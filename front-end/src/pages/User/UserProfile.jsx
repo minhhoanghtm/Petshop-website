@@ -8,7 +8,7 @@ import {
     FaMapMarkerAlt,
     FaCartPlus,
 } from "react-icons/fa";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import LoadingOverlay from "../../components/LoadingOverlay";
@@ -27,6 +27,7 @@ import {
     fetchOrdersByUser as fetchOrdersByUserRequest,
     updateOrder as updateOrderRequest
 } from "../../services/orderService";
+import { createMomoPayment } from "../../services/paymentService";
 import { isValidPhone, isValidGmailAddress } from "../../utils/validation";
     
 import ShippingInfo from "./components/ShippingInfo";
@@ -124,9 +125,18 @@ const UserProfile = () => {
     const [ordersLoading, setOrdersLoading] = useState(true);
     const [error, setError] = useState(null);
     const navigate = useNavigate();
+    const location = useLocation();
     const [isLoggingOut, setIsLoggingOut] = useState(false);
     const [selectedFile, setSelectedFile] = useState(null);
     const [activeTab, setActiveTab] = useState("profile");
+
+    useEffect(() => {
+        if (location.state?.activeTab) {
+            setActiveTab(location.state.activeTab);
+        } else if (location.hash === "#history" || location.hash === "#don-hang-cua-ban") {
+            setActiveTab("history");
+        }
+    }, [location]);
     const [selectedOrder, setSelectedOrder] = useState(null);
     const [showOrderModal, setShowOrderModal] = useState(false);
     const [orderStats, setOrderStats] = useState({
@@ -435,6 +445,34 @@ const UserProfile = () => {
         }
     };
 
+    const handlePayNow = async (order) => {
+        if (order.payment_method === "MOMO") {
+            try {
+                const loadingToastId = toast.loading("Đang tạo link thanh toán MoMo...");
+                const response = await createMomoPayment(order._id);
+                if (response?.data?.payUrl) {
+                    toast.update(loadingToastId, {
+                        render: "Đang chuyển hướng sang MoMo...",
+                        type: "success",
+                        isLoading: false,
+                        autoClose: 2000,
+                    });
+                    setTimeout(() => {
+                        window.location.href = response.data.payUrl;
+                    }, 1000);
+                } else {
+                    throw new Error("Không nhận được URL thanh toán từ MoMo.");
+                }
+            } catch (error) {
+                console.error("Lỗi khi thanh toán MoMo:", error);
+                toast.error(
+                    error.response?.data?.message ||
+                    "Không thể tạo liên kết thanh toán MoMo. Vui lòng thử lại sau!"
+                );
+            }
+        }
+    };
+
     const hanldeGenerateInvoice = (order) => {
         generateInvoice(order, formatDisplayDate);
     };
@@ -696,6 +734,7 @@ const UserProfile = () => {
                                     onViewOrder={handleViewOrder}
                                     onCancelOrder={handleCancelOrder}
                                     formatDate={formatDisplayDate}
+                                    onPayNow={handlePayNow}
                                 />
                             )}
 

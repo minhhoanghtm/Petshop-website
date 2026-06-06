@@ -33,6 +33,7 @@ import categoryRoutes from "./routes/categoryRoutes.js";
 import orderRoutes from "./routes/orderRoutes.js";
 import cartRoutes from "./routes/cartRoutes.js";
 import settingRoutes from "./routes/settingRoutes.js";
+import paymentRoutes from "./routes/paymentRoutes.js";
 import aiRoutes from "./routes/AIRoutes.js";
 import reviewRoutes from "./routes/reviewRoutes.js";
 import dashboadRoutes from "./routes/dashboardRoutes.js";
@@ -227,6 +228,7 @@ app.use("/api/auth", authRoutes);
 // Product and category routes (viewing only)
 app.use("/api/products", productRoutes);
 app.use("/api/categories", categoryRoutes);
+app.use("/api/payments", paymentRoutes);
 app.use("/api/ai", aiRoutes);
 app.use("/api/reviews", reviewRoutes);
 

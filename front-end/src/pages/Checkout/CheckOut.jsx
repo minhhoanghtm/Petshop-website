@@ -11,6 +11,7 @@ import bankCard from "../../assets/images/bank-card.png";
 import { CheckCheck, ChevronDown } from "lucide-react";
 import { BsBox2 } from "react-icons/bs";
 import { createOrder } from "../../services/orderService";
+import { createMomoPayment } from "../../services/paymentService";
 import {
   fetchShippingAddress,
   updateShippingAddress,
@@ -434,15 +435,7 @@ const CheckOut = () => {
 
         // call API đặt hàng
         const response = await createOrder(orderData);
-
-        // update toast thành công
-        toast.update(loadingToastId, {
-          render: "Đặt hàng thành công!",
-          type: "success",
-          isLoading: false,
-          autoClose: 5000,
-          closeButton: true,
-        });
+        const createdOrder = response.data;
 
         // Chỉ xóa những sản phẩm đã chọn thanh toán khỏi giỏ hàng
         if (!isBuyNowMode && userId) {
@@ -461,8 +454,57 @@ const CheckOut = () => {
         setSelectedMethod("cod");
         setErrors({});
 
+        if (selectedMethod === "momo" && createdOrder?._id) {
+          try {
+            toast.update(loadingToastId, {
+              render: "Đang tạo liên kết thanh toán MoMo...",
+              type: "info",
+              isLoading: true,
+            });
+
+            const paymentRes = await createMomoPayment(createdOrder._id);
+            if (paymentRes?.data?.payUrl) {
+              toast.update(loadingToastId, {
+                render: "Đặt hàng thành công! Đang chuyển hướng sang MoMo...",
+                type: "success",
+                isLoading: false,
+                autoClose: 2000,
+                closeButton: true,
+              });
+              setTimeout(() => {
+                window.location.href = paymentRes.data.payUrl;
+              }, 1000);
+              return;
+            } else {
+              throw new Error("Không nhận được URL thanh toán từ MoMo.");
+            }
+          } catch (payError) {
+            console.error("Lỗi khi tạo thanh toán MoMo:", payError);
+            toast.update(loadingToastId, {
+              render: "Đặt hàng thành công nhưng không tạo được liên kết thanh toán. Vui lòng thanh toán lại trong lịch sử mua hàng.",
+              type: "warning",
+              isLoading: false,
+              autoClose: 6000,
+              closeButton: true,
+            });
+            setTimeout(() => {
+              navigate("/userProfile#history");
+            }, 3000);
+            return;
+          }
+        }
+
+        // update toast thành công cho COD hoặc PayPal (do PayPal mock đã hoàn tất thanh toán)
+        toast.update(loadingToastId, {
+          render: "Đặt hàng thành công!",
+          type: "success",
+          isLoading: false,
+          autoClose: 5000,
+          closeButton: true,
+        });
+
         setTimeout(() => {
-          navigate("/userProfile#don-hang-cua-ban");
+          navigate("/userProfile#history");
         }, 1000);
       } catch (error) {
         console.error("Error submitting order:", error);

@@ -64,6 +64,8 @@ const orderSchema = new mongoose.Schema({
     payment_method: {
         type: String,
         required: true,
+        uppercase: true,
+        trim: true,
         default: "COD",
         enum: ["COD", "MOMO", "PAYPAL"],
     },

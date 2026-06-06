@@ -14,6 +14,7 @@ const OrderHistory = ({
     onViewOrder,
     onCancelOrder,
     formatDate,
+    onPayNow,
 }) => {
     const dispatch = useDispatch();
     const { myReviews } = useSelector((state) => state.reviews);
@@ -82,6 +83,7 @@ const OrderHistory = ({
                             canCancel={canCancelStatus(order.statusNormalized)}
                             formatDate={formatDate}
                             reviewMap={reviewMap}
+                            onPayNow={onPayNow}
                         />
                     ))}
                 </div>

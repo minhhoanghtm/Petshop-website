@@ -178,3 +178,134 @@ MongooseError: Operation `products.aggregate()` buffering timed out after 10000m
 2026-06-02T06:30:21.302Z [error] Queue Redis error {"service":"back-end"}
 2026-06-02T06:30:23.314Z [error] Queue Redis error {"service":"back-end"}
 2026-06-02T10:15:15.376Z [error] MongoDB connection error Server selection timed out after 5000 ms {"service":"back-end"}
+2026-06-02T12:35:13.949Z [error] Error fetching products getaddrinfo ENOTFOUND ac-jpovlcq-shard-00-00.ne0u0gu.mongodb.net {"service":"back-end"}
+MongoServerSelectionError: getaddrinfo ENOTFOUND ac-jpovlcq-shard-00-00.ne0u0gu.mongodb.net
+    at Topology.selectServer (D:\Project\Nhom1_KienTrucVaThietKePhanMem_DHKTPM18A-main\back-end\node_modules\mongoose\node_modules\mongodb\lib\sdam\topology.js:327:38)
+    at async tryOperation (D:\Project\Nhom1_KienTrucVaThietKePhanMem_DHKTPM18A-main\back-end\node_modules\mongoose\node_modules\mongodb\lib\operations\execute_operation.js:148:18)
+    at async executeOperation (D:\Project\Nhom1_KienTrucVaThietKePhanMem_DHKTPM18A-main\back-end\node_modules\mongoose\node_modules\mongodb\lib\operations\execute_operation.js:78:16)
+    at async AggregationCursor._initialize (D:\Project\Nhom1_KienTrucVaThietKePhanMem_DHKTPM18A-main\back-end\node_modules\mongoose\node_modules\mongodb\lib\cursor\aggregation_cursor.js:57:26)
+    at async AggregationCursor.cursorInit (D:\Project\Nhom1_KienTrucVaThietKePhanMem_DHKTPM18A-main\back-end\node_modules\mongoose\node_modules\mongodb\lib\cursor\abstract_cursor.js:632:27)
+    at async AggregationCursor.fetchBatch (D:\Project\Nhom1_KienTrucVaThietKePhanMem_DHKTPM18A-main\back-end\node_modules\mongoose\node_modules\mongodb\lib\cursor\abstract_cursor.js:666:13)
+    at async AggregationCursor.next (D:\Project\Nhom1_KienTrucVaThietKePhanMem_DHKTPM18A-main\back-end\node_modules\mongoose\node_modules\mongodb\lib\cursor\abstract_cursor.js:342:17)
+    at async [Symbol.asyncIterator] (D:\Project\Nhom1_KienTrucVaThietKePhanMem_DHKTPM18A-main\back-end\node_modules\mongoose\node_modules\mongodb\lib\cursor\abstract_cursor.js:250:34)
+    at async AggregationCursor.toArray (D:\Project\Nhom1_KienTrucVaThietKePhanMem_DHKTPM18A-main\back-end\node_modules\mongoose\node_modules\mongodb\lib\cursor\abstract_cursor.js:422:26)
+    at async Aggregate.exec (D:\Project\Nhom1_KienTrucVaThietKePhanMem_DHKTPM18A-main\back-end\node_modules\mongoose\lib\aggregate.js:1104:14)
+2026-06-02T12:35:13.962Z [error] Error fetching sale products getaddrinfo ENOTFOUND ac-jpovlcq-shard-00-00.ne0u0gu.mongodb.net {"service":"back-end"}
+MongoServerSelectionError: getaddrinfo ENOTFOUND ac-jpovlcq-shard-00-00.ne0u0gu.mongodb.net
+    at Topology.selectServer (D:\Project\Nhom1_KienTrucVaThietKePhanMem_DHKTPM18A-main\back-end\node_modules\mongoose\node_modules\mongodb\lib\sdam\topology.js:327:38)
+    at async tryOperation (D:\Project\Nhom1_KienTrucVaThietKePhanMem_DHKTPM18A-main\back-end\node_modules\mongoose\node_modules\mongodb\lib\operations\execute_operation.js:148:18)
+    at async executeOperation (D:\Project\Nhom1_KienTrucVaThietKePhanMem_DHKTPM18A-main\back-end\node_modules\mongoose\node_modules\mongodb\lib\operations\execute_operation.js:78:16)
+    at async AggregationCursor._initialize (D:\Project\Nhom1_KienTrucVaThietKePhanMem_DHKTPM18A-main\back-end\node_modules\mongoose\node_modules\mongodb\lib\cursor\aggregation_cursor.js:57:26)
+    at async AggregationCursor.cursorInit (D:\Project\Nhom1_KienTrucVaThietKePhanMem_DHKTPM18A-main\back-end\node_modules\mongoose\node_modules\mongodb\lib\cursor\abstract_cursor.js:632:27)
+    at async AggregationCursor.fetchBatch (D:\Project\Nhom1_KienTrucVaThietKePhanMem_DHKTPM18A-main\back-end\node_modules\mongoose\node_modules\mongodb\lib\cursor\abstract_cursor.js:666:13)
+    at async AggregationCursor.next (D:\Project\Nhom1_KienTrucVaThietKePhanMem_DHKTPM18A-main\back-end\node_modules\mongoose\node_modules\mongodb\lib\cursor\abstract_cursor.js:342:17)
+    at async [Symbol.asyncIterator] (D:\Project\Nhom1_KienTrucVaThietKePhanMem_DHKTPM18A-main\back-end\node_modules\mongoose\node_modules\mongodb\lib\cursor\abstract_cursor.js:250:34)
+    at async AggregationCursor.toArray (D:\Project\Nhom1_KienTrucVaThietKePhanMem_DHKTPM18A-main\back-end\node_modules\mongoose\node_modules\mongodb\lib\cursor\abstract_cursor.js:422:26)
+    at async Aggregate.exec (D:\Project\Nhom1_KienTrucVaThietKePhanMem_DHKTPM18A-main\back-end\node_modules\mongoose\lib\aggregate.js:1104:14)
+2026-06-02T13:05:34.622Z [error] MongoDB connection error getaddrinfo ENOTFOUND ac-jpovlcq-shard-00-00.ne0u0gu.mongodb.net {"service":"back-end"}
+2026-06-05T16:09:37.617Z [error] Redis client error {"service":"back-end"}
+2026-06-05T16:09:37.619Z [error] Queue Redis error {"service":"back-end"}
+2026-06-05T16:09:37.635Z [error] Redis client error {"service":"back-end"}
+2026-06-05T16:09:37.690Z [error] Queue Redis error {"service":"back-end"}
+2026-06-05T16:09:37.812Z [error] Queue Redis error {"service":"back-end"}
+2026-06-05T16:09:37.968Z [error] Queue Redis error {"service":"back-end"}
+2026-06-05T16:09:38.185Z [error] Queue Redis error {"service":"back-end"}
+2026-06-05T16:09:38.451Z [error] Queue Redis error {"service":"back-end"}
+2026-06-05T16:09:38.641Z [error] Redis client error {"service":"back-end"}
+2026-06-05T16:09:38.767Z [error] Queue Redis error {"service":"back-end"}
+2026-06-05T16:09:39.126Z [error] Queue Redis error {"service":"back-end"}
+2026-06-05T16:09:39.534Z [error] Queue Redis error {"service":"back-end"}
+2026-06-05T16:09:39.989Z [error] Queue Redis error {"service":"back-end"}
+2026-06-05T16:09:40.506Z [error] Queue Redis error {"service":"back-end"}
+2026-06-05T16:09:40.645Z [error] Redis client error {"service":"back-end"}
+2026-06-05T16:09:41.066Z [error] Queue Redis error {"service":"back-end"}
+2026-06-05T16:09:41.673Z [error] Queue Redis error {"service":"back-end"}
+2026-06-05T16:09:42.327Z [error] Queue Redis error {"service":"back-end"}
+2026-06-05T16:09:43.041Z [error] Queue Redis error {"service":"back-end"}
+2026-06-05T16:09:43.650Z [error] Redis client error {"service":"back-end"}
+2026-06-05T16:09:43.804Z [error] Queue Redis error {"service":"back-end"}
+2026-06-05T16:09:44.619Z [error] Queue Redis error {"service":"back-end"}
+2026-06-05T16:09:45.488Z [error] Queue Redis error {"service":"back-end"}
+2026-06-05T16:09:46.394Z [error] Queue Redis error {"service":"back-end"}
+2026-06-05T16:09:47.360Z [error] Queue Redis error {"service":"back-end"}
+2026-06-05T16:09:47.661Z [error] Redis client error {"service":"back-end"}
+2026-06-05T16:09:48.373Z [error] Queue Redis error {"service":"back-end"}
+2026-06-05T16:09:49.433Z [error] Queue Redis error {"service":"back-end"}
+2026-06-05T16:09:50.539Z [error] Queue Redis error {"service":"back-end"}
+2026-06-05T16:09:51.708Z [error] Queue Redis error {"service":"back-end"}
+2026-06-05T16:09:52.673Z [error] Redis client error {"service":"back-end"}
+2026-06-05T16:09:52.921Z [error] Queue Redis error {"service":"back-end"}
+2026-06-05T16:09:54.186Z [error] Queue Redis error {"service":"back-end"}
+2026-06-05T16:09:55.498Z [error] Queue Redis error {"service":"back-end"}
+2026-06-05T16:09:56.852Z [error] Queue Redis error {"service":"back-end"}
+2026-06-05T16:09:57.678Z [error] Redis client error {"service":"back-end"}
+2026-06-05T16:09:58.269Z [error] Queue Redis error {"service":"back-end"}
+2026-06-05T16:09:59.736Z [error] Queue Redis error {"service":"back-end"}
+2026-06-05T16:10:01.251Z [error] Queue Redis error {"service":"back-end"}
+2026-06-05T16:10:02.697Z [error] Redis client error {"service":"back-end"}
+2026-06-05T16:10:02.804Z [error] Queue Redis error {"service":"back-end"}
+2026-06-05T16:10:04.408Z [error] Queue Redis error {"service":"back-end"}
+2026-06-05T16:10:06.072Z [error] Queue Redis error {"service":"back-end"}
+2026-06-05T16:10:07.700Z [error] Redis client error {"service":"back-end"}
+2026-06-05T16:10:07.777Z [error] Queue Redis error {"service":"back-end"}
+2026-06-05T16:10:09.539Z [error] Queue Redis error {"service":"back-end"}
+2026-06-05T16:10:11.345Z [error] Queue Redis error {"service":"back-end"}
+2026-06-05T16:10:12.718Z [error] Redis client error {"service":"back-end"}
+2026-06-05T16:10:13.200Z [error] Queue Redis error {"service":"back-end"}
+2026-06-05T16:10:15.117Z [error] Queue Redis error {"service":"back-end"}
+2026-06-05T16:10:17.084Z [error] Queue Redis error {"service":"back-end"}
+2026-06-05T16:10:17.733Z [error] Redis client error {"service":"back-end"}
+2026-06-05T16:10:19.088Z [error] Queue Redis error {"service":"back-end"}
+2026-06-05T16:10:21.096Z [error] Queue Redis error {"service":"back-end"}
+2026-06-05T16:10:22.736Z [error] Redis client error {"service":"back-end"}
+2026-06-05T16:10:23.103Z [error] Queue Redis error {"service":"back-end"}
+2026-06-05T16:10:25.122Z [error] Queue Redis error {"service":"back-end"}
+2026-06-05T16:10:27.201Z [error] Queue Redis error {"service":"back-end"}
+2026-06-05T16:10:27.745Z [error] Redis client error {"service":"back-end"}
+2026-06-05T16:10:29.250Z [error] Queue Redis error {"service":"back-end"}
+2026-06-05T16:10:31.262Z [error] Queue Redis error {"service":"back-end"}
+2026-06-05T16:10:32.749Z [error] Redis client error {"service":"back-end"}
+2026-06-05T16:10:33.273Z [error] Queue Redis error {"service":"back-end"}
+2026-06-05T16:10:35.291Z [error] Queue Redis error {"service":"back-end"}
+2026-06-05T16:10:37.304Z [error] Queue Redis error {"service":"back-end"}
+2026-06-05T16:10:37.765Z [error] Redis client error {"service":"back-end"}
+2026-06-05T16:10:39.321Z [error] Queue Redis error {"service":"back-end"}
+2026-06-05T16:10:41.333Z [error] Queue Redis error {"service":"back-end"}
+2026-06-05T16:10:42.781Z [error] Redis client error {"service":"back-end"}
+2026-06-05T16:10:43.342Z [error] Queue Redis error {"service":"back-end"}
+2026-06-05T16:10:45.355Z [error] Queue Redis error {"service":"back-end"}
+2026-06-05T16:10:47.359Z [error] Queue Redis error {"service":"back-end"}
+2026-06-05T16:10:47.784Z [error] Redis client error {"service":"back-end"}
+2026-06-05T16:10:49.371Z [error] Queue Redis error {"service":"back-end"}
+2026-06-05T16:10:51.383Z [error] Queue Redis error {"service":"back-end"}
+2026-06-05T16:10:52.800Z [error] Redis client error {"service":"back-end"}
+2026-06-05T16:10:53.387Z [error] Queue Redis error {"service":"back-end"}
+2026-06-05T16:10:55.399Z [error] Queue Redis error {"service":"back-end"}
+2026-06-05T16:11:09.287Z [error] Redis client error {"service":"back-end"}
+2026-06-05T16:11:09.289Z [error] Queue Redis error {"service":"back-end"}
+2026-06-05T16:11:09.302Z [error] Redis client error {"service":"back-end"}
+2026-06-05T16:11:09.358Z [error] Queue Redis error {"service":"back-end"}
+2026-06-05T16:11:09.466Z [error] Queue Redis error {"service":"back-end"}
+2026-06-05T16:11:09.635Z [error] Queue Redis error {"service":"back-end"}
+2026-06-05T16:11:09.852Z [error] Queue Redis error {"service":"back-end"}
+2026-06-05T16:11:10.117Z [error] Queue Redis error {"service":"back-end"}
+2026-06-05T16:11:10.306Z [error] Redis client error {"service":"back-end"}
+2026-06-05T16:11:10.428Z [error] Queue Redis error {"service":"back-end"}
+2026-06-05T16:11:10.786Z [error] Queue Redis error {"service":"back-end"}
+2026-06-05T16:11:11.192Z [error] Queue Redis error {"service":"back-end"}
+2026-06-05T16:11:11.645Z [error] Queue Redis error {"service":"back-end"}
+2026-06-05T16:11:12.158Z [error] Queue Redis error {"service":"back-end"}
+2026-06-05T16:11:12.314Z [error] Redis client error {"service":"back-end"}
+2026-06-05T16:11:12.718Z [error] Queue Redis error {"service":"back-end"}
+2026-06-05T16:11:13.338Z [error] Queue Redis error {"service":"back-end"}
+2026-06-05T16:11:14.004Z [error] Queue Redis error {"service":"back-end"}
+2026-06-05T16:11:14.709Z [error] Queue Redis error {"service":"back-end"}
+2026-06-05T16:11:15.320Z [error] Redis client error {"service":"back-end"}
+2026-06-05T16:11:15.477Z [error] Queue Redis error {"service":"back-end"}
+2026-06-05T16:11:16.287Z [error] Queue Redis error {"service":"back-end"}
+2026-06-05T16:11:17.144Z [error] Queue Redis error {"service":"back-end"}
+2026-06-05T16:11:18.047Z [error] Queue Redis error {"service":"back-end"}
+2026-06-05T16:11:19.013Z [error] Queue Redis error {"service":"back-end"}
+2026-06-05T16:11:19.326Z [error] Redis client error {"service":"back-end"}
+2026-06-05T16:11:20.028Z [error] Queue Redis error {"service":"back-end"}
+2026-06-05T16:11:21.096Z [error] Queue Redis error {"service":"back-end"}

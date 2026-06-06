@@ -16,10 +16,24 @@ const OrderCard = ({
     canCancel,
     formatDate,
     reviewMap = new Map(),
+    onPayNow,
 }) => {
     const statusInfo = statusMeta[order.statusNormalized];
-    const paymentMethod =
-        order.payment_method || order.paymentMethod || "Thanh toán khi nhận hàng";
+    
+    let paymentMethodLabel = order.payment_method || order.paymentMethod || "Thanh toán khi nhận hàng";
+    if (paymentMethodLabel === "MOMO") {
+        paymentMethodLabel = "Ví MoMo";
+    } else if (paymentMethodLabel === "PAYPAL") {
+        paymentMethodLabel = "Ví PayPal";
+    } else if (paymentMethodLabel === "COD") {
+        paymentMethodLabel = "Thanh toán khi nhận hàng (COD)";
+    }
+
+    const paymentStatusText = order.payment_status === "paid"
+        ? "Đã thanh toán"
+        : order.payment_status === "refunded"
+            ? "Đã hoàn tiền"
+            : "Chưa thanh toán";
 
     return (
         <div className="bg-white border border-slate-100 rounded-2xl p-4 md:p-5 shadow-sm">
@@ -59,7 +73,18 @@ const OrderCard = ({
                 </div>
                 <div>
                     <p className="text-slate-500">Thanh toán</p>
-                    <p className="font-medium text-slate-800">{paymentMethod}</p>
+                    <p className="font-medium text-slate-800 flex items-center flex-wrap gap-1">
+                        {paymentMethodLabel}
+                        <span className={`text-[10px] px-2 py-0.5 rounded-full font-medium ${
+                            order.payment_status === "paid"
+                                ? "bg-emerald-50 text-emerald-700 border border-emerald-200"
+                                : order.payment_status === "refunded"
+                                    ? "bg-slate-100 text-slate-700 border border-slate-200"
+                                    : "bg-amber-50 text-amber-700 border border-amber-200"
+                        }`}>
+                            {paymentStatusText}
+                        </span>
+                    </p>
                 </div>
                 <div className="md:text-right">
                     <p className="text-slate-500">Tổng tiền</p>
@@ -77,6 +102,14 @@ const OrderCard = ({
                     <FaEye />
                     Xem chi tiết
                 </button>
+                {order.payment_method === "MOMO" && order.payment_status === "pending" && order.statusNormalized !== "cancelled" && (
+                    <button
+                        onClick={() => onPayNow && onPayNow(order)}
+                        className="inline-flex items-center gap-2 px-3 py-2 rounded-lg bg-[#d82d8b] text-white text-sm font-medium hover:bg-[#b0226f] transition cursor-pointer shadow-sm font-medium"
+                    >
+                        Thanh toán ngay (MoMo)
+                    </button>
+                )}
                 {canCancel && (
                     <button
                         onClick={() => onCancel(order._id)}

@@ -18,11 +18,12 @@
   "dependencies": {
     "@google/generative-ai": "^0.24.1",
     "antd": "^6.3.3",
-    "axios": "^1.16.0",
+    "axios": "^1.17.0",
     "bcryptjs": "^2.4.3",
     "bullmq": "^5.77.6",
     "connect-redis": "^9.0.0",
     "cors": "^2.8.5",
+    "crypto": "^1.0.1",
     "dotenv": "^16.4.7",
     "express": "^4.22.1",
     "express-rate-limit": "^8.5.1",

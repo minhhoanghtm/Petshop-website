@@ -1,5 +1,6 @@
 import Order from "../models/Order.js";
 import Product from "../models/Product.js";
+import Payment from "../models/Payment.js";
 import { createServiceError } from "../utils/serviceError.js";
 import PaymentContext from "./payment/paymentContext.js";
 import CodPaymentStrategy from "./payment/codStrategy.js";
@@ -43,52 +44,68 @@ export const createOrder = async (orderData = {}) => {
   const payment_method = orderData.payment_method || orderData.paymentMethod || "COD";
   const normalizedStatus = normalizeStatus(status) || "pending";
 
-  // 1. Kiểm tra tồn kho sản phẩm
-  for (const item of items) {
-    const product = await Product.findById(item.product_id);
-    if (!product) {
-      throw createServiceError(`Không tìm thấy sản phẩm với ID: ${item.product_id}`, 404);
+  const savedProducts = [];
+  try {
+    // 1. Kiểm tra tồn kho và tạm thời giảm số lượng sản phẩm
+    for (const item of items) {
+      const product = await Product.findById(item.product_id);
+      if (!product) {
+        throw createServiceError(`Không tìm thấy sản phẩm với ID: ${item.product_id}`, 404);
+      }
+
+      if (product.stock < item.quantity) {
+        throw createServiceError(`Sản phẩm ${product.name} không đủ số lượng trong kho`, 400);
+      }
+
+      product.stock -= item.quantity;
+      await product.save();
+      // Lưu lại để có thể rollback nếu các bước sau lỗi
+      savedProducts.push({ product, quantity: item.quantity });
     }
 
-    if (product.stock < item.quantity) {
-      throw createServiceError(`Sản phẩm ${product.name} không đủ số lượng trong kho`, 400);
+    // 2. Áp dụng Strategy Pattern để xử lý thanh toán
+    let paymentStrategy;
+    switch (String(payment_method).toUpperCase()) {
+      case "MOMO":
+        paymentStrategy = new MomoPaymentStrategy();
+        break;
+      case "PAYPAL":
+        paymentStrategy = new PaypalPaymentStrategy();
+        break;
+      case "COD":
+      default:
+        paymentStrategy = new CodPaymentStrategy();
+        break;
     }
 
-    product.stock -= item.quantity;
-    await product.save();
+    const paymentContext = new PaymentContext(paymentStrategy);
+    
+    // Thực thi thanh toán qua Context
+    const paymentResult = await paymentContext.executePayment(total_price, { user_id, items });
+
+    // 3. Khởi tạo và lưu đơn hàng với kết quả thanh toán tương ứng
+    const newOrder = new Order({
+      user_id,
+      items,
+      total_price,
+      status: normalizedStatus,
+      payment_method: payment_method.toUpperCase(),
+      payment_status: paymentResult.payment_status,
+    });
+
+    return await newOrder.save();
+  } catch (error) {
+    // Rollback lại tồn kho nếu xảy ra bất kỳ lỗi nào trong quá trình tạo đơn hàng
+    for (const { product, quantity } of savedProducts) {
+      try {
+        product.stock += quantity;
+        await product.save();
+      } catch (rollbackError) {
+        console.error(`Lỗi rollback tồn kho cho sản phẩm ${product._id}:`, rollbackError);
+      }
+    }
+    throw error;
   }
-
-  // 2. Áp dụng Strategy Pattern để xử lý thanh toán
-  let paymentStrategy;
-  switch (String(payment_method).toUpperCase()) {
-    case "MOMO":
-      paymentStrategy = new MomoPaymentStrategy();
-      break;
-    case "PAYPAL":
-      paymentStrategy = new PaypalPaymentStrategy();
-      break;
-    case "COD":
-    default:
-      paymentStrategy = new CodPaymentStrategy();
-      break;
-  }
-
-  const paymentContext = new PaymentContext(paymentStrategy);
-  
-  // Thực thi thanh toán qua Context
-  const paymentResult = await paymentContext.executePayment(total_price, { user_id, items });
-
-  // 3. Khởi tạo và lưu đơn hàng với kết quả thanh toán tương ứng
-  const newOrder = new Order({
-    user_id,
-    items,
-    total_price,
-    status: normalizedStatus,
-    payment_method: payment_method.toUpperCase(),
-    payment_status: paymentResult.payment_status,
-  });
-
-  return newOrder.save();
 };
 
 export const getOrders = async (queryParams = {}, currentUser = null) => {
@@ -179,9 +196,22 @@ export const updateOrder = async (orderId, updateData = {}, currentUser = null) 
     }
   }
 
+  const updateFields = { status: normalizedStatus, updatedAt: new Date() };
+
+  if (normalizedStatus === "cancelled" && previousStatus !== "cancelled") {
+    if (currentOrder.payment_status === "paid") {
+      updateFields.payment_status = "refunded";
+      try {
+        await Payment.updateMany({ order_id: orderId }, { status: "refunded", refunded_at: new Date() });
+      } catch (paymentErr) {
+        console.error("Lỗi khi cập nhật bảng Payment thành refunded:", paymentErr);
+      }
+    }
+  }
+
   const updatedOrder = await Order.findByIdAndUpdate(
     orderId,
-    { status: normalizedStatus, updatedAt: new Date() },
+    updateFields,
     { new: true }
   )
     .populate("user_id")

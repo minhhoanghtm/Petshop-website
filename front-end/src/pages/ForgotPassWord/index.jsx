@@ -184,7 +184,7 @@ const ForgotPassword = () => {
                 </div>
               </div>
 
-              <h1 className="text-3xl font-black leading-tight sm:text-4xl">
+              <h1 className="text-3xl font-black leading-tight sm:text-4xl">a
                 Đừng lo,<br />
                 <span className="text-amber-100">bạn đã có</span><br />
                 chúng mình! 🐶
