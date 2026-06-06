@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Hướng dẫn chạy dự án
 
 ## 1. Yêu cầu
@@ -115,3 +116,6 @@ npm run lint
 2. Chạy Redis bằng `docker start redis` hoặc `docker run --name redis -p 6379:6379 -d redis:7-alpine`.
 3. Chạy backend bằng `cd back-end && npm start`.
 4. Chạy frontend bằng `cd front-end && npm run dev`.
+=======
+# Petshop-website
+>>>>>>> 2605ba340459049d5f88752663d26bec89ff37f8
