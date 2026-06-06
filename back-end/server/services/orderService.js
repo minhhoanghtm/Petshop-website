@@ -6,6 +6,7 @@ import PaymentContext from "./payment/paymentContext.js";
 import CodPaymentStrategy from "./payment/codStrategy.js";
 import MomoPaymentStrategy from "./payment/momoStrategy.js";
 import PaypalPaymentStrategy from "./payment/paypalStrategy.js";
+import VnpayPaymentStrategy from "./payment/vnpayStrategy.js";
 
 const REVENUE_STATUSES = ["delivered"];
 
@@ -40,7 +41,23 @@ export const normalizeStatus = (value) => {
 };
 
 export const createOrder = async (orderData = {}) => {
-  const { user_id, items, total_price, status } = orderData;
+  const { 
+    user_id, 
+    items, 
+    total_price,
+    status,
+    fullName,
+    email,
+    phone,
+    address,
+    province,
+    district,
+    ward,
+    detailAddress,
+    deliveryOption,
+    shippingCost
+  } = orderData;
+  
   const payment_method = orderData.payment_method || orderData.paymentMethod || "COD";
   const normalizedStatus = normalizeStatus(status) || "pending";
 
@@ -63,7 +80,7 @@ export const createOrder = async (orderData = {}) => {
       savedProducts.push({ product, quantity: item.quantity });
     }
 
-    // 2. Áp dụng Strategy Pattern để xử lý thanh toán
+    // 2. Áp dụng Strategy Pattern để xử lý thanh toán (chỉ xác nhận phương thức, không xử lý thanh toán ở đây)
     let paymentStrategy;
     switch (String(payment_method).toUpperCase()) {
       case "MOMO":
@@ -71,6 +88,9 @@ export const createOrder = async (orderData = {}) => {
         break;
       case "PAYPAL":
         paymentStrategy = new PaypalPaymentStrategy();
+        break;
+      case "VNPAY":
+        paymentStrategy = new VnpayPaymentStrategy();
         break;
       case "COD":
       default:
@@ -91,6 +111,17 @@ export const createOrder = async (orderData = {}) => {
       status: normalizedStatus,
       payment_method: payment_method.toUpperCase(),
       payment_status: paymentResult.payment_status,
+      // Shipping Information
+      fullName,
+      email,
+      phone,
+      address,
+      province,
+      district,
+      ward,
+      detailAddress,
+      deliveryOption: deliveryOption || "delivery",
+      shippingCost: shippingCost || 0,
     });
 
     return await newOrder.save();

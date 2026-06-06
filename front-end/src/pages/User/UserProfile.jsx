@@ -27,7 +27,7 @@ import {
     fetchOrdersByUser as fetchOrdersByUserRequest,
     updateOrder as updateOrderRequest
 } from "../../services/orderService";
-import { createMomoPayment } from "../../services/paymentService";
+import { createMomoPayment, createVNPayPayment } from "../../services/paymentService";
 import { isValidPhone, isValidGmailAddress } from "../../utils/validation";
     
 import ShippingInfo from "./components/ShippingInfo";
@@ -446,28 +446,35 @@ const UserProfile = () => {
     };
 
     const handlePayNow = async (order) => {
-        if (order.payment_method === "MOMO") {
+        const method = String(order.payment_method || "").trim().toUpperCase();
+        if (method === "MOMO" || method === "VNPAY") {
+            const isMomo = method === "MOMO";
+            const providerName = isMomo ? "MoMo" : "VNPay";
             try {
-                const loadingToastId = toast.loading("Đang tạo link thanh toán MoMo...");
-                const response = await createMomoPayment(order._id);
-                if (response?.data?.payUrl) {
+                const loadingToastId = toast.loading(`Đang tạo link thanh toán ${providerName}...`);
+                const response = isMomo 
+                    ? await createMomoPayment(order._id)
+                    : await createVNPayPayment(order._id);
+                
+                const payUrl = response?.data?.payUrl || response?.data?.paymentUrl;
+                if (payUrl) {
                     toast.update(loadingToastId, {
-                        render: "Đang chuyển hướng sang MoMo...",
+                        render: `Đang chuyển hướng sang ${providerName}...`,
                         type: "success",
                         isLoading: false,
                         autoClose: 2000,
                     });
                     setTimeout(() => {
-                        window.location.href = response.data.payUrl;
+                        window.location.href = payUrl;
                     }, 1000);
                 } else {
-                    throw new Error("Không nhận được URL thanh toán từ MoMo.");
+                    throw new Error(`Không nhận được URL thanh toán từ ${providerName}.`);
                 }
             } catch (error) {
-                console.error("Lỗi khi thanh toán MoMo:", error);
+                console.error(`Lỗi khi thanh toán ${providerName}:`, error);
                 toast.error(
                     error.response?.data?.message ||
-                    "Không thể tạo liên kết thanh toán MoMo. Vui lòng thử lại sau!"
+                    `Không thể tạo liên kết thanh toán ${providerName}. Vui lòng thử lại sau!`
                 );
             }
         }

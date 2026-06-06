@@ -11,7 +11,7 @@ import bankCard from "../../assets/images/bank-card.png";
 import { CheckCheck, ChevronDown } from "lucide-react";
 import { BsBox2 } from "react-icons/bs";
 import { createOrder } from "../../services/orderService";
-import { createMomoPayment } from "../../services/paymentService";
+import { createMomoPayment, createVNPayPayment } from "../../services/paymentService";
 import {
   fetchShippingAddress,
   updateShippingAddress,
@@ -454,32 +454,39 @@ const CheckOut = () => {
         setSelectedMethod("cod");
         setErrors({});
 
-        if (selectedMethod === "momo" && createdOrder?._id) {
+        if ((selectedMethod === "momo" || selectedMethod === "vnpay") && createdOrder?._id) {
+          const paymentMethodName = selectedMethod === "momo" ? "MoMo" : "VNPay";
           try {
             toast.update(loadingToastId, {
-              render: "Đang tạo liên kết thanh toán MoMo...",
+              render: `Đang tạo liên kết thanh toán ${paymentMethodName}...`,
               type: "info",
               isLoading: true,
             });
 
-            const paymentRes = await createMomoPayment(createdOrder._id);
-            if (paymentRes?.data?.payUrl) {
+            const paymentRes = selectedMethod === "momo" 
+              ? await createMomoPayment(createdOrder._id)
+              : await createVNPayPayment(createdOrder._id);
+            
+            console.log("VNPAY/MoMo debug - paymentRes:", paymentRes);
+            const payUrl = paymentRes?.data?.payUrl || paymentRes?.data?.paymentUrl;
+            console.log("VNPAY/MoMo debug - payUrl:", payUrl);
+            if (payUrl) {
               toast.update(loadingToastId, {
-                render: "Đặt hàng thành công! Đang chuyển hướng sang MoMo...",
+                render: `Đặt hàng thành công! Đang chuyển hướng sang ${paymentMethodName}...`,
                 type: "success",
                 isLoading: false,
                 autoClose: 2000,
                 closeButton: true,
               });
               setTimeout(() => {
-                window.location.href = paymentRes.data.payUrl;
+                window.location.href = payUrl;
               }, 1000);
               return;
             } else {
-              throw new Error("Không nhận được URL thanh toán từ MoMo.");
+              throw new Error(`Không nhận được URL thanh toán từ ${paymentMethodName}.`);
             }
           } catch (payError) {
-            console.error("Lỗi khi tạo thanh toán MoMo:", payError);
+            console.error(`Lỗi khi tạo thanh toán ${paymentMethodName}:`, payError);
             toast.update(loadingToastId, {
               render: "Đặt hàng thành công nhưng không tạo được liên kết thanh toán. Vui lòng thanh toán lại trong lịch sử mua hàng.",
               type: "warning",
@@ -837,30 +844,30 @@ const CheckOut = () => {
                 checked={selectedMethod === "momo"}
                 onChange={() => handlePaymentSelection("momo")}
               />
-              <div className="w-8 h-8 rounded bg-[#d82d8b] text-white flex items-center justify-center font-bold text-xs shadow-sm" style={{ minWidth: '32px' }}>
+              <div className="w-8 h-8 rounded bg-[#ff5f06] text-white flex items-center justify-center font-bold text-[9px] shadow-sm" style={{ minWidth: '32px' }}>
                 MoMo
               </div>
               <span>Thanh toán qua Ví MoMo</span>
             </div>
 
             <div
-              className={`border p-4 rounded-lg flex items-center space-x-3 cursor-pointer mt-3 ${selectedMethod === "paypal"
+              className={`border p-4 rounded-lg flex items-center space-x-3 cursor-pointer mt-3 ${selectedMethod === "vnpay"
                 ? "border-blue-0 bg-blue-100"
                 : "border-gray-300"
                 }`}
-              onClick={() => handlePaymentSelection("paypal")}
+              onClick={() => handlePaymentSelection("vnpay")}
             >
               <input
                 type="radio"
                 name="payment"
-                value="paypal"
-                checked={selectedMethod === "paypal"}
-                onChange={() => handlePaymentSelection("paypal")}
+                value="vnpay"
+                checked={selectedMethod === "vnpay"}
+                onChange={() => handlePaymentSelection("vnpay")}
               />
               <div className="w-8 h-8 rounded bg-[#003087] text-white flex items-center justify-center font-bold text-[9px] shadow-sm" style={{ minWidth: '32px' }}>
-                PayPal
+                VNPay
               </div>
-              <span>Thanh toán qua Ví PayPal</span>
+              <span>Thanh toán qua VNPay</span>
             </div>
           </div>
           {/* Right Checkout */}

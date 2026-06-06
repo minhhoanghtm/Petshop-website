@@ -16,7 +16,7 @@ export const buildMomoCreateRawSignature = ({
   return `accessKey=${accessKey}&amount=${amount}&extraData=${extraData}&ipnUrl=${ipnUrl}&orderId=${orderId}&orderInfo=${orderInfo}&partnerCode=${partnerCode}&redirectUrl=${redirectUrl}&requestId=${requestId}&requestType=${requestType}`;
 };
 
-// Hàm này có thể được sử dụng chung cho cả tạo đơn và IPN nếu cần, nhưng hiện tại chúng ta sẽ giữ riêng để dễ quản lý
+//Tạo chữ ký khi thanh toán
 export const buildMomoIpnRawSignature = ({
   accessKey = "",
   amount = "",
@@ -35,13 +35,14 @@ export const buildMomoIpnRawSignature = ({
   return `accessKey=${accessKey}&amount=${amount}&extraData=${extraData}&message=${message}&orderId=${orderId}&orderInfo=${orderInfo}&orderType=${orderType}&partnerCode=${partnerCode}&payType=${payType}&requestId=${requestId}&responseTime=${responseTime}&resultCode=${resultCode}&transId=${transId}`;
 };
 
-// Hàm này có thể được sử dụng chung cho cả tạo đơn và IPN nếu cần, nhưng hiện tại chúng ta sẽ giữ riêng để dễ quản lý
+//Tạo chữ ký cho request thanh toán
 export const generateMomoSignature = (rawSignature, secretKey) => {
   return crypto.createHmac("sha256", secretKey).update(rawSignature).digest("hex");
 };
 
 // Hàm verifyMomoSignature có thể được sử dụng trong cả quá trình tạo đơn và xử lý IPN nếu cần thiết, nhưng hiện tại chúng ta sẽ sử dụng chủ yếu cho IPN
 export const verifyMomoSignature = (payload, secretKey) => {
+  // Kiểm tra xem payload có tồn tại và có chứa trường signature hay không
   if (!payload || !payload.signature) {
     return false;
   }

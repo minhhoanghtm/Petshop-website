@@ -1,5 +1,5 @@
-import * as momoService from "../services/payment/momoPaymentService.js";
-import { sendControllerError } from "../utils/controllerError.js";
+import * as momoService from "../../services/payment/momoPaymentService.js";
+import { sendControllerError } from "../../utils/controllerError.js";
 
 export const createMomoPayment = async (req, res) => {
   try {

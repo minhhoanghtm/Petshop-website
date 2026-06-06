@@ -5419,3 +5419,1116 @@ MongoServerSelectionError: getaddrinfo ENOTFOUND ac-jpovlcq-shard-00-00.ne0u0gu.
 2026-06-05T17:42:34.348Z [info] .env file loaded successfully {"service":"back-end"}
 2026-06-05T17:42:34.381Z [info] Background workers initialized {"service":"back-end"}
 2026-06-05T17:42:34.388Z [info] Server is running: http://localhost:5000 {"service":"back-end"}
+2026-06-06T14:40:04.562Z [warn] Redis reconnect attempt {"service":"back-end","attempt":0,"delay":0}
+2026-06-06T14:40:04.576Z [error] Redis client error {"service":"back-end"}
+2026-06-06T14:40:04.585Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-06T14:40:04.589Z [error] Queue Redis error {"service":"back-end"}
+2026-06-06T14:40:04.599Z [warn] Queue Redis reconnecting {"service":"back-end","delay":50}
+2026-06-06T14:40:04.602Z [warn] Queue Redis connection will retry on demand Connection is closed. {"service":"back-end"}
+2026-06-06T14:40:04.617Z [warn] Redis reconnect attempt {"service":"back-end","attempt":1,"delay":1000}
+2026-06-06T14:40:04.618Z [error] Redis client error {"service":"back-end"}
+2026-06-06T14:40:04.656Z [error] Queue Redis error {"service":"back-end"}
+2026-06-06T14:40:04.662Z [warn] Queue Redis reconnecting {"service":"back-end","delay":100}
+2026-06-06T14:40:04.779Z [error] Queue Redis error {"service":"back-end"}
+2026-06-06T14:40:04.784Z [warn] Queue Redis reconnecting {"service":"back-end","delay":150}
+2026-06-06T14:40:04.964Z [error] Queue Redis error {"service":"back-end"}
+2026-06-06T14:40:04.970Z [warn] Queue Redis reconnecting {"service":"back-end","delay":200}
+2026-06-06T14:40:05.190Z [error] Queue Redis error {"service":"back-end"}
+2026-06-06T14:40:05.201Z [warn] Queue Redis reconnecting {"service":"back-end","delay":250}
+2026-06-06T14:40:05.458Z [error] Queue Redis error {"service":"back-end"}
+2026-06-06T14:40:05.479Z [warn] Queue Redis reconnecting {"service":"back-end","delay":300}
+2026-06-06T14:40:05.626Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-06T14:40:05.634Z [warn] Redis reconnect attempt {"service":"back-end","attempt":2,"delay":2000}
+2026-06-06T14:40:05.637Z [error] Redis client error {"service":"back-end"}
+2026-06-06T14:40:05.808Z [error] Queue Redis error {"service":"back-end"}
+2026-06-06T14:40:05.813Z [warn] Queue Redis reconnecting {"service":"back-end","delay":350}
+2026-06-06T14:40:06.172Z [error] Queue Redis error {"service":"back-end"}
+2026-06-06T14:40:06.178Z [warn] Queue Redis reconnecting {"service":"back-end","delay":400}
+2026-06-06T14:40:06.601Z [error] Queue Redis error {"service":"back-end"}
+2026-06-06T14:40:06.614Z [warn] Queue Redis reconnecting {"service":"back-end","delay":450}
+2026-06-06T14:40:07.073Z [error] Queue Redis error {"service":"back-end"}
+2026-06-06T14:40:07.084Z [warn] Queue Redis reconnecting {"service":"back-end","delay":500}
+2026-06-06T14:40:07.612Z [error] Queue Redis error {"service":"back-end"}
+2026-06-06T14:40:07.619Z [warn] Queue Redis reconnecting {"service":"back-end","delay":550}
+2026-06-06T14:40:07.669Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-06T14:40:07.672Z [warn] Redis reconnect attempt {"service":"back-end","attempt":3,"delay":3000}
+2026-06-06T14:40:07.678Z [error] Redis client error {"service":"back-end"}
+2026-06-06T14:40:08.187Z [error] Queue Redis error {"service":"back-end"}
+2026-06-06T14:40:08.203Z [warn] Queue Redis reconnecting {"service":"back-end","delay":600}
+2026-06-06T14:40:08.814Z [error] Queue Redis error {"service":"back-end"}
+2026-06-06T14:40:08.820Z [warn] Queue Redis reconnecting {"service":"back-end","delay":650}
+2026-06-06T14:40:09.491Z [error] Queue Redis error {"service":"back-end"}
+2026-06-06T14:40:09.506Z [warn] Queue Redis reconnecting {"service":"back-end","delay":700}
+2026-06-06T14:40:10.244Z [error] Queue Redis error {"service":"back-end"}
+2026-06-06T14:40:10.614Z [warn] Queue Redis reconnecting {"service":"back-end","delay":750}
+2026-06-06T14:40:10.702Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-06T14:40:10.755Z [warn] Redis reconnect attempt {"service":"back-end","attempt":4,"delay":4000}
+2026-06-06T14:40:10.799Z [error] Redis client error {"service":"back-end"}
+2026-06-06T14:40:11.391Z [error] Queue Redis error {"service":"back-end"}
+2026-06-06T14:40:11.415Z [warn] Queue Redis reconnecting {"service":"back-end","delay":800}
+2026-06-06T14:40:12.224Z [error] Queue Redis error {"service":"back-end"}
+2026-06-06T14:40:12.237Z [warn] Queue Redis reconnecting {"service":"back-end","delay":850}
+2026-06-06T14:40:13.102Z [error] Queue Redis error {"service":"back-end"}
+2026-06-06T14:40:13.112Z [warn] Queue Redis reconnecting {"service":"back-end","delay":900}
+2026-06-06T14:40:14.032Z [error] Queue Redis error {"service":"back-end"}
+2026-06-06T14:40:14.035Z [warn] Queue Redis reconnecting {"service":"back-end","delay":950}
+2026-06-06T14:40:14.851Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-06T14:40:14.855Z [warn] Redis reconnect attempt {"service":"back-end","attempt":5,"delay":5000}
+2026-06-06T14:40:14.864Z [error] Redis client error {"service":"back-end"}
+2026-06-06T14:40:15.006Z [error] Queue Redis error {"service":"back-end"}
+2026-06-06T14:40:15.012Z [warn] Queue Redis reconnecting {"service":"back-end","delay":1000}
+2026-06-06T14:40:16.015Z [error] Queue Redis error {"service":"back-end"}
+2026-06-06T14:40:16.016Z [warn] Queue Redis reconnecting {"service":"back-end","delay":1050}
+2026-06-06T14:40:17.079Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-06T14:40:17.082Z [warn] Queue Redis reconnecting {"service":"back-end","delay":1100}
+2026-06-06T14:40:18.184Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-06T14:40:18.207Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-06T14:40:19.880Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-06T14:40:19.882Z [info] Redis client connecting {"service":"back-end"}
+2026-06-06T14:40:19.887Z [info] Redis client ready {"service":"back-end"}
+2026-06-06T14:40:19.887Z [info] Redis client connected {"service":"back-end"}
+2026-06-06T14:40:19.888Z [info] Loading .env {"service":"back-end","envPath":"D:\\Project\\PetShop-Website\\back-end\\.env"}
+2026-06-06T14:40:19.889Z [info] .env file loaded successfully {"service":"back-end"}
+2026-06-06T14:40:19.928Z [info] Background workers initialized {"service":"back-end"}
+2026-06-06T14:40:19.931Z [info] Server is running: http://localhost:5000 {"service":"back-end"}
+2026-06-06T14:40:20.724Z [info] MongoDB connected {"service":"back-end"}
+2026-06-06T14:40:20.725Z [info] Connected to MongoDB {"service":"back-end"}
+2026-06-06T14:40:27.939Z [info] GET /api/categories 304 103.366 ms - - req=67b32ee8-7328-4bed-ae82-0b27a1f0792a {"service":"back-end"}
+2026-06-06T14:40:27.944Z [info] GET /api/categories/catetory/shop-cho-cun 304 90.298 ms - - req=801382a0-0ba6-4b30-8dff-240320872055 {"service":"back-end"}
+2026-06-06T14:40:28.058Z [info] GET /api/categories 304 106.994 ms - - req=bb73f583-60ec-4155-9c6a-787e2d38bda2 {"service":"back-end"}
+2026-06-06T14:40:28.144Z [info] GET /api/products 200 280.265 ms - 185092 req=bffb5794-82ad-4ad6-b9a8-0d313d1b089d {"service":"back-end"}
+2026-06-06T14:40:28.149Z [info] GET /api/categories 304 88.139 ms - - req=bdf75a25-890f-42b2-b2be-50d13152c97c {"service":"back-end"}
+2026-06-06T14:40:28.180Z [info] GET /api/categories/shop-cho-meo 200 301.596 ms - 103131 req=d3c88516-5073-476f-a3e7-20f17df6fad6 {"service":"back-end"}
+2026-06-06T14:40:28.209Z [info] GET /api/categories/shop-cho-cun 200 337.508 ms - 81962 req=4fcbe748-ae82-4a6a-a416-5275753f03e6 {"service":"back-end"}
+2026-06-06T14:40:28.503Z [info] GET /api/products/product/sales 200 615.479 ms - 30211 req=17314fc4-8d26-4666-9417-a864a3705a0a {"service":"back-end"}
+2026-06-06T14:40:31.468Z [info] GET /api/users/profile 401 6.110 ms - 62 req=8f3c6075-20f8-4e35-bee5-05e0c5c021ac {"service":"back-end"}
+2026-06-06T14:40:31.494Z [info] GET /api/carts/me 401 2.262 ms - 62 req=2cd57e17-e998-4b6d-bb87-9ec3fe93f303 {"service":"back-end"}
+2026-06-06T14:40:31.512Z [info] GET /api/categories 304 53.777 ms - - req=f5e6e46f-b388-474a-8170-d90fec83d6f8 {"service":"back-end"}
+2026-06-06T14:40:31.515Z [info] GET /api/carts/me 401 1.277 ms - 62 req=791e01b4-99e5-4c8f-b5dd-0ed04ad77feb {"service":"back-end"}
+2026-06-06T14:40:31.545Z [info] GET /api/categories/catetory/shop-cho-cun 304 72.035 ms - - req=44650b4a-f68d-47b9-a288-066582a7e6c0 {"service":"back-end"}
+2026-06-06T14:40:31.550Z [info] GET /api/carts/me 401 1.472 ms - 62 req=3a456843-0d72-4e57-92e3-e5e31bd33f7c {"service":"back-end"}
+2026-06-06T14:40:31.569Z [info] GET /api/categories 304 52.253 ms - - req=dc9f8092-b380-404c-9b8e-d5e142b620fb {"service":"back-end"}
+2026-06-06T14:40:31.630Z [info] GET /api/categories 304 58.913 ms - - req=5e741197-a66d-495a-8855-14b2c4d8c987 {"service":"back-end"}
+2026-06-06T14:40:31.649Z [info] GET /api/products/product/sales 304 151.656 ms - - req=bbaa46f2-529b-4b4e-92a6-503534d82b7f {"service":"back-end"}
+2026-06-06T14:40:31.683Z [info] GET /api/categories/shop-cho-cun 304 205.919 ms - - req=4837280c-879a-4df3-be3d-786d9862dd00 {"service":"back-end"}
+2026-06-06T14:40:31.763Z [info] GET /api/categories/shop-cho-meo 200 277.379 ms - 103131 req=b1eeabf8-f832-45bf-8157-520e1af78e8d {"service":"back-end"}
+2026-06-06T14:40:31.800Z [info] GET /api/products 200 317.765 ms - 185092 req=0e8f64a1-d147-49be-b9a4-305ba5f98fe3 {"service":"back-end"}
+2026-06-06T14:40:33.463Z [info] GET /api/categories 304 95.050 ms - - req=bcfbdfbf-44a1-4db6-8e24-03515dd5dfb6 {"service":"back-end"}
+2026-06-06T14:40:33.542Z [info] GET /api/products/product/sales 304 168.037 ms - - req=50c312e1-de20-4c6f-a79c-9e3b89364567 {"service":"back-end"}
+2026-06-06T14:40:33.598Z [info] GET /api/categories/shop-cho-cun 304 225.962 ms - - req=c471dfe4-94ba-42c8-8035-90244ea4321b {"service":"back-end"}
+2026-06-06T14:40:33.664Z [info] GET /api/categories/shop-cho-meo 304 288.454 ms - - req=fb32efb6-8f3b-4dcd-b590-5f55f5150037 {"service":"back-end"}
+2026-06-06T14:40:33.684Z [info] GET /api/products 304 314.005 ms - - req=d2a0d928-983e-44c5-b17b-a6683469f103 {"service":"back-end"}
+2026-06-06T14:40:37.473Z [info] POST /api/auth/signin 200 136.801 ms - 18914 req=c5bcd6ce-2ace-4f8b-b580-70cbe254c493 {"service":"back-end"}
+2026-06-06T14:40:37.602Z [info] GET /api/users/profile 304 120.998 ms - - req=874a9631-2654-4ca6-bba3-81b1444a2efe {"service":"back-end"}
+2026-06-06T14:40:38.441Z [info] GET /api/categories/catetory/shop-cho-cun 304 71.023 ms - - req=c3060c97-d572-43e1-95bd-e5e61316fee9 {"service":"back-end"}
+2026-06-06T14:40:38.443Z [info] GET /api/categories 304 74.662 ms - - req=442a5a0f-9b60-4bd7-a642-82a061460276 {"service":"back-end"}
+2026-06-06T14:40:38.503Z [info] GET /api/categories 304 56.829 ms - - req=299d2431-6618-4c0a-aa41-c532899836ce {"service":"back-end"}
+2026-06-06T14:40:38.541Z [info] GET /api/users/profile 304 186.586 ms - - req=b18410da-e80c-4900-87e1-facd78380939 {"service":"back-end"}
+2026-06-06T14:40:38.566Z [info] GET /api/categories 304 60.178 ms - - req=464f4288-ecfd-461d-bc2a-dd738adb7a8e {"service":"back-end"}
+2026-06-06T14:40:38.610Z [info] GET /api/carts/me 304 236.727 ms - - req=83936aad-51cb-4012-b6fd-a2edd6c92d33 {"service":"back-end"}
+2026-06-06T14:40:38.762Z [info] GET /api/carts/me 304 148.839 ms - - req=f54d94f7-41b5-4998-a481-09b15a205427 {"service":"back-end"}
+2026-06-06T14:40:38.913Z [info] GET /api/carts/me 304 148.590 ms - - req=b59084cf-eb42-40a7-b586-62b26b80067e {"service":"back-end"}
+2026-06-06T14:40:44.791Z [info] GET /api/categories 304 76.507 ms - - req=80c4367f-3b98-4350-9a08-2d4be6be7316 {"service":"back-end"}
+2026-06-06T14:40:44.874Z [info] GET /api/users/shipping-address 304 153.805 ms - - req=19a848b0-0c70-4742-a719-35501ad2b192 {"service":"back-end"}
+2026-06-06T14:40:44.875Z [info] GET /api/carts/me 304 156.423 ms - - req=cee8d546-cd1b-4258-9158-a414742485d1 {"service":"back-end"}
+2026-06-06T14:40:44.880Z [info] GET /api/users/profile 304 161.138 ms - - req=405923a5-a9cb-4dfd-b23b-79d472d2daa0 {"service":"back-end"}
+2026-06-06T14:40:44.987Z [info] GET /api/carts/me 304 106.324 ms - - req=cb41a65d-9a40-4cde-ae7e-48bba6620e61 {"service":"back-end"}
+2026-06-06T14:40:45.095Z [info] GET /api/carts/me 304 104.793 ms - - req=84b64f66-595a-4c43-acb0-2382e006551a {"service":"back-end"}
+2026-06-06T14:40:48.097Z [info] POST /api/orders 201 322.242 ms - 346 req=9e35525f-19dc-4a1c-ac80-5e19452349f1 {"service":"back-end"}
+2026-06-06T14:40:48.546Z [info] POST /api/payments/momo/create 201 440.332 ms - 557 req=03f84d6f-2996-462c-9e9f-f4dab8fe3c91 {"service":"back-end"}
+2026-06-06T15:51:42.206Z [info] Redis client connecting {"service":"back-end"}
+2026-06-06T15:51:42.214Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-06T15:51:42.225Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-06T15:51:42.230Z [info] Redis client ready {"service":"back-end"}
+2026-06-06T15:51:42.231Z [info] Redis client connected {"service":"back-end"}
+2026-06-06T15:51:42.231Z [info] Loading .env {"service":"back-end","envPath":"D:\\Project\\PetShop-Website\\back-end\\.env"}
+2026-06-06T15:51:42.232Z [info] .env file loaded successfully {"service":"back-end"}
+2026-06-06T15:51:42.268Z [info] Background workers initialized {"service":"back-end"}
+2026-06-06T15:51:42.271Z [info] Server is running: http://localhost:5000 {"service":"back-end"}
+2026-06-06T15:51:42.864Z [info] MongoDB connected {"service":"back-end"}
+2026-06-06T15:51:42.867Z [info] Connected to MongoDB {"service":"back-end"}
+2026-06-06T15:51:54.196Z [info] GET /api/categories/catetory/shop-cho-cun 304 64.590 ms - - req=b0e1f268-43ca-4416-aa05-7649863a7037 {"service":"back-end"}
+2026-06-06T15:51:54.201Z [info] GET /api/categories 304 85.251 ms - - req=5dc532bd-c1e2-4ade-8aee-34e1ce39d6dc {"service":"back-end"}
+2026-06-06T15:51:54.280Z [info] GET /api/categories 304 73.545 ms - - req=9bf5becc-3bdf-43e0-9b2e-ad8563bd9dfb {"service":"back-end"}
+2026-06-06T15:51:54.346Z [info] GET /api/categories 304 63.855 ms - - req=92969318-90f1-4e17-bf69-ec0932c9494b {"service":"back-end"}
+2026-06-06T15:51:54.428Z [info] GET /api/categories/shop-cho-cun 200 278.441 ms - 81962 req=42fb9266-133d-4217-81eb-64adb26b24da {"service":"back-end"}
+2026-06-06T15:51:54.434Z [info] GET /api/categories/shop-cho-meo 304 277.640 ms - - req=12fe4f7c-08b5-4826-9323-96a71b0a9cff {"service":"back-end"}
+2026-06-06T15:51:54.450Z [info] GET /api/products 200 313.896 ms - 185092 req=fb6d6647-6d7b-471e-ab2e-9fbd8e804ca2 {"service":"back-end"}
+2026-06-06T15:51:54.619Z [info] GET /api/products/product/sales 200 457.960 ms - 30211 req=9591d1c0-8348-4a73-9467-e359ff4cbdc5 {"service":"back-end"}
+2026-06-06T15:51:57.975Z [info] GET /api/users/profile 401 4.377 ms - 62 req=cbdabb66-60cd-43a0-9514-38b95c64a40b {"service":"back-end"}
+2026-06-06T15:51:58.013Z [info] GET /api/categories 304 50.345 ms - - req=6615aee2-cf98-4e0f-a9c2-e0c791c21af4 {"service":"back-end"}
+2026-06-06T15:51:58.017Z [info] GET /api/carts/me 401 2.023 ms - 62 req=9b319987-fabc-4da1-8d6d-5c92e1cf6215 {"service":"back-end"}
+2026-06-06T15:51:58.041Z [info] GET /api/categories/catetory/shop-cho-cun 304 64.529 ms - - req=fbc2820e-6306-4f0e-a897-72f6f5dc923e {"service":"back-end"}
+2026-06-06T15:51:58.046Z [info] GET /api/carts/me 401 1.346 ms - 62 req=00ca192f-e537-4e1d-8ffa-14afeb24be26 {"service":"back-end"}
+2026-06-06T15:51:58.049Z [info] GET /api/carts/me 401 1.298 ms - 62 req=15704fdd-41fe-4378-9965-cffc14715487 {"service":"back-end"}
+2026-06-06T15:51:58.072Z [info] GET /api/categories 304 51.980 ms - - req=b73941ee-84ea-4913-89c5-4327d604c6e5 {"service":"back-end"}
+2026-06-06T15:51:58.120Z [info] GET /api/products/product/sales 200 138.895 ms - 30211 req=767ab79a-049a-4f08-8242-6c542a0a99d4 {"service":"back-end"}
+2026-06-06T15:51:58.122Z [info] GET /api/categories 304 48.520 ms - - req=6d7e064c-8482-4b75-bf1d-8a617cff8291 {"service":"back-end"}
+2026-06-06T15:51:58.229Z [info] GET /api/products 200 250.370 ms - 185092 req=fc8f30bf-b77d-4068-8f13-8d623ad03e5c {"service":"back-end"}
+2026-06-06T15:51:58.259Z [info] GET /api/categories/shop-cho-cun 200 278.614 ms - 81962 req=1e7cc9cc-0760-4246-8de0-4a5e1eed4910 {"service":"back-end"}
+2026-06-06T15:51:58.268Z [info] GET /api/categories/shop-cho-meo 304 282.324 ms - - req=37456f58-0d5a-4944-9d6c-ca9b22e678ce {"service":"back-end"}
+2026-06-06T15:52:02.327Z [info] GET /api/categories 304 50.754 ms - - req=e2b7ab0d-0876-478e-8c4b-05f99b89366f {"service":"back-end"}
+2026-06-06T15:52:02.354Z [info] GET /api/categories/catetory/shop-cho-cun 304 74.030 ms - - req=06241ecd-b7ae-487e-9ed7-2da445640823 {"service":"back-end"}
+2026-06-06T15:52:02.380Z [info] GET /api/categories 304 50.609 ms - - req=4eeace51-1a25-4d24-af19-85d12dd6b309 {"service":"back-end"}
+2026-06-06T15:52:02.434Z [info] GET /api/categories 304 52.292 ms - - req=9013b370-fd20-41a2-94d2-07edf815ab18 {"service":"back-end"}
+2026-06-06T15:52:02.441Z [info] GET /api/products/product/sales 304 140.781 ms - - req=920a5cb1-232c-4ef4-a914-c8531966b6b7 {"service":"back-end"}
+2026-06-06T15:52:02.516Z [info] GET /api/categories/shop-cho-cun 304 224.670 ms - - req=f2b6679a-6a62-4c4e-807f-580375ad37ae {"service":"back-end"}
+2026-06-06T15:52:02.536Z [info] GET /api/products 304 249.832 ms - - req=03a70a87-8459-4323-a8eb-f7977e463b18 {"service":"back-end"}
+2026-06-06T15:52:02.637Z [info] GET /api/categories/shop-cho-meo 304 341.591 ms - - req=700a28c6-552e-4837-8ce5-d2c62f16f2d2 {"service":"back-end"}
+2026-06-06T15:52:05.351Z [info] GET /api/categories 304 65.660 ms - - req=932a793b-d848-4010-b993-3bb1d4a0b680 {"service":"back-end"}
+2026-06-06T15:52:09.042Z [info] POST /api/auth/signin 200 148.052 ms - 18914 req=c0289a5d-4d5e-4364-8802-852b2a792e23 {"service":"back-end"}
+2026-06-06T15:52:09.184Z [info] GET /api/users/profile 304 135.110 ms - - req=6a1200f0-4e62-4b30-85a6-74046736af73 {"service":"back-end"}
+2026-06-06T15:52:09.932Z [info] GET /api/categories 304 58.892 ms - - req=849ff8e0-89a2-4111-bb8c-70faf123a401 {"service":"back-end"}
+2026-06-06T15:52:09.946Z [info] GET /api/categories/catetory/shop-cho-cun 304 72.410 ms - - req=c62309a7-0f39-4de3-8afc-7dac62069866 {"service":"back-end"}
+2026-06-06T15:52:09.989Z [info] GET /api/categories 304 52.780 ms - - req=0c254e54-adac-471a-b015-103d5422f408 {"service":"back-end"}
+2026-06-06T15:52:10.040Z [info] GET /api/carts/me 304 164.895 ms - - req=f8ce6138-7f70-4f86-b4db-d993469845bc {"service":"back-end"}
+2026-06-06T15:52:10.042Z [info] GET /api/categories 304 49.325 ms - - req=89b926ac-d050-4b22-865d-49cd9ce252e6 {"service":"back-end"}
+2026-06-06T15:52:10.070Z [info] GET /api/users/profile 304 205.448 ms - - req=6b373b72-1aef-417e-9acb-ca95bd7dedc2 {"service":"back-end"}
+2026-06-06T15:52:10.191Z [info] GET /api/carts/me 304 147.555 ms - - req=6bbc512a-4ef2-459f-a384-216be444548a {"service":"back-end"}
+2026-06-06T15:52:10.292Z [info] GET /api/carts/me 304 98.408 ms - - req=44dc4ed3-ef0c-483a-b120-7d1e44b01c8c {"service":"back-end"}
+2026-06-06T15:52:25.999Z [info] GET /api/categories 304 56.578 ms - - req=51a9e459-a1ba-4e6d-85e1-df8243f72fb1 {"service":"back-end"}
+2026-06-06T15:52:26.096Z [info] GET /api/users/profile 304 152.925 ms - - req=9f63a9f8-99ba-499a-86b5-002c219a3376 {"service":"back-end"}
+2026-06-06T15:52:26.140Z [info] GET /api/carts/me 304 197.734 ms - - req=43a2e7c3-9d02-4594-933f-6c4ccfe9ee8c {"service":"back-end"}
+2026-06-06T15:52:26.147Z [info] GET /api/users/shipping-address 304 203.546 ms - - req=cbc113e9-9684-4edb-adf2-bf7e563229fc {"service":"back-end"}
+2026-06-06T15:52:26.281Z [info] GET /api/carts/me 304 138.109 ms - - req=e1b07146-0b20-4c05-a15a-19d4c90b18f0 {"service":"back-end"}
+2026-06-06T15:52:34.716Z [info] POST /api/orders 400 365.261 ms - 115 req=8dfddb2a-0af4-4cff-894b-298723597bd6 {"service":"back-end"}
+2026-06-06T15:53:44.581Z [info] Redis client connecting {"service":"back-end"}
+2026-06-06T15:53:44.588Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-06T15:53:44.590Z [info] Redis client ready {"service":"back-end"}
+2026-06-06T15:53:44.596Z [info] Redis client connected {"service":"back-end"}
+2026-06-06T15:53:44.601Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-06T15:53:44.603Z [info] Loading .env {"service":"back-end","envPath":"D:\\Project\\PetShop-Website\\back-end\\.env"}
+2026-06-06T15:53:44.604Z [info] .env file loaded successfully {"service":"back-end"}
+2026-06-06T15:53:44.641Z [info] Background workers initialized {"service":"back-end"}
+2026-06-06T15:53:44.649Z [info] Server is running: http://localhost:5000 {"service":"back-end"}
+2026-06-06T15:53:45.452Z [info] MongoDB connected {"service":"back-end"}
+2026-06-06T15:53:45.454Z [info] Connected to MongoDB {"service":"back-end"}
+2026-06-06T15:53:55.427Z [info] Redis client connecting {"service":"back-end"}
+2026-06-06T15:53:55.434Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-06T15:53:55.436Z [info] Redis client ready {"service":"back-end"}
+2026-06-06T15:53:55.442Z [info] Redis client connected {"service":"back-end"}
+2026-06-06T15:53:55.446Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-06T15:53:55.447Z [info] Loading .env {"service":"back-end","envPath":"D:\\Project\\PetShop-Website\\back-end\\.env"}
+2026-06-06T15:53:55.449Z [info] .env file loaded successfully {"service":"back-end"}
+2026-06-06T15:53:55.494Z [info] Background workers initialized {"service":"back-end"}
+2026-06-06T15:53:55.500Z [info] Server is running: http://localhost:5000 {"service":"back-end"}
+2026-06-06T15:53:56.216Z [info] MongoDB connected {"service":"back-end"}
+2026-06-06T15:53:56.220Z [info] Connected to MongoDB {"service":"back-end"}
+2026-06-06T15:54:29.727Z [info] Redis client connecting {"service":"back-end"}
+2026-06-06T15:54:29.735Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-06T15:54:29.742Z [info] Redis client ready {"service":"back-end"}
+2026-06-06T15:54:29.743Z [info] Redis client connected {"service":"back-end"}
+2026-06-06T15:54:29.746Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-06T15:54:29.749Z [info] Loading .env {"service":"back-end","envPath":"D:\\Project\\PetShop-Website\\back-end\\.env"}
+2026-06-06T15:54:29.750Z [info] .env file loaded successfully {"service":"back-end"}
+2026-06-06T15:54:29.783Z [info] Background workers initialized {"service":"back-end"}
+2026-06-06T15:54:29.795Z [info] Server is running: http://localhost:5000 {"service":"back-end"}
+2026-06-06T15:54:30.431Z [info] MongoDB connected {"service":"back-end"}
+2026-06-06T15:54:30.433Z [info] Connected to MongoDB {"service":"back-end"}
+2026-06-06T15:54:38.003Z [info] Redis client connecting {"service":"back-end"}
+2026-06-06T15:54:38.012Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-06T15:54:38.015Z [info] Redis client ready {"service":"back-end"}
+2026-06-06T15:54:38.022Z [info] Redis client connected {"service":"back-end"}
+2026-06-06T15:54:38.026Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-06T15:54:38.028Z [info] Loading .env {"service":"back-end","envPath":"D:\\Project\\PetShop-Website\\back-end\\.env"}
+2026-06-06T15:54:38.029Z [info] .env file loaded successfully {"service":"back-end"}
+2026-06-06T15:54:38.062Z [info] Background workers initialized {"service":"back-end"}
+2026-06-06T15:54:38.068Z [info] Server is running: http://localhost:5000 {"service":"back-end"}
+2026-06-06T15:54:38.765Z [info] MongoDB connected {"service":"back-end"}
+2026-06-06T15:54:38.766Z [info] Connected to MongoDB {"service":"back-end"}
+2026-06-06T15:54:57.404Z [info] GET /api/categories 304 70.082 ms - - req=278b772c-93dc-4060-bfb1-a462aea3fe70 {"service":"back-end"}
+2026-06-06T15:54:57.513Z [info] GET /api/users/profile 304 158.800 ms - - req=d9076798-ebbe-467c-937a-c727f9c543fb {"service":"back-end"}
+2026-06-06T15:54:57.522Z [info] GET /api/products/product/sales 304 116.123 ms - - req=68d2c9e3-e15d-4c89-bf0e-e10645788c08 {"service":"back-end"}
+2026-06-06T15:54:57.553Z [info] GET /api/carts/me 304 204.073 ms - - req=7a40cd28-d3e0-47eb-ac3c-691a41d26251 {"service":"back-end"}
+2026-06-06T15:54:57.586Z [info] GET /api/categories/shop-cho-cun 304 224.748 ms - - req=a10f2042-7f25-41b9-89a6-e2ffb3068640 {"service":"back-end"}
+2026-06-06T15:54:57.599Z [info] GET /api/products 304 242.136 ms - - req=434637f7-548a-4d13-9864-b12fe7ea8306 {"service":"back-end"}
+2026-06-06T15:54:57.628Z [info] GET /api/users/shipping-address 304 112.680 ms - - req=9c15b0d0-1081-4221-86f4-547541c9d469 {"service":"back-end"}
+2026-06-06T15:54:57.702Z [info] GET /api/carts/me 304 132.054 ms - - req=9168b9c8-f871-4cbf-966f-556d319b359e {"service":"back-end"}
+2026-06-06T15:54:58.052Z [info] GET /api/categories/shop-cho-meo 304 686.497 ms - - req=7117cc67-5ada-4413-9cc1-3d9af6eb8572 {"service":"back-end"}
+2026-06-06T15:55:18.810Z [info] GET /api/users/shipping-address 304 147.606 ms - - req=83ea17a8-07a4-4ee7-af75-33f098d56d78 {"service":"back-end"}
+2026-06-06T15:55:24.804Z [info] GET /api/users/shipping-address 304 147.418 ms - - req=33ad4781-f389-466d-98be-721156b7a8cb {"service":"back-end"}
+2026-06-06T15:55:31.455Z [info] Redis client connecting {"service":"back-end"}
+2026-06-06T15:55:31.466Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-06T15:55:31.471Z [info] Redis client ready {"service":"back-end"}
+2026-06-06T15:55:31.480Z [info] Redis client connected {"service":"back-end"}
+2026-06-06T15:55:31.484Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-06T15:55:31.489Z [info] Loading .env {"service":"back-end","envPath":"D:\\Project\\PetShop-Website\\back-end\\.env"}
+2026-06-06T15:55:31.491Z [info] .env file loaded successfully {"service":"back-end"}
+2026-06-06T15:55:31.547Z [info] Background workers initialized {"service":"back-end"}
+2026-06-06T15:55:31.558Z [info] Server is running: http://localhost:5000 {"service":"back-end"}
+2026-06-06T15:55:32.263Z [info] MongoDB connected {"service":"back-end"}
+2026-06-06T15:55:32.264Z [info] Connected to MongoDB {"service":"back-end"}
+2026-06-06T15:55:45.618Z [info] Redis client connecting {"service":"back-end"}
+2026-06-06T15:55:45.626Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-06T15:55:45.633Z [info] Redis client ready {"service":"back-end"}
+2026-06-06T15:55:45.634Z [info] Redis client connected {"service":"back-end"}
+2026-06-06T15:55:45.637Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-06T15:55:45.640Z [info] Loading .env {"service":"back-end","envPath":"D:\\Project\\PetShop-Website\\back-end\\.env"}
+2026-06-06T15:55:45.642Z [info] .env file loaded successfully {"service":"back-end"}
+2026-06-06T15:55:45.681Z [info] Background workers initialized {"service":"back-end"}
+2026-06-06T15:55:45.687Z [info] Server is running: http://localhost:5000 {"service":"back-end"}
+2026-06-06T15:55:46.270Z [info] MongoDB connected {"service":"back-end"}
+2026-06-06T15:55:46.272Z [info] Connected to MongoDB {"service":"back-end"}
+2026-06-06T15:55:52.345Z [info] Redis client connecting {"service":"back-end"}
+2026-06-06T15:55:52.352Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-06T15:55:52.359Z [info] Redis client ready {"service":"back-end"}
+2026-06-06T15:55:52.359Z [info] Redis client connected {"service":"back-end"}
+2026-06-06T15:55:52.362Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-06T15:55:52.366Z [info] Loading .env {"service":"back-end","envPath":"D:\\Project\\PetShop-Website\\back-end\\.env"}
+2026-06-06T15:55:52.367Z [info] .env file loaded successfully {"service":"back-end"}
+2026-06-06T15:55:52.399Z [info] Background workers initialized {"service":"back-end"}
+2026-06-06T15:55:52.407Z [info] Server is running: http://localhost:5000 {"service":"back-end"}
+2026-06-06T15:55:53.071Z [info] MongoDB connected {"service":"back-end"}
+2026-06-06T15:55:53.074Z [info] Connected to MongoDB {"service":"back-end"}
+2026-06-06T15:56:29.746Z [info] GET /api/categories 304 64.840 ms - - req=f44ce395-8c63-4d1b-a461-c72e4049bf7f {"service":"back-end"}
+2026-06-06T15:56:29.878Z [info] GET /api/users/profile 304 183.368 ms - - req=8b5543f5-e721-45eb-93d7-ef19b45ec812 {"service":"back-end"}
+2026-06-06T15:56:29.905Z [info] GET /api/carts/me 304 157.277 ms - - req=98c7439f-dc82-4c70-b571-111d259cdce6 {"service":"back-end"}
+2026-06-06T15:56:29.933Z [info] GET /api/categories/shop-cho-cun 304 230.509 ms - - req=ce9a8756-052e-4962-b745-6b3ba6e05d42 {"service":"back-end"}
+2026-06-06T15:56:29.970Z [info] GET /api/categories/shop-cho-meo 304 264.546 ms - - req=0a0df5b6-a6df-40aa-8215-8455fbe75164 {"service":"back-end"}
+2026-06-06T15:56:29.985Z [info] GET /api/users/shipping-address 304 106.331 ms - - req=b1e47a6c-cfe5-4254-80e5-f976094678b5 {"service":"back-end"}
+2026-06-06T15:56:30.009Z [info] GET /api/carts/me 304 102.657 ms - - req=b2853606-64eb-4785-b2cc-e7240dca2b91 {"service":"back-end"}
+2026-06-06T15:56:30.045Z [info] GET /api/products 304 345.379 ms - - req=ca48ffd7-191b-4248-80fa-39c6008b00b6 {"service":"back-end"}
+2026-06-06T15:56:30.396Z [info] GET /api/products/product/sales 304 689.040 ms - - req=d347310a-ca7e-4b34-a27a-6fb7c09b72f3 {"service":"back-end"}
+2026-06-06T15:56:55.009Z [info] Redis client connecting {"service":"back-end"}
+2026-06-06T15:56:55.019Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-06T15:56:55.028Z [info] Redis client ready {"service":"back-end"}
+2026-06-06T15:56:55.028Z [info] Redis client connected {"service":"back-end"}
+2026-06-06T15:56:55.032Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-06T15:56:55.035Z [info] Loading .env {"service":"back-end","envPath":"D:\\Project\\PetShop-Website\\back-end\\.env"}
+2026-06-06T15:56:55.036Z [info] .env file loaded successfully {"service":"back-end"}
+2026-06-06T15:56:55.073Z [info] Background workers initialized {"service":"back-end"}
+2026-06-06T15:56:55.079Z [info] Server is running: http://localhost:5000 {"service":"back-end"}
+2026-06-06T15:56:55.844Z [info] MongoDB connected {"service":"back-end"}
+2026-06-06T15:56:55.846Z [info] Connected to MongoDB {"service":"back-end"}
+2026-06-06T15:57:13.849Z [info] Redis client connecting {"service":"back-end"}
+2026-06-06T15:57:13.861Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-06T15:57:13.863Z [info] Redis client ready {"service":"back-end"}
+2026-06-06T15:57:13.869Z [info] Redis client connected {"service":"back-end"}
+2026-06-06T15:57:13.874Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-06T15:57:13.876Z [info] Loading .env {"service":"back-end","envPath":"D:\\Project\\PetShop-Website\\back-end\\.env"}
+2026-06-06T15:57:13.877Z [info] .env file loaded successfully {"service":"back-end"}
+2026-06-06T15:57:13.909Z [info] Background workers initialized {"service":"back-end"}
+2026-06-06T15:57:13.914Z [info] Server is running: http://localhost:5000 {"service":"back-end"}
+2026-06-06T15:57:14.722Z [info] MongoDB connected {"service":"back-end"}
+2026-06-06T15:57:14.723Z [info] Connected to MongoDB {"service":"back-end"}
+2026-06-06T15:57:32.284Z [info] GET /api/categories 304 85.441 ms - - req=d53a65cb-9071-4228-91cf-843389ad7630 {"service":"back-end"}
+2026-06-06T15:57:32.439Z [info] GET /api/users/profile 304 225.664 ms - - req=36d5beec-531c-41b2-a96c-77a33632b6be {"service":"back-end"}
+2026-06-06T15:57:32.466Z [info] GET /api/categories/shop-cho-cun 304 236.599 ms - - req=2b4cb158-ab28-4329-9c8f-2ec332915e13 {"service":"back-end"}
+2026-06-06T15:57:32.534Z [info] GET /api/products 304 310.548 ms - - req=53420903-6840-4240-a0cd-4a11a6df23da {"service":"back-end"}
+2026-06-06T15:57:32.541Z [info] GET /api/categories/shop-cho-meo 304 308.301 ms - - req=2505b9df-887b-4d80-b19f-50b4a49c640b {"service":"back-end"}
+2026-06-06T15:57:32.556Z [info] GET /api/carts/me 304 262.825 ms - - req=ccb733a2-c3a1-4b08-9a21-91642dcf569c {"service":"back-end"}
+2026-06-06T15:57:32.577Z [info] GET /api/users/shipping-address 304 135.987 ms - - req=0241f6d3-14ca-4e48-bcf9-7149d9342814 {"service":"back-end"}
+2026-06-06T15:57:32.725Z [info] GET /api/carts/me 304 166.696 ms - - req=404e606e-ede8-47e6-8de7-4e24b13bfbb0 {"service":"back-end"}
+2026-06-06T15:57:32.933Z [info] GET /api/products/product/sales 304 696.848 ms - - req=b168e130-cb49-4d8f-8f85-6ae3b892e202 {"service":"back-end"}
+2026-06-06T15:57:45.865Z [info] GET /api/users/shipping-address 304 202.882 ms - - req=eeddb712-45a2-4661-af86-fdce9695a5d3 {"service":"back-end"}
+2026-06-06T15:58:07.255Z [info] POST /api/orders 201 370.068 ms - 614 req=76fa6065-995b-4b0f-895b-0a281800ce4b {"service":"back-end"}
+2026-06-06T15:58:07.405Z [info] POST /api/payments/vnpay/create 500 140.271 ms - 160 req=bc43913f-8580-455e-8d2f-2a3a48f74854 {"service":"back-end"}
+2026-06-06T15:58:49.232Z [info] Redis client connecting {"service":"back-end"}
+2026-06-06T15:58:49.246Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-06T15:58:49.248Z [info] Redis client ready {"service":"back-end"}
+2026-06-06T15:58:49.256Z [info] Redis client connected {"service":"back-end"}
+2026-06-06T15:58:49.261Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-06T15:58:49.263Z [info] Loading .env {"service":"back-end","envPath":"D:\\Project\\PetShop-Website\\back-end\\.env"}
+2026-06-06T15:58:49.264Z [info] .env file loaded successfully {"service":"back-end"}
+2026-06-06T15:58:49.308Z [info] Background workers initialized {"service":"back-end"}
+2026-06-06T15:58:49.315Z [info] Server is running: http://localhost:5000 {"service":"back-end"}
+2026-06-06T15:58:49.978Z [info] MongoDB connected {"service":"back-end"}
+2026-06-06T15:58:49.979Z [info] Connected to MongoDB {"service":"back-end"}
+2026-06-06T15:58:54.405Z [info] Redis client connecting {"service":"back-end"}
+2026-06-06T15:58:54.413Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-06T15:58:54.420Z [info] Redis client ready {"service":"back-end"}
+2026-06-06T15:58:54.426Z [info] Redis client connected {"service":"back-end"}
+2026-06-06T15:58:54.431Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-06T15:58:54.435Z [info] Loading .env {"service":"back-end","envPath":"D:\\Project\\PetShop-Website\\back-end\\.env"}
+2026-06-06T15:58:54.435Z [info] .env file loaded successfully {"service":"back-end"}
+2026-06-06T15:58:54.474Z [info] Background workers initialized {"service":"back-end"}
+2026-06-06T15:58:54.480Z [info] Server is running: http://localhost:5000 {"service":"back-end"}
+2026-06-06T15:58:55.117Z [info] MongoDB connected {"service":"back-end"}
+2026-06-06T15:58:55.119Z [info] Connected to MongoDB {"service":"back-end"}
+2026-06-06T15:58:58.364Z [info] Redis client connecting {"service":"back-end"}
+2026-06-06T15:58:58.373Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-06T15:58:58.376Z [info] Redis client ready {"service":"back-end"}
+2026-06-06T15:58:58.384Z [info] Redis client connected {"service":"back-end"}
+2026-06-06T15:58:58.388Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-06T15:58:58.389Z [info] Loading .env {"service":"back-end","envPath":"D:\\Project\\PetShop-Website\\back-end\\.env"}
+2026-06-06T15:58:58.390Z [info] .env file loaded successfully {"service":"back-end"}
+2026-06-06T15:58:58.423Z [info] Background workers initialized {"service":"back-end"}
+2026-06-06T15:58:58.428Z [info] Server is running: http://localhost:5000 {"service":"back-end"}
+2026-06-06T15:58:59.008Z [info] MongoDB connected {"service":"back-end"}
+2026-06-06T15:58:59.009Z [info] Connected to MongoDB {"service":"back-end"}
+2026-06-06T15:59:10.868Z [info] GET /api/categories 304 71.028 ms - - req=31e7430b-9045-4718-87eb-9703e27c704f {"service":"back-end"}
+2026-06-06T15:59:11.032Z [info] GET /api/users/profile 304 223.421 ms - - req=716491c5-f747-46d6-a046-f1d80f81431e {"service":"back-end"}
+2026-06-06T15:59:11.040Z [info] GET /api/categories/shop-cho-cun 200 224.334 ms - 81962 req=af6cbf78-d49b-4ec9-9b5c-bdb550d7a933 {"service":"back-end"}
+2026-06-06T15:59:11.113Z [info] GET /api/carts/me 304 238.706 ms - - req=71931851-5e09-4fca-9643-6fa76a0763b0 {"service":"back-end"}
+2026-06-06T15:59:11.155Z [info] GET /api/products 200 347.914 ms - 185092 req=1d4a94f7-c406-4faf-a0bb-b3a32ec8f74e {"service":"back-end"}
+2026-06-06T15:59:11.174Z [info] GET /api/users/shipping-address 304 132.541 ms - - req=eb2cc8eb-8c7a-4fc3-803b-614f95fd73b7 {"service":"back-end"}
+2026-06-06T15:59:11.197Z [info] GET /api/categories/shop-cho-meo 304 380.491 ms - - req=d4c25260-efaa-4281-898c-e65335331bb2 {"service":"back-end"}
+2026-06-06T15:59:11.243Z [info] GET /api/carts/me 304 128.493 ms - - req=ba42fa13-4c12-4c14-8b38-358c2bea6954 {"service":"back-end"}
+2026-06-06T15:59:11.359Z [info] GET /api/products/product/sales 200 540.466 ms - 30211 req=88d67094-340f-4217-8d44-1bb12cabf739 {"service":"back-end"}
+2026-06-06T15:59:13.454Z [info] POST /api/orders 201 296.940 ms - 614 req=c73ae477-bfb9-4b58-8d62-3db43c782dc5 {"service":"back-end"}
+2026-06-06T15:59:13.574Z [info] POST /api/payments/vnpay/create 200 111.140 ms - 595 req=a750207b-c020-4c7d-a890-8a7edd8aa829 {"service":"back-end"}
+2026-06-06T15:59:19.580Z [info] GET /api/categories 304 52.732 ms - - req=ad40e508-6a86-41a8-b18a-0284eceb6467 {"service":"back-end"}
+2026-06-06T15:59:19.649Z [info] GET /api/products/product/sales 200 111.432 ms - 30211 req=8d49fa16-fd9d-48d4-a35c-e207e6ec38fa {"service":"back-end"}
+2026-06-06T15:59:19.682Z [info] GET /api/users/profile 304 151.351 ms - - req=19c0d14a-a454-4c4f-97f3-338714b76613 {"service":"back-end"}
+2026-06-06T15:59:19.737Z [info] GET /api/carts/me 304 155.636 ms - - req=338311a8-b3a3-46b0-978a-4a638e134a31 {"service":"back-end"}
+2026-06-06T15:59:19.749Z [info] GET /api/categories/shop-cho-cun 200 213.940 ms - 81962 req=7e4e81f5-a166-4b74-ab0c-307564f924bd {"service":"back-end"}
+2026-06-06T15:59:19.762Z [info] GET /api/users/shipping-address 304 109.685 ms - - req=99596d53-64eb-4391-bcd0-409483e47b8f {"service":"back-end"}
+2026-06-06T15:59:19.786Z [info] GET /api/products 200 251.909 ms - 185092 req=66b54c79-e2fe-42db-ab38-6ac55c6efd80 {"service":"back-end"}
+2026-06-06T15:59:19.844Z [info] GET /api/carts/me 304 104.913 ms - - req=6a9e3e22-1033-48e8-94c9-e42292e8e53b {"service":"back-end"}
+2026-06-06T15:59:19.910Z [info] GET /api/categories/shop-cho-meo 304 372.910 ms - - req=eb853d6e-cafc-4aa3-b75f-96466721e092 {"service":"back-end"}
+2026-06-06T15:59:23.654Z [info] POST /api/orders 201 355.964 ms - 613 req=cb4a1052-f3ec-4550-a892-15c1e30f5819 {"service":"back-end"}
+2026-06-06T15:59:24.227Z [info] POST /api/payments/momo/create 201 564.460 ms - 557 req=5e0d6ddc-d1e8-4ad0-a411-2047beb77c55 {"service":"back-end"}
+2026-06-06T16:00:48.036Z [info] POST /api/orders 201 1427.361 ms - 614 req=7ccc6dab-37fa-46d4-83ef-b43b2d0ade84 {"service":"back-end"}
+2026-06-06T16:00:48.612Z [info] POST /api/payments/vnpay/create 200 566.058 ms - 595 req=aead774e-33c9-4763-833c-e9989c72ad1c {"service":"back-end"}
+2026-06-06T16:03:20.863Z [info] GET /api/users/shipping-address 304 211.466 ms - - req=e2c43ddc-9e3d-44fd-a5cd-9b9435e79aa5 {"service":"back-end"}
+2026-06-06T16:05:02.476Z [info] GET /api/categories 304 72.331 ms - - req=f09f2c11-8f9f-471f-bb34-b5bef967d22e {"service":"back-end"}
+2026-06-06T16:05:02.531Z [info] GET /api/products/product/sales 200 109.759 ms - 30211 req=ccb8d93d-f317-42d2-9238-63faf64b78dc {"service":"back-end"}
+2026-06-06T16:05:02.572Z [info] GET /api/users/profile 304 159.889 ms - - req=a6d7c7b9-200e-4b12-9767-4022ddaeff87 {"service":"back-end"}
+2026-06-06T16:05:02.649Z [info] GET /api/users/shipping-address 304 115.095 ms - - req=fc4faf2d-05cc-41a8-9e85-4e408189d973 {"service":"back-end"}
+2026-06-06T16:05:02.677Z [info] GET /api/products 200 260.511 ms - 185092 req=93648b1a-a750-434f-9140-f771af485faa {"service":"back-end"}
+2026-06-06T16:05:02.682Z [info] GET /api/categories/shop-cho-cun 200 263.075 ms - 81962 req=18c7e6b8-d4b8-4b27-a5ab-6bda213d5ed0 {"service":"back-end"}
+2026-06-06T16:05:02.691Z [info] GET /api/carts/me 304 213.802 ms - - req=564502d1-feaa-47d4-8081-ca3d80b28ce9 {"service":"back-end"}
+2026-06-06T16:05:02.716Z [info] GET /api/categories/shop-cho-meo 304 295.729 ms - - req=65dcd116-3f27-42e7-bafc-1238952c7c92 {"service":"back-end"}
+2026-06-06T16:05:02.838Z [info] GET /api/carts/me 304 144.798 ms - - req=22d4a473-d526-4fcf-a4ab-50c53287e74e {"service":"back-end"}
+2026-06-06T16:05:05.042Z [info] POST /api/orders 201 370.349 ms - 614 req=520b1c8f-cd73-425b-b68c-36fbc8b20732 {"service":"back-end"}
+2026-06-06T16:05:05.193Z [info] POST /api/payments/vnpay/create 200 142.111 ms - 595 req=ab845e44-461c-4602-b746-cc2ac888eb55 {"service":"back-end"}
+2026-06-06T16:05:08.434Z [info] GET /api/users/profile 304 213.566 ms - - req=df69704b-89d5-4992-8b98-58ef8fad7d13 {"service":"back-end"}
+2026-06-06T16:05:08.719Z [info] GET /api/orders?user_id=6a00b69d0af467688ea55f1b 200 264.126 ms - 566630 req=48673560-74e1-477e-8948-ae8628145cca {"service":"back-end"}
+2026-06-06T16:05:09.143Z [info] GET /api/categories 304 70.976 ms - - req=89059afa-28de-4fe6-bb66-42492d86f6b9 {"service":"back-end"}
+2026-06-06T16:05:09.236Z [info] GET /api/users/profile 304 167.701 ms - - req=9a3375e8-eb64-4fb6-ba74-b06272f89985 {"service":"back-end"}
+2026-06-06T16:05:09.237Z [info] GET /api/carts/me 304 160.804 ms - - req=46bb31d4-a8b8-40db-a51a-40563053b473 {"service":"back-end"}
+2026-06-06T16:05:09.362Z [info] GET /api/reviews/my-reviews 304 287.801 ms - - req=4b14762e-05ca-4df5-94ee-28171cefa731 {"service":"back-end"}
+2026-06-06T16:05:09.381Z [info] GET /api/carts/me 304 139.475 ms - - req=52456a1c-7851-467c-9ba7-b8aa5cc9ad58 {"service":"back-end"}
+2026-06-06T16:05:55.914Z [info] GET /api/users/profile 304 238.243 ms - - req=7ce296a3-ab2c-4520-a2e1-ef0c9ded60cb {"service":"back-end"}
+2026-06-06T16:05:56.189Z [info] GET /api/orders?user_id=6a00b69d0af467688ea55f1b 200 266.110 ms - 566630 req=01005ff7-0ee0-466d-af82-1f68a0cedfbb {"service":"back-end"}
+2026-06-06T16:06:00.817Z [info] GET /api/users/profile 304 154.885 ms - - req=c9a4d47e-f500-4302-9417-40f3b8173b56 {"service":"back-end"}
+2026-06-06T16:06:01.100Z [info] GET /api/orders?user_id=6a00b69d0af467688ea55f1b 200 275.385 ms - 566630 req=3d1307ae-93e2-477e-a542-1fcf4e36858c {"service":"back-end"}
+2026-06-06T16:06:21.414Z [info] GET /api/products/product/sales 200 110.462 ms - 30210 req=13a13e45-85a5-43ae-b6a8-1bc9026eb871 {"service":"back-end"}
+2026-06-06T16:06:21.518Z [info] GET /api/users/profile 304 222.798 ms - - req=41b839e1-5e85-401f-97d8-1f2eae2a415a {"service":"back-end"}
+2026-06-06T16:06:21.530Z [info] GET /api/categories/shop-cho-cun 200 229.416 ms - 81961 req=29b123f7-1af6-456c-9f12-7dca56e30642 {"service":"back-end"}
+2026-06-06T16:06:21.579Z [info] GET /api/categories/shop-cho-meo 304 277.455 ms - - req=72296941-eead-46ee-8959-6569837eb82c {"service":"back-end"}
+2026-06-06T16:06:21.593Z [info] GET /api/products 200 294.481 ms - 185091 req=10df2ad7-a5cf-45ec-a1f8-5587aab2a3f7 {"service":"back-end"}
+2026-06-06T16:06:21.825Z [info] GET /api/orders?user_id=6a00b69d0af467688ea55f1b 200 201.584 ms - 566630 req=7f6f9ccb-e700-4ed1-bd97-db8d0c50d538 {"service":"back-end"}
+2026-06-06T16:06:22.487Z [info] GET /api/categories 304 52.480 ms - - req=5a30a616-e039-46a4-a93b-c5b96a7338d3 {"service":"back-end"}
+2026-06-06T16:06:22.589Z [info] GET /api/users/profile 304 160.001 ms - - req=f668d92a-ea09-444e-9726-de8d51513310 {"service":"back-end"}
+2026-06-06T16:06:22.665Z [info] GET /api/carts/me 304 226.277 ms - - req=898851b7-ab53-448c-8776-5d8d277cd880 {"service":"back-end"}
+2026-06-06T16:06:22.713Z [info] GET /api/reviews/my-reviews 304 276.119 ms - - req=0c6d0e8f-05b8-4a0b-8170-3d00ddd72d35 {"service":"back-end"}
+2026-06-06T16:06:22.814Z [info] GET /api/carts/me 304 145.989 ms - - req=f4e9974e-942f-4451-8a8c-349e4a8f2cb8 {"service":"back-end"}
+2026-06-06T16:06:22.973Z [info] GET /api/carts/me 304 156.940 ms - - req=03f58d20-c035-4264-b612-9a9c7503bc81 {"service":"back-end"}
+2026-06-06T16:06:32.964Z [info] POST /api/payments/momo/create 201 362.883 ms - 636 req=c169c9c3-5b1f-42db-b0e4-03ddeb85d733 {"service":"back-end"}
+2026-06-06T16:06:39.311Z [info] GET /api/categories 304 51.706 ms - - req=a7804d6b-9e12-49c0-b934-1731fcccc4b0 {"service":"back-end"}
+2026-06-06T16:06:39.415Z [info] GET /api/carts/me 304 150.788 ms - - req=c5066dba-8df5-435c-b277-f342c97be877 {"service":"back-end"}
+2026-06-06T16:06:39.465Z [info] GET /api/users/profile 304 211.087 ms - - req=39e44610-4891-469f-9355-2f4cf754ca4c {"service":"back-end"}
+2026-06-06T16:06:39.520Z [info] GET /api/reviews/my-reviews 304 257.819 ms - - req=7c2667af-6d8c-4255-8102-88f439f01194 {"service":"back-end"}
+2026-06-06T16:06:39.523Z [info] GET /api/carts/me 304 105.692 ms - - req=cfadf2b0-884a-4c4b-a15b-f26808c709e5 {"service":"back-end"}
+2026-06-06T16:06:39.625Z [info] GET /api/carts/me 304 100.951 ms - - req=a6a25533-3fa4-4a75-aa27-892cfb6cb307 {"service":"back-end"}
+2026-06-06T16:06:55.211Z [info] GET /api/categories 304 56.824 ms - - req=d6c47498-0ddf-44dc-988b-858e27695857 {"service":"back-end"}
+2026-06-06T16:06:55.216Z [info] GET /api/categories/catetory/shop-cho-cun 304 51.602 ms - - req=9f7adf9d-5c5a-4639-9c19-0bc4f97353b7 {"service":"back-end"}
+2026-06-06T16:06:55.268Z [info] GET /api/categories 304 55.100 ms - - req=511bdfb1-84ed-49d2-bb1c-18cebaa9b9c9 {"service":"back-end"}
+2026-06-06T16:06:55.311Z [info] GET /api/users/profile 304 154.420 ms - - req=ec6f761b-596a-45c5-aa42-1ce01b4e07fb {"service":"back-end"}
+2026-06-06T16:06:55.315Z [info] GET /api/carts/me 304 152.292 ms - - req=8c6ef726-e58a-4960-babb-be85c33ce127 {"service":"back-end"}
+2026-06-06T16:06:55.321Z [info] GET /api/categories 304 51.785 ms - - req=bc043130-6aa2-4db6-bad7-c2156295dae4 {"service":"back-end"}
+2026-06-06T16:06:55.420Z [info] GET /api/carts/me 304 104.387 ms - - req=f48ed1d8-6109-4dca-9ead-7b11157fc69f {"service":"back-end"}
+2026-06-06T16:06:55.524Z [info] GET /api/carts/me 304 102.789 ms - - req=06290100-0c2a-4296-9cfe-5709b5eff4da {"service":"back-end"}
+2026-06-06T16:07:00.945Z [info] GET /api/categories 304 53.268 ms - - req=f896ec2e-4261-4819-a956-244a77db9f30 {"service":"back-end"}
+2026-06-06T16:07:01.047Z [info] GET /api/users/profile 304 158.031 ms - - req=592bc08a-d319-401c-9f67-0f758ab5d9e9 {"service":"back-end"}
+2026-06-06T16:07:01.054Z [info] GET /api/users/shipping-address 304 158.748 ms - - req=f815cf03-ab6a-415d-9628-3936894aaac8 {"service":"back-end"}
+2026-06-06T16:07:01.056Z [info] GET /api/carts/me 304 162.594 ms - - req=42cbfd79-4c45-42f0-8bf5-e335d087d72f {"service":"back-end"}
+2026-06-06T16:07:01.179Z [info] GET /api/carts/me 304 121.041 ms - - req=76098ec2-f617-4cb2-8893-a02f84625114 {"service":"back-end"}
+2026-06-06T16:07:01.283Z [info] GET /api/carts/me 304 102.381 ms - - req=61f53a27-756d-442e-8c9a-a6b12de5e293 {"service":"back-end"}
+2026-06-06T16:09:28.317Z [info] GET /api/categories 304 68.867 ms - - req=37798e4a-8002-488e-b27b-2fda6fafb8c4 {"service":"back-end"}
+2026-06-06T16:09:28.393Z [info] GET /api/categories/catetory/shop-cho-cun 304 59.877 ms - - req=7e403ede-a9e2-4a88-a873-c7ddf16dd156 {"service":"back-end"}
+2026-06-06T16:09:28.429Z [info] GET /api/users/profile 304 176.914 ms - - req=122a4344-4367-4b88-932e-55dc62b491d8 {"service":"back-end"}
+2026-06-06T16:09:28.467Z [info] GET /api/products/product/sales 304 127.216 ms - - req=87752681-03a4-48c9-afbf-e8bf0b366919 {"service":"back-end"}
+2026-06-06T16:09:28.486Z [info] GET /api/categories 304 53.325 ms - - req=c8f8dcb4-a298-4b44-8d81-be4f42cca53f {"service":"back-end"}
+2026-06-06T16:09:28.539Z [info] GET /api/categories 304 51.494 ms - - req=0dbd9e20-2119-4229-967b-6222a6fcd1f4 {"service":"back-end"}
+2026-06-06T16:09:28.581Z [info] GET /api/categories/shop-cho-cun 304 244.997 ms - - req=6ddeb3ba-1ba6-4505-ab8b-b6d5a3b116cd {"service":"back-end"}
+2026-06-06T16:09:28.585Z [info] GET /api/carts/me 304 175.818 ms - - req=2b004dc0-6b83-4331-94d2-d3e41814a7c8 {"service":"back-end"}
+2026-06-06T16:09:28.641Z [info] GET /api/products 304 312.307 ms - - req=da6ddbbb-f381-4853-8fee-248c0ca28529 {"service":"back-end"}
+2026-06-06T16:09:28.696Z [info] GET /api/carts/me 304 108.376 ms - - req=2cff28be-c5fd-471d-929d-b06a8fb16021 {"service":"back-end"}
+2026-06-06T16:09:28.737Z [info] GET /api/categories/shop-cho-meo 304 399.074 ms - - req=30f4af0b-e3f9-4df5-8782-3dcc5e0a659e {"service":"back-end"}
+2026-06-06T16:09:28.799Z [info] GET /api/carts/me 304 101.526 ms - - req=1c72ce67-41c6-493b-a759-a749c793628b {"service":"back-end"}
+2026-06-06T16:09:30.623Z [info] GET /api/categories 304 50.141 ms - - req=e4aeca3f-899e-4ea0-a916-cd32486ce646 {"service":"back-end"}
+2026-06-06T16:09:30.734Z [info] GET /api/carts/me 304 154.656 ms - - req=c3c1cd7c-8fe4-4bba-8452-44683ec92127 {"service":"back-end"}
+2026-06-06T16:09:30.736Z [info] GET /api/products/thuc-an-hat-mem-zenith-adult-cho-cho-truong-thanh 200 154.559 ms - 1567 req=f1803c48-32ce-4dce-b8fc-3dfd492157e1 {"service":"back-end"}
+2026-06-06T16:09:30.792Z [info] GET /api/users/profile 304 217.583 ms - - req=467aa753-1f10-429e-b665-1f604288fd97 {"service":"back-end"}
+2026-06-06T16:09:30.875Z [info] GET /api/products 304 297.540 ms - - req=b998ca21-ce46-4a26-b08c-4e4c322f21f2 {"service":"back-end"}
+2026-06-06T16:09:30.885Z [info] GET /api/carts/me 304 146.985 ms - - req=d813c327-3fa3-4649-808c-67f2fbfdcfe1 {"service":"back-end"}
+2026-06-06T16:09:30.989Z [info] GET /api/carts/me 304 101.888 ms - - req=3540adc7-d3b6-4ff3-90bb-49431e4dc40c {"service":"back-end"}
+2026-06-06T16:09:31.338Z [info] GET /api/reviews/can-review/680df6645a024f101799caa4 200 184.322 ms - 179 req=acbd3172-8be8-4ae4-ada9-c61f09ccc0f3 {"service":"back-end"}
+2026-06-06T16:09:31.424Z [info] GET /api/reviews/my-reviews 304 257.128 ms - - req=6e59c67a-c67d-4d1c-a344-281efa0bf96d {"service":"back-end"}
+2026-06-06T16:09:31.491Z [info] GET /api/reviews/can-review/680df6645a024f101799caa4 304 151.801 ms - - req=e653a0a2-84c8-4f7e-b41b-21c25e3c05e1 {"service":"back-end"}
+2026-06-06T16:09:31.728Z [info] GET /api/reviews/my-reviews 304 301.965 ms - - req=e5266945-ab0a-4ece-b2b1-52c8faf00e0a {"service":"back-end"}
+2026-06-06T16:09:32.588Z [info] POST /api/carts/add 201 288.256 ms - 178 req=748f2349-3edf-49d0-9054-babb2ca5f26f {"service":"back-end"}
+2026-06-06T16:09:32.813Z [info] GET /api/carts/me 200 219.455 ms - 1194 req=83fe0ee9-732c-4e66-a567-b5352d327aec {"service":"back-end"}
+2026-06-06T16:09:33.779Z [info] GET /api/categories 304 70.818 ms - - req=caa04dfe-c986-4b96-aac2-753e1e871e52 {"service":"back-end"}
+2026-06-06T16:09:33.868Z [info] GET /api/users/shipping-address 304 153.930 ms - - req=a95edec5-87c4-4e64-bc90-1648026db9af {"service":"back-end"}
+2026-06-06T16:09:33.873Z [info] GET /api/users/profile 304 164.068 ms - - req=e5edeab7-ddb1-4747-8ed9-7d793c1f9e3a {"service":"back-end"}
+2026-06-06T16:09:33.919Z [info] GET /api/carts/me 304 207.438 ms - - req=6f305838-1ccc-4121-8352-a914889ac04c {"service":"back-end"}
+2026-06-06T16:09:34.073Z [info] GET /api/carts/me 304 152.137 ms - - req=00653f20-ef3a-4470-9acc-cec61a07f675 {"service":"back-end"}
+2026-06-06T16:09:34.226Z [info] GET /api/carts/me 304 151.604 ms - - req=37066e23-3764-4d8c-990e-cbe5f6a1358a {"service":"back-end"}
+2026-06-06T16:09:37.169Z [info] POST /api/orders 201 264.655 ms - 615 req=3a60358c-4ad6-4cc4-ad77-db9120c348a2 {"service":"back-end"}
+2026-06-06T16:09:37.278Z [info] POST /api/payments/vnpay/create 200 100.049 ms - 596 req=4ea19e66-abc7-4c50-9e9c-9042fcd31e3f {"service":"back-end"}
+2026-06-06T16:18:16.690Z [info] POST /api/orders 201 258.778 ms - 613 req=304c02fb-cefd-4367-a580-e8e349557860 {"service":"back-end"}
+2026-06-06T16:18:17.879Z [info] GET /api/users/profile 304 153.763 ms - - req=3232c43a-2055-471e-baa6-322f8dca173e {"service":"back-end"}
+2026-06-06T16:18:18.108Z [info] GET /api/orders?user_id=6a00b69d0af467688ea55f1b 200 218.915 ms - 608694 req=1ca1a34e-7588-42cb-845d-0b3875a47953 {"service":"back-end"}
+2026-06-06T16:18:18.516Z [info] GET /api/categories 304 67.884 ms - - req=2c41b7e8-7e64-460a-83a1-49f35f599311 {"service":"back-end"}
+2026-06-06T16:18:18.568Z [info] GET /api/users/profile 304 118.215 ms - - req=4c8af604-20ab-4046-a007-38b6d23b551a {"service":"back-end"}
+2026-06-06T16:18:18.667Z [info] GET /api/carts/me 200 214.831 ms - 1194 req=63225911-9687-4c14-9de8-104d34423423 {"service":"back-end"}
+2026-06-06T16:18:18.820Z [info] GET /api/carts/me 304 150.671 ms - - req=bb63c9e8-0159-4f35-88b9-b6019f010c72 {"service":"back-end"}
+2026-06-06T16:18:18.825Z [info] GET /api/reviews/my-reviews 304 369.205 ms - - req=af08a912-5abe-4079-9618-a4611307a12a {"service":"back-end"}
+2026-06-06T16:18:18.976Z [info] GET /api/carts/me 304 154.911 ms - - req=2cea3edd-b97e-4a36-a10e-4516b2a97286 {"service":"back-end"}
+2026-06-06T16:18:23.967Z [info] GET /api/categories 304 53.165 ms - - req=08343573-4cff-408b-92de-f3fbb1fd15e0 {"service":"back-end"}
+2026-06-06T16:18:24.075Z [info] GET /api/users/shipping-address 304 155.857 ms - - req=cf794e23-88e8-42fc-9592-46c4de9634b8 {"service":"back-end"}
+2026-06-06T16:18:24.121Z [info] GET /api/carts/me 304 202.507 ms - - req=ee0bde21-24a7-45c4-b69c-6874b09ebc1f {"service":"back-end"}
+2026-06-06T16:18:24.127Z [info] GET /api/users/profile 304 212.053 ms - - req=fa80d19c-0dc9-4136-bba4-1c368d31c79b {"service":"back-end"}
+2026-06-06T16:18:24.274Z [info] GET /api/carts/me 304 152.064 ms - - req=627ddbdc-7e37-47c4-9c46-3d08e1e7d3cf {"service":"back-end"}
+2026-06-06T16:18:24.428Z [info] GET /api/carts/me 304 152.512 ms - - req=f4da3415-6785-4c03-9d17-01d0f2a3c7c5 {"service":"back-end"}
+2026-06-06T16:18:27.501Z [info] POST /api/orders 201 261.049 ms - 615 req=6ddad2e4-ed2b-4a85-905f-f345e8ed002e {"service":"back-end"}
+2026-06-06T16:18:27.627Z [info] DELETE /api/carts/me 200 118.438 ms - 91 req=727fc665-1a6d-459b-b949-0a81c6d143eb {"service":"back-end"}
+2026-06-06T16:18:27.740Z [info] POST /api/payments/vnpay/create 200 100.697 ms - 596 req=0b69b95c-dae2-45f9-93e1-de501b16ade9 {"service":"back-end"}
+2026-06-06T16:18:30.922Z [info] GET /api/users/profile 304 154.340 ms - - req=f42334c7-4511-4c5d-bf15-fb5785082166 {"service":"back-end"}
+2026-06-06T16:18:31.184Z [info] GET /api/orders?user_id=6a00b69d0af467688ea55f1b 200 252.419 ms - 629727 req=bbd7f560-45ac-4f11-840e-a053999a73ca {"service":"back-end"}
+2026-06-06T16:18:31.504Z [info] GET /api/categories 304 52.205 ms - - req=61344e7b-0461-498b-8cd4-df49e6afe688 {"service":"back-end"}
+2026-06-06T16:18:31.611Z [info] GET /api/carts/me 200 156.198 ms - 119 req=e406f05f-74bb-40b3-915a-399f34e7b9b5 {"service":"back-end"}
+2026-06-06T16:18:31.655Z [info] GET /api/users/profile 304 211.538 ms - - req=95347ef2-5a92-4a0e-a0c6-143f249381fb {"service":"back-end"}
+2026-06-06T16:18:31.716Z [info] GET /api/carts/me 304 102.973 ms - - req=ea1978f4-05cd-4aec-a8da-7c6a19dbfaab {"service":"back-end"}
+2026-06-06T16:18:31.742Z [info] GET /api/reviews/my-reviews 304 288.002 ms - - req=6cded7a2-f44a-4ad6-8ece-0ba7025feb30 {"service":"back-end"}
+2026-06-06T16:18:31.823Z [info] GET /api/carts/me 304 105.427 ms - - req=a24c0ac5-e3a8-406e-929c-d123f799c794 {"service":"back-end"}
+2026-06-06T16:20:30.787Z [info] Redis client connecting {"service":"back-end"}
+2026-06-06T16:20:30.802Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-06T16:20:30.808Z [info] Redis client ready {"service":"back-end"}
+2026-06-06T16:20:30.815Z [info] Redis client connected {"service":"back-end"}
+2026-06-06T16:20:30.821Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-06T16:20:30.824Z [info] Loading .env {"service":"back-end","envPath":"D:\\Project\\PetShop-Website\\back-end\\.env"}
+2026-06-06T16:20:30.826Z [info] .env file loaded successfully {"service":"back-end"}
+2026-06-06T16:20:30.878Z [info] Background workers initialized {"service":"back-end"}
+2026-06-06T16:20:30.885Z [info] Server is running: http://localhost:5000 {"service":"back-end"}
+2026-06-06T16:20:31.600Z [info] MongoDB connected {"service":"back-end"}
+2026-06-06T16:20:31.601Z [info] Connected to MongoDB {"service":"back-end"}
+2026-06-06T16:20:31.827Z [info] GET /api/products/product/sales 304 837.828 ms - - req=4b8c1edf-099a-47b1-a8de-b850f62c27d2 {"service":"back-end"}
+2026-06-06T16:20:32.217Z [info] GET /api/products 200 1234.929 ms - 185091 req=07b7776a-ef2f-4d95-a24d-32851682ddf2 {"service":"back-end"}
+2026-06-06T16:20:32.285Z [info] GET /api/categories/shop-cho-cun 200 1297.358 ms - 81961 req=a40f7a4e-b7d5-4882-88dd-38d4cdc18d60 {"service":"back-end"}
+2026-06-06T16:20:32.319Z [info] GET /api/categories/shop-cho-meo 304 1334.018 ms - - req=37a6c0e2-4f81-4e8b-a728-91ee60c6ad3c {"service":"back-end"}
+2026-06-06T16:20:32.337Z [info] GET /api/users/profile 304 1370.210 ms - - req=cf725460-972f-4093-a8ad-6079670d07d5 {"service":"back-end"}
+2026-06-06T16:20:32.613Z [info] GET /api/orders?user_id=6a00b69d0af467688ea55f1b 200 255.755 ms - 629727 req=8630b809-c3b6-40d4-a458-281ea1ff333f {"service":"back-end"}
+2026-06-06T16:20:33.051Z [info] GET /api/categories 304 64.840 ms - - req=80597c1c-b2c2-469d-a96b-c5e6f2e1228a {"service":"back-end"}
+2026-06-06T16:20:33.134Z [info] GET /api/carts/me 304 143.180 ms - - req=2d57a16b-3ab8-4dbb-8c62-33e3a3ce3e26 {"service":"back-end"}
+2026-06-06T16:20:33.210Z [info] GET /api/users/profile 304 228.085 ms - - req=358c019e-6507-49b7-9d17-f55e5c32a2b7 {"service":"back-end"}
+2026-06-06T16:20:33.242Z [info] GET /api/carts/me 304 103.582 ms - - req=02beca20-f705-4f80-9e93-a549629e0d15 {"service":"back-end"}
+2026-06-06T16:20:33.283Z [info] GET /api/reviews/my-reviews 304 293.985 ms - - req=983d4102-22dd-4102-862b-b6b49e42cded {"service":"back-end"}
+2026-06-06T16:20:33.347Z [info] GET /api/carts/me 304 103.341 ms - - req=645b1f24-1109-49e5-a207-72a81f138c5f {"service":"back-end"}
+2026-06-06T16:20:35.147Z [info] GET /api/categories 304 54.824 ms - - req=d5ac62f3-e25e-4505-9daf-a34f351cf05c {"service":"back-end"}
+2026-06-06T16:20:35.165Z [info] GET /api/categories/catetory/shop-cho-cun 304 65.229 ms - - req=06c699a9-1f4e-4be1-be48-8a3d9bd97dbc {"service":"back-end"}
+2026-06-06T16:20:35.202Z [info] GET /api/categories 304 53.774 ms - - req=206571f3-8eef-4030-a7ec-1cc70e4ec76e {"service":"back-end"}
+2026-06-06T16:20:35.260Z [info] GET /api/categories 304 55.155 ms - - req=b83e3c84-e0a5-4c18-bfa9-9fd06c3992cc {"service":"back-end"}
+2026-06-06T16:20:35.305Z [info] GET /api/users/profile 304 210.793 ms - - req=9652b41a-fee2-4fb4-a412-2ee5fa03aaff {"service":"back-end"}
+2026-06-06T16:20:35.308Z [info] GET /api/carts/me 304 210.991 ms - - req=70867269-d228-4266-a96a-b251d2221f63 {"service":"back-end"}
+2026-06-06T16:20:35.454Z [info] GET /api/carts/me 304 144.375 ms - - req=8c8a0af1-a8c1-4beb-9f77-8131ea5d36a0 {"service":"back-end"}
+2026-06-06T16:20:35.596Z [info] GET /api/carts/me 304 139.911 ms - - req=ba546eb4-f183-41ba-985d-5d1c494511b2 {"service":"back-end"}
+2026-06-06T16:20:37.859Z [info] GET /api/categories 304 72.803 ms - - req=163b923a-298e-421e-8655-8b4b8e639d97 {"service":"back-end"}
+2026-06-06T16:20:37.950Z [info] GET /api/users/profile 304 156.039 ms - - req=6aaf59b4-b30b-4c4f-a33a-acc349da4172 {"service":"back-end"}
+2026-06-06T16:20:37.991Z [info] GET /api/users/shipping-address 304 194.352 ms - - req=177b6073-662b-4f08-991f-978001e45f97 {"service":"back-end"}
+2026-06-06T16:20:37.997Z [info] GET /api/carts/me 304 207.116 ms - - req=9870c428-25ef-4597-86fa-529041932433 {"service":"back-end"}
+2026-06-06T16:20:38.137Z [info] GET /api/carts/me 304 138.713 ms - - req=d9a56c4e-1b79-412f-a366-fe9050f4e833 {"service":"back-end"}
+2026-06-06T16:20:38.277Z [info] GET /api/carts/me 304 138.882 ms - - req=493d008a-657f-4795-8588-e8af99c5309c {"service":"back-end"}
+2026-06-06T16:20:42.342Z [info] POST /api/orders 201 362.914 ms - 614 req=3abe58cb-69ec-4e09-9710-7d6ee2bbed9a {"service":"back-end"}
+2026-06-06T16:20:42.496Z [info] POST /api/payments/vnpay/create 200 144.382 ms - 595 req=af6c5197-9e41-43b5-9ca6-e316e673db74 {"service":"back-end"}
+2026-06-06T16:21:47.017Z [info] Redis client connecting {"service":"back-end"}
+2026-06-06T16:21:47.024Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-06T16:21:47.034Z [info] Redis client ready {"service":"back-end"}
+2026-06-06T16:21:47.034Z [info] Redis client connected {"service":"back-end"}
+2026-06-06T16:21:47.037Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-06T16:21:47.040Z [info] Loading .env {"service":"back-end","envPath":"D:\\Project\\PetShop-Website\\back-end\\.env"}
+2026-06-06T16:21:47.041Z [info] .env file loaded successfully {"service":"back-end"}
+2026-06-06T16:21:47.074Z [info] Background workers initialized {"service":"back-end"}
+2026-06-06T16:21:47.080Z [info] Server is running: http://localhost:5000 {"service":"back-end"}
+2026-06-06T16:21:48.723Z [info] MongoDB connected {"service":"back-end"}
+2026-06-06T16:21:48.725Z [info] Connected to MongoDB {"service":"back-end"}
+2026-06-06T16:22:02.607Z [info] POST /api/orders 201 357.133 ms - 614 req=74992172-eaa1-4d67-8c25-7ee6d7f019e2 {"service":"back-end"}
+2026-06-06T16:22:02.773Z [info] POST /api/payments/vnpay/create 200 153.317 ms - 559 req=a6284a1c-47e6-42a9-bd53-bf6c10602c7d {"service":"back-end"}
+2026-06-06T16:22:05.990Z [info] GET /api/users/profile 304 189.255 ms - - req=16dabcfb-16cb-4939-b554-3fe7e49978ce {"service":"back-end"}
+2026-06-06T16:22:06.303Z [info] GET /api/orders?user_id=6a00b69d0af467688ea55f1b 200 289.446 ms - 672165 req=86eb0098-d668-4548-8d1b-eb3fa01d3158 {"service":"back-end"}
+2026-06-06T16:22:06.726Z [info] GET /api/categories 304 65.278 ms - - req=c234eca4-4902-4344-8cad-f5a7a30bd856 {"service":"back-end"}
+2026-06-06T16:22:06.850Z [info] GET /api/users/profile 304 193.127 ms - - req=bca92b2f-5c1d-49b7-8cec-3b4ad8e36659 {"service":"back-end"}
+2026-06-06T16:22:06.864Z [info] GET /api/carts/me 304 197.502 ms - - req=5286b67f-794a-4738-81f6-b5f8d84d18ee {"service":"back-end"}
+2026-06-06T16:22:06.996Z [info] GET /api/carts/me 304 126.438 ms - - req=04b1afa3-9424-4fcd-b59a-ecda6e718eed {"service":"back-end"}
+2026-06-06T16:22:07.005Z [info] GET /api/reviews/my-reviews 304 340.831 ms - - req=8aa4a3d1-5269-417e-b4eb-9193e3d72f2f {"service":"back-end"}
+2026-06-06T16:23:21.971Z [info] Redis client connecting {"service":"back-end"}
+2026-06-06T16:23:21.978Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-06T16:23:21.980Z [info] Redis client ready {"service":"back-end"}
+2026-06-06T16:23:21.986Z [info] Redis client connected {"service":"back-end"}
+2026-06-06T16:23:21.991Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-06T16:23:21.993Z [info] Loading .env {"service":"back-end","envPath":"D:\\Project\\PetShop-Website\\back-end\\.env"}
+2026-06-06T16:23:21.994Z [info] .env file loaded successfully {"service":"back-end"}
+2026-06-06T16:23:22.028Z [info] Background workers initialized {"service":"back-end"}
+2026-06-06T16:23:22.034Z [info] Server is running: http://localhost:5000 {"service":"back-end"}
+2026-06-06T16:23:24.698Z [info] Redis client connecting {"service":"back-end"}
+2026-06-06T16:23:24.706Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-06T16:23:24.708Z [info] Redis client ready {"service":"back-end"}
+2026-06-06T16:23:24.714Z [info] Redis client connected {"service":"back-end"}
+2026-06-06T16:23:24.718Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-06T16:23:24.720Z [info] Loading .env {"service":"back-end","envPath":"D:\\Project\\PetShop-Website\\back-end\\.env"}
+2026-06-06T16:23:24.721Z [info] .env file loaded successfully {"service":"back-end"}
+2026-06-06T16:23:24.754Z [info] Background workers initialized {"service":"back-end"}
+2026-06-06T16:23:24.759Z [info] Server is running: http://localhost:5000 {"service":"back-end"}
+2026-06-06T16:23:25.371Z [info] MongoDB connected {"service":"back-end"}
+2026-06-06T16:23:25.373Z [info] Connected to MongoDB {"service":"back-end"}
+2026-06-06T16:23:28.084Z [info] Redis client connecting {"service":"back-end"}
+2026-06-06T16:23:28.092Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-06T16:23:28.094Z [info] Redis client ready {"service":"back-end"}
+2026-06-06T16:23:28.100Z [info] Redis client connected {"service":"back-end"}
+2026-06-06T16:23:28.104Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-06T16:23:28.107Z [info] Loading .env {"service":"back-end","envPath":"D:\\Project\\PetShop-Website\\back-end\\.env"}
+2026-06-06T16:23:28.108Z [info] .env file loaded successfully {"service":"back-end"}
+2026-06-06T16:23:28.149Z [info] Background workers initialized {"service":"back-end"}
+2026-06-06T16:23:28.155Z [info] Server is running: http://localhost:5000 {"service":"back-end"}
+2026-06-06T16:23:28.843Z [info] MongoDB connected {"service":"back-end"}
+2026-06-06T16:23:28.845Z [info] Connected to MongoDB {"service":"back-end"}
+2026-06-06T16:23:33.506Z [info] Redis client connecting {"service":"back-end"}
+2026-06-06T16:23:33.514Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-06T16:23:33.516Z [info] Redis client ready {"service":"back-end"}
+2026-06-06T16:23:33.522Z [info] Redis client connected {"service":"back-end"}
+2026-06-06T16:23:33.526Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-06T16:23:33.529Z [info] Loading .env {"service":"back-end","envPath":"D:\\Project\\PetShop-Website\\back-end\\.env"}
+2026-06-06T16:23:33.530Z [info] .env file loaded successfully {"service":"back-end"}
+2026-06-06T16:23:33.564Z [info] Background workers initialized {"service":"back-end"}
+2026-06-06T16:23:33.569Z [info] Server is running: http://localhost:5000 {"service":"back-end"}
+2026-06-06T16:23:34.197Z [info] MongoDB connected {"service":"back-end"}
+2026-06-06T16:23:34.198Z [info] Connected to MongoDB {"service":"back-end"}
+2026-06-06T16:25:06.160Z [info] GET /api/users/profile 401 8.250 ms - 62 req=fd3fae52-d2b4-4958-a401-c5ba2fe1e1ce {"service":"back-end"}
+2026-06-06T16:25:06.296Z [info] GET /api/products/product/sales 200 115.535 ms - 30210 req=9c953ade-e015-4814-9e7d-6162de5a94be {"service":"back-end"}
+2026-06-06T16:25:06.409Z [info] GET /api/categories/shop-cho-cun 200 230.784 ms - 81961 req=860073ca-a622-4980-bcf4-3a3d9951611b {"service":"back-end"}
+2026-06-06T16:25:06.503Z [info] GET /api/products 200 338.739 ms - 185091 req=c7cae84e-1bb0-418f-bd79-7028d6765bad {"service":"back-end"}
+2026-06-06T16:25:06.565Z [info] GET /api/categories/shop-cho-meo 304 395.267 ms - - req=7d70cd7c-4a4c-4755-897c-84c30250738b {"service":"back-end"}
+2026-06-06T16:25:07.200Z [info] GET /api/categories 304 52.943 ms - - req=d2cfe878-c0fe-4896-a776-52a20ff39fde {"service":"back-end"}
+2026-06-06T16:25:07.253Z [info] GET /api/products/product/sales 304 107.924 ms - - req=d77c2f3c-c2b8-4df7-8b75-199d72c80da0 {"service":"back-end"}
+2026-06-06T16:25:07.378Z [info] GET /api/categories/shop-cho-cun 304 237.332 ms - - req=2b2b8f71-c95e-4e5f-af05-9286569a4379 {"service":"back-end"}
+2026-06-06T16:25:07.387Z [info] GET /api/products 304 248.156 ms - - req=954184cb-1df7-4d81-9a1b-0828fd56e331 {"service":"back-end"}
+2026-06-06T16:25:07.442Z [info] GET /api/categories/shop-cho-meo 304 298.021 ms - - req=cd8a0401-a765-47b0-816a-992bd94992c5 {"service":"back-end"}
+2026-06-06T16:25:10.873Z [info] POST /api/auth/signin 200 126.959 ms - 18914 req=efb2a8e4-3ee9-450d-b818-15b91828e37e {"service":"back-end"}
+2026-06-06T16:25:10.990Z [info] GET /api/users/profile 304 110.147 ms - - req=f8b47493-1f23-43b6-a60c-8a5e389168f8 {"service":"back-end"}
+2026-06-06T16:25:12.026Z [info] GET /api/categories 304 75.245 ms - - req=0f377bbf-1fe0-4efb-954f-4c91c510cca0 {"service":"back-end"}
+2026-06-06T16:25:12.032Z [info] GET /api/categories/catetory/shop-cho-cun 304 79.259 ms - - req=7f32bc47-f12c-4253-8422-b0673a0a5834 {"service":"back-end"}
+2026-06-06T16:25:12.104Z [info] GET /api/categories 304 74.909 ms - - req=38e5a285-443a-4749-bbdb-eabed8fc64a1 {"service":"back-end"}
+2026-06-06T16:25:12.114Z [info] GET /api/users/profile 304 163.225 ms - - req=a7d9aff0-5b80-423e-bc82-b34d6caf5bda {"service":"back-end"}
+2026-06-06T16:25:12.128Z [info] GET /api/carts/me 304 169.823 ms - - req=655bce86-d6b2-4e40-810e-9c1c6632dc78 {"service":"back-end"}
+2026-06-06T16:25:12.192Z [info] GET /api/categories 304 82.555 ms - - req=c1d49f38-e625-4292-914f-6ad71ab27ed9 {"service":"back-end"}
+2026-06-06T16:25:12.251Z [info] GET /api/carts/me 304 119.850 ms - - req=fc69b5d8-e0b4-410b-a9d0-75d5f204910c {"service":"back-end"}
+2026-06-06T16:25:17.672Z [info] GET /api/categories 304 60.579 ms - - req=c97ef4ea-f04b-4875-80d6-22dac9be95cd {"service":"back-end"}
+2026-06-06T16:25:17.784Z [info] GET /api/users/profile 304 168.459 ms - - req=151c1be6-dade-48b7-9ccb-349056f53d79 {"service":"back-end"}
+2026-06-06T16:25:17.829Z [info] GET /api/users/shipping-address 304 210.144 ms - - req=788d691b-652e-40aa-9b13-c3b01543942c {"service":"back-end"}
+2026-06-06T16:25:17.835Z [info] GET /api/carts/me 304 221.735 ms - - req=69eb03d3-c7fa-4416-9b88-df60fe7cc198 {"service":"back-end"}
+2026-06-06T16:25:17.990Z [info] GET /api/carts/me 304 151.815 ms - - req=39c372af-81af-42ff-8432-d6b398551203 {"service":"back-end"}
+2026-06-06T16:25:21.829Z [info] POST /api/orders 201 384.163 ms - 614 req=c14816ce-2d2a-4340-9aff-925ec17c94b2 {"service":"back-end"}
+2026-06-06T16:25:21.986Z [info] POST /api/payments/vnpay/create 200 148.252 ms - 597 req=1269600c-2ed7-460f-aa3a-88e9b0763e26 {"service":"back-end"}
+2026-06-06T16:27:48.476Z [info] Redis client connecting {"service":"back-end"}
+2026-06-06T16:27:48.484Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-06T16:27:48.486Z [info] Redis client ready {"service":"back-end"}
+2026-06-06T16:27:48.493Z [info] Redis client connected {"service":"back-end"}
+2026-06-06T16:27:48.498Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-06T16:27:48.500Z [info] Loading .env {"service":"back-end","envPath":"D:\\Project\\PetShop-Website\\back-end\\.env"}
+2026-06-06T16:27:48.501Z [info] .env file loaded successfully {"service":"back-end"}
+2026-06-06T16:27:48.533Z [info] Background workers initialized {"service":"back-end"}
+2026-06-06T16:27:48.540Z [info] Server is running: http://localhost:5000 {"service":"back-end"}
+2026-06-06T16:27:50.286Z [info] MongoDB connected {"service":"back-end"}
+2026-06-06T16:27:50.288Z [info] Connected to MongoDB {"service":"back-end"}
+2026-06-06T16:27:58.590Z [info] POST /api/orders 201 362.020 ms - 614 req=0dbfbd02-60b2-4ebc-9837-eef6dd024d60 {"service":"back-end"}
+2026-06-06T16:27:58.737Z [info] POST /api/payments/vnpay/create 500 135.915 ms - 35 req=19650b59-f512-420e-9543-a7e1ad6914d3 {"service":"back-end"}
+2026-06-06T16:28:01.973Z [info] GET /api/users/profile 304 190.955 ms - - req=06395713-7f5f-49a8-90bb-600c4623ef77 {"service":"back-end"}
+2026-06-06T16:28:02.289Z [info] GET /api/orders?user_id=6a00b69d0af467688ea55f1b 200 304.609 ms - 714603 req=0ee8f136-d8b4-4d33-998a-8c30a6f2ff07 {"service":"back-end"}
+2026-06-06T16:28:02.723Z [info] GET /api/categories 304 67.459 ms - - req=6dded54c-5ddd-485e-8724-ff75673f734b {"service":"back-end"}
+2026-06-06T16:28:02.863Z [info] GET /api/users/profile 304 216.087 ms - - req=935e4916-f7cd-482b-9c4a-552e565334e1 {"service":"back-end"}
+2026-06-06T16:28:02.880Z [info] GET /api/carts/me 304 220.653 ms - - req=ba8ae129-28cd-4eb7-b5e1-b304a8b9faf7 {"service":"back-end"}
+2026-06-06T16:28:02.964Z [info] GET /api/reviews/my-reviews 304 302.981 ms - - req=f4f88931-6fdc-47f7-b074-dc890f7ba251 {"service":"back-end"}
+2026-06-06T16:28:03.034Z [info] GET /api/carts/me 304 151.725 ms - - req=31598e33-d43a-4672-8d35-3c62130d35f5 {"service":"back-end"}
+2026-06-06T16:28:19.959Z [info] Redis client connecting {"service":"back-end"}
+2026-06-06T16:28:19.965Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-06T16:28:19.974Z [info] Redis client ready {"service":"back-end"}
+2026-06-06T16:28:19.975Z [info] Redis client connected {"service":"back-end"}
+2026-06-06T16:28:19.975Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-06T16:28:19.978Z [info] Loading .env {"service":"back-end","envPath":"D:\\Project\\PetShop-Website\\back-end\\.env"}
+2026-06-06T16:28:19.978Z [info] .env file loaded successfully {"service":"back-end"}
+2026-06-06T16:28:20.010Z [info] Background workers initialized {"service":"back-end"}
+2026-06-06T16:28:20.015Z [info] Server is running: http://localhost:5000 {"service":"back-end"}
+2026-06-06T16:28:20.699Z [info] MongoDB connected {"service":"back-end"}
+2026-06-06T16:28:20.701Z [info] Connected to MongoDB {"service":"back-end"}
+2026-06-06T16:28:58.547Z [info] GET /api/products/product/sales 200 157.053 ms - 30210 req=6ddee1f9-6629-402f-a647-ee0bd6b4caaf {"service":"back-end"}
+2026-06-06T16:28:58.591Z [info] GET /api/users/profile 304 231.267 ms - - req=f2ab756a-5ad6-4c26-a731-2cf168866fe8 {"service":"back-end"}
+2026-06-06T16:28:58.652Z [info] GET /api/categories/shop-cho-cun 200 271.921 ms - 81961 req=da88c3fc-6a29-4ab2-9060-25de95fb3b0a {"service":"back-end"}
+2026-06-06T16:28:58.659Z [info] GET /api/categories/shop-cho-meo 304 276.102 ms - - req=e273ad6d-8ba1-47f5-b3f7-9d65da36f4c8 {"service":"back-end"}
+2026-06-06T16:28:58.697Z [info] GET /api/products 200 320.478 ms - 185091 req=6073ceb2-cbd3-4d41-b7db-b71622f7a6a0 {"service":"back-end"}
+2026-06-06T16:28:59.038Z [info] GET /api/orders?user_id=6a00b69d0af467688ea55f1b 200 251.438 ms - 714603 req=eec8b61a-b39d-4e5d-90aa-88b1280202bd {"service":"back-end"}
+2026-06-06T16:28:59.532Z [info] GET /api/categories 304 51.117 ms - - req=1d5a408c-7653-4a0e-8716-70952b652efa {"service":"back-end"}
+2026-06-06T16:28:59.624Z [info] GET /api/users/profile 304 149.021 ms - - req=be5f022b-b897-48af-9136-30a0dfe33859 {"service":"back-end"}
+2026-06-06T16:28:59.707Z [info] GET /api/carts/me 304 220.160 ms - - req=9c6bb366-e389-4e21-9737-7ab73e958843 {"service":"back-end"}
+2026-06-06T16:28:59.783Z [info] GET /api/reviews/my-reviews 304 297.901 ms - - req=d2bc724d-9e8b-4fca-bb63-75a9a2e7f616 {"service":"back-end"}
+2026-06-06T16:28:59.855Z [info] GET /api/carts/me 304 147.021 ms - - req=3e3b9682-71e9-4119-9ea0-297b05901dc0 {"service":"back-end"}
+2026-06-06T16:29:02.621Z [info] GET /api/categories 304 78.036 ms - - req=de72fb40-3613-436c-8b03-5566effe3589 {"service":"back-end"}
+2026-06-06T16:29:02.624Z [info] GET /api/categories/catetory/shop-cho-cun 304 74.500 ms - - req=9faa79de-1033-4166-b747-b6ea1a547fc3 {"service":"back-end"}
+2026-06-06T16:29:02.691Z [info] GET /api/categories 304 65.604 ms - - req=b67bd045-b85f-4147-9b32-f50025a045ed {"service":"back-end"}
+2026-06-06T16:29:02.731Z [info] GET /api/carts/me 304 183.373 ms - - req=67bfe250-e108-4bbf-a759-1e1857d6376d {"service":"back-end"}
+2026-06-06T16:29:02.761Z [info] GET /api/categories 304 64.142 ms - - req=3b75fb1d-bc94-46b3-95f6-370ca0026b00 {"service":"back-end"}
+2026-06-06T16:29:02.774Z [info] GET /api/users/profile 304 228.561 ms - - req=496fce41-b947-4e80-bc6c-3df672930569 {"service":"back-end"}
+2026-06-06T16:29:02.834Z [info] GET /api/carts/me 304 100.361 ms - - req=1b2c7770-69bd-47f7-b620-6c48ced30ffc {"service":"back-end"}
+2026-06-06T16:29:07.398Z [info] GET /api/categories 304 79.284 ms - - req=4c3ba4a3-788f-4057-a71e-1746c752bab3 {"service":"back-end"}
+2026-06-06T16:29:07.478Z [info] GET /api/carts/me 304 157.818 ms - - req=f00c5213-125c-45d3-8ac1-8f2d2b62d2d2 {"service":"back-end"}
+2026-06-06T16:29:07.482Z [info] GET /api/users/profile 304 164.987 ms - - req=a0090c9a-82a1-4a0a-9c0a-0ab2b3913767 {"service":"back-end"}
+2026-06-06T16:29:07.533Z [info] GET /api/users/shipping-address 304 211.886 ms - - req=abd1cacc-a588-41e3-b677-b9d86a516743 {"service":"back-end"}
+2026-06-06T16:29:07.581Z [info] GET /api/carts/me 304 102.027 ms - - req=400e74b4-4f98-4fa2-8c76-295136577e45 {"service":"back-end"}
+2026-06-06T16:29:10.227Z [info] POST /api/orders 201 259.759 ms - 614 req=260036b3-a387-4f25-8c83-49bb6ae8c79d {"service":"back-end"}
+2026-06-06T16:29:10.337Z [info] POST /api/payments/vnpay/create 200 100.654 ms - 597 req=1b418343-8747-4dd5-870f-676205d47ac6 {"service":"back-end"}
+2026-06-06T16:30:56.460Z [info] POST /api/orders 201 251.636 ms - 614 req=34703045-e1db-4bb8-9cb2-7cf8f1673708 {"service":"back-end"}
+2026-06-06T16:30:56.569Z [info] POST /api/payments/vnpay/create 200 98.492 ms - 597 req=7bb37fdc-13c2-4376-94b0-a49bccdd1108 {"service":"back-end"}
+2026-06-06T16:30:59.746Z [info] GET /api/users/profile 304 147.174 ms - - req=468e487c-30b3-42db-b57f-5d6765b6431e {"service":"back-end"}
+2026-06-06T16:31:00.007Z [info] GET /api/orders?user_id=6a00b69d0af467688ea55f1b 200 252.487 ms - 757041 req=49772945-0bde-48b4-b02b-b0e46a18748a {"service":"back-end"}
+2026-06-06T16:31:00.463Z [info] GET /api/categories 304 51.851 ms - - req=bfde7137-9f53-4656-a892-d5416ff8e572 {"service":"back-end"}
+2026-06-06T16:31:00.561Z [info] GET /api/carts/me 304 146.410 ms - - req=90ac33c5-4d48-43dc-8719-d22cd4ed7f92 {"service":"back-end"}
+2026-06-06T16:31:00.609Z [info] GET /api/users/profile 304 203.746 ms - - req=1d91a69e-3a11-45d5-bc4c-604cd21fceb3 {"service":"back-end"}
+2026-06-06T16:31:00.663Z [info] GET /api/carts/me 304 100.845 ms - - req=dbb5f56e-9f1a-495b-9d71-9c641319070c {"service":"back-end"}
+2026-06-06T16:31:00.757Z [info] GET /api/reviews/my-reviews 304 340.275 ms - - req=8c00008e-4179-4d77-b3a1-9e939588a99c {"service":"back-end"}
+2026-06-06T16:31:02.415Z [info] GET /api/categories/catetory/shop-cho-cun 304 71.539 ms - - req=317fa2a4-788a-4fb0-ba41-de78220af47b {"service":"back-end"}
+2026-06-06T16:31:02.418Z [info] GET /api/categories 304 80.253 ms - - req=b48ff087-f019-4173-8abc-a4bbf2347a4d {"service":"back-end"}
+2026-06-06T16:31:02.488Z [info] GET /api/categories 304 69.025 ms - - req=b13e1c91-0024-480d-84c9-77767a136168 {"service":"back-end"}
+2026-06-06T16:31:02.524Z [info] GET /api/carts/me 304 182.592 ms - - req=23f6fe3f-950c-436a-8c88-ef38b78461c5 {"service":"back-end"}
+2026-06-06T16:31:02.551Z [info] GET /api/users/profile 304 212.196 ms - - req=81e9f15f-972f-43de-a4db-9142ae78497d {"service":"back-end"}
+2026-06-06T16:31:02.566Z [info] GET /api/categories 304 75.506 ms - - req=fee41e58-8e55-4895-8cb9-9a267e9ac559 {"service":"back-end"}
+2026-06-06T16:31:02.622Z [info] GET /api/carts/me 304 97.556 ms - - req=9fa96bf9-b4db-4b9e-b195-bee02181f70a {"service":"back-end"}
+2026-06-06T16:31:04.561Z [info] GET /api/categories 304 50.667 ms - - req=f7514dd4-12fc-4fb6-b127-16aeb0108372 {"service":"back-end"}
+2026-06-06T16:31:04.676Z [info] GET /api/users/shipping-address 304 159.359 ms - - req=3b54f8ef-8df4-4b45-8bd5-3ca3b166aca9 {"service":"back-end"}
+2026-06-06T16:31:04.719Z [info] GET /api/users/profile 304 205.693 ms - - req=6cb894e0-27dc-4e71-b26f-0efa169afce3 {"service":"back-end"}
+2026-06-06T16:31:04.722Z [info] GET /api/carts/me 304 207.122 ms - - req=b6ba3848-9da0-43fc-955e-62a912904df4 {"service":"back-end"}
+2026-06-06T16:31:04.862Z [info] GET /api/carts/me 304 137.599 ms - - req=504c935c-f2dc-4f3a-9bba-ad15c99b4446 {"service":"back-end"}
+2026-06-06T16:31:07.906Z [info] POST /api/orders 201 342.812 ms - 614 req=275eae05-0195-4e4f-8d31-b9828dfe53e9 {"service":"back-end"}
+2026-06-06T16:31:08.052Z [info] POST /api/payments/vnpay/create 200 138.706 ms - 597 req=4e7e0882-736f-4949-b22d-d588094410e2 {"service":"back-end"}
+2026-06-06T16:31:11.284Z [info] GET /api/users/profile 304 205.463 ms - - req=e97e348c-95fa-4f08-9160-b9b12ccb1464 {"service":"back-end"}
+2026-06-06T16:31:11.586Z [info] GET /api/orders?user_id=6a00b69d0af467688ea55f1b 200 291.990 ms - 778260 req=fd619a17-cf05-463f-a6fa-bfffd80b68d2 {"service":"back-end"}
+2026-06-06T16:31:11.990Z [info] GET /api/categories 304 67.935 ms - - req=04b8e154-68b1-4713-a94e-fafbacf9d8bd {"service":"back-end"}
+2026-06-06T16:31:12.073Z [info] GET /api/carts/me 304 148.681 ms - - req=53390052-5ac9-403b-a591-709f507f38eb {"service":"back-end"}
+2026-06-06T16:31:12.122Z [info] GET /api/users/profile 304 204.975 ms - - req=1bbf5f6b-f1f8-40a3-a650-7a37a8ee0aaa {"service":"back-end"}
+2026-06-06T16:31:12.172Z [info] GET /api/carts/me 304 96.813 ms - - req=bcb3324d-2a09-47b1-b006-6e2934e60217 {"service":"back-end"}
+2026-06-06T16:31:12.209Z [info] GET /api/reviews/my-reviews 304 285.978 ms - - req=7848c430-9c3b-4fa3-aac8-7f5704ada6cf {"service":"back-end"}
+2026-06-06T16:31:23.061Z [info] Redis client connecting {"service":"back-end"}
+2026-06-06T16:31:23.073Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-06T16:31:23.085Z [info] Redis client ready {"service":"back-end"}
+2026-06-06T16:31:23.086Z [info] Redis client connected {"service":"back-end"}
+2026-06-06T16:31:23.091Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-06T16:31:23.097Z [info] Loading .env {"service":"back-end","envPath":"D:\\Project\\PetShop-Website\\back-end\\.env"}
+2026-06-06T16:31:23.098Z [info] .env file loaded successfully {"service":"back-end"}
+2026-06-06T16:31:23.153Z [info] Background workers initialized {"service":"back-end"}
+2026-06-06T16:31:23.170Z [info] Server is running: http://localhost:5000 {"service":"back-end"}
+2026-06-06T16:31:23.818Z [info] MongoDB connected {"service":"back-end"}
+2026-06-06T16:31:23.819Z [info] Connected to MongoDB {"service":"back-end"}
+2026-06-06T16:31:24.038Z [info] GET /api/categories 304 543.716 ms - - req=aedf2907-c5c3-437c-bfed-0d223e664e8a {"service":"back-end"}
+2026-06-06T16:31:24.476Z [info] GET /api/users/shipping-address 304 962.924 ms - - req=d4676839-69ce-46a0-863b-8d0dbab17a17 {"service":"back-end"}
+2026-06-06T16:31:24.597Z [info] GET /api/carts/me 304 1085.536 ms - - req=52f8bc11-1fde-4228-8970-4a0822467c74 {"service":"back-end"}
+2026-06-06T16:31:24.612Z [info] GET /api/users/profile 304 1106.823 ms - - req=ec894a91-f2ca-41d8-88e7-ea0bae8868ab {"service":"back-end"}
+2026-06-06T16:31:25.298Z [info] GET /api/carts/me 304 698.603 ms - - req=4c87735d-7c5c-49bd-bb62-255387a0ac9c {"service":"back-end"}
+2026-06-06T16:31:26.491Z [info] GET /api/categories 304 69.289 ms - - req=5d91a6cd-4b91-437c-879b-a05002def204 {"service":"back-end"}
+2026-06-06T16:31:26.497Z [info] GET /api/categories/catetory/shop-cho-cun 304 68.283 ms - - req=3e82749a-777b-4386-9dda-e663afde86c0 {"service":"back-end"}
+2026-06-06T16:31:26.561Z [info] GET /api/categories 304 68.623 ms - - req=6470660c-7aed-4bc5-8ee5-f8c0e6b0083c {"service":"back-end"}
+2026-06-06T16:31:26.572Z [info] GET /api/carts/me 304 145.446 ms - - req=8ec54917-1e7c-4fa2-b455-7ecf725e9720 {"service":"back-end"}
+2026-06-06T16:31:26.630Z [info] GET /api/categories 304 67.766 ms - - req=a213ccfb-7b8e-4c58-8136-ccfb12fd8047 {"service":"back-end"}
+2026-06-06T16:31:26.642Z [info] GET /api/users/profile 304 217.797 ms - - req=72ae1dcf-f8db-4b86-b01a-224d1117588d {"service":"back-end"}
+2026-06-06T16:31:26.675Z [info] GET /api/carts/me 304 101.543 ms - - req=849e84c1-9c44-4014-91a9-bb2af6d3c7ca {"service":"back-end"}
+2026-06-06T16:31:28.970Z [info] GET /api/categories 304 47.463 ms - - req=1cfb0624-db12-45c9-be00-105621122c51 {"service":"back-end"}
+2026-06-06T16:31:29.121Z [info] GET /api/carts/me 304 195.269 ms - - req=c41eb706-a6f9-4789-9c65-5ad2c5dffdc3 {"service":"back-end"}
+2026-06-06T16:31:29.125Z [info] GET /api/users/shipping-address 304 197.824 ms - - req=abe9425d-4d37-446c-a47f-3da544c9586b {"service":"back-end"}
+2026-06-06T16:31:29.152Z [info] GET /api/users/profile 304 227.517 ms - - req=d85037d5-e4b4-4623-8eb4-1679c8551094 {"service":"back-end"}
+2026-06-06T16:31:29.253Z [info] GET /api/carts/me 304 130.916 ms - - req=42b19dc9-8231-4ed9-9122-4fadbd02ad03 {"service":"back-end"}
+2026-06-06T16:31:34.337Z [info] POST /api/orders 201 358.220 ms - 615 req=bc565aa7-d564-447f-9237-52079a5a2b24 {"service":"back-end"}
+2026-06-06T16:31:34.486Z [info] POST /api/payments/vnpay/create 200 140.481 ms - 598 req=c63c43cd-51ee-47c7-8f94-396a50775285 {"service":"back-end"}
+2026-06-06T16:31:37.716Z [info] GET /api/users/profile 304 198.991 ms - - req=fa500e63-5abe-4de3-af1c-d96745523c0f {"service":"back-end"}
+2026-06-06T16:31:38.037Z [info] GET /api/orders?user_id=6a00b69d0af467688ea55f1b 200 311.613 ms - 799293 req=83d652b1-f685-48e2-b3cb-92272b08dd57 {"service":"back-end"}
+2026-06-06T16:31:38.505Z [info] GET /api/categories 304 67.673 ms - - req=ea5f4334-ea22-4251-8627-7a275641d25a {"service":"back-end"}
+2026-06-06T16:31:38.579Z [info] GET /api/carts/me 304 138.179 ms - - req=8df90510-f33b-41d9-83fb-e13de3723ff3 {"service":"back-end"}
+2026-06-06T16:31:38.649Z [info] GET /api/users/profile 304 216.251 ms - - req=0aa32ce4-38a7-4998-a245-3e138d5263d0 {"service":"back-end"}
+2026-06-06T16:31:38.677Z [info] GET /api/carts/me 304 95.718 ms - - req=3afeaf3f-acdd-435a-a61c-f37be4d3c717 {"service":"back-end"}
+2026-06-06T16:31:38.786Z [info] GET /api/reviews/my-reviews 304 346.920 ms - - req=15aa39b8-2ffc-41f6-bb6b-04d77ca5386c {"service":"back-end"}
+2026-06-06T16:33:05.492Z [info] Redis client connecting {"service":"back-end"}
+2026-06-06T16:33:05.501Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-06T16:33:05.503Z [info] Redis client ready {"service":"back-end"}
+2026-06-06T16:33:05.509Z [info] Redis client connected {"service":"back-end"}
+2026-06-06T16:33:05.513Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-06T16:33:05.516Z [info] Loading .env {"service":"back-end","envPath":"D:\\Project\\PetShop-Website\\back-end\\.env"}
+2026-06-06T16:33:05.517Z [info] .env file loaded successfully {"service":"back-end"}
+2026-06-06T16:33:05.551Z [info] Background workers initialized {"service":"back-end"}
+2026-06-06T16:33:05.558Z [info] Server is running: http://localhost:5000 {"service":"back-end"}
+2026-06-06T16:33:06.136Z [info] MongoDB connected {"service":"back-end"}
+2026-06-06T16:33:06.137Z [info] Connected to MongoDB {"service":"back-end"}
+2026-06-06T16:33:44.786Z [info] Redis client connecting {"service":"back-end"}
+2026-06-06T16:33:44.793Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-06T16:33:44.801Z [info] Redis client ready {"service":"back-end"}
+2026-06-06T16:33:44.802Z [info] Redis client connected {"service":"back-end"}
+2026-06-06T16:33:44.807Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-06T16:33:44.809Z [info] Loading .env {"service":"back-end","envPath":"D:\\Project\\PetShop-Website\\back-end\\.env"}
+2026-06-06T16:33:44.810Z [info] .env file loaded successfully {"service":"back-end"}
+2026-06-06T16:33:44.846Z [info] Background workers initialized {"service":"back-end"}
+2026-06-06T16:33:44.852Z [info] Server is running: http://localhost:5000 {"service":"back-end"}
+2026-06-06T16:33:45.571Z [info] MongoDB connected {"service":"back-end"}
+2026-06-06T16:33:45.573Z [info] Connected to MongoDB {"service":"back-end"}
+2026-06-06T16:33:49.622Z [info] GET /api/categories 304 86.395 ms - - req=4170dd6b-a7c1-4dd0-8634-e3806906c2a9 {"service":"back-end"}
+2026-06-06T16:33:49.639Z [info] GET /api/categories/catetory/shop-cho-cun 304 66.441 ms - - req=bce98b2d-dd51-4549-9c21-3e84b71a26ea {"service":"back-end"}
+2026-06-06T16:33:49.694Z [info] GET /api/categories 304 70.855 ms - - req=99b7de08-af19-4135-903e-664e1b1de308 {"service":"back-end"}
+2026-06-06T16:33:49.722Z [info] GET /api/carts/me 304 169.784 ms - - req=d87030dd-5606-4567-9461-190978aad476 {"service":"back-end"}
+2026-06-06T16:33:49.774Z [info] GET /api/users/profile 304 208.374 ms - - req=93decfd7-d496-45ea-b5fe-2c46d0a169f5 {"service":"back-end"}
+2026-06-06T16:33:49.783Z [info] GET /api/categories 304 83.297 ms - - req=7115ee11-724e-4e61-b6b2-64b87867fc25 {"service":"back-end"}
+2026-06-06T16:33:49.853Z [info] GET /api/carts/me 304 112.815 ms - - req=99f91a3b-3bf7-4a2e-a345-7f7b56e27c0b {"service":"back-end"}
+2026-06-06T16:33:52.135Z [info] GET /api/categories 304 49.202 ms - - req=ce1aad1a-74c2-45d9-b90e-246bceff79b5 {"service":"back-end"}
+2026-06-06T16:33:52.286Z [info] GET /api/carts/me 304 195.786 ms - - req=fe58fa34-b590-43d5-84ae-13d96334c06d {"service":"back-end"}
+2026-06-06T16:33:52.289Z [info] GET /api/users/shipping-address 304 196.586 ms - - req=99d24592-f1cf-44c8-8729-d4f1411d667a {"service":"back-end"}
+2026-06-06T16:33:52.303Z [info] GET /api/users/profile 304 216.041 ms - - req=55134bee-2d79-45ec-883d-7b84cf13f330 {"service":"back-end"}
+2026-06-06T16:33:52.419Z [info] GET /api/carts/me 304 128.553 ms - - req=663613f4-4119-46ca-adac-3c05b8fb884b {"service":"back-end"}
+2026-06-06T16:33:56.076Z [info] POST /api/orders 201 336.708 ms - 614 req=bfebc5f2-5e9a-4ff4-8bb8-84f98f9fef78 {"service":"back-end"}
+2026-06-06T16:33:56.219Z [info] POST /api/payments/vnpay/create 200 132.488 ms - 617 req=a195c99d-44f6-4bfb-a310-14b0f7f8b960 {"service":"back-end"}
+2026-06-06T16:33:59.435Z [info] GET /api/users/profile 304 189.253 ms - - req=915fc378-7cfb-4acf-a841-3e052f486815 {"service":"back-end"}
+2026-06-06T16:33:59.735Z [info] GET /api/orders?user_id=6a00b69d0af467688ea55f1b 200 289.938 ms - 820512 req=cc28881e-5de5-486f-a42c-1a6353f36887 {"service":"back-end"}
+2026-06-06T16:34:00.146Z [info] GET /api/categories 304 64.357 ms - - req=e99fff77-ba23-46cd-8d10-a03afe624dde {"service":"back-end"}
+2026-06-06T16:34:00.245Z [info] GET /api/carts/me 304 159.960 ms - - req=6f7ecc5b-e09c-4e53-9077-661f69ab130c {"service":"back-end"}
+2026-06-06T16:34:00.292Z [info] GET /api/users/profile 304 215.258 ms - - req=13dc7450-6a90-402c-a56b-5b8e276f253c {"service":"back-end"}
+2026-06-06T16:34:00.345Z [info] GET /api/carts/me 304 97.534 ms - - req=8505d2f0-decb-4626-b838-aee6a6112c48 {"service":"back-end"}
+2026-06-06T16:34:00.422Z [info] GET /api/reviews/my-reviews 304 338.284 ms - - req=c4105e73-13d8-418f-9b43-f84fd46167ae {"service":"back-end"}
+2026-06-06T16:34:48.795Z [info] Redis client connecting {"service":"back-end"}
+2026-06-06T16:34:48.803Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-06T16:34:48.805Z [info] Redis client ready {"service":"back-end"}
+2026-06-06T16:34:48.810Z [info] Redis client connected {"service":"back-end"}
+2026-06-06T16:34:48.814Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-06T16:34:48.816Z [info] Loading .env {"service":"back-end","envPath":"D:\\Project\\PetShop-Website\\back-end\\.env"}
+2026-06-06T16:34:48.817Z [info] .env file loaded successfully {"service":"back-end"}
+2026-06-06T16:34:48.848Z [info] Background workers initialized {"service":"back-end"}
+2026-06-06T16:34:48.854Z [info] Server is running: http://localhost:5000 {"service":"back-end"}
+2026-06-06T16:34:49.604Z [info] MongoDB connected {"service":"back-end"}
+2026-06-06T16:34:49.606Z [info] Connected to MongoDB {"service":"back-end"}
+2026-06-06T16:36:07.609Z [info] Redis client connecting {"service":"back-end"}
+2026-06-06T16:36:07.616Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-06T16:36:07.625Z [info] Redis client ready {"service":"back-end"}
+2026-06-06T16:36:07.625Z [info] Redis client connected {"service":"back-end"}
+2026-06-06T16:36:07.629Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-06T16:36:07.631Z [info] Loading .env {"service":"back-end","envPath":"D:\\Project\\PetShop-Website\\back-end\\.env"}
+2026-06-06T16:36:07.632Z [info] .env file loaded successfully {"service":"back-end"}
+2026-06-06T16:36:07.662Z [info] Background workers initialized {"service":"back-end"}
+2026-06-06T16:36:07.667Z [info] Server is running: http://localhost:5000 {"service":"back-end"}
+2026-06-06T16:36:08.374Z [info] MongoDB connected {"service":"back-end"}
+2026-06-06T16:36:08.376Z [info] Connected to MongoDB {"service":"back-end"}
+2026-06-06T16:37:20.141Z [info] GET /api/products/product/sales 200 106.953 ms - 30210 req=17129e05-bcf1-430f-820a-45d7405d63ea {"service":"back-end"}
+2026-06-06T16:37:20.252Z [info] GET /api/users/profile 304 247.802 ms - - req=e28388b2-5575-4e17-b57e-5cee12e5cad1 {"service":"back-end"}
+2026-06-06T16:37:20.300Z [info] GET /api/categories/shop-cho-cun 200 271.912 ms - 81961 req=59890edb-a989-4d21-89b6-332214d24559 {"service":"back-end"}
+2026-06-06T16:37:20.305Z [info] GET /api/categories/shop-cho-meo 304 274.229 ms - - req=b65eca33-7ad9-45e9-92bb-104c976ecfb1 {"service":"back-end"}
+2026-06-06T16:37:20.348Z [info] GET /api/products 200 323.296 ms - 185091 req=da869870-6ca5-4e82-9cb8-7fe7259b3ee4 {"service":"back-end"}
+2026-06-06T16:37:20.614Z [info] GET /api/orders?user_id=6a00b69d0af467688ea55f1b 200 258.240 ms - 820512 req=9bb3a014-ea3c-4dfa-a77a-dedaa0387a34 {"service":"back-end"}
+2026-06-06T16:37:21.179Z [info] GET /api/categories 304 50.904 ms - - req=5f95143d-840b-4359-be3e-1fc427b93c38 {"service":"back-end"}
+2026-06-06T16:37:21.265Z [info] GET /api/users/profile 304 143.064 ms - - req=ecf0629b-fe76-4123-a4be-1caf1246a029 {"service":"back-end"}
+2026-06-06T16:37:21.343Z [info] GET /api/carts/me 304 208.241 ms - - req=66dba290-56d3-46b2-8e04-f8fe94821f64 {"service":"back-end"}
+2026-06-06T16:37:21.481Z [info] GET /api/reviews/my-reviews 304 348.935 ms - - req=3343525d-de9e-46ae-9101-a7cedbd559d2 {"service":"back-end"}
+2026-06-06T16:37:21.484Z [info] GET /api/carts/me 304 138.975 ms - - req=2f4a0713-bedb-4b4f-82bc-50aac4531bf4 {"service":"back-end"}
+2026-06-06T16:37:23.963Z [info] GET /api/categories/catetory/shop-cho-cun 304 50.680 ms - - req=b8387b2d-7c0b-4ecb-b301-7da75c9ab162 {"service":"back-end"}
+2026-06-06T16:37:23.973Z [info] GET /api/categories 304 70.135 ms - - req=8faec631-61c5-4fe8-b8a8-28ff05fd756c {"service":"back-end"}
+2026-06-06T16:37:24.044Z [info] GET /api/categories 304 69.271 ms - - req=ac7ad667-4b02-404f-9276-351d3d1d0d4d {"service":"back-end"}
+2026-06-06T16:37:24.100Z [info] GET /api/carts/me 304 193.636 ms - - req=4d112300-9f7d-4eed-8a55-68304cdf78ee {"service":"back-end"}
+2026-06-06T16:37:24.105Z [info] GET /api/users/profile 304 201.008 ms - - req=a257a3ce-5ff2-42bb-b756-e7d371b2ab56 {"service":"back-end"}
+2026-06-06T16:37:24.122Z [info] GET /api/categories 304 76.584 ms - - req=51d21899-c147-4429-9d65-c9fa09926d67 {"service":"back-end"}
+2026-06-06T16:37:24.232Z [info] GET /api/carts/me 304 130.649 ms - - req=a5b782d5-7488-4056-a1b8-bd5538a0612d {"service":"back-end"}
+2026-06-06T16:37:26.168Z [info] GET /api/categories 304 65.362 ms - - req=3fbec54c-ad06-47c0-9004-f88ffd22571d {"service":"back-end"}
+2026-06-06T16:37:26.275Z [info] GET /api/users/shipping-address 304 163.111 ms - - req=19c30478-ede1-4518-8341-153c9d2a659c {"service":"back-end"}
+2026-06-06T16:37:26.322Z [info] GET /api/users/profile 304 211.813 ms - - req=48bc6133-a10a-4be2-94bb-99a9c872e541 {"service":"back-end"}
+2026-06-06T16:37:26.326Z [info] GET /api/carts/me 304 218.311 ms - - req=e5daefb9-9db3-44c6-8edf-091ccbd996fd {"service":"back-end"}
+2026-06-06T16:37:26.469Z [info] GET /api/carts/me 304 139.762 ms - - req=6037e625-caf3-49db-a2ea-525404b5eafc {"service":"back-end"}
+2026-06-06T16:37:28.843Z [info] POST /api/orders 400 205.834 ms - 102 req=6213dcae-b27d-4098-b093-9f1f4aacaf8a {"service":"back-end"}
+2026-06-06T16:37:35.015Z [info] GET /api/categories/catetory/shop-cho-cun 304 47.567 ms - - req=469eab07-e056-4300-8620-3820cb64ae06 {"service":"back-end"}
+2026-06-06T16:37:35.043Z [info] GET /api/categories 304 79.132 ms - - req=a07410f3-156d-4a11-8ea7-8b13a2aecebc {"service":"back-end"}
+2026-06-06T16:37:35.113Z [info] GET /api/categories 304 68.694 ms - - req=995e5502-cd99-49d9-be17-90b25c4da905 {"service":"back-end"}
+2026-06-06T16:37:35.166Z [info] GET /api/carts/me 304 197.617 ms - - req=2e1d32a4-4dae-4c24-b012-0a1f189e212a {"service":"back-end"}
+2026-06-06T16:37:35.173Z [info] GET /api/users/profile 304 207.513 ms - - req=a300ec54-8f4a-4e4e-862b-e86582db04b6 {"service":"back-end"}
+2026-06-06T16:37:35.185Z [info] GET /api/categories 304 70.822 ms - - req=67665193-5964-44a2-ba38-a6e22ad58a62 {"service":"back-end"}
+2026-06-06T16:37:35.296Z [info] GET /api/carts/me 304 128.171 ms - - req=b42470dd-2ed7-4dbd-ac3d-1ae4a492d1a2 {"service":"back-end"}
+2026-06-06T16:37:36.903Z [info] GET /api/categories 304 75.844 ms - - req=7fe777f7-6c0e-445a-8ad8-18e97430f144 {"service":"back-end"}
+2026-06-06T16:37:36.905Z [info] GET /api/categories/catetory/shop-cho-cun 304 73.177 ms - - req=ed110c6d-3fbb-4476-90b8-9f2f5f4505d1 {"service":"back-end"}
+2026-06-06T16:37:36.982Z [info] GET /api/carts/me 304 144.302 ms - - req=278fea87-4a58-448a-8e53-00085aabd2e2 {"service":"back-end"}
+2026-06-06T16:37:37.031Z [info] GET /api/categories 304 48.246 ms - - req=c801e1ed-af53-4a1b-9522-0757a9658c56 {"service":"back-end"}
+2026-06-06T16:37:37.044Z [info] GET /api/users/profile 304 214.762 ms - - req=edf6c416-dcab-4cb8-8493-aa78c482489d {"service":"back-end"}
+2026-06-06T16:37:37.059Z [info] GET /api/products/product/sales 304 150.347 ms - - req=f16fa0d8-dfb3-4a78-be66-a21c66588c89 {"service":"back-end"}
+2026-06-06T16:37:37.079Z [info] GET /api/products 304 238.036 ms - - req=52f09a41-9be9-46da-8faa-dde3a809ecf1 {"service":"back-end"}
+2026-06-06T16:37:37.122Z [info] GET /api/categories 304 76.210 ms - - req=09807b3c-bdc7-42e0-b274-d759347fa31d {"service":"back-end"}
+2026-06-06T16:37:37.137Z [info] GET /api/carts/me 304 103.737 ms - - req=85c96338-bd9e-4747-b4e7-398355bbfc86 {"service":"back-end"}
+2026-06-06T16:37:37.273Z [info] GET /api/categories/shop-cho-meo 304 366.804 ms - - req=e4650ba2-8ac7-45fc-b61a-0fb1da010aab {"service":"back-end"}
+2026-06-06T16:37:41.305Z [info] Redis client connecting {"service":"back-end"}
+2026-06-06T16:37:41.315Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-06T16:37:41.318Z [info] Redis client ready {"service":"back-end"}
+2026-06-06T16:37:41.325Z [info] Redis client connected {"service":"back-end"}
+2026-06-06T16:37:41.330Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-06T16:37:41.333Z [info] Loading .env {"service":"back-end","envPath":"D:\\Project\\PetShop-Website\\back-end\\.env"}
+2026-06-06T16:37:41.334Z [info] .env file loaded successfully {"service":"back-end"}
+2026-06-06T16:37:41.376Z [info] Background workers initialized {"service":"back-end"}
+2026-06-06T16:37:41.383Z [info] Server is running: http://localhost:5000 {"service":"back-end"}
+2026-06-06T16:37:42.077Z [info] MongoDB connected {"service":"back-end"}
+2026-06-06T16:37:42.079Z [info] Connected to MongoDB {"service":"back-end"}
+2026-06-06T16:37:43.216Z [info] GET /api/categories 304 77.890 ms - - req=7425d8a4-8fd1-4c47-9aba-cffbd3841d6a {"service":"back-end"}
+2026-06-06T16:37:43.314Z [info] GET /api/carts/me 304 163.814 ms - - req=2c007ce8-e437-454c-a983-850dac51fb2b {"service":"back-end"}
+2026-06-06T16:37:43.319Z [info] GET /api/users/shipping-address 304 165.675 ms - - req=fa7543ba-82f1-4367-a18a-e53fb2376523 {"service":"back-end"}
+2026-06-06T16:37:43.345Z [info] GET /api/users/profile 304 198.936 ms - - req=7fbc3bc6-e5b3-4021-8aca-7c04eaaf7e60 {"service":"back-end"}
+2026-06-06T16:37:43.432Z [info] GET /api/carts/me 304 110.831 ms - - req=90710aec-e64f-438f-9b15-9c1be7153c72 {"service":"back-end"}
+2026-06-06T16:37:45.543Z [info] POST /api/orders 201 272.737 ms - 614 req=d428e9d2-2f10-4aa5-95a7-3134f1635b35 {"service":"back-end"}
+2026-06-06T16:37:45.662Z [info] POST /api/payments/vnpay/create 200 110.595 ms - 617 req=a6c7b88f-1dc6-4262-adc4-a15bbf8571ff {"service":"back-end"}
+2026-06-06T16:39:13.218Z [info] Redis client connecting {"service":"back-end"}
+2026-06-06T16:39:13.225Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-06T16:39:13.227Z [info] Redis client ready {"service":"back-end"}
+2026-06-06T16:39:13.232Z [info] Redis client connected {"service":"back-end"}
+2026-06-06T16:39:13.236Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-06T16:39:13.239Z [info] Loading .env {"service":"back-end","envPath":"D:\\Project\\PetShop-Website\\back-end\\.env"}
+2026-06-06T16:39:13.240Z [info] .env file loaded successfully {"service":"back-end"}
+2026-06-06T16:39:13.274Z [info] Background workers initialized {"service":"back-end"}
+2026-06-06T16:39:13.280Z [info] Server is running: http://localhost:5000 {"service":"back-end"}
+2026-06-06T16:39:13.897Z [info] MongoDB connected {"service":"back-end"}
+2026-06-06T16:39:13.899Z [info] Connected to MongoDB {"service":"back-end"}
+2026-06-06T16:39:18.002Z [info] Redis client connecting {"service":"back-end"}
+2026-06-06T16:39:18.009Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-06T16:39:18.017Z [info] Redis client ready {"service":"back-end"}
+2026-06-06T16:39:18.018Z [info] Redis client connected {"service":"back-end"}
+2026-06-06T16:39:18.021Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-06T16:39:18.024Z [info] Loading .env {"service":"back-end","envPath":"D:\\Project\\PetShop-Website\\back-end\\.env"}
+2026-06-06T16:39:18.024Z [info] .env file loaded successfully {"service":"back-end"}
+2026-06-06T16:39:18.054Z [info] Background workers initialized {"service":"back-end"}
+2026-06-06T16:39:18.060Z [info] Server is running: http://localhost:5000 {"service":"back-end"}
+2026-06-06T16:39:18.600Z [info] MongoDB connected {"service":"back-end"}
+2026-06-06T16:39:18.601Z [info] Connected to MongoDB {"service":"back-end"}
+2026-06-06T16:40:32.868Z [info] POST /api/orders 201 360.573 ms - 614 req=22571c01-c25e-4d94-9cef-c676ff869f80 {"service":"back-end"}
+2026-06-06T16:40:33.014Z [info] === VNPAY DEBUG === {"service":"back-end","TmnCode":"C7SJCYP6","Amount":6000000,"CreateDate":"20260606234033","SignData":"vnp_Amount=6000000&vnp_Command=pay&vnp_CreateDate=20260606234033&vnp_CurrCode=VND&vnp_IpAddr=127.0.0.1&vnp_Locale=vn&vnp_OrderInfo=Thanh+to%C3%A1n+%C4%91%C6%A1n+h%C3%A0ng+6a244d807419a2794dedb4be&vnp_OrderType=other&vnp_ReturnUrl=http%3A%2F%2Flocalhost%3A5000%2Fapi%2Fpayments%2Fvnpay%2Freturn&vnp_TmnCode=C7SJCYP6&vnp_TxnRef=6a244d807419a2794dedb4be&vnp_Version=2.1.0","SecureHash":"f51fb4d04728375d3e6d952198359501175b9ced7483a57e6509aaba3dee23ae2a65b0103df83b88501b9a10c7fbcc33252a69ec70e7a5b575aea30fa0d5cb77","PaymentUrl":"https://sandbox.vnpayment.vn/paymentv2/vpcpay.html?vnp_Amount=6000000&vnp_Command=pay&vnp_CreateDate=20260606234033&vnp_CurrCode=VND&vnp_IpAddr=127.0.0.1&vnp_Locale=vn&vnp_OrderInfo=Thanh+to%C3%A1n+%C4%91%C6%A1n+h%C3%A0ng+6a244d807419a2794dedb4be&vnp_OrderType=other&vnp_ReturnUrl=http%3A%2F%2Flocalhost%3A5000%2Fapi%2Fpayments%2Fvnpay%2Freturn&vnp_TmnCode=C7SJCYP6&vnp_TxnRef=6a244d807419a2794dedb4be&vnp_Version=2.1.0&vnp_SecureHash=f51fb4d04728375d3e6d952198359501175b9ced7483a57e6509aaba3dee23ae2a65b0103df83b88501b9a10c7fbcc33252a69ec70e7a5b575aea30fa0d5cb77"}
+2026-06-06T16:40:33.015Z [info] POST /api/payments/vnpay/create 200 137.800 ms - 617 req=a09d4343-3004-4742-89a8-21882c313999 {"service":"back-end"}
+2026-06-06T16:40:35.703Z [info] GET /api/categories 304 109.959 ms - - req=f5684b54-b21e-4291-b336-c8db09a7b8dc {"service":"back-end"}
+2026-06-06T16:40:35.889Z [info] GET /api/users/profile 304 288.628 ms - - req=e365e6f1-f1ec-4b27-809d-f74049c557e8 {"service":"back-end"}
+2026-06-06T16:40:36.024Z [info] GET /api/users/shipping-address 304 133.470 ms - - req=c1233bec-15ef-40dd-a987-5736e67ce20d {"service":"back-end"}
+2026-06-06T16:40:36.057Z [info] GET /api/categories/shop-cho-cun 304 446.400 ms - - req=a7ddf735-39e3-4fa7-8dc4-e6dc464a68ee {"service":"back-end"}
+2026-06-06T16:40:36.068Z [info] GET /api/carts/me 304 362.312 ms - - req=985cac17-7881-42dc-90d6-d888882ef3cc {"service":"back-end"}
+2026-06-06T16:40:36.074Z [info] GET /api/categories/shop-cho-meo 200 459.879 ms - 103131 req=8ff8257e-4150-499d-a60b-80fc6d06a507 {"service":"back-end"}
+2026-06-06T16:40:36.133Z [info] GET /api/products 200 529.024 ms - 185091 req=7f471936-f51f-4a91-9da1-b36136dbcf34 {"service":"back-end"}
+2026-06-06T16:40:36.185Z [info] GET /api/carts/me 304 108.982 ms - - req=03f00fdd-ae3b-4bab-b8ba-ed3cac337943 {"service":"back-end"}
+2026-06-06T16:40:36.450Z [info] GET /api/products/product/sales 200 833.548 ms - 30210 req=1f386d4b-314d-4b0c-934c-2cd18dee40b2 {"service":"back-end"}
+2026-06-06T16:40:39.816Z [info] Redis client connecting {"service":"back-end"}
+2026-06-06T16:40:39.824Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-06T16:40:39.826Z [info] Redis client ready {"service":"back-end"}
+2026-06-06T16:40:39.832Z [info] Redis client connected {"service":"back-end"}
+2026-06-06T16:40:39.836Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-06T16:40:39.839Z [info] Loading .env {"service":"back-end","envPath":"D:\\Project\\PetShop-Website\\back-end\\.env"}
+2026-06-06T16:40:39.840Z [info] .env file loaded successfully {"service":"back-end"}
+2026-06-06T16:40:39.871Z [info] Background workers initialized {"service":"back-end"}
+2026-06-06T16:40:39.876Z [info] Server is running: http://localhost:5000 {"service":"back-end"}
+2026-06-06T16:40:40.637Z [info] MongoDB connected {"service":"back-end"}
+2026-06-06T16:40:40.638Z [info] Connected to MongoDB {"service":"back-end"}
+2026-06-06T16:40:42.066Z [info] POST /api/orders 201 282.867 ms - 614 req=feacb961-085d-4bd1-b18f-381bf04f66b9 {"service":"back-end"}
+2026-06-06T16:40:42.179Z [info] === VNPAY DEBUG === {"service":"back-end","TmnCode":"C7SJCYP6","Amount":6000000,"CreateDate":"20260606234042","SignData":"vnp_Amount=6000000&vnp_Command=pay&vnp_CreateDate=20260606234042&vnp_CurrCode=VND&vnp_IpAddr=127.0.0.1&vnp_Locale=vn&vnp_OrderInfo=Thanh+to%C3%A1n+%C4%91%C6%A1n+h%C3%A0ng+6a244d8aa201f5d071437a20&vnp_OrderType=other&vnp_ReturnUrl=http%3A%2F%2Flocalhost%3A5000%2Fapi%2Fpayments%2Fvnpay%2Freturn&vnp_TmnCode=C7SJCYP6&vnp_TxnRef=6a244d8aa201f5d071437a20&vnp_Version=2.1.0","SecureHash":"aa5622aa72094e14677ea0579e3a019be74666b04def5811856475c930c45a965128a6c446825c2d4aec13488accddd514b544f9f780c42f2528586da8b6f339","PaymentUrl":"https://sandbox.vnpayment.vn/paymentv2/vpcpay.html?vnp_Amount=6000000&vnp_Command=pay&vnp_CreateDate=20260606234042&vnp_CurrCode=VND&vnp_IpAddr=127.0.0.1&vnp_Locale=vn&vnp_OrderInfo=Thanh+to%C3%A1n+%C4%91%C6%A1n+h%C3%A0ng+6a244d8aa201f5d071437a20&vnp_OrderType=other&vnp_ReturnUrl=http%3A%2F%2Flocalhost%3A5000%2Fapi%2Fpayments%2Fvnpay%2Freturn&vnp_TmnCode=C7SJCYP6&vnp_TxnRef=6a244d8aa201f5d071437a20&vnp_Version=2.1.0&vnp_SecureHash=aa5622aa72094e14677ea0579e3a019be74666b04def5811856475c930c45a965128a6c446825c2d4aec13488accddd514b544f9f780c42f2528586da8b6f339"}
+2026-06-06T16:40:42.180Z [info] POST /api/payments/vnpay/create 200 104.209 ms - 617 req=206fe471-6a20-4104-93e6-cf79755cfb6a {"service":"back-end"}
+2026-06-06T16:43:40.215Z [info] Redis client connecting {"service":"back-end"}
+2026-06-06T16:43:40.222Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-06T16:43:40.230Z [info] Redis client ready {"service":"back-end"}
+2026-06-06T16:43:40.230Z [info] Redis client connected {"service":"back-end"}
+2026-06-06T16:43:40.234Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-06T16:43:40.236Z [info] Loading .env {"service":"back-end","envPath":"D:\\Project\\PetShop-Website\\back-end\\.env"}
+2026-06-06T16:43:40.237Z [info] .env file loaded successfully {"service":"back-end"}
+2026-06-06T16:43:40.270Z [info] Background workers initialized {"service":"back-end"}
+2026-06-06T16:43:40.277Z [info] Server is running: http://localhost:5000 {"service":"back-end"}
+2026-06-06T16:43:40.913Z [info] MongoDB connected {"service":"back-end"}
+2026-06-06T16:43:40.915Z [info] Connected to MongoDB {"service":"back-end"}
+2026-06-06T16:43:49.100Z [info] GET /api/categories 304 77.983 ms - - req=cccb0c18-dd5e-49d3-b8f8-46b099ba97ff {"service":"back-end"}
+2026-06-06T16:43:49.214Z [info] GET /api/users/profile 304 180.065 ms - - req=09395c4f-9acf-4f74-abfa-d721bd45a1c9 {"service":"back-end"}
+2026-06-06T16:43:49.283Z [info] GET /api/categories/shop-cho-cun 304 239.047 ms - - req=4f8771e7-d136-45ec-a437-593a904e53c6 {"service":"back-end"}
+2026-06-06T16:43:49.293Z [info] GET /api/products 200 251.720 ms - 185091 req=88c79851-5928-4b55-9d63-2b0cd16f9b02 {"service":"back-end"}
+2026-06-06T16:43:49.328Z [info] GET /api/users/shipping-address 304 112.328 ms - - req=ef78b9a7-4468-4441-8a69-8ec61fcc3a0b {"service":"back-end"}
+2026-06-06T16:43:49.339Z [info] GET /api/carts/me 304 233.991 ms - - req=7d61c774-f1db-4175-a098-02f6439779cd {"service":"back-end"}
+2026-06-06T16:43:49.424Z [info] GET /api/categories/shop-cho-meo 200 377.487 ms - 103131 req=f717b5b8-fe96-43c9-a587-0560a6b511ee {"service":"back-end"}
+2026-06-06T16:43:49.472Z [info] GET /api/carts/me 304 130.279 ms - - req=1e46b71f-e356-48d7-b4b9-f73f9dcb70e6 {"service":"back-end"}
+2026-06-06T16:43:49.577Z [info] GET /api/products/product/sales 200 528.215 ms - 30210 req=dbd21b5b-d33a-4256-9eca-0807d74ed737 {"service":"back-end"}
+2026-06-06T16:43:51.614Z [info] POST /api/orders 201 260.389 ms - 614 req=df330a48-3943-4d53-8a70-e0d0965c61df {"service":"back-end"}
+2026-06-06T16:43:51.724Z [info] === VNPAY DEBUG === {"service":"back-end","TmnCode":"C7SJCYP6","Amount":6000000,"CreateDate":"20260606234351","SignData":"vnp_Amount=6000000&vnp_Command=pay&vnp_CreateDate=20260606234351&vnp_CurrCode=VND&vnp_IpAddr=127.0.0.1&vnp_Locale=vn&vnp_OrderInfo=Thanh+to%C3%A1n+%C4%91%C6%A1n+h%C3%A0ng+6a244e47320bb6a45a8ef1d9&vnp_OrderType=other&vnp_ReturnUrl=http%3A%2F%2Flocalhost%3A5000%2Fapi%2Fpayments%2Fvnpay%2Freturn&vnp_TmnCode=C7SJCYP6&vnp_TxnRef=6a244e47320bb6a45a8ef1d9&vnp_Version=2.1.0","SecureHash":"ea1e56a3639a3d80391cca3c4b4ec2a96d369785345866ec971d7e269ce3185b4e21ddd309255a2a899fdcbf55380d88b9862eae23f64618753de2c17e753298","PaymentUrl":"https://sandbox.vnpayment.vn/paymentv2/vpcpay.html?vnp_Amount=6000000&vnp_Command=pay&vnp_CreateDate=20260606234351&vnp_CurrCode=VND&vnp_IpAddr=127.0.0.1&vnp_Locale=vn&vnp_OrderInfo=Thanh+to%C3%A1n+%C4%91%C6%A1n+h%C3%A0ng+6a244e47320bb6a45a8ef1d9&vnp_OrderType=other&vnp_ReturnUrl=http%3A%2F%2Flocalhost%3A5000%2Fapi%2Fpayments%2Fvnpay%2Freturn&vnp_TmnCode=C7SJCYP6&vnp_TxnRef=6a244e47320bb6a45a8ef1d9&vnp_Version=2.1.0&vnp_SecureHash=ea1e56a3639a3d80391cca3c4b4ec2a96d369785345866ec971d7e269ce3185b4e21ddd309255a2a899fdcbf55380d88b9862eae23f64618753de2c17e753298"}
+2026-06-06T16:43:51.725Z [info] POST /api/payments/vnpay/create 200 102.457 ms - 617 req=532c2c79-9562-4148-abb5-fbbd6c451b85 {"service":"back-end"}
+2026-06-06T16:43:57.899Z [info] POST /api/orders 201 251.192 ms - 614 req=1b1f7dcb-0d6e-4489-974f-a7a8691b4be6 {"service":"back-end"}
+2026-06-06T16:43:58.006Z [info] === VNPAY DEBUG === {"service":"back-end","TmnCode":"C7SJCYP6","Amount":6000000,"CreateDate":"20260606234358","SignData":"vnp_Amount=6000000&vnp_Command=pay&vnp_CreateDate=20260606234358&vnp_CurrCode=VND&vnp_IpAddr=127.0.0.1&vnp_Locale=vn&vnp_OrderInfo=Thanh+to%C3%A1n+%C4%91%C6%A1n+h%C3%A0ng+6a244e4d320bb6a45a8ef1e2&vnp_OrderType=other&vnp_ReturnUrl=http%3A%2F%2Flocalhost%3A5000%2Fapi%2Fpayments%2Fvnpay%2Freturn&vnp_TmnCode=C7SJCYP6&vnp_TxnRef=6a244e4d320bb6a45a8ef1e2&vnp_Version=2.1.0","SecureHash":"2fccf543ef2673584dc3480ef88ed3e54e8a4c3fc288ca6f0fa3b7fb5e0274d6997cb809e74eb9d36cb6e720b0e9f12f09766355dea5c4e3bc3ff0793664bc2e","PaymentUrl":"https://sandbox.vnpayment.vn/paymentv2/vpcpay.html?vnp_Amount=6000000&vnp_Command=pay&vnp_CreateDate=20260606234358&vnp_CurrCode=VND&vnp_IpAddr=127.0.0.1&vnp_Locale=vn&vnp_OrderInfo=Thanh+to%C3%A1n+%C4%91%C6%A1n+h%C3%A0ng+6a244e4d320bb6a45a8ef1e2&vnp_OrderType=other&vnp_ReturnUrl=http%3A%2F%2Flocalhost%3A5000%2Fapi%2Fpayments%2Fvnpay%2Freturn&vnp_TmnCode=C7SJCYP6&vnp_TxnRef=6a244e4d320bb6a45a8ef1e2&vnp_Version=2.1.0&vnp_SecureHash=2fccf543ef2673584dc3480ef88ed3e54e8a4c3fc288ca6f0fa3b7fb5e0274d6997cb809e74eb9d36cb6e720b0e9f12f09766355dea5c4e3bc3ff0793664bc2e"}
+2026-06-06T16:43:58.007Z [info] POST /api/payments/vnpay/create 200 99.156 ms - 617 req=a6ed9e08-58d1-414d-91cc-732f9c0c262f {"service":"back-end"}
+2026-06-06T16:44:53.880Z [info] Redis client connecting {"service":"back-end"}
+2026-06-06T16:44:53.888Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-06T16:44:53.890Z [info] Redis client ready {"service":"back-end"}
+2026-06-06T16:44:53.895Z [info] Redis client connected {"service":"back-end"}
+2026-06-06T16:44:53.900Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-06T16:44:53.902Z [info] Loading .env {"service":"back-end","envPath":"D:\\Project\\PetShop-Website\\back-end\\.env"}
+2026-06-06T16:44:53.904Z [info] .env file loaded successfully {"service":"back-end"}
+2026-06-06T16:44:53.943Z [info] Background workers initialized {"service":"back-end"}
+2026-06-06T16:44:53.949Z [info] Server is running: http://localhost:5000 {"service":"back-end"}
+2026-06-06T16:44:54.670Z [info] MongoDB connected {"service":"back-end"}
+2026-06-06T16:44:54.672Z [info] Connected to MongoDB {"service":"back-end"}
+2026-06-06T16:44:59.729Z [info] POST /api/orders 201 278.947 ms - 614 req=a9bf2c61-12d9-4236-a5d8-682c5bf77208 {"service":"back-end"}
+2026-06-06T16:44:59.845Z [info] === VNPAY DEBUG === {"service":"back-end","TmnCode":"C7SJCYP6","Amount":6000000,"CreateDate":"20260606234459","SignData":"vnp_Amount=6000000&vnp_Command=pay&vnp_CreateDate=20260606234459&vnp_CurrCode=VND&vnp_IpAddr=127.0.0.1&vnp_Locale=vn&vnp_OrderInfo=Thanh+to%C3%A1n+%C4%91%C6%A1n+h%C3%A0ng+6a244e8b93d49f58862ece73&vnp_OrderType=other&vnp_ReturnUrl=http%3A%2F%2Flocalhost%3A5000%2Fapi%2Fpayments%2Fvnpay%2Freturn&vnp_TmnCode=C7SJCYP6&vnp_TxnRef=6a244e8b93d49f58862ece73&vnp_Version=2.1.0","SecureHash":"fd3c77df6adcd69a4399564b4133314ce266f339b6b93f82043207a883031f8c727f666c6cdde8b73cf0531d1c3f5b213c70c8bf8f665fb1ccaade9876dd5f28","PaymentUrl":"https://sandbox.vnpayment.vn/paymentv2/vpcpay.html?vnp_Amount=6000000&vnp_Command=pay&vnp_CreateDate=20260606234459&vnp_CurrCode=VND&vnp_IpAddr=127.0.0.1&vnp_Locale=vn&vnp_OrderInfo=Thanh+to%C3%A1n+%C4%91%C6%A1n+h%C3%A0ng+6a244e8b93d49f58862ece73&vnp_OrderType=other&vnp_ReturnUrl=http%3A%2F%2Flocalhost%3A5000%2Fapi%2Fpayments%2Fvnpay%2Freturn&vnp_TmnCode=C7SJCYP6&vnp_TxnRef=6a244e8b93d49f58862ece73&vnp_Version=2.1.0&vnp_SecureHash=fd3c77df6adcd69a4399564b4133314ce266f339b6b93f82043207a883031f8c727f666c6cdde8b73cf0531d1c3f5b213c70c8bf8f665fb1ccaade9876dd5f28"}
+2026-06-06T16:44:59.847Z [info] POST /api/payments/vnpay/create 200 108.271 ms - 617 req=3764c760-86c3-451d-bb03-61567e8e4961 {"service":"back-end"}
+2026-06-06T16:48:17.209Z [info] Redis client connecting {"service":"back-end"}
+2026-06-06T16:48:17.215Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-06T16:48:17.217Z [info] Redis client ready {"service":"back-end"}
+2026-06-06T16:48:17.217Z [info] Redis client connected {"service":"back-end"}
+2026-06-06T16:48:17.222Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-06T16:48:17.224Z [info] Loading .env {"service":"back-end","envPath":"D:\\Project\\PetShop-Website\\back-end\\.env"}
+2026-06-06T16:48:17.224Z [info] .env file loaded successfully {"service":"back-end"}
+2026-06-06T16:48:17.259Z [info] Background workers initialized {"service":"back-end"}
+2026-06-06T16:48:17.265Z [info] Server is running: http://localhost:5000 {"service":"back-end"}
+2026-06-06T16:48:18.106Z [info] MongoDB connected {"service":"back-end"}
+2026-06-06T16:48:18.108Z [info] Connected to MongoDB {"service":"back-end"}
+2026-06-06T16:48:25.283Z [info] POST /api/orders 201 394.673 ms - 614 req=07d267e3-2d5d-4329-b9f5-a5d3de731ee5 {"service":"back-end"}
+2026-06-06T16:48:25.468Z [info] === VNPAY DEBUG === {"service":"back-end","TmnCode":"C7SJCYP6","Amount":6000000,"CreateDate":"20260606234825","SignData":"vnp_Amount=6000000&vnp_Command=pay&vnp_CreateDate=20260606234825&vnp_CurrCode=VND&vnp_IpAddr=127.0.0.1&vnp_Locale=vn&vnp_OrderInfo=Thanh+to%C3%A1n+%C4%91%C6%A1n+h%C3%A0ng+6a244f593f63305bbddf1aaa&vnp_OrderType=other&vnp_ReturnUrl=http%3A%2F%2Flocalhost%3A5000%2Fapi%2Fpayments%2Fvnpay%2Freturn&vnp_TmnCode=C7SJCYP6&vnp_TxnRef=6a244f593f63305bbddf1aaa&vnp_Version=2.1.0","SecureHash":"d51a1ad071914f55221d4796ce8dd8b656d201d1d78a245760faee9e12cfcd0329d3f6fa6db4a1d9e9ea4a19e589cc482de74353d22e3813f566f7f28cb232d4","PaymentUrl":"https://sandbox.vnpayment.vn/paymentv2/vpcpay.html?vnp_Amount=6000000&vnp_Command=pay&vnp_CreateDate=20260606234825&vnp_CurrCode=VND&vnp_IpAddr=127.0.0.1&vnp_Locale=vn&vnp_OrderInfo=Thanh+to%C3%A1n+%C4%91%C6%A1n+h%C3%A0ng+6a244f593f63305bbddf1aaa&vnp_OrderType=other&vnp_ReturnUrl=http%3A%2F%2Flocalhost%3A5000%2Fapi%2Fpayments%2Fvnpay%2Freturn&vnp_TmnCode=C7SJCYP6&vnp_TxnRef=6a244f593f63305bbddf1aaa&vnp_Version=2.1.0&vnp_SecureHash=d51a1ad071914f55221d4796ce8dd8b656d201d1d78a245760faee9e12cfcd0329d3f6fa6db4a1d9e9ea4a19e589cc482de74353d22e3813f566f7f28cb232d4"}
+2026-06-06T16:48:25.469Z [info] POST /api/payments/vnpay/create 200 177.399 ms - 617 req=32740421-645b-4db1-9903-d12ca84344c0 {"service":"back-end"}
+2026-06-06T16:48:41.149Z [info] GET /api/payments/vnpay/return?vnp_Amount=6000000&vnp_BankCode=VNPAY&vnp_CardType=QRCODE&vnp_OrderInfo=Thanh+to%C3%A1n+%C4%91%C6%A1n+h%C3%A0ng+6a244f593f63305bbddf1aaa&vnp_PayDate=20260606234827&vnp_ResponseCode=24&vnp_TmnCode=C7SJCYP6&vnp_TransactionNo=0&vnp_TransactionStatus=02&vnp_TxnRef=6a244f593f63305bbddf1aaa&vnp_SecureHash=1b12ad440b9911565e1d124b4bde77e9b89417d0768ea55505f0f7eb5dd0c08ca7488625b241dcda59e29265f9780936416432e65b45643f37fe007b4493e3ce 302 2.396 ms - 242 req=246bdb99-ff4b-4a2c-bf02-1a1483344dcb {"service":"back-end"}
+2026-06-06T16:48:54.783Z [info] POST /api/orders 201 355.519 ms - 614 req=6ecbafc9-66c0-4f2a-b4ac-0e253caf9227 {"service":"back-end"}
+2026-06-06T16:48:54.935Z [info] === VNPAY DEBUG === {"service":"back-end","TmnCode":"C7SJCYP6","Amount":6000000,"CreateDate":"20260606234854","SignData":"vnp_Amount=6000000&vnp_Command=pay&vnp_CreateDate=20260606234854&vnp_CurrCode=VND&vnp_IpAddr=127.0.0.1&vnp_Locale=vn&vnp_OrderInfo=Thanh+to%C3%A1n+%C4%91%C6%A1n+h%C3%A0ng+6a244f763f63305bbddf1ab3&vnp_OrderType=other&vnp_ReturnUrl=http%3A%2F%2Flocalhost%3A5000%2Fapi%2Fpayments%2Fvnpay%2Freturn&vnp_TmnCode=C7SJCYP6&vnp_TxnRef=6a244f763f63305bbddf1ab3&vnp_Version=2.1.0","SecureHash":"bf10429e8c085874b58eb17bdbb6d96d2992ce6c30de9833d65954da8d951c6ab0ea151dc703c3460e0970488885c3ee3f866f02a7d200bb739720334e463b5f","PaymentUrl":"https://sandbox.vnpayment.vn/paymentv2/vpcpay.html?vnp_Amount=6000000&vnp_Command=pay&vnp_CreateDate=20260606234854&vnp_CurrCode=VND&vnp_IpAddr=127.0.0.1&vnp_Locale=vn&vnp_OrderInfo=Thanh+to%C3%A1n+%C4%91%C6%A1n+h%C3%A0ng+6a244f763f63305bbddf1ab3&vnp_OrderType=other&vnp_ReturnUrl=http%3A%2F%2Flocalhost%3A5000%2Fapi%2Fpayments%2Fvnpay%2Freturn&vnp_TmnCode=C7SJCYP6&vnp_TxnRef=6a244f763f63305bbddf1ab3&vnp_Version=2.1.0&vnp_SecureHash=bf10429e8c085874b58eb17bdbb6d96d2992ce6c30de9833d65954da8d951c6ab0ea151dc703c3460e0970488885c3ee3f866f02a7d200bb739720334e463b5f"}
+2026-06-06T16:48:54.936Z [info] POST /api/payments/vnpay/create 200 143.668 ms - 617 req=350ba7c4-d545-4e6d-8964-8220abb6e301 {"service":"back-end"}
+2026-06-06T16:49:43.454Z [info] GET /api/payments/vnpay/return?vnp_Amount=6000000&vnp_BankCode=NCB&vnp_BankTranNo=VNP15572352&vnp_CardType=ATM&vnp_OrderInfo=Thanh+to%C3%A1n+%C4%91%C6%A1n+h%C3%A0ng+6a244f763f63305bbddf1ab3&vnp_PayDate=20260606234924&vnp_ResponseCode=00&vnp_TmnCode=C7SJCYP6&vnp_TransactionNo=15572352&vnp_TransactionStatus=00&vnp_TxnRef=6a244f763f63305bbddf1ab3&vnp_SecureHash=e9d672487985617d2733c28873de8754649433402b6ff633487aaaaa4f923a6d3110c77e694212465c9588fea4072dd2e3b64efb867b5acf013405c9dd17fe63 302 1.857 ms - 250 req=55bab218-78a6-4c87-8c8c-5dc2daf827a8 {"service":"back-end"}
+2026-06-06T16:50:06.110Z [info] GET /api/categories 304 79.243 ms - - req=cc845c3f-e17a-4d95-9066-43a279c6faff {"service":"back-end"}
+2026-06-06T16:50:06.123Z [info] GET /api/categories/catetory/shop-cho-cun 304 72.011 ms - - req=55f7c668-2758-48d5-8ac5-480f0e62f8ee {"service":"back-end"}
+2026-06-06T16:50:06.236Z [info] GET /api/users/profile 304 196.097 ms - - req=b6313bef-c818-4f1a-9d01-4012e02f96e7 {"service":"back-end"}
+2026-06-06T16:50:06.259Z [info] GET /api/products/product/sales 200 145.826 ms - 30210 req=c9169af7-485e-4deb-991a-716a6ad1b8dc {"service":"back-end"}
+2026-06-06T16:50:06.301Z [info] GET /api/categories 304 63.901 ms - - req=8bd3b5cc-f3ac-45a2-b193-ec889a526de1 {"service":"back-end"}
+2026-06-06T16:50:06.346Z [info] GET /api/categories/shop-cho-cun 304 290.191 ms - - req=8014b4c9-2f59-49bb-b1eb-9af7a9fc2fa3 {"service":"back-end"}
+2026-06-06T16:50:06.356Z [info] GET /api/products 200 310.243 ms - 185091 req=bf99707b-0372-4ce3-84d1-604ee79d16a4 {"service":"back-end"}
+2026-06-06T16:50:06.370Z [info] GET /api/carts/me 304 239.674 ms - - req=30c226de-96da-47d2-8f5c-2ed38d149ceb {"service":"back-end"}
+2026-06-06T16:50:06.376Z [info] GET /api/categories 304 72.383 ms - - req=cdb78299-c0f1-485b-8a9f-fdcfe70f7c10 {"service":"back-end"}
+2026-06-06T16:50:06.507Z [info] GET /api/carts/me 304 129.226 ms - - req=627dbd60-5ee8-4aa4-af89-21e2fe0ac68a {"service":"back-end"}
+2026-06-06T16:50:06.641Z [info] GET /api/carts/me 304 132.877 ms - - req=2712877a-a0d6-42de-9c5f-b477f8c9987a {"service":"back-end"}
+2026-06-06T16:50:06.739Z [info] GET /api/categories/shop-cho-meo 200 677.737 ms - 103131 req=e8b288a6-2241-4344-9f0d-6d7fc31e498d {"service":"back-end"}
+2026-06-06T16:50:09.338Z [info] GET /api/categories 304 56.636 ms - - req=07a60bf2-d017-418e-90c0-7418289791dc {"service":"back-end"}
+2026-06-06T16:50:09.473Z [info] GET /api/users/profile 304 190.139 ms - - req=e24b4de4-a78b-4381-b124-0e4ea08ac1c7 {"service":"back-end"}
+2026-06-06T16:50:09.483Z [info] GET /api/users/shipping-address 304 196.105 ms - - req=308bfb1c-9b40-4637-a07d-a6ea97622277 {"service":"back-end"}
+2026-06-06T16:50:09.498Z [info] GET /api/carts/me 304 212.397 ms - - req=126086e8-ecf0-4b76-9d90-e6f71a150064 {"service":"back-end"}
+2026-06-06T16:50:09.644Z [info] GET /api/carts/me 304 145.073 ms - - req=5a5de3c7-e670-40ad-bf4c-4c9281fb36c8 {"service":"back-end"}
+2026-06-06T16:50:09.789Z [info] GET /api/carts/me 304 142.914 ms - - req=8feeb374-f7f0-40e5-aa0d-f698ccc94f18 {"service":"back-end"}
+2026-06-06T16:50:14.224Z [info] POST /api/orders 201 379.882 ms - 614 req=e2ff9bb6-090c-4625-a115-cb6440a22f21 {"service":"back-end"}
+2026-06-06T16:50:14.374Z [info] === VNPAY DEBUG === {"service":"back-end","TmnCode":"C7SJCYP6","Amount":2500000,"CreateDate":"20260606235014","SignData":"vnp_Amount=2500000&vnp_Command=pay&vnp_CreateDate=20260606235014&vnp_CurrCode=VND&vnp_IpAddr=127.0.0.1&vnp_Locale=vn&vnp_OrderInfo=Thanh+to%C3%A1n+%C4%91%C6%A1n+h%C3%A0ng+6a244fc63f63305bbddf1ad9&vnp_OrderType=other&vnp_ReturnUrl=http%3A%2F%2Flocalhost%3A5000%2Fapi%2Fpayments%2Fvnpay%2Freturn&vnp_TmnCode=C7SJCYP6&vnp_TxnRef=6a244fc63f63305bbddf1ad9&vnp_Version=2.1.0","SecureHash":"84530ff2540b4e8102a04c88b52e023309d6d5824fecd96d4415dec0651fb32668d8fa5ed7c5ac0b24891b52f2ace89dc8a7a7a77b44ee4efff78577b8a45e8c","PaymentUrl":"https://sandbox.vnpayment.vn/paymentv2/vpcpay.html?vnp_Amount=2500000&vnp_Command=pay&vnp_CreateDate=20260606235014&vnp_CurrCode=VND&vnp_IpAddr=127.0.0.1&vnp_Locale=vn&vnp_OrderInfo=Thanh+to%C3%A1n+%C4%91%C6%A1n+h%C3%A0ng+6a244fc63f63305bbddf1ad9&vnp_OrderType=other&vnp_ReturnUrl=http%3A%2F%2Flocalhost%3A5000%2Fapi%2Fpayments%2Fvnpay%2Freturn&vnp_TmnCode=C7SJCYP6&vnp_TxnRef=6a244fc63f63305bbddf1ad9&vnp_Version=2.1.0&vnp_SecureHash=84530ff2540b4e8102a04c88b52e023309d6d5824fecd96d4415dec0651fb32668d8fa5ed7c5ac0b24891b52f2ace89dc8a7a7a77b44ee4efff78577b8a45e8c"}
+2026-06-06T16:50:14.374Z [info] POST /api/payments/vnpay/create 200 142.591 ms - 617 req=d1862ab3-df0b-473d-ae51-3189b7e37efb {"service":"back-end"}
+2026-06-06T16:50:53.472Z [info] GET /api/payments/vnpay/return?vnp_Amount=2500000&vnp_BankCode=NCB&vnp_BankTranNo=VNP15572355&vnp_CardType=ATM&vnp_OrderInfo=Thanh+to%C3%A1n+%C4%91%C6%A1n+h%C3%A0ng+6a244fc63f63305bbddf1ad9&vnp_PayDate=20260606235045&vnp_ResponseCode=00&vnp_TmnCode=C7SJCYP6&vnp_TransactionNo=15572355&vnp_TransactionStatus=00&vnp_TxnRef=6a244fc63f63305bbddf1ad9&vnp_SecureHash=c78debb8bbb50f7abcb847d3943108d8f0d7137d3d532d4b614a0168ada09580adb93282c9bddc78cbde6ead79c19f783fb345d638a69adb15ab780e6894fc2a 302 1.261 ms - 250 req=b6f0506c-c0f5-4cb2-b101-00a89ef6de58 {"service":"back-end"}
+2026-06-06T16:52:10.048Z [info] Redis client connecting {"service":"back-end"}
+2026-06-06T16:52:10.055Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-06T16:52:10.057Z [info] Redis client ready {"service":"back-end"}
+2026-06-06T16:52:10.062Z [info] Redis client connected {"service":"back-end"}
+2026-06-06T16:52:10.066Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-06T16:52:10.069Z [info] Loading .env {"service":"back-end","envPath":"D:\\Project\\PetShop-Website\\back-end\\.env"}
+2026-06-06T16:52:10.069Z [info] .env file loaded successfully {"service":"back-end"}
+2026-06-06T16:52:10.107Z [info] Background workers initialized {"service":"back-end"}
+2026-06-06T16:52:10.113Z [info] Server is running: http://localhost:5000 {"service":"back-end"}
+2026-06-06T16:52:11.017Z [info] MongoDB connected {"service":"back-end"}
+2026-06-06T16:52:11.018Z [info] Connected to MongoDB {"service":"back-end"}
+2026-06-06T16:53:00.140Z [info] GET /api/products/product/sales 200 152.209 ms - 30210 req=60067c8e-f18f-49c5-abc7-d7e85897703b {"service":"back-end"}
+2026-06-06T16:53:00.250Z [info] GET /api/categories/shop-cho-cun 200 276.006 ms - 81961 req=72ec97b8-2db7-4b50-b5d4-304c62fb3a65 {"service":"back-end"}
+2026-06-06T16:53:00.270Z [info] GET /api/products 200 303.773 ms - 185091 req=94090f4a-873e-4a27-8ba9-e43ff4f778c4 {"service":"back-end"}
+2026-06-06T16:53:00.370Z [info] GET /api/categories/shop-cho-meo 200 388.320 ms - 103131 req=4509cd15-d38f-41ab-a522-242bdc8d562e {"service":"back-end"}
+2026-06-06T16:53:02.076Z [info] GET /api/categories/catetory/shop-cho-cun 200 68.706 ms - 1390 req=1268fd6e-ec32-43be-825e-bc24758d6fcb {"service":"back-end"}
+2026-06-06T16:53:02.088Z [info] GET /api/categories 200 83.631 ms - 2785 req=7b8624f8-9cbe-48ec-98b7-06ae9648b116 {"service":"back-end"}
+2026-06-06T16:53:02.169Z [info] GET /api/categories 304 79.053 ms - - req=5e239bf3-1ab7-4ecd-8a3d-922b9f824c2a {"service":"back-end"}
+2026-06-06T16:53:02.248Z [info] GET /api/categories 304 76.889 ms - - req=f60560e7-6052-41af-9fbd-dc6e4ff68eb4 {"service":"back-end"}
+2026-06-06T16:53:10.543Z [info] Redis client connecting {"service":"back-end"}
+2026-06-06T16:53:10.551Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-06T16:53:10.553Z [info] Redis client ready {"service":"back-end"}
+2026-06-06T16:53:10.558Z [info] Redis client connected {"service":"back-end"}
+2026-06-06T16:53:10.563Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-06T16:53:10.566Z [info] Loading .env {"service":"back-end","envPath":"D:\\Project\\PetShop-Website\\back-end\\.env"}
+2026-06-06T16:53:10.567Z [info] .env file loaded successfully {"service":"back-end"}
+2026-06-06T16:53:10.597Z [info] Background workers initialized {"service":"back-end"}
+2026-06-06T16:53:10.604Z [info] Server is running: http://localhost:5000 {"service":"back-end"}
+2026-06-06T16:53:11.405Z [info] MongoDB connected {"service":"back-end"}
+2026-06-06T16:53:11.407Z [info] Connected to MongoDB {"service":"back-end"}
+2026-06-06T16:53:15.061Z [info] GET /api/categories 304 81.348 ms - - req=b7a6617b-b4f3-40de-8a99-c7d6b8b66513 {"service":"back-end"}
+2026-06-06T16:53:15.164Z [info] GET /api/users/profile 304 177.124 ms - - req=6b80a247-787f-4e1f-a140-4aad060ba5dd {"service":"back-end"}
+2026-06-06T16:53:15.212Z [info] GET /api/carts/me 304 219.613 ms - - req=6e47fe98-71f1-4f4a-bb5a-7ab8141c9ebe {"service":"back-end"}
+2026-06-06T16:53:15.245Z [info] GET /api/users/shipping-address 304 249.023 ms - - req=cd230635-66bb-4e63-875a-ac039b74c8aa {"service":"back-end"}
+2026-06-06T16:53:15.353Z [info] GET /api/carts/me 304 139.146 ms - - req=e93dc9a9-f07e-42bd-a4dd-354cb6f9e5c0 {"service":"back-end"}
+2026-06-06T16:53:15.486Z [info] GET /api/carts/me 304 131.201 ms - - req=c9ca35e6-baef-4a6f-93ad-d15bac67daa0 {"service":"back-end"}
+2026-06-06T16:53:17.872Z [info] POST /api/orders 201 345.105 ms - 614 req=71ed1470-e121-4c61-a6a2-805f5b1ff0bd {"service":"back-end"}
+2026-06-06T16:53:18.025Z [info] === VNPAY DEBUG === {"service":"back-end","TmnCode":"C7SJCYP6","Amount":3000000,"CreateDate":"20260606235318","SignData":"vnp_Amount=3000000&vnp_Command=pay&vnp_CreateDate=20260606235318&vnp_CurrCode=VND&vnp_IpAddr=127.0.0.1&vnp_Locale=vn&vnp_OrderInfo=Thanh+to%C3%A1n+%C4%91%C6%A1n+h%C3%A0ng+6a24507d67d2bd14de1891b3&vnp_OrderType=other&vnp_ReturnUrl=http%3A%2F%2Flocalhost%3A5000%2Fapi%2Fpayments%2Fvnpay%2Freturn&vnp_TmnCode=C7SJCYP6&vnp_TxnRef=6a24507d67d2bd14de1891b3&vnp_Version=2.1.0","SecureHash":"fbd4106faaa9ebd5cc0c0d73a3bccb8faf8e11131470e6ca96ee447e74a4bb7b3125a643c6052701e1dbd240579351f6f9dc3cdebc4a6a835fc76a8494db0f61","PaymentUrl":"https://sandbox.vnpayment.vn/paymentv2/vpcpay.html?vnp_Amount=3000000&vnp_Command=pay&vnp_CreateDate=20260606235318&vnp_CurrCode=VND&vnp_IpAddr=127.0.0.1&vnp_Locale=vn&vnp_OrderInfo=Thanh+to%C3%A1n+%C4%91%C6%A1n+h%C3%A0ng+6a24507d67d2bd14de1891b3&vnp_OrderType=other&vnp_ReturnUrl=http%3A%2F%2Flocalhost%3A5000%2Fapi%2Fpayments%2Fvnpay%2Freturn&vnp_TmnCode=C7SJCYP6&vnp_TxnRef=6a24507d67d2bd14de1891b3&vnp_Version=2.1.0&vnp_SecureHash=fbd4106faaa9ebd5cc0c0d73a3bccb8faf8e11131470e6ca96ee447e74a4bb7b3125a643c6052701e1dbd240579351f6f9dc3cdebc4a6a835fc76a8494db0f61"}
+2026-06-06T16:53:18.026Z [info] POST /api/payments/vnpay/create 200 145.728 ms - 617 req=a2a4e64d-e7f0-48c5-a7b8-193b7e917e1d {"service":"back-end"}
+2026-06-06T16:53:45.141Z [info] GET /api/payments/vnpay/return?vnp_Amount=3000000&vnp_BankCode=NCB&vnp_BankTranNo=VNP15572357&vnp_CardType=ATM&vnp_OrderInfo=Thanh+to%C3%A1n+%C4%91%C6%A1n+h%C3%A0ng+6a24507d67d2bd14de1891b3&vnp_PayDate=20260606235338&vnp_ResponseCode=00&vnp_TmnCode=C7SJCYP6&vnp_TransactionNo=15572357&vnp_TransactionStatus=00&vnp_TxnRef=6a24507d67d2bd14de1891b3&vnp_SecureHash=97c5418a3382b604eedc7c5a4c5fafecbabdc007053fc1ab029467c802fab1fcac0d22c704877ee4675b5f3e055084259d5463c1184db7728d4ee9bc53f501c9 302 5.722 ms - 250 req=2619d24a-90a8-47d2-84c0-28b0a87278af {"service":"back-end"}
+2026-06-06T16:53:46.181Z [info] GET /api/products/product/sales 200 143.936 ms - 30210 req=8a1aff09-b576-4d29-8f5a-ae6377084971 {"service":"back-end"}
+2026-06-06T16:53:46.318Z [info] GET /api/categories/shop-cho-meo 200 282.832 ms - 103131 req=ffbf0e6a-e3bd-4cf4-8b2d-1a59de88354d {"service":"back-end"}
+2026-06-06T16:53:46.356Z [info] GET /api/categories/shop-cho-cun 200 325.366 ms - 81961 req=4e70fe98-d79a-44f7-8bf9-a462e662118a {"service":"back-end"}
+2026-06-06T16:53:46.380Z [info] GET /api/products 200 353.605 ms - 185091 req=41405078-57f8-4134-9b8c-3bccf31bb5b1 {"service":"back-end"}
+2026-06-06T16:54:31.663Z [info] GET /api/categories 304 110.468 ms - - req=5008de15-a3c2-4433-b19c-0855a4ee1718 {"service":"back-end"}
+2026-06-06T16:54:31.678Z [info] GET /api/categories/catetory/shop-cho-cun 304 119.492 ms - - req=8797be79-2d71-4c0d-aa0a-c9b682f292aa {"service":"back-end"}
+2026-06-06T16:54:31.739Z [info] GET /api/categories 304 69.889 ms - - req=16a842ef-3f77-45a3-a52e-ba2549dff909 {"service":"back-end"}
+2026-06-06T16:54:31.804Z [info] GET /api/carts/me 304 243.261 ms - - req=f2804e54-59d5-42e0-8be5-8cd145b7e48b {"service":"back-end"}
+2026-06-06T16:54:31.811Z [info] GET /api/categories 304 66.729 ms - - req=d4aecce0-b1c8-41ce-a27e-6136cfe64ce9 {"service":"back-end"}
+2026-06-06T16:54:31.825Z [info] GET /api/users/profile 304 270.131 ms - - req=0e7a1268-8256-4872-9958-93d571c43bdf {"service":"back-end"}
+2026-06-06T16:54:31.940Z [info] GET /api/carts/me 304 133.313 ms - - req=7b255e42-ac1b-40f8-9b39-8a6d12bc3f97 {"service":"back-end"}
+2026-06-06T16:54:32.081Z [info] GET /api/carts/me 304 139.206 ms - - req=f14595ce-367f-4fe8-b4c4-172b8c59ec7d {"service":"back-end"}
+2026-06-06T16:57:05.276Z [info] Redis client connecting {"service":"back-end"}
+2026-06-06T16:57:05.284Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-06T16:57:05.287Z [info] Redis client ready {"service":"back-end"}
+2026-06-06T16:57:05.292Z [info] Redis client connected {"service":"back-end"}
+2026-06-06T16:57:05.298Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-06T16:57:05.301Z [info] Loading .env {"service":"back-end","envPath":"D:\\Project\\PetShop-Website\\back-end\\.env"}
+2026-06-06T16:57:05.302Z [info] .env file loaded successfully {"service":"back-end"}
+2026-06-06T16:57:05.339Z [info] Background workers initialized {"service":"back-end"}
+2026-06-06T16:57:05.348Z [info] Server is running: http://localhost:5000 {"service":"back-end"}
+2026-06-06T16:57:06.140Z [info] MongoDB connected {"service":"back-end"}
+2026-06-06T16:57:06.143Z [info] Connected to MongoDB {"service":"back-end"}
+2026-06-06T16:57:07.331Z [info] GET /api/users/profile 401 5.990 ms - 62 req=32dd4f3a-b92e-4a52-af3e-420b47d89f91 {"service":"back-end"}
+2026-06-06T16:57:07.336Z [info] GET /api/carts/me 401 2.013 ms - 62 req=d46764bc-1dc2-45f9-ae39-6565dbe9a9e4 {"service":"back-end"}
+2026-06-06T16:57:07.339Z [info] GET /api/users/shipping-address 401 1.288 ms - 62 req=3b3a8a2f-9b6c-4e5e-8a28-3f70f7a2648e {"service":"back-end"}
+2026-06-06T16:57:07.343Z [info] GET /api/carts/me 401 1.617 ms - 62 req=1c9ce8fe-bed9-4c41-82ba-4f660d0fe53f {"service":"back-end"}
+2026-06-06T16:57:07.346Z [info] GET /api/carts/me 401 1.175 ms - 62 req=57d93f55-e26d-4eb1-821a-0366a5d180a6 {"service":"back-end"}
+2026-06-06T16:57:07.393Z [info] GET /api/categories 304 78.117 ms - - req=b23da0b2-040d-4cd7-85d4-4fed80ae22fd {"service":"back-end"}
+2026-06-06T16:57:08.066Z [info] GET /api/categories 304 71.315 ms - - req=21bfe7c6-e400-4bcc-bf45-02f99f8dee88 {"service":"back-end"}
+2026-06-06T16:57:08.192Z [info] GET /api/products/product/sales 304 169.804 ms - - req=7dbcced7-1dbc-4c7d-be90-ccb736074e75 {"service":"back-end"}
+2026-06-06T16:57:08.310Z [info] GET /api/categories/shop-cho-cun 304 296.837 ms - - req=fddced87-8b65-4b6f-8169-d1c79eac313b {"service":"back-end"}
+2026-06-06T16:57:08.315Z [info] GET /api/categories/shop-cho-meo 304 297.364 ms - - req=b18df68d-b1b3-4d61-8d44-2048c0b24753 {"service":"back-end"}
+2026-06-06T16:57:08.327Z [info] GET /api/products 304 325.694 ms - - req=65a41d8b-4c74-4929-b61c-53135426a7d1 {"service":"back-end"}
+2026-06-06T16:57:12.562Z [info] POST /api/auth/signin 200 147.926 ms - 18914 req=a0dc73cd-5a8c-41ac-a0f6-b57bcc9fed5c {"service":"back-end"}
+2026-06-06T16:57:12.729Z [info] GET /api/users/profile 304 157.660 ms - - req=83b77218-3f10-45b3-8974-127898a454f8 {"service":"back-end"}
+2026-06-06T16:57:13.677Z [info] GET /api/categories 304 56.483 ms - - req=0d9df3d7-ba49-4eba-91a8-0919153c7463 {"service":"back-end"}
+2026-06-06T16:57:13.701Z [info] GET /api/categories/catetory/shop-cho-cun 304 73.392 ms - - req=98a13e3b-c1aa-4bdc-bd23-bb9077484cb7 {"service":"back-end"}
+2026-06-06T16:57:13.764Z [info] GET /api/categories 304 78.550 ms - - req=640dfa8d-76e6-4bbb-840f-dbdab880dd5b {"service":"back-end"}
+2026-06-06T16:57:13.836Z [info] GET /api/categories 304 64.253 ms - - req=9b233217-7187-4fb1-ac23-3ba420822c2d {"service":"back-end"}
+2026-06-06T16:57:13.838Z [info] GET /api/users/profile 304 227.178 ms - - req=9b43cbda-1b49-4715-9781-3ad8774491f1 {"service":"back-end"}
+2026-06-06T16:57:13.869Z [info] GET /api/carts/me 304 241.333 ms - - req=929730c7-b95c-47b3-89fb-ad001f57e521 {"service":"back-end"}
+2026-06-06T16:57:14.041Z [info] GET /api/carts/me 304 167.448 ms - - req=1f317d44-3a83-4132-a7aa-ff92c7c3a64a {"service":"back-end"}
+2026-06-06T16:57:14.197Z [info] GET /api/carts/me 304 152.486 ms - - req=e7cb360d-24d8-4f2a-b4a1-37e7bcdb80df {"service":"back-end"}
+2026-06-06T16:57:16.476Z [info] GET /api/categories 304 80.758 ms - - req=bdd5b129-5fb6-4276-bc94-40dedfaa67ec {"service":"back-end"}
+2026-06-06T16:57:16.556Z [info] GET /api/carts/me 304 158.119 ms - - req=f7851ed4-40c1-414e-a191-4139c33373c8 {"service":"back-end"}
+2026-06-06T16:57:16.602Z [info] GET /api/users/profile 304 203.513 ms - - req=5ccd1fd2-2bb7-4603-bd85-025a61f575f2 {"service":"back-end"}
+2026-06-06T16:57:16.611Z [info] GET /api/users/shipping-address 304 205.273 ms - - req=526573d9-268f-448c-bb61-3f576ff0dc19 {"service":"back-end"}
+2026-06-06T16:57:16.665Z [info] GET /api/carts/me 304 105.805 ms - - req=516aeb75-3318-4cef-a232-b86c63eea89e {"service":"back-end"}
+2026-06-06T16:57:16.774Z [info] GET /api/carts/me 304 102.245 ms - - req=5bf45ef7-2d22-4bb9-ab39-4438c48e0acf {"service":"back-end"}
+2026-06-06T16:57:19.303Z [info] POST /api/orders 201 263.031 ms - 614 req=f74baa28-d29d-4e09-8a8a-63600b1cbcfe {"service":"back-end"}
+2026-06-06T16:57:19.417Z [info] === VNPAY DEBUG === {"service":"back-end","TmnCode":"C7SJCYP6","Amount":3500000,"CreateDate":"20260606235719","SignData":"vnp_Amount=3500000&vnp_Command=pay&vnp_CreateDate=20260606235719&vnp_CurrCode=VND&vnp_IpAddr=127.0.0.1&vnp_Locale=vn&vnp_OrderInfo=Thanh+to%C3%A1n+%C4%91%C6%A1n+h%C3%A0ng+6a24516f2331db25cafe2ec1&vnp_OrderType=other&vnp_ReturnUrl=http%3A%2F%2Flocalhost%3A5000%2Fapi%2Fpayments%2Fvnpay%2Freturn&vnp_TmnCode=C7SJCYP6&vnp_TxnRef=6a24516f2331db25cafe2ec1&vnp_Version=2.1.0","SecureHash":"231bf36f188063dcec20627f5a344b01d256c5a314e8bfde1a6d73dbca3c48a4cde6db92bcf2b41938b4c0a72be636023e5ada668cde935dcc22a991fe3c4cfa","PaymentUrl":"https://sandbox.vnpayment.vn/paymentv2/vpcpay.html?vnp_Amount=3500000&vnp_Command=pay&vnp_CreateDate=20260606235719&vnp_CurrCode=VND&vnp_IpAddr=127.0.0.1&vnp_Locale=vn&vnp_OrderInfo=Thanh+to%C3%A1n+%C4%91%C6%A1n+h%C3%A0ng+6a24516f2331db25cafe2ec1&vnp_OrderType=other&vnp_ReturnUrl=http%3A%2F%2Flocalhost%3A5000%2Fapi%2Fpayments%2Fvnpay%2Freturn&vnp_TmnCode=C7SJCYP6&vnp_TxnRef=6a24516f2331db25cafe2ec1&vnp_Version=2.1.0&vnp_SecureHash=231bf36f188063dcec20627f5a344b01d256c5a314e8bfde1a6d73dbca3c48a4cde6db92bcf2b41938b4c0a72be636023e5ada668cde935dcc22a991fe3c4cfa"}
+2026-06-06T16:57:19.420Z [info] POST /api/payments/vnpay/create 200 108.866 ms - 617 req=3a9e9933-eb20-4a32-b39f-23a1fdc83c38 {"service":"back-end"}
+2026-06-06T16:57:43.837Z [info] GET /api/payments/vnpay/return?vnp_Amount=3500000&vnp_BankCode=NCB&vnp_BankTranNo=VNP15572359&vnp_CardType=ATM&vnp_OrderInfo=Thanh+to%C3%A1n+%C4%91%C6%A1n+h%C3%A0ng+6a24516f2331db25cafe2ec1&vnp_PayDate=20260606235738&vnp_ResponseCode=00&vnp_TmnCode=C7SJCYP6&vnp_TransactionNo=15572359&vnp_TransactionStatus=00&vnp_TxnRef=6a24516f2331db25cafe2ec1&vnp_SecureHash=9b4a032e8be81f147f70f212067fbcfde7659c1fa9f1c6e1e70f91032005a073b3fdfe55b9fa2ed14cf335223062afa6e805f7d48913f7a7cd8d42631d918544 302 4.853 ms - 250 req=8934ef32-a9ac-45ae-b579-494c96090e71 {"service":"back-end"}
+2026-06-06T16:57:45.018Z [info] GET /api/products/product/sales 200 167.825 ms - 30210 req=9d3bd89a-38a8-4ae2-b588-0616d4352bb3 {"service":"back-end"}
+2026-06-06T16:57:45.110Z [info] GET /api/products 200 267.460 ms - 185091 req=b7bdf898-4f9f-47dd-ac31-93ea251d2d1e {"service":"back-end"}
+2026-06-06T16:57:45.119Z [info] GET /api/categories/shop-cho-cun 200 275.935 ms - 81961 req=c6d2e76b-740e-4d3f-ac38-b17224e18a54 {"service":"back-end"}
+2026-06-06T16:57:45.493Z [info] GET /api/categories/shop-cho-meo 304 648.877 ms - - req=2e452d46-7e74-4780-8c19-a11ed48e7f15 {"service":"back-end"}
+2026-06-06T16:59:29.783Z [info] Redis client connecting {"service":"back-end"}
+2026-06-06T16:59:29.791Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-06T16:59:29.794Z [info] Redis client ready {"service":"back-end"}
+2026-06-06T16:59:29.800Z [info] Redis client connected {"service":"back-end"}
+2026-06-06T16:59:29.804Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-06T16:59:29.807Z [info] Loading .env {"service":"back-end","envPath":"D:\\Project\\PetShop-Website\\back-end\\.env"}
+2026-06-06T16:59:29.808Z [info] .env file loaded successfully {"service":"back-end"}
+2026-06-06T16:59:29.843Z [info] Background workers initialized {"service":"back-end"}
+2026-06-06T16:59:29.849Z [info] Server is running: http://localhost:5000 {"service":"back-end"}
+2026-06-06T16:59:30.458Z [info] MongoDB connected {"service":"back-end"}
+2026-06-06T16:59:30.460Z [info] Connected to MongoDB {"service":"back-end"}
+2026-06-06T16:59:37.857Z [info] Redis client connecting {"service":"back-end"}
+2026-06-06T16:59:37.868Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-06T16:59:37.871Z [info] Redis client ready {"service":"back-end"}
+2026-06-06T16:59:37.879Z [info] Redis client connected {"service":"back-end"}
+2026-06-06T16:59:37.885Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-06T16:59:37.888Z [info] Loading .env {"service":"back-end","envPath":"D:\\Project\\PetShop-Website\\back-end\\.env"}
+2026-06-06T16:59:37.890Z [info] .env file loaded successfully {"service":"back-end"}
+2026-06-06T16:59:37.939Z [info] Background workers initialized {"service":"back-end"}
+2026-06-06T16:59:37.946Z [info] Server is running: http://localhost:5000 {"service":"back-end"}
+2026-06-06T16:59:38.710Z [info] MongoDB connected {"service":"back-end"}
+2026-06-06T16:59:38.711Z [info] Connected to MongoDB {"service":"back-end"}
+2026-06-06T16:59:45.129Z [info] GET /api/categories 304 72.141 ms - - req=7b8d7f82-fb5e-4015-b651-f801e7c4ac73 {"service":"back-end"}
+2026-06-06T16:59:45.218Z [info] GET /api/users/profile 304 152.612 ms - - req=17b59d0f-5055-449b-9ac8-432ced887b4c {"service":"back-end"}
+2026-06-06T16:59:45.279Z [info] GET /api/carts/me 304 207.613 ms - - req=0bd532b5-0805-4ab6-adfe-f5b8499f750c {"service":"back-end"}
+2026-06-06T16:59:45.304Z [info] GET /api/users/shipping-address 304 230.541 ms - - req=a8d4a5b5-574a-4715-addd-6a489e5f81d6 {"service":"back-end"}
+2026-06-06T16:59:45.435Z [info] GET /api/carts/me 304 154.426 ms - - req=5ac7d445-e5ae-4781-b167-85fea6a2a11c {"service":"back-end"}
+2026-06-06T16:59:45.579Z [info] GET /api/carts/me 304 142.999 ms - - req=7bf27be2-c2d5-44f0-9b73-4e9b1c66a7e2 {"service":"back-end"}
+2026-06-06T16:59:48.329Z [info] POST /api/orders 201 354.794 ms - 614 req=ae09d8a3-da2c-4453-92ee-e371beefc829 {"service":"back-end"}
+2026-06-06T16:59:48.477Z [info] === VNPAY DEBUG === {"service":"back-end","TmnCode":"C7SJCYP6","Amount":3000000,"CreateDate":"20260606235948","SignData":"vnp_Amount=3000000&vnp_Command=pay&vnp_CreateDate=20260606235948&vnp_CurrCode=VND&vnp_IpAddr=127.0.0.1&vnp_Locale=vn&vnp_OrderInfo=Thanh+to%C3%A1n+%C4%91%C6%A1n+h%C3%A0ng+6a245204fabfe4f1da5241c5&vnp_OrderType=other&vnp_ReturnUrl=http%3A%2F%2Flocalhost%3A5000%2Fapi%2Fpayments%2Fvnpay%2Freturn&vnp_TmnCode=C7SJCYP6&vnp_TxnRef=6a245204fabfe4f1da5241c5&vnp_Version=2.1.0","SecureHash":"3d08d4915a0dc6d89a85c18e6b3ed4014f01205fc88128db7b9973ce8d2c18d464afebd9c85078903b69d9653f888d2490c27c9f87f80fe649cee28bfe4415e1","PaymentUrl":"https://sandbox.vnpayment.vn/paymentv2/vpcpay.html?vnp_Amount=3000000&vnp_Command=pay&vnp_CreateDate=20260606235948&vnp_CurrCode=VND&vnp_IpAddr=127.0.0.1&vnp_Locale=vn&vnp_OrderInfo=Thanh+to%C3%A1n+%C4%91%C6%A1n+h%C3%A0ng+6a245204fabfe4f1da5241c5&vnp_OrderType=other&vnp_ReturnUrl=http%3A%2F%2Flocalhost%3A5000%2Fapi%2Fpayments%2Fvnpay%2Freturn&vnp_TmnCode=C7SJCYP6&vnp_TxnRef=6a245204fabfe4f1da5241c5&vnp_Version=2.1.0&vnp_SecureHash=3d08d4915a0dc6d89a85c18e6b3ed4014f01205fc88128db7b9973ce8d2c18d464afebd9c85078903b69d9653f888d2490c27c9f87f80fe649cee28bfe4415e1"}
+2026-06-06T16:59:48.478Z [info] POST /api/payments/vnpay/create 200 138.459 ms - 617 req=02011b5a-7e6e-4fdd-929a-53ac4213050c {"service":"back-end"}
+2026-06-06T17:00:16.255Z [info] GET /api/payments/vnpay/return?vnp_Amount=3000000&vnp_BankCode=NCB&vnp_BankTranNo=VNP15572362&vnp_CardType=ATM&vnp_OrderInfo=Thanh+to%C3%A1n+%C4%91%C6%A1n+h%C3%A0ng+6a245204fabfe4f1da5241c5&vnp_PayDate=20260607000008&vnp_ResponseCode=00&vnp_TmnCode=C7SJCYP6&vnp_TransactionNo=15572362&vnp_TransactionStatus=00&vnp_TxnRef=6a245204fabfe4f1da5241c5&vnp_SecureHash=bc2966148410861eef8d8312761dbc46fe8e42536bcaf4b305b2a34e353d21b6a6cddcfaf2ae85ba803dbd94b3da1f8cd9b8597dd8db88968f6801b55c94b394 302 21.577 ms - 251 req=4b2884d5-700f-446e-b9a5-0d69e6530c6d {"service":"back-end"}
+2026-06-06T17:00:17.255Z [info] GET /api/products/product/sales 200 112.151 ms - 30210 req=f0927f15-f20e-41f6-914f-e369dcce7004 {"service":"back-end"}
+2026-06-06T17:00:17.398Z [info] GET /api/categories/shop-cho-meo 200 256.219 ms - 103131 req=7c8e614e-c0bc-49d8-acbe-a88be0943f29 {"service":"back-end"}
+2026-06-06T17:00:17.458Z [info] GET /api/products 200 320.099 ms - 185091 req=537c8d70-4ac3-477f-a045-48eeb5fddb9f {"service":"back-end"}
+2026-06-06T17:00:17.463Z [info] GET /api/categories/shop-cho-cun 304 323.293 ms - - req=1ad09b4d-4927-4c0f-8394-0ce1c23820ac {"service":"back-end"}

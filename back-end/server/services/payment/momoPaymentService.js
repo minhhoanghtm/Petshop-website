@@ -3,27 +3,34 @@ import Payment from "../../models/Payment.js";
 import MomoPaymentStrategy from "./momoStrategy.js";
 import { createServiceError } from "../../utils/serviceError.js";
 
+// Khởi tạo chiến lược thanh toán MOMO
 const momoStrategy = new MomoPaymentStrategy();
 
+// API để tạo yêu cầu thanh toán MOMO
 export const createMomoPayment = async (orderId, user) => {
   if (!orderId) {
     throw createServiceError("orderId là bắt buộc.", 400);
   }
 
+  // Tìm đơn hàng và kiểm tra quyền truy cập
   const order = await Order.findById(orderId).populate("user_id");
   if (!order) {
     throw createServiceError("Không tìm thấy đơn hàng.", 404);
   }
 
+  // Kiểm tra xem người dùng có phải là chủ sở hữu đơn hàng hoặc có vai trò admin hay không
   const isOwner = String(order.user_id?._id) === String(user._id);
   if (!isOwner && user.role !== "admin") {
     throw createServiceError("Bạn không có quyền truy cập đơn hàng này.", 403);
   }
 
+
+  // Kiểm tra trạng thái thanh toán và phương thức thanh toán hiện tại của đơn hàng
   let paymentMethod = String(order.payment_method || "").trim().toUpperCase();
   const paymentStatus = String(order.payment_status || "pending").trim().toLowerCase();
   const orderStatus = String(order.status || "pending").trim().toLowerCase();
 
+  //Nếu chưa có phương thức thanh toán tì mặc định là MOMO
   if (!paymentMethod) {
     order.payment_method = "MOMO";
     order.payment_status = "pending";
@@ -31,10 +38,13 @@ export const createMomoPayment = async (orderId, user) => {
     paymentMethod = "MOMO";
   }
 
+
+  //Kiểm tra đã thanh toán chưa
   if (paymentStatus === "paid") {
     throw createServiceError("Đơn hàng đã được thanh toán.", 400);
   }
 
+  // Nếu phương thức thanh toán hiện tại không phải là MOMO, chúng ta sẽ chuyển đổi nó sang MOMO (nếu đơn hàng đang ở trạng thái pending hoặc confirmed)
   if (paymentMethod !== "MOMO") {
     if (!["pending", "confirmed"].includes(orderStatus)) {
       throw createServiceError("Đơn hàng không hợp lệ để chuyển đổi sang MOMO.", 400);
@@ -46,6 +56,7 @@ export const createMomoPayment = async (orderId, user) => {
     paymentMethod = "MOMO";
   }
 
+  // Kiểm tra xem đã tồn tại yêu cầu thanh toán MOMO nào đang chờ xử lý cho đơn hàng này chưa
   const existingPendingPayment = await Payment.findOne({
     order_id: order._id,
     method: "MOMO",
@@ -63,8 +74,10 @@ export const createMomoPayment = async (orderId, user) => {
     };
   }
 
+  // Tạo yêu cầu thanh toán MOMO mới
   const momoResponse = await momoStrategy.createPayment(order, user);
 
+  // Lưu thông tin thanh toán vào cơ sở dữ liệu
   const payment = await Payment.create({
     order_id: order._id,
     user_id: user._id,
@@ -78,6 +91,8 @@ export const createMomoPayment = async (orderId, user) => {
     },
   });
 
+
+  // Trả về thông tin thanh toán MOMO cho client
   return {
     paymentCode: payment.payment_code,
     orderId: order._id,
@@ -87,15 +102,17 @@ export const createMomoPayment = async (orderId, user) => {
   };
 };
 
+// Hàm xử lý IPN từ MOMO
 export const handleMomoIpn = async (payload = {}) => {
   if (!payload || typeof payload !== "object") {
     throw createServiceError("Dữ liệu IPN không hợp lệ.", 400);
   }
-
+  //Nếu không có verify thì không thể xác thực được tính hợp lệ của IPN, do đó sẽ từ chối xử lý
   if (!momoStrategy.verifyCallback(payload)) {
     throw createServiceError("Chữ ký MoMo không hợp lệ.", 400);
   }
 
+  // Tìm thông tin thanh toán dựa trên extraData (payment_code) hoặc orderId từ payload
   let payment = null;
   if (payload.extraData) {
     payment = await Payment.findOne({ payment_code: payload.extraData, method: "MOMO" });
