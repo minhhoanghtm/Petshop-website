@@ -7,6 +7,7 @@ import {
   generateMomoSignature,
   verifyMomoSignature,
 } from "../../utils/momoUtils.js";
+import { callWithRetry } from "../../utils/retryHelper.js";
 
 export class MomoPaymentStrategy extends PaymentStrategy {
   constructor() {
@@ -21,8 +22,18 @@ export class MomoPaymentStrategy extends PaymentStrategy {
   }
 
   get config() {
-    if (!this.partnerCode || !this.accessKey || !this.secretKey || !this.endpoint || !this.redirectUrl || !this.ipnUrl) {
-      throw createServiceError("Thiết lập Momo chưa đầy đủ trong biến môi trường", 500);
+    if (
+      !this.partnerCode ||
+      !this.accessKey ||
+      !this.secretKey ||
+      !this.endpoint ||
+      !this.redirectUrl ||
+      !this.ipnUrl
+    ) {
+      throw createServiceError(
+        "Thiết lập Momo chưa đầy đủ trong biến môi trường",
+        500,
+      );
     }
 
     return {
@@ -61,14 +72,24 @@ export class MomoPaymentStrategy extends PaymentStrategy {
       requestType: config.requestType,
     };
 
-    requestPayload.signature = generateMomoSignature(buildMomoCreateRawSignature(requestPayload), config.secretKey);
+    requestPayload.signature = generateMomoSignature(
+      buildMomoCreateRawSignature(requestPayload),
+      config.secretKey,
+    );
 
-    const response = await axios.post(`${config.endpoint}/v2/gateway/api/create`, requestPayload, {
-      headers: {
-        "Content-Type": "application/json",
+    const response = await callWithRetry(
+      () =>
+        axios.post(`${config.endpoint}/v2/gateway/api/create`, requestPayload, {
+          headers: {
+            "Content-Type": "application/json",
+          },
+          timeout: 10000, //đặt timeout 10 giây để kích hoạt retry nếu Momo không phản hồi kịp thời
+        }),
+      {
+        maxAttemps: 3, // thử lại tối đa 3 lần
+        delayMs: 2000, // bắt đầu với 2 giây và tăng dần
       },
-      timeout: 15000,
-    });
+    );
 
     if (!response?.data) {
       throw createServiceError("Không nhận được phản hồi từ Momo", 502);
@@ -76,7 +97,11 @@ export class MomoPaymentStrategy extends PaymentStrategy {
 
     const responseBody = response.data;
     if (Number(responseBody.resultCode) !== 0) {
-      throw createServiceError(`Momo trả về lỗi: ${responseBody.message || responseBody.localMessage}`, 502, responseBody);
+      throw createServiceError(
+        `Momo trả về lỗi: ${responseBody.message || responseBody.localMessage}`,
+        502,
+        responseBody,
+      );
     }
 
     return {

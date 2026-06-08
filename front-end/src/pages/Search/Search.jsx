@@ -6,22 +6,46 @@ import { ScaleLoader } from "react-spinners";
 import { searchProducts } from "../../services/productService";
 
 const Search = () => {
-  const [searchTerm, setSearchTerm] = useState("");
+  const navigate = useNavigate();
+  const location = useLocation();
+  const params = new URLSearchParams(location.search);
+  const query = params.get("q") || "";
+
+  const [searchTerm, setSearchTerm] = useState(query);
+  const [debouncedSearchTerm, setDebouncedSearchTerm] = useState(query);
   const [searchResults, setSearchResults] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [hasSearched, setHasSearched] = useState(false);
-  const navigate = useNavigate();
-  const location = useLocation();
 
+  // Đồng bộ từ URL khi người dùng chuyển hướng từ trang khác hoặc click link tìm kiếm bên ngoài
   useEffect(() => {
     const params = new URLSearchParams(location.search);
-    const query = params.get("q");
-
-    if (query) {
-      setSearchTerm(query);
-      performSearch(query);
+    const q = params.get("q") || "";
+    if (q !== searchTerm) {
+      setSearchTerm(q);
+      setDebouncedSearchTerm(q);
     }
   }, [location.search]);
+
+  // Debounce input: Cập nhật debouncedSearchTerm 500ms sau khi người dùng dừng gõ
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setDebouncedSearchTerm(searchTerm);
+    }, 500);
+    return () => clearTimeout(timer);
+  }, [searchTerm]);
+
+  // Gọi API tìm kiếm khi debouncedSearchTerm thay đổi
+  useEffect(() => {
+    if (debouncedSearchTerm.trim()) {
+      performSearch(debouncedSearchTerm);
+      // Cập nhật URL mà không reload trang để người dùng có thể chia sẻ link
+      navigate(`/search?q=${encodeURIComponent(debouncedSearchTerm)}`, { replace: true });
+    } else {
+      setSearchResults([]);
+      setHasSearched(false);
+    }
+  }, [debouncedSearchTerm]);
 
   const performSearch = async (query) => {
     if (!query.trim()) return;
@@ -41,8 +65,11 @@ const Search = () => {
   };
 
   const handleSearch = () => {
-    navigate(`/search?q=${encodeURIComponent(searchTerm)}`);
-    performSearch(searchTerm);
+    if (searchTerm.trim()) {
+      setDebouncedSearchTerm(searchTerm);
+      performSearch(searchTerm);
+      navigate(`/search?q=${encodeURIComponent(searchTerm)}`);
+    }
   };
 
   const handleKeyDown = (e) => {

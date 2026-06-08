@@ -9,14 +9,6 @@ const queueRedis = new Redis(redisUrl, {
   maxRetriesPerRequest: null,
   enableReadyCheck: false,
   lazyConnect: true,
-  reconnectStrategy(times) {
-    const delay = Math.min(times * 1000, 5000);
-    logger.warn("Queue Redis reconnect attempt", {
-      attempt: times,
-      delay,
-    });
-    return delay;
-  },
 });
 
 queueRedis.on("connect", () => {

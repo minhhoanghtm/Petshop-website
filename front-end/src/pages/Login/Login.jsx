@@ -8,8 +8,9 @@ import ScrollToTopButton from "../../components/ScrollToTopButton";
 import { Link, useNavigate } from "react-router-dom";
 import "../page.scss";
 import { toast } from "react-toastify";
-import { signIn } from "../../services/authService";
+import { signIn, signInWithGoogle } from "../../services/authService";
 import { fetchProfile } from "../../services/userService";
+import { useGoogleLogin } from "@react-oauth/google";
 import {
   EMAIL_RULE_MESSAGE,
   PASSWORD_RULE_MESSAGE,
@@ -125,6 +126,44 @@ const Login = () => {
     }, 5000);
   };
 
+  const loginGoogle = useGoogleLogin({
+    onSuccess: async (tokenResponse) => {
+      setLoading(true);
+      setErrors({});
+      try {
+        const res = await signInWithGoogle({ token: tokenResponse.access_token });
+        const { accessToken } = res.data;
+
+        if (!accessToken) {
+          showApiError("Đăng nhập bằng Google thất bại.");
+          return;
+        }
+
+        localStorage.setItem("accessToken", accessToken);
+        const profileRes = await fetchProfile();
+        if (profileRes?.data) {
+          localStorage.setItem("user", JSON.stringify(profileRes.data));
+        }
+        setSuccess(true);
+        toast.success("Đăng nhập bằng Google thành công!");
+        setTimeout(() => {
+          navigate("/");
+        }, 500);
+      } catch (err) {
+        console.error("Google Login Error:", err);
+        const errorMessage = err.response?.data?.message || "Đăng nhập bằng Google thất bại. Vui lòng thử lại.";
+        showApiError(errorMessage);
+        toast.error(errorMessage);
+      } finally {
+        setLoading(false);
+      }
+    },
+    onError: (error) => {
+      console.error("Google Login Failed:", error);
+      toast.error("Đăng nhập bằng Google thất bại.");
+    }
+  });
+
   const handleLogin = async (e) => {
     e.preventDefault();
 
@@ -236,7 +275,12 @@ const Login = () => {
             Đăng nhập với
           </h1>
           <div className="flex justify-center gap-4 mb-6">
-            <button className="flex items-center gap-2 bg-gray-100 px-6 py-3 rounded-md hover:bg-gray-200 shadow-sm cursor-pointer">
+            <button
+              type="button"
+              onClick={() => loginGoogle()}
+              className="flex items-center gap-2 bg-gray-100 px-6 py-3 rounded-md hover:bg-gray-200 shadow-sm cursor-pointer"
+              disabled={loading}
+            >
               <FcGoogle className="text-4xl" />
               Google
             </button>

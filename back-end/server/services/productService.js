@@ -1,6 +1,9 @@
 import mongoose from "mongoose";
 import Product from "../models/Product.js";
 import { getReviewSummaryByProductId } from "./reviewService.js";
+import { getOrSetCache, invalidCachePattern } from "../utils/cacheHelper.js";
+import { CACHE_TTL } from "../configs/cacheConfig.js";
+import redisClient from "../configs/redisClient.js";
 
 // ============ Helper Functions ============
 
@@ -19,7 +22,9 @@ const normalizeImages = (images) => {
     try {
       const parsed = JSON.parse(trimmed);
       if (Array.isArray(parsed)) {
-        return parsed.map((image) => String(image || "").trim()).filter(Boolean);
+        return parsed
+          .map((image) => String(image || "").trim())
+          .filter(Boolean);
       }
     } catch {
       // fall back to single string image
@@ -37,11 +42,15 @@ const normalizeImages = (images) => {
 const normalizeProductPayload = (payload = {}, existingProduct = null) => {
   const categoryId = payload.category_id?._id || payload.category_id || "";
   const images = normalizeImages(payload.images);
-  const slugSource = String(payload.slug || payload.name || existingProduct?.name || "").trim();
+  const slugSource = String(
+    payload.slug || payload.name || existingProduct?.name || "",
+  ).trim();
 
   const normalized = {
     name: String(payload.name || existingProduct?.name || "").trim(),
-    description: String(payload.description || existingProduct?.description || "").trim(),
+    description: String(
+      payload.description || existingProduct?.description || "",
+    ).trim(),
     price: Number(payload.price ?? existingProduct?.price ?? 0),
     stock: Number(payload.stock ?? existingProduct?.stock ?? 0),
     category_id: String(categoryId).trim(),
@@ -123,7 +132,10 @@ const buildProductRatingLookupPipeline = () => [
       rating: {
         $round: [
           {
-            $ifNull: [{ $arrayElemAt: ["$reviewSummaryAgg.averageRating", 0] }, 0],
+            $ifNull: [
+              { $arrayElemAt: ["$reviewSummaryAgg.averageRating", 0] },
+              0,
+            ],
           },
           1,
         ],
@@ -172,34 +184,42 @@ const buildProductMatchQuery = (params = {}) => {
  * Get all products with optional category filter
  */
 export const getAllProducts = async (params) => {
-  const match = buildProductMatchQuery(params);
+  // Tạo cache key động dựa trên tham số lọc
+  const categoryFilter = params?.category || "all";
+  const cacheKey = `products:list:${categoryFilter}`;
 
-  return Product.aggregate([
-    { $match: match },
-    ...buildCategoryLookupPipeline(),
-    ...buildProductRatingLookupPipeline(),
-  ]);
+  return getOrSetCache(cacheKey, CACHE_TTL, PRODUCT_LIST, async () => {
+    const match = buildProductMatchQuery(params);
+    return Product.aggregate([
+      { $match: match },
+      ...buildCategoryLookupPipeline(),
+      ...buildProductRatingLookupPipeline(),
+    ]);
+  });
 };
 
 /**
  * Get product by slug
  */
 export const getProductBySlug = async (slug) => {
-  const product = await Product.findOne({ slug })
-    .populate("category_id")
-    .populate({
-      path: "reviews",
-      populate: {
-        path: "user",
-        select: "fullName avatar role",
-      },
-      options: {
-        sort: { createdAt: -1 },
-      },
-    });
+  const cacheKey = `products:detail:${slug}`;
 
+  return getOrSetCache(cacheKey, CACHE_TTL, PRODUCT_DETAIL, async () => {
+    const product = await Product.findOne({ slug })
+      .populate("category_id")
+      .populate({
+        path: "reviews",
+        populate: {
+          path: "user",
+          select: "fullName avatar role",
+        },
+        options: {
+          sort: { createdAt: -1 },
+        },
+      });
+  });
   if (!product) {
-    throw new Error("Sản phẩm không tồn tại");
+    throw new Error("Sản phẩm không tồn tại!");
   }
 
   const reviewSummary = await getReviewSummaryByProductId(product._id);
@@ -214,14 +234,48 @@ export const getProductBySlug = async (slug) => {
 };
 
 /**
+ * Get top 20 products by sales
+ */
+export const getProductsSale = async () => {
+  const cacheKey = "products:best_seller";
+
+  return getOrSetCache(cacheKey, CACHE_TTL.BEST_SELLER, async () => {
+    return Product.aggregate([
+      { $sort: { sold: -1 } },
+      { $limit: 20 },
+      ...buildCategoryLookupPipeline(),
+      ...buildProductRatingLookupPipeline(),
+    ]);
+  });
+};
+
+// Hàm helper nội bộ dọn dẹp cache liên quan đến sản phẩm
+const clearProductCache = async (slug = null) => {
+  try {
+    // 1. Xóa cache danh sách sản phẩm và sản phẩm bán chạy
+    await invalidateCachePattern("products:list:*");
+    await redisClient.del("products:best_seller");
+    
+    // 2. Xóa cache chi tiết sản phẩm cụ thể nếu có truyền slug
+    if (slug) {
+      await redisClient.del(`product:detail:${slug}`);
+    }
+  } catch (error) {
+    logger.error("Failed to clear product cache:", { message: error.message });
+  }
+};
+
+/**
  * Create new product
  */
 export const createProduct = async (productData) => {
   const normalized = normalizeProductPayload(productData);
   validateProduct(normalized);
-
   const product = new Product(normalized);
   const newProduct = await product.save();
+  
+  // Xóa cache danh sách ngay sau khi thêm mới
+  await clearProductCache();
   return newProduct;
 };
 
@@ -231,22 +285,25 @@ export const createProduct = async (productData) => {
 export const updateProduct = async (productId, updateData) => {
   const product = await Product.findById(productId);
   if (!product) {
-    throw new Error("Product not found");
+    throw new Error("Không tìm thấy sản phẩm!");
   }
-
+  const oldSlug = product.slug;
   const updates = normalizeProductPayload(updateData, product);
   validateProduct(updates);
-
   const updatedProduct = await Product.findByIdAndUpdate(
     productId,
     { $set: updates },
     { new: true, runValidators: true, context: "query" }
   );
-
   if (!updatedProduct) {
-    throw new Error("Product not found");
+    throw new Error("Không tìm thấy sản phẩm!");
   }
 
+  // Xóa cache danh sách và chi tiết của sản phẩm này (kể cả slug cũ và mới)
+  await clearProductCache(oldSlug);
+  if (updatedProduct.slug !== oldSlug) {
+    await clearProductCache(updatedProduct.slug);
+  }
   return updatedProduct;
 };
 
@@ -258,21 +315,12 @@ export const deleteProduct = async (productId) => {
   if (!product) {
     throw new Error("Product not found");
   }
-
+  const slug = product.slug;
   await Product.deleteOne({ _id: productId });
+  
+  // Xóa cache danh sách và chi tiết của sản phẩm vừa xóa
+  await clearProductCache(slug);
   return { message: "Product deleted" };
-};
-
-/**
- * Get top 20 products by sales
- */
-export const getProductsSale = async () => {
-  return Product.aggregate([
-    { $sort: { sold: -1 } },
-    { $limit: 20 },
-    ...buildCategoryLookupPipeline(),
-    ...buildProductRatingLookupPipeline(),
-  ]);
 };
 
 /**

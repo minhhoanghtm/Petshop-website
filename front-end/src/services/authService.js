@@ -2,6 +2,8 @@ import axiosInstance from "../utils/axiosInstance";
 
 export const signIn = (payload) => axiosInstance.post("/api/auth/signin", payload);
 
+export const signInWithGoogle = (payload) => axiosInstance.post("/api/auth/google-signin", payload);
+
 export const signUp = (payload) => axiosInstance.post("/api/auth/signup", payload);
 
 export const checkDuplicate = (payload) =>

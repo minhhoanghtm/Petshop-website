@@ -8,7 +8,9 @@ import ScrollToTopButton from "../../components/ScrollToTopButton";
 import { Link, useNavigate } from "react-router-dom";
 import "../page.scss";
 import { toast } from "react-toastify";
-import { checkDuplicate, sendSignupCode, verifySignup } from "../../services/authService";
+import { checkDuplicate, sendSignupCode, verifySignup, signInWithGoogle } from "../../services/authService";
+import { fetchProfile } from "../../services/userService";
+import { useGoogleLogin } from "@react-oauth/google";
 import {
   EMAIL_RULE_MESSAGE,
   PASSWORD_RULE_MESSAGE,
@@ -37,6 +39,7 @@ const Register = () => {
   const [code, setCode] = useState("");
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState("");
+  const [cooldown, setCooldown] = useState(0);
 
   useEffect(() => {
     if (success) {
@@ -48,6 +51,15 @@ const Register = () => {
       return () => clearTimeout(timer);
     }
   }, [success, navigate]);
+
+  // Bộ đếm ngược 60 giây cho nút Gửi lại OTP
+  useEffect(() => {
+    if (cooldown <= 0) return;
+    const timer = setInterval(() => {
+      setCooldown((prev) => prev - 1);
+    }, 1000);
+    return () => clearInterval(timer);
+  }, [cooldown]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -92,6 +104,44 @@ const Register = () => {
     if (!gender) newErrors.gender = "Vui lòng chọn giới tính.";
     return newErrors;
   };
+
+  const loginGoogle = useGoogleLogin({
+    onSuccess: async (tokenResponse) => {
+      setLoading(true);
+      setErrors({});
+      try {
+        const res = await signInWithGoogle({ token: tokenResponse.access_token });
+        const { accessToken } = res.data;
+
+        if (!accessToken) {
+          toast.error("Đăng ký bằng Google thất bại.");
+          return;
+        }
+
+        localStorage.setItem("accessToken", accessToken);
+        const profileRes = await fetchProfile();
+        if (profileRes?.data) {
+          localStorage.setItem("user", JSON.stringify(profileRes.data));
+        }
+        setSuccess(true);
+        toast.success("Đăng ký/Đăng nhập bằng Google thành công!");
+        setTimeout(() => {
+          navigate("/");
+        }, 500);
+      } catch (err) {
+        console.error("Google Register Error:", err);
+        const errorMessage = err.response?.data?.message || "Đăng ký bằng Google thất bại. Vui lòng thử lại.";
+        setErrors({ general: errorMessage });
+        toast.error(errorMessage);
+      } finally {
+        setLoading(false);
+      }
+    },
+    onError: (error) => {
+      console.error("Google Register Failed:", error);
+      toast.error("Đăng ký bằng Google thất bại.");
+    }
+  });
 
   const handleRegister = async (e) => {
     e.preventDefault();
@@ -169,6 +219,7 @@ const Register = () => {
       const res = await sendSignupCode(userData);
       setMessage(res.data?.message || "Đã gửi mã xác thực đến email.");
       setStep(2);
+      setCooldown(60); // Bắt đầu đếm ngược 60 giây khi chuyển sang bước xác thực OTP
     } catch (err) {
       console.error("API Error:", err.response?.data || err.message);
       const errorMessage = err.response?.data?.message || err.message || "Đã có lỗi xảy ra. Vui lòng thử lại.";
@@ -229,7 +280,12 @@ const Register = () => {
           </h1>
           {/* social login */}
           <div className="flex justify-center gap-4 mb-6">
-            <button className="flex items-center gap-2 bg-gray-100 px-6 py-3 rounded-md hover:bg-gray-200 shadow-sm cursor-pointer">
+            <button
+              type="button"
+              onClick={() => loginGoogle()}
+              className="flex items-center gap-2 bg-gray-100 px-6 py-3 rounded-md hover:bg-gray-200 shadow-sm cursor-pointer"
+              disabled={loading}
+            >
               <FcGoogle className="text-4xl" />
               Google
             </button>
@@ -407,11 +463,11 @@ const Register = () => {
                 </button>
                 <button
                   type="button"
-                  className="flex-1 border rounded py-2"
-                  disabled={loading}
+                  className={`flex-1 border rounded py-2 ${cooldown > 0 ? "bg-gray-100 text-gray-400 cursor-not-allowed" : ""}`}
+                  disabled={loading || cooldown > 0}
                   onClick={async () => {
                     // Prevent double click
-                    if (loading) return;
+                    if (loading || cooldown > 0) return;
 
                     setLoading(true);
                     try {
@@ -440,6 +496,7 @@ const Register = () => {
                       });
                       setMessage('Mã xác thực đã được gửi lại.');
                       toast.success('Mã xác thực đã được gửi lại.');
+                      setCooldown(60); // Kích hoạt lại cooldown 60 giây sau khi gửi thành công
                     } catch (err) {
                       const errorMessage = err.response?.data?.message || err.message || "Gửi lại mã thất bại. Vui lòng thử lại.";
                       setErrors({ general: errorMessage });
@@ -449,7 +506,7 @@ const Register = () => {
                     }
                   }}
                 >
-                  {loading ? 'Đang gửi...' : 'Gửi lại mã'}
+                  {loading ? 'Đang gửi...' : cooldown > 0 ? `Gửi lại mã (${cooldown}s)` : 'Gửi lại mã'}
                 </button>
               </div>
             </form>

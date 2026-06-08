@@ -6718,3 +6718,1958 @@ MongoServerSelectionError: getaddrinfo ENOTFOUND ac-jpovlcq-shard-00-00.ne0u0gu.
 2026-06-07T16:04:12.973Z [info] GET /api/dashboard/notifications?limit=5 200 381.267 ms - 753 req=94f279b5-d7b3-460d-869c-78ec989112c6 {"service":"back-end"}
 2026-06-07T16:04:43.300Z [info] GET /api/dashboard/notifications?limit=5 200 327.317 ms - 753 req=ca9cf12b-2ad6-42a5-acd8-90d238e277d6 {"service":"back-end"}
 2026-06-07T16:05:46.292Z [info] GET /api/dashboard/notifications?limit=5 200 324.670 ms - 753 req=49a72c75-9c67-4c88-8aaa-b7968077c58a {"service":"back-end"}
+2026-06-08T11:47:59.955Z [warn] Redis reconnect attempt {"service":"back-end","attempt":0,"delay":0}
+2026-06-08T11:47:59.984Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:47:59.986Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:47:59.989Z [warn] Redis reconnect attempt {"service":"back-end","attempt":1,"delay":1000}
+2026-06-08T11:47:59.990Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:48:00.995Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:48:00.998Z [warn] Redis reconnect attempt {"service":"back-end","attempt":2,"delay":2000}
+2026-06-08T11:48:00.999Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:48:03.013Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:48:03.016Z [warn] Redis reconnect attempt {"service":"back-end","attempt":3,"delay":3000}
+2026-06-08T11:48:03.016Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:48:06.022Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:48:06.025Z [warn] Redis reconnect attempt {"service":"back-end","attempt":4,"delay":4000}
+2026-06-08T11:48:06.026Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:48:10.033Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:48:10.040Z [warn] Redis reconnect attempt {"service":"back-end","attempt":5,"delay":5000}
+2026-06-08T11:48:10.040Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:48:15.043Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:48:15.045Z [warn] Redis reconnect attempt {"service":"back-end","attempt":6,"delay":5000}
+2026-06-08T11:48:15.046Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:48:20.062Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:48:20.065Z [warn] Redis reconnect attempt {"service":"back-end","attempt":7,"delay":5000}
+2026-06-08T11:48:20.066Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:52:40.273Z [warn] Redis reconnect attempt {"service":"back-end","attempt":0,"delay":0}
+2026-06-08T11:52:40.299Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:52:40.302Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:52:40.306Z [warn] Redis reconnect attempt {"service":"back-end","attempt":1,"delay":1000}
+2026-06-08T11:52:40.307Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:52:40.375Z [warn] Redis reconnect attempt {"service":"back-end","attempt":0,"delay":0}
+2026-06-08T11:52:40.398Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:52:40.399Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:52:40.402Z [warn] Redis reconnect attempt {"service":"back-end","attempt":1,"delay":1000}
+2026-06-08T11:52:40.402Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:52:41.319Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:52:41.322Z [warn] Redis reconnect attempt {"service":"back-end","attempt":2,"delay":2000}
+2026-06-08T11:52:41.323Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:52:41.412Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:52:41.415Z [warn] Redis reconnect attempt {"service":"back-end","attempt":2,"delay":2000}
+2026-06-08T11:52:41.416Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:52:43.329Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:52:43.331Z [warn] Redis reconnect attempt {"service":"back-end","attempt":3,"delay":3000}
+2026-06-08T11:52:43.332Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:52:43.421Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:52:43.425Z [warn] Redis reconnect attempt {"service":"back-end","attempt":3,"delay":3000}
+2026-06-08T11:52:43.426Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:52:46.343Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:52:46.346Z [warn] Redis reconnect attempt {"service":"back-end","attempt":4,"delay":4000}
+2026-06-08T11:52:46.346Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:52:46.436Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:52:46.439Z [warn] Redis reconnect attempt {"service":"back-end","attempt":4,"delay":4000}
+2026-06-08T11:52:46.440Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:52:50.354Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:52:50.357Z [warn] Redis reconnect attempt {"service":"back-end","attempt":5,"delay":5000}
+2026-06-08T11:52:50.358Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:52:50.448Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:52:50.453Z [warn] Redis reconnect attempt {"service":"back-end","attempt":5,"delay":5000}
+2026-06-08T11:52:50.454Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:52:55.372Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:52:55.374Z [warn] Redis reconnect attempt {"service":"back-end","attempt":6,"delay":5000}
+2026-06-08T11:52:55.375Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:52:55.465Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:52:55.468Z [warn] Redis reconnect attempt {"service":"back-end","attempt":6,"delay":5000}
+2026-06-08T11:52:55.469Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:53:00.388Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:53:00.390Z [warn] Redis reconnect attempt {"service":"back-end","attempt":7,"delay":5000}
+2026-06-08T11:53:00.391Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:53:00.483Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:53:00.486Z [warn] Redis reconnect attempt {"service":"back-end","attempt":7,"delay":5000}
+2026-06-08T11:53:00.486Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:53:05.397Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:53:05.400Z [warn] Redis reconnect attempt {"service":"back-end","attempt":8,"delay":5000}
+2026-06-08T11:53:05.400Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:53:05.489Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:53:05.492Z [warn] Redis reconnect attempt {"service":"back-end","attempt":8,"delay":5000}
+2026-06-08T11:53:05.493Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:53:10.405Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:53:10.420Z [warn] Redis reconnect attempt {"service":"back-end","attempt":9,"delay":5000}
+2026-06-08T11:53:10.421Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:53:10.498Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:53:10.502Z [warn] Redis reconnect attempt {"service":"back-end","attempt":9,"delay":5000}
+2026-06-08T11:53:10.503Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:53:15.432Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:53:15.434Z [warn] Redis reconnect attempt {"service":"back-end","attempt":10,"delay":5000}
+2026-06-08T11:53:15.435Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:53:15.508Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:53:15.514Z [warn] Redis reconnect attempt {"service":"back-end","attempt":10,"delay":5000}
+2026-06-08T11:53:15.515Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:53:20.445Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:53:20.447Z [warn] Redis reconnect attempt {"service":"back-end","attempt":11,"delay":5000}
+2026-06-08T11:53:20.448Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:53:20.521Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:53:20.525Z [warn] Redis reconnect attempt {"service":"back-end","attempt":11,"delay":5000}
+2026-06-08T11:53:20.526Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:53:25.458Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:53:25.460Z [warn] Redis reconnect attempt {"service":"back-end","attempt":12,"delay":5000}
+2026-06-08T11:53:25.462Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:53:25.535Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:53:25.538Z [warn] Redis reconnect attempt {"service":"back-end","attempt":12,"delay":5000}
+2026-06-08T11:53:25.540Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:53:30.470Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:53:30.473Z [warn] Redis reconnect attempt {"service":"back-end","attempt":13,"delay":5000}
+2026-06-08T11:53:30.474Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:53:30.547Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:53:30.555Z [warn] Redis reconnect attempt {"service":"back-end","attempt":13,"delay":5000}
+2026-06-08T11:53:30.556Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:53:35.483Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:53:35.486Z [warn] Redis reconnect attempt {"service":"back-end","attempt":14,"delay":5000}
+2026-06-08T11:53:35.487Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:53:35.563Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:53:35.567Z [warn] Redis reconnect attempt {"service":"back-end","attempt":14,"delay":5000}
+2026-06-08T11:53:35.567Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:53:40.502Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:53:40.504Z [warn] Redis reconnect attempt {"service":"back-end","attempt":15,"delay":5000}
+2026-06-08T11:53:40.505Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:53:40.578Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:53:40.581Z [warn] Redis reconnect attempt {"service":"back-end","attempt":15,"delay":5000}
+2026-06-08T11:53:40.581Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:53:45.513Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:53:45.516Z [warn] Redis reconnect attempt {"service":"back-end","attempt":16,"delay":5000}
+2026-06-08T11:53:45.516Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:53:45.592Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:53:45.593Z [warn] Redis reconnect attempt {"service":"back-end","attempt":16,"delay":5000}
+2026-06-08T11:53:45.594Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:53:50.529Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:53:50.534Z [warn] Redis reconnect attempt {"service":"back-end","attempt":17,"delay":5000}
+2026-06-08T11:53:50.537Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:53:50.606Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:53:50.609Z [warn] Redis reconnect attempt {"service":"back-end","attempt":17,"delay":5000}
+2026-06-08T11:53:50.611Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:53:55.547Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:53:55.551Z [warn] Redis reconnect attempt {"service":"back-end","attempt":18,"delay":5000}
+2026-06-08T11:53:55.551Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:53:55.624Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:53:55.627Z [warn] Redis reconnect attempt {"service":"back-end","attempt":18,"delay":5000}
+2026-06-08T11:53:55.627Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:54:00.566Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:54:00.569Z [warn] Redis reconnect attempt {"service":"back-end","attempt":19,"delay":5000}
+2026-06-08T11:54:00.570Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:54:00.629Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:54:00.632Z [warn] Redis reconnect attempt {"service":"back-end","attempt":19,"delay":5000}
+2026-06-08T11:54:00.632Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:54:05.577Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:54:05.579Z [warn] Redis reconnect attempt {"service":"back-end","attempt":20,"delay":5000}
+2026-06-08T11:54:05.580Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:54:05.640Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:54:05.643Z [warn] Redis reconnect attempt {"service":"back-end","attempt":20,"delay":5000}
+2026-06-08T11:54:05.644Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:54:10.589Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:54:10.591Z [warn] Redis reconnect attempt {"service":"back-end","attempt":21,"delay":5000}
+2026-06-08T11:54:10.592Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:54:10.652Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:54:10.654Z [warn] Redis reconnect attempt {"service":"back-end","attempt":21,"delay":5000}
+2026-06-08T11:54:10.655Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:54:15.593Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:54:15.599Z [warn] Redis reconnect attempt {"service":"back-end","attempt":22,"delay":5000}
+2026-06-08T11:54:15.601Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:54:15.670Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:54:15.673Z [warn] Redis reconnect attempt {"service":"back-end","attempt":22,"delay":5000}
+2026-06-08T11:54:15.674Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:54:20.609Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:54:20.612Z [warn] Redis reconnect attempt {"service":"back-end","attempt":23,"delay":5000}
+2026-06-08T11:54:20.613Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:54:20.687Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:54:20.691Z [warn] Redis reconnect attempt {"service":"back-end","attempt":23,"delay":5000}
+2026-06-08T11:54:20.692Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:54:25.618Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:54:25.626Z [warn] Redis reconnect attempt {"service":"back-end","attempt":24,"delay":5000}
+2026-06-08T11:54:25.626Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:54:25.696Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:54:25.699Z [warn] Redis reconnect attempt {"service":"back-end","attempt":24,"delay":5000}
+2026-06-08T11:54:25.700Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:54:30.639Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:54:30.641Z [warn] Redis reconnect attempt {"service":"back-end","attempt":25,"delay":5000}
+2026-06-08T11:54:30.642Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:54:30.702Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:54:30.704Z [warn] Redis reconnect attempt {"service":"back-end","attempt":25,"delay":5000}
+2026-06-08T11:54:30.705Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:54:35.652Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:54:35.655Z [warn] Redis reconnect attempt {"service":"back-end","attempt":26,"delay":5000}
+2026-06-08T11:54:35.656Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:54:35.714Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:54:35.716Z [warn] Redis reconnect attempt {"service":"back-end","attempt":26,"delay":5000}
+2026-06-08T11:54:35.717Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:54:40.661Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:54:40.665Z [warn] Redis reconnect attempt {"service":"back-end","attempt":27,"delay":5000}
+2026-06-08T11:54:40.665Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:54:40.720Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:54:40.722Z [warn] Redis reconnect attempt {"service":"back-end","attempt":27,"delay":5000}
+2026-06-08T11:54:40.727Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:54:45.677Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:54:45.681Z [warn] Redis reconnect attempt {"service":"back-end","attempt":28,"delay":5000}
+2026-06-08T11:54:45.682Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:54:45.741Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:54:45.744Z [warn] Redis reconnect attempt {"service":"back-end","attempt":28,"delay":5000}
+2026-06-08T11:54:45.745Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:54:50.685Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:54:50.688Z [warn] Redis reconnect attempt {"service":"back-end","attempt":29,"delay":5000}
+2026-06-08T11:54:50.689Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:54:50.761Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:54:50.763Z [warn] Redis reconnect attempt {"service":"back-end","attempt":29,"delay":5000}
+2026-06-08T11:54:50.764Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:54:55.698Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:54:55.701Z [warn] Redis reconnect attempt {"service":"back-end","attempt":30,"delay":5000}
+2026-06-08T11:54:55.701Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:54:55.777Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:54:55.780Z [warn] Redis reconnect attempt {"service":"back-end","attempt":30,"delay":5000}
+2026-06-08T11:54:55.780Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:55:00.711Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:55:00.715Z [warn] Redis reconnect attempt {"service":"back-end","attempt":31,"delay":5000}
+2026-06-08T11:55:00.715Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:55:00.785Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:55:00.787Z [warn] Redis reconnect attempt {"service":"back-end","attempt":31,"delay":5000}
+2026-06-08T11:55:00.788Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:55:05.729Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:55:05.732Z [warn] Redis reconnect attempt {"service":"back-end","attempt":32,"delay":5000}
+2026-06-08T11:55:05.733Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:55:05.791Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:55:05.793Z [warn] Redis reconnect attempt {"service":"back-end","attempt":32,"delay":5000}
+2026-06-08T11:55:05.795Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:55:10.733Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:55:10.736Z [warn] Redis reconnect attempt {"service":"back-end","attempt":33,"delay":5000}
+2026-06-08T11:55:10.737Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:55:10.796Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:55:10.800Z [warn] Redis reconnect attempt {"service":"back-end","attempt":33,"delay":5000}
+2026-06-08T11:55:10.801Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:55:15.740Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:55:15.742Z [warn] Redis reconnect attempt {"service":"back-end","attempt":34,"delay":5000}
+2026-06-08T11:55:15.743Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:55:15.803Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:55:15.806Z [warn] Redis reconnect attempt {"service":"back-end","attempt":34,"delay":5000}
+2026-06-08T11:55:15.807Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:55:20.763Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:55:20.766Z [warn] Redis reconnect attempt {"service":"back-end","attempt":35,"delay":5000}
+2026-06-08T11:55:20.767Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:55:20.810Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:55:20.812Z [warn] Redis reconnect attempt {"service":"back-end","attempt":35,"delay":5000}
+2026-06-08T11:55:20.813Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:55:25.779Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:55:25.782Z [warn] Redis reconnect attempt {"service":"back-end","attempt":36,"delay":5000}
+2026-06-08T11:55:25.783Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:55:25.826Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:55:25.829Z [warn] Redis reconnect attempt {"service":"back-end","attempt":36,"delay":5000}
+2026-06-08T11:55:25.830Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:55:30.794Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:55:30.797Z [warn] Redis reconnect attempt {"service":"back-end","attempt":37,"delay":5000}
+2026-06-08T11:55:30.797Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:55:30.840Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:55:30.842Z [warn] Redis reconnect attempt {"service":"back-end","attempt":37,"delay":5000}
+2026-06-08T11:55:30.843Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:55:35.802Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:55:35.805Z [warn] Redis reconnect attempt {"service":"back-end","attempt":38,"delay":5000}
+2026-06-08T11:55:35.806Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:55:35.850Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:55:35.853Z [warn] Redis reconnect attempt {"service":"back-end","attempt":38,"delay":5000}
+2026-06-08T11:55:35.854Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:55:40.810Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:55:40.814Z [warn] Redis reconnect attempt {"service":"back-end","attempt":39,"delay":5000}
+2026-06-08T11:55:40.814Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:55:40.854Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:55:40.856Z [warn] Redis reconnect attempt {"service":"back-end","attempt":39,"delay":5000}
+2026-06-08T11:55:40.857Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:55:45.825Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:55:45.827Z [warn] Redis reconnect attempt {"service":"back-end","attempt":40,"delay":5000}
+2026-06-08T11:55:45.828Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:55:45.872Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:55:45.874Z [warn] Redis reconnect attempt {"service":"back-end","attempt":40,"delay":5000}
+2026-06-08T11:55:45.875Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:55:50.836Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:55:50.839Z [warn] Redis reconnect attempt {"service":"back-end","attempt":41,"delay":5000}
+2026-06-08T11:55:50.840Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:55:50.883Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:55:50.886Z [warn] Redis reconnect attempt {"service":"back-end","attempt":41,"delay":5000}
+2026-06-08T11:55:50.886Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:55:55.846Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:55:55.849Z [warn] Redis reconnect attempt {"service":"back-end","attempt":42,"delay":5000}
+2026-06-08T11:55:55.850Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:55:55.891Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:55:55.895Z [warn] Redis reconnect attempt {"service":"back-end","attempt":42,"delay":5000}
+2026-06-08T11:55:55.896Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:56:00.851Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:56:00.854Z [warn] Redis reconnect attempt {"service":"back-end","attempt":43,"delay":5000}
+2026-06-08T11:56:00.854Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:56:00.898Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:56:00.900Z [warn] Redis reconnect attempt {"service":"back-end","attempt":43,"delay":5000}
+2026-06-08T11:56:00.901Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:56:05.865Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:56:05.868Z [warn] Redis reconnect attempt {"service":"back-end","attempt":44,"delay":5000}
+2026-06-08T11:56:05.872Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:56:05.913Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:56:05.915Z [warn] Redis reconnect attempt {"service":"back-end","attempt":44,"delay":5000}
+2026-06-08T11:56:05.916Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:56:10.881Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:56:10.884Z [warn] Redis reconnect attempt {"service":"back-end","attempt":45,"delay":5000}
+2026-06-08T11:56:10.885Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:56:10.928Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:56:10.930Z [warn] Redis reconnect attempt {"service":"back-end","attempt":45,"delay":5000}
+2026-06-08T11:56:10.934Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:56:15.896Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:56:15.898Z [warn] Redis reconnect attempt {"service":"back-end","attempt":46,"delay":5000}
+2026-06-08T11:56:15.899Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:56:15.941Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:56:15.949Z [warn] Redis reconnect attempt {"service":"back-end","attempt":46,"delay":5000}
+2026-06-08T11:56:15.950Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:56:20.902Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:56:20.905Z [warn] Redis reconnect attempt {"service":"back-end","attempt":47,"delay":5000}
+2026-06-08T11:56:20.910Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:56:20.966Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:56:20.968Z [warn] Redis reconnect attempt {"service":"back-end","attempt":47,"delay":5000}
+2026-06-08T11:56:20.968Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:56:25.921Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:56:25.929Z [warn] Redis reconnect attempt {"service":"back-end","attempt":48,"delay":5000}
+2026-06-08T11:56:25.930Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:56:25.982Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:56:25.991Z [warn] Redis reconnect attempt {"service":"back-end","attempt":48,"delay":5000}
+2026-06-08T11:56:25.992Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:56:30.933Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:56:30.935Z [warn] Redis reconnect attempt {"service":"back-end","attempt":49,"delay":5000}
+2026-06-08T11:56:30.936Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:56:30.995Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:56:30.999Z [warn] Redis reconnect attempt {"service":"back-end","attempt":49,"delay":5000}
+2026-06-08T11:56:31.000Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:56:35.940Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:56:35.945Z [warn] Redis reconnect attempt {"service":"back-end","attempt":50,"delay":5000}
+2026-06-08T11:56:35.946Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:56:36.003Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:56:36.005Z [warn] Redis reconnect attempt {"service":"back-end","attempt":50,"delay":5000}
+2026-06-08T11:56:36.006Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:56:40.948Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:56:40.950Z [warn] Redis reconnect attempt {"service":"back-end","attempt":51,"delay":5000}
+2026-06-08T11:56:40.950Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:56:41.011Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:56:41.015Z [warn] Redis reconnect attempt {"service":"back-end","attempt":51,"delay":5000}
+2026-06-08T11:56:41.016Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:56:45.963Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:56:45.966Z [warn] Redis reconnect attempt {"service":"back-end","attempt":52,"delay":5000}
+2026-06-08T11:56:45.967Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:56:46.025Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:56:46.028Z [warn] Redis reconnect attempt {"service":"back-end","attempt":52,"delay":5000}
+2026-06-08T11:56:46.029Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:56:50.968Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:56:50.970Z [warn] Redis reconnect attempt {"service":"back-end","attempt":53,"delay":5000}
+2026-06-08T11:56:50.970Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:56:51.045Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:56:51.051Z [warn] Redis reconnect attempt {"service":"back-end","attempt":53,"delay":5000}
+2026-06-08T11:56:51.052Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:56:55.978Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:56:55.983Z [warn] Redis reconnect attempt {"service":"back-end","attempt":54,"delay":5000}
+2026-06-08T11:56:55.983Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:56:56.055Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:56:56.058Z [warn] Redis reconnect attempt {"service":"back-end","attempt":54,"delay":5000}
+2026-06-08T11:56:56.059Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:57:00.990Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:57:00.994Z [warn] Redis reconnect attempt {"service":"back-end","attempt":55,"delay":5000}
+2026-06-08T11:57:00.994Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:57:01.069Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:57:01.073Z [warn] Redis reconnect attempt {"service":"back-end","attempt":55,"delay":5000}
+2026-06-08T11:57:01.074Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:57:06.008Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:57:06.011Z [warn] Redis reconnect attempt {"service":"back-end","attempt":56,"delay":5000}
+2026-06-08T11:57:06.012Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:57:06.084Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:57:06.089Z [warn] Redis reconnect attempt {"service":"back-end","attempt":56,"delay":5000}
+2026-06-08T11:57:06.090Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:57:11.015Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:57:11.018Z [warn] Redis reconnect attempt {"service":"back-end","attempt":57,"delay":5000}
+2026-06-08T11:57:11.019Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:57:11.091Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:57:11.094Z [warn] Redis reconnect attempt {"service":"back-end","attempt":57,"delay":5000}
+2026-06-08T11:57:11.094Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:57:16.032Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:57:16.035Z [warn] Redis reconnect attempt {"service":"back-end","attempt":58,"delay":5000}
+2026-06-08T11:57:16.035Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:57:16.095Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:57:16.098Z [warn] Redis reconnect attempt {"service":"back-end","attempt":58,"delay":5000}
+2026-06-08T11:57:16.099Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:57:21.049Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:57:21.051Z [warn] Redis reconnect attempt {"service":"back-end","attempt":59,"delay":5000}
+2026-06-08T11:57:21.052Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:57:21.111Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:57:21.113Z [warn] Redis reconnect attempt {"service":"back-end","attempt":59,"delay":5000}
+2026-06-08T11:57:21.114Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:57:26.061Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:57:26.065Z [warn] Redis reconnect attempt {"service":"back-end","attempt":60,"delay":5000}
+2026-06-08T11:57:26.066Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:57:26.123Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:57:26.126Z [warn] Redis reconnect attempt {"service":"back-end","attempt":60,"delay":5000}
+2026-06-08T11:57:26.126Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:57:31.068Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:57:31.070Z [warn] Redis reconnect attempt {"service":"back-end","attempt":61,"delay":5000}
+2026-06-08T11:57:31.070Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:57:31.138Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:57:31.141Z [warn] Redis reconnect attempt {"service":"back-end","attempt":61,"delay":5000}
+2026-06-08T11:57:31.142Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:57:36.079Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:57:36.081Z [warn] Redis reconnect attempt {"service":"back-end","attempt":62,"delay":5000}
+2026-06-08T11:57:36.082Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:57:36.155Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:57:36.158Z [warn] Redis reconnect attempt {"service":"back-end","attempt":62,"delay":5000}
+2026-06-08T11:57:36.160Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:57:41.094Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:57:41.097Z [warn] Redis reconnect attempt {"service":"back-end","attempt":63,"delay":5000}
+2026-06-08T11:57:41.098Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:57:41.168Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:57:41.170Z [warn] Redis reconnect attempt {"service":"back-end","attempt":63,"delay":5000}
+2026-06-08T11:57:41.174Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:57:46.111Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:57:46.113Z [warn] Redis reconnect attempt {"service":"back-end","attempt":64,"delay":5000}
+2026-06-08T11:57:46.114Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:57:46.190Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:57:46.193Z [warn] Redis reconnect attempt {"service":"back-end","attempt":64,"delay":5000}
+2026-06-08T11:57:46.193Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:57:51.117Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:57:51.121Z [warn] Redis reconnect attempt {"service":"back-end","attempt":65,"delay":5000}
+2026-06-08T11:57:51.121Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:57:51.195Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:57:51.201Z [warn] Redis reconnect attempt {"service":"back-end","attempt":65,"delay":5000}
+2026-06-08T11:57:51.202Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:57:56.130Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:57:56.135Z [warn] Redis reconnect attempt {"service":"back-end","attempt":66,"delay":5000}
+2026-06-08T11:57:56.137Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:57:56.204Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:57:56.207Z [warn] Redis reconnect attempt {"service":"back-end","attempt":66,"delay":5000}
+2026-06-08T11:57:56.207Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:58:01.148Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:58:01.150Z [warn] Redis reconnect attempt {"service":"back-end","attempt":67,"delay":5000}
+2026-06-08T11:58:01.151Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:58:01.210Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:58:01.211Z [warn] Redis reconnect attempt {"service":"back-end","attempt":67,"delay":5000}
+2026-06-08T11:58:01.212Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:58:06.163Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:58:06.166Z [warn] Redis reconnect attempt {"service":"back-end","attempt":68,"delay":5000}
+2026-06-08T11:58:06.172Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:58:06.225Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:58:06.227Z [warn] Redis reconnect attempt {"service":"back-end","attempt":68,"delay":5000}
+2026-06-08T11:58:06.228Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:58:11.181Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:58:11.185Z [warn] Redis reconnect attempt {"service":"back-end","attempt":69,"delay":5000}
+2026-06-08T11:58:11.186Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:58:11.243Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:58:11.247Z [warn] Redis reconnect attempt {"service":"back-end","attempt":69,"delay":5000}
+2026-06-08T11:58:11.249Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:58:16.199Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:58:16.202Z [warn] Redis reconnect attempt {"service":"back-end","attempt":70,"delay":5000}
+2026-06-08T11:58:16.203Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:58:16.261Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:58:16.265Z [warn] Redis reconnect attempt {"service":"back-end","attempt":70,"delay":5000}
+2026-06-08T11:58:16.266Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:58:21.214Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:58:21.217Z [warn] Redis reconnect attempt {"service":"back-end","attempt":71,"delay":5000}
+2026-06-08T11:58:21.217Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:58:21.276Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:58:21.279Z [warn] Redis reconnect attempt {"service":"back-end","attempt":71,"delay":5000}
+2026-06-08T11:58:21.280Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:58:26.231Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:58:26.234Z [warn] Redis reconnect attempt {"service":"back-end","attempt":72,"delay":5000}
+2026-06-08T11:58:26.235Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:58:26.292Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:58:26.295Z [warn] Redis reconnect attempt {"service":"back-end","attempt":72,"delay":5000}
+2026-06-08T11:58:26.295Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:58:31.238Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:58:31.241Z [warn] Redis reconnect attempt {"service":"back-end","attempt":73,"delay":5000}
+2026-06-08T11:58:31.242Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:58:31.301Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:58:31.303Z [warn] Redis reconnect attempt {"service":"back-end","attempt":73,"delay":5000}
+2026-06-08T11:58:31.305Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:58:36.248Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:58:36.250Z [warn] Redis reconnect attempt {"service":"back-end","attempt":74,"delay":5000}
+2026-06-08T11:58:36.251Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:58:36.311Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:58:36.314Z [warn] Redis reconnect attempt {"service":"back-end","attempt":74,"delay":5000}
+2026-06-08T11:58:36.314Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:58:41.264Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:58:41.267Z [warn] Redis reconnect attempt {"service":"back-end","attempt":75,"delay":5000}
+2026-06-08T11:58:41.267Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:58:41.326Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:58:41.329Z [warn] Redis reconnect attempt {"service":"back-end","attempt":75,"delay":5000}
+2026-06-08T11:58:41.330Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:58:46.275Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:58:46.279Z [warn] Redis reconnect attempt {"service":"back-end","attempt":76,"delay":5000}
+2026-06-08T11:58:46.279Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:58:46.336Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:58:46.343Z [warn] Redis reconnect attempt {"service":"back-end","attempt":76,"delay":5000}
+2026-06-08T11:58:46.344Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:58:51.283Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:58:51.285Z [warn] Redis reconnect attempt {"service":"back-end","attempt":77,"delay":5000}
+2026-06-08T11:58:51.286Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:58:51.360Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:58:51.364Z [warn] Redis reconnect attempt {"service":"back-end","attempt":77,"delay":5000}
+2026-06-08T11:58:51.365Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:58:56.300Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:58:56.303Z [warn] Redis reconnect attempt {"service":"back-end","attempt":78,"delay":5000}
+2026-06-08T11:58:56.303Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:58:56.376Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:58:56.380Z [warn] Redis reconnect attempt {"service":"back-end","attempt":78,"delay":5000}
+2026-06-08T11:58:56.380Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:59:01.309Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:59:01.311Z [warn] Redis reconnect attempt {"service":"back-end","attempt":79,"delay":5000}
+2026-06-08T11:59:01.312Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:59:01.386Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:59:01.390Z [warn] Redis reconnect attempt {"service":"back-end","attempt":79,"delay":5000}
+2026-06-08T11:59:01.391Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:59:06.321Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:59:06.324Z [warn] Redis reconnect attempt {"service":"back-end","attempt":80,"delay":5000}
+2026-06-08T11:59:06.324Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:59:06.400Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:59:06.403Z [warn] Redis reconnect attempt {"service":"back-end","attempt":80,"delay":5000}
+2026-06-08T11:59:06.404Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:59:11.341Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:59:11.343Z [warn] Redis reconnect attempt {"service":"back-end","attempt":81,"delay":5000}
+2026-06-08T11:59:11.344Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:59:11.419Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:59:11.422Z [warn] Redis reconnect attempt {"service":"back-end","attempt":81,"delay":5000}
+2026-06-08T11:59:11.423Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:59:16.344Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:59:16.347Z [warn] Redis reconnect attempt {"service":"back-end","attempt":82,"delay":5000}
+2026-06-08T11:59:16.348Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:59:16.436Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:59:16.438Z [warn] Redis reconnect attempt {"service":"back-end","attempt":82,"delay":5000}
+2026-06-08T11:59:16.439Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:59:21.354Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:59:21.358Z [warn] Redis reconnect attempt {"service":"back-end","attempt":83,"delay":5000}
+2026-06-08T11:59:21.358Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:59:21.448Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:59:21.451Z [warn] Redis reconnect attempt {"service":"back-end","attempt":83,"delay":5000}
+2026-06-08T11:59:21.451Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:59:26.373Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:59:26.376Z [warn] Redis reconnect attempt {"service":"back-end","attempt":84,"delay":5000}
+2026-06-08T11:59:26.376Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:59:26.466Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:59:26.469Z [warn] Redis reconnect attempt {"service":"back-end","attempt":84,"delay":5000}
+2026-06-08T11:59:26.470Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:59:31.382Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:59:31.386Z [warn] Redis reconnect attempt {"service":"back-end","attempt":85,"delay":5000}
+2026-06-08T11:59:31.386Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:59:31.475Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:59:31.480Z [warn] Redis reconnect attempt {"service":"back-end","attempt":85,"delay":5000}
+2026-06-08T11:59:31.481Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:59:36.387Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:59:36.390Z [warn] Redis reconnect attempt {"service":"back-end","attempt":86,"delay":5000}
+2026-06-08T11:59:36.392Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:59:36.495Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:59:36.499Z [warn] Redis reconnect attempt {"service":"back-end","attempt":86,"delay":5000}
+2026-06-08T11:59:36.500Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:59:41.407Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:59:41.409Z [warn] Redis reconnect attempt {"service":"back-end","attempt":87,"delay":5000}
+2026-06-08T11:59:41.409Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:59:41.501Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:59:41.507Z [warn] Redis reconnect attempt {"service":"back-end","attempt":87,"delay":5000}
+2026-06-08T11:59:41.508Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:59:46.412Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:59:46.415Z [warn] Redis reconnect attempt {"service":"back-end","attempt":88,"delay":5000}
+2026-06-08T11:59:46.416Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:59:46.523Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:59:46.525Z [warn] Redis reconnect attempt {"service":"back-end","attempt":88,"delay":5000}
+2026-06-08T11:59:46.526Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:59:51.423Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:59:51.426Z [warn] Redis reconnect attempt {"service":"back-end","attempt":89,"delay":5000}
+2026-06-08T11:59:51.428Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:59:51.532Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:59:51.534Z [warn] Redis reconnect attempt {"service":"back-end","attempt":89,"delay":5000}
+2026-06-08T11:59:51.535Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:59:56.442Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:59:56.446Z [warn] Redis reconnect attempt {"service":"back-end","attempt":90,"delay":5000}
+2026-06-08T11:59:56.447Z [error] Redis client error {"service":"back-end"}
+2026-06-08T11:59:56.537Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T11:59:56.541Z [warn] Redis reconnect attempt {"service":"back-end","attempt":90,"delay":5000}
+2026-06-08T11:59:56.542Z [error] Redis client error {"service":"back-end"}
+2026-06-08T12:00:01.451Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T12:00:01.455Z [warn] Redis reconnect attempt {"service":"back-end","attempt":91,"delay":5000}
+2026-06-08T12:00:01.456Z [error] Redis client error {"service":"back-end"}
+2026-06-08T12:00:01.545Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T12:00:01.548Z [warn] Redis reconnect attempt {"service":"back-end","attempt":91,"delay":5000}
+2026-06-08T12:00:01.549Z [error] Redis client error {"service":"back-end"}
+2026-06-08T12:00:06.461Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T12:00:06.464Z [warn] Redis reconnect attempt {"service":"back-end","attempt":92,"delay":5000}
+2026-06-08T12:00:06.464Z [error] Redis client error {"service":"back-end"}
+2026-06-08T12:00:06.553Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T12:00:06.556Z [warn] Redis reconnect attempt {"service":"back-end","attempt":92,"delay":5000}
+2026-06-08T12:00:06.556Z [error] Redis client error {"service":"back-end"}
+2026-06-08T12:00:11.476Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T12:00:11.479Z [warn] Redis reconnect attempt {"service":"back-end","attempt":93,"delay":5000}
+2026-06-08T12:00:11.480Z [error] Redis client error {"service":"back-end"}
+2026-06-08T12:00:11.567Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T12:00:11.570Z [warn] Redis reconnect attempt {"service":"back-end","attempt":93,"delay":5000}
+2026-06-08T12:00:11.571Z [error] Redis client error {"service":"back-end"}
+2026-06-08T12:00:16.487Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T12:00:16.490Z [warn] Redis reconnect attempt {"service":"back-end","attempt":94,"delay":5000}
+2026-06-08T12:00:16.494Z [error] Redis client error {"service":"back-end"}
+2026-06-08T12:00:16.581Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T12:00:16.583Z [warn] Redis reconnect attempt {"service":"back-end","attempt":94,"delay":5000}
+2026-06-08T12:00:16.584Z [error] Redis client error {"service":"back-end"}
+2026-06-08T12:00:21.495Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T12:00:21.498Z [warn] Redis reconnect attempt {"service":"back-end","attempt":95,"delay":5000}
+2026-06-08T12:00:21.499Z [error] Redis client error {"service":"back-end"}
+2026-06-08T12:00:21.590Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T12:00:21.593Z [warn] Redis reconnect attempt {"service":"back-end","attempt":95,"delay":5000}
+2026-06-08T12:00:21.594Z [error] Redis client error {"service":"back-end"}
+2026-06-08T12:00:26.501Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T12:00:26.504Z [warn] Redis reconnect attempt {"service":"back-end","attempt":96,"delay":5000}
+2026-06-08T12:00:26.504Z [error] Redis client error {"service":"back-end"}
+2026-06-08T12:00:26.610Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T12:00:26.612Z [warn] Redis reconnect attempt {"service":"back-end","attempt":96,"delay":5000}
+2026-06-08T12:00:26.613Z [error] Redis client error {"service":"back-end"}
+2026-06-08T12:00:31.513Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T12:00:31.516Z [warn] Redis reconnect attempt {"service":"back-end","attempt":97,"delay":5000}
+2026-06-08T12:00:31.517Z [error] Redis client error {"service":"back-end"}
+2026-06-08T12:00:31.623Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T12:00:31.626Z [warn] Redis reconnect attempt {"service":"back-end","attempt":97,"delay":5000}
+2026-06-08T12:00:31.627Z [error] Redis client error {"service":"back-end"}
+2026-06-08T12:00:36.523Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T12:00:36.528Z [warn] Redis reconnect attempt {"service":"back-end","attempt":98,"delay":5000}
+2026-06-08T12:00:36.529Z [error] Redis client error {"service":"back-end"}
+2026-06-08T12:00:36.630Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T12:00:36.632Z [warn] Redis reconnect attempt {"service":"back-end","attempt":98,"delay":5000}
+2026-06-08T12:00:36.633Z [error] Redis client error {"service":"back-end"}
+2026-06-08T12:00:41.539Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T12:00:41.542Z [warn] Redis reconnect attempt {"service":"back-end","attempt":99,"delay":5000}
+2026-06-08T12:00:41.543Z [error] Redis client error {"service":"back-end"}
+2026-06-08T12:00:41.647Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T12:00:41.650Z [warn] Redis reconnect attempt {"service":"back-end","attempt":99,"delay":5000}
+2026-06-08T12:00:41.651Z [error] Redis client error {"service":"back-end"}
+2026-06-08T12:00:46.546Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T12:00:46.549Z [warn] Redis reconnect attempt {"service":"back-end","attempt":100,"delay":5000}
+2026-06-08T12:00:46.551Z [error] Redis client error {"service":"back-end"}
+2026-06-08T12:00:46.656Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T12:00:46.659Z [warn] Redis reconnect attempt {"service":"back-end","attempt":100,"delay":5000}
+2026-06-08T12:00:46.659Z [error] Redis client error {"service":"back-end"}
+2026-06-08T12:00:51.557Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T12:00:51.562Z [warn] Redis reconnect attempt {"service":"back-end","attempt":101,"delay":5000}
+2026-06-08T12:00:51.563Z [error] Redis client error {"service":"back-end"}
+2026-06-08T12:00:51.666Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T12:00:51.670Z [warn] Redis reconnect attempt {"service":"back-end","attempt":101,"delay":5000}
+2026-06-08T12:00:51.671Z [error] Redis client error {"service":"back-end"}
+2026-06-08T12:00:56.570Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T12:00:56.580Z [warn] Redis reconnect attempt {"service":"back-end","attempt":102,"delay":5000}
+2026-06-08T12:00:56.580Z [error] Redis client error {"service":"back-end"}
+2026-06-08T12:00:56.680Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T12:00:56.682Z [warn] Redis reconnect attempt {"service":"back-end","attempt":102,"delay":5000}
+2026-06-08T12:00:56.684Z [error] Redis client error {"service":"back-end"}
+2026-06-08T12:01:01.589Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T12:01:01.593Z [warn] Redis reconnect attempt {"service":"back-end","attempt":103,"delay":5000}
+2026-06-08T12:01:01.593Z [error] Redis client error {"service":"back-end"}
+2026-06-08T12:01:01.696Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T12:01:01.699Z [warn] Redis reconnect attempt {"service":"back-end","attempt":103,"delay":5000}
+2026-06-08T12:01:01.700Z [error] Redis client error {"service":"back-end"}
+2026-06-08T12:01:06.602Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T12:01:06.604Z [warn] Redis reconnect attempt {"service":"back-end","attempt":104,"delay":5000}
+2026-06-08T12:01:06.605Z [error] Redis client error {"service":"back-end"}
+2026-06-08T12:01:06.711Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T12:01:06.714Z [warn] Redis reconnect attempt {"service":"back-end","attempt":104,"delay":5000}
+2026-06-08T12:01:06.715Z [error] Redis client error {"service":"back-end"}
+2026-06-08T12:01:11.609Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T12:01:11.612Z [warn] Redis reconnect attempt {"service":"back-end","attempt":105,"delay":5000}
+2026-06-08T12:01:11.613Z [error] Redis client error {"service":"back-end"}
+2026-06-08T12:01:11.718Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T12:01:11.721Z [warn] Redis reconnect attempt {"service":"back-end","attempt":105,"delay":5000}
+2026-06-08T12:01:11.721Z [error] Redis client error {"service":"back-end"}
+2026-06-08T12:01:16.619Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T12:01:16.622Z [warn] Redis reconnect attempt {"service":"back-end","attempt":106,"delay":5000}
+2026-06-08T12:01:16.623Z [error] Redis client error {"service":"back-end"}
+2026-06-08T12:01:16.728Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T12:01:16.730Z [warn] Redis reconnect attempt {"service":"back-end","attempt":106,"delay":5000}
+2026-06-08T12:01:16.731Z [error] Redis client error {"service":"back-end"}
+2026-06-08T12:01:21.643Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T12:01:21.647Z [warn] Redis reconnect attempt {"service":"back-end","attempt":107,"delay":5000}
+2026-06-08T12:01:21.649Z [error] Redis client error {"service":"back-end"}
+2026-06-08T12:01:21.734Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T12:01:21.738Z [warn] Redis reconnect attempt {"service":"back-end","attempt":107,"delay":5000}
+2026-06-08T12:01:21.738Z [error] Redis client error {"service":"back-end"}
+2026-06-08T12:01:26.663Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T12:01:26.666Z [warn] Redis reconnect attempt {"service":"back-end","attempt":108,"delay":5000}
+2026-06-08T12:01:26.667Z [error] Redis client error {"service":"back-end"}
+2026-06-08T12:01:26.741Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T12:01:26.744Z [warn] Redis reconnect attempt {"service":"back-end","attempt":108,"delay":5000}
+2026-06-08T12:01:26.744Z [error] Redis client error {"service":"back-end"}
+2026-06-08T12:01:31.676Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T12:01:31.679Z [warn] Redis reconnect attempt {"service":"back-end","attempt":109,"delay":5000}
+2026-06-08T12:01:31.680Z [error] Redis client error {"service":"back-end"}
+2026-06-08T12:01:31.754Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T12:01:31.757Z [warn] Redis reconnect attempt {"service":"back-end","attempt":109,"delay":5000}
+2026-06-08T12:01:31.757Z [error] Redis client error {"service":"back-end"}
+2026-06-08T12:01:36.691Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T12:01:36.694Z [warn] Redis reconnect attempt {"service":"back-end","attempt":110,"delay":5000}
+2026-06-08T12:01:36.694Z [error] Redis client error {"service":"back-end"}
+2026-06-08T12:01:36.767Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T12:01:36.770Z [warn] Redis reconnect attempt {"service":"back-end","attempt":110,"delay":5000}
+2026-06-08T12:01:36.771Z [error] Redis client error {"service":"back-end"}
+2026-06-08T12:01:41.705Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T12:01:41.707Z [warn] Redis reconnect attempt {"service":"back-end","attempt":111,"delay":5000}
+2026-06-08T12:01:41.707Z [error] Redis client error {"service":"back-end"}
+2026-06-08T12:01:41.782Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T12:01:41.785Z [warn] Redis reconnect attempt {"service":"back-end","attempt":111,"delay":5000}
+2026-06-08T12:01:41.793Z [error] Redis client error {"service":"back-end"}
+2026-06-08T12:01:46.724Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T12:01:46.726Z [warn] Redis reconnect attempt {"service":"back-end","attempt":112,"delay":5000}
+2026-06-08T12:01:46.727Z [error] Redis client error {"service":"back-end"}
+2026-06-08T12:01:46.801Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T12:01:46.803Z [warn] Redis reconnect attempt {"service":"back-end","attempt":112,"delay":5000}
+2026-06-08T12:01:46.804Z [error] Redis client error {"service":"back-end"}
+2026-06-08T12:01:51.738Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T12:01:51.740Z [warn] Redis reconnect attempt {"service":"back-end","attempt":113,"delay":5000}
+2026-06-08T12:01:51.741Z [error] Redis client error {"service":"back-end"}
+2026-06-08T12:01:51.817Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T12:01:51.820Z [warn] Redis reconnect attempt {"service":"back-end","attempt":113,"delay":5000}
+2026-06-08T12:01:51.820Z [error] Redis client error {"service":"back-end"}
+2026-06-08T12:01:56.752Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T12:01:56.755Z [warn] Redis reconnect attempt {"service":"back-end","attempt":114,"delay":5000}
+2026-06-08T12:01:56.756Z [error] Redis client error {"service":"back-end"}
+2026-06-08T12:01:56.829Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T12:01:56.832Z [warn] Redis reconnect attempt {"service":"back-end","attempt":114,"delay":5000}
+2026-06-08T12:01:56.832Z [error] Redis client error {"service":"back-end"}
+2026-06-08T12:02:01.764Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T12:02:01.766Z [warn] Redis reconnect attempt {"service":"back-end","attempt":115,"delay":5000}
+2026-06-08T12:02:01.766Z [error] Redis client error {"service":"back-end"}
+2026-06-08T12:02:01.842Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T12:02:01.844Z [warn] Redis reconnect attempt {"service":"back-end","attempt":115,"delay":5000}
+2026-06-08T12:02:01.845Z [error] Redis client error {"service":"back-end"}
+2026-06-08T12:02:06.779Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T12:02:06.784Z [warn] Redis reconnect attempt {"service":"back-end","attempt":116,"delay":5000}
+2026-06-08T12:02:06.785Z [error] Redis client error {"service":"back-end"}
+2026-06-08T12:02:06.857Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T12:02:06.861Z [warn] Redis reconnect attempt {"service":"back-end","attempt":116,"delay":5000}
+2026-06-08T12:02:06.861Z [error] Redis client error {"service":"back-end"}
+2026-06-08T12:02:09.537Z [warn] Redis reconnect attempt {"service":"back-end","attempt":0,"delay":0}
+2026-06-08T12:02:09.543Z [error] Redis client error {"service":"back-end"}
+2026-06-08T12:02:09.545Z [error] Queue Redis error {"service":"back-end"}
+2026-06-08T12:02:09.547Z [warn] Queue Redis reconnecting {"service":"back-end","delay":50}
+2026-06-08T12:02:09.548Z [warn] Queue Redis connection will retry on demand Connection is closed. {"service":"back-end"}
+2026-06-08T12:02:09.557Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T12:02:09.560Z [warn] Redis reconnect attempt {"service":"back-end","attempt":1,"delay":1000}
+2026-06-08T12:02:09.564Z [error] Redis client error {"service":"back-end"}
+2026-06-08T12:02:09.609Z [error] Queue Redis error {"service":"back-end"}
+2026-06-08T12:02:09.612Z [warn] Queue Redis reconnecting {"service":"back-end","delay":100}
+2026-06-08T12:02:09.719Z [error] Queue Redis error {"service":"back-end"}
+2026-06-08T12:02:09.720Z [warn] Queue Redis reconnecting {"service":"back-end","delay":150}
+2026-06-08T12:02:09.875Z [error] Queue Redis error {"service":"back-end"}
+2026-06-08T12:02:09.876Z [warn] Queue Redis reconnecting {"service":"back-end","delay":200}
+2026-06-08T12:02:10.093Z [error] Queue Redis error {"service":"back-end"}
+2026-06-08T12:02:10.098Z [warn] Queue Redis reconnecting {"service":"back-end","delay":250}
+2026-06-08T12:02:10.360Z [error] Queue Redis error {"service":"back-end"}
+2026-06-08T12:02:10.362Z [warn] Queue Redis reconnecting {"service":"back-end","delay":300}
+2026-06-08T12:02:10.575Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T12:02:10.584Z [warn] Redis reconnect attempt {"service":"back-end","attempt":2,"delay":2000}
+2026-06-08T12:02:10.585Z [error] Redis client error {"service":"back-end"}
+2026-06-08T12:02:10.669Z [error] Queue Redis error {"service":"back-end"}
+2026-06-08T12:02:10.670Z [warn] Queue Redis reconnecting {"service":"back-end","delay":350}
+2026-06-08T12:02:11.030Z [error] Queue Redis error {"service":"back-end"}
+2026-06-08T12:02:11.031Z [warn] Queue Redis reconnecting {"service":"back-end","delay":400}
+2026-06-08T12:02:11.448Z [error] Queue Redis error {"service":"back-end"}
+2026-06-08T12:02:11.449Z [warn] Queue Redis reconnecting {"service":"back-end","delay":450}
+2026-06-08T12:02:11.788Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T12:02:11.790Z [warn] Redis reconnect attempt {"service":"back-end","attempt":117,"delay":5000}
+2026-06-08T12:02:11.790Z [error] Redis client error {"service":"back-end"}
+2026-06-08T12:02:11.864Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T12:02:11.868Z [warn] Redis reconnect attempt {"service":"back-end","attempt":117,"delay":5000}
+2026-06-08T12:02:11.869Z [error] Redis client error {"service":"back-end"}
+2026-06-08T12:02:11.913Z [error] Queue Redis error {"service":"back-end"}
+2026-06-08T12:02:11.916Z [warn] Queue Redis reconnecting {"service":"back-end","delay":500}
+2026-06-08T12:02:12.425Z [error] Queue Redis error {"service":"back-end"}
+2026-06-08T12:02:12.427Z [warn] Queue Redis reconnecting {"service":"back-end","delay":550}
+2026-06-08T12:02:12.595Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T12:02:12.597Z [warn] Redis reconnect attempt {"service":"back-end","attempt":3,"delay":3000}
+2026-06-08T12:02:12.597Z [error] Redis client error {"service":"back-end"}
+2026-06-08T12:02:12.981Z [error] Queue Redis error {"service":"back-end"}
+2026-06-08T12:02:12.982Z [warn] Queue Redis reconnecting {"service":"back-end","delay":600}
+2026-06-08T12:02:13.586Z [error] Queue Redis error {"service":"back-end"}
+2026-06-08T12:02:13.587Z [warn] Queue Redis reconnecting {"service":"back-end","delay":650}
+2026-06-08T12:02:14.240Z [error] Queue Redis error {"service":"back-end"}
+2026-06-08T12:02:14.244Z [warn] Queue Redis reconnecting {"service":"back-end","delay":700}
+2026-06-08T12:02:14.952Z [error] Queue Redis error {"service":"back-end"}
+2026-06-08T12:02:14.953Z [warn] Queue Redis reconnecting {"service":"back-end","delay":750}
+2026-06-08T12:02:15.603Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T12:02:15.606Z [warn] Redis reconnect attempt {"service":"back-end","attempt":4,"delay":4000}
+2026-06-08T12:02:15.607Z [error] Redis client error {"service":"back-end"}
+2026-06-08T12:02:15.715Z [error] Queue Redis error {"service":"back-end"}
+2026-06-08T12:02:15.716Z [warn] Queue Redis reconnecting {"service":"back-end","delay":800}
+2026-06-08T12:02:16.519Z [error] Queue Redis error {"service":"back-end"}
+2026-06-08T12:02:16.520Z [warn] Queue Redis reconnecting {"service":"back-end","delay":850}
+2026-06-08T12:02:16.799Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T12:02:16.802Z [warn] Redis reconnect attempt {"service":"back-end","attempt":118,"delay":5000}
+2026-06-08T12:02:16.803Z [error] Redis client error {"service":"back-end"}
+2026-06-08T12:02:16.876Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T12:02:16.879Z [warn] Redis reconnect attempt {"service":"back-end","attempt":118,"delay":5000}
+2026-06-08T12:02:16.879Z [error] Redis client error {"service":"back-end"}
+2026-06-08T12:02:17.377Z [error] Queue Redis error {"service":"back-end"}
+2026-06-08T12:02:17.379Z [warn] Queue Redis reconnecting {"service":"back-end","delay":900}
+2026-06-08T12:02:18.294Z [error] Queue Redis error {"service":"back-end"}
+2026-06-08T12:02:18.295Z [warn] Queue Redis reconnecting {"service":"back-end","delay":950}
+2026-06-08T12:02:19.263Z [error] Queue Redis error {"service":"back-end"}
+2026-06-08T12:02:19.264Z [warn] Queue Redis reconnecting {"service":"back-end","delay":1000}
+2026-06-08T12:02:19.624Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T12:02:19.627Z [warn] Redis reconnect attempt {"service":"back-end","attempt":5,"delay":5000}
+2026-06-08T12:02:19.628Z [error] Redis client error {"service":"back-end"}
+2026-06-08T12:02:20.278Z [error] Queue Redis error {"service":"back-end"}
+2026-06-08T12:02:20.280Z [warn] Queue Redis reconnecting {"service":"back-end","delay":1050}
+2026-06-08T12:02:21.340Z [error] Queue Redis error {"service":"back-end"}
+2026-06-08T12:02:21.341Z [warn] Queue Redis reconnecting {"service":"back-end","delay":1100}
+2026-06-08T12:02:21.803Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T12:02:21.807Z [warn] Redis reconnect attempt {"service":"back-end","attempt":119,"delay":5000}
+2026-06-08T12:02:21.807Z [error] Redis client error {"service":"back-end"}
+2026-06-08T12:02:21.881Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T12:02:21.884Z [warn] Redis reconnect attempt {"service":"back-end","attempt":119,"delay":5000}
+2026-06-08T12:02:21.885Z [error] Redis client error {"service":"back-end"}
+2026-06-08T12:02:22.444Z [error] Queue Redis error {"service":"back-end"}
+2026-06-08T12:02:22.445Z [warn] Queue Redis reconnecting {"service":"back-end","delay":1150}
+2026-06-08T12:02:23.611Z [error] Queue Redis error {"service":"back-end"}
+2026-06-08T12:02:23.612Z [warn] Queue Redis reconnecting {"service":"back-end","delay":1200}
+2026-06-08T12:02:24.643Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T12:02:24.645Z [warn] Redis reconnect attempt {"service":"back-end","attempt":6,"delay":5000}
+2026-06-08T12:02:24.645Z [error] Redis client error {"service":"back-end"}
+2026-06-08T12:02:24.819Z [error] Queue Redis error {"service":"back-end"}
+2026-06-08T12:02:24.820Z [warn] Queue Redis reconnecting {"service":"back-end","delay":1250}
+2026-06-08T12:02:26.086Z [error] Queue Redis error {"service":"back-end"}
+2026-06-08T12:02:26.087Z [warn] Queue Redis reconnecting {"service":"back-end","delay":1300}
+2026-06-08T12:02:26.820Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T12:02:26.822Z [warn] Redis reconnect attempt {"service":"back-end","attempt":120,"delay":5000}
+2026-06-08T12:02:26.823Z [error] Redis client error {"service":"back-end"}
+2026-06-08T12:02:26.896Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T12:02:26.900Z [warn] Redis reconnect attempt {"service":"back-end","attempt":120,"delay":5000}
+2026-06-08T12:02:26.901Z [error] Redis client error {"service":"back-end"}
+2026-06-08T12:02:27.394Z [error] Queue Redis error {"service":"back-end"}
+2026-06-08T12:02:27.400Z [warn] Queue Redis reconnecting {"service":"back-end","delay":1350}
+2026-06-08T12:02:28.763Z [error] Queue Redis error {"service":"back-end"}
+2026-06-08T12:02:28.765Z [warn] Queue Redis reconnecting {"service":"back-end","delay":1400}
+2026-06-08T12:02:29.647Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T12:02:29.649Z [warn] Redis reconnect attempt {"service":"back-end","attempt":7,"delay":5000}
+2026-06-08T12:02:29.649Z [error] Redis client error {"service":"back-end"}
+2026-06-08T12:02:30.181Z [error] Queue Redis error {"service":"back-end"}
+2026-06-08T12:02:30.182Z [warn] Queue Redis reconnecting {"service":"back-end","delay":1450}
+2026-06-08T12:02:31.638Z [error] Queue Redis error {"service":"back-end"}
+2026-06-08T12:02:31.639Z [warn] Queue Redis reconnecting {"service":"back-end","delay":1500}
+2026-06-08T12:02:31.837Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T12:02:31.840Z [warn] Redis reconnect attempt {"service":"back-end","attempt":121,"delay":5000}
+2026-06-08T12:02:31.840Z [error] Redis client error {"service":"back-end"}
+2026-06-08T12:02:31.915Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T12:02:31.918Z [warn] Redis reconnect attempt {"service":"back-end","attempt":121,"delay":5000}
+2026-06-08T12:02:31.918Z [error] Redis client error {"service":"back-end"}
+2026-06-08T12:02:33.145Z [error] Queue Redis error {"service":"back-end"}
+2026-06-08T12:02:33.146Z [warn] Queue Redis reconnecting {"service":"back-end","delay":1550}
+2026-06-08T12:02:35.759Z [warn] Redis reconnect attempt {"service":"back-end","attempt":0,"delay":0}
+2026-06-08T12:02:35.763Z [error] Redis client error {"service":"back-end"}
+2026-06-08T12:02:35.765Z [error] Queue Redis error {"service":"back-end"}
+2026-06-08T12:02:35.766Z [warn] Queue Redis reconnecting {"service":"back-end","delay":50}
+2026-06-08T12:02:35.766Z [warn] Queue Redis connection will retry on demand Connection is closed. {"service":"back-end"}
+2026-06-08T12:02:35.769Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T12:02:35.782Z [warn] Redis reconnect attempt {"service":"back-end","attempt":1,"delay":1000}
+2026-06-08T12:02:35.783Z [error] Redis client error {"service":"back-end"}
+2026-06-08T12:02:35.822Z [error] Queue Redis error {"service":"back-end"}
+2026-06-08T12:02:35.824Z [warn] Queue Redis reconnecting {"service":"back-end","delay":100}
+2026-06-08T12:02:35.931Z [error] Queue Redis error {"service":"back-end"}
+2026-06-08T12:02:35.932Z [warn] Queue Redis reconnecting {"service":"back-end","delay":150}
+2026-06-08T12:02:36.087Z [error] Queue Redis error {"service":"back-end"}
+2026-06-08T12:02:36.088Z [warn] Queue Redis reconnecting {"service":"back-end","delay":200}
+2026-06-08T12:02:36.303Z [error] Queue Redis error {"service":"back-end"}
+2026-06-08T12:02:36.305Z [warn] Queue Redis reconnecting {"service":"back-end","delay":250}
+2026-06-08T12:02:36.569Z [error] Queue Redis error {"service":"back-end"}
+2026-06-08T12:02:36.570Z [warn] Queue Redis reconnecting {"service":"back-end","delay":300}
+2026-06-08T12:02:36.785Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T12:02:36.788Z [warn] Redis reconnect attempt {"service":"back-end","attempt":2,"delay":2000}
+2026-06-08T12:02:36.789Z [error] Redis client error {"service":"back-end"}
+2026-06-08T12:02:36.848Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T12:02:36.852Z [warn] Redis reconnect attempt {"service":"back-end","attempt":122,"delay":5000}
+2026-06-08T12:02:36.852Z [error] Redis client error {"service":"back-end"}
+2026-06-08T12:02:36.883Z [error] Queue Redis error {"service":"back-end"}
+2026-06-08T12:02:36.884Z [warn] Queue Redis reconnecting {"service":"back-end","delay":350}
+2026-06-08T12:02:36.926Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T12:02:36.929Z [warn] Redis reconnect attempt {"service":"back-end","attempt":122,"delay":5000}
+2026-06-08T12:02:36.929Z [error] Redis client error {"service":"back-end"}
+2026-06-08T12:02:37.241Z [error] Queue Redis error {"service":"back-end"}
+2026-06-08T12:02:37.243Z [warn] Queue Redis reconnecting {"service":"back-end","delay":400}
+2026-06-08T12:02:37.657Z [error] Queue Redis error {"service":"back-end"}
+2026-06-08T12:02:37.659Z [warn] Queue Redis reconnecting {"service":"back-end","delay":450}
+2026-06-08T12:02:38.123Z [error] Queue Redis error {"service":"back-end"}
+2026-06-08T12:02:38.125Z [warn] Queue Redis reconnecting {"service":"back-end","delay":500}
+2026-06-08T12:02:38.632Z [error] Queue Redis error {"service":"back-end"}
+2026-06-08T12:02:38.633Z [warn] Queue Redis reconnecting {"service":"back-end","delay":550}
+2026-06-08T12:02:38.804Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T12:02:38.807Z [warn] Redis reconnect attempt {"service":"back-end","attempt":3,"delay":3000}
+2026-06-08T12:02:38.808Z [error] Redis client error {"service":"back-end"}
+2026-06-08T12:02:39.193Z [error] Queue Redis error {"service":"back-end"}
+2026-06-08T12:02:39.194Z [warn] Queue Redis reconnecting {"service":"back-end","delay":600}
+2026-06-08T12:02:39.811Z [error] Queue Redis error {"service":"back-end"}
+2026-06-08T12:02:39.812Z [warn] Queue Redis reconnecting {"service":"back-end","delay":650}
+2026-06-08T12:02:41.858Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T12:02:41.862Z [warn] Redis reconnect attempt {"service":"back-end","attempt":123,"delay":5000}
+2026-06-08T12:02:41.862Z [error] Redis client error {"service":"back-end"}
+2026-06-08T12:02:41.938Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T12:02:41.944Z [warn] Redis reconnect attempt {"service":"back-end","attempt":123,"delay":5000}
+2026-06-08T12:02:41.944Z [error] Redis client error {"service":"back-end"}
+2026-06-08T12:02:46.867Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T12:02:46.870Z [warn] Redis reconnect attempt {"service":"back-end","attempt":124,"delay":5000}
+2026-06-08T12:02:46.871Z [error] Redis client error {"service":"back-end"}
+2026-06-08T12:02:46.956Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T12:02:46.961Z [warn] Redis reconnect attempt {"service":"back-end","attempt":124,"delay":5000}
+2026-06-08T12:02:46.962Z [error] Redis client error {"service":"back-end"}
+2026-06-08T12:02:51.875Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T12:02:51.878Z [warn] Redis reconnect attempt {"service":"back-end","attempt":125,"delay":5000}
+2026-06-08T12:02:51.880Z [error] Redis client error {"service":"back-end"}
+2026-06-08T12:02:51.969Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T12:02:51.972Z [warn] Redis reconnect attempt {"service":"back-end","attempt":125,"delay":5000}
+2026-06-08T12:02:51.973Z [error] Redis client error {"service":"back-end"}
+2026-06-08T12:02:56.888Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T12:02:56.892Z [warn] Redis reconnect attempt {"service":"back-end","attempt":126,"delay":5000}
+2026-06-08T12:02:56.893Z [error] Redis client error {"service":"back-end"}
+2026-06-08T12:02:56.983Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T12:02:56.986Z [warn] Redis reconnect attempt {"service":"back-end","attempt":126,"delay":5000}
+2026-06-08T12:02:56.987Z [error] Redis client error {"service":"back-end"}
+2026-06-08T12:03:01.903Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T12:03:01.907Z [warn] Redis reconnect attempt {"service":"back-end","attempt":127,"delay":5000}
+2026-06-08T12:03:01.908Z [error] Redis client error {"service":"back-end"}
+2026-06-08T12:03:01.997Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T12:03:01.999Z [warn] Redis reconnect attempt {"service":"back-end","attempt":127,"delay":5000}
+2026-06-08T12:03:02.000Z [error] Redis client error {"service":"back-end"}
+2026-06-08T12:03:06.745Z [warn] Redis reconnect attempt {"service":"back-end","attempt":0,"delay":0}
+2026-06-08T12:03:06.748Z [error] Redis client error {"service":"back-end"}
+2026-06-08T12:03:06.750Z [error] Queue Redis error {"service":"back-end"}
+2026-06-08T12:03:06.751Z [warn] Queue Redis reconnecting {"service":"back-end","delay":50}
+2026-06-08T12:03:06.751Z [warn] Queue Redis connection will retry on demand Connection is closed. {"service":"back-end"}
+2026-06-08T12:03:06.753Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T12:03:06.756Z [warn] Redis reconnect attempt {"service":"back-end","attempt":1,"delay":1000}
+2026-06-08T12:03:06.756Z [error] Redis client error {"service":"back-end"}
+2026-06-08T12:03:06.816Z [error] Queue Redis error {"service":"back-end"}
+2026-06-08T12:03:06.818Z [warn] Queue Redis reconnecting {"service":"back-end","delay":100}
+2026-06-08T12:03:06.923Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T12:03:06.924Z [error] Queue Redis error {"service":"back-end"}
+2026-06-08T12:03:06.926Z [warn] Redis reconnect attempt {"service":"back-end","attempt":128,"delay":5000}
+2026-06-08T12:03:06.926Z [warn] Queue Redis reconnecting {"service":"back-end","delay":150}
+2026-06-08T12:03:06.927Z [error] Redis client error {"service":"back-end"}
+2026-06-08T12:03:07.002Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T12:03:07.005Z [warn] Redis reconnect attempt {"service":"back-end","attempt":128,"delay":5000}
+2026-06-08T12:03:07.006Z [error] Redis client error {"service":"back-end"}
+2026-06-08T12:03:07.082Z [error] Queue Redis error {"service":"back-end"}
+2026-06-08T12:03:07.083Z [warn] Queue Redis reconnecting {"service":"back-end","delay":200}
+2026-06-08T12:03:07.303Z [error] Queue Redis error {"service":"back-end"}
+2026-06-08T12:03:07.305Z [warn] Queue Redis reconnecting {"service":"back-end","delay":250}
+2026-06-08T12:03:07.568Z [error] Queue Redis error {"service":"back-end"}
+2026-06-08T12:03:07.571Z [warn] Queue Redis reconnecting {"service":"back-end","delay":300}
+2026-06-08T12:03:07.760Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T12:03:07.763Z [warn] Redis reconnect attempt {"service":"back-end","attempt":2,"delay":2000}
+2026-06-08T12:03:07.764Z [error] Redis client error {"service":"back-end"}
+2026-06-08T12:03:07.887Z [error] Queue Redis error {"service":"back-end"}
+2026-06-08T12:03:07.888Z [warn] Queue Redis reconnecting {"service":"back-end","delay":350}
+2026-06-08T12:03:08.242Z [error] Queue Redis error {"service":"back-end"}
+2026-06-08T12:03:08.244Z [warn] Queue Redis reconnecting {"service":"back-end","delay":400}
+2026-06-08T12:03:08.645Z [error] Queue Redis error {"service":"back-end"}
+2026-06-08T12:03:08.646Z [warn] Queue Redis reconnecting {"service":"back-end","delay":450}
+2026-06-08T12:03:09.111Z [error] Queue Redis error {"service":"back-end"}
+2026-06-08T12:03:09.113Z [warn] Queue Redis reconnecting {"service":"back-end","delay":500}
+2026-06-08T12:03:09.625Z [error] Queue Redis error {"service":"back-end"}
+2026-06-08T12:03:09.627Z [warn] Queue Redis reconnecting {"service":"back-end","delay":550}
+2026-06-08T12:03:09.779Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T12:03:09.781Z [warn] Redis reconnect attempt {"service":"back-end","attempt":3,"delay":3000}
+2026-06-08T12:03:09.781Z [error] Redis client error {"service":"back-end"}
+2026-06-08T12:03:10.187Z [error] Queue Redis error {"service":"back-end"}
+2026-06-08T12:03:10.188Z [warn] Queue Redis reconnecting {"service":"back-end","delay":600}
+2026-06-08T12:03:10.794Z [error] Queue Redis error {"service":"back-end"}
+2026-06-08T12:03:10.796Z [warn] Queue Redis reconnecting {"service":"back-end","delay":650}
+2026-06-08T12:03:11.448Z [error] Queue Redis error {"service":"back-end"}
+2026-06-08T12:03:11.449Z [warn] Queue Redis reconnecting {"service":"back-end","delay":700}
+2026-06-08T12:03:11.929Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T12:03:11.932Z [warn] Redis reconnect attempt {"service":"back-end","attempt":129,"delay":5000}
+2026-06-08T12:03:11.933Z [error] Redis client error {"service":"back-end"}
+2026-06-08T12:03:12.008Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T12:03:12.012Z [warn] Redis reconnect attempt {"service":"back-end","attempt":129,"delay":5000}
+2026-06-08T12:03:12.013Z [error] Redis client error {"service":"back-end"}
+2026-06-08T12:03:12.163Z [error] Queue Redis error {"service":"back-end"}
+2026-06-08T12:03:12.165Z [warn] Queue Redis reconnecting {"service":"back-end","delay":750}
+2026-06-08T12:03:12.783Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T12:03:12.785Z [warn] Redis reconnect attempt {"service":"back-end","attempt":4,"delay":4000}
+2026-06-08T12:03:12.785Z [error] Redis client error {"service":"back-end"}
+2026-06-08T12:03:12.929Z [error] Queue Redis error {"service":"back-end"}
+2026-06-08T12:03:12.930Z [warn] Queue Redis reconnecting {"service":"back-end","delay":800}
+2026-06-08T12:03:13.738Z [error] Queue Redis error {"service":"back-end"}
+2026-06-08T12:03:13.739Z [warn] Queue Redis reconnecting {"service":"back-end","delay":850}
+2026-06-08T12:03:14.594Z [error] Queue Redis error {"service":"back-end"}
+2026-06-08T12:03:14.595Z [warn] Queue Redis reconnecting {"service":"back-end","delay":900}
+2026-06-08T12:03:15.500Z [error] Queue Redis error {"service":"back-end"}
+2026-06-08T12:03:15.501Z [warn] Queue Redis reconnecting {"service":"back-end","delay":950}
+2026-06-08T12:03:16.461Z [error] Queue Redis error {"service":"back-end"}
+2026-06-08T12:03:16.462Z [warn] Queue Redis reconnecting {"service":"back-end","delay":1000}
+2026-06-08T12:03:16.798Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T12:03:16.800Z [warn] Redis reconnect attempt {"service":"back-end","attempt":5,"delay":5000}
+2026-06-08T12:03:16.800Z [error] Redis client error {"service":"back-end"}
+2026-06-08T12:03:16.937Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T12:03:16.941Z [warn] Redis reconnect attempt {"service":"back-end","attempt":130,"delay":5000}
+2026-06-08T12:03:16.942Z [error] Redis client error {"service":"back-end"}
+2026-06-08T12:03:17.014Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T12:03:17.016Z [warn] Redis reconnect attempt {"service":"back-end","attempt":130,"delay":5000}
+2026-06-08T12:03:17.017Z [error] Redis client error {"service":"back-end"}
+2026-06-08T12:03:17.472Z [error] Queue Redis error {"service":"back-end"}
+2026-06-08T12:03:17.476Z [warn] Queue Redis reconnecting {"service":"back-end","delay":1050}
+2026-06-08T12:03:18.541Z [error] Queue Redis error {"service":"back-end"}
+2026-06-08T12:03:18.541Z [warn] Queue Redis reconnecting {"service":"back-end","delay":1100}
+2026-06-08T12:03:19.643Z [error] Queue Redis error {"service":"back-end"}
+2026-06-08T12:03:19.644Z [warn] Queue Redis reconnecting {"service":"back-end","delay":1150}
+2026-06-08T12:03:20.810Z [error] Queue Redis error {"service":"back-end"}
+2026-06-08T12:03:20.811Z [warn] Queue Redis reconnecting {"service":"back-end","delay":1200}
+2026-06-08T12:03:21.805Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T12:03:21.808Z [warn] Redis reconnect attempt {"service":"back-end","attempt":6,"delay":5000}
+2026-06-08T12:03:21.808Z [error] Redis client error {"service":"back-end"}
+2026-06-08T12:03:21.945Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T12:03:21.948Z [warn] Redis reconnect attempt {"service":"back-end","attempt":131,"delay":5000}
+2026-06-08T12:03:21.949Z [error] Redis client error {"service":"back-end"}
+2026-06-08T12:03:22.021Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T12:03:22.023Z [error] Queue Redis error {"service":"back-end"}
+2026-06-08T12:03:22.025Z [warn] Redis reconnect attempt {"service":"back-end","attempt":131,"delay":5000}
+2026-06-08T12:03:22.024Z [warn] Queue Redis reconnecting {"service":"back-end","delay":1250}
+2026-06-08T12:03:22.026Z [error] Redis client error {"service":"back-end"}
+2026-06-08T12:03:23.287Z [error] Queue Redis error {"service":"back-end"}
+2026-06-08T12:03:23.288Z [warn] Queue Redis reconnecting {"service":"back-end","delay":1300}
+2026-06-08T12:03:24.607Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-08T12:03:24.610Z [warn] Queue Redis reconnecting {"service":"back-end","delay":1350}
+2026-06-08T12:03:25.965Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-08T12:03:25.978Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-08T12:03:26.821Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T12:03:26.823Z [info] Redis client connecting {"service":"back-end"}
+2026-06-08T12:03:26.828Z [info] Redis client ready {"service":"back-end"}
+2026-06-08T12:03:26.828Z [info] Redis client connected {"service":"back-end"}
+2026-06-08T12:03:26.830Z [info] Loading .env {"service":"back-end","envPath":"D:\\Project\\PetShop-Website\\back-end\\.env"}
+2026-06-08T12:03:26.831Z [info] .env file loaded successfully {"service":"back-end"}
+2026-06-08T12:03:26.882Z [info] Background workers initialized {"service":"back-end"}
+2026-06-08T12:03:26.886Z [info] Server is running: http://localhost:5000 {"service":"back-end"}
+2026-06-08T12:03:26.960Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T12:03:26.965Z [info] Redis client connecting {"service":"back-end"}
+2026-06-08T12:03:26.969Z [info] Redis client ready {"service":"back-end"}
+2026-06-08T12:03:26.970Z [info] Redis client connected {"service":"back-end"}
+2026-06-08T12:03:27.037Z [warn] Redis client reconnecting {"service":"back-end"}
+2026-06-08T12:03:27.040Z [info] Redis client connecting {"service":"back-end"}
+2026-06-08T12:03:27.045Z [info] Redis client ready {"service":"back-end"}
+2026-06-08T12:03:27.046Z [info] Redis client connected {"service":"back-end"}
+2026-06-08T12:03:27.555Z [info] MongoDB connected {"service":"back-end"}
+2026-06-08T12:03:27.557Z [info] Connected to MongoDB {"service":"back-end"}
+2026-06-08T12:03:33.705Z [info] Redis client connecting {"service":"back-end"}
+2026-06-08T12:03:33.720Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-08T12:03:33.722Z [info] Redis client ready {"service":"back-end"}
+2026-06-08T12:03:33.729Z [info] Redis client connected {"service":"back-end"}
+2026-06-08T12:03:33.733Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-08T12:03:33.736Z [info] Loading .env {"service":"back-end","envPath":"D:\\Project\\PetShop-Website\\back-end\\.env"}
+2026-06-08T12:03:33.737Z [info] .env file loaded successfully {"service":"back-end"}
+2026-06-08T12:03:33.778Z [info] Background workers initialized {"service":"back-end"}
+2026-06-08T12:03:33.784Z [info] Server is running: http://localhost:5000 {"service":"back-end"}
+2026-06-08T12:03:34.528Z [info] MongoDB connected {"service":"back-end"}
+2026-06-08T12:03:34.529Z [info] Connected to MongoDB {"service":"back-end"}
+2026-06-08T12:03:55.377Z [info] Redis client connecting {"service":"back-end"}
+2026-06-08T12:03:55.387Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-08T12:03:55.394Z [info] Redis client ready {"service":"back-end"}
+2026-06-08T12:03:55.401Z [info] Redis client connected {"service":"back-end"}
+2026-06-08T12:03:55.407Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-08T12:03:55.410Z [info] Loading .env {"service":"back-end","envPath":"D:\\Project\\PetShop-Website\\back-end\\.env"}
+2026-06-08T12:03:55.411Z [info] .env file loaded successfully {"service":"back-end"}
+2026-06-08T12:03:55.450Z [info] Background workers initialized {"service":"back-end"}
+2026-06-08T12:03:55.456Z [info] Server is running: http://localhost:5000 {"service":"back-end"}
+2026-06-08T12:03:56.280Z [info] MongoDB connected {"service":"back-end"}
+2026-06-08T12:03:56.281Z [info] Connected to MongoDB {"service":"back-end"}
+2026-06-08T12:04:00.306Z [info] Redis client connecting {"service":"back-end"}
+2026-06-08T12:04:00.326Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-08T12:04:00.331Z [info] Redis client ready {"service":"back-end"}
+2026-06-08T12:04:00.339Z [info] Redis client connected {"service":"back-end"}
+2026-06-08T12:04:00.346Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-08T12:04:00.348Z [info] Loading .env {"service":"back-end","envPath":"D:\\Project\\PetShop-Website\\back-end\\.env"}
+2026-06-08T12:04:00.350Z [info] .env file loaded successfully {"service":"back-end"}
+2026-06-08T12:04:00.396Z [info] Background workers initialized {"service":"back-end"}
+2026-06-08T12:04:00.402Z [info] Server is running: http://localhost:5000 {"service":"back-end"}
+2026-06-08T12:04:01.609Z [info] MongoDB connected {"service":"back-end"}
+2026-06-08T12:04:01.611Z [info] Connected to MongoDB {"service":"back-end"}
+2026-06-08T12:04:05.114Z [info] Redis client connecting {"service":"back-end"}
+2026-06-08T12:04:05.127Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-08T12:04:05.129Z [info] Redis client ready {"service":"back-end"}
+2026-06-08T12:04:05.135Z [info] Redis client connected {"service":"back-end"}
+2026-06-08T12:04:05.140Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-08T12:04:05.143Z [info] Loading .env {"service":"back-end","envPath":"D:\\Project\\PetShop-Website\\back-end\\.env"}
+2026-06-08T12:04:05.144Z [info] .env file loaded successfully {"service":"back-end"}
+2026-06-08T12:04:05.187Z [info] Background workers initialized {"service":"back-end"}
+2026-06-08T12:04:05.192Z [info] Server is running: http://localhost:5000 {"service":"back-end"}
+2026-06-08T12:04:07.858Z [info] Redis client connecting {"service":"back-end"}
+2026-06-08T12:04:07.872Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-08T12:04:07.874Z [info] Redis client ready {"service":"back-end"}
+2026-06-08T12:04:07.881Z [info] Redis client connected {"service":"back-end"}
+2026-06-08T12:04:07.886Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-08T12:04:07.888Z [info] Loading .env {"service":"back-end","envPath":"D:\\Project\\PetShop-Website\\back-end\\.env"}
+2026-06-08T12:04:07.889Z [info] .env file loaded successfully {"service":"back-end"}
+2026-06-08T12:04:07.924Z [info] Background workers initialized {"service":"back-end"}
+2026-06-08T12:04:07.932Z [info] Server is running: http://localhost:5000 {"service":"back-end"}
+2026-06-08T12:04:08.518Z [info] MongoDB connected {"service":"back-end"}
+2026-06-08T12:04:08.521Z [info] Connected to MongoDB {"service":"back-end"}
+2026-06-08T12:04:31.154Z [info] Redis client connecting {"service":"back-end"}
+2026-06-08T12:04:31.196Z [info] Redis client connecting {"service":"back-end"}
+2026-06-08T12:04:31.200Z [info] Redis client ready {"service":"back-end"}
+2026-06-08T12:04:31.201Z [info] Redis client connected {"service":"back-end"}
+2026-06-08T12:04:31.229Z [info] Redis client ready {"service":"back-end"}
+2026-06-08T12:04:31.231Z [info] Redis client connected {"service":"back-end"}
+2026-06-08T12:04:31.283Z [warn] OTP send rate limit exceeded {"service":"back-end","email":"test_otp_limiter@gmail.com","retryMins":10}
+2026-06-08T12:04:38.507Z [info] Redis client connecting {"service":"back-end"}
+2026-06-08T12:04:38.514Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-08T12:04:38.516Z [info] Redis client ready {"service":"back-end"}
+2026-06-08T12:04:38.517Z [info] Redis client connected {"service":"back-end"}
+2026-06-08T12:04:38.524Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-08T12:04:38.527Z [info] Loading .env {"service":"back-end","envPath":"D:\\Project\\PetShop-Website\\back-end\\.env"}
+2026-06-08T12:04:38.528Z [info] .env file loaded successfully {"service":"back-end"}
+2026-06-08T12:04:38.567Z [info] Background workers initialized {"service":"back-end"}
+2026-06-08T12:04:38.576Z [info] Server is running: http://localhost:5000 {"service":"back-end"}
+2026-06-08T12:04:39.500Z [info] MongoDB connected {"service":"back-end"}
+2026-06-08T12:04:39.503Z [info] Connected to MongoDB {"service":"back-end"}
+2026-06-08T12:04:59.584Z [warn] MongoDB disconnected {"service":"back-end"}
+2026-06-08T12:05:31.959Z [info] MongoDB connected {"service":"back-end"}
+2026-06-08T12:05:31.961Z [info] MongoDB reconnected {"service":"back-end"}
+2026-06-08T12:05:39.445Z [info] Redis client connecting {"service":"back-end"}
+2026-06-08T12:05:39.452Z [info] Redis client ready {"service":"back-end"}
+2026-06-08T12:05:39.453Z [info] Redis client connected {"service":"back-end"}
+2026-06-08T12:05:39.501Z [warn] OTP send rate limit exceeded {"service":"back-end","email":"test_otp_limiter@gmail.com","retryMins":10}
+2026-06-08T12:11:28.660Z [info] Redis client connecting {"service":"back-end"}
+2026-06-08T12:11:28.669Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-08T12:11:28.671Z [info] Redis client ready {"service":"back-end"}
+2026-06-08T12:11:28.678Z [info] Redis client connected {"service":"back-end"}
+2026-06-08T12:11:28.684Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-08T12:11:28.686Z [info] Loading .env {"service":"back-end","envPath":"D:\\Project\\PetShop-Website\\back-end\\.env"}
+2026-06-08T12:11:28.687Z [info] .env file loaded successfully {"service":"back-end"}
+2026-06-08T12:11:28.735Z [info] Background workers initialized {"service":"back-end"}
+2026-06-08T12:11:28.745Z [info] Server is running: http://localhost:5000 {"service":"back-end"}
+2026-06-08T12:11:29.445Z [info] MongoDB connected {"service":"back-end"}
+2026-06-08T12:11:29.447Z [info] Connected to MongoDB {"service":"back-end"}
+2026-06-08T12:11:43.420Z [info] Redis client connecting {"service":"back-end"}
+2026-06-08T12:11:43.429Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-08T12:11:43.431Z [info] Redis client ready {"service":"back-end"}
+2026-06-08T12:11:43.437Z [info] Redis client connected {"service":"back-end"}
+2026-06-08T12:11:43.442Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-08T12:11:43.444Z [info] Loading .env {"service":"back-end","envPath":"D:\\Project\\PetShop-Website\\back-end\\.env"}
+2026-06-08T12:11:43.445Z [info] .env file loaded successfully {"service":"back-end"}
+2026-06-08T12:11:43.478Z [info] Background workers initialized {"service":"back-end"}
+2026-06-08T12:11:43.484Z [info] Server is running: http://localhost:5000 {"service":"back-end"}
+2026-06-08T12:11:44.131Z [info] MongoDB connected {"service":"back-end"}
+2026-06-08T12:11:44.132Z [info] Connected to MongoDB {"service":"back-end"}
+2026-06-08T12:11:52.830Z [info] Redis client connecting {"service":"back-end"}
+2026-06-08T12:11:52.858Z [info] Redis client ready {"service":"back-end"}
+2026-06-08T12:11:52.860Z [info] Redis client connected {"service":"back-end"}
+2026-06-08T12:11:52.932Z [info] Redis client connecting {"service":"back-end"}
+2026-06-08T12:11:52.961Z [info] Redis client ready {"service":"back-end"}
+2026-06-08T12:11:52.962Z [info] Redis client connected {"service":"back-end"}
+2026-06-08T12:11:53.008Z [warn] OTP send rate limit exceeded {"service":"back-end","email":"test_otp_limiter@gmail.com","retryMins":10}
+2026-06-08T12:12:06.572Z [info] Redis client connecting {"service":"back-end"}
+2026-06-08T12:12:06.579Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-08T12:12:06.581Z [info] Redis client ready {"service":"back-end"}
+2026-06-08T12:12:06.582Z [info] Redis client connected {"service":"back-end"}
+2026-06-08T12:12:06.586Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-08T12:12:55.671Z [info] Redis client connecting {"service":"back-end"}
+2026-06-08T12:12:55.680Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-08T12:12:55.682Z [info] Redis client ready {"service":"back-end"}
+2026-06-08T12:12:55.688Z [info] Redis client connected {"service":"back-end"}
+2026-06-08T12:12:55.693Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-08T12:12:55.695Z [info] Loading .env {"service":"back-end","envPath":"D:\\Project\\PetShop-Website\\back-end\\.env"}
+2026-06-08T12:12:55.696Z [info] .env file loaded successfully {"service":"back-end"}
+2026-06-08T12:12:55.728Z [info] Background workers initialized {"service":"back-end"}
+2026-06-08T12:12:55.733Z [info] Server is running: http://localhost:5000 {"service":"back-end"}
+2026-06-08T12:12:56.484Z [info] MongoDB connected {"service":"back-end"}
+2026-06-08T12:12:56.486Z [info] Connected to MongoDB {"service":"back-end"}
+2026-06-08T12:13:15.429Z [info] Redis client connecting {"service":"back-end"}
+2026-06-08T12:13:15.436Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-08T12:13:15.438Z [info] Redis client ready {"service":"back-end"}
+2026-06-08T12:13:15.443Z [info] Redis client connected {"service":"back-end"}
+2026-06-08T12:13:15.447Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-08T12:13:15.449Z [info] Loading .env {"service":"back-end","envPath":"D:\\Project\\PetShop-Website\\back-end\\.env"}
+2026-06-08T12:13:15.450Z [info] .env file loaded successfully {"service":"back-end"}
+2026-06-08T12:13:15.481Z [info] Background workers initialized {"service":"back-end"}
+2026-06-08T12:13:15.485Z [info] Server is running: http://localhost:5000 {"service":"back-end"}
+2026-06-08T12:13:16.118Z [info] MongoDB connected {"service":"back-end"}
+2026-06-08T12:13:16.120Z [info] Connected to MongoDB {"service":"back-end"}
+2026-06-08T12:25:49.552Z [info] MongoDB reconnected {"service":"back-end"}
+2026-06-08T12:25:49.554Z [info] MongoDB reconnected {"service":"back-end"}
+2026-06-08T12:25:59.818Z [warn] MongoDB disconnected {"service":"back-end"}
+2026-06-08T12:25:59.915Z [info] MongoDB connected {"service":"back-end"}
+2026-06-08T12:25:59.916Z [info] MongoDB reconnected {"service":"back-end"}
+2026-06-08T14:33:17.579Z [info] MongoDB reconnected {"service":"back-end"}
+2026-06-08T14:33:17.580Z [info] MongoDB reconnected {"service":"back-end"}
+2026-06-08T14:33:27.870Z [warn] MongoDB disconnected {"service":"back-end"}
+2026-06-08T14:33:28.022Z [info] MongoDB connected {"service":"back-end"}
+2026-06-08T14:33:28.022Z [info] MongoDB reconnected {"service":"back-end"}
+2026-06-08T15:05:14.576Z [info] Redis client connecting {"service":"back-end"}
+2026-06-08T15:05:14.584Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-08T15:05:14.586Z [info] Redis client ready {"service":"back-end"}
+2026-06-08T15:05:14.593Z [info] Redis client connected {"service":"back-end"}
+2026-06-08T15:05:14.597Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-08T15:05:14.600Z [info] Loading .env {"service":"back-end","envPath":"D:\\Project\\PetShop-Website\\back-end\\.env"}
+2026-06-08T15:05:14.601Z [info] .env file loaded successfully {"service":"back-end"}
+2026-06-08T15:05:14.644Z [info] Background workers initialized {"service":"back-end"}
+2026-06-08T15:05:14.651Z [info] Server is running: http://localhost:5000 {"service":"back-end"}
+2026-06-08T15:05:15.411Z [info] MongoDB connected {"service":"back-end"}
+2026-06-08T15:05:15.414Z [info] Connected to MongoDB {"service":"back-end"}
+2026-06-08T15:05:55.207Z [info] Redis client connecting {"service":"back-end"}
+2026-06-08T15:05:55.218Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-08T15:05:55.223Z [info] Redis client ready {"service":"back-end"}
+2026-06-08T15:05:55.237Z [info] Redis client connected {"service":"back-end"}
+2026-06-08T15:05:55.245Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-08T15:05:55.248Z [info] Loading .env {"service":"back-end","envPath":"D:\\Project\\PetShop-Website\\back-end\\.env"}
+2026-06-08T15:05:55.249Z [info] .env file loaded successfully {"service":"back-end"}
+2026-06-08T15:05:55.289Z [info] Background workers initialized {"service":"back-end"}
+2026-06-08T15:05:55.296Z [info] Server is running: http://localhost:5000 {"service":"back-end"}
+2026-06-08T15:05:56.316Z [info] MongoDB connected {"service":"back-end"}
+2026-06-08T15:05:56.319Z [info] Connected to MongoDB {"service":"back-end"}
+2026-06-08T15:07:00.920Z [info] Redis client connecting {"service":"back-end"}
+2026-06-08T15:07:00.927Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-08T15:07:00.929Z [info] Redis client ready {"service":"back-end"}
+2026-06-08T15:07:00.937Z [info] Redis client connected {"service":"back-end"}
+2026-06-08T15:07:00.942Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-08T15:07:00.944Z [info] Loading .env {"service":"back-end","envPath":"D:\\Project\\PetShop-Website\\back-end\\.env"}
+2026-06-08T15:07:00.945Z [info] .env file loaded successfully {"service":"back-end"}
+2026-06-08T15:07:00.979Z [info] Background workers initialized {"service":"back-end"}
+2026-06-08T15:07:00.984Z [info] Server is running: http://localhost:5000 {"service":"back-end"}
+2026-06-08T15:07:01.760Z [info] MongoDB connected {"service":"back-end"}
+2026-06-08T15:07:01.761Z [info] Connected to MongoDB {"service":"back-end"}
+2026-06-08T15:09:17.145Z [info] Redis client connecting {"service":"back-end"}
+2026-06-08T15:09:17.153Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-08T15:09:17.155Z [info] Redis client ready {"service":"back-end"}
+2026-06-08T15:09:17.155Z [info] Redis client connected {"service":"back-end"}
+2026-06-08T15:09:17.164Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-08T15:09:17.166Z [info] Loading .env {"service":"back-end","envPath":"D:\\Project\\PetShop-Website\\back-end\\.env"}
+2026-06-08T15:09:17.168Z [info] .env file loaded successfully {"service":"back-end"}
+2026-06-08T15:09:17.198Z [info] Background workers initialized {"service":"back-end"}
+2026-06-08T15:09:17.206Z [info] Server is running: http://localhost:5000 {"service":"back-end"}
+2026-06-08T15:09:17.839Z [info] MongoDB connected {"service":"back-end"}
+2026-06-08T15:09:17.840Z [info] Connected to MongoDB {"service":"back-end"}
+2026-06-08T15:09:23.118Z [info] Redis client connecting {"service":"back-end"}
+2026-06-08T15:09:23.126Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-08T15:09:23.129Z [info] Redis client ready {"service":"back-end"}
+2026-06-08T15:09:23.134Z [info] Redis client connected {"service":"back-end"}
+2026-06-08T15:09:23.139Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-08T15:09:23.142Z [info] Loading .env {"service":"back-end","envPath":"D:\\Project\\PetShop-Website\\back-end\\.env"}
+2026-06-08T15:09:23.142Z [info] .env file loaded successfully {"service":"back-end"}
+2026-06-08T15:09:23.174Z [info] Background workers initialized {"service":"back-end"}
+2026-06-08T15:09:23.180Z [info] Server is running: http://localhost:5000 {"service":"back-end"}
+2026-06-08T15:09:23.876Z [info] MongoDB connected {"service":"back-end"}
+2026-06-08T15:09:23.878Z [info] Connected to MongoDB {"service":"back-end"}
+2026-06-08T15:09:29.137Z [info] Redis client connecting {"service":"back-end"}
+2026-06-08T15:09:29.144Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-08T15:09:29.146Z [info] Redis client ready {"service":"back-end"}
+2026-06-08T15:09:29.152Z [info] Redis client connected {"service":"back-end"}
+2026-06-08T15:09:29.156Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-08T15:09:29.159Z [info] Loading .env {"service":"back-end","envPath":"D:\\Project\\PetShop-Website\\back-end\\.env"}
+2026-06-08T15:09:29.160Z [info] .env file loaded successfully {"service":"back-end"}
+2026-06-08T15:09:29.190Z [info] Background workers initialized {"service":"back-end"}
+2026-06-08T15:09:29.196Z [info] Server is running: http://localhost:5000 {"service":"back-end"}
+2026-06-08T15:09:29.887Z [info] MongoDB connected {"service":"back-end"}
+2026-06-08T15:09:29.889Z [info] Connected to MongoDB {"service":"back-end"}
+2026-06-08T15:09:35.259Z [info] Redis client connecting {"service":"back-end"}
+2026-06-08T15:09:35.266Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-08T15:09:35.268Z [info] Redis client ready {"service":"back-end"}
+2026-06-08T15:09:35.274Z [info] Redis client connected {"service":"back-end"}
+2026-06-08T15:09:35.280Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-08T15:09:35.282Z [info] Loading .env {"service":"back-end","envPath":"D:\\Project\\PetShop-Website\\back-end\\.env"}
+2026-06-08T15:09:35.283Z [info] .env file loaded successfully {"service":"back-end"}
+2026-06-08T15:09:35.315Z [info] Background workers initialized {"service":"back-end"}
+2026-06-08T15:09:35.322Z [info] Server is running: http://localhost:5000 {"service":"back-end"}
+2026-06-08T15:09:36.063Z [info] MongoDB connected {"service":"back-end"}
+2026-06-08T15:09:36.065Z [info] Connected to MongoDB {"service":"back-end"}
+2026-06-08T15:09:41.624Z [info] Redis client connecting {"service":"back-end"}
+2026-06-08T15:09:41.631Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-08T15:09:41.633Z [info] Redis client ready {"service":"back-end"}
+2026-06-08T15:09:41.639Z [info] Redis client connected {"service":"back-end"}
+2026-06-08T15:09:41.643Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-08T15:09:41.647Z [info] Loading .env {"service":"back-end","envPath":"D:\\Project\\PetShop-Website\\back-end\\.env"}
+2026-06-08T15:09:41.649Z [info] .env file loaded successfully {"service":"back-end"}
+2026-06-08T15:09:41.681Z [info] Background workers initialized {"service":"back-end"}
+2026-06-08T15:09:41.688Z [info] Server is running: http://localhost:5000 {"service":"back-end"}
+2026-06-08T15:09:42.428Z [info] MongoDB connected {"service":"back-end"}
+2026-06-08T15:09:42.430Z [info] Connected to MongoDB {"service":"back-end"}
+2026-06-08T15:09:55.270Z [info] Redis client connecting {"service":"back-end"}
+2026-06-08T15:09:55.276Z [info] Redis client ready {"service":"back-end"}
+2026-06-08T15:09:55.276Z [info] Redis client connected {"service":"back-end"}
+2026-06-08T15:09:55.313Z [warn] Payment creation rate limit exceeded {"service":"back-end","key":"507f1f77bcf86cd799439011","retrySecs":60}
+2026-06-08T15:09:55.337Z [warn] Payment creation rate limit exceeded {"service":"back-end","key":"127.0.0.1","retrySecs":60}
+2026-06-08T15:09:55.357Z [warn] Order creation rate limit exceeded {"service":"back-end","key":"507f1f77bcf86cd799439011","retrySecs":60}
+2026-06-08T15:10:10.193Z [info] Redis client connecting {"service":"back-end"}
+2026-06-08T15:10:10.199Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-08T15:10:10.201Z [info] Redis client ready {"service":"back-end"}
+2026-06-08T15:10:10.206Z [info] Redis client connected {"service":"back-end"}
+2026-06-08T15:10:10.212Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-08T15:28:37.613Z [info] Redis client connecting {"service":"back-end"}
+2026-06-08T15:28:37.620Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-08T15:28:37.623Z [info] Redis client ready {"service":"back-end"}
+2026-06-08T15:28:37.630Z [info] Redis client connected {"service":"back-end"}
+2026-06-08T15:28:37.635Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-08T15:28:37.638Z [info] Loading .env {"service":"back-end","envPath":"D:\\Project\\PetShop-Website\\back-end\\.env"}
+2026-06-08T15:28:37.639Z [info] .env file loaded successfully {"service":"back-end"}
+2026-06-08T15:28:37.683Z [info] Background workers initialized {"service":"back-end"}
+2026-06-08T15:28:37.689Z [info] Server is running: http://localhost:5000 {"service":"back-end"}
+2026-06-08T15:28:38.399Z [info] MongoDB connected {"service":"back-end"}
+2026-06-08T15:28:38.400Z [info] Connected to MongoDB {"service":"back-end"}
+2026-06-08T15:31:17.667Z [info] Redis client connecting {"service":"back-end"}
+2026-06-08T15:31:17.685Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-08T15:31:17.688Z [info] Redis client ready {"service":"back-end"}
+2026-06-08T15:31:17.694Z [info] Redis client connected {"service":"back-end"}
+2026-06-08T15:31:17.699Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-08T15:31:17.701Z [info] Loading .env {"service":"back-end","envPath":"D:\\Project\\PetShop-Website\\back-end\\.env"}
+2026-06-08T15:31:17.702Z [info] .env file loaded successfully {"service":"back-end"}
+2026-06-08T15:31:17.736Z [info] Background workers initialized {"service":"back-end"}
+2026-06-08T15:31:17.745Z [info] Server is running: http://localhost:5000 {"service":"back-end"}
+2026-06-08T15:31:18.578Z [info] MongoDB connected {"service":"back-end"}
+2026-06-08T15:31:18.582Z [info] Connected to MongoDB {"service":"back-end"}
+2026-06-08T15:32:01.461Z [info] Redis client connecting {"service":"back-end"}
+2026-06-08T15:32:01.470Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-08T15:32:01.473Z [info] Redis client ready {"service":"back-end"}
+2026-06-08T15:32:01.478Z [info] Redis client connected {"service":"back-end"}
+2026-06-08T15:32:01.482Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-08T15:32:01.484Z [info] Loading .env {"service":"back-end","envPath":"D:\\Project\\PetShop-Website\\back-end\\.env"}
+2026-06-08T15:32:01.486Z [info] .env file loaded successfully {"service":"back-end"}
+2026-06-08T15:32:01.530Z [info] Background workers initialized {"service":"back-end"}
+2026-06-08T15:32:01.537Z [info] Server is running: http://localhost:5000 {"service":"back-end"}
+2026-06-08T15:32:02.198Z [info] MongoDB connected {"service":"back-end"}
+2026-06-08T15:32:02.201Z [info] Connected to MongoDB {"service":"back-end"}
+2026-06-08T15:33:02.959Z [info] Redis client connecting {"service":"back-end"}
+2026-06-08T15:33:02.969Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-08T15:33:02.976Z [info] Redis client ready {"service":"back-end"}
+2026-06-08T15:33:02.982Z [info] Redis client connected {"service":"back-end"}
+2026-06-08T15:33:02.991Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-08T15:33:02.994Z [info] Loading .env {"service":"back-end","envPath":"D:\\Project\\PetShop-Website\\back-end\\.env"}
+2026-06-08T15:33:02.995Z [info] .env file loaded successfully {"service":"back-end"}
+2026-06-08T15:33:03.039Z [info] Background workers initialized {"service":"back-end"}
+2026-06-08T15:33:03.046Z [info] Server is running: http://localhost:5000 {"service":"back-end"}
+2026-06-08T15:33:03.778Z [info] MongoDB connected {"service":"back-end"}
+2026-06-08T15:33:03.779Z [info] Connected to MongoDB {"service":"back-end"}
+2026-06-08T15:35:09.835Z [info] Redis client connecting {"service":"back-end"}
+2026-06-08T15:35:09.841Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-08T15:35:09.850Z [info] Redis client ready {"service":"back-end"}
+2026-06-08T15:35:09.856Z [info] Redis client connected {"service":"back-end"}
+2026-06-08T15:35:09.863Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-08T15:35:09.866Z [info] Loading .env {"service":"back-end","envPath":"D:\\Project\\PetShop-Website\\back-end\\.env"}
+2026-06-08T15:35:09.866Z [info] .env file loaded successfully {"service":"back-end"}
+2026-06-08T15:35:09.899Z [info] Background workers initialized {"service":"back-end"}
+2026-06-08T15:35:09.904Z [info] Server is running: http://localhost:5000 {"service":"back-end"}
+2026-06-08T15:35:10.642Z [info] MongoDB connected {"service":"back-end"}
+2026-06-08T15:35:10.644Z [info] Connected to MongoDB {"service":"back-end"}
+2026-06-08T15:35:20.789Z [info] Redis client connecting {"service":"back-end"}
+2026-06-08T15:35:20.796Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-08T15:35:20.798Z [info] Redis client ready {"service":"back-end"}
+2026-06-08T15:35:20.799Z [info] Redis client connected {"service":"back-end"}
+2026-06-08T15:35:20.804Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-08T15:35:20.807Z [info] Loading .env {"service":"back-end","envPath":"D:\\Project\\PetShop-Website\\back-end\\.env"}
+2026-06-08T15:35:20.808Z [info] .env file loaded successfully {"service":"back-end"}
+2026-06-08T15:35:20.843Z [info] Background workers initialized {"service":"back-end"}
+2026-06-08T15:35:20.849Z [info] Server is running: http://localhost:5000 {"service":"back-end"}
+2026-06-08T15:35:21.545Z [info] MongoDB connected {"service":"back-end"}
+2026-06-08T15:35:21.547Z [info] Connected to MongoDB {"service":"back-end"}
+2026-06-08T15:35:26.279Z [info] Redis client connecting {"service":"back-end"}
+2026-06-08T15:35:26.289Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-08T15:35:26.291Z [info] Redis client ready {"service":"back-end"}
+2026-06-08T15:35:26.297Z [info] Redis client connected {"service":"back-end"}
+2026-06-08T15:35:26.303Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-08T15:35:26.305Z [info] Loading .env {"service":"back-end","envPath":"D:\\Project\\PetShop-Website\\back-end\\.env"}
+2026-06-08T15:35:26.306Z [info] .env file loaded successfully {"service":"back-end"}
+2026-06-08T15:35:26.342Z [info] Background workers initialized {"service":"back-end"}
+2026-06-08T15:35:26.351Z [info] Server is running: http://localhost:5000 {"service":"back-end"}
+2026-06-08T15:35:26.984Z [info] MongoDB connected {"service":"back-end"}
+2026-06-08T15:35:26.986Z [info] Connected to MongoDB {"service":"back-end"}
+2026-06-08T15:36:20.928Z [info] Redis client connecting {"service":"back-end"}
+2026-06-08T15:36:20.944Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-08T15:36:20.948Z [info] Redis client ready {"service":"back-end"}
+2026-06-08T15:36:20.956Z [info] Redis client connected {"service":"back-end"}
+2026-06-08T15:36:20.961Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-08T15:36:20.964Z [info] Loading .env {"service":"back-end","envPath":"D:\\Project\\PetShop-Website\\back-end\\.env"}
+2026-06-08T15:36:20.965Z [info] .env file loaded successfully {"service":"back-end"}
+2026-06-08T15:36:21.006Z [info] Background workers initialized {"service":"back-end"}
+2026-06-08T15:36:21.013Z [info] Server is running: http://localhost:5000 {"service":"back-end"}
+2026-06-08T15:36:21.763Z [info] MongoDB connected {"service":"back-end"}
+2026-06-08T15:36:21.766Z [info] Connected to MongoDB {"service":"back-end"}
+2026-06-08T15:37:50.003Z [info] Redis client connecting {"service":"back-end"}
+2026-06-08T15:37:50.013Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-08T15:37:50.015Z [info] Redis client ready {"service":"back-end"}
+2026-06-08T15:37:50.020Z [info] Redis client connected {"service":"back-end"}
+2026-06-08T15:37:50.025Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-08T15:37:50.028Z [info] Loading .env {"service":"back-end","envPath":"D:\\Project\\PetShop-Website\\back-end\\.env"}
+2026-06-08T15:37:50.030Z [info] .env file loaded successfully {"service":"back-end"}
+2026-06-08T15:37:50.067Z [info] Background workers initialized {"service":"back-end"}
+2026-06-08T15:37:50.072Z [info] Server is running: http://localhost:5000 {"service":"back-end"}
+2026-06-08T15:37:50.831Z [info] MongoDB connected {"service":"back-end"}
+2026-06-08T15:37:50.833Z [info] Connected to MongoDB {"service":"back-end"}
+2026-06-08T15:38:08.972Z [info] Redis client connecting {"service":"back-end"}
+2026-06-08T15:38:08.983Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-08T15:38:08.986Z [info] Redis client ready {"service":"back-end"}
+2026-06-08T15:38:08.994Z [info] Redis client connected {"service":"back-end"}
+2026-06-08T15:38:09.000Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-08T15:38:09.002Z [info] Loading .env {"service":"back-end","envPath":"D:\\Project\\PetShop-Website\\back-end\\.env"}
+2026-06-08T15:38:09.003Z [info] .env file loaded successfully {"service":"back-end"}
+2026-06-08T15:38:09.050Z [info] Background workers initialized {"service":"back-end"}
+2026-06-08T15:38:09.055Z [info] Server is running: http://localhost:5000 {"service":"back-end"}
+2026-06-08T15:38:09.997Z [info] MongoDB connected {"service":"back-end"}
+2026-06-08T15:38:09.999Z [info] Connected to MongoDB {"service":"back-end"}
+2026-06-08T15:39:34.572Z [info] Redis client connecting {"service":"back-end"}
+2026-06-08T15:39:34.579Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-08T15:39:34.581Z [info] Redis client ready {"service":"back-end"}
+2026-06-08T15:39:34.590Z [info] Redis client connected {"service":"back-end"}
+2026-06-08T15:39:34.597Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-08T15:39:34.599Z [info] Loading .env {"service":"back-end","envPath":"D:\\Project\\PetShop-Website\\back-end\\.env"}
+2026-06-08T15:39:34.600Z [info] .env file loaded successfully {"service":"back-end"}
+2026-06-08T15:39:34.642Z [info] Background workers initialized {"service":"back-end"}
+2026-06-08T15:39:34.648Z [info] Server is running: http://localhost:5000 {"service":"back-end"}
+2026-06-08T15:39:35.349Z [info] MongoDB connected {"service":"back-end"}
+2026-06-08T15:39:35.351Z [info] Connected to MongoDB {"service":"back-end"}
+2026-06-08T15:41:33.130Z [info] Redis client connecting {"service":"back-end"}
+2026-06-08T15:41:33.141Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-08T15:41:33.145Z [info] Redis client ready {"service":"back-end"}
+2026-06-08T15:41:33.150Z [info] Redis client connected {"service":"back-end"}
+2026-06-08T15:41:33.157Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-08T15:41:33.163Z [info] Loading .env {"service":"back-end","envPath":"D:\\Project\\PetShop-Website\\back-end\\.env"}
+2026-06-08T15:41:33.164Z [info] .env file loaded successfully {"service":"back-end"}
+2026-06-08T15:41:33.198Z [info] Background workers initialized {"service":"back-end"}
+2026-06-08T15:41:33.203Z [info] Server is running: http://localhost:5000 {"service":"back-end"}
+2026-06-08T15:41:33.912Z [info] MongoDB connected {"service":"back-end"}
+2026-06-08T15:41:33.915Z [info] Connected to MongoDB {"service":"back-end"}
+2026-06-08T15:44:04.355Z [info] Redis client connecting {"service":"back-end"}
+2026-06-08T15:44:04.366Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-08T15:44:04.368Z [info] Redis client ready {"service":"back-end"}
+2026-06-08T15:44:04.373Z [info] Redis client connected {"service":"back-end"}
+2026-06-08T15:44:04.380Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-08T15:44:04.383Z [info] Loading .env {"service":"back-end","envPath":"D:\\Project\\PetShop-Website\\back-end\\.env"}
+2026-06-08T15:44:04.383Z [info] .env file loaded successfully {"service":"back-end"}
+2026-06-08T15:44:04.418Z [info] Background workers initialized {"service":"back-end"}
+2026-06-08T15:44:04.423Z [info] Server is running: http://localhost:5000 {"service":"back-end"}
+2026-06-08T15:44:05.083Z [info] MongoDB connected {"service":"back-end"}
+2026-06-08T15:44:05.085Z [info] Connected to MongoDB {"service":"back-end"}
+2026-06-08T15:50:30.935Z [info] Redis client connecting {"service":"back-end"}
+2026-06-08T15:50:30.943Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-08T15:50:30.945Z [info] Redis client ready {"service":"back-end"}
+2026-06-08T15:50:30.951Z [info] Redis client connected {"service":"back-end"}
+2026-06-08T15:50:30.956Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-08T15:50:30.959Z [info] Loading .env {"service":"back-end","envPath":"D:\\Project\\PetShop-Website\\back-end\\.env"}
+2026-06-08T15:50:30.960Z [info] .env file loaded successfully {"service":"back-end"}
+2026-06-08T15:50:30.990Z [info] Background workers initialized {"service":"back-end"}
+2026-06-08T15:50:30.995Z [info] Server is running: http://localhost:5000 {"service":"back-end"}
+2026-06-08T15:50:32.996Z [info] MongoDB connected {"service":"back-end"}
+2026-06-08T15:50:32.997Z [info] Connected to MongoDB {"service":"back-end"}
+2026-06-08T15:51:09.446Z [info] Redis client connecting {"service":"back-end"}
+2026-06-08T15:51:09.456Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-08T15:51:09.461Z [info] Redis client ready {"service":"back-end"}
+2026-06-08T15:51:09.468Z [info] Redis client connected {"service":"back-end"}
+2026-06-08T15:51:09.473Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-08T15:51:09.475Z [info] Loading .env {"service":"back-end","envPath":"D:\\Project\\PetShop-Website\\back-end\\.env"}
+2026-06-08T15:51:09.477Z [info] .env file loaded successfully {"service":"back-end"}
+2026-06-08T15:51:09.518Z [info] Background workers initialized {"service":"back-end"}
+2026-06-08T15:51:09.523Z [info] Server is running: http://localhost:5000 {"service":"back-end"}
+2026-06-08T15:51:10.226Z [info] MongoDB connected {"service":"back-end"}
+2026-06-08T15:51:10.228Z [info] Connected to MongoDB {"service":"back-end"}
+2026-06-08T15:52:04.407Z [info] Redis client connecting {"service":"back-end"}
+2026-06-08T15:52:04.414Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-08T15:52:04.417Z [info] Redis client ready {"service":"back-end"}
+2026-06-08T15:52:04.423Z [info] Redis client connected {"service":"back-end"}
+2026-06-08T15:52:04.428Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-08T15:52:04.430Z [info] Loading .env {"service":"back-end","envPath":"D:\\Project\\PetShop-Website\\back-end\\.env"}
+2026-06-08T15:52:04.431Z [info] .env file loaded successfully {"service":"back-end"}
+2026-06-08T15:52:04.464Z [info] Background workers initialized {"service":"back-end"}
+2026-06-08T15:52:04.469Z [info] Server is running: http://localhost:5000 {"service":"back-end"}
+2026-06-08T15:52:05.376Z [info] MongoDB connected {"service":"back-end"}
+2026-06-08T15:52:05.379Z [info] Connected to MongoDB {"service":"back-end"}
+2026-06-08T15:52:39.721Z [info] Redis client connecting {"service":"back-end"}
+2026-06-08T15:52:39.729Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-08T15:52:39.731Z [info] Redis client ready {"service":"back-end"}
+2026-06-08T15:52:39.736Z [info] Redis client connected {"service":"back-end"}
+2026-06-08T15:52:39.741Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-08T15:52:39.744Z [info] Loading .env {"service":"back-end","envPath":"D:\\Project\\PetShop-Website\\back-end\\.env"}
+2026-06-08T15:52:39.745Z [info] .env file loaded successfully {"service":"back-end"}
+2026-06-08T15:52:39.781Z [info] Background workers initialized {"service":"back-end"}
+2026-06-08T15:52:39.786Z [info] Server is running: http://localhost:5000 {"service":"back-end"}
+2026-06-08T15:52:40.496Z [info] MongoDB connected {"service":"back-end"}
+2026-06-08T15:52:40.498Z [info] Connected to MongoDB {"service":"back-end"}
+2026-06-08T15:53:36.465Z [info] Redis client connecting {"service":"back-end"}
+2026-06-08T15:53:36.472Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-08T15:53:36.474Z [info] Redis client ready {"service":"back-end"}
+2026-06-08T15:53:36.479Z [info] Redis client connected {"service":"back-end"}
+2026-06-08T15:53:36.485Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-08T15:53:36.488Z [info] Loading .env {"service":"back-end","envPath":"D:\\Project\\PetShop-Website\\back-end\\.env"}
+2026-06-08T15:53:36.489Z [info] .env file loaded successfully {"service":"back-end"}
+2026-06-08T15:53:36.520Z [info] Background workers initialized {"service":"back-end"}
+2026-06-08T15:53:36.525Z [info] Server is running: http://localhost:5000 {"service":"back-end"}
+2026-06-08T15:53:37.286Z [info] MongoDB connected {"service":"back-end"}
+2026-06-08T15:53:37.289Z [info] Connected to MongoDB {"service":"back-end"}
+2026-06-08T15:57:13.158Z [info] Redis client connecting {"service":"back-end"}
+2026-06-08T15:57:13.166Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-08T15:57:13.168Z [info] Redis client ready {"service":"back-end"}
+2026-06-08T15:57:13.173Z [info] Redis client connected {"service":"back-end"}
+2026-06-08T15:57:13.178Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-08T15:57:13.180Z [info] Loading .env {"service":"back-end","envPath":"D:\\Project\\PetShop-Website\\back-end\\.env"}
+2026-06-08T15:57:13.181Z [info] .env file loaded successfully {"service":"back-end"}
+2026-06-08T15:57:13.212Z [info] Background workers initialized {"service":"back-end"}
+2026-06-08T15:57:13.218Z [info] Server is running: http://localhost:5000 {"service":"back-end"}
+2026-06-08T15:57:14.030Z [info] MongoDB connected {"service":"back-end"}
+2026-06-08T15:57:14.032Z [info] Connected to MongoDB {"service":"back-end"}
+2026-06-08T15:57:19.438Z [info] Redis client connecting {"service":"back-end"}
+2026-06-08T15:57:19.444Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-08T15:57:19.446Z [info] Redis client ready {"service":"back-end"}
+2026-06-08T15:57:19.447Z [info] Redis client connected {"service":"back-end"}
+2026-06-08T15:57:19.457Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-08T15:57:19.459Z [info] Loading .env {"service":"back-end","envPath":"D:\\Project\\PetShop-Website\\back-end\\.env"}
+2026-06-08T15:57:19.460Z [info] .env file loaded successfully {"service":"back-end"}
+2026-06-08T15:57:19.491Z [info] Background workers initialized {"service":"back-end"}
+2026-06-08T15:57:19.497Z [info] Server is running: http://localhost:5000 {"service":"back-end"}
+2026-06-08T15:57:20.305Z [info] MongoDB connected {"service":"back-end"}
+2026-06-08T15:57:20.307Z [info] Connected to MongoDB {"service":"back-end"}
+2026-06-08T15:57:42.710Z [info] Redis client connecting {"service":"back-end"}
+2026-06-08T15:57:42.718Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-08T15:57:42.720Z [info] Redis client ready {"service":"back-end"}
+2026-06-08T15:57:42.726Z [info] Redis client connected {"service":"back-end"}
+2026-06-08T15:57:42.731Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-08T15:57:42.733Z [info] Loading .env {"service":"back-end","envPath":"D:\\Project\\PetShop-Website\\back-end\\.env"}
+2026-06-08T15:57:42.734Z [info] .env file loaded successfully {"service":"back-end"}
+2026-06-08T15:57:42.767Z [info] Background workers initialized {"service":"back-end"}
+2026-06-08T15:57:42.773Z [info] Server is running: http://localhost:5000 {"service":"back-end"}
+2026-06-08T15:57:43.433Z [info] MongoDB connected {"service":"back-end"}
+2026-06-08T15:57:43.434Z [info] Connected to MongoDB {"service":"back-end"}
+2026-06-08T15:57:55.425Z [info] Redis client connecting {"service":"back-end"}
+2026-06-08T15:57:55.432Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-08T15:57:55.434Z [info] Redis client ready {"service":"back-end"}
+2026-06-08T15:57:55.440Z [info] Redis client connected {"service":"back-end"}
+2026-06-08T15:57:55.445Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-08T15:57:55.447Z [info] Loading .env {"service":"back-end","envPath":"D:\\Project\\PetShop-Website\\back-end\\.env"}
+2026-06-08T15:57:55.448Z [info] .env file loaded successfully {"service":"back-end"}
+2026-06-08T15:57:55.483Z [info] Background workers initialized {"service":"back-end"}
+2026-06-08T15:57:55.488Z [info] Server is running: http://localhost:5000 {"service":"back-end"}
+2026-06-08T15:57:56.212Z [info] MongoDB connected {"service":"back-end"}
+2026-06-08T15:57:56.213Z [info] Connected to MongoDB {"service":"back-end"}
+2026-06-08T15:58:22.201Z [info] Redis client connecting {"service":"back-end"}
+2026-06-08T15:58:22.212Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-08T15:58:22.215Z [info] Redis client ready {"service":"back-end"}
+2026-06-08T15:58:22.222Z [info] Redis client connected {"service":"back-end"}
+2026-06-08T15:58:22.230Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-08T15:58:22.233Z [info] Loading .env {"service":"back-end","envPath":"D:\\Project\\PetShop-Website\\back-end\\.env"}
+2026-06-08T15:58:22.234Z [info] .env file loaded successfully {"service":"back-end"}
+2026-06-08T15:58:22.288Z [info] Background workers initialized {"service":"back-end"}
+2026-06-08T15:58:22.295Z [info] Server is running: http://localhost:5000 {"service":"back-end"}
+2026-06-08T15:58:22.996Z [info] MongoDB connected {"service":"back-end"}
+2026-06-08T15:58:22.998Z [info] Connected to MongoDB {"service":"back-end"}
+2026-06-08T15:58:25.959Z [info] Redis client connecting {"service":"back-end"}
+2026-06-08T15:58:25.967Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-08T15:58:25.970Z [info] Redis client ready {"service":"back-end"}
+2026-06-08T15:58:25.974Z [info] Redis client connected {"service":"back-end"}
+2026-06-08T15:58:25.979Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-08T15:58:25.982Z [info] Loading .env {"service":"back-end","envPath":"D:\\Project\\PetShop-Website\\back-end\\.env"}
+2026-06-08T15:58:25.983Z [info] .env file loaded successfully {"service":"back-end"}
+2026-06-08T15:58:26.015Z [info] Background workers initialized {"service":"back-end"}
+2026-06-08T15:58:26.020Z [info] Server is running: http://localhost:5000 {"service":"back-end"}
+2026-06-08T15:58:27.371Z [info] MongoDB connected {"service":"back-end"}
+2026-06-08T15:58:27.372Z [info] Connected to MongoDB {"service":"back-end"}
+2026-06-08T15:58:37.749Z [info] Redis client connecting {"service":"back-end"}
+2026-06-08T15:58:37.756Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-08T15:58:37.758Z [info] Redis client ready {"service":"back-end"}
+2026-06-08T15:58:37.763Z [info] Redis client connected {"service":"back-end"}
+2026-06-08T15:58:37.768Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-08T15:58:37.770Z [info] Loading .env {"service":"back-end","envPath":"D:\\Project\\PetShop-Website\\back-end\\.env"}
+2026-06-08T15:58:37.771Z [info] .env file loaded successfully {"service":"back-end"}
+2026-06-08T15:58:37.801Z [info] Background workers initialized {"service":"back-end"}
+2026-06-08T15:58:37.806Z [info] Server is running: http://localhost:5000 {"service":"back-end"}
+2026-06-08T15:58:38.455Z [info] MongoDB connected {"service":"back-end"}
+2026-06-08T15:58:38.456Z [info] Connected to MongoDB {"service":"back-end"}
+2026-06-08T15:58:45.457Z [info] Redis client connecting {"service":"back-end"}
+2026-06-08T15:58:45.463Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-08T15:58:45.465Z [info] Redis client ready {"service":"back-end"}
+2026-06-08T15:58:45.472Z [info] Redis client connected {"service":"back-end"}
+2026-06-08T15:58:45.476Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-08T15:58:45.478Z [info] Loading .env {"service":"back-end","envPath":"D:\\Project\\PetShop-Website\\back-end\\.env"}
+2026-06-08T15:58:45.479Z [info] .env file loaded successfully {"service":"back-end"}
+2026-06-08T15:58:45.509Z [info] Background workers initialized {"service":"back-end"}
+2026-06-08T15:58:45.514Z [info] Server is running: http://localhost:5000 {"service":"back-end"}
+2026-06-08T15:58:46.165Z [info] MongoDB connected {"service":"back-end"}
+2026-06-08T15:58:46.166Z [info] Connected to MongoDB {"service":"back-end"}
+2026-06-08T15:58:55.540Z [info] Redis client connecting {"service":"back-end"}
+2026-06-08T15:58:55.548Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-08T15:58:55.549Z [info] Redis client ready {"service":"back-end"}
+2026-06-08T15:58:55.554Z [info] Redis client connected {"service":"back-end"}
+2026-06-08T15:58:55.560Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-08T15:58:55.562Z [info] Loading .env {"service":"back-end","envPath":"D:\\Project\\PetShop-Website\\back-end\\.env"}
+2026-06-08T15:58:55.562Z [info] .env file loaded successfully {"service":"back-end"}
+2026-06-08T15:58:55.595Z [info] Background workers initialized {"service":"back-end"}
+2026-06-08T15:58:55.600Z [info] Server is running: http://localhost:5000 {"service":"back-end"}
+2026-06-08T15:58:56.235Z [info] MongoDB connected {"service":"back-end"}
+2026-06-08T15:58:56.237Z [info] Connected to MongoDB {"service":"back-end"}
+2026-06-08T15:59:08.430Z [error] Error fetching products PRODUCT_LIST is not defined {"service":"back-end"}
+ReferenceError: PRODUCT_LIST is not defined
+    at Module.getAllProducts (file:///D:/Project/PetShop-Website/back-end/server/services/productService.js:191:45)
+    at getAllProducts (file:///D:/Project/PetShop-Website/back-end/server/controllers/productController.js:6:43)
+    at Layer.handle [as handle_request] (D:\Project\PetShop-Website\back-end\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Project\PetShop-Website\back-end\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\Project\PetShop-Website\back-end\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\Project\PetShop-Website\back-end\node_modules\express\lib\router\layer.js:95:5)
+    at D:\Project\PetShop-Website\back-end\node_modules\express\lib\router\index.js:284:15
+    at router.process_params (D:\Project\PetShop-Website\back-end\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Project\PetShop-Website\back-end\node_modules\express\lib\router\index.js:280:10)
+    at router.handle (D:\Project\PetShop-Website\back-end\node_modules\express\lib\router\index.js:175:3)
+2026-06-08T15:59:08.439Z [info] GET /api/products 500 6.227 ms - 41 req=5db89de4-8c7e-409e-bc91-fd50971e9cb6 {"service":"back-end"}
+2026-06-08T15:59:08.515Z [info] GET /api/categories 304 98.240 ms - - req=58bc651f-b39f-4eed-96f7-436ee55e35df {"service":"back-end"}
+2026-06-08T15:59:08.518Z [info] GET /api/categories/catetory/shop-cho-cun 304 92.908 ms - - req=feea235f-0a3f-4b58-bfd1-eaacce71f173 {"service":"back-end"}
+2026-06-08T15:59:08.576Z [info] GET /api/products/product/sales 304 125.756 ms - - req=972b9e36-cb9b-438e-ac18-fe9f92a318a8 {"service":"back-end"}
+2026-06-08T15:59:08.592Z [info] GET /api/categories 304 68.403 ms - - req=4ac81f45-0d2d-4540-89b7-ddc613c4f5c2 {"service":"back-end"}
+2026-06-08T15:59:08.667Z [info] GET /api/categories 304 71.804 ms - - req=09f89375-ef67-4ec9-8888-40f1a1c8309c {"service":"back-end"}
+2026-06-08T15:59:08.748Z [info] GET /api/categories/shop-cho-cun 304 305.850 ms - - req=f7fcef72-328e-4410-960a-f073a2c19fbc {"service":"back-end"}
+2026-06-08T15:59:08.818Z [info] GET /api/categories/shop-cho-meo 304 371.487 ms - - req=8b7ef994-3518-4344-ba4e-13362f9573f5 {"service":"back-end"}
+2026-06-08T15:59:12.469Z [info] GET /api/users/profile 401 3.425 ms - 62 req=243b4e80-4e06-4932-a0c3-79ce806e48b9 {"service":"back-end"}
+2026-06-08T15:59:12.473Z [error] Error fetching products PRODUCT_LIST is not defined {"service":"back-end"}
+ReferenceError: PRODUCT_LIST is not defined
+    at Module.getAllProducts (file:///D:/Project/PetShop-Website/back-end/server/services/productService.js:191:45)
+    at getAllProducts (file:///D:/Project/PetShop-Website/back-end/server/controllers/productController.js:6:43)
+    at Layer.handle [as handle_request] (D:\Project\PetShop-Website\back-end\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Project\PetShop-Website\back-end\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\Project\PetShop-Website\back-end\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\Project\PetShop-Website\back-end\node_modules\express\lib\router\layer.js:95:5)
+    at D:\Project\PetShop-Website\back-end\node_modules\express\lib\router\index.js:284:15
+    at router.process_params (D:\Project\PetShop-Website\back-end\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Project\PetShop-Website\back-end\node_modules\express\lib\router\index.js:280:10)
+    at router.handle (D:\Project\PetShop-Website\back-end\node_modules\express\lib\router\index.js:175:3)
+2026-06-08T15:59:12.474Z [info] GET /api/products 500 1.454 ms - 41 req=f0ea7bd7-0c66-4077-ba29-3ffa56ccfa87 {"service":"back-end"}
+2026-06-08T15:59:12.482Z [info] GET /api/carts/me 401 1.111 ms - 62 req=7ad0beb5-6484-4c8d-bc18-9722e736c5a6 {"service":"back-end"}
+2026-06-08T15:59:12.484Z [info] GET /api/products/product/sales 304 7.597 ms - - req=7bc3ed92-74ef-4602-a6cc-386208daf508 {"service":"back-end"}
+2026-06-08T15:59:12.486Z [info] GET /api/carts/me 401 0.901 ms - 62 req=54494086-eacd-44a6-9943-9221ca9ebc92 {"service":"back-end"}
+2026-06-08T15:59:12.489Z [info] GET /api/carts/me 401 0.782 ms - 62 req=ea32c951-6841-4229-97ee-0250457549f6 {"service":"back-end"}
+2026-06-08T15:59:12.538Z [info] GET /api/categories/catetory/shop-cho-cun 304 66.736 ms - - req=16a6614a-c4bc-40ce-a8a9-5e0d738b7a91 {"service":"back-end"}
+2026-06-08T15:59:12.539Z [info] GET /api/categories 304 77.945 ms - - req=048cbaa8-de44-4144-9c25-a05bd1626eee {"service":"back-end"}
+2026-06-08T15:59:12.607Z [info] GET /api/categories 304 66.290 ms - - req=81e69dae-dcc8-412a-a170-14239335dc52 {"service":"back-end"}
+2026-06-08T15:59:12.673Z [info] GET /api/categories 304 64.597 ms - - req=d0a8419a-ecf5-44f3-8624-2aed635dfeaa {"service":"back-end"}
+2026-06-08T15:59:12.749Z [info] GET /api/categories/shop-cho-meo 200 270.337 ms - 103131 req=e87ce973-69f2-44dc-aa5e-8d3da07b3d31 {"service":"back-end"}
+2026-06-08T15:59:12.771Z [info] GET /api/categories/shop-cho-cun 200 293.572 ms - 81961 req=528b57ad-d00e-428d-a8cb-4ce94d216a4d {"service":"back-end"}
+2026-06-08T15:59:13.750Z [error] Error fetching products PRODUCT_LIST is not defined {"service":"back-end"}
+ReferenceError: PRODUCT_LIST is not defined
+    at Module.getAllProducts (file:///D:/Project/PetShop-Website/back-end/server/services/productService.js:191:45)
+    at getAllProducts (file:///D:/Project/PetShop-Website/back-end/server/controllers/productController.js:6:43)
+    at Layer.handle [as handle_request] (D:\Project\PetShop-Website\back-end\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Project\PetShop-Website\back-end\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\Project\PetShop-Website\back-end\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\Project\PetShop-Website\back-end\node_modules\express\lib\router\layer.js:95:5)
+    at D:\Project\PetShop-Website\back-end\node_modules\express\lib\router\index.js:284:15
+    at router.process_params (D:\Project\PetShop-Website\back-end\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Project\PetShop-Website\back-end\node_modules\express\lib\router\index.js:280:10)
+    at router.handle (D:\Project\PetShop-Website\back-end\node_modules\express\lib\router\index.js:175:3)
+2026-06-08T15:59:13.752Z [info] GET /api/products 500 1.869 ms - 41 req=4408dd35-7967-4dd6-8c67-f2abaf007625 {"service":"back-end"}
+2026-06-08T15:59:13.754Z [info] GET /api/products/product/sales 304 6.167 ms - - req=b4ee7531-523e-4639-bf72-138be6ddb50f {"service":"back-end"}
+2026-06-08T15:59:13.798Z [info] GET /api/categories/catetory/shop-cho-cun 304 57.864 ms - - req=63381ae2-3063-4b19-8556-818f40f0bddf {"service":"back-end"}
+2026-06-08T15:59:13.814Z [info] GET /api/categories 304 75.789 ms - - req=47cad125-8d41-45f7-b640-648d8fa4cc07 {"service":"back-end"}
+2026-06-08T15:59:13.897Z [info] GET /api/categories 304 78.445 ms - - req=8e315160-f235-4be5-b18c-e9dae830458d {"service":"back-end"}
+2026-06-08T15:59:13.968Z [info] GET /api/categories 304 68.387 ms - - req=8103f188-e758-46eb-9b40-87b05401ebe5 {"service":"back-end"}
+2026-06-08T15:59:14.068Z [info] GET /api/categories/shop-cho-cun 304 325.390 ms - - req=2ac23117-cb29-4cf3-8761-57dc6c235e70 {"service":"back-end"}
+2026-06-08T15:59:14.149Z [info] GET /api/categories/shop-cho-meo 304 404.703 ms - - req=11eec5b5-d766-4bf2-9583-a64d79c39c1e {"service":"back-end"}
+2026-06-08T16:01:13.856Z [info] Redis client connecting {"service":"back-end"}
+2026-06-08T16:01:13.862Z [info] Redis client ready {"service":"back-end"}
+2026-06-08T16:01:13.862Z [info] Redis client connected {"service":"back-end"}
+2026-06-08T16:01:26.622Z [info] Redis client connecting {"service":"back-end"}
+2026-06-08T16:01:26.627Z [info] Redis client ready {"service":"back-end"}
+2026-06-08T16:01:26.628Z [info] Redis client connected {"service":"back-end"}
+2026-06-08T16:08:21.781Z [info] Redis client connecting {"service":"back-end"}
+2026-06-08T16:08:21.789Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-08T16:08:21.791Z [info] Redis client ready {"service":"back-end"}
+2026-06-08T16:08:21.791Z [info] Redis client connected {"service":"back-end"}
+2026-06-08T16:08:21.801Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-08T16:08:21.804Z [info] Loading .env {"service":"back-end","envPath":"D:\\Project\\PetShop-Website\\back-end\\.env"}
+2026-06-08T16:08:21.804Z [info] .env file loaded successfully {"service":"back-end"}
+2026-06-08T16:08:21.835Z [info] Background workers initialized {"service":"back-end"}
+2026-06-08T16:08:21.840Z [info] Server is running: http://localhost:5000 {"service":"back-end"}
+2026-06-08T16:08:22.707Z [info] MongoDB connected {"service":"back-end"}
+2026-06-08T16:08:22.709Z [info] Connected to MongoDB {"service":"back-end"}
+2026-06-08T16:08:27.149Z [info] Redis client connecting {"service":"back-end"}
+2026-06-08T16:08:27.157Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-08T16:08:27.159Z [info] Redis client ready {"service":"back-end"}
+2026-06-08T16:08:27.164Z [info] Redis client connected {"service":"back-end"}
+2026-06-08T16:08:27.169Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-08T16:08:27.172Z [info] Loading .env {"service":"back-end","envPath":"D:\\Project\\PetShop-Website\\back-end\\.env"}
+2026-06-08T16:08:27.172Z [info] .env file loaded successfully {"service":"back-end"}
+2026-06-08T16:08:27.202Z [info] Background workers initialized {"service":"back-end"}
+2026-06-08T16:08:27.208Z [info] Server is running: http://localhost:5000 {"service":"back-end"}
+2026-06-08T16:08:28.552Z [info] MongoDB connected {"service":"back-end"}
+2026-06-08T16:08:28.554Z [info] Connected to MongoDB {"service":"back-end"}
+2026-06-08T16:08:32.476Z [info] Redis client connecting {"service":"back-end"}
+2026-06-08T16:08:32.485Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-08T16:08:32.487Z [info] Redis client ready {"service":"back-end"}
+2026-06-08T16:08:32.494Z [info] Redis client connected {"service":"back-end"}
+2026-06-08T16:08:32.499Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-08T16:08:32.501Z [info] Loading .env {"service":"back-end","envPath":"D:\\Project\\PetShop-Website\\back-end\\.env"}
+2026-06-08T16:08:32.502Z [info] .env file loaded successfully {"service":"back-end"}
+2026-06-08T16:08:32.541Z [info] Background workers initialized {"service":"back-end"}
+2026-06-08T16:08:32.546Z [info] Server is running: http://localhost:5000 {"service":"back-end"}
+2026-06-08T16:08:33.597Z [info] MongoDB connected {"service":"back-end"}
+2026-06-08T16:08:33.598Z [info] Connected to MongoDB {"service":"back-end"}
+2026-06-08T16:08:37.230Z [info] Redis client connecting {"service":"back-end"}
+2026-06-08T16:08:37.238Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-08T16:08:37.240Z [info] Redis client ready {"service":"back-end"}
+2026-06-08T16:08:37.246Z [info] Redis client connected {"service":"back-end"}
+2026-06-08T16:08:37.250Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-08T16:08:37.253Z [info] Loading .env {"service":"back-end","envPath":"D:\\Project\\PetShop-Website\\back-end\\.env"}
+2026-06-08T16:08:37.253Z [info] .env file loaded successfully {"service":"back-end"}
+2026-06-08T16:08:37.282Z [info] Background workers initialized {"service":"back-end"}
+2026-06-08T16:08:37.287Z [info] Server is running: http://localhost:5000 {"service":"back-end"}
+2026-06-08T16:08:38.028Z [info] MongoDB connected {"service":"back-end"}
+2026-06-08T16:08:38.030Z [info] Connected to MongoDB {"service":"back-end"}
+2026-06-08T16:36:38.882Z [info] MongoDB reconnected {"service":"back-end"}
+2026-06-08T16:36:38.886Z [info] MongoDB reconnected {"service":"back-end"}
+2026-06-08T16:36:49.233Z [warn] MongoDB disconnected {"service":"back-end"}
+2026-06-08T16:36:49.327Z [info] MongoDB connected {"service":"back-end"}
+2026-06-08T16:36:49.327Z [info] MongoDB reconnected {"service":"back-end"}
+2026-06-08T16:37:10.449Z [info] Redis client connecting {"service":"back-end"}
+2026-06-08T16:37:10.456Z [info] Redis client connecting {"service":"back-end"}
+2026-06-08T16:37:10.456Z [info] Redis client connecting {"service":"back-end"}
+2026-06-08T16:37:10.487Z [info] Redis client ready {"service":"back-end"}
+2026-06-08T16:37:10.489Z [info] Redis client ready {"service":"back-end"}
+2026-06-08T16:37:10.491Z [info] Redis client ready {"service":"back-end"}
+2026-06-08T16:37:10.488Z [info] Redis client connected {"service":"back-end"}
+2026-06-08T16:37:10.490Z [info] Redis client connected {"service":"back-end"}
+2026-06-08T16:37:10.492Z [info] Redis client connected {"service":"back-end"}
+2026-06-08T16:37:10.526Z [warn] Payment creation rate limit exceeded {"service":"back-end","key":"507f1f77bcf86cd799439011","retrySecs":60}
+2026-06-08T16:37:10.534Z [warn] OTP send rate limit exceeded {"service":"back-end","email":"test_otp_limiter@gmail.com","retryMins":10}
+2026-06-08T16:37:10.548Z [warn] Payment creation rate limit exceeded {"service":"back-end","key":"127.0.0.1","retrySecs":60}
+2026-06-08T16:37:10.566Z [warn] Order creation rate limit exceeded {"service":"back-end","key":"507f1f77bcf86cd799439011","retrySecs":60}
+2026-06-08T16:41:38.939Z [info] Redis client connecting {"service":"back-end"}
+2026-06-08T16:41:38.946Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-08T16:41:38.948Z [info] Redis client ready {"service":"back-end"}
+2026-06-08T16:41:38.948Z [info] Redis client connected {"service":"back-end"}
+2026-06-08T16:41:38.953Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-08T16:52:24.063Z [info] Redis client connecting {"service":"back-end"}
+2026-06-08T16:52:24.070Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-08T16:52:24.073Z [info] Redis client ready {"service":"back-end"}
+2026-06-08T16:52:24.078Z [info] Redis client connected {"service":"back-end"}
+2026-06-08T16:52:24.083Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-08T16:52:24.085Z [info] Loading .env {"service":"back-end","envPath":"D:\\Project\\PetShop-Website\\back-end\\.env"}
+2026-06-08T16:52:24.086Z [info] .env file loaded successfully {"service":"back-end"}
+2026-06-08T16:52:24.117Z [info] Background workers initialized {"service":"back-end"}
+2026-06-08T16:52:24.122Z [info] Server is running: http://localhost:5000 {"service":"back-end"}
+2026-06-08T16:52:24.980Z [info] MongoDB connected {"service":"back-end"}
+2026-06-08T16:52:24.981Z [info] Connected to MongoDB {"service":"back-end"}
+2026-06-08T16:54:58.428Z [error] Error fetching products PRODUCT_LIST is not defined {"service":"back-end"}
+ReferenceError: PRODUCT_LIST is not defined
+    at Module.getAllProducts (file:///D:/Project/PetShop-Website/back-end/server/services/productService.js:191:45)
+    at getAllProducts (file:///D:/Project/PetShop-Website/back-end/server/controllers/productController.js:6:43)
+    at Layer.handle [as handle_request] (D:\Project\PetShop-Website\back-end\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Project\PetShop-Website\back-end\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\Project\PetShop-Website\back-end\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\Project\PetShop-Website\back-end\node_modules\express\lib\router\layer.js:95:5)
+    at D:\Project\PetShop-Website\back-end\node_modules\express\lib\router\index.js:284:15
+    at router.process_params (D:\Project\PetShop-Website\back-end\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Project\PetShop-Website\back-end\node_modules\express\lib\router\index.js:280:10)
+    at router.handle (D:\Project\PetShop-Website\back-end\node_modules\express\lib\router\index.js:175:3)
+2026-06-08T16:54:58.433Z [info] GET /api/products 500 3.112 ms - 41 req=c451ced9-00a8-4c90-b244-0abaef5bf18b {"service":"back-end"}
+2026-06-08T16:54:58.446Z [info] GET /api/products/product/sales 304 5.859 ms - - req=15bfd0b9-e3a7-4b73-8749-ef6b49bab746 {"service":"back-end"}
+2026-06-08T16:54:58.494Z [info] GET /api/categories/catetory/shop-cho-cun 304 68.161 ms - - req=06d3d942-da6b-42df-8ebb-fd4bfda4f4c6 {"service":"back-end"}
+2026-06-08T16:54:58.500Z [info] GET /api/categories 304 82.368 ms - - req=9b7cd053-b5c1-4b26-8f54-06a32cb3759d {"service":"back-end"}
+2026-06-08T16:54:58.661Z [info] GET /api/categories 304 50.586 ms - - req=f37c53c8-aaf1-4a64-8681-89c1ba0e3f8c {"service":"back-end"}
+2026-06-08T16:54:58.713Z [info] GET /api/categories 304 50.279 ms - - req=ec900142-b4d6-42fa-b129-b721dfbe11a6 {"service":"back-end"}
+2026-06-08T16:54:58.732Z [info] GET /api/categories/shop-cho-cun 304 296.631 ms - - req=99adeb7c-2f78-4d8b-96a8-d1b9eb59655e {"service":"back-end"}
+2026-06-08T16:54:58.800Z [info] GET /api/categories/shop-cho-meo 304 362.859 ms - - req=416f7f75-d76f-4b78-9fa9-afa1b333f341 {"service":"back-end"}
+2026-06-08T16:56:45.497Z [info] Redis client connecting {"service":"back-end"}
+2026-06-08T16:56:45.506Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-08T16:56:45.508Z [info] Redis client ready {"service":"back-end"}
+2026-06-08T16:56:45.515Z [info] Redis client connected {"service":"back-end"}
+2026-06-08T16:56:45.521Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-08T16:56:45.523Z [info] Loading .env {"service":"back-end","envPath":"D:\\Project\\PetShop-Website\\back-end\\.env"}
+2026-06-08T16:56:45.525Z [info] .env file loaded successfully {"service":"back-end"}
+2026-06-08T16:56:45.569Z [info] Background workers initialized {"service":"back-end"}
+2026-06-08T16:56:45.577Z [info] Server is running: http://localhost:5000 {"service":"back-end"}
+2026-06-08T16:56:46.645Z [info] MongoDB connected {"service":"back-end"}
+2026-06-08T16:56:46.647Z [info] Connected to MongoDB {"service":"back-end"}
+2026-06-08T16:57:17.055Z [info] Redis client connecting {"service":"back-end"}
+2026-06-08T16:57:17.061Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-08T16:57:17.063Z [info] Redis client ready {"service":"back-end"}
+2026-06-08T16:57:17.069Z [info] Redis client connected {"service":"back-end"}
+2026-06-08T16:57:17.075Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-08T16:57:17.078Z [info] Loading .env {"service":"back-end","envPath":"D:\\Project\\PetShop-Website\\back-end\\.env"}
+2026-06-08T16:57:17.079Z [info] .env file loaded successfully {"service":"back-end"}
+2026-06-08T16:57:17.112Z [info] Background workers initialized {"service":"back-end"}
+2026-06-08T16:57:17.117Z [info] Server is running: http://localhost:5000 {"service":"back-end"}
+2026-06-08T16:57:17.726Z [info] MongoDB connected {"service":"back-end"}
+2026-06-08T16:57:17.729Z [info] Connected to MongoDB {"service":"back-end"}
+2026-06-08T16:57:20.965Z [info] Redis client connecting {"service":"back-end"}
+2026-06-08T16:57:20.974Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-08T16:57:20.977Z [info] Redis client ready {"service":"back-end"}
+2026-06-08T16:57:20.983Z [info] Redis client connected {"service":"back-end"}
+2026-06-08T16:57:20.988Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-08T16:57:20.990Z [info] Loading .env {"service":"back-end","envPath":"D:\\Project\\PetShop-Website\\back-end\\.env"}
+2026-06-08T16:57:20.990Z [info] .env file loaded successfully {"service":"back-end"}
+2026-06-08T16:57:21.025Z [info] Background workers initialized {"service":"back-end"}
+2026-06-08T16:57:21.032Z [info] Server is running: http://localhost:5000 {"service":"back-end"}
+2026-06-08T16:57:21.635Z [info] MongoDB connected {"service":"back-end"}
+2026-06-08T16:57:21.638Z [info] Connected to MongoDB {"service":"back-end"}
+2026-06-08T17:22:09.602Z [info] Redis client connecting {"service":"back-end"}
+2026-06-08T17:22:09.611Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-08T17:22:09.613Z [info] Redis client ready {"service":"back-end"}
+2026-06-08T17:22:09.618Z [info] Redis client connected {"service":"back-end"}
+2026-06-08T17:22:09.624Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-08T17:22:09.626Z [info] Loading .env {"service":"back-end","envPath":"D:\\Project\\PetShop-Website\\back-end\\.env"}
+2026-06-08T17:22:09.627Z [info] .env file loaded successfully {"service":"back-end"}
+2026-06-08T17:22:09.661Z [info] Background workers initialized {"service":"back-end"}
+2026-06-08T17:22:09.666Z [info] Server is running: http://localhost:5000 {"service":"back-end"}
+2026-06-08T17:22:10.332Z [info] MongoDB connected {"service":"back-end"}
+2026-06-08T17:22:10.334Z [info] Connected to MongoDB {"service":"back-end"}
+2026-06-08T17:23:10.493Z [error] Error fetching products PRODUCT_LIST is not defined {"service":"back-end"}
+ReferenceError: PRODUCT_LIST is not defined
+    at Module.getAllProducts (file:///D:/Project/PetShop-Website/back-end/server/services/productService.js:191:45)
+    at getAllProducts (file:///D:/Project/PetShop-Website/back-end/server/controllers/productController.js:6:43)
+    at Layer.handle [as handle_request] (D:\Project\PetShop-Website\back-end\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Project\PetShop-Website\back-end\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\Project\PetShop-Website\back-end\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\Project\PetShop-Website\back-end\node_modules\express\lib\router\layer.js:95:5)
+    at D:\Project\PetShop-Website\back-end\node_modules\express\lib\router\index.js:284:15
+    at router.process_params (D:\Project\PetShop-Website\back-end\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Project\PetShop-Website\back-end\node_modules\express\lib\router\index.js:280:10)
+    at router.handle (D:\Project\PetShop-Website\back-end\node_modules\express\lib\router\index.js:175:3)
+2026-06-08T17:23:10.499Z [info] GET /api/products 500 2.962 ms - 41 req=2eb523e2-6566-4825-8e33-3b0d37251278 {"service":"back-end"}
+2026-06-08T17:23:10.547Z [info] GET /api/categories/catetory/shop-cho-cun 304 64.650 ms - - req=f8fd2c4c-6362-4aeb-b97e-53873d04174e {"service":"back-end"}
+2026-06-08T17:23:10.552Z [info] GET /api/categories 304 63.395 ms - - req=a3ef015d-85e1-4a96-ae7d-825ada19a0ab {"service":"back-end"}
+2026-06-08T17:23:10.612Z [info] GET /api/categories 304 56.855 ms - - req=e68256f3-205b-48f4-8085-176190852ddd {"service":"back-end"}
+2026-06-08T17:23:10.656Z [info] GET /api/products/product/sales 304 143.597 ms - - req=d0aa5cd4-c145-44e4-8ed0-e057265567e6 {"service":"back-end"}
+2026-06-08T17:23:10.681Z [info] GET /api/categories 304 66.608 ms - - req=997e1711-0a9e-4488-8ac5-eebd9967deb9 {"service":"back-end"}
+2026-06-08T17:23:10.769Z [info] GET /api/categories/shop-cho-cun 304 267.156 ms - - req=3bd12b23-03e6-4433-8b7f-1353a8a0e5cf {"service":"back-end"}
+2026-06-08T17:23:10.829Z [info] GET /api/categories/shop-cho-meo 304 320.890 ms - - req=34d82c83-3165-4e6e-b409-54cf6b046766 {"service":"back-end"}
+2026-06-08T17:23:13.708Z [info] GET /api/categories 304 74.662 ms - - req=baaca766-28c8-4e1f-9bd2-0be94ab83e21 {"service":"back-end"}
+2026-06-08T17:23:15.870Z [info] GET /api/categories 304 57.043 ms - - req=3dd1f0d4-e3fe-4cf2-bbb0-70495fe39624 {"service":"back-end"}
+2026-06-08T17:23:22.681Z [info] GET /api/categories/catetory/shop-cho-cun 304 55.335 ms - - req=ae35d45c-9df4-4430-a5d0-b77335e0dffb {"service":"back-end"}
+2026-06-08T17:23:22.682Z [info] GET /api/categories 304 58.145 ms - - req=e974d989-5e1d-4e7e-8494-733a3bdf4ae7 {"service":"back-end"}
+2026-06-08T17:23:22.743Z [info] GET /api/categories 304 58.796 ms - - req=923cbd33-e86a-4b8a-8bb4-6cf9a371bba5 {"service":"back-end"}
+2026-06-08T17:23:22.802Z [info] GET /api/categories 304 57.244 ms - - req=18b924fe-e87d-472b-a60e-18ce3c7a7218 {"service":"back-end"}
+2026-06-08T17:31:58.193Z [error] Error fetching products PRODUCT_LIST is not defined {"service":"back-end"}
+ReferenceError: PRODUCT_LIST is not defined
+    at Module.getAllProducts (file:///D:/Project/PetShop-Website/back-end/server/services/productService.js:191:45)
+    at getAllProducts (file:///D:/Project/PetShop-Website/back-end/server/controllers/productController.js:6:43)
+    at Layer.handle [as handle_request] (D:\Project\PetShop-Website\back-end\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Project\PetShop-Website\back-end\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\Project\PetShop-Website\back-end\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\Project\PetShop-Website\back-end\node_modules\express\lib\router\layer.js:95:5)
+    at D:\Project\PetShop-Website\back-end\node_modules\express\lib\router\index.js:284:15
+    at router.process_params (D:\Project\PetShop-Website\back-end\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Project\PetShop-Website\back-end\node_modules\express\lib\router\index.js:280:10)
+    at router.handle (D:\Project\PetShop-Website\back-end\node_modules\express\lib\router\index.js:175:3)
+2026-06-08T17:31:58.194Z [info] GET /api/products 500 1.405 ms - 41 req=ae391ea0-4d11-42a0-9147-30d2bf593eaa {"service":"back-end"}
+2026-06-08T17:31:58.210Z [info] GET /api/products/product/sales 304 6.035 ms - - req=36fa11af-0a13-4760-9996-ef1c7fb6e058 {"service":"back-end"}
+2026-06-08T17:31:58.246Z [info] GET /api/categories/catetory/shop-cho-cun 304 57.190 ms - - req=a503be57-a708-48f3-9b5d-f28062979548 {"service":"back-end"}
+2026-06-08T17:31:58.249Z [info] GET /api/categories 304 62.095 ms - - req=3dc1a902-c04e-4ed1-856b-e191149b2a08 {"service":"back-end"}
+2026-06-08T17:31:58.314Z [info] GET /api/categories 304 62.600 ms - - req=5aa24dee-7f97-4b4b-8d85-007f77f39ba3 {"service":"back-end"}
+2026-06-08T17:31:58.376Z [info] GET /api/categories 304 57.989 ms - - req=2c3f0ef4-26f1-4fb6-8a6f-663352ade0a4 {"service":"back-end"}
+2026-06-08T17:31:58.436Z [info] GET /api/categories/shop-cho-cun 304 239.693 ms - - req=288ac8b0-d23e-4077-9a1a-5e3c5699b287 {"service":"back-end"}
+2026-06-08T17:31:58.511Z [info] GET /api/categories/shop-cho-meo 304 310.927 ms - - req=14b9f8d7-ce3b-4c6a-8263-0fb137afeba1 {"service":"back-end"}
+2026-06-08T17:40:11.839Z [error] Error fetching products PRODUCT_LIST is not defined {"service":"back-end"}
+ReferenceError: PRODUCT_LIST is not defined
+    at Module.getAllProducts (file:///D:/Project/PetShop-Website/back-end/server/services/productService.js:191:45)
+    at getAllProducts (file:///D:/Project/PetShop-Website/back-end/server/controllers/productController.js:6:43)
+    at Layer.handle [as handle_request] (D:\Project\PetShop-Website\back-end\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Project\PetShop-Website\back-end\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\Project\PetShop-Website\back-end\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\Project\PetShop-Website\back-end\node_modules\express\lib\router\layer.js:95:5)
+    at D:\Project\PetShop-Website\back-end\node_modules\express\lib\router\index.js:284:15
+    at router.process_params (D:\Project\PetShop-Website\back-end\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Project\PetShop-Website\back-end\node_modules\express\lib\router\index.js:280:10)
+    at router.handle (D:\Project\PetShop-Website\back-end\node_modules\express\lib\router\index.js:175:3)
+2026-06-08T17:40:11.840Z [info] GET /api/products 500 0.831 ms - 41 req=82e2788c-adc6-4e3f-aba0-d6f5f8cf3618 {"service":"back-end"}
+2026-06-08T17:40:11.846Z [info] GET /api/products/product/sales 304 2.665 ms - - req=89247649-f1e3-40f7-badf-b6c9911beacd {"service":"back-end"}
+2026-06-08T17:40:11.892Z [info] GET /api/categories/catetory/shop-cho-cun 304 54.985 ms - - req=d8159088-6148-408e-867c-b6bd1c1c3cf2 {"service":"back-end"}
+2026-06-08T17:40:11.894Z [info] GET /api/categories 304 57.945 ms - - req=1812968a-c0ba-4f2a-bd23-d531f22302fd {"service":"back-end"}
+2026-06-08T17:40:11.954Z [info] GET /api/categories 304 58.494 ms - - req=47fe0bbe-4c86-431a-9037-e3abc426c869 {"service":"back-end"}
+2026-06-08T17:40:12.013Z [info] GET /api/categories 304 57.275 ms - - req=509072db-9537-4d60-93b1-e7d10ef6b63d {"service":"back-end"}
+2026-06-08T17:40:12.085Z [info] GET /api/categories/shop-cho-cun 304 244.367 ms - - req=ac6e9de6-deec-4cfa-94c0-b92a58689956 {"service":"back-end"}
+2026-06-08T17:40:12.156Z [info] GET /api/categories/shop-cho-meo 304 313.529 ms - - req=309a498c-74c9-41f8-918e-a94624c2572e {"service":"back-end"}
+2026-06-08T17:43:59.769Z [info] Redis client connecting {"service":"back-end"}
+2026-06-08T17:43:59.778Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-08T17:43:59.780Z [info] Redis client ready {"service":"back-end"}
+2026-06-08T17:43:59.781Z [info] Redis client connected {"service":"back-end"}
+2026-06-08T17:43:59.787Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-08T17:43:59.791Z [info] Loading .env {"service":"back-end","envPath":"D:\\Project\\PetShop-Website\\back-end\\.env"}
+2026-06-08T17:43:59.792Z [info] .env file loaded successfully {"service":"back-end"}
+2026-06-08T17:43:59.823Z [info] Background workers initialized {"service":"back-end"}
+2026-06-08T17:43:59.828Z [info] Server is running: http://localhost:5000 {"service":"back-end"}
+2026-06-08T17:44:00.491Z [info] MongoDB connected {"service":"back-end"}
+2026-06-08T17:44:00.494Z [info] Connected to MongoDB {"service":"back-end"}
+2026-06-08T17:44:06.920Z [info] Redis client connecting {"service":"back-end"}
+2026-06-08T17:44:06.927Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-08T17:44:06.929Z [info] Redis client ready {"service":"back-end"}
+2026-06-08T17:44:06.939Z [info] Redis client connected {"service":"back-end"}
+2026-06-08T17:44:06.944Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-08T17:44:06.947Z [info] Loading .env {"service":"back-end","envPath":"D:\\Project\\PetShop-Website\\back-end\\.env"}
+2026-06-08T17:44:06.949Z [info] .env file loaded successfully {"service":"back-end"}
+2026-06-08T17:44:06.985Z [info] Background workers initialized {"service":"back-end"}
+2026-06-08T17:44:06.991Z [info] Server is running: http://localhost:5000 {"service":"back-end"}
+2026-06-08T17:44:07.704Z [info] MongoDB connected {"service":"back-end"}
+2026-06-08T17:44:07.706Z [info] Connected to MongoDB {"service":"back-end"}
+2026-06-08T17:45:11.816Z [info] Redis client connecting {"service":"back-end"}
+2026-06-08T17:45:11.842Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-08T17:45:11.863Z [info] Redis client ready {"service":"back-end"}
+2026-06-08T17:45:11.864Z [info] Redis client connected {"service":"back-end"}
+2026-06-08T17:45:11.872Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-08T17:45:11.877Z [info] Loading .env {"service":"back-end","envPath":"D:\\Project\\PetShop-Website\\back-end\\.env"}
+2026-06-08T17:45:11.885Z [info] .env file loaded successfully {"service":"back-end"}
+2026-06-08T17:45:11.944Z [info] Background workers initialized {"service":"back-end"}
+2026-06-08T17:45:11.966Z [info] Server is running: http://localhost:5000 {"service":"back-end"}
+2026-06-08T17:45:12.707Z [info] MongoDB connected {"service":"back-end"}
+2026-06-08T17:45:12.712Z [info] Connected to MongoDB {"service":"back-end"}
+2026-06-08T17:45:27.295Z [error] Error fetching products PRODUCT_LIST is not defined {"service":"back-end"}
+ReferenceError: PRODUCT_LIST is not defined
+    at Module.getAllProducts (file:///D:/Project/PetShop-Website/back-end/server/services/productService.js:191:45)
+    at getAllProducts (file:///D:/Project/PetShop-Website/back-end/server/controllers/productController.js:6:43)
+    at Layer.handle [as handle_request] (D:\Project\PetShop-Website\back-end\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Project\PetShop-Website\back-end\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\Project\PetShop-Website\back-end\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\Project\PetShop-Website\back-end\node_modules\express\lib\router\layer.js:95:5)
+    at D:\Project\PetShop-Website\back-end\node_modules\express\lib\router\index.js:284:15
+    at router.process_params (D:\Project\PetShop-Website\back-end\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Project\PetShop-Website\back-end\node_modules\express\lib\router\index.js:280:10)
+    at router.handle (D:\Project\PetShop-Website\back-end\node_modules\express\lib\router\index.js:175:3)
+2026-06-08T17:45:27.305Z [info] GET /api/products 500 6.205 ms - 41 req=2ddb4668-912a-4ec7-a282-3f48f43c0150 {"service":"back-end"}
+2026-06-08T17:45:27.329Z [info] GET /api/products/product/sales 304 10.696 ms - - req=1b879ca2-6f73-4bba-a9b6-0aab953a278a {"service":"back-end"}
+2026-06-08T17:45:27.350Z [info] GET /api/categories 304 71.141 ms - - req=d413238a-2764-45bf-b4ba-59e1d37d8a6c {"service":"back-end"}
+2026-06-08T17:45:27.354Z [info] GET /api/categories/catetory/shop-cho-cun 304 64.270 ms - - req=cabe401c-3730-4ee6-93a3-c7add8cddeaa {"service":"back-end"}
+2026-06-08T17:45:27.415Z [info] GET /api/categories 304 58.432 ms - - req=085b3384-57c4-43a6-afd6-d4ec27106bab {"service":"back-end"}
+2026-06-08T17:45:27.481Z [info] GET /api/categories 304 63.206 ms - - req=460b8c17-72ba-49d9-8fad-384063664e5a {"service":"back-end"}
+2026-06-08T17:45:27.557Z [info] GET /api/categories/shop-cho-cun 304 248.508 ms - - req=e8bcb423-d3a9-44a3-b481-cf7fd714c4d3 {"service":"back-end"}
+2026-06-08T17:45:27.595Z [info] GET /api/categories/shop-cho-meo 304 282.753 ms - - req=be83d2ef-88e9-440d-837f-28b7a9986969 {"service":"back-end"}
+2026-06-08T17:45:29.680Z [info] GET /api/categories 304 52.719 ms - - req=4e0d4b83-616f-494c-bb73-45f0e81436bb {"service":"back-end"}
+2026-06-08T17:46:11.874Z [error] Error fetching products PRODUCT_LIST is not defined {"service":"back-end"}
+ReferenceError: PRODUCT_LIST is not defined
+    at Module.getAllProducts (file:///D:/Project/PetShop-Website/back-end/server/services/productService.js:191:45)
+    at getAllProducts (file:///D:/Project/PetShop-Website/back-end/server/controllers/productController.js:6:43)
+    at Layer.handle [as handle_request] (D:\Project\PetShop-Website\back-end\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Project\PetShop-Website\back-end\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\Project\PetShop-Website\back-end\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\Project\PetShop-Website\back-end\node_modules\express\lib\router\layer.js:95:5)
+    at D:\Project\PetShop-Website\back-end\node_modules\express\lib\router\index.js:284:15
+    at router.process_params (D:\Project\PetShop-Website\back-end\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Project\PetShop-Website\back-end\node_modules\express\lib\router\index.js:280:10)
+    at router.handle (D:\Project\PetShop-Website\back-end\node_modules\express\lib\router\index.js:175:3)
+2026-06-08T17:46:11.875Z [info] GET /api/products 500 1.382 ms - 41 req=64c1fcf7-3d13-46ad-9523-99d93d6847f5 {"service":"back-end"}
+2026-06-08T17:46:11.885Z [info] GET /api/products/product/sales 200 3.027 ms - 30210 req=a04796ab-cd36-488e-8831-06d5bfd4a30e {"service":"back-end"}
+2026-06-08T17:46:11.923Z [info] GET /api/categories 304 52.993 ms - - req=24e40978-75d2-46ec-ab77-42ad75a08524 {"service":"back-end"}
+2026-06-08T17:46:12.118Z [info] GET /api/categories/shop-cho-cun 200 239.927 ms - 81961 req=94cf0cff-8e3e-41fd-81c7-662689e7af00 {"service":"back-end"}
+2026-06-08T17:46:12.184Z [info] GET /api/categories/shop-cho-meo 200 302.881 ms - 103131 req=d6f1c4dd-385a-45e0-b2c2-388847f0812a {"service":"back-end"}
+2026-06-08T17:47:44.968Z [error] Error fetching products PRODUCT_LIST is not defined {"service":"back-end"}
+ReferenceError: PRODUCT_LIST is not defined
+    at Module.getAllProducts (file:///D:/Project/PetShop-Website/back-end/server/services/productService.js:191:45)
+    at getAllProducts (file:///D:/Project/PetShop-Website/back-end/server/controllers/productController.js:6:43)
+    at Layer.handle [as handle_request] (D:\Project\PetShop-Website\back-end\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Project\PetShop-Website\back-end\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\Project\PetShop-Website\back-end\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\Project\PetShop-Website\back-end\node_modules\express\lib\router\layer.js:95:5)
+    at D:\Project\PetShop-Website\back-end\node_modules\express\lib\router\index.js:284:15
+    at router.process_params (D:\Project\PetShop-Website\back-end\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Project\PetShop-Website\back-end\node_modules\express\lib\router\index.js:280:10)
+    at router.handle (D:\Project\PetShop-Website\back-end\node_modules\express\lib\router\index.js:175:3)
+2026-06-08T17:47:44.970Z [info] GET /api/products 500 1.285 ms - 41 req=243f0f73-fceb-4683-9ca6-4ca9530325f3 {"service":"back-end"}
+2026-06-08T17:47:44.976Z [info] GET /api/products/product/sales 304 2.801 ms - - req=67b2e3f0-c448-41f9-9f24-bdb1cbd6051a {"service":"back-end"}
+2026-06-08T17:47:45.022Z [info] GET /api/categories 304 57.825 ms - - req=6da0be33-74e1-4391-b059-982d03381898 {"service":"back-end"}
+2026-06-08T17:47:45.284Z [info] GET /api/categories/shop-cho-cun 304 313.124 ms - - req=1b30369e-31be-4c7b-9c08-e36bea72d3c2 {"service":"back-end"}
+2026-06-08T17:47:45.288Z [info] GET /api/categories/shop-cho-meo 304 316.085 ms - - req=64108bcd-1f2e-4056-98f9-7dcc85110a93 {"service":"back-end"}
+2026-06-08T17:50:34.730Z [error] Error fetching products PRODUCT_LIST is not defined {"service":"back-end"}
+ReferenceError: PRODUCT_LIST is not defined
+    at Module.getAllProducts (file:///D:/Project/PetShop-Website/back-end/server/services/productService.js:191:45)
+    at getAllProducts (file:///D:/Project/PetShop-Website/back-end/server/controllers/productController.js:6:43)
+    at Layer.handle [as handle_request] (D:\Project\PetShop-Website\back-end\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Project\PetShop-Website\back-end\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\Project\PetShop-Website\back-end\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\Project\PetShop-Website\back-end\node_modules\express\lib\router\layer.js:95:5)
+    at D:\Project\PetShop-Website\back-end\node_modules\express\lib\router\index.js:284:15
+    at router.process_params (D:\Project\PetShop-Website\back-end\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Project\PetShop-Website\back-end\node_modules\express\lib\router\index.js:280:10)
+    at router.handle (D:\Project\PetShop-Website\back-end\node_modules\express\lib\router\index.js:175:3)
+2026-06-08T17:50:34.732Z [info] GET /api/products 500 1.798 ms - 41 req=f70b4a35-a263-41a9-aa5f-f9dde2393264 {"service":"back-end"}
+2026-06-08T17:50:34.741Z [info] GET /api/products/product/sales 304 3.801 ms - - req=dfc2b54f-3aa2-41f9-8390-94f913a2c1db {"service":"back-end"}
+2026-06-08T17:50:34.780Z [info] GET /api/categories 304 53.501 ms - - req=9ceea339-0ae1-4160-8cc3-ecc87b0e465b {"service":"back-end"}
+2026-06-08T17:50:34.967Z [info] GET /api/categories/shop-cho-cun 304 233.875 ms - - req=27b1ff5c-1632-409f-97e8-841b994dc346 {"service":"back-end"}
+2026-06-08T17:50:35.042Z [info] GET /api/categories/shop-cho-meo 304 306.845 ms - - req=8541d3ba-5401-46c3-8402-a44cc37330e4 {"service":"back-end"}

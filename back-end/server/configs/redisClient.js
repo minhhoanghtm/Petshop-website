@@ -8,14 +8,6 @@ const redisClient = createClient({
     url: process.env.REDIS_URL,
     socket: {
         connectTimeout: 5000,
-        reconnectStrategy(times) {
-            const delay = Math.min(times * 1000, 5000);
-            logger.warn("Redis reconnect attempt", {
-                attempt: times,
-                delay,
-            });
-            return delay;
-        },
     },
     maxRetriesPerRequest: null,
 });

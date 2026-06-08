@@ -39,7 +39,6 @@ import reviewRoutes from "./routes/reviewRoutes.js";
 import dashboadRoutes from "./routes/dashboardRoutes.js";
 import adminRoutes from "./routes/adminRoutes.js";
 import { protectedRoute } from "./middleware/authMiddleware.js";
-import { rateLimiter } from "./middleware/rateLimiter.js";
 import redisClient from "./configs/redisClient.js";
 import User from "./models/User.js";
 import { createRequire } from "module";
@@ -142,7 +141,7 @@ const ensureBootstrapAdmin = async () => {
 
 mongoose
   .connect(process.env.MONGO_URI, {
-    retryWrites: true,
+    retryWrites: false,
     w: "majority",
     serverSelectionTimeoutMS: 5000,
     socketTimeoutMS: 45000,
@@ -220,7 +219,6 @@ app.use(
   }),
 );
 app.set("trust proxy", 1); // Nếu ứng dụng chạy sau proxy (ví dụ: Nginx), để Express biết và xử lý cookie đúng cách
-app.use(rateLimiter); // Apply rate limiter to all routes
 // ===== PUBLIC ROUTES (No authentication required) =====
 // Authentication routes (signup, signin, signout)
 app.use("/api/auth", authRoutes);

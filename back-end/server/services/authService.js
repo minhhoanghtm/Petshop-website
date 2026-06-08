@@ -2,6 +2,7 @@ import User from "../models/User.js";
 import jwt from "jsonwebtoken";
 import crypto from "crypto";
 import bcrypt from "bcryptjs";
+import axios from "axios";
 import { generateOTP } from "../utils/generateOTP.js";
 import redisClient from "../configs/redisClient.js";
 import { enqueueOtpEmail } from "../queues/otpQueue.js";
@@ -815,5 +816,118 @@ export const verifySignup = async (userData) => {
 
   return {
     message: "Đăng ký thành công!",
+  };
+};
+
+/**
+ * Sign in user with Google OAuth
+ */
+export const googleSignIn = async (body, req) => {
+  const { token, accessToken } = body;
+  const gToken = token || accessToken;
+
+  if (!gToken) {
+    throw createServiceError("Thiếu Google access token.", 400);
+  }
+
+  // Gọi Google API để lấy thông tin profile
+  let googleUser;
+  try {
+    const response = await axios.get(
+      `https://www.googleapis.com/oauth2/v3/userinfo`,
+      {
+        headers: {
+          Authorization: `Bearer ${gToken}`,
+        },
+      }
+    );
+    googleUser = response.data;
+  } catch (err) {
+    logger.warn("Xác thực Google Access Token thất bại", {
+      message: err.message,
+    });
+    throw createServiceError("Đăng nhập bằng Google thất bại. Token không hợp lệ.", 401);
+  }
+
+  const { email, name, picture } = googleUser;
+  if (!email) {
+    throw createServiceError("Không lấy được email từ tài khoản Google.", 400);
+  }
+
+  const normalizedEmail = email.trim().toLowerCase();
+  let user = await User.findOne({ email: normalizedEmail });
+
+  if (user) {
+    // Tài khoản đã tồn tại
+    if (user.isBlocked || user.status !== "Active") {
+      throw createServiceError("Tài khoản của bạn đã bị khóa bởi hệ thống.", 403);
+    }
+    // Cập nhật avatar nếu chưa có
+    if (!user.avatar && picture) {
+      await User.updateOne({ _id: user._id }, { $set: { avatar: picture } });
+      user.avatar = picture;
+    }
+  } else {
+    // Tạo tài khoản mới
+    const randomPass = crypto.randomBytes(16).toString("hex");
+    const hashedPass = hashPassword(randomPass);
+
+    user = await User.create({
+      email: normalizedEmail,
+      password: hashedPass,
+      fullName: name || "Google User",
+      birthDate: new Date("1990-01-01"), // Mặc định bắt buộc
+      gender: "male", // Mặc định bắt buộc
+      status: "Active", // Tài khoản đăng nhập qua MXH được active luôn
+      avatar: picture || "",
+      role: "user",
+    });
+  }
+
+  // Sinh JWT tokens cho hệ thống
+  const systemAccessToken = jwt.sign(
+    { userId: user._id },
+    process.env.ACCESS_TOKEN_SECRET,
+    { expiresIn: ACCESS_TOKEN_TTL }
+  );
+
+  const systemRefreshToken = crypto.randomBytes(60).toString("hex");
+
+  try {
+    await redisClient.set(
+      `refresh:${systemRefreshToken}`,
+      JSON.stringify({ userId: user._id.toString() }),
+      { EX: Math.floor(REFRESH_TOKEN_TTL / 1000) }
+    );
+  } catch (err) {
+    logger.warn("Không thể lưu refreshToken vào Redis cho Google user", {
+      message: err.message,
+    });
+  }
+
+  // Đồng bộ session nếu có session store
+  if (req && req.session) {
+    await new Promise((resolve, reject) => {
+      req.session.regenerate((err) => {
+        if (err) return reject(err);
+        req.session.userId = user._id.toString();
+        req.session.email = user.email;
+        req.session.refreshToken = systemRefreshToken;
+        req.session.save((err2) => (err2 ? reject(err2) : resolve()));
+      });
+    });
+  }
+
+  return {
+    message: `Đăng nhập thành công bằng Google!`,
+    accessToken: systemAccessToken,
+    refreshToken: systemRefreshToken,
+    user: {
+      _id: user._id,
+      email: user.email,
+      fullName: user.fullName,
+      role: user.role,
+      avatar: user.avatar,
+    },
   };
 };

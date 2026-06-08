@@ -1,4 +1,4 @@
-﻿import express from "express";
+import express from "express";
 import {
     createOrder,
     getOrders,
@@ -9,11 +9,12 @@ import {
     getRecentOrders,
 } from "../controllers/orderController.js";
 import { requireAdmin } from "../middleware/authMiddleware.js";
+import { orderLimiterMiddleware } from "../middleware/rateLimit/orderLimiter.js";
 
 const router = express.Router();
 
 // tạo đơn hàng mới
-router.post("/", createOrder);
+router.post("/", orderLimiterMiddleware, createOrder);
 
 // lấy tất cả đơn hàng (admin xem tất cả, user chỉ xem của mình)
 router.get("/", getOrders);

@@ -28,6 +28,7 @@ const CheckOut = () => {
   const [isAddressLoading, setIsAddressLoading] = useState(false);
   const [isSavingAddress, setIsSavingAddress] = useState(false);
   const [addressError, setAddressError] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
   const { cartItems, clearCart, removeFromCart } = useCart();
@@ -403,6 +404,8 @@ const CheckOut = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (isSubmitting) return;
+
     if (validateForm()) {
       if (!user) {
         toast.error("Vui lòng đăng nhập để đặt hàng.");
@@ -410,6 +413,7 @@ const CheckOut = () => {
         return;
       }
 
+      setIsSubmitting(true);
       const orderData = {
         user_id: userId,
         items: checkoutItems.map((item) => ({
@@ -518,6 +522,8 @@ const CheckOut = () => {
         toast.error(
           error.response?.data?.message || "Có lỗi xảy ra khi đặt hàng."
         );
+      } finally {
+        setIsSubmitting(false);
       }
     } else {
       toast.error("Vui lòng điền đầy đủ thông tin trước khi đặt hàng.");
@@ -925,10 +931,13 @@ const CheckOut = () => {
             </div>
             <button
               type="submit"
-              className="w-full cursor-pointer bg-blue-0 text-white py-3 px-4 rounded text-center hover:bg-blue-600 transition"
+              className={`w-full cursor-pointer bg-blue-0 text-white py-3 px-4 rounded text-center hover:bg-blue-600 transition ${
+                isSubmitting ? "opacity-50 cursor-not-allowed" : ""
+              }`}
               onClick={handleSubmit}
+              disabled={isSubmitting}
             >
-              Đặt hàng
+              {isSubmitting ? "Đang xử lý đơn hàng..." : "Đặt hàng"}
             </button>
           </div>
         </div>
