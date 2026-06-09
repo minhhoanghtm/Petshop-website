@@ -113,10 +113,10 @@ pipeline {
             }
         }
 
-        stage('Install Backend Dependencies') {
+       stage('Install Backend Dependencies') {
             steps {
                 dir(env.BACKEND_DIR) {
-                    sh 'npm ci'
+                    sh 'npm install'
                 }
             }
         }
@@ -124,7 +124,7 @@ pipeline {
         stage('Install Frontend Dependencies') {
             steps {
                 dir(env.FRONTEND_DIR) {
-                    sh 'npm ci'
+                    sh 'npm install'
                 }
             }
         }
