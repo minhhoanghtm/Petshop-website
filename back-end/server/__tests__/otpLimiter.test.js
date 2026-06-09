@@ -1,17 +1,16 @@
 import { jest } from "@jest/globals";
 import { otpSendLimiter, otpSendLimiterMiddleware } from "../middleware/rateLimit/otpLimiter.js";
-import redisClient from "../configs/redisClient.js";
 
 describe("OTP Send Rate Limiter", () => {
   const email = "test_otp_limiter@gmail.com";
   const key = `otp_send:${email}`;
 
   beforeEach(async () => {
-    await redisClient.del(key);
+    await otpSendLimiter.delete(email);
   });
 
   afterAll(async () => {
-    await redisClient.del(key);
+    await otpSendLimiter.delete(email);
   });
 
   test("Allows up to 5 OTP requests and blocks on the 6th", async () => {
@@ -36,7 +35,7 @@ describe("OTP Send Rate Limiter", () => {
     const next = jest.fn();
 
     // Reset rate limiter points
-    await redisClient.del(key);
+    await otpSendLimiter.delete(email);
 
     // Call 5 times: should call next() each time
     for (let i = 0; i < 5; i++) {

@@ -3,43 +3,123 @@ dotenv.config();
 import { createClient } from "redis";
 import { logger } from "../logger/logger.js";
 
-// Tạo một client Redis mới
-const redisClient = createClient({
-    url: process.env.REDIS_URL,
-    socket: {
-        connectTimeout: 5000,
-    },
-    maxRetriesPerRequest: null,
-});
+let redisClient;
 
-// Xử lý lỗi kết nối Redis
-redisClient.on("error", (err) => {
-    logger.error("Redis client error", { message: err.message });
-});
+const useMock = process.env.NODE_ENV === "test" && !process.env.USE_REAL_REDIS;
 
-redisClient.on("connect", () => {
-    logger.info("Redis client connecting");
-});
+if (useMock) {
+    logger.info("Initializing in-memory mock Redis client for testing...");
+    const store = new Map();
+    const ttls = new Map();
 
-redisClient.on("ready", () => {
-    logger.info("Redis client ready");
-});
+    const isExpired = (key) => {
+        if (!ttls.has(key)) return false;
+        const expireAt = ttls.get(key);
+        if (Date.now() >= expireAt) {
+            store.delete(key);
+            ttls.delete(key);
+            return true;
+        }
+        return false;
+    };
 
-redisClient.on("reconnecting", (delay) => {
-    logger.warn("Redis client reconnecting", { delay });
-});
+    redisClient = {
+        isOpen: true,
+        isMock: true,
+        on: () => redisClient,
+        connect: async () => redisClient,
+        disconnect: async () => {},
+        quit: async () => {},
+        get: async (key) => {
+            if (isExpired(key)) return null;
+            const val = store.get(key);
+            return val !== undefined ? String(val) : null;
+        },
+        set: async (key, value, options) => {
+            store.set(key, value);
+            if (options && options.EX) {
+                ttls.set(key, Date.now() + options.EX * 1000);
+            } else {
+                ttls.delete(key);
+            }
+            return "OK";
+        },
+        del: async (keys) => {
+            const keyList = Array.isArray(keys) ? keys : [keys];
+            let count = 0;
+            for (const k of keyList) {
+                if (store.has(k)) {
+                    store.delete(k);
+                    ttls.delete(k);
+                    count++;
+                }
+            }
+            return count;
+        },
+        incr: async (key) => {
+            if (isExpired(key)) {
+                store.set(key, 0);
+            }
+            const val = Number(store.get(key) || 0) + 1;
+            store.set(key, val);
+            return val;
+        },
+        expire: async (key, seconds) => {
+            if (store.has(key)) {
+                ttls.set(key, Date.now() + seconds * 1000);
+                return 1;
+            }
+            return 0;
+        },
+        ttl: async (key) => {
+            if (!store.has(key) || isExpired(key)) {
+                return -2;
+            }
+            if (!ttls.has(key)) {
+                return -1;
+            }
+            const remainingMs = ttls.get(key) - Date.now();
+            return Math.max(0, Math.ceil(remainingMs / 1000));
+        }
+    };
+} else {
+    // Tạo một client Redis mới
+    redisClient = createClient({
+        url: process.env.REDIS_URL,
+        socket: {
+            connectTimeout: 5000,
+        },
+        maxRetriesPerRequest: null,
+    });
 
-redisClient.on("end", () => {
-    logger.warn("Redis client disconnected");
-});
+    // Xử lý lỗi kết nối Redis
+    redisClient.on("error", (err) => {
+        logger.error("Redis client error", { message: err.message });
+    });
 
-// Kết nối đến Redis
-try {
-    await redisClient.connect();
-    logger.info("Redis client connected");
-} catch (error) {
-    logger.warn("Redis client initial connection failed, will retry", {
-        message: error.message,
+    redisClient.on("connect", () => {
+        logger.info("Redis client connecting");
+    });
+
+    redisClient.on("ready", () => {
+        logger.info("Redis client ready");
+    });
+
+    redisClient.on("reconnecting", (delay) => {
+        logger.warn("Redis client reconnecting", { delay });
+    });
+
+    redisClient.on("end", () => {
+        logger.warn("Redis client disconnected");
+    });
+
+    // Kết nối đến Redis bất đồng bộ ở background để không block import module
+    redisClient.connect().then(() => {
+        logger.info("Redis client connected");
+    }).catch((error) => {
+        logger.warn("Redis client initial connection failed, will retry", {
+            message: error.message,
+        });
     });
 }
 

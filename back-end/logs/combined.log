@@ -84,3 +84,123 @@
 2026-06-09T08:11:12.858Z [info] Server is running: http://localhost:5000 {"service":"back-end"}
 2026-06-09T08:11:13.656Z [info] MongoDB connected {"service":"back-end"}
 2026-06-09T08:11:13.658Z [info] Connected to MongoDB {"service":"back-end"}
+2026-06-09T08:31:26.135Z [info] Redis client connecting {"service":"back-end"}
+2026-06-09T08:31:26.143Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-09T08:31:26.145Z [info] Redis client ready {"service":"back-end"}
+2026-06-09T08:31:26.149Z [info] Redis client connected {"service":"back-end"}
+2026-06-09T08:31:26.154Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-09T08:31:26.157Z [info] Loading .env {"service":"back-end","envPath":"D:\\Project\\PetShop-Website\\back-end\\.env"}
+2026-06-09T08:31:26.158Z [info] .env file loaded successfully {"service":"back-end"}
+2026-06-09T08:31:26.192Z [info] Background workers initialized {"service":"back-end"}
+2026-06-09T08:31:26.197Z [info] Server is running: http://localhost:5000 {"service":"back-end"}
+2026-06-09T08:31:26.961Z [info] MongoDB connected {"service":"back-end"}
+2026-06-09T08:31:26.963Z [info] Connected to MongoDB {"service":"back-end"}
+2026-06-09T08:42:05.163Z [info] Redis client connecting {"service":"back-end"}
+2026-06-09T08:42:05.172Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-09T08:42:05.174Z [info] Redis client ready {"service":"back-end"}
+2026-06-09T08:42:05.179Z [info] Redis client connected {"service":"back-end"}
+2026-06-09T08:42:05.185Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-09T08:42:05.187Z [info] Loading .env {"service":"back-end","envPath":"D:\\Project\\PetShop-Website\\back-end\\.env"}
+2026-06-09T08:42:05.188Z [info] .env file loaded successfully {"service":"back-end"}
+2026-06-09T08:42:05.225Z [info] Background workers initialized {"service":"back-end"}
+2026-06-09T08:42:05.232Z [info] Server is running: http://localhost:5000 {"service":"back-end"}
+2026-06-09T08:42:05.906Z [info] MongoDB connected {"service":"back-end"}
+2026-06-09T08:42:05.908Z [info] Connected to MongoDB {"service":"back-end"}
+2026-06-09T08:42:08.075Z [info] Redis client connecting {"service":"back-end"}
+2026-06-09T08:42:08.083Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-09T08:42:08.086Z [info] Redis client ready {"service":"back-end"}
+2026-06-09T08:42:08.092Z [info] Redis client connected {"service":"back-end"}
+2026-06-09T08:42:08.097Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-09T08:42:08.100Z [info] Loading .env {"service":"back-end","envPath":"D:\\Project\\PetShop-Website\\back-end\\.env"}
+2026-06-09T08:42:08.101Z [info] .env file loaded successfully {"service":"back-end"}
+2026-06-09T08:42:08.134Z [info] Background workers initialized {"service":"back-end"}
+2026-06-09T08:42:08.139Z [info] Server is running: http://localhost:5000 {"service":"back-end"}
+2026-06-09T08:42:10.513Z [info] Redis client connecting {"service":"back-end"}
+2026-06-09T08:42:10.519Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-09T08:42:10.526Z [info] Redis client ready {"service":"back-end"}
+2026-06-09T08:42:10.527Z [info] Redis client connected {"service":"back-end"}
+2026-06-09T08:42:10.531Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-09T08:42:10.533Z [info] Loading .env {"service":"back-end","envPath":"D:\\Project\\PetShop-Website\\back-end\\.env"}
+2026-06-09T08:42:10.533Z [info] .env file loaded successfully {"service":"back-end"}
+2026-06-09T08:42:10.564Z [info] Background workers initialized {"service":"back-end"}
+2026-06-09T08:42:10.568Z [info] Server is running: http://localhost:5000 {"service":"back-end"}
+2026-06-09T08:42:11.240Z [info] MongoDB connected {"service":"back-end"}
+2026-06-09T08:42:11.242Z [info] Connected to MongoDB {"service":"back-end"}
+2026-06-09T08:42:13.574Z [info] Redis client connecting {"service":"back-end"}
+2026-06-09T08:42:13.582Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-09T08:42:13.584Z [info] Redis client ready {"service":"back-end"}
+2026-06-09T08:42:13.589Z [info] Redis client connected {"service":"back-end"}
+2026-06-09T08:42:13.594Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-09T08:42:13.596Z [info] Loading .env {"service":"back-end","envPath":"D:\\Project\\PetShop-Website\\back-end\\.env"}
+2026-06-09T08:42:13.597Z [info] .env file loaded successfully {"service":"back-end"}
+2026-06-09T08:42:13.627Z [info] Background workers initialized {"service":"back-end"}
+2026-06-09T08:42:13.632Z [info] Server is running: http://localhost:5000 {"service":"back-end"}
+2026-06-09T08:42:14.356Z [info] MongoDB connected {"service":"back-end"}
+2026-06-09T08:42:14.358Z [info] Connected to MongoDB {"service":"back-end"}
+2026-06-09T08:42:16.467Z [info] Redis client connecting {"service":"back-end"}
+2026-06-09T08:42:16.475Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-09T08:42:16.477Z [info] Redis client ready {"service":"back-end"}
+2026-06-09T08:42:16.482Z [info] Redis client connected {"service":"back-end"}
+2026-06-09T08:42:16.486Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-09T08:42:16.489Z [info] Loading .env {"service":"back-end","envPath":"D:\\Project\\PetShop-Website\\back-end\\.env"}
+2026-06-09T08:42:16.490Z [info] .env file loaded successfully {"service":"back-end"}
+2026-06-09T08:42:16.521Z [info] Background workers initialized {"service":"back-end"}
+2026-06-09T08:42:16.526Z [info] Server is running: http://localhost:5000 {"service":"back-end"}
+2026-06-09T08:42:17.260Z [info] MongoDB connected {"service":"back-end"}
+2026-06-09T08:42:17.262Z [info] Connected to MongoDB {"service":"back-end"}
+2026-06-09T08:42:22.660Z [info] Initializing in-memory mock Redis client for testing... {"service":"back-end"}
+2026-06-09T08:42:23.055Z [info] Initializing in-memory mock Redis client for testing... {"service":"back-end"}
+2026-06-09T08:42:22.678Z [warn] Payment creation rate limit exceeded {"service":"back-end","key":"507f1f77bcf86cd799439011","retrySecs":60}
+2026-06-09T08:42:22.686Z [warn] Payment creation rate limit exceeded {"service":"back-end","key":"127.0.0.1","retrySecs":60}
+2026-06-09T08:42:22.691Z [warn] Order creation rate limit exceeded {"service":"back-end","key":"507f1f77bcf86cd799439011","retrySecs":60}
+2026-06-09T08:42:23.465Z [info] Initializing in-memory mock Redis client for testing... {"service":"back-end"}
+2026-06-09T08:42:23.481Z [warn] OTP send rate limit exceeded {"service":"back-end","email":"test_otp_limiter@gmail.com","retryMins":10}
+2026-06-09T08:42:30.861Z [info] Redis client connecting {"service":"back-end"}
+2026-06-09T08:42:30.869Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-09T08:42:30.871Z [info] Redis client ready {"service":"back-end"}
+2026-06-09T08:42:30.875Z [info] Redis client connected {"service":"back-end"}
+2026-06-09T08:42:30.880Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-09T08:42:30.882Z [info] Loading .env {"service":"back-end","envPath":"D:\\Project\\PetShop-Website\\back-end\\.env"}
+2026-06-09T08:42:30.883Z [info] .env file loaded successfully {"service":"back-end"}
+2026-06-09T08:42:30.916Z [info] Background workers initialized {"service":"back-end"}
+2026-06-09T08:42:30.921Z [info] Server is running: http://localhost:5000 {"service":"back-end"}
+2026-06-09T08:42:31.574Z [info] MongoDB connected {"service":"back-end"}
+2026-06-09T08:42:31.576Z [info] Connected to MongoDB {"service":"back-end"}
+2026-06-09T08:42:34.621Z [info] Redis client connecting {"service":"back-end"}
+2026-06-09T08:42:34.631Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-09T08:42:34.633Z [info] Redis client ready {"service":"back-end"}
+2026-06-09T08:42:34.638Z [info] Redis client connected {"service":"back-end"}
+2026-06-09T08:42:34.642Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-09T08:42:34.645Z [info] Loading .env {"service":"back-end","envPath":"D:\\Project\\PetShop-Website\\back-end\\.env"}
+2026-06-09T08:42:34.646Z [info] .env file loaded successfully {"service":"back-end"}
+2026-06-09T08:42:34.679Z [info] Background workers initialized {"service":"back-end"}
+2026-06-09T08:42:34.685Z [info] Server is running: http://localhost:5000 {"service":"back-end"}
+2026-06-09T08:42:35.384Z [info] MongoDB connected {"service":"back-end"}
+2026-06-09T08:42:35.386Z [info] Connected to MongoDB {"service":"back-end"}
+2026-06-09T08:42:38.214Z [info] Redis client connecting {"service":"back-end"}
+2026-06-09T08:42:38.222Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-09T08:42:38.224Z [info] Redis client ready {"service":"back-end"}
+2026-06-09T08:42:38.225Z [info] Redis client connected {"service":"back-end"}
+2026-06-09T08:42:38.234Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-09T08:42:38.236Z [info] Loading .env {"service":"back-end","envPath":"D:\\Project\\PetShop-Website\\back-end\\.env"}
+2026-06-09T08:42:38.237Z [info] .env file loaded successfully {"service":"back-end"}
+2026-06-09T08:42:38.268Z [info] Background workers initialized {"service":"back-end"}
+2026-06-09T08:42:38.274Z [info] Server is running: http://localhost:5000 {"service":"back-end"}
+2026-06-09T08:42:38.983Z [info] MongoDB connected {"service":"back-end"}
+2026-06-09T08:42:38.985Z [info] Connected to MongoDB {"service":"back-end"}
+2026-06-09T08:42:44.708Z [info] Initializing in-memory mock Redis client for testing... {"service":"back-end"}
+2026-06-09T08:42:45.121Z [info] Initializing in-memory mock Redis client for testing... {"service":"back-end"}
+2026-06-09T08:42:44.728Z [warn] OTP send rate limit exceeded {"service":"back-end","email":"test_otp_limiter@gmail.com","retryMins":10}
+2026-06-09T08:42:45.133Z [warn] Payment creation rate limit exceeded {"service":"back-end","key":"507f1f77bcf86cd799439011","retrySecs":60}
+2026-06-09T08:42:45.138Z [warn] Payment creation rate limit exceeded {"service":"back-end","key":"127.0.0.1","retrySecs":60}
+2026-06-09T08:42:45.144Z [warn] Order creation rate limit exceeded {"service":"back-end","key":"507f1f77bcf86cd799439011","retrySecs":60}
+2026-06-09T08:42:45.493Z [info] Initializing in-memory mock Redis client for testing... {"service":"back-end"}
+2026-06-09T08:42:49.705Z [info] Redis client connecting {"service":"back-end"}
+2026-06-09T08:42:49.712Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-09T08:42:49.714Z [info] Redis client ready {"service":"back-end"}
+2026-06-09T08:42:49.714Z [info] Redis client connected {"service":"back-end"}
+2026-06-09T08:42:49.723Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-09T08:42:49.725Z [info] Loading .env {"service":"back-end","envPath":"D:\\Project\\PetShop-Website\\back-end\\.env"}
+2026-06-09T08:42:49.726Z [info] .env file loaded successfully {"service":"back-end"}
+2026-06-09T08:42:49.756Z [info] Background workers initialized {"service":"back-end"}
+2026-06-09T08:42:49.762Z [info] Server is running: http://localhost:5000 {"service":"back-end"}

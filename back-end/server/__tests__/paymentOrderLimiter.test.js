@@ -1,26 +1,25 @@
 import { jest } from "@jest/globals";
 import { paymentLimiter, paymentLimiterMiddleware } from "../middleware/rateLimit/paymentLimiter.js";
 import { orderLimiter, orderLimiterMiddleware } from "../middleware/rateLimit/orderLimiter.js";
-import redisClient from "../configs/redisClient.js";
 
 describe("Payment and Order Rate Limiters", () => {
   const userId = "507f1f77bcf86cd799439011";
   const userIp = "127.0.0.1";
 
   beforeEach(async () => {
-    // Clean up Redis keys before each test
-    await redisClient.del(`payment_create:${userId}`);
-    await redisClient.del(`payment_create:${userIp}`);
-    await redisClient.del(`order_create:${userId}`);
-    await redisClient.del(`order_create:${userIp}`);
+    // Clean up rate limiters before each test
+    await paymentLimiter.delete(userId);
+    await paymentLimiter.delete(userIp);
+    await orderLimiter.delete(userId);
+    await orderLimiter.delete(userIp);
   });
 
   afterAll(async () => {
-    // Clean up Redis keys after all tests
-    await redisClient.del(`payment_create:${userId}`);
-    await redisClient.del(`payment_create:${userIp}`);
-    await redisClient.del(`order_create:${userId}`);
-    await redisClient.del(`order_create:${userIp}`);
+    // Clean up rate limiters after all tests
+    await paymentLimiter.delete(userId);
+    await paymentLimiter.delete(userIp);
+    await orderLimiter.delete(userId);
+    await orderLimiter.delete(userIp);
   });
 
   describe("paymentLimiterMiddleware", () => {

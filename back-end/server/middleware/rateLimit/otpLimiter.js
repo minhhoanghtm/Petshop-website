@@ -1,15 +1,21 @@
-import { RateLimiterRedis } from "rate-limiter-flexible";
+import { RateLimiterRedis, RateLimiterMemory } from "rate-limiter-flexible";
 import redisClient from "../../configs/redisClient.js";
 import { logger } from "../../logger/logger.js";
 
-export const otpSendLimiter = new RateLimiterRedis({
-    storeClient: redisClient,
+const limiterOptions = {
     keyPrefix: 'otp_send',
     points: 5, //5 lần
     duration: 60 * 10, //10 phút
     blockDuration: 60 * 10, //Khóa 10 phút nếu vượt quá giới hạn
-    useRedisPackage: true
-});
+};
+
+export const otpSendLimiter = redisClient.isMock
+    ? new RateLimiterMemory(limiterOptions)
+    : new RateLimiterRedis({
+        ...limiterOptions,
+        storeClient: redisClient,
+        useRedisPackage: true
+      });
 
 export const otpSendLimiterMiddleware = async (req, res, next) => {
     const email = req.body?.email;

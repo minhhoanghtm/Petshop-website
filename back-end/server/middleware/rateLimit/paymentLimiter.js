@@ -1,15 +1,21 @@
-import { RateLimiterRedis } from "rate-limiter-flexible";
+import { RateLimiterRedis, RateLimiterMemory } from "rate-limiter-flexible";
 import redisClient from "../../configs/redisClient.js";
 import { logger } from "../../logger/logger.js";
 
-export const paymentLimiter = new RateLimiterRedis({
-    storeClient: redisClient,
+const limiterOptions = {
     keyPrefix: 'payment_create',
     points: 5, // 5 lần
     duration: 60, // 1 phút
     blockDuration: 60, // Khóa 1 phút nếu vượt quá giới hạn
-    useRedisPackage: true
-});
+};
+
+export const paymentLimiter = redisClient.isMock
+    ? new RateLimiterMemory(limiterOptions)
+    : new RateLimiterRedis({
+        ...limiterOptions,
+        storeClient: redisClient,
+        useRedisPackage: true
+      });
 
 export const paymentLimiterMiddleware = async (req, res, next) => {
     // Ưu tiên dùng ID user đã đăng nhập, nếu chưa có thì dùng IP

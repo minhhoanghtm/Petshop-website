@@ -1,16 +1,22 @@
-import { RateLimiterRedis } from "rate-limiter-flexible";
+import { RateLimiterRedis, RateLimiterMemory } from "rate-limiter-flexible";
 import redisClient from "../../configs/redisClient.js";
 import { logger } from "../../logger/logger.js";
 
-// 1. Cấu hình giới hạn: Tối đa 5 lần trong 1 phút (60 giây)
-export const orderLimiter = new RateLimiterRedis({
-    storeClient: redisClient,
+const limiterOptions = {
     keyPrefix: 'order_create', // Tiền tố lưu trên Redis
     points: 5,                 // Số lượt tối đa được thực hiện
     duration: 60,              // Thời gian giới hạn (giây)
     blockDuration: 60,         // Khóa 60 giây tiếp theo nếu vượt giới hạn
-    useRedisPackage: true      // Tương thích thư viện node-redis v4+
-});
+};
+
+// 1. Cấu hình giới hạn
+export const orderLimiter = redisClient.isMock
+    ? new RateLimiterMemory(limiterOptions)
+    : new RateLimiterRedis({
+        ...limiterOptions,
+        storeClient: redisClient,
+        useRedisPackage: true
+      });
 
 export const orderLimiterMiddleware = async (req, res, next) => {
     // 2. Định danh Client: Ưu tiên dùng ID User đã đăng nhập, nếu chưa đăng nhập dùng IP
