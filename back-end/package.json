@@ -7,7 +7,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js --testEnvironment=node",
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js --testEnvironment=node --detectOpenHandles --forceExit",
     "test:watch": "node --experimental-vm-modules node_modules/jest/bin/jest.js --testEnvironment=node --watch",
     "start": "nodemon server/server.js",
     "migrate:up": "migrate-mongo up -f migrate-mongo-config.cjs",
