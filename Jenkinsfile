@@ -3,7 +3,7 @@ pipeline {
     agent any
 
     tools {
-        nodejs 'Node 22'
+        nodejs 'Node 20'
     }
 
     options {
