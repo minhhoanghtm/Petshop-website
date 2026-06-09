@@ -5,100 +5,117 @@
 // - Nếu Jenkins agent có Docker, có thể mở rộng thêm stage build/push image.
 
 pipeline {
-    agent any
+agent any
 
-    options {
-        timestamps()
-        disableConcurrentBuilds()
+```
+tools {
+    // Tên phải trùng với NodeJS installation trong Jenkins Tools
+    nodejs 'Node 22'
+}
+
+options {
+    timestamps()
+    disableConcurrentBuilds()
+}
+
+environment {
+    BACKEND_DIR = 'back-end'
+    FRONTEND_DIR = 'front-end'
+    CI = 'true'
+}
+
+stages {
+
+    stage('Checkout') {
+        steps {
+            checkout scm
+        }
     }
 
-    environment {
-        BACKEND_DIR = 'back-end'
-        FRONTEND_DIR = 'front-end'
-    }
-
-    stages {
-        stage('Checkout') {
-            steps {
-                // Lấy mã nguồn từ nhánh đang build
-                checkout scm
-            }
-        }
-
-        stage('Install Backend') {
-            steps {
-                dir(env.BACKEND_DIR) {
-                    // Cài dependency cho backend
-                    sh 'npm ci'
-                }
-            }
-        }
-
-        stage('Install Frontend') {
-            steps {
-                dir(env.FRONTEND_DIR) {
-                    // Cài dependency cho frontend
-                    sh 'npm ci'
-                }
-            }
-        }
-
-        stage('Test Backend') {
-            steps {
-                dir(env.BACKEND_DIR) {
-                    // Chạy test backend. Nếu chưa có test case thì stage này có thể báo UNSTABLE.
-                    catchError(buildResult: 'UNSTABLE', stageResult: 'UNSTABLE') {
-                        sh 'npm test'
-                    }
-                }
-            }
-        }
-
-        stage('Build Frontend') {
-            steps {
-                dir(env.FRONTEND_DIR) {
-                    // Build frontend ra thư mục dist
-                    sh 'npm run build'
-                }
-            }
-        }
-
-        stage('Archive Artifacts') {
-            steps {
-                // Lưu lại file build của frontend để tải về hoặc deploy tiếp
-                archiveArtifacts artifacts: 'front-end/dist/**/*', allowEmptyArchive: true, fingerprint: true
-            }
-        }
-
-        stage('Docker Build Preview') {
-            when {
-                anyOf {
-                    branch 'main'
-                    branch 'master'
-                }
-            }
-            steps {
-                script {
-                    // Stage này chỉ là ví dụ. Cần Docker trên Jenkins agent mới chạy được.
-                    echo 'Nếu Jenkins agent có Docker, có thể build image ở đây.'
-                }
+    stage('Install Backend') {
+        steps {
+            dir(env.BACKEND_DIR) {
+                sh 'npm ci'
             }
         }
     }
 
-    post {
-        always {
-            // Dọn workspace sau khi pipeline kết thúc để tránh ảnh hưởng build sau
-            cleanWs()
+    stage('Install Frontend') {
+        steps {
+            dir(env.FRONTEND_DIR) {
+                sh 'npm ci'
+            }
         }
-        success {
-            echo 'Jenkins pipeline đã chạy thành công.'
+    }
+
+    stage('Test Backend') {
+        steps {
+            dir(env.BACKEND_DIR) {
+
+                catchError(buildResult: 'UNSTABLE', stageResult: 'UNSTABLE') {
+                    sh 'npm test'
+                }
+
+            }
         }
-        unstable {
-            echo 'Pipeline chạy được nhưng có stage test chưa đạt hoặc chưa có đủ test case.'
+    }
+
+    stage('Build Frontend') {
+        steps {
+            dir(env.FRONTEND_DIR) {
+                sh 'npm run build'
+            }
         }
-        failure {
-            echo 'Pipeline thất bại. Hãy kiểm tra log của stage bị lỗi.'
+    }
+
+    stage('Archive Artifacts') {
+        steps {
+            archiveArtifacts artifacts: 'front-end/dist/**/*',
+                allowEmptyArchive: true,
+                fingerprint: true
+        }
+    }
+
+    stage('Docker Build Preview') {
+
+        when {
+            anyOf {
+                branch 'main'
+                branch 'master'
+            }
+        }
+
+        steps {
+            script {
+                echo 'Docker build preview stage'
+
+                sh '''
+                    docker --version || true
+                '''
+            }
         }
     }
 }
+
+post {
+
+    always {
+        cleanWs()
+    }
+
+    success {
+        echo 'Jenkins pipeline đã chạy thành công.'
+    }
+
+    unstable {
+        echo 'Pipeline UNSTABLE: test chưa pass hoàn toàn.'
+    }
+
+    failure {
+        echo 'Pipeline FAILED. Kiểm tra stage bị lỗi.'
+    }
+}
+```
+
+}
+

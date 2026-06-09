@@ -230,3 +230,40 @@ export const googleSignIn = async (req, res) => {
     return sendControllerError(res, error, error.statusCode || 400);
   }
 };
+
+// Quay vòng Refresh Token (Rotation)
+export const refresh = async (req, res) => {
+  const token = req.cookies?.refreshToken || req.body?.refreshToken;
+  try {
+    const result = await authService.refreshAccessToken(token);
+
+    // Lưu Refresh Token mới vào cookie
+    res.cookie("refreshToken", result.refreshToken, {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === "production",
+      sameSite: "none",
+      maxAge: 14 * 24 * 60 * 60 * 1000,
+    });
+
+    return res.status(200).json({
+      message: result.message,
+      accessToken: result.accessToken,
+      refreshToken: result.refreshToken,
+    });
+  } catch (error) {
+    logger.warn("Xác thực hoặc quay vòng Refresh Token thất bại", {
+      message: error.message,
+    });
+    
+    // Nếu bị Replay Attack và quăng lỗi 403, xóa cookie refreshToken trên client ngay lập tức
+    if (error.statusCode === 403) {
+      res.clearCookie("refreshToken", {
+        httpOnly: true,
+        secure: process.env.NODE_ENV === "production",
+        sameSite: "none",
+      });
+    }
+    
+    return sendControllerError(res, error, error.statusCode || 401);
+  }
+};

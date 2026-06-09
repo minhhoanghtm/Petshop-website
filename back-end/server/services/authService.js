@@ -163,6 +163,139 @@ const normalizeForgotPasswordError = (message) => {
   return message || "Không thể xử lý yêu cầu đặt lại mật khẩu.";
 };
 
+// ============ Refresh Token Rotation Helpers ============
+
+const generateRefreshToken = (userId) => {
+  return jwt.sign(
+    { userId: userId.toString() },
+    process.env.ACCESS_TOKEN_SECRET,
+    { expiresIn: "14d" }
+  );
+};
+
+const storeRefreshToken = async (userId, token) => {
+  const userIdStr = userId.toString();
+  const tokenKey = `refresh:${token}`;
+  const userSetKey = `user:refresh_tokens:${userIdStr}`;
+  const ttlSeconds = Math.floor(REFRESH_TOKEN_TTL / 1000);
+
+  try {
+    // Lưu thông tin token và gán TTL 14 ngày
+    await redisClient.set(tokenKey, JSON.stringify({ userId: userIdStr }), {
+      EX: ttlSeconds,
+    });
+    // Thêm token vào danh sách quản lý của User
+    await redisClient.sAdd(userSetKey, token);
+    // Gán TTL cho Set của User (để tự động dọn dẹp)
+    await redisClient.expire(userSetKey, ttlSeconds);
+  } catch (err) {
+    logger.error("Lỗi khi lưu Refresh Token vào Redis:", { message: err.message, userId: userIdStr });
+  }
+};
+
+const revokeAllUserRefreshTokens = async (userId) => {
+  const userIdStr = userId.toString();
+  const userSetKey = `user:refresh_tokens:${userIdStr}`;
+
+  try {
+    // Lấy tất cả các refresh token đang hoạt động của User
+    const tokens = await redisClient.sMembers(userSetKey);
+    
+    if (tokens.length > 0) {
+      const keysToDelete = tokens.map(t => `refresh:${t}`);
+      // Xóa tất cả các key refresh token tương ứng
+      await redisClient.del(keysToDelete);
+    }
+    
+    // Xóa luôn Set quản lý của User
+    await redisClient.del(userSetKey);
+    logger.warn(`Đã thu hồi toàn bộ Refresh Token của User: ${userIdStr} do nghi ngờ có Replay Attack.`);
+  } catch (err) {
+    logger.error("Lỗi khi thu hồi toàn bộ Refresh Token của User:", { message: err.message, userId: userIdStr });
+  }
+};
+
+export const refreshAccessToken = async (oldRefreshToken) => {
+  if (!oldRefreshToken) {
+    throw createServiceError("Thiếu Refresh Token.", 400);
+  }
+
+  let decoded;
+  try {
+    // Giải mã JWT của Refresh Token để lấy userId
+    decoded = jwt.verify(oldRefreshToken, process.env.ACCESS_TOKEN_SECRET);
+  } catch (err) {
+    throw createServiceError("Refresh Token không hợp lệ hoặc đã hết hạn.", 401);
+  }
+
+  const userId = decoded.userId;
+  const tokenKey = `refresh:${oldRefreshToken}`;
+  const userSetKey = `user:refresh_tokens:${userId}`;
+
+  try {
+    const redisValue = await redisClient.get(tokenKey);
+
+    // TH1: Token KHÔNG tồn tại trên Redis -> Nghi ngờ Replay Attack (token cũ đã dùng lại ngoài thời gian ân hạn)
+    if (!redisValue) {
+      // Kích hoạt cơ chế tự vệ: Xóa toàn bộ token của User để hủy tất cả phiên đăng nhập
+      await revokeAllUserRefreshTokens(userId);
+      throw createServiceError("Phiên đăng nhập bất hợp pháp hoặc token đã hết hạn. Vui lòng đăng nhập lại.", 403);
+    }
+
+    // TH2: Token có trạng thái "used" -> Request trùng lặp trong thời gian ân hạn (Grace Period) do mạng lag
+    if (redisValue.startsWith("used:")) {
+      logger.info(`Phát hiện request refresh trùng lặp trong thời gian ân hạn cho user: ${userId}`);
+      const cacheData = JSON.parse(redisValue.slice("used:".length));
+      return {
+        accessToken: cacheData.accessToken,
+        refreshToken: cacheData.refreshToken,
+      };
+    }
+
+    // TH3: Lần đầu tiên sử dụng Refresh Token hợp lệ -> Tạo cặp token mới
+    const user = await User.findById(userId);
+    if (!user || user.isBlocked || user.status !== "Active") {
+      throw createServiceError("Tài khoản của bạn không tồn tại hoặc đã bị khóa.", 403);
+    }
+
+    // Tạo access/refresh token mới
+    const newAccessToken = jwt.sign(
+      { userId: user._id },
+      process.env.ACCESS_TOKEN_SECRET,
+      { expiresIn: ACCESS_TOKEN_TTL }
+    );
+    const newRefreshToken = generateRefreshToken(user._id);
+
+    const newPair = {
+      accessToken: newAccessToken,
+      refreshToken: newRefreshToken,
+    };
+
+    // Lưu Refresh Token mới vào Redis
+    await storeRefreshToken(user._id, newRefreshToken);
+
+    // Đánh dấu old token đã sử dụng (Grace Period: 10 giây)
+    // Sau 10 giây Redis sẽ tự động dọn dẹp key này
+    await redisClient.set(tokenKey, `used:${JSON.stringify(newPair)}`, {
+      EX: 10,
+    });
+
+    // Xóa old token khỏi Set quản lý của User
+    await redisClient.sRem(userSetKey, oldRefreshToken);
+
+    logger.debug(`Đã quay vòng Refresh Token (Rotation) thành công cho user: ${userId}`);
+
+    return {
+      message: "Cấp mới Access Token thành công!",
+      ...newPair,
+    };
+  } catch (err) {
+    if (err.statusCode) throw err;
+    logger.error("Lỗi khi xử lý Refresh Token:", { message: err.message, userId });
+    throw createServiceError("Lỗi hệ thống khi refresh token.", 500);
+  }
+};
+
 // ============ Service Functions ============
 
 /**
@@ -342,19 +475,8 @@ export const signIn = async (userData, req) => {
     { expiresIn: ACCESS_TOKEN_TTL },
   );
 
-  const refreshToken = crypto.randomBytes(60).toString("hex");
-
-  try {
-    await redisClient.set(
-      `refresh:${refreshToken}`,
-      JSON.stringify({ userId: user._id.toString() }),
-      { EX: Math.floor(REFRESH_TOKEN_TTL / 1000) },
-    );
-  } catch (err) {
-    logger.warn("Không thể lưu refreshToken vào Redis", {
-      message: err.message,
-    });
-  }
+  const refreshToken = generateRefreshToken(user._id);
+  await storeRefreshToken(user._id, refreshToken);
 
   if (req && req.session) {
     await new Promise((resolve, reject) => {
@@ -389,6 +511,12 @@ export const signOut = async (token, req) => {
   if (token) {
     try {
       await redisClient.del(`refresh:${token}`);
+      try {
+        const decoded = jwt.verify(token, process.env.ACCESS_TOKEN_SECRET);
+        await redisClient.sRem(`user:refresh_tokens:${decoded.userId}`, token);
+      } catch {
+        // Bỏ qua lỗi verify khi logout
+      }
     } catch (err) {
       logger.warn("Không thể xóa refreshToken trên Redis", {
         message: err.message,
@@ -891,19 +1019,8 @@ export const googleSignIn = async (body, req) => {
     { expiresIn: ACCESS_TOKEN_TTL }
   );
 
-  const systemRefreshToken = crypto.randomBytes(60).toString("hex");
-
-  try {
-    await redisClient.set(
-      `refresh:${systemRefreshToken}`,
-      JSON.stringify({ userId: user._id.toString() }),
-      { EX: Math.floor(REFRESH_TOKEN_TTL / 1000) }
-    );
-  } catch (err) {
-    logger.warn("Không thể lưu refreshToken vào Redis cho Google user", {
-      message: err.message,
-    });
-  }
+  const systemRefreshToken = generateRefreshToken(user._id);
+  await storeRefreshToken(user._id, systemRefreshToken);
 
   // Đồng bộ session nếu có session store
   if (req && req.session) {

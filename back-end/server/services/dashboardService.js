@@ -168,38 +168,41 @@ export const getRevenueByDay = async (timeFilter = "7days") => {
 };
 
 export const getRevenueByCategory = async () => {
-  const orders = await Order.find({ status: { $in: REVENUE_STATUSES } }).populate({
-    path: "items.product_id",
-    populate: { path: "category_id" },
-  });
+  const rawStats = await Order.aggregate([
+    { $match: { status: { $in: REVENUE_STATUSES } } },
+    { $unwind: "$items" },
+    {
+      $lookup: {
+        from: "products",
+        localField: "items.product_id",
+        foreignField: "_id",
+        as: "product",
+      },
+    },
+    { $unwind: "$product" },
+    {
+      $lookup: {
+        from: "categories",
+        localField: "product.category_id",
+        foreignField: "_id",
+        as: "category",
+      },
+    },
+    { $unwind: "$category" },
+    {
+      $group: {
+        _id: "$category.name",
+        revenue: { $sum: { $multiply: ["$items.quantity", "$product.price"] } },
+      },
+    },
+  ]);
 
-  const categoryRevenue = new Map();
-  let totalRevenue = 0;
+  const totalRevenue = rawStats.reduce((sum, item) => sum + item.revenue, 0);
 
-  orders.forEach((order) => {
-    order.items.forEach((item) => {
-      if (item.product_id && item.product_id.category_id) {
-        const categoryName = item.product_id.category_id.name;
-        const itemRevenue = Number(item.quantity || 0) * Number(item.product_id.price || 0);
-
-        categoryRevenue.set(
-          categoryName,
-          (categoryRevenue.get(categoryName) || 0) + itemRevenue
-        );
-
-        totalRevenue += itemRevenue;
-      }
-    });
-  });
-
-  const labels = [];
-  const data = [];
-
-  for (const [category, revenue] of categoryRevenue.entries()) {
-    labels.push(category);
-    const percentage = totalRevenue > 0 ? (revenue / totalRevenue) * 100 : 0;
-    data.push(Number(percentage.toFixed(1)));
-  }
+  const labels = rawStats.map((item) => item._id);
+  const data = rawStats.map((item) =>
+    totalRevenue > 0 ? Number(((item.revenue / totalRevenue) * 100).toFixed(1)) : 0
+  );
 
   if (labels.length > 5) {
     const combined = labels

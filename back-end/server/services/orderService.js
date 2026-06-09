@@ -63,24 +63,33 @@ export const createOrder = async (orderData = {}) => {
 
   const savedProducts = [];
   try {
-    // 1. Kiểm tra tồn kho và tạm thời giảm số lượng sản phẩm
+    // 1. Trừ tồn kho nguyên tử chống Race Condition (Overselling)
     for (const item of items) {
-      const product = await Product.findById(item.product_id);
-      if (!product) {
-        throw createServiceError(`Không tìm thấy sản phẩm với ID: ${item.product_id}`, 404);
+      const updatedProduct = await Product.findOneAndUpdate(
+        {
+          _id: item.product_id,
+          stock: { $gte: item.quantity } // Đảm bảo tồn kho lớn hơn hoặc bằng số lượng mua
+        },
+        {
+          $inc: { stock: -item.quantity } // Giảm kho nguyên tử
+        },
+        { new: true }
+      );
+
+      if (!updatedProduct) {
+        // Tìm xem sản phẩm có tồn tại hay không để phản hồi status phù hợp
+        const checkProduct = await Product.findById(item.product_id);
+        if (!checkProduct) {
+          throw createServiceError(`Không tìm thấy sản phẩm với ID: ${item.product_id}`, 404);
+        }
+        throw createServiceError(`Sản phẩm ${checkProduct.name} không đủ số lượng trong kho`, 400);
       }
 
-      if (product.stock < item.quantity) {
-        throw createServiceError(`Sản phẩm ${product.name} không đủ số lượng trong kho`, 400);
-      }
-
-      product.stock -= item.quantity;
-      await product.save();
-      // Lưu lại để có thể rollback nếu các bước sau lỗi
-      savedProducts.push({ product, quantity: item.quantity });
+      // Lưu lại thông tin sản phẩm đã trừ để có thể rollback
+      savedProducts.push({ product_id: item.product_id, quantity: item.quantity });
     }
 
-    // 2. Áp dụng Strategy Pattern để xử lý thanh toán (chỉ xác nhận phương thức, không xử lý thanh toán ở đây)
+    // 2. Áp dụng Strategy Pattern để xử lý thanh toán
     let paymentStrategy;
     switch (String(payment_method).toUpperCase()) {
       case "MOMO":
@@ -126,20 +135,22 @@ export const createOrder = async (orderData = {}) => {
 
     return await newOrder.save();
   } catch (error) {
-    // Rollback lại tồn kho nếu xảy ra bất kỳ lỗi nào trong quá trình tạo đơn hàng
-    for (const { product, quantity } of savedProducts) {
+    // Rollback lại tồn kho nguyên tử nếu xảy ra bất kỳ lỗi nào trong quá trình tạo đơn hàng
+    for (const { product_id, quantity } of savedProducts) {
       try {
-        product.stock += quantity;
-        await product.save();
+        await Product.updateOne(
+          { _id: product_id },
+          { $inc: { stock: quantity } } // Cộng lại kho nguyên tử
+        );
       } catch (rollbackError) {
-        console.error(`Lỗi rollback tồn kho cho sản phẩm ${product._id}:`, rollbackError);
+        console.error(`Lỗi rollback tồn kho cho sản phẩm ${product_id}:`, rollbackError);
       }
     }
     throw error;
   }
 };
 
-export const getOrders = async (queryParams = {}, currentUser = null) => {
+export const getOrders = async (queryParams = {}, currentUser = null, pagination = null) => {
   const { user_id } = queryParams;
   const query = {};
 
@@ -151,6 +162,25 @@ export const getOrders = async (queryParams = {}, currentUser = null) => {
     query.user_id = currentUser?._id;
   } else if (user_id) {
     query.user_id = user_id;
+  }
+
+  if (pagination) {
+    const { limit, skip, page } = pagination;
+    const total = await Order.countDocuments(query);
+    const orders = await Order.find(query)
+      .sort({ order_date: -1 })
+      .skip(skip)
+      .limit(limit)
+      .populate("user_id")
+      .populate("items.product_id");
+
+    return {
+      orders,
+      total,
+      currentPage: page,
+      limit,
+      totalPages: Math.ceil(total / limit),
+    };
   }
 
   return Order.find(query).populate("user_id").populate("items.product_id");

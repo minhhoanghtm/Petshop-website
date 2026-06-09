@@ -10,14 +10,16 @@ import {
 } from "../controllers/orderController.js";
 import { requireAdmin } from "../middleware/authMiddleware.js";
 import { orderLimiterMiddleware } from "../middleware/rateLimit/orderLimiter.js";
+import { idempotencyMiddleware } from "../middleware/idempotencyMiddleware.js";
+import { paginationMiddleware } from "../middleware/paginationMiddleware.js";
 
 const router = express.Router();
 
-// tạo đơn hàng mới
-router.post("/", orderLimiterMiddleware, createOrder);
+// tạo đơn hàng mới với cơ chế idempotency bảo vệ chống race condition đặt trùng
+router.post("/", orderLimiterMiddleware, idempotencyMiddleware, createOrder);
 
-// lấy tất cả đơn hàng (admin xem tất cả, user chỉ xem của mình)
-router.get("/", getOrders);
+// lấy tất cả đơn hàng có hỗ trợ phân trang tối đa 100 records/page để bảo vệ RAM
+router.get("/", paginationMiddleware(10, 100), getOrders);
 
 // thống kê đơn hàng (admin)
 router.get("/stats", requireAdmin, getOrderStats);

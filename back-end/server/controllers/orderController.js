@@ -12,7 +12,7 @@ export const createOrder = async (req, res) => {
 
 export const getOrders = async (req, res) => {
   try {
-    const result = await orderService.getOrders(req.query, req.user);
+    const result = await orderService.getOrders(req.query, req.user, req.pagination);
     return res.status(200).json(result);
   } catch (error) {
     return sendControllerError(res, error, 404);

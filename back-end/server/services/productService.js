@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 import Product from "../models/Product.js";
 import { getReviewSummaryByProductId } from "./reviewService.js";
-import { getOrSetCache, invalidCachePattern } from "../utils/cacheHelper.js";
+import { getOrSetCache, invalidateCachePattern } from "../utils/cacheHelper.js";
 import { CACHE_TTL } from "../configs/cacheConfig.js";
 import redisClient from "../configs/redisClient.js";
 
@@ -187,8 +187,9 @@ export const getAllProducts = async (params) => {
   // Tạo cache key động dựa trên tham số lọc
   const categoryFilter = params?.category || "all";
   const cacheKey = `products:list:${categoryFilter}`;
+  const ttl = CACHE_TTL.PRODUCT_LIST || 300;
 
-  return getOrSetCache(cacheKey, CACHE_TTL, PRODUCT_LIST, async () => {
+  return getOrSetCache(cacheKey, ttl, async () => {
     const match = buildProductMatchQuery(params);
     return Product.aggregate([
       { $match: match },
@@ -203,8 +204,9 @@ export const getAllProducts = async (params) => {
  */
 export const getProductBySlug = async (slug) => {
   const cacheKey = `products:detail:${slug}`;
+  const ttl = CACHE_TTL.PRODUCT_DETAIL || 600;
 
-  return getOrSetCache(cacheKey, CACHE_TTL, PRODUCT_DETAIL, async () => {
+  return getOrSetCache(cacheKey, ttl, async () => {
     const product = await Product.findOne({ slug })
       .populate("category_id")
       .populate({
@@ -217,20 +219,21 @@ export const getProductBySlug = async (slug) => {
           sort: { createdAt: -1 },
         },
       });
+
+    if (!product) {
+      throw new Error("Sản phẩm không tồn tại!");
+    }
+
+    const reviewSummary = await getReviewSummaryByProductId(product._id);
+    const productData = product.toObject();
+
+    return {
+      ...productData,
+      rating: reviewSummary.averageRating || 0,
+      numReviews: reviewSummary.totalReviews || 0,
+      reviewSummary,
+    };
   });
-  if (!product) {
-    throw new Error("Sản phẩm không tồn tại!");
-  }
-
-  const reviewSummary = await getReviewSummaryByProductId(product._id);
-  const productData = product.toObject();
-
-  return {
-    ...productData,
-    rating: reviewSummary.averageRating || 0,
-    numReviews: reviewSummary.totalReviews || 0,
-    reviewSummary,
-  };
 };
 
 /**
@@ -238,8 +241,9 @@ export const getProductBySlug = async (slug) => {
  */
 export const getProductsSale = async () => {
   const cacheKey = "products:best_seller";
+  const ttl = CACHE_TTL.BEST_SELLER || 3600;
 
-  return getOrSetCache(cacheKey, CACHE_TTL.BEST_SELLER, async () => {
+  return getOrSetCache(cacheKey, ttl, async () => {
     return Product.aggregate([
       { $sort: { sold: -1 } },
       { $limit: 20 },
@@ -256,9 +260,9 @@ const clearProductCache = async (slug = null) => {
     await invalidateCachePattern("products:list:*");
     await redisClient.del("products:best_seller");
     
-    // 2. Xóa cache chi tiết sản phẩm cụ thể nếu có truyền slug
+    // 2. Xóa cache chi tiết sản phẩm cụ thể nếu có truyền slug (chú ý sửa key có chữ 's' cho đồng bộ)
     if (slug) {
-      await redisClient.del(`product:detail:${slug}`);
+      await redisClient.del(`products:detail:${slug}`);
     }
   } catch (error) {
     logger.error("Failed to clear product cache:", { message: error.message });

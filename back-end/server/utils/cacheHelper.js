@@ -1,11 +1,3 @@
-/**
- * Tự động đọc cache hoặc query DB và lưu lại vào cache
- * @param {string} key - Key lưu trên Redis
- * @param {number} ttl - Thời gian sống của cache (giây)
- * @param {function} fetchFunction - Hàm truy vấn DB nếu cache miss
- */
-
-import { cache } from "react";
 import redisClient from "../configs/redisClient.js";
 import { logger } from "../logger/logger.js";
 
@@ -36,13 +28,23 @@ export const getOrSetCache = async (key, ttl, fetchFunction) => {
 };
 
 /**
- * Xóa danh sách cache theo Pattern (Wildcard)
- * Ví dụ: Xóa tất cả key chứa "product:detail:*"
+ * Xóa danh sách cache theo Pattern (Wildcard) sử dụng SCAN để tránh block Redis
+ * Ví dụ: Xóa tất cả key chứa "products:list:*"
  */
-export const invalidCachePattern = async (pattern) => {
+export const invalidateCachePattern = async (pattern) => {
     try {
-        
+        const keys = [];
+        for await (const key of redisClient.scanIterator({
+            MATCH: pattern,
+            COUNT: 100
+        })) {
+            keys.push(key);
+        }
+        if (keys.length > 0) {
+            await redisClient.del(keys);
+            logger.info(`Invalidated cache keys matching pattern: ${pattern}`, { count: keys.length });
+        }
     } catch (error) {
-        logger.error(`Error invalidation cache pattern ${pattern}: `, {message: error.message});
+        logger.error(`Error invalidating cache pattern ${pattern}: `, { message: error.message });
     }
 }

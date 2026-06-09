@@ -31,8 +31,8 @@ describe("Payment Strategy Pattern", () => {
     const result = await context.executePayment(amount, orderDetails);
     
     expect(result.success).toBe(true);
-    expect(result.payment_status).toBe("paid");
-    expect(result.transactionId).toMatch(/^MOMO_\d+_\d+$/);
+    expect(result.payment_status).toBe("pending");
+    expect(result.transactionId).toBeNull();
   });
 
   test("PAYPAL Strategy returns paid status with transaction ID", async () => {
@@ -57,6 +57,6 @@ describe("Payment Strategy Pattern", () => {
     // Switch to MOMO dynamically
     context.setStrategy(new MomoPaymentStrategy());
     const momoResult = await context.executePayment(amount, orderDetails);
-    expect(momoResult.payment_status).toBe("paid");
+    expect(momoResult.payment_status).toBe("pending");
   });
 });

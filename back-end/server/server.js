@@ -1,3 +1,4 @@
+import "./configs/env.js";
 import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
@@ -13,7 +14,7 @@ import {
   notFoundHandler,
   requestContextMiddleware,
 } from "./logger/middleware.js";
-import { initializeWorkers } from "./workers/index.js";
+import { initializeWorkers, closeWorkers } from "./workers/index.js";
 
 // Load environment variables from .env file
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -248,6 +249,47 @@ app.use(errorHandler);
 initializeWorkers();
 
 // Start the server
-app.listen(PORT, () => {
+const server = app.listen(PORT, () => {
   logger.info(`Server is running: http://localhost:${PORT}`);
 });
+
+const gracefulShutdown = async (signal) => {
+  logger.info(`Received ${signal}. Starting graceful shutdown...`);
+
+  // Dừng tiếp nhận request mới
+  server.close(async () => {
+    logger.info("HTTP server closed.");
+
+    try {
+      // Đóng BullMQ workers
+      await closeWorkers();
+      logger.info("BullMQ workers closed.");
+
+      // Đóng Redis client
+      if (redisClient && redisClient.isOpen) {
+        await redisClient.quit();
+        logger.info("Redis connection closed gracefully.");
+      }
+
+      // Đóng MongoDB connection
+      if (mongoose.connection && mongoose.connection.readyState === 1) {
+        await mongoose.connection.close();
+        logger.info("MongoDB connection closed.");
+      }
+
+      process.exit(0);
+    } catch (err) {
+      logger.error("Error during graceful shutdown:", { message: err.message, stack: err.stack });
+      process.exit(1);
+    }
+  });
+
+  // Khống chế thời gian tắt tối đa 15s để tránh stuck tiến trình
+  setTimeout(() => {
+    logger.warn("Graceful shutdown timeout. Forcing process exit.");
+    process.exit(1);
+  }, 15000);
+};
+
+process.on("SIGINT", () => gracefulShutdown("SIGINT"));
+process.on("SIGTERM", () => gracefulShutdown("SIGTERM"));

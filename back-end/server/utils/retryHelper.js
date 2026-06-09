@@ -1,3 +1,5 @@
+import { logger } from "../logger/logger.js";
+
 export const callWithRetry = async (fn, options = {}) => {
   const maxAttemps = options.maxAttemps || 3; // số lần thử lại, mặc định là 3 lần
   const delayMs = options.delayMs || 2000; // mặc định là 2000ms (2 giây)
