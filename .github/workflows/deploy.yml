@@ -29,8 +29,13 @@ jobs:
         cd back-end
         npm ci
 
-    # Bước này kích hoạt Render tự động kéo bản build mới về mà không bị nghẽn deploy
+    # Bước này kích hoạt Render tự động kéo bản build mới về nếu đã cấu hình Webhook
     - name: Trigger Render Deploy
       if: success()
       run: |
-        curl -X POST "${{ secrets.RENDER_DEPLOY_HOOK }}"
+        if [ -z "${{ secrets.RENDER_DEPLOY_HOOK }}" ]; then
+          echo "WARNING: RENDER_DEPLOY_HOOK secret is not configured on GitHub Repository. Skipping deployment trigger."
+        else
+          echo "Triggering deployment to Render..."
+          curl -f -X POST "${{ secrets.RENDER_DEPLOY_HOOK }}"
+        fi
