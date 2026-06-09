@@ -130,13 +130,17 @@ const OrderManagement = () => {
     let result = orders;
 
     if (searchTerm) {
+      const cleanSearch = searchTerm.trim().startsWith("#")
+        ? searchTerm.trim().substring(1)
+        : searchTerm.trim();
+
       result = result.filter(
         (order) =>
-          order._id.toLowerCase().includes(searchTerm.toLowerCase()) ||
+          order._id.toLowerCase().includes(cleanSearch.toLowerCase()) ||
           (order.user_id &&
             order.user_id.fullName
               .toLowerCase()
-              .includes(searchTerm.toLowerCase()))
+              .includes(cleanSearch.toLowerCase()))
       );
     }
 

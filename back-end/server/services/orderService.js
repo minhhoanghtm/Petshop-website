@@ -397,8 +397,12 @@ export const updateOrder = async (orderId, updateData = {}, currentUser = null) 
     await enqueueEventForProjection(event);
   }
 
+  const populatedOrder = await Order.findById(orderId)
+    .populate("user_id")
+    .populate("items.product_id");
+
   return {
-    ...currentOrder.toObject(),
+    ...(populatedOrder || currentOrder).toObject(),
     status: normalizedStatus,
     updatedAt: new Date(),
   };

@@ -1203,3 +1203,1150 @@
 2026-06-09T13:51:21.704Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 302.345 ms - - req=52636c71-907b-492f-a07f-d727918901cf {"service":"back-end"}
 2026-06-09T13:51:21.839Z [info] GET /api/orders/stats 304 432.282 ms - - req=4e5d9e6d-a9bf-4366-944e-ac7cb89f72e2 {"service":"back-end"}
 2026-06-09T13:51:21.984Z [info] GET /api/orders?limit=1000 200 576.607 ms - 2521658 req=f3ea3b9b-8a51-43de-995c-bb4d2929dfac {"service":"back-end"}
+2026-06-09T13:51:26.749Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 339.611 ms - - req=7f7445bc-f510-4f26-bb83-3f9c5d887ced {"service":"back-end"}
+2026-06-09T13:51:26.851Z [info] GET /api/orders/stats 304 435.837 ms - - req=8b5fcd5c-68b6-4784-9df1-764ad71870f2 {"service":"back-end"}
+2026-06-09T13:51:27.087Z [info] GET /api/orders?limit=1000 200 670.491 ms - 2521658 req=eed4d6ec-a8e3-4942-9fdd-2e2d9f4b400a {"service":"back-end"}
+2026-06-09T13:51:30.503Z [info] GET /api/categories 304 71.440 ms - - req=87fc009a-67f9-4595-a4dd-a8c2caf61b53 {"service":"back-end"}
+2026-06-09T13:51:30.719Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 304.761 ms - - req=d052a741-5bda-4c0f-9e46-ea99df0fde71 {"service":"back-end"}
+2026-06-09T13:51:30.795Z [info] GET /api/products 304 363.929 ms - - req=c8857e0c-e4bf-4b39-879e-154ad7de046c {"service":"back-end"}
+2026-06-09T13:51:31.086Z [info] GET /api/products 304 9.090 ms - - req=959d6752-f6c7-4c90-a83d-5edc2a14cd03 {"service":"back-end"}
+2026-06-09T13:51:31.566Z [info] GET /api/products 304 5.739 ms - - req=33ebf77e-d5c4-42fa-a0d8-ba30a5a23bb6 {"service":"back-end"}
+2026-06-09T13:51:32.552Z [info] GET /api/categories 304 64.793 ms - - req=7b4913a3-8a2b-44e2-8467-18c4bbcee7a7 {"service":"back-end"}
+2026-06-09T13:51:32.801Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 308.877 ms - - req=9dbb1f14-4564-40fb-bed0-68641ee8855d {"service":"back-end"}
+2026-06-09T13:51:32.966Z [info] GET /api/categories?page=1&limit=10&search=&type= 304 70.334 ms - - req=81521a1f-b0d8-4ca6-ac64-de47b3a0d712 {"service":"back-end"}
+2026-06-09T13:51:34.512Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 293.816 ms - - req=c66283d0-241f-428d-815f-4c1aebbc5546 {"service":"back-end"}
+2026-06-09T13:51:34.671Z [info] GET /api/orders/stats 304 446.197 ms - - req=85859b3f-7778-4a4d-afda-50c9430c6e1b {"service":"back-end"}
+2026-06-09T13:51:34.748Z [info] GET /api/orders?limit=1000 200 523.521 ms - 2521658 req=82f44bca-3988-4d65-b870-ef6aca2c2b18 {"service":"back-end"}
+2026-06-09T13:51:40.661Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 262.064 ms - - req=94c2574e-fa81-4101-80f3-81b1a57e2435 {"service":"back-end"}
+2026-06-09T13:51:40.811Z [info] GET /api/orders/stats 304 408.089 ms - - req=cf4bff92-8621-496b-b759-7c2f2ec50341 {"service":"back-end"}
+2026-06-09T13:51:41.007Z [info] GET /api/orders?limit=1000 200 603.933 ms - 2521658 req=a717a964-b5cd-4d98-aebe-b7338554f744 {"service":"back-end"}
+2026-06-09T13:51:43.925Z [info] GET /api/settings 200 218.422 ms - 177 req=cdc751a5-72cd-46df-ad42-8cd9683cdfcb {"service":"back-end"}
+2026-06-09T13:51:44.007Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 303.406 ms - - req=23366ca4-fcff-4453-8d74-b35bf69bc0ba {"service":"back-end"}
+2026-06-09T13:51:44.806Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 315.892 ms - - req=3dbf75f3-f0d1-481c-8963-ea18a0071f95 {"service":"back-end"}
+2026-06-09T13:51:44.941Z [info] GET /api/orders/stats 304 448.115 ms - - req=09fc2cc9-d8cb-4fa7-88ff-4ed3cebee6cf {"service":"back-end"}
+2026-06-09T13:51:45.035Z [info] GET /api/orders?limit=1000 200 542.188 ms - 2521658 req=6e3dee61-c7c9-4f3f-a277-76452b41c62a {"service":"back-end"}
+2026-06-09T13:51:46.019Z [info] GET /api/products 304 4.928 ms - - req=b531ede2-f70f-43c5-9c32-810652be5d8d {"service":"back-end"}
+2026-06-09T13:51:46.096Z [info] GET /api/categories 304 84.422 ms - - req=03e5e4f5-7573-49b7-8f2a-d8d58050be76 {"service":"back-end"}
+2026-06-09T13:51:46.330Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 320.497 ms - - req=36c2dcec-f9a5-4652-be2f-9cf897c88916 {"service":"back-end"}
+2026-06-09T13:51:46.509Z [info] GET /api/products 304 8.182 ms - - req=0b5f3ec7-de70-4744-93a4-6c3640867752 {"service":"back-end"}
+2026-06-09T13:51:46.675Z [info] GET /api/products 304 5.966 ms - - req=2bbb81ff-cbf3-463c-b4e0-c3905ea65a33 {"service":"back-end"}
+2026-06-09T13:51:46.810Z [info] GET /api/categories 304 71.085 ms - - req=d257972d-5be8-4687-925f-c20c0d47f2e6 {"service":"back-end"}
+2026-06-09T13:51:46.956Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 219.698 ms - - req=15dfbdc3-2645-4a62-b427-620741e6e653 {"service":"back-end"}
+2026-06-09T13:51:47.206Z [info] GET /api/categories?page=1&limit=10&search=&type= 304 67.526 ms - - req=f9819fd9-07ec-41b1-bd49-894f5a9433e9 {"service":"back-end"}
+2026-06-09T13:51:48.296Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 279.328 ms - - req=b00357e8-e13f-43f5-befc-8b83f29750f5 {"service":"back-end"}
+2026-06-09T13:51:48.433Z [info] GET /api/users/paginated?page=1&limit=5 304 396.228 ms - - req=da797469-0af0-4000-97ed-cf0d6bfab587 {"service":"back-end"}
+2026-06-09T13:51:49.045Z [info] GET /api/products 304 7.364 ms - - req=89c2842a-4084-4a67-a904-d429d7ed0c9c {"service":"back-end"}
+2026-06-09T13:51:49.236Z [info] GET /api/dashboard/revenue-by-category?timeFilter=7days 304 186.300 ms - - req=fa687dcb-f9b0-4f3f-a33f-b42e0ddc34eb {"service":"back-end"}
+2026-06-09T13:51:49.344Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 316.223 ms - - req=285510b2-2453-4b6f-baa1-ca68b183c9ab {"service":"back-end"}
+2026-06-09T13:51:49.379Z [info] GET /api/dashboard/notifications?timeFilter=7days 200 330.057 ms - 753 req=85035fc7-8490-4b74-8b41-76c150b18e8b {"service":"back-end"}
+2026-06-09T13:51:49.455Z [info] GET /api/dashboard/stats?timeFilter=7days 304 415.747 ms - - req=a0c9c16a-ec93-4dda-89ca-fa115f682668 {"service":"back-end"}
+2026-06-09T13:51:49.535Z [info] GET /api/users/paginated?page=1&limit=1 304 297.520 ms - - req=f22a56f9-08f3-4db6-9ff6-e570fdf2fe73 {"service":"back-end"}
+2026-06-09T13:51:49.678Z [info] GET /api/dashboard/revenue-by-day?timeFilter=7days 304 627.026 ms - - req=374a84bc-965e-4745-b739-70ca08f88cd6 {"service":"back-end"}
+2026-06-09T13:51:49.798Z [info] GET /api/dashboard/recent-orders?limit=5 304 750.827 ms - - req=7c35d2f8-cc54-4104-8f6a-d14c861609e1 {"service":"back-end"}
+2026-06-09T13:51:52.998Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 279.307 ms - - req=bc8a23bc-aaa6-4072-b228-af295a9534e5 {"service":"back-end"}
+2026-06-09T13:51:53.004Z [info] GET /api/dashboard/notifications?timeFilter=all 200 280.672 ms - 753 req=09a03151-d423-4c9a-96b6-d104f83c819c {"service":"back-end"}
+2026-06-09T13:51:53.012Z [info] GET /api/products 304 5.411 ms - - req=8231b1d0-3325-40ed-91c3-89df2d6acaf6 {"service":"back-end"}
+2026-06-09T13:51:53.016Z [info] GET /api/dashboard/revenue-by-day?timeFilter=all 304 290.951 ms - - req=616abfd4-3b28-434a-9dae-dcced215e527 {"service":"back-end"}
+2026-06-09T13:51:53.018Z [info] GET /api/dashboard/recent-orders?limit=5 304 305.246 ms - - req=8fcdbf2e-8d22-49e4-a936-45f6fb213dcb {"service":"back-end"}
+2026-06-09T13:51:53.159Z [info] GET /api/dashboard/stats?timeFilter=all 304 437.364 ms - - req=5db48cc6-499d-4486-8b23-fffa4dbbfb1b {"service":"back-end"}
+2026-06-09T13:51:53.160Z [info] GET /api/dashboard/revenue-by-category?timeFilter=all 304 161.044 ms - - req=dfbea1b4-e991-4083-a438-6089efe9eb29 {"service":"back-end"}
+2026-06-09T13:51:53.476Z [info] GET /api/users/paginated?page=1&limit=1 304 758.871 ms - - req=ef1130f0-2a30-4db9-b7b6-8b4d2d4457ae {"service":"back-end"}
+2026-06-09T13:52:02.061Z [info] GET /api/dashboard/revenue-by-day?timeFilter=7days 304 163.810 ms - - req=61fbd529-f9c8-4ce7-97f8-1f34f8fad160 {"service":"back-end"}
+2026-06-09T13:52:02.118Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 234.278 ms - - req=a22c4aad-1b02-4a01-83c3-de7b80b3aebc {"service":"back-end"}
+2026-06-09T13:52:02.122Z [info] GET /api/dashboard/revenue-by-category?timeFilter=7days 304 222.647 ms - - req=008f0c77-a34d-49b6-906b-585d59faf48c {"service":"back-end"}
+2026-06-09T13:52:02.126Z [info] GET /api/products 304 6.719 ms - - req=608b7794-2068-4a88-96f9-476082855d3f {"service":"back-end"}
+2026-06-09T13:52:02.179Z [info] GET /api/dashboard/recent-orders?limit=5 304 287.777 ms - - req=48604659-dc33-4fc2-90ab-c379644bb174 {"service":"back-end"}
+2026-06-09T13:52:02.216Z [info] GET /api/dashboard/stats?timeFilter=7days 304 327.657 ms - - req=846083cf-28e1-46c5-b046-70c7571f7706 {"service":"back-end"}
+2026-06-09T13:52:02.229Z [info] GET /api/dashboard/notifications?timeFilter=7days 200 334.819 ms - 753 req=4bf413b2-f435-4390-a301-01d8ea4e0f3f {"service":"back-end"}
+2026-06-09T13:52:02.333Z [info] GET /api/users/paginated?page=1&limit=1 304 271.109 ms - - req=59524741-e34a-405c-8217-44fc073476d9 {"service":"back-end"}
+2026-06-09T13:52:04.973Z [info] GET /api/products 304 8.356 ms - - req=ce6f58fb-4f37-47ae-82ae-f2fd0563710a {"service":"back-end"}
+2026-06-09T13:52:05.168Z [info] GET /api/dashboard/recent-orders?limit=5 304 209.555 ms - - req=11162ecb-d2e5-45e7-9773-6b4d73a6f2e7 {"service":"back-end"}
+2026-06-09T13:52:05.189Z [info] GET /api/dashboard/revenue-by-category?timeFilter=all 304 214.864 ms - - req=52d6450a-6c0e-4a7c-867f-e3361424473f {"service":"back-end"}
+2026-06-09T13:52:05.212Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 255.712 ms - - req=16aba44f-ec7d-47ee-abd1-b09da3a2201b {"service":"back-end"}
+2026-06-09T13:52:05.273Z [info] GET /api/users/paginated?page=1&limit=1 304 311.728 ms - - req=3fea188c-eded-4115-ae52-f0bc89fa8bf1 {"service":"back-end"}
+2026-06-09T13:52:05.306Z [info] GET /api/dashboard/notifications?timeFilter=all 200 339.888 ms - 753 req=a49cc816-d4c6-46b6-91ac-0cd2003c5007 {"service":"back-end"}
+2026-06-09T13:52:05.376Z [info] GET /api/dashboard/stats?timeFilter=all 304 411.127 ms - - req=7c82e9d7-b77a-447b-8c22-f56ef2ba71e7 {"service":"back-end"}
+2026-06-09T13:52:05.381Z [info] GET /api/dashboard/revenue-by-day?timeFilter=all 304 209.027 ms - - req=9ba9c75d-bfbc-417e-8c39-3c75540207c5 {"service":"back-end"}
+2026-06-09T13:52:20.270Z [info] GET /api/dashboard/revenue-by-category?timeFilter=year 304 151.256 ms - - req=e657c48c-1822-454d-bafc-785aaecf61b8 {"service":"back-end"}
+2026-06-09T13:52:20.277Z [info] GET /api/products 304 5.464 ms - - req=661f4c17-966f-4462-9b8c-3911a41590ba {"service":"back-end"}
+2026-06-09T13:52:20.295Z [info] GET /api/dashboard/revenue-by-day?timeFilter=year 304 172.765 ms - - req=62598a7e-5889-478f-863e-21b9938bb9b1 {"service":"back-end"}
+2026-06-09T13:52:20.312Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 209.573 ms - - req=a6d1ed8f-06b6-4294-8460-a834b56a3bd7 {"service":"back-end"}
+2026-06-09T13:52:20.406Z [info] GET /api/dashboard/recent-orders?limit=5 304 291.816 ms - - req=5951aff5-dc2a-4342-a4f7-b6de327d979f {"service":"back-end"}
+2026-06-09T13:52:20.479Z [info] GET /api/dashboard/notifications?timeFilter=year 200 362.597 ms - 753 req=4b2468c7-66ac-4879-be21-18a4f75700d7 {"service":"back-end"}
+2026-06-09T13:52:20.519Z [info] GET /api/dashboard/stats?timeFilter=year 304 413.086 ms - - req=72e81c1c-5fea-489f-9d3e-40c3cb1a4732 {"service":"back-end"}
+2026-06-09T13:52:20.555Z [info] GET /api/users/paginated?page=1&limit=1 304 276.905 ms - - req=baa8b79f-7bf7-4fc9-80dd-f494d0adef93 {"service":"back-end"}
+2026-06-09T13:52:22.237Z [info] GET /api/products 304 15.131 ms - - req=6a4c7932-2fbe-4541-b515-d1688bee625b {"service":"back-end"}
+2026-06-09T13:52:22.393Z [info] GET /api/dashboard/revenue-by-day?timeFilter=90days 304 155.394 ms - - req=7c26c6de-3b7e-400a-9bc3-cd0f660b3154 {"service":"back-end"}
+2026-06-09T13:52:22.495Z [info] GET /api/dashboard/revenue-by-category?timeFilter=90days 304 100.570 ms - - req=f00e2db4-a92b-4b69-a6a8-05d0397aceec {"service":"back-end"}
+2026-06-09T13:52:22.499Z [info] GET /api/dashboard/notifications?timeFilter=90days 200 271.236 ms - 753 req=364b96f0-52d7-4ee6-833e-c9cb426df705 {"service":"back-end"}
+2026-06-09T13:52:22.503Z [info] GET /api/dashboard/recent-orders?limit=5 304 284.639 ms - - req=25e8466e-a8ac-4768-b808-a61b951ef464 {"service":"back-end"}
+2026-06-09T13:52:22.524Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 309.529 ms - - req=238ad223-6775-471f-bbe9-fff7e6abbf72 {"service":"back-end"}
+2026-06-09T13:52:22.545Z [info] GET /api/users/paginated?page=1&limit=1 304 322.783 ms - - req=c1109322-5689-495a-99f4-52b7fa858e26 {"service":"back-end"}
+2026-06-09T13:52:22.640Z [info] GET /api/dashboard/stats?timeFilter=90days 304 414.377 ms - - req=848f30c7-d00e-4756-84d2-5dbf13fa155d {"service":"back-end"}
+2026-06-09T13:52:23.632Z [info] GET /api/products 304 9.110 ms - - req=6975f3ec-2c88-44cb-b61f-f76d21c58941 {"service":"back-end"}
+2026-06-09T13:52:23.856Z [info] GET /api/dashboard/revenue-by-day?timeFilter=7days 304 222.622 ms - - req=08ebd6b1-1743-4c8f-baa2-475b1876136e {"service":"back-end"}
+2026-06-09T13:52:23.908Z [info] GET /api/dashboard/recent-orders?limit=5 304 290.602 ms - - req=addf3600-53c3-4f97-9a9d-a6e04904684c {"service":"back-end"}
+2026-06-09T13:52:23.934Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 318.989 ms - - req=cbe8a050-f898-4653-ba9d-ae78735fec03 {"service":"back-end"}
+2026-06-09T13:52:23.949Z [info] GET /api/users/paginated?page=1&limit=1 304 328.858 ms - - req=b91c3d68-070c-4265-a6b5-8546daf40443 {"service":"back-end"}
+2026-06-09T13:52:23.951Z [info] GET /api/dashboard/stats?timeFilter=7days 304 331.912 ms - - req=f2ae4aea-c53b-4ee6-86c7-be71ded2dc31 {"service":"back-end"}
+2026-06-09T13:52:23.998Z [info] GET /api/dashboard/revenue-by-category?timeFilter=7days 304 141.400 ms - - req=1b862647-f2df-4e0d-aee5-ae3f28792d10 {"service":"back-end"}
+2026-06-09T13:52:24.006Z [info] GET /api/dashboard/notifications?timeFilter=7days 200 382.884 ms - 753 req=58f4c3aa-2e3e-4706-8512-5819dc943dbd {"service":"back-end"}
+2026-06-09T13:53:25.452Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 294.430 ms - - req=3051e83a-5532-4ae1-83d8-62c90777b79f {"service":"back-end"}
+2026-06-09T13:53:25.472Z [info] GET /api/orders/stats 304 310.355 ms - - req=5804aa8c-bca3-40dd-9f64-b2506d665732 {"service":"back-end"}
+2026-06-09T13:53:25.692Z [info] GET /api/orders?limit=1000 200 530.036 ms - 2521658 req=920d26a9-ade1-4473-9d88-909a1cfdfe36 {"service":"back-end"}
+2026-06-09T13:53:28.987Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 274.555 ms - - req=c2404733-32ff-4dce-8136-c9c316c812be {"service":"back-end"}
+2026-06-09T13:53:29.050Z [info] GET /api/users/paginated?page=1&limit=5 304 333.051 ms - - req=daac73b6-b7ee-40cf-afaf-47b4d941cc32 {"service":"back-end"}
+2026-06-09T13:53:29.452Z [info] GET /api/dashboard/revenue-by-day?timeFilter=7days 304 156.285 ms - - req=3070f26d-a31e-4273-bbc4-4f65b1b8c00d {"service":"back-end"}
+2026-06-09T13:53:29.462Z [info] GET /api/products 304 6.834 ms - - req=6338e573-205c-4116-af32-c116d1af69c6 {"service":"back-end"}
+2026-06-09T13:53:29.497Z [info] GET /api/dashboard/recent-orders?limit=5 304 204.568 ms - - req=26c7e0c8-d779-429c-b8cc-25494f1ee3e5 {"service":"back-end"}
+2026-06-09T13:53:29.569Z [info] GET /api/dashboard/notifications?timeFilter=7days 200 274.148 ms - 753 req=b1a216ea-e3fb-4f14-a49d-e655ce860040 {"service":"back-end"}
+2026-06-09T13:53:29.570Z [info] GET /api/dashboard/revenue-by-category?timeFilter=7days 304 105.281 ms - - req=609ce698-3523-4d26-b2c9-f0d417d6c147 {"service":"back-end"}
+2026-06-09T13:53:29.572Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 291.420 ms - - req=7ffa48e0-aa7a-4327-9bab-f442f692e66e {"service":"back-end"}
+2026-06-09T13:53:29.606Z [info] GET /api/dashboard/stats?timeFilter=7days 304 316.288 ms - - req=cba46b54-cb88-4114-b3c5-055d4b6e9144 {"service":"back-end"}
+2026-06-09T13:53:29.618Z [info] GET /api/users/paginated?page=1&limit=1 304 320.415 ms - - req=575791a3-be0e-4ea6-a6dd-d2dc89bb1eab {"service":"back-end"}
+2026-06-09T13:54:02.212Z [info] GET /api/dashboard/revenue-by-category?timeFilter=7days 304 157.401 ms - - req=9a275adb-0362-4766-878b-6bf875458c0e {"service":"back-end"}
+2026-06-09T13:54:02.311Z [info] GET /api/dashboard/recent-orders?limit=5 304 260.754 ms - - req=f5e83a6f-41bb-40b7-b56c-0a63bd3259f0 {"service":"back-end"}
+2026-06-09T13:54:02.314Z [info] GET /api/dashboard/notifications?timeFilter=7days 200 261.767 ms - 753 req=6b05fb12-83da-498c-bf49-f6c372dc3193 {"service":"back-end"}
+2026-06-09T13:54:02.318Z [info] GET /api/dashboard/revenue-by-day?timeFilter=7days 304 105.191 ms - - req=9d074e41-985b-47e0-bbe4-7b32ef01bbc5 {"service":"back-end"}
+2026-06-09T13:54:02.323Z [info] GET /api/products 304 7.871 ms - - req=a1c7cc73-c127-4031-aab9-94311ceee70e {"service":"back-end"}
+2026-06-09T13:54:02.326Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 281.525 ms - - req=a2e6a39e-d77d-4427-9f85-244479f456d7 {"service":"back-end"}
+2026-06-09T13:54:02.366Z [info] GET /api/dashboard/stats?timeFilter=7days 304 318.557 ms - - req=80e358d2-e5da-4887-a7e5-ba5c8c5d4322 {"service":"back-end"}
+2026-06-09T13:54:02.489Z [info] GET /api/users/paginated?page=1&limit=1 304 436.245 ms - - req=4ec75275-6857-475b-92e4-3483f4324633 {"service":"back-end"}
+2026-06-09T13:54:17.121Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 308.161 ms - - req=dc3840eb-9689-4fe0-969c-57312fb6a8be {"service":"back-end"}
+2026-06-09T13:54:17.138Z [info] GET /api/orders/stats 304 318.445 ms - - req=98df412e-42f3-411f-8f6b-47209a94cd2a {"service":"back-end"}
+2026-06-09T13:54:17.431Z [info] GET /api/orders?limit=1000 200 612.641 ms - 2521658 req=db7fe2a4-9189-4720-839d-77e512c05374 {"service":"back-end"}
+2026-06-09T13:54:24.519Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 283.678 ms - - req=ac26c931-f263-4499-92d5-5688bedd6136 {"service":"back-end"}
+2026-06-09T13:54:24.580Z [info] GET /api/users/paginated?page=1&limit=5 304 341.321 ms - - req=cdb93013-a55c-4e91-84bf-7993caf8fbc1 {"service":"back-end"}
+2026-06-09T13:54:26.629Z [info] GET /api/dashboard/revenue-by-day?timeFilter=7days 304 147.799 ms - - req=a120137e-e26d-4950-86d1-01d1a54205f2 {"service":"back-end"}
+2026-06-09T13:54:26.680Z [info] GET /api/dashboard/recent-orders?limit=5 304 203.653 ms - - req=a4cfae14-bdb5-4511-96c0-03418f767b37 {"service":"back-end"}
+2026-06-09T13:54:26.689Z [info] GET /api/products 304 5.595 ms - - req=6c484532-d341-4039-b4d8-218270ef05c7 {"service":"back-end"}
+2026-06-09T13:54:26.694Z [info] GET /api/dashboard/revenue-by-category?timeFilter=7days 304 211.260 ms - - req=3d63466d-4f04-49d3-8f20-00baef21c542 {"service":"back-end"}
+2026-06-09T13:54:26.771Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 308.705 ms - - req=178e3d71-aa3e-494c-bac3-cc3c7d3e6fed {"service":"back-end"}
+2026-06-09T13:54:26.781Z [info] GET /api/dashboard/stats?timeFilter=7days 304 308.249 ms - - req=f0bb1cc4-4f5f-499d-bdb6-3e7e60dda77e {"service":"back-end"}
+2026-06-09T13:54:26.828Z [info] GET /api/dashboard/notifications?timeFilter=7days 200 348.715 ms - 753 req=516f9e26-8e9d-4eb5-8242-fc3a38632888 {"service":"back-end"}
+2026-06-09T13:54:26.897Z [info] GET /api/users/paginated?page=1&limit=1 304 266.233 ms - - req=85ba416b-7772-4ebc-ae52-2b70a224f409 {"service":"back-end"}
+2026-06-09T13:54:31.069Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 285.950 ms - - req=f1004b94-1692-4b4f-b8b3-b7c09704ac69 {"service":"back-end"}
+2026-06-09T13:54:31.079Z [info] GET /api/orders/stats 304 294.302 ms - - req=c26568af-2484-4c82-9c49-74507e791155 {"service":"back-end"}
+2026-06-09T13:54:31.332Z [info] GET /api/orders?limit=1000 200 545.061 ms - 2521658 req=35a48fa1-1c47-4f3b-8f93-e46fcf95dc01 {"service":"back-end"}
+2026-06-09T13:54:35.127Z [info] GET /api/dashboard/recent-orders?limit=5 304 200.472 ms - - req=bc3cefce-f1b0-4811-8d7b-9ffed03f4f9b {"service":"back-end"}
+2026-06-09T13:54:35.131Z [info] GET /api/dashboard/revenue-by-day?timeFilter=7days 304 200.384 ms - - req=f8b77a51-340a-495c-bc2e-3900319c3377 {"service":"back-end"}
+2026-06-09T13:54:35.139Z [info] GET /api/products 304 7.798 ms - - req=7a374556-bc64-498d-80ac-d7e34e00ecb7 {"service":"back-end"}
+2026-06-09T13:54:35.217Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 303.340 ms - - req=2e43eb10-9ff4-4ffb-9ab5-0042fd45c0d7 {"service":"back-end"}
+2026-06-09T13:54:35.228Z [info] GET /api/dashboard/stats?timeFilter=7days 304 304.481 ms - - req=03c26dfe-bf83-4c02-8c69-8fb177506eb7 {"service":"back-end"}
+2026-06-09T13:54:35.247Z [info] GET /api/users/paginated?page=1&limit=1 304 315.247 ms - - req=74a61bce-e83e-4d5f-b7ce-9950c51cbf19 {"service":"back-end"}
+2026-06-09T13:54:35.277Z [info] GET /api/dashboard/revenue-by-category?timeFilter=7days 304 148.102 ms - - req=1a292706-6edb-44ca-88b1-2929c8f85aa4 {"service":"back-end"}
+2026-06-09T13:54:35.283Z [info] GET /api/dashboard/notifications?timeFilter=7days 200 354.736 ms - 753 req=fc4b337f-08c6-4115-9870-a5679f024316 {"service":"back-end"}
+2026-06-09T13:54:35.489Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 231.390 ms - - req=a4e87eb3-0fd1-4d06-83ea-47985d45fa50 {"service":"back-end"}
+2026-06-09T13:54:35.587Z [info] GET /api/users/paginated?page=1&limit=5 304 322.414 ms - - req=8f1f632b-af27-4c15-b7ad-d8688a64832c {"service":"back-end"}
+2026-06-09T13:54:36.892Z [info] GET /api/dashboard/revenue-by-day?timeFilter=7days 304 163.690 ms - - req=3705b4b6-dfe3-483f-a47f-56bbfb298a4a {"service":"back-end"}
+2026-06-09T13:54:36.901Z [info] GET /api/dashboard/revenue-by-category?timeFilter=7days 304 170.930 ms - - req=2096d044-0f93-4321-ab13-898c940603e2 {"service":"back-end"}
+2026-06-09T13:54:36.908Z [info] GET /api/products 304 6.034 ms - - req=716d300b-f282-483a-a0e0-19d62f12ae6b {"service":"back-end"}
+2026-06-09T13:54:36.972Z [info] GET /api/dashboard/recent-orders?limit=5 304 247.163 ms - - req=44950736-9021-4cec-ac64-547f5ae2ccb6 {"service":"back-end"}
+2026-06-09T13:54:36.994Z [info] GET /api/dashboard/notifications?timeFilter=7days 200 266.532 ms - 753 req=221aa95f-68b9-4ebb-8541-c955856e1335 {"service":"back-end"}
+2026-06-09T13:54:37.016Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 291.927 ms - - req=f965fb11-a120-438b-9a47-86e050ff5ebd {"service":"back-end"}
+2026-06-09T13:54:37.149Z [info] GET /api/dashboard/stats?timeFilter=7days 304 429.611 ms - - req=bae59948-d960-4901-92a8-ff8c39d2db2c {"service":"back-end"}
+2026-06-09T13:54:37.168Z [info] GET /api/users/paginated?page=1&limit=1 304 275.453 ms - - req=fb4db352-eb29-4a42-927b-2fbb6036ec5c {"service":"back-end"}
+2026-06-09T13:55:33.340Z [info] GET /api/dashboard/revenue-by-category?timeFilter=7days 304 163.976 ms - - req=27a596e1-99ef-4922-bda3-427e92eecf90 {"service":"back-end"}
+2026-06-09T13:55:33.398Z [info] GET /api/dashboard/recent-orders?limit=5 304 226.574 ms - - req=8b882537-bb55-4964-aaaa-aab7ecddad77 {"service":"back-end"}
+2026-06-09T13:55:33.400Z [info] GET /api/dashboard/revenue-by-day?timeFilter=7days 304 225.070 ms - - req=59f72781-e4a5-402c-8cf1-0fb1d6c5f10f {"service":"back-end"}
+2026-06-09T13:55:33.409Z [info] GET /api/products 304 4.548 ms - - req=aa9a0761-a994-4cd4-8a45-a833700999d6 {"service":"back-end"}
+2026-06-09T13:55:33.453Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 285.716 ms - - req=c6c8ced4-5421-4e73-b078-b958a84e419b {"service":"back-end"}
+2026-06-09T13:55:33.505Z [info] GET /api/dashboard/stats?timeFilter=7days 304 336.351 ms - - req=c32c9d1d-7721-4465-810d-28e8ed1fef39 {"service":"back-end"}
+2026-06-09T13:55:33.543Z [info] GET /api/dashboard/notifications?timeFilter=7days 200 369.427 ms - 753 req=6f11c75f-88c7-497a-ad1f-1ee6a4a6e376 {"service":"back-end"}
+2026-06-09T13:55:33.645Z [info] GET /api/users/paginated?page=1&limit=1 304 302.055 ms - - req=02d59bd0-849a-482b-b799-c6da72d71478 {"service":"back-end"}
+2026-06-09T13:57:09.733Z [info] GET /api/categories 304 54.217 ms - - req=1a992e5d-882b-4f6b-84a2-c98e0e65df3e {"service":"back-end"}
+2026-06-09T13:57:09.945Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 269.556 ms - - req=66fd8d8e-06f4-4b35-bdd8-b5b41cfc6e0e {"service":"back-end"}
+2026-06-09T13:57:09.960Z [info] GET /api/products 304 282.348 ms - - req=3df58a7e-0f4d-4853-921c-c1279da0a2d0 {"service":"back-end"}
+2026-06-09T13:57:10.361Z [info] GET /api/products 304 6.467 ms - - req=60fdfa15-2eea-4554-a8fe-a6d64530f6dd {"service":"back-end"}
+2026-06-09T13:57:10.577Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 205.585 ms - - req=c8512c21-95ca-4158-a87f-86883050e75d {"service":"back-end"}
+2026-06-09T13:57:10.724Z [info] GET /api/orders/stats 304 341.419 ms - - req=9df1a7c1-de6d-4146-950f-b7085fc0b5be {"service":"back-end"}
+2026-06-09T13:57:10.798Z [info] GET /api/orders?limit=1000 200 414.032 ms - 2521658 req=2367c568-af43-495f-93c2-2ffce11f085c {"service":"back-end"}
+2026-06-09T13:58:31.362Z [info] GET /api/dashboard/revenue-by-category?timeFilter=7days 304 171.931 ms - - req=1c1e22c8-9fa3-4d08-82d7-e44fc696e46c {"service":"back-end"}
+2026-06-09T13:58:31.410Z [info] GET /api/dashboard/recent-orders?limit=5 304 226.897 ms - - req=67ed9fea-16bc-4de7-a894-88014ef7988f {"service":"back-end"}
+2026-06-09T13:58:31.413Z [info] GET /api/dashboard/revenue-by-day?timeFilter=7days 304 226.592 ms - - req=f3cac8b8-f927-45d7-9cbe-4d1450676551 {"service":"back-end"}
+2026-06-09T13:58:31.422Z [info] GET /api/products 304 10.082 ms - - req=72b80d4d-a9b0-42fb-9d0f-356b7b3d1ee0 {"service":"back-end"}
+2026-06-09T13:58:31.479Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 304.153 ms - - req=d4d11481-5384-49c4-9ecc-d01d22b9c278 {"service":"back-end"}
+2026-06-09T13:58:31.511Z [info] GET /api/dashboard/stats?timeFilter=7days 304 330.098 ms - - req=a39da09a-ce0e-4b45-8159-c26ad1d836ea {"service":"back-end"}
+2026-06-09T13:58:31.549Z [info] GET /api/dashboard/notifications?timeFilter=7days 200 364.892 ms - 753 req=57f2f5d4-91f1-49a4-9ebd-6ed3d2fcb5f6 {"service":"back-end"}
+2026-06-09T13:58:31.644Z [info] GET /api/users/paginated?page=1&limit=1 304 281.205 ms - - req=dd8fb3f6-31c5-4408-921e-83150964b6ef {"service":"back-end"}
+2026-06-09T13:58:37.753Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 299.502 ms - - req=7e24da10-c913-4e76-a572-17f4ed6c1e0e {"service":"back-end"}
+2026-06-09T13:58:37.806Z [info] GET /api/orders/stats 304 350.610 ms - - req=3230ecea-1eff-45d4-93f8-88cffe4941f1 {"service":"back-end"}
+2026-06-09T13:58:37.989Z [info] GET /api/orders?limit=1000 200 532.108 ms - 2521658 req=26a311d3-75fb-4e71-8752-6aeb7409d0cc {"service":"back-end"}
+2026-06-09T13:59:12.232Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 273.708 ms - - req=604d3d0e-372d-4366-b9fc-bcede9777ead {"service":"back-end"}
+2026-06-09T13:59:12.339Z [info] GET /api/orders/stats 304 379.657 ms - - req=eb71416d-4926-4ab8-ba31-c3f281af3802 {"service":"back-end"}
+2026-06-09T13:59:12.547Z [info] GET /api/orders?limit=1000 200 588.360 ms - 2521658 req=c8405cfb-c389-40bf-a975-4cbb7f12a4f0 {"service":"back-end"}
+2026-06-09T13:59:39.790Z [info] GET /api/dashboard/revenue-by-category?timeFilter=7days 304 156.513 ms - - req=f3a63579-edf4-464f-88f6-9efc737b880a {"service":"back-end"}
+2026-06-09T13:59:39.843Z [info] GET /api/dashboard/revenue-by-day?timeFilter=7days 304 216.282 ms - - req=7685b6a9-6434-49cd-b839-f1e71a0fbdb7 {"service":"back-end"}
+2026-06-09T13:59:39.850Z [info] GET /api/products 304 5.833 ms - - req=54b07165-c42e-471b-80ca-edbec9a8dc4d {"service":"back-end"}
+2026-06-09T13:59:39.864Z [info] GET /api/dashboard/recent-orders?limit=5 304 246.473 ms - - req=d33aca77-8091-4860-ba3c-22c43a9e1df0 {"service":"back-end"}
+2026-06-09T13:59:39.909Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 293.649 ms - - req=4bcfcd81-5fc7-4542-9363-26a45f5a570e {"service":"back-end"}
+2026-06-09T13:59:39.926Z [info] GET /api/dashboard/stats?timeFilter=7days 304 306.110 ms - - req=3d54022f-26af-4143-8db1-c441aed45209 {"service":"back-end"}
+2026-06-09T13:59:39.980Z [info] GET /api/dashboard/notifications?timeFilter=7days 200 358.256 ms - 753 req=e8d8d276-329a-42d0-b3cc-606a3f97b51b {"service":"back-end"}
+2026-06-09T13:59:40.055Z [info] GET /api/users/paginated?page=1&limit=1 304 263.453 ms - - req=c055acdb-6e2e-419a-8af0-95317c56f1b4 {"service":"back-end"}
+2026-06-09T13:59:43.310Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 285.231 ms - - req=4a3918db-e065-4569-9158-f713fc37ce7e {"service":"back-end"}
+2026-06-09T13:59:43.342Z [info] GET /api/orders/stats 304 309.164 ms - - req=17a64e46-0fb2-41c5-bd95-aa0d036b53d3 {"service":"back-end"}
+2026-06-09T13:59:43.554Z [info] GET /api/orders?limit=1000 200 520.201 ms - 2521658 req=11920536-0cae-4261-ab41-74fe549088fe {"service":"back-end"}
+2026-06-09T13:59:50.961Z [info] PUT /api/orders/6a245204fabfe4f1da5241c5 200 481.224 ms - 616 req=e7973c85-f67c-48e9-acea-c06f8b950987 {"service":"back-end"}
+2026-06-09T13:59:51.108Z [info] [ProjectionWorker] Processing event OrderDelivered (Seq: 1) for Aggregate: 6a245204fabfe4f1da5241c5 {"service":"back-end"}
+2026-06-09T13:59:51.188Z [warn] OrderPlaced event not found for order 6a245204fabfe4f1da5241c5 {"service":"back-end"}
+2026-06-09T13:59:52.491Z [info] GET /api/dashboard/revenue-by-day?timeFilter=7days 304 152.258 ms - - req=ae0199b7-479f-422b-851d-f57eeb3f20ba {"service":"back-end"}
+2026-06-09T13:59:52.495Z [info] GET /api/dashboard/revenue-by-category?timeFilter=7days 304 155.272 ms - - req=bd99e202-c64f-459d-8eeb-dc000969fa12 {"service":"back-end"}
+2026-06-09T13:59:52.502Z [info] GET /api/products 304 5.805 ms - - req=c13b465a-0402-462f-97b9-824c45a960f0 {"service":"back-end"}
+2026-06-09T13:59:52.594Z [info] GET /api/dashboard/notifications?timeFilter=7days 200 258.196 ms - 753 req=84a390bf-5ca8-4c6e-96ab-b822e99eaff9 {"service":"back-end"}
+2026-06-09T13:59:52.608Z [info] GET /api/dashboard/recent-orders?limit=5 304 270.716 ms - - req=36983000-80aa-42d3-aee7-1c62d1377f57 {"service":"back-end"}
+2026-06-09T13:59:52.612Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 281.546 ms - - req=fd275359-c497-45e3-a1f8-3c286045be01 {"service":"back-end"}
+2026-06-09T13:59:52.647Z [info] GET /api/dashboard/stats?timeFilter=7days 304 313.782 ms - - req=25736abd-f7f8-4bc5-9d97-8b00db656f40 {"service":"back-end"}
+2026-06-09T13:59:52.776Z [info] GET /api/users/paginated?page=1&limit=1 304 283.466 ms - - req=17204f25-9e24-4aa0-ae8e-70ff08f99505 {"service":"back-end"}
+2026-06-09T13:59:56.142Z [info] GET /api/dashboard/revenue-by-category?timeFilter=7days 304 160.532 ms - - req=376a07d9-31b2-4c75-846b-639da58c5165 {"service":"back-end"}
+2026-06-09T13:59:56.144Z [info] GET /api/dashboard/revenue-by-day?timeFilter=7days 304 159.575 ms - - req=cf896c72-ca5a-405e-92bd-50c2317e3a0d {"service":"back-end"}
+2026-06-09T13:59:56.154Z [info] GET /api/products 304 6.751 ms - - req=d6e1e4b8-8e90-4c5d-971f-b365f0c7990c {"service":"back-end"}
+2026-06-09T13:59:56.205Z [info] GET /api/dashboard/recent-orders?limit=5 304 228.478 ms - - req=b2ae6ebf-98ef-47ae-bf37-eadcdf80465a {"service":"back-end"}
+2026-06-09T13:59:56.241Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 268.728 ms - - req=20ede8c0-6e96-4797-9763-f303d2ab1a98 {"service":"back-end"}
+2026-06-09T13:59:56.245Z [info] GET /api/products/product/sales 304 2.645 ms - - req=bccf2b19-2a3d-4e02-9860-8ac3cdb6ef37 {"service":"back-end"}
+2026-06-09T13:59:56.253Z [info] GET /api/products 304 7.279 ms - - req=eec90a25-183a-4248-86c6-b170fd5fbfcf {"service":"back-end"}
+2026-06-09T13:59:56.285Z [info] GET /api/dashboard/stats?timeFilter=7days 304 310.607 ms - - req=7481760e-b2d8-40ed-8f00-c742110af4e6 {"service":"back-end"}
+2026-06-09T13:59:56.321Z [info] GET /api/categories/shop-cho-cun 304 165.464 ms - - req=9e22d864-c238-41d8-ac1f-701eda0a01fd {"service":"back-end"}
+2026-06-09T13:59:56.323Z [info] GET /api/dashboard/notifications?timeFilter=7days 200 343.714 ms - 753 req=148a5954-c5b7-4676-8899-2e49d4dd7c66 {"service":"back-end"}
+2026-06-09T13:59:56.412Z [info] GET /api/users/paginated?page=1&limit=1 304 266.913 ms - - req=010f4f48-0e5a-41c8-9754-7d47109066f8 {"service":"back-end"}
+2026-06-09T13:59:56.583Z [info] GET /api/categories/shop-cho-meo 304 374.254 ms - - req=1a636054-9c4f-4a20-b8e2-73e52d603b3c {"service":"back-end"}
+2026-06-09T13:59:56.878Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 222.549 ms - - req=f0c883a4-3616-4344-8143-f93cb6d9dafa {"service":"back-end"}
+2026-06-09T13:59:57.063Z [info] GET /api/users/paginated?page=1&limit=5 304 403.354 ms - - req=61a26b1e-0f49-42a3-a1d9-0b65300a71ca {"service":"back-end"}
+2026-06-09T13:59:57.686Z [info] GET /api/dashboard/revenue-by-day?timeFilter=7days 304 152.511 ms - - req=58598c91-d30e-4c67-82b8-dddafaa4f686 {"service":"back-end"}
+2026-06-09T13:59:57.738Z [info] GET /api/dashboard/recent-orders?limit=5 304 208.291 ms - - req=9a0f77fd-4e09-4b5d-8a07-e476a435b92f {"service":"back-end"}
+2026-06-09T13:59:57.741Z [info] GET /api/dashboard/revenue-by-category?timeFilter=7days 304 207.081 ms - - req=1c08742d-52a4-4823-a6ac-b020f22b3b7f {"service":"back-end"}
+2026-06-09T13:59:57.748Z [info] GET /api/products 304 5.379 ms - - req=04be880c-cc07-4fbc-81b8-cc7a70a5c907 {"service":"back-end"}
+2026-06-09T13:59:57.750Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 229.099 ms - - req=5de29d54-fdbc-40c8-95e8-ea30f72f703e {"service":"back-end"}
+2026-06-09T13:59:57.781Z [info] GET /api/dashboard/notifications?timeFilter=7days 200 249.035 ms - 753 req=0aafc625-19a3-4fcc-815b-e9297ab06aa7 {"service":"back-end"}
+2026-06-09T13:59:57.863Z [info] GET /api/dashboard/stats?timeFilter=7days 304 340.289 ms - - req=23b76710-daf9-4f1d-ac31-bb1ef89da693 {"service":"back-end"}
+2026-06-09T13:59:57.957Z [info] GET /api/users/paginated?page=1&limit=1 304 270.063 ms - - req=30e788aa-7e07-4abd-a956-e88fb0c5de45 {"service":"back-end"}
+2026-06-09T14:00:03.066Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 296.621 ms - - req=6b4ce436-7368-4a7a-bf88-5327aa1f7616 {"service":"back-end"}
+2026-06-09T14:00:03.093Z [info] GET /api/orders/stats 304 320.433 ms - - req=8746c4fb-4ce9-4383-9bb8-0e3e3ad37ebf {"service":"back-end"}
+2026-06-09T14:00:03.327Z [info] GET /api/orders?limit=1000 200 553.689 ms - 2521658 req=72bb3725-e60b-43ba-bca3-1476b0c70403 {"service":"back-end"}
+2026-06-09T14:00:13.470Z [info] PUT /api/orders/6a245204fabfe4f1da5241c5 200 455.639 ms - 616 req=5b03e224-f638-4b7b-a620-627d816f633d {"service":"back-end"}
+2026-06-09T14:00:13.618Z [info] [ProjectionWorker] Processing event OrderDelivered (Seq: 2) for Aggregate: 6a245204fabfe4f1da5241c5 {"service":"back-end"}
+2026-06-09T14:00:13.689Z [warn] OrderPlaced event not found for order 6a245204fabfe4f1da5241c5 {"service":"back-end"}
+2026-06-09T14:00:18.001Z [info] GET /api/products 304 10.128 ms - - req=52b38bfb-7f28-4595-af23-c8e2484b69ad {"service":"back-end"}
+2026-06-09T14:00:18.009Z [info] GET /api/products/product/sales 304 2.935 ms - - req=208ba3a9-fad2-4151-bfc5-b58a5afd677a {"service":"back-end"}
+2026-06-09T14:00:18.282Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 301.157 ms - - req=d792cc02-d4eb-489c-a836-de96f12b41ef {"service":"back-end"}
+2026-06-09T14:00:18.285Z [info] GET /api/orders/stats 304 296.377 ms - - req=e6775262-6986-49ab-b9ef-71823979331e {"service":"back-end"}
+2026-06-09T14:00:18.293Z [info] GET /api/categories/shop-cho-cun 304 291.202 ms - - req=379738ef-c3dc-43b1-806b-7bbb141af783 {"service":"back-end"}
+2026-06-09T14:00:18.369Z [info] GET /api/categories/shop-cho-meo 304 364.162 ms - - req=2e5f9915-4c99-473d-beae-4af9196c3ac9 {"service":"back-end"}
+2026-06-09T14:00:18.474Z [info] GET /api/orders?limit=1000 200 485.382 ms - 2521658 req=5d92404b-acb3-4c07-98c0-513fd120f2fb {"service":"back-end"}
+2026-06-09T14:00:35.350Z [info] PUT /api/orders/6a245204fabfe4f1da5241c5 401 0.787 ms - 62 req=04fd0650-70f2-4e27-a1d1-4daf120048c6 {"service":"back-end"}
+2026-06-09T14:00:36.025Z [info] GET /api/products 304 7.781 ms - - req=49d9f767-0061-4697-a65c-019394338d67 {"service":"back-end"}
+2026-06-09T14:00:36.030Z [info] GET /api/products/product/sales 304 3.622 ms - - req=85ee13f2-007e-4c3f-9865-3e3c21f6c057 {"service":"back-end"}
+2026-06-09T14:00:36.070Z [info] GET /api/categories 304 56.536 ms - - req=8d80c16b-9bae-4d0d-9943-94c23f9e1b09 {"service":"back-end"}
+2026-06-09T14:00:36.250Z [info] GET /api/categories/shop-cho-cun 304 232.525 ms - - req=aa2123aa-9499-43a1-931c-e7c03c92e650 {"service":"back-end"}
+2026-06-09T14:00:36.374Z [info] GET /api/categories/shop-cho-meo 304 355.187 ms - - req=2c659bf1-a9f2-4298-aac9-66669b2eae52 {"service":"back-end"}
+2026-06-09T14:03:14.703Z [info] POST /api/auth/signin 200 158.777 ms - 18914 req=c21ba583-a3eb-4416-a64c-66c398dbf532 {"service":"back-end"}
+2026-06-09T14:03:14.877Z [info] GET /api/users/profile 304 163.344 ms - - req=4c039e39-375c-4223-b9fd-1ee0e921dcba {"service":"back-end"}
+2026-06-09T14:03:15.856Z [info] GET /api/dashboard/revenue-by-day?timeFilter=7days 304 359.182 ms - - req=62535097-24b0-4665-bba4-d43b8033b852 {"service":"back-end"}
+2026-06-09T14:03:15.908Z [info] GET /api/dashboard/revenue-by-category?timeFilter=7days 304 410.681 ms - - req=4f486f96-dbec-4cdb-b1a8-606731007c3d {"service":"back-end"}
+2026-06-09T14:03:15.917Z [info] GET /api/dashboard/recent-orders?limit=5 304 424.758 ms - - req=43de24ea-12db-4771-8290-f2554a4f5d81 {"service":"back-end"}
+2026-06-09T14:03:15.973Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 497.239 ms - - req=1c24332f-c018-4239-ad0e-f756dee08d4f {"service":"back-end"}
+2026-06-09T14:03:16.016Z [info] GET /api/dashboard/stats?timeFilter=7days 304 526.565 ms - - req=78492e2e-a8ff-4870-b677-baebe82e7a1a {"service":"back-end"}
+2026-06-09T14:03:16.032Z [info] GET /api/dashboard/notifications?timeFilter=7days 200 535.539 ms - 753 req=9a903acf-0301-4df0-8774-6a356d25e89e {"service":"back-end"}
+2026-06-09T14:03:16.170Z [info] GET /api/products 304 259.597 ms - - req=b94993da-50ec-41db-bd3a-e336ffd14664 {"service":"back-end"}
+2026-06-09T14:03:16.193Z [info] GET /api/users/paginated?page=1&limit=1 304 333.589 ms - - req=389a8c2a-6a3b-4b25-9876-40168193b406 {"service":"back-end"}
+2026-06-09T14:03:18.199Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 280.848 ms - - req=0f697fed-7530-4f52-9842-012acc44d96b {"service":"back-end"}
+2026-06-09T14:03:18.257Z [info] GET /api/orders/stats 304 325.960 ms - - req=9578a06a-5971-4ebe-aa5b-b03a9839339e {"service":"back-end"}
+2026-06-09T14:03:18.405Z [info] GET /api/orders?limit=1000 200 482.371 ms - 2521658 req=63a1d1c8-02b3-42c4-b8fc-772c4cdf2ca0 {"service":"back-end"}
+2026-06-09T14:03:20.702Z [info] PUT /api/orders/6a245204fabfe4f1da5241c5 200 315.953 ms - 616 req=ac5a1848-265c-41bc-930c-e609d458c198 {"service":"back-end"}
+2026-06-09T14:03:20.800Z [info] [ProjectionWorker] Processing event OrderStatusChanged (Seq: 3) for Aggregate: 6a245204fabfe4f1da5241c5 {"service":"back-end"}
+2026-06-09T14:03:20.859Z [warn] OrderPlaced event not found for order 6a245204fabfe4f1da5241c5 {"service":"back-end"}
+2026-06-09T14:03:24.792Z [info] PUT /api/orders/6a245204fabfe4f1da5241c5 200 408.732 ms - 615 req=06188d03-014f-4ec9-9434-5b9ff7f5c705 {"service":"back-end"}
+2026-06-09T14:03:24.924Z [info] [ProjectionWorker] Processing event OrderStatusChanged (Seq: 4) for Aggregate: 6a245204fabfe4f1da5241c5 {"service":"back-end"}
+2026-06-09T14:03:24.986Z [warn] OrderPlaced event not found for order 6a245204fabfe4f1da5241c5 {"service":"back-end"}
+2026-06-09T14:03:27.195Z [info] PUT /api/orders/6a245204fabfe4f1da5241c5 200 314.935 ms - 616 req=526f3e39-c4db-4156-966e-10d58de385de {"service":"back-end"}
+2026-06-09T14:03:27.296Z [info] [ProjectionWorker] Processing event OrderDelivered (Seq: 5) for Aggregate: 6a245204fabfe4f1da5241c5 {"service":"back-end"}
+2026-06-09T14:03:27.348Z [warn] OrderPlaced event not found for order 6a245204fabfe4f1da5241c5 {"service":"back-end"}
+2026-06-09T14:03:29.240Z [info] GET /api/products 304 10.767 ms - - req=391f24db-53ad-4f12-9ceb-14952f40374a {"service":"back-end"}
+2026-06-09T14:03:29.245Z [info] GET /api/products/product/sales 304 3.913 ms - - req=01eaa8b1-f725-4253-a3c8-43ec4201d913 {"service":"back-end"}
+2026-06-09T14:03:29.430Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 215.860 ms - - req=98e00f2e-48a6-4f8d-a51b-ef5f6eeae29e {"service":"back-end"}
+2026-06-09T14:03:29.460Z [info] GET /api/categories/shop-cho-cun 304 228.628 ms - - req=5d130fff-afaf-4324-87d0-10873ea17436 {"service":"back-end"}
+2026-06-09T14:03:29.598Z [info] GET /api/categories/shop-cho-meo 304 365.923 ms - - req=f5574c41-6bf1-4598-91c1-f47623103fe4 {"service":"back-end"}
+2026-06-09T14:03:29.645Z [info] GET /api/orders/stats 304 416.537 ms - - req=393d0227-df46-4eb8-8eee-bf05f831be70 {"service":"back-end"}
+2026-06-09T14:03:29.726Z [info] GET /api/orders?limit=1000 200 495.337 ms - 2521658 req=2dcf94b9-3e09-44cf-8bfc-dd1b61f43507 {"service":"back-end"}
+2026-06-09T14:03:37.884Z [info] GET /api/products 304 12.007 ms - - req=04d6b82d-fa24-4358-b176-e9159e7af1a1 {"service":"back-end"}
+2026-06-09T14:03:37.891Z [info] GET /api/products/product/sales 304 4.330 ms - - req=4bc922df-42ca-4184-92e3-7a4320d5e85a {"service":"back-end"}
+2026-06-09T14:03:38.103Z [info] GET /api/categories/shop-cho-cun 304 231.792 ms - - req=a0b7210a-9f88-4514-aeb4-05fc90ba2a64 {"service":"back-end"}
+2026-06-09T14:03:38.146Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 277.135 ms - - req=bd97cf5c-54cf-4a8b-bb76-6dba35f8652b {"service":"back-end"}
+2026-06-09T14:03:38.155Z [info] GET /api/categories/shop-cho-meo 304 284.336 ms - - req=8356a0f2-70eb-42a4-a062-ecb18f1e7c5e {"service":"back-end"}
+2026-06-09T14:03:38.286Z [info] GET /api/orders/stats 304 416.225 ms - - req=ff9eaa24-ac69-46b9-bc7f-146e660c1c45 {"service":"back-end"}
+2026-06-09T14:03:38.331Z [info] GET /api/orders?limit=1000 200 459.655 ms - 2521658 req=5f94a43a-b283-4887-b503-3cc79b0f5d5a {"service":"back-end"}
+2026-06-09T14:04:51.405Z [info] GET /api/products 304 7.773 ms - - req=0f991646-06fb-4e71-988e-3522d5577634 {"service":"back-end"}
+2026-06-09T14:04:51.467Z [info] GET /api/categories 304 68.945 ms - - req=ccf05d32-78a5-421d-96be-c9631604e378 {"service":"back-end"}
+2026-06-09T14:04:51.593Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 198.838 ms - - req=cd085fe5-543e-4e9a-ac0a-1c3150b244ae {"service":"back-end"}
+2026-06-09T14:04:52.207Z [info] GET /api/products 304 5.004 ms - - req=d96e6bc2-f500-4041-b75e-193a473ebcfa {"service":"back-end"}
+2026-06-09T14:04:52.574Z [info] GET /api/products 304 6.795 ms - - req=b85f4cd7-8f4f-4d8e-8448-0c3004e7f015 {"service":"back-end"}
+2026-06-09T14:04:52.646Z [info] GET /api/products 304 5.599 ms - - req=11cfe537-b621-44bd-af7d-02359966d10d {"service":"back-end"}
+2026-06-09T14:04:53.041Z [info] GET /api/dashboard/revenue-by-day?timeFilter=7days 304 387.958 ms - - req=3eb03e14-bae3-4e3d-9dc8-b3e6acaadd7a {"service":"back-end"}
+2026-06-09T14:04:53.044Z [info] GET /api/dashboard/revenue-by-category?timeFilter=7days 304 386.824 ms - - req=f0e661aa-a748-49de-9f0d-ccb676817089 {"service":"back-end"}
+2026-06-09T14:04:53.123Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 485.041 ms - - req=ca6e3676-4055-42df-b4bd-e36db6747653 {"service":"back-end"}
+2026-06-09T14:04:53.171Z [info] GET /api/dashboard/recent-orders?limit=5 304 519.432 ms - - req=ded62208-dc4d-423e-ad63-4ce6c1f11893 {"service":"back-end"}
+2026-06-09T14:04:53.347Z [info] GET /api/dashboard/notifications?timeFilter=7days 200 302.325 ms - 753 req=463c3d73-21ed-40ab-a5c9-dc8831614c68 {"service":"back-end"}
+2026-06-09T14:04:53.349Z [info] GET /api/dashboard/stats?timeFilter=7days 304 700.943 ms - - req=940ac359-0eb6-4cee-ad07-4ff47c300f65 {"service":"back-end"}
+2026-06-09T14:04:53.351Z [info] GET /api/users/paginated?page=1&limit=1 304 695.368 ms - - req=73c76760-f88b-47f9-837e-fdc277a0e468 {"service":"back-end"}
+2026-06-09T14:04:55.553Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 320.834 ms - - req=f76746ff-36be-4ba5-a6e7-9f2a63814a14 {"service":"back-end"}
+2026-06-09T14:04:55.676Z [info] GET /api/users/paginated?page=1&limit=5 304 438.576 ms - - req=21bb51ce-8a1a-4cbc-a285-be7e6e719913 {"service":"back-end"}
+2026-06-09T14:04:56.275Z [info] GET /api/categories 304 66.130 ms - - req=31cb35c0-ce18-492b-8102-166777672641 {"service":"back-end"}
+2026-06-09T14:04:56.523Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 315.186 ms - - req=1c6818e7-2190-44a4-9e37-a8ca0c180816 {"service":"back-end"}
+2026-06-09T14:04:56.687Z [info] GET /api/categories?page=1&limit=10&search=&type= 304 71.934 ms - - req=30e1961f-d077-4f3f-bdbf-cdc5f2f8a1c5 {"service":"back-end"}
+2026-06-09T14:04:56.946Z [info] GET /api/products 304 6.667 ms - - req=b4bda8bf-5d79-4bbd-aebb-f0aab74408fd {"service":"back-end"}
+2026-06-09T14:04:57.026Z [info] GET /api/categories 304 85.891 ms - - req=c60eb55e-7694-48ee-bc65-c1d283f066bc {"service":"back-end"}
+2026-06-09T14:04:57.176Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 237.951 ms - - req=2382df34-79a6-4b86-860f-3a5bb31222fa {"service":"back-end"}
+2026-06-09T14:04:57.508Z [info] GET /api/products 304 5.016 ms - - req=dc58d45b-b7ea-4444-b9a6-230b39c0951f {"service":"back-end"}
+2026-06-09T14:04:58.047Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 323.808 ms - - req=c5a0ae58-f380-40d0-b230-830cfc0c9ab2 {"service":"back-end"}
+2026-06-09T14:04:58.218Z [info] GET /api/orders/stats 304 486.425 ms - - req=a149c15e-5edb-468e-a169-1023123cba93 {"service":"back-end"}
+2026-06-09T14:04:58.337Z [info] GET /api/orders?limit=1000 200 606.229 ms - 2521658 req=3f4254d8-6f6b-4548-8f27-9f7fa9c24448 {"service":"back-end"}
+2026-06-09T14:04:58.984Z [info] GET /api/settings 304 142.083 ms - - req=ffdb75f0-fb77-45a8-9933-82b29ada9d88 {"service":"back-end"}
+2026-06-09T14:04:59.099Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 271.844 ms - - req=36007231-e774-4146-ade0-22c43a3645f1 {"service":"back-end"}
+2026-06-09T14:05:00.385Z [info] GET /api/products 304 6.211 ms - - req=5dcca91f-8691-4e1a-a02c-e35f75d148cc {"service":"back-end"}
+2026-06-09T14:05:00.472Z [info] GET /api/categories 304 91.975 ms - - req=ece0c7a0-895a-4d59-8bbe-4249389ee6dc {"service":"back-end"}
+2026-06-09T14:05:00.701Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 323.692 ms - - req=c1f0aa17-4438-4d1a-8b92-1eea112861f5 {"service":"back-end"}
+2026-06-09T14:05:01.093Z [info] GET /api/products 304 6.061 ms - - req=98e640d4-a65b-4045-b0a8-ab1005f746be {"service":"back-end"}
+2026-06-09T14:05:01.376Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 257.505 ms - - req=a9ee65dc-f017-4212-97e9-fec8ebbe7356 {"service":"back-end"}
+2026-06-09T14:05:01.579Z [info] GET /api/orders/stats 304 456.037 ms - - req=f629ed52-741b-40e9-b0c4-ba9563213f13 {"service":"back-end"}
+2026-06-09T14:05:01.730Z [info] GET /api/orders?limit=1000 200 606.876 ms - 2521658 req=6574efdd-918c-4a3f-aa10-6c28bfa27c46 {"service":"back-end"}
+2026-06-09T14:05:48.508Z [info] PUT /api/orders/6a245204fabfe4f1da5241c5 200 439.364 ms - 616 req=d2a270fa-1b94-49ab-b5d4-cd164d2bf5bd {"service":"back-end"}
+2026-06-09T14:05:48.651Z [info] [ProjectionWorker] Processing event OrderStatusChanged (Seq: 6) for Aggregate: 6a245204fabfe4f1da5241c5 {"service":"back-end"}
+2026-06-09T14:05:48.722Z [warn] OrderPlaced event not found for order 6a245204fabfe4f1da5241c5 {"service":"back-end"}
+2026-06-09T14:05:51.798Z [info] PUT /api/orders/6a245204fabfe4f1da5241c5 200 496.221 ms - 615 req=22068214-477c-4b26-851a-bff0b724bfa5 {"service":"back-end"}
+2026-06-09T14:05:51.941Z [info] [ProjectionWorker] Processing event OrderStatusChanged (Seq: 7) for Aggregate: 6a245204fabfe4f1da5241c5 {"service":"back-end"}
+2026-06-09T14:05:52.023Z [warn] OrderPlaced event not found for order 6a245204fabfe4f1da5241c5 {"service":"back-end"}
+2026-06-09T14:05:53.411Z [info] PUT /api/orders/6a245204fabfe4f1da5241c5 200 458.909 ms - 616 req=12afe836-bda0-4c7b-8fd8-94ced1257572 {"service":"back-end"}
+2026-06-09T14:05:53.552Z [info] [ProjectionWorker] Processing event OrderDelivered (Seq: 8) for Aggregate: 6a245204fabfe4f1da5241c5 {"service":"back-end"}
+2026-06-09T14:05:53.627Z [warn] OrderPlaced event not found for order 6a245204fabfe4f1da5241c5 {"service":"back-end"}
+2026-06-09T14:06:25.011Z [info] PUT /api/orders/6a245204fabfe4f1da5241c5 200 229.686 ms - 614 req=2a577875-4761-4a56-b429-eb1d48583aed {"service":"back-end"}
+2026-06-09T14:06:27.335Z [info] PUT /api/orders/6a245204fabfe4f1da5241c5 200 430.226 ms - 616 req=8089bade-8acf-4655-97ef-08cf70d01e55 {"service":"back-end"}
+2026-06-09T14:06:27.477Z [info] [ProjectionWorker] Processing event OrderDelivered (Seq: 9) for Aggregate: 6a245204fabfe4f1da5241c5 {"service":"back-end"}
+2026-06-09T14:06:27.549Z [warn] OrderPlaced event not found for order 6a245204fabfe4f1da5241c5 {"service":"back-end"}
+2026-06-09T14:06:29.004Z [info] GET /api/products 304 19.848 ms - - req=40dd6fa1-db3a-415c-8ecb-266770c16d66 {"service":"back-end"}
+2026-06-09T14:06:29.013Z [info] GET /api/products/product/sales 304 4.259 ms - - req=66967ef5-9de2-4a94-8d0f-734d55e0444e {"service":"back-end"}
+2026-06-09T14:06:29.193Z [info] GET /api/categories/shop-cho-cun 304 208.183 ms - - req=85d230e0-db9a-4681-9c7f-d6c4f4ac1dad {"service":"back-end"}
+2026-06-09T14:06:29.259Z [info] GET /api/categories/shop-cho-meo 304 271.929 ms - - req=98b3f96b-d2aa-42f8-935f-50ad3f092f59 {"service":"back-end"}
+2026-06-09T14:06:29.265Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 291.729 ms - - req=313ef507-3c87-4996-bccf-f0f1327cef80 {"service":"back-end"}
+2026-06-09T14:06:29.404Z [info] GET /api/orders/stats 304 423.548 ms - - req=73e74a7f-3b13-4466-beb8-336b5897f098 {"service":"back-end"}
+2026-06-09T14:06:29.532Z [info] GET /api/orders?limit=1000 200 552.369 ms - 2521658 req=eb30ecc7-c5c2-404f-b1ff-218abdad1428 {"service":"back-end"}
+2026-06-09T14:08:03.720Z [info] GET /api/products 304 11.507 ms - - req=740683cc-8e21-4183-859c-65d167f05aab {"service":"back-end"}
+2026-06-09T14:08:03.726Z [info] GET /api/products/product/sales 304 4.413 ms - - req=e15bc4f4-90ab-4938-b294-900c34f764db {"service":"back-end"}
+2026-06-09T14:08:03.934Z [info] GET /api/categories/shop-cho-cun 304 224.850 ms - - req=671c906c-8c9f-42c4-a005-68bfcd8e8c6c {"service":"back-end"}
+2026-06-09T14:08:03.972Z [info] GET /api/categories/shop-cho-meo 304 259.872 ms - - req=66e9d71e-713b-4d27-b1d6-a1420f87cf0c {"service":"back-end"}
+2026-06-09T14:08:03.984Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 287.847 ms - - req=dcd73a75-4555-4bf3-a9a3-978ddc5c16a5 {"service":"back-end"}
+2026-06-09T14:08:04.125Z [info] GET /api/orders/stats 304 418.829 ms - - req=01b3b193-c01c-4042-b069-0be95038bce3 {"service":"back-end"}
+2026-06-09T14:08:04.258Z [info] GET /api/orders?limit=1000 200 553.204 ms - 2521658 req=f6d37036-1e07-46fd-88eb-7ed39720230c {"service":"back-end"}
+2026-06-09T14:08:10.566Z [info] Received SIGINT. Starting graceful shutdown... {"service":"back-end"}
+2026-06-09T14:08:18.109Z [info] Redis client connecting {"service":"back-end"}
+2026-06-09T14:08:18.125Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-09T14:08:18.129Z [info] Redis client ready {"service":"back-end"}
+2026-06-09T14:08:18.135Z [info] Redis client connected {"service":"back-end"}
+2026-06-09T14:08:18.141Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-09T14:08:18.144Z [info] Loading .env {"service":"back-end","envPath":"D:\\Project\\PetShop-Website\\back-end\\.env"}
+2026-06-09T14:08:18.145Z [info] .env file loaded successfully {"service":"back-end"}
+2026-06-09T14:08:18.183Z [info] [ProjectionWorker] Checking for pending events to catch up from checkpoints... {"service":"back-end"}
+2026-06-09T14:08:18.184Z [info] Background workers initialized {"service":"back-end"}
+2026-06-09T14:08:18.194Z [info] Server is running: http://localhost:5000 {"service":"back-end"}
+2026-06-09T14:08:18.816Z [info] MongoDB connected {"service":"back-end"}
+2026-06-09T14:08:18.818Z [info] Connected to MongoDB {"service":"back-end"}
+2026-06-09T14:08:19.551Z [info] [ProjectionWorker] Catch-up check completed. {"service":"back-end"}
+2026-06-09T14:08:19.938Z [info] GET /api/categories/shop-cho-cun 304 260.400 ms - - req=dadbd9e6-1738-463d-b072-cc170c5c3541 {"service":"back-end"}
+2026-06-09T14:08:19.945Z [info] GET /api/products/product/sales 304 2.867 ms - - req=3f9bc144-430f-44c7-b9ad-ba2e27e1443e {"service":"back-end"}
+2026-06-09T14:08:20.039Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 378.938 ms - - req=4ba029d7-ff9d-4b0b-b5e1-50e649bdf640 {"service":"back-end"}
+2026-06-09T14:08:20.045Z [info] GET /api/products 304 368.864 ms - - req=2254e651-7878-462c-8f9c-f994b9791ff9 {"service":"back-end"}
+2026-06-09T14:08:20.211Z [info] GET /api/orders?limit=1000 200 535.049 ms - 2521658 req=df025ffc-2104-42a2-a1e7-2aa0ac814fae {"service":"back-end"}
+2026-06-09T14:08:20.425Z [info] GET /api/categories/shop-cho-meo 304 746.506 ms - - req=44fef4c6-5ddf-4f23-93ff-31152d5ffe6d {"service":"back-end"}
+2026-06-09T14:08:20.611Z [info] GET /api/orders/stats 304 938.730 ms - - req=a5ece909-96dd-4b98-9704-df358741b02b {"service":"back-end"}
+2026-06-09T14:08:24.000Z [info] PUT /api/orders/6a245204fabfe4f1da5241c5 200 487.650 ms - 616 req=7a1e2812-ad72-4f18-aa6f-e9e838768fbb {"service":"back-end"}
+2026-06-09T14:08:24.135Z [info] [ProjectionWorker] Processing event OrderStatusChanged (Seq: 10) for Aggregate: 6a245204fabfe4f1da5241c5 {"service":"back-end"}
+2026-06-09T14:08:24.204Z [warn] OrderPlaced event not found for order 6a245204fabfe4f1da5241c5 {"service":"back-end"}
+2026-06-09T14:08:43.160Z [info] PUT /api/orders/6a245204fabfe4f1da5241c5 200 421.953 ms - 615 req=195976b5-a615-42a0-9c4e-54ed94533193 {"service":"back-end"}
+2026-06-09T14:08:43.297Z [info] [ProjectionWorker] Processing event OrderStatusChanged (Seq: 11) for Aggregate: 6a245204fabfe4f1da5241c5 {"service":"back-end"}
+2026-06-09T14:08:43.364Z [warn] OrderPlaced event not found for order 6a245204fabfe4f1da5241c5 {"service":"back-end"}
+2026-06-09T14:09:52.757Z [info] Redis client connecting {"service":"back-end"}
+2026-06-09T14:09:52.770Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-09T14:09:52.773Z [info] Redis client ready {"service":"back-end"}
+2026-06-09T14:09:52.780Z [info] Redis client connected {"service":"back-end"}
+2026-06-09T14:09:52.786Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-09T14:09:52.789Z [info] Loading .env {"service":"back-end","envPath":"D:\\Project\\PetShop-Website\\back-end\\.env"}
+2026-06-09T14:09:52.790Z [info] .env file loaded successfully {"service":"back-end"}
+2026-06-09T14:09:52.835Z [info] [ProjectionWorker] Checking for pending events to catch up from checkpoints... {"service":"back-end"}
+2026-06-09T14:09:52.838Z [info] Background workers initialized {"service":"back-end"}
+2026-06-09T14:09:52.847Z [info] Server is running: http://localhost:5000 {"service":"back-end"}
+2026-06-09T14:09:53.702Z [info] MongoDB connected {"service":"back-end"}
+2026-06-09T14:09:53.704Z [info] Connected to MongoDB {"service":"back-end"}
+2026-06-09T14:09:54.516Z [info] [ProjectionWorker] Catch-up check completed. {"service":"back-end"}
+2026-06-09T14:10:12.300Z [info] GET /api/products 304 12.944 ms - - req=5c1d134a-cbf6-46eb-8933-37c3242121e4 {"service":"back-end"}
+2026-06-09T14:10:12.305Z [info] GET /api/products/product/sales 304 3.209 ms - - req=6ce28fef-dba3-4faa-bf89-3fa6e0d45eeb {"service":"back-end"}
+2026-06-09T14:10:12.505Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 230.444 ms - - req=71d5b958-0b73-43fd-aafc-a8d9f1a0825b {"service":"back-end"}
+2026-06-09T14:10:12.597Z [info] GET /api/categories/shop-cho-meo 304 306.762 ms - - req=60701bf0-07f7-4ce5-8a73-7908c3777782 {"service":"back-end"}
+2026-06-09T14:10:12.608Z [info] GET /api/categories/shop-cho-cun 304 319.212 ms - - req=83900823-4799-4e85-b950-981970c888df {"service":"back-end"}
+2026-06-09T14:10:12.640Z [info] GET /api/orders/stats 304 354.991 ms - - req=4d263fc3-20a6-4abd-828b-dffc3a5034c3 {"service":"back-end"}
+2026-06-09T14:10:12.900Z [info] GET /api/orders?limit=1000 200 614.007 ms - 2521658 req=aa4c508d-af07-47ee-9444-9e1a67f52daa {"service":"back-end"}
+2026-06-09T14:10:19.026Z [info] PUT /api/orders/6a245204fabfe4f1da5241c5 200 502.176 ms - 615 req=ad753be6-d3cb-47f9-bbc7-63d37e0f742c {"service":"back-end"}
+2026-06-09T14:10:19.171Z [info] [ProjectionWorker] Processing event OrderStatusChanged (Seq: 12) for Aggregate: 6a245204fabfe4f1da5241c5 {"service":"back-end"}
+2026-06-09T14:10:19.244Z [warn] OrderPlaced event not found for order 6a245204fabfe4f1da5241c5 {"service":"back-end"}
+2026-06-09T14:10:48.269Z [info] Redis client connecting {"service":"back-end"}
+2026-06-09T14:10:48.277Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-09T14:10:48.279Z [info] Redis client ready {"service":"back-end"}
+2026-06-09T14:10:48.284Z [info] Redis client connected {"service":"back-end"}
+2026-06-09T14:10:48.288Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-09T14:10:48.291Z [info] Loading .env {"service":"back-end","envPath":"D:\\Project\\PetShop-Website\\back-end\\.env"}
+2026-06-09T14:10:48.292Z [info] .env file loaded successfully {"service":"back-end"}
+2026-06-09T14:10:48.326Z [info] [ProjectionWorker] Checking for pending events to catch up from checkpoints... {"service":"back-end"}
+2026-06-09T14:10:48.328Z [info] Background workers initialized {"service":"back-end"}
+2026-06-09T14:10:48.334Z [info] Server is running: http://localhost:5000 {"service":"back-end"}
+2026-06-09T14:10:50.132Z [info] MongoDB connected {"service":"back-end"}
+2026-06-09T14:10:50.133Z [info] Connected to MongoDB {"service":"back-end"}
+2026-06-09T14:10:51.347Z [info] [ProjectionWorker] Catch-up check completed. {"service":"back-end"}
+2026-06-09T14:11:01.576Z [info] Redis client connecting {"service":"back-end"}
+2026-06-09T14:11:01.584Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-09T14:11:01.587Z [info] Redis client ready {"service":"back-end"}
+2026-06-09T14:11:01.592Z [info] Redis client connected {"service":"back-end"}
+2026-06-09T14:11:01.596Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-09T14:11:01.599Z [info] Loading .env {"service":"back-end","envPath":"D:\\Project\\PetShop-Website\\back-end\\.env"}
+2026-06-09T14:11:01.600Z [info] .env file loaded successfully {"service":"back-end"}
+2026-06-09T14:11:01.634Z [info] [ProjectionWorker] Checking for pending events to catch up from checkpoints... {"service":"back-end"}
+2026-06-09T14:11:01.637Z [info] Background workers initialized {"service":"back-end"}
+2026-06-09T14:11:01.644Z [info] Server is running: http://localhost:5000 {"service":"back-end"}
+2026-06-09T14:11:02.314Z [info] MongoDB connected {"service":"back-end"}
+2026-06-09T14:11:02.316Z [info] Connected to MongoDB {"service":"back-end"}
+2026-06-09T14:11:03.227Z [info] [ProjectionWorker] Catch-up check completed. {"service":"back-end"}
+2026-06-09T15:21:34.525Z [info] MongoDB reconnected {"service":"back-end"}
+2026-06-09T15:21:34.527Z [info] MongoDB reconnected {"service":"back-end"}
+2026-06-09T15:21:46.310Z [info] Redis client connecting {"service":"back-end"}
+2026-06-09T15:21:46.318Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-09T15:21:46.321Z [info] Redis client ready {"service":"back-end"}
+2026-06-09T15:21:46.322Z [info] Redis client connected {"service":"back-end"}
+2026-06-09T15:21:46.327Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-09T15:21:46.330Z [info] Loading .env {"service":"back-end","envPath":"D:\\Project\\PetShop-Website\\back-end\\.env"}
+2026-06-09T15:21:46.331Z [info] .env file loaded successfully {"service":"back-end"}
+2026-06-09T15:21:46.375Z [info] [ProjectionWorker] Checking for pending events to catch up from checkpoints... {"service":"back-end"}
+2026-06-09T15:21:46.378Z [info] Background workers initialized {"service":"back-end"}
+2026-06-09T15:21:46.388Z [info] Server is running: http://localhost:5000 {"service":"back-end"}
+2026-06-09T15:21:47.197Z [info] MongoDB connected {"service":"back-end"}
+2026-06-09T15:21:47.199Z [info] Connected to MongoDB {"service":"back-end"}
+2026-06-09T15:21:48.050Z [info] [ProjectionWorker] Catch-up check completed. {"service":"back-end"}
+2026-06-09T15:21:49.035Z [info] GET /api/users/6a00b69d0af467688ea55f1b 401 7.216 ms - 62 req=dc4e5b1c-f972-43f3-ba34-d07232a728eb {"service":"back-end"}
+2026-06-09T15:21:49.045Z [info] GET /api/orders?limit=1000 401 1.049 ms - 62 req=9cc3810e-20ba-4b72-8f18-366639f62a90 {"service":"back-end"}
+2026-06-09T15:21:49.049Z [info] GET /api/orders/stats 401 0.764 ms - 62 req=d6da8ca5-fb96-4e83-a2e7-0c50bf799e7f {"service":"back-end"}
+2026-06-09T15:21:49.219Z [info] GET /api/products/product/sales 304 176.421 ms - - req=0837cfa4-911e-4876-8610-243c2008b9e2 {"service":"back-end"}
+2026-06-09T15:21:49.318Z [info] GET /api/categories/shop-cho-cun 304 282.349 ms - - req=d6d5bc95-f285-41a0-bf7c-f8911a9561dc {"service":"back-end"}
+2026-06-09T15:21:49.323Z [info] GET /api/products 304 275.875 ms - - req=b5febfa0-dfe1-48f3-bbe7-c60ad0d8e26c {"service":"back-end"}
+2026-06-09T15:21:49.392Z [warn] Xác thực hoặc quay vòng Refresh Token thất bại Thiếu Refresh Token. {"service":"back-end"}
+2026-06-09T15:21:49.394Z [info] POST /api/auth/refresh 400 2.315 ms - 36 req=4de5f8eb-b823-40ff-9cec-9c8941dbe9e9 {"service":"back-end"}
+2026-06-09T15:21:49.421Z [info] GET /api/categories/shop-cho-meo 304 371.211 ms - - req=ac82b788-ec63-40b8-a8d6-35587ecd3a06 {"service":"back-end"}
+2026-06-09T15:21:51.574Z [info] GET /api/products 304 10.998 ms - - req=e0b7e4cd-e2df-4dd9-86d7-30719937e3cf {"service":"back-end"}
+2026-06-09T15:21:51.577Z [info] GET /api/products/product/sales 304 9.885 ms - - req=220eeed1-47d9-49e7-94b5-d5d7c603e62a {"service":"back-end"}
+2026-06-09T15:21:51.640Z [info] GET /api/categories 304 78.596 ms - - req=76a58be8-f691-4387-80d0-0108eb5d614e {"service":"back-end"}
+2026-06-09T15:21:51.845Z [info] GET /api/categories/shop-cho-cun 304 281.547 ms - - req=75e19803-c5eb-4814-bd92-dd7ae2fe85da {"service":"back-end"}
+2026-06-09T15:21:51.856Z [info] GET /api/categories/shop-cho-meo 304 291.211 ms - - req=31deac00-34c3-4a26-886a-50982c70be4b {"service":"back-end"}
+2026-06-09T15:22:06.644Z [info] Received SIGINT. Starting graceful shutdown... {"service":"back-end"}
+2026-06-09T15:22:11.399Z [info] Redis client connecting {"service":"back-end"}
+2026-06-09T15:22:11.408Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-09T15:22:11.410Z [info] Redis client ready {"service":"back-end"}
+2026-06-09T15:22:11.416Z [info] Redis client connected {"service":"back-end"}
+2026-06-09T15:22:11.420Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-09T15:22:11.423Z [info] Loading .env {"service":"back-end","envPath":"D:\\Project\\PetShop-Website\\back-end\\.env"}
+2026-06-09T15:22:11.424Z [info] .env file loaded successfully {"service":"back-end"}
+2026-06-09T15:22:11.461Z [info] [ProjectionWorker] Checking for pending events to catch up from checkpoints... {"service":"back-end"}
+2026-06-09T15:22:11.463Z [info] Background workers initialized {"service":"back-end"}
+2026-06-09T15:22:11.472Z [info] Server is running: http://localhost:5000 {"service":"back-end"}
+2026-06-09T15:22:12.187Z [info] MongoDB connected {"service":"back-end"}
+2026-06-09T15:22:12.189Z [info] Connected to MongoDB {"service":"back-end"}
+2026-06-09T15:22:13.023Z [info] [ProjectionWorker] Catch-up check completed. {"service":"back-end"}
+2026-06-09T15:22:13.334Z [info] GET /api/products 304 12.116 ms - - req=a7eab835-461a-427c-840b-076d82cb66d8 {"service":"back-end"}
+2026-06-09T15:22:13.337Z [info] GET /api/products/product/sales 304 11.532 ms - - req=f6b272ab-0bbd-418d-bd9c-aa5a7bc78c69 {"service":"back-end"}
+2026-06-09T15:22:13.386Z [info] GET /api/categories 304 70.773 ms - - req=90bece85-f6ef-407e-b0f1-591639165d90 {"service":"back-end"}
+2026-06-09T15:22:13.604Z [info] GET /api/categories/shop-cho-meo 304 280.143 ms - - req=9f10d548-3774-4cd9-8139-559629f932f7 {"service":"back-end"}
+2026-06-09T15:22:13.608Z [info] GET /api/categories/shop-cho-cun 304 286.614 ms - - req=4f60e03a-74ce-4131-87ad-495fbc9c3a60 {"service":"back-end"}
+2026-06-09T15:22:17.641Z [info] POST /api/auth/signin 200 196.934 ms - 18914 req=bdb21e96-1ccf-4016-9696-244758d0407c {"service":"back-end"}
+2026-06-09T15:22:17.802Z [info] GET /api/users/profile 304 146.938 ms - - req=25d37c65-9bed-444b-8d2d-dcdb2c0583fb {"service":"back-end"}
+2026-06-09T15:22:18.585Z [info] GET /api/dashboard/revenue-by-day?timeFilter=7days 304 159.708 ms - - req=a2903462-f716-41fc-8ad6-54f6c5327224 {"service":"back-end"}
+2026-06-09T15:22:18.587Z [info] GET /api/dashboard/revenue-by-category?timeFilter=7days 304 161.106 ms - - req=50d08d85-da72-4a76-9c07-e0bb27707b08 {"service":"back-end"}
+2026-06-09T15:22:18.613Z [info] GET /api/products 304 11.263 ms - - req=d9209d40-20d7-4b96-a2dc-d0eb6361473d {"service":"back-end"}
+2026-06-09T15:22:18.677Z [info] GET /api/dashboard/recent-orders?limit=5 304 252.997 ms - - req=c3a814b9-8642-4b36-970f-1294c7b1d05a {"service":"back-end"}
+2026-06-09T15:22:18.711Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 300.801 ms - - req=9e4b98ab-fc30-4928-9d0a-913afae08cc1 {"service":"back-end"}
+2026-06-09T15:22:18.734Z [info] GET /api/dashboard/stats?timeFilter=7days 304 319.441 ms - - req=90d5d128-1026-4a71-a383-844e7bfa2af0 {"service":"back-end"}
+2026-06-09T15:22:18.770Z [info] GET /api/dashboard/notifications?timeFilter=7days 200 344.199 ms - 753 req=04ff21a3-b004-456a-ada9-906848a524be {"service":"back-end"}
+2026-06-09T15:22:18.873Z [info] GET /api/users/paginated?page=1&limit=1 304 283.440 ms - - req=75dc30b2-ec17-43b6-8b85-0737414d7578 {"service":"back-end"}
+2026-06-09T15:22:22.437Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 266.829 ms - - req=62ca9959-845f-459f-8be5-c90a9aa5efbc {"service":"back-end"}
+2026-06-09T15:22:22.527Z [info] GET /api/orders/stats 304 346.581 ms - - req=2226d2cb-580c-46ff-842f-6f6ce1a29e3c {"service":"back-end"}
+2026-06-09T15:22:22.661Z [info] GET /api/orders?limit=1000 200 477.505 ms - 2521658 req=abeaab90-1bc7-4267-9f3f-49301f56bf9e {"service":"back-end"}
+2026-06-09T15:22:25.480Z [info] [ProjectionWorker] Processing event OrderStatusChanged (Seq: 13) for Aggregate: 6a245204fabfe4f1da5241c5 {"service":"back-end"}
+2026-06-09T15:22:25.511Z [info] PUT /api/orders/6a245204fabfe4f1da5241c5 200 714.611 ms - 21083 req=df2c907e-0e11-45e2-bca7-4cd06c74b717 {"service":"back-end"}
+2026-06-09T15:22:25.603Z [error] [ProjectionWorker] Job failed for event 6a282fb17a92e89fea310b62: Path "lastEventSequence" is not in schema, strict mode is `true`, and upsert is `true`. {"service":"back-end","isImmutableError":false,"path":"lastEventSequence"}
+StrictModeError: Path "lastEventSequence" is not in schema, strict mode is `true`, and upsert is `true`.
+    at cast (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\cast.js:305:17)
+    at cast (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\cast.js:76:20)
+    at Query.cast (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:5060:12)
+    at Query._castConditions (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:2374:10)
+    at model.Query._updateThunk (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:4043:8)
+    at model.Query._updateOne (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:4150:23)
+    at model.Query.exec (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:4627:80)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async projectOrder (file:///D:/Project/PetShop-Website/back-end/server/services/projector.js:130:3)
+    at async Worker.connection [as processFn] (file:///D:/Project/PetShop-Website/back-end/server/workers/projectionWorker.js:84:9)
+2026-06-09T15:22:26.720Z [info] [ProjectionWorker] Processing event OrderStatusChanged (Seq: 13) for Aggregate: 6a245204fabfe4f1da5241c5 {"service":"back-end"}
+2026-06-09T15:22:26.828Z [error] [ProjectionWorker] Job failed for event 6a282fb17a92e89fea310b62: Path "lastEventSequence" is not in schema, strict mode is `true`, and upsert is `true`. {"service":"back-end","isImmutableError":false,"path":"lastEventSequence"}
+StrictModeError: Path "lastEventSequence" is not in schema, strict mode is `true`, and upsert is `true`.
+    at cast (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\cast.js:305:17)
+    at cast (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\cast.js:76:20)
+    at Query.cast (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:5060:12)
+    at Query._castConditions (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:2374:10)
+    at model.Query._updateThunk (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:4043:8)
+    at model.Query._updateOne (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:4150:23)
+    at model.Query.exec (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:4627:80)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async projectOrder (file:///D:/Project/PetShop-Website/back-end/server/services/projector.js:130:3)
+    at async Worker.connection [as processFn] (file:///D:/Project/PetShop-Website/back-end/server/workers/projectionWorker.js:84:9)
+2026-06-09T15:22:28.738Z [info] GET /api/products 304 9.809 ms - - req=c11b3ac8-248a-4c2a-989b-fb1cc1f10567 {"service":"back-end"}
+2026-06-09T15:22:28.744Z [info] GET /api/products/product/sales 304 3.865 ms - - req=0693cd29-6743-4976-b67b-08ee0c3890d1 {"service":"back-end"}
+2026-06-09T15:22:28.921Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 204.927 ms - - req=9785a8d1-25a4-4254-8339-2f82fa2cc3e9 {"service":"back-end"}
+2026-06-09T15:22:28.935Z [info] [ProjectionWorker] Processing event OrderStatusChanged (Seq: 13) for Aggregate: 6a245204fabfe4f1da5241c5 {"service":"back-end"}
+2026-06-09T15:22:29.021Z [info] GET /api/categories/shop-cho-cun 304 290.483 ms - - req=2669ab03-5359-4822-b9d1-388ad2313582 {"service":"back-end"}
+2026-06-09T15:22:29.022Z [info] GET /api/categories/shop-cho-meo 304 292.010 ms - - req=09dae639-44f6-49db-aeed-60e6cf7494ae {"service":"back-end"}
+2026-06-09T15:22:29.045Z [info] GET /api/orders/stats 304 317.473 ms - - req=006fe473-016f-47cd-8713-fc5d0bf0be3a {"service":"back-end"}
+2026-06-09T15:22:29.066Z [error] [ProjectionWorker] Job failed for event 6a282fb17a92e89fea310b62: Path "lastEventSequence" is not in schema, strict mode is `true`, and upsert is `true`. {"service":"back-end","isImmutableError":false,"path":"lastEventSequence"}
+StrictModeError: Path "lastEventSequence" is not in schema, strict mode is `true`, and upsert is `true`.
+    at cast (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\cast.js:305:17)
+    at cast (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\cast.js:76:20)
+    at Query.cast (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:5060:12)
+    at Query._castConditions (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:2374:10)
+    at model.Query._updateThunk (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:4043:8)
+    at model.Query._updateOne (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:4150:23)
+    at model.Query.exec (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:4627:80)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async projectOrder (file:///D:/Project/PetShop-Website/back-end/server/services/projector.js:130:3)
+    at async Worker.connection [as processFn] (file:///D:/Project/PetShop-Website/back-end/server/workers/projectionWorker.js:84:9)
+2026-06-09T15:22:29.273Z [info] GET /api/orders?limit=1000 200 543.757 ms - 2521658 req=79ccc383-6d05-4f5b-9864-bd3cac2550be {"service":"back-end"}
+2026-06-09T15:22:33.162Z [info] [ProjectionWorker] Processing event OrderStatusChanged (Seq: 13) for Aggregate: 6a245204fabfe4f1da5241c5 {"service":"back-end"}
+2026-06-09T15:22:33.272Z [error] [ProjectionWorker] Job failed for event 6a282fb17a92e89fea310b62: Path "lastEventSequence" is not in schema, strict mode is `true`, and upsert is `true`. {"service":"back-end","isImmutableError":false,"path":"lastEventSequence"}
+StrictModeError: Path "lastEventSequence" is not in schema, strict mode is `true`, and upsert is `true`.
+    at cast (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\cast.js:305:17)
+    at cast (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\cast.js:76:20)
+    at Query.cast (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:5060:12)
+    at Query._castConditions (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:2374:10)
+    at model.Query._updateThunk (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:4043:8)
+    at model.Query._updateOne (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:4150:23)
+    at model.Query.exec (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:4627:80)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async projectOrder (file:///D:/Project/PetShop-Website/back-end/server/services/projector.js:130:3)
+    at async Worker.connection [as processFn] (file:///D:/Project/PetShop-Website/back-end/server/workers/projectionWorker.js:84:9)
+2026-06-09T15:22:41.411Z [info] [ProjectionWorker] Processing event OrderStatusChanged (Seq: 13) for Aggregate: 6a245204fabfe4f1da5241c5 {"service":"back-end"}
+2026-06-09T15:22:41.568Z [error] [ProjectionWorker] Job failed for event 6a282fb17a92e89fea310b62: Path "lastEventSequence" is not in schema, strict mode is `true`, and upsert is `true`. {"service":"back-end","isImmutableError":false,"path":"lastEventSequence"}
+StrictModeError: Path "lastEventSequence" is not in schema, strict mode is `true`, and upsert is `true`.
+    at cast (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\cast.js:305:17)
+    at cast (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\cast.js:76:20)
+    at Query.cast (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:5060:12)
+    at Query._castConditions (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:2374:10)
+    at model.Query._updateThunk (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:4043:8)
+    at model.Query._updateOne (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:4150:23)
+    at model.Query.exec (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:4627:80)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async projectOrder (file:///D:/Project/PetShop-Website/back-end/server/services/projector.js:130:3)
+    at async Worker.connection [as processFn] (file:///D:/Project/PetShop-Website/back-end/server/workers/projectionWorker.js:84:9)
+2026-06-09T15:22:47.817Z [info] PUT /api/orders/6a1e8e928413666c84435a49 200 452.957 ms - 20994 req=c5d28bc7-f85c-4b4d-8b4a-823bbe4cba63 {"service":"back-end"}
+2026-06-09T15:22:47.836Z [info] [ProjectionWorker] Processing event OrderStatusChanged (Seq: 14) for Aggregate: 6a1e8e928413666c84435a49 {"service":"back-end"}
+2026-06-09T15:22:47.974Z [error] [ProjectionWorker] Job failed for event 6a282fc77a92e89fea310c2a: Path "lastEventSequence" is not in schema, strict mode is `true`, and upsert is `true`. {"service":"back-end","isImmutableError":false,"path":"lastEventSequence"}
+StrictModeError: Path "lastEventSequence" is not in schema, strict mode is `true`, and upsert is `true`.
+    at cast (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\cast.js:305:17)
+    at cast (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\cast.js:76:20)
+    at Query.cast (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:5060:12)
+    at Query._castConditions (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:2374:10)
+    at model.Query._updateThunk (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:4043:8)
+    at model.Query._updateOne (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:4150:23)
+    at model.Query.exec (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:4627:80)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async projectOrder (file:///D:/Project/PetShop-Website/back-end/server/services/projector.js:130:3)
+    at async Worker.connection [as processFn] (file:///D:/Project/PetShop-Website/back-end/server/workers/projectionWorker.js:84:9)
+2026-06-09T15:22:49.215Z [info] [ProjectionWorker] Processing event OrderStatusChanged (Seq: 14) for Aggregate: 6a1e8e928413666c84435a49 {"service":"back-end"}
+2026-06-09T15:22:49.346Z [error] [ProjectionWorker] Job failed for event 6a282fc77a92e89fea310c2a: Path "lastEventSequence" is not in schema, strict mode is `true`, and upsert is `true`. {"service":"back-end","isImmutableError":false,"path":"lastEventSequence"}
+StrictModeError: Path "lastEventSequence" is not in schema, strict mode is `true`, and upsert is `true`.
+    at cast (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\cast.js:305:17)
+    at cast (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\cast.js:76:20)
+    at Query.cast (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:5060:12)
+    at Query._castConditions (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:2374:10)
+    at model.Query._updateThunk (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:4043:8)
+    at model.Query._updateOne (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:4150:23)
+    at model.Query.exec (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:4627:80)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async projectOrder (file:///D:/Project/PetShop-Website/back-end/server/services/projector.js:130:3)
+    at async Worker.connection [as processFn] (file:///D:/Project/PetShop-Website/back-end/server/workers/projectionWorker.js:84:9)
+2026-06-09T15:22:50.645Z [info] [ProjectionWorker] Processing event OrderStatusChanged (Seq: 15) for Aggregate: 6a1828c2ec64ea7bb152c4ec {"service":"back-end"}
+2026-06-09T15:22:50.683Z [info] PUT /api/orders/6a1828c2ec64ea7bb152c4ec 200 547.235 ms - 2343 req=eb9097a5-15d3-4fe5-92ad-33c18d32384e {"service":"back-end"}
+2026-06-09T15:22:50.756Z [error] [ProjectionWorker] Job failed for event 6a282fca7a92e89fea310c3e: Path "lastEventSequence" is not in schema, strict mode is `true`, and upsert is `true`. {"service":"back-end","isImmutableError":false,"path":"lastEventSequence"}
+StrictModeError: Path "lastEventSequence" is not in schema, strict mode is `true`, and upsert is `true`.
+    at cast (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\cast.js:305:17)
+    at cast (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\cast.js:76:20)
+    at Query.cast (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:5060:12)
+    at Query._castConditions (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:2374:10)
+    at model.Query._updateThunk (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:4043:8)
+    at model.Query._updateOne (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:4150:23)
+    at model.Query.exec (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:4627:80)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async projectOrder (file:///D:/Project/PetShop-Website/back-end/server/services/projector.js:130:3)
+    at async Worker.connection [as processFn] (file:///D:/Project/PetShop-Website/back-end/server/workers/projectionWorker.js:84:9)
+2026-06-09T15:22:51.497Z [info] [ProjectionWorker] Processing event OrderStatusChanged (Seq: 14) for Aggregate: 6a1e8e928413666c84435a49 {"service":"back-end"}
+2026-06-09T15:22:51.604Z [error] [ProjectionWorker] Job failed for event 6a282fc77a92e89fea310c2a: Path "lastEventSequence" is not in schema, strict mode is `true`, and upsert is `true`. {"service":"back-end","isImmutableError":false,"path":"lastEventSequence"}
+StrictModeError: Path "lastEventSequence" is not in schema, strict mode is `true`, and upsert is `true`.
+    at cast (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\cast.js:305:17)
+    at cast (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\cast.js:76:20)
+    at Query.cast (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:5060:12)
+    at Query._castConditions (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:2374:10)
+    at model.Query._updateThunk (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:4043:8)
+    at model.Query._updateOne (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:4150:23)
+    at model.Query.exec (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:4627:80)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async projectOrder (file:///D:/Project/PetShop-Website/back-end/server/services/projector.js:130:3)
+    at async Worker.connection [as processFn] (file:///D:/Project/PetShop-Website/back-end/server/workers/projectionWorker.js:84:9)
+2026-06-09T15:22:51.882Z [info] [ProjectionWorker] Processing event OrderStatusChanged (Seq: 15) for Aggregate: 6a1828c2ec64ea7bb152c4ec {"service":"back-end"}
+2026-06-09T15:22:52.010Z [error] [ProjectionWorker] Job failed for event 6a282fca7a92e89fea310c3e: Path "lastEventSequence" is not in schema, strict mode is `true`, and upsert is `true`. {"service":"back-end","isImmutableError":false,"path":"lastEventSequence"}
+StrictModeError: Path "lastEventSequence" is not in schema, strict mode is `true`, and upsert is `true`.
+    at cast (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\cast.js:305:17)
+    at cast (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\cast.js:76:20)
+    at Query.cast (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:5060:12)
+    at Query._castConditions (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:2374:10)
+    at model.Query._updateThunk (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:4043:8)
+    at model.Query._updateOne (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:4150:23)
+    at model.Query.exec (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:4627:80)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async projectOrder (file:///D:/Project/PetShop-Website/back-end/server/services/projector.js:130:3)
+    at async Worker.connection [as processFn] (file:///D:/Project/PetShop-Website/back-end/server/workers/projectionWorker.js:84:9)
+2026-06-09T15:22:54.294Z [info] [ProjectionWorker] Processing event OrderStatusChanged (Seq: 15) for Aggregate: 6a1828c2ec64ea7bb152c4ec {"service":"back-end"}
+2026-06-09T15:22:54.398Z [error] [ProjectionWorker] Job failed for event 6a282fca7a92e89fea310c3e: Path "lastEventSequence" is not in schema, strict mode is `true`, and upsert is `true`. {"service":"back-end","isImmutableError":false,"path":"lastEventSequence"}
+StrictModeError: Path "lastEventSequence" is not in schema, strict mode is `true`, and upsert is `true`.
+    at cast (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\cast.js:305:17)
+    at cast (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\cast.js:76:20)
+    at Query.cast (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:5060:12)
+    at Query._castConditions (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:2374:10)
+    at model.Query._updateThunk (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:4043:8)
+    at model.Query._updateOne (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:4150:23)
+    at model.Query.exec (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:4627:80)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async projectOrder (file:///D:/Project/PetShop-Website/back-end/server/services/projector.js:130:3)
+    at async Worker.connection [as processFn] (file:///D:/Project/PetShop-Website/back-end/server/workers/projectionWorker.js:84:9)
+2026-06-09T15:22:54.835Z [info] GET /api/products 304 7.856 ms - - req=b63fec19-0848-4c60-9f3f-f259aab37f15 {"service":"back-end"}
+2026-06-09T15:22:54.840Z [info] GET /api/products/product/sales 304 3.176 ms - - req=7b5b49ae-70c6-4214-aac8-8933e2ace793 {"service":"back-end"}
+2026-06-09T15:22:55.034Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 222.174 ms - - req=b361a4c4-09d3-4e06-bb67-9b80862b4523 {"service":"back-end"}
+2026-06-09T15:22:55.043Z [info] GET /api/categories/shop-cho-cun 304 216.510 ms - - req=06ce1dfb-5a78-48bc-919d-e62d97664329 {"service":"back-end"}
+2026-06-09T15:22:55.141Z [info] GET /api/orders/stats 304 317.519 ms - - req=df2cc4cd-87de-43c2-a5da-093aaed9a337 {"service":"back-end"}
+2026-06-09T15:22:55.186Z [info] GET /api/categories/shop-cho-meo 304 357.768 ms - - req=3b607442-c777-4186-9701-a3680db5a0b8 {"service":"back-end"}
+2026-06-09T15:22:55.344Z [info] GET /api/orders?limit=1000 200 522.160 ms - 2521658 req=af3790fe-ab47-4592-8f16-76c36f996ccb {"service":"back-end"}
+2026-06-09T15:22:55.849Z [info] [ProjectionWorker] Processing event OrderStatusChanged (Seq: 14) for Aggregate: 6a1e8e928413666c84435a49 {"service":"back-end"}
+2026-06-09T15:22:55.981Z [error] [ProjectionWorker] Job failed for event 6a282fc77a92e89fea310c2a: Path "lastEventSequence" is not in schema, strict mode is `true`, and upsert is `true`. {"service":"back-end","isImmutableError":false,"path":"lastEventSequence"}
+StrictModeError: Path "lastEventSequence" is not in schema, strict mode is `true`, and upsert is `true`.
+    at cast (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\cast.js:305:17)
+    at cast (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\cast.js:76:20)
+    at Query.cast (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:5060:12)
+    at Query._castConditions (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:2374:10)
+    at model.Query._updateThunk (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:4043:8)
+    at model.Query._updateOne (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:4150:23)
+    at model.Query.exec (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:4627:80)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async projectOrder (file:///D:/Project/PetShop-Website/back-end/server/services/projector.js:130:3)
+    at async Worker.connection [as processFn] (file:///D:/Project/PetShop-Website/back-end/server/workers/projectionWorker.js:84:9)
+2026-06-09T15:22:58.564Z [info] [ProjectionWorker] Processing event OrderStatusChanged (Seq: 15) for Aggregate: 6a1828c2ec64ea7bb152c4ec {"service":"back-end"}
+2026-06-09T15:22:58.696Z [error] [ProjectionWorker] Job failed for event 6a282fca7a92e89fea310c3e: Path "lastEventSequence" is not in schema, strict mode is `true`, and upsert is `true`. {"service":"back-end","isImmutableError":false,"path":"lastEventSequence"}
+StrictModeError: Path "lastEventSequence" is not in schema, strict mode is `true`, and upsert is `true`.
+    at cast (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\cast.js:305:17)
+    at cast (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\cast.js:76:20)
+    at Query.cast (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:5060:12)
+    at Query._castConditions (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:2374:10)
+    at model.Query._updateThunk (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:4043:8)
+    at model.Query._updateOne (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:4150:23)
+    at model.Query.exec (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:4627:80)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async projectOrder (file:///D:/Project/PetShop-Website/back-end/server/services/projector.js:130:3)
+    at async Worker.connection [as processFn] (file:///D:/Project/PetShop-Website/back-end/server/workers/projectionWorker.js:84:9)
+2026-06-09T15:23:04.186Z [info] [ProjectionWorker] Processing event OrderStatusChanged (Seq: 14) for Aggregate: 6a1e8e928413666c84435a49 {"service":"back-end"}
+2026-06-09T15:23:04.317Z [error] [ProjectionWorker] Job failed for event 6a282fc77a92e89fea310c2a: Path "lastEventSequence" is not in schema, strict mode is `true`, and upsert is `true`. {"service":"back-end","isImmutableError":false,"path":"lastEventSequence"}
+StrictModeError: Path "lastEventSequence" is not in schema, strict mode is `true`, and upsert is `true`.
+    at cast (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\cast.js:305:17)
+    at cast (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\cast.js:76:20)
+    at Query.cast (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:5060:12)
+    at Query._castConditions (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:2374:10)
+    at model.Query._updateThunk (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:4043:8)
+    at model.Query._updateOne (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:4150:23)
+    at model.Query.exec (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:4627:80)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async projectOrder (file:///D:/Project/PetShop-Website/back-end/server/services/projector.js:130:3)
+    at async Worker.connection [as processFn] (file:///D:/Project/PetShop-Website/back-end/server/workers/projectionWorker.js:84:9)
+2026-06-09T15:23:06.932Z [info] [ProjectionWorker] Processing event OrderStatusChanged (Seq: 15) for Aggregate: 6a1828c2ec64ea7bb152c4ec {"service":"back-end"}
+2026-06-09T15:23:07.081Z [error] [ProjectionWorker] Job failed for event 6a282fca7a92e89fea310c3e: Path "lastEventSequence" is not in schema, strict mode is `true`, and upsert is `true`. {"service":"back-end","isImmutableError":false,"path":"lastEventSequence"}
+StrictModeError: Path "lastEventSequence" is not in schema, strict mode is `true`, and upsert is `true`.
+    at cast (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\cast.js:305:17)
+    at cast (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\cast.js:76:20)
+    at Query.cast (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:5060:12)
+    at Query._castConditions (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:2374:10)
+    at model.Query._updateThunk (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:4043:8)
+    at model.Query._updateOne (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:4150:23)
+    at model.Query.exec (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:4627:80)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async projectOrder (file:///D:/Project/PetShop-Website/back-end/server/services/projector.js:130:3)
+    at async Worker.connection [as processFn] (file:///D:/Project/PetShop-Website/back-end/server/workers/projectionWorker.js:84:9)
+2026-06-09T15:23:52.431Z [info] Redis client connecting {"service":"back-end"}
+2026-06-09T15:23:52.445Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-09T15:23:52.448Z [info] Redis client ready {"service":"back-end"}
+2026-06-09T15:23:52.455Z [info] Redis client connected {"service":"back-end"}
+2026-06-09T15:23:52.461Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-09T15:23:52.465Z [info] Loading .env {"service":"back-end","envPath":"D:\\Project\\PetShop-Website\\back-end\\.env"}
+2026-06-09T15:23:52.466Z [info] .env file loaded successfully {"service":"back-end"}
+2026-06-09T15:23:52.519Z [info] [ProjectionWorker] Checking for pending events to catch up from checkpoints... {"service":"back-end"}
+2026-06-09T15:23:52.522Z [info] Background workers initialized {"service":"back-end"}
+2026-06-09T15:23:52.531Z [info] Server is running: http://localhost:5000 {"service":"back-end"}
+2026-06-09T15:23:53.398Z [info] MongoDB connected {"service":"back-end"}
+2026-06-09T15:23:53.401Z [info] Connected to MongoDB {"service":"back-end"}
+2026-06-09T15:23:54.173Z [info] [ProjectionWorker] Catching up Order projections from sequence 12. Found 3 events. {"service":"back-end"}
+2026-06-09T15:23:54.704Z [error] [ProjectionWorker] Failed to process event 6a282fb17a92e89fea310b62 during catch-up: Path "lastEventSequence" is not in schema, strict mode is `true`, and upsert is `true`. {"service":"back-end","isImmutableError":false,"path":"lastEventSequence"}
+StrictModeError: Path "lastEventSequence" is not in schema, strict mode is `true`, and upsert is `true`.
+    at cast (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\cast.js:305:17)
+    at cast (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\cast.js:76:20)
+    at Query.cast (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:5060:12)
+    at Query._castConditions (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:2374:10)
+    at model.Query._updateThunk (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:4043:8)
+    at model.Query._updateOne (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:4150:23)
+    at model.Query.exec (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:4627:80)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async projectOrder (file:///D:/Project/PetShop-Website/back-end/server/services/projector.js:130:3)
+    at async resumeProjectionsFromCheckpoints (file:///D:/Project/PetShop-Website/back-end/server/workers/projectionWorker.js:32:13)
+2026-06-09T15:23:54.753Z [info] [ProjectionWorker] Catch-up check completed. {"service":"back-end"}
+2026-06-09T15:24:33.083Z [info] Redis client connecting {"service":"back-end"}
+2026-06-09T15:24:33.095Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-09T15:24:33.099Z [info] Redis client ready {"service":"back-end"}
+2026-06-09T15:24:33.106Z [info] Redis client connected {"service":"back-end"}
+2026-06-09T15:24:33.112Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-09T15:24:33.116Z [info] Loading .env {"service":"back-end","envPath":"D:\\Project\\PetShop-Website\\back-end\\.env"}
+2026-06-09T15:24:33.117Z [info] .env file loaded successfully {"service":"back-end"}
+2026-06-09T15:24:33.167Z [info] [ProjectionWorker] Checking for pending events to catch up from checkpoints... {"service":"back-end"}
+2026-06-09T15:24:33.171Z [info] Background workers initialized {"service":"back-end"}
+2026-06-09T15:24:33.180Z [info] Server is running: http://localhost:5000 {"service":"back-end"}
+2026-06-09T15:24:33.771Z [info] MongoDB connected {"service":"back-end"}
+2026-06-09T15:24:33.774Z [info] Connected to MongoDB {"service":"back-end"}
+2026-06-09T15:24:34.521Z [info] [ProjectionWorker] Catching up Order projections from sequence 12. Found 3 events. {"service":"back-end"}
+2026-06-09T15:24:35.229Z [error] [ProjectionWorker] Failed to process event 6a282fb17a92e89fea310b62 during catch-up: Path "lastEventSequence" is not in schema, strict mode is `true`, and upsert is `true`. {"service":"back-end","isImmutableError":false,"path":"lastEventSequence"}
+StrictModeError: Path "lastEventSequence" is not in schema, strict mode is `true`, and upsert is `true`.
+    at cast (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\cast.js:305:17)
+    at cast (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\cast.js:76:20)
+    at Query.cast (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:5060:12)
+    at Query._castConditions (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:2374:10)
+    at model.Query._updateThunk (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:4043:8)
+    at model.Query._updateOne (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:4150:23)
+    at model.Query.exec (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:4627:80)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async projectOrder (file:///D:/Project/PetShop-Website/back-end/server/services/projector.js:130:3)
+    at async resumeProjectionsFromCheckpoints (file:///D:/Project/PetShop-Website/back-end/server/workers/projectionWorker.js:32:13)
+2026-06-09T15:24:35.303Z [info] [ProjectionWorker] Catch-up check completed. {"service":"back-end"}
+2026-06-09T15:24:41.783Z [info] Redis client connecting {"service":"back-end"}
+2026-06-09T15:24:41.794Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-09T15:24:41.796Z [info] Redis client ready {"service":"back-end"}
+2026-06-09T15:24:41.802Z [info] Redis client connected {"service":"back-end"}
+2026-06-09T15:24:41.807Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-09T15:24:43.799Z [info] [ProjectionWorker] Processing event OrderStatusChanged (Seq: 16) for Aggregate: 6a245204fabfe4f1da5241c5 {"service":"back-end"}
+2026-06-09T15:24:43.963Z [error] [ProjectionWorker] Job failed for event 6a28303b7dcac27229d04ea6: Path "lastEventSequence" is not in schema, strict mode is `true`, and upsert is `true`. {"service":"back-end","isImmutableError":false,"path":"lastEventSequence"}
+StrictModeError: Path "lastEventSequence" is not in schema, strict mode is `true`, and upsert is `true`.
+    at cast (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\cast.js:305:17)
+    at cast (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\cast.js:76:20)
+    at Query.cast (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:5060:12)
+    at Query._castConditions (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:2374:10)
+    at model.Query._updateThunk (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:4043:8)
+    at model.Query._updateOne (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:4150:23)
+    at model.Query.exec (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:4627:80)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async projectOrder (file:///D:/Project/PetShop-Website/back-end/server/services/projector.js:130:3)
+    at async Worker.connection [as processFn] (file:///D:/Project/PetShop-Website/back-end/server/workers/projectionWorker.js:84:9)
+2026-06-09T15:24:45.213Z [info] [ProjectionWorker] Processing event OrderStatusChanged (Seq: 16) for Aggregate: 6a245204fabfe4f1da5241c5 {"service":"back-end"}
+2026-06-09T15:24:45.363Z [error] [ProjectionWorker] Job failed for event 6a28303b7dcac27229d04ea6: Path "lastEventSequence" is not in schema, strict mode is `true`, and upsert is `true`. {"service":"back-end","isImmutableError":false,"path":"lastEventSequence"}
+StrictModeError: Path "lastEventSequence" is not in schema, strict mode is `true`, and upsert is `true`.
+    at cast (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\cast.js:305:17)
+    at cast (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\cast.js:76:20)
+    at Query.cast (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:5060:12)
+    at Query._castConditions (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:2374:10)
+    at model.Query._updateThunk (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:4043:8)
+    at model.Query._updateOne (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:4150:23)
+    at model.Query.exec (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:4627:80)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async projectOrder (file:///D:/Project/PetShop-Website/back-end/server/services/projector.js:130:3)
+    at async Worker.connection [as processFn] (file:///D:/Project/PetShop-Website/back-end/server/workers/projectionWorker.js:84:9)
+2026-06-09T15:24:47.538Z [info] [ProjectionWorker] Processing event OrderStatusChanged (Seq: 16) for Aggregate: 6a245204fabfe4f1da5241c5 {"service":"back-end"}
+2026-06-09T15:24:47.692Z [error] [ProjectionWorker] Job failed for event 6a28303b7dcac27229d04ea6: Path "lastEventSequence" is not in schema, strict mode is `true`, and upsert is `true`. {"service":"back-end","isImmutableError":false,"path":"lastEventSequence"}
+StrictModeError: Path "lastEventSequence" is not in schema, strict mode is `true`, and upsert is `true`.
+    at cast (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\cast.js:305:17)
+    at cast (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\cast.js:76:20)
+    at Query.cast (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:5060:12)
+    at Query._castConditions (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:2374:10)
+    at model.Query._updateThunk (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:4043:8)
+    at model.Query._updateOne (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:4150:23)
+    at model.Query.exec (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:4627:80)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async projectOrder (file:///D:/Project/PetShop-Website/back-end/server/services/projector.js:130:3)
+    at async Worker.connection [as processFn] (file:///D:/Project/PetShop-Website/back-end/server/workers/projectionWorker.js:84:9)
+2026-06-09T15:24:51.880Z [info] [ProjectionWorker] Processing event OrderStatusChanged (Seq: 16) for Aggregate: 6a245204fabfe4f1da5241c5 {"service":"back-end"}
+2026-06-09T15:24:52.043Z [error] [ProjectionWorker] Job failed for event 6a28303b7dcac27229d04ea6: Path "lastEventSequence" is not in schema, strict mode is `true`, and upsert is `true`. {"service":"back-end","isImmutableError":false,"path":"lastEventSequence"}
+StrictModeError: Path "lastEventSequence" is not in schema, strict mode is `true`, and upsert is `true`.
+    at cast (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\cast.js:305:17)
+    at cast (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\cast.js:76:20)
+    at Query.cast (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:5060:12)
+    at Query._castConditions (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:2374:10)
+    at model.Query._updateThunk (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:4043:8)
+    at model.Query._updateOne (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:4150:23)
+    at model.Query.exec (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:4627:80)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async projectOrder (file:///D:/Project/PetShop-Website/back-end/server/services/projector.js:130:3)
+    at async Worker.connection [as processFn] (file:///D:/Project/PetShop-Website/back-end/server/workers/projectionWorker.js:84:9)
+2026-06-09T15:25:01.586Z [info] Redis client connecting {"service":"back-end"}
+2026-06-09T15:25:01.596Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-09T15:25:01.600Z [info] Redis client ready {"service":"back-end"}
+2026-06-09T15:25:01.606Z [info] Redis client connected {"service":"back-end"}
+2026-06-09T15:25:01.612Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-09T15:25:01.617Z [info] Loading .env {"service":"back-end","envPath":"D:\\Project\\PetShop-Website\\back-end\\.env"}
+2026-06-09T15:25:01.619Z [info] .env file loaded successfully {"service":"back-end"}
+2026-06-09T15:25:01.674Z [info] [ProjectionWorker] Checking for pending events to catch up from checkpoints... {"service":"back-end"}
+2026-06-09T15:25:01.678Z [info] Background workers initialized {"service":"back-end"}
+2026-06-09T15:25:01.688Z [info] Server is running: http://localhost:5000 {"service":"back-end"}
+2026-06-09T15:25:02.495Z [info] MongoDB connected {"service":"back-end"}
+2026-06-09T15:25:02.497Z [info] Connected to MongoDB {"service":"back-end"}
+2026-06-09T15:25:03.391Z [info] [ProjectionWorker] Catching up Order projections from sequence 12. Found 4 events. {"service":"back-end"}
+2026-06-09T15:25:03.405Z [info] [ProjectionWorker] Processing event OrderStatusChanged (Seq: 16) for Aggregate: 6a245204fabfe4f1da5241c5 {"service":"back-end"}
+2026-06-09T15:25:03.685Z [error] [ProjectionWorker] Job failed for event 6a28303b7dcac27229d04ea6: Path "lastEventSequence" is not in schema, strict mode is `true`, and upsert is `true`. {"service":"back-end","isImmutableError":false,"path":"lastEventSequence"}
+StrictModeError: Path "lastEventSequence" is not in schema, strict mode is `true`, and upsert is `true`.
+    at cast (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\cast.js:305:17)
+    at cast (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\cast.js:76:20)
+    at Query.cast (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:5060:12)
+    at Query._castConditions (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:2374:10)
+    at model.Query._updateThunk (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:4043:8)
+    at model.Query._updateOne (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:4150:23)
+    at model.Query.exec (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:4627:80)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async projectOrder (file:///D:/Project/PetShop-Website/back-end/server/services/projector.js:130:3)
+    at async Worker.connection [as processFn] (file:///D:/Project/PetShop-Website/back-end/server/workers/projectionWorker.js:84:9)
+2026-06-09T15:25:04.129Z [error] [ProjectionWorker] Failed to process event 6a282fb17a92e89fea310b62 during catch-up: Path "lastEventSequence" is not in schema, strict mode is `true`, and upsert is `true`. {"service":"back-end","isImmutableError":false,"path":"lastEventSequence"}
+StrictModeError: Path "lastEventSequence" is not in schema, strict mode is `true`, and upsert is `true`.
+    at cast (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\cast.js:305:17)
+    at cast (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\cast.js:76:20)
+    at Query.cast (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:5060:12)
+    at Query._castConditions (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:2374:10)
+    at model.Query._updateThunk (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:4043:8)
+    at model.Query._updateOne (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:4150:23)
+    at model.Query.exec (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:4627:80)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async projectOrder (file:///D:/Project/PetShop-Website/back-end/server/services/projector.js:130:3)
+    at async resumeProjectionsFromCheckpoints (file:///D:/Project/PetShop-Website/back-end/server/workers/projectionWorker.js:32:13)
+2026-06-09T15:25:04.201Z [info] [ProjectionWorker] Catch-up check completed. {"service":"back-end"}
+2026-06-09T15:25:06.233Z [info] Redis client connecting {"service":"back-end"}
+2026-06-09T15:25:06.246Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-09T15:25:06.258Z [info] Redis client ready {"service":"back-end"}
+2026-06-09T15:25:06.258Z [info] Redis client connected {"service":"back-end"}
+2026-06-09T15:25:06.260Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-09T15:25:08.190Z [info] [ProjectionWorker] Processing event OrderStatusChanged (Seq: 17) for Aggregate: 6a245204fabfe4f1da5241c5 {"service":"back-end"}
+2026-06-09T15:25:08.339Z [error] [ProjectionWorker] Job failed for event 6a283053b917280c06069df9: Path "lastEventSequence" is not in schema, strict mode is `true`, and upsert is `true`. {"service":"back-end","isImmutableError":false,"path":"lastEventSequence"}
+StrictModeError: Path "lastEventSequence" is not in schema, strict mode is `true`, and upsert is `true`.
+    at cast (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\cast.js:305:17)
+    at cast (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\cast.js:76:20)
+    at Query.cast (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:5060:12)
+    at Query._castConditions (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:2374:10)
+    at model.Query._updateThunk (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:4043:8)
+    at model.Query._updateOne (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:4150:23)
+    at model.Query.exec (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:4627:80)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async projectOrder (file:///D:/Project/PetShop-Website/back-end/server/services/projector.js:130:3)
+    at async Worker.connection [as processFn] (file:///D:/Project/PetShop-Website/back-end/server/workers/projectionWorker.js:84:9)
+2026-06-09T15:25:09.554Z [info] [ProjectionWorker] Processing event OrderStatusChanged (Seq: 17) for Aggregate: 6a245204fabfe4f1da5241c5 {"service":"back-end"}
+2026-06-09T15:25:09.725Z [error] [ProjectionWorker] Job failed for event 6a283053b917280c06069df9: Path "lastEventSequence" is not in schema, strict mode is `true`, and upsert is `true`. {"service":"back-end","isImmutableError":false,"path":"lastEventSequence"}
+StrictModeError: Path "lastEventSequence" is not in schema, strict mode is `true`, and upsert is `true`.
+    at cast (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\cast.js:305:17)
+    at cast (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\cast.js:76:20)
+    at Query.cast (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:5060:12)
+    at Query._castConditions (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:2374:10)
+    at model.Query._updateThunk (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:4043:8)
+    at model.Query._updateOne (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:4150:23)
+    at model.Query.exec (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:4627:80)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async projectOrder (file:///D:/Project/PetShop-Website/back-end/server/services/projector.js:130:3)
+    at async Worker.connection [as processFn] (file:///D:/Project/PetShop-Website/back-end/server/workers/projectionWorker.js:84:9)
+2026-06-09T15:25:11.968Z [info] [ProjectionWorker] Processing event OrderStatusChanged (Seq: 17) for Aggregate: 6a245204fabfe4f1da5241c5 {"service":"back-end"}
+2026-06-09T15:25:12.121Z [error] [ProjectionWorker] Job failed for event 6a283053b917280c06069df9: Path "lastEventSequence" is not in schema, strict mode is `true`, and upsert is `true`. {"service":"back-end","isImmutableError":false,"path":"lastEventSequence"}
+StrictModeError: Path "lastEventSequence" is not in schema, strict mode is `true`, and upsert is `true`.
+    at cast (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\cast.js:305:17)
+    at cast (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\cast.js:76:20)
+    at Query.cast (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:5060:12)
+    at Query._castConditions (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:2374:10)
+    at model.Query._updateThunk (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:4043:8)
+    at model.Query._updateOne (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:4150:23)
+    at model.Query.exec (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:4627:80)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async projectOrder (file:///D:/Project/PetShop-Website/back-end/server/services/projector.js:130:3)
+    at async Worker.connection [as processFn] (file:///D:/Project/PetShop-Website/back-end/server/workers/projectionWorker.js:84:9)
+2026-06-09T15:25:16.284Z [info] [ProjectionWorker] Processing event OrderStatusChanged (Seq: 17) for Aggregate: 6a245204fabfe4f1da5241c5 {"service":"back-end"}
+2026-06-09T15:25:16.433Z [error] [ProjectionWorker] Job failed for event 6a283053b917280c06069df9: Path "lastEventSequence" is not in schema, strict mode is `true`, and upsert is `true`. {"service":"back-end","isImmutableError":false,"path":"lastEventSequence"}
+StrictModeError: Path "lastEventSequence" is not in schema, strict mode is `true`, and upsert is `true`.
+    at cast (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\cast.js:305:17)
+    at cast (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\cast.js:76:20)
+    at Query.cast (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:5060:12)
+    at Query._castConditions (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:2374:10)
+    at model.Query._updateThunk (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:4043:8)
+    at model.Query._updateOne (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:4150:23)
+    at model.Query.exec (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:4627:80)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async projectOrder (file:///D:/Project/PetShop-Website/back-end/server/services/projector.js:130:3)
+    at async Worker.connection [as processFn] (file:///D:/Project/PetShop-Website/back-end/server/workers/projectionWorker.js:84:9)
+2026-06-09T15:25:24.628Z [info] [ProjectionWorker] Processing event OrderStatusChanged (Seq: 17) for Aggregate: 6a245204fabfe4f1da5241c5 {"service":"back-end"}
+2026-06-09T15:25:24.781Z [error] [ProjectionWorker] Job failed for event 6a283053b917280c06069df9: Path "lastEventSequence" is not in schema, strict mode is `true`, and upsert is `true`. {"service":"back-end","isImmutableError":false,"path":"lastEventSequence"}
+StrictModeError: Path "lastEventSequence" is not in schema, strict mode is `true`, and upsert is `true`.
+    at cast (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\cast.js:305:17)
+    at cast (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\cast.js:76:20)
+    at Query.cast (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:5060:12)
+    at Query._castConditions (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:2374:10)
+    at model.Query._updateThunk (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:4043:8)
+    at model.Query._updateOne (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:4150:23)
+    at model.Query.exec (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:4627:80)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async projectOrder (file:///D:/Project/PetShop-Website/back-end/server/services/projector.js:130:3)
+    at async Worker.connection [as processFn] (file:///D:/Project/PetShop-Website/back-end/server/workers/projectionWorker.js:84:9)
+2026-06-09T15:25:28.548Z [info] Redis client connecting {"service":"back-end"}
+2026-06-09T15:25:28.558Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-09T15:25:28.562Z [info] Redis client ready {"service":"back-end"}
+2026-06-09T15:25:28.563Z [info] Redis client connected {"service":"back-end"}
+2026-06-09T15:25:28.568Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-09T15:25:28.573Z [info] Loading .env {"service":"back-end","envPath":"D:\\Project\\PetShop-Website\\back-end\\.env"}
+2026-06-09T15:25:28.574Z [info] .env file loaded successfully {"service":"back-end"}
+2026-06-09T15:25:28.624Z [info] [ProjectionWorker] Checking for pending events to catch up from checkpoints... {"service":"back-end"}
+2026-06-09T15:25:28.626Z [info] Background workers initialized {"service":"back-end"}
+2026-06-09T15:25:28.637Z [info] Server is running: http://localhost:5000 {"service":"back-end"}
+2026-06-09T15:25:29.311Z [info] MongoDB connected {"service":"back-end"}
+2026-06-09T15:25:29.314Z [info] Connected to MongoDB {"service":"back-end"}
+2026-06-09T15:25:30.068Z [info] [ProjectionWorker] Catching up Order projections from sequence 12. Found 5 events. {"service":"back-end"}
+2026-06-09T15:25:30.211Z [error] [ProjectionWorker] Failed to process event 6a282fb17a92e89fea310b62 during catch-up: Path "lastEventSequence" is not in schema, strict mode is `true`, and upsert is `true`. {"service":"back-end","isImmutableError":false,"path":"lastEventSequence"}
+StrictModeError: Path "lastEventSequence" is not in schema, strict mode is `true`, and upsert is `true`.
+    at cast (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\cast.js:305:17)
+    at cast (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\cast.js:76:20)
+    at Query.cast (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:5060:12)
+    at Query._castConditions (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:2374:10)
+    at model.Query._updateThunk (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:4043:8)
+    at model.Query._updateOne (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:4150:23)
+    at model.Query.exec (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:4627:80)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async projectOrder (file:///D:/Project/PetShop-Website/back-end/server/services/projector.js:130:3)
+    at async resumeProjectionsFromCheckpoints (file:///D:/Project/PetShop-Website/back-end/server/workers/projectionWorker.js:32:13)
+2026-06-09T15:25:30.265Z [info] [ProjectionWorker] Catch-up check completed. {"service":"back-end"}
+2026-06-09T15:25:39.952Z [info] Redis client connecting {"service":"back-end"}
+2026-06-09T15:25:39.970Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-09T15:25:39.973Z [info] Redis client ready {"service":"back-end"}
+2026-06-09T15:25:39.981Z [info] Redis client connected {"service":"back-end"}
+2026-06-09T15:25:39.988Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-09T15:25:41.911Z [info] [ProjectionWorker] Processing event OrderStatusChanged (Seq: 18) for Aggregate: 6a245204fabfe4f1da5241c5 {"service":"back-end"}
+2026-06-09T15:25:42.052Z [error] [ProjectionWorker] Job failed for event 6a28307517dc878f895610aa: Path "lastEventSequence" is not in schema, strict mode is `true`, and upsert is `true`. {"service":"back-end","isImmutableError":false,"path":"lastEventSequence"}
+StrictModeError: Path "lastEventSequence" is not in schema, strict mode is `true`, and upsert is `true`.
+    at cast (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\cast.js:305:17)
+    at cast (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\cast.js:76:20)
+    at Query.cast (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:5060:12)
+    at Query._castConditions (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:2374:10)
+    at model.Query._updateThunk (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:4043:8)
+    at model.Query._updateOne (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:4150:23)
+    at model.Query.exec (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:4627:80)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async projectOrder (file:///D:/Project/PetShop-Website/back-end/server/services/projector.js:130:3)
+    at async Worker.connection [as processFn] (file:///D:/Project/PetShop-Website/back-end/server/workers/projectionWorker.js:84:9)
+2026-06-09T15:25:43.217Z [info] [ProjectionWorker] Processing event OrderStatusChanged (Seq: 18) for Aggregate: 6a245204fabfe4f1da5241c5 {"service":"back-end"}
+2026-06-09T15:25:43.360Z [error] [ProjectionWorker] Job failed for event 6a28307517dc878f895610aa: Path "lastEventSequence" is not in schema, strict mode is `true`, and upsert is `true`. {"service":"back-end","isImmutableError":false,"path":"lastEventSequence"}
+StrictModeError: Path "lastEventSequence" is not in schema, strict mode is `true`, and upsert is `true`.
+    at cast (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\cast.js:305:17)
+    at cast (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\cast.js:76:20)
+    at Query.cast (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:5060:12)
+    at Query._castConditions (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:2374:10)
+    at model.Query._updateThunk (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:4043:8)
+    at model.Query._updateOne (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:4150:23)
+    at model.Query.exec (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:4627:80)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async projectOrder (file:///D:/Project/PetShop-Website/back-end/server/services/projector.js:130:3)
+    at async Worker.connection [as processFn] (file:///D:/Project/PetShop-Website/back-end/server/workers/projectionWorker.js:84:9)
+2026-06-09T15:25:45.533Z [info] [ProjectionWorker] Processing event OrderStatusChanged (Seq: 18) for Aggregate: 6a245204fabfe4f1da5241c5 {"service":"back-end"}
+2026-06-09T15:25:45.678Z [error] [ProjectionWorker] Job failed for event 6a28307517dc878f895610aa: Path "lastEventSequence" is not in schema, strict mode is `true`, and upsert is `true`. {"service":"back-end","isImmutableError":false,"path":"lastEventSequence"}
+StrictModeError: Path "lastEventSequence" is not in schema, strict mode is `true`, and upsert is `true`.
+    at cast (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\cast.js:305:17)
+    at cast (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\cast.js:76:20)
+    at Query.cast (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:5060:12)
+    at Query._castConditions (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:2374:10)
+    at model.Query._updateThunk (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:4043:8)
+    at model.Query._updateOne (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:4150:23)
+    at model.Query.exec (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:4627:80)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async projectOrder (file:///D:/Project/PetShop-Website/back-end/server/services/projector.js:130:3)
+    at async Worker.connection [as processFn] (file:///D:/Project/PetShop-Website/back-end/server/workers/projectionWorker.js:84:9)
+2026-06-09T15:25:49.888Z [info] [ProjectionWorker] Processing event OrderStatusChanged (Seq: 18) for Aggregate: 6a245204fabfe4f1da5241c5 {"service":"back-end"}
+2026-06-09T15:25:50.110Z [error] [ProjectionWorker] Job failed for event 6a28307517dc878f895610aa: Path "lastEventSequence" is not in schema, strict mode is `true`, and upsert is `true`. {"service":"back-end","isImmutableError":false,"path":"lastEventSequence"}
+StrictModeError: Path "lastEventSequence" is not in schema, strict mode is `true`, and upsert is `true`.
+    at cast (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\cast.js:305:17)
+    at cast (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\cast.js:76:20)
+    at Query.cast (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:5060:12)
+    at Query._castConditions (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:2374:10)
+    at model.Query._updateThunk (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:4043:8)
+    at model.Query._updateOne (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:4150:23)
+    at model.Query.exec (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:4627:80)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async projectOrder (file:///D:/Project/PetShop-Website/back-end/server/services/projector.js:130:3)
+    at async Worker.connection [as processFn] (file:///D:/Project/PetShop-Website/back-end/server/workers/projectionWorker.js:84:9)
+2026-06-09T15:25:58.296Z [info] [ProjectionWorker] Processing event OrderStatusChanged (Seq: 18) for Aggregate: 6a245204fabfe4f1da5241c5 {"service":"back-end"}
+2026-06-09T15:25:58.479Z [error] [ProjectionWorker] Job failed for event 6a28307517dc878f895610aa: Path "lastEventSequence" is not in schema, strict mode is `true`, and upsert is `true`. {"service":"back-end","isImmutableError":false,"path":"lastEventSequence"}
+StrictModeError: Path "lastEventSequence" is not in schema, strict mode is `true`, and upsert is `true`.
+    at cast (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\cast.js:305:17)
+    at cast (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\cast.js:76:20)
+    at Query.cast (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:5060:12)
+    at Query._castConditions (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:2374:10)
+    at model.Query._updateThunk (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:4043:8)
+    at model.Query._updateOne (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:4150:23)
+    at model.Query.exec (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:4627:80)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async projectOrder (file:///D:/Project/PetShop-Website/back-end/server/services/projector.js:130:3)
+    at async Worker.connection [as processFn] (file:///D:/Project/PetShop-Website/back-end/server/workers/projectionWorker.js:84:9)
+2026-06-09T15:26:12.425Z [info] Redis client connecting {"service":"back-end"}
+2026-06-09T15:26:12.447Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-09T15:26:12.460Z [info] Redis client ready {"service":"back-end"}
+2026-06-09T15:26:12.461Z [info] Redis client connected {"service":"back-end"}
+2026-06-09T15:26:12.468Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-09T15:26:12.475Z [info] Loading .env {"service":"back-end","envPath":"D:\\Project\\PetShop-Website\\back-end\\.env"}
+2026-06-09T15:26:12.476Z [info] .env file loaded successfully {"service":"back-end"}
+2026-06-09T15:26:12.569Z [info] [ProjectionWorker] Checking for pending events to catch up from checkpoints... {"service":"back-end"}
+2026-06-09T15:26:12.576Z [info] Background workers initialized {"service":"back-end"}
+2026-06-09T15:26:12.595Z [info] Server is running: http://localhost:5000 {"service":"back-end"}
+2026-06-09T15:26:15.455Z [info] Redis client connecting {"service":"back-end"}
+2026-06-09T15:26:15.473Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-09T15:26:15.478Z [info] Redis client ready {"service":"back-end"}
+2026-06-09T15:26:15.486Z [info] Redis client connected {"service":"back-end"}
+2026-06-09T15:26:15.496Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-09T15:26:17.915Z [info] Redis client connecting {"service":"back-end"}
+2026-06-09T15:26:17.929Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-09T15:26:17.933Z [info] Redis client ready {"service":"back-end"}
+2026-06-09T15:26:17.940Z [info] Redis client connected {"service":"back-end"}
+2026-06-09T15:26:17.946Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-09T15:26:17.949Z [info] Loading .env {"service":"back-end","envPath":"D:\\Project\\PetShop-Website\\back-end\\.env"}
+2026-06-09T15:26:17.949Z [info] .env file loaded successfully {"service":"back-end"}
+2026-06-09T15:26:17.984Z [info] [ProjectionWorker] Checking for pending events to catch up from checkpoints... {"service":"back-end"}
+2026-06-09T15:26:17.986Z [info] Background workers initialized {"service":"back-end"}
+2026-06-09T15:26:17.993Z [info] Server is running: http://localhost:5000 {"service":"back-end"}
+2026-06-09T15:26:20.607Z [info] Redis client connecting {"service":"back-end"}
+2026-06-09T15:26:20.617Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-09T15:26:20.620Z [info] Redis client ready {"service":"back-end"}
+2026-06-09T15:26:20.626Z [info] Redis client connected {"service":"back-end"}
+2026-06-09T15:26:20.632Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-09T15:26:20.636Z [info] Loading .env {"service":"back-end","envPath":"D:\\Project\\PetShop-Website\\back-end\\.env"}
+2026-06-09T15:26:20.637Z [info] .env file loaded successfully {"service":"back-end"}
+2026-06-09T15:26:20.686Z [info] [ProjectionWorker] Checking for pending events to catch up from checkpoints... {"service":"back-end"}
+2026-06-09T15:26:20.689Z [info] Background workers initialized {"service":"back-end"}
+2026-06-09T15:26:20.699Z [info] Server is running: http://localhost:5000 {"service":"back-end"}
+2026-06-09T15:26:21.409Z [info] MongoDB connected {"service":"back-end"}
+2026-06-09T15:26:21.411Z [info] Connected to MongoDB {"service":"back-end"}
+2026-06-09T15:26:22.111Z [info] [ProjectionWorker] Catching up Order projections from sequence 12. Found 6 events. {"service":"back-end"}
+2026-06-09T15:26:22.389Z [info] Projected Order 6a245204fabfe4f1da5241c5 successfully to status: shipping, payment_status: paid {"service":"back-end"}
+2026-06-09T15:26:22.601Z [info] Projected Order 6a1e8e928413666c84435a49 successfully to status: pending, payment_status: pending {"service":"back-end"}
+2026-06-09T15:26:22.809Z [info] Projected Order 6a1828c2ec64ea7bb152c4ec successfully to status: pending, payment_status: pending {"service":"back-end"}
+2026-06-09T15:26:23.018Z [error] [ProjectionWorker] Failed to process event 6a28303b7dcac27229d04ea6 during catch-up: E11000 duplicate key error collection: test.orders index: _id_ dup key: { _id: ObjectId('6a245204fabfe4f1da5241c5') } {"service":"back-end","errorLabelSet":{},"errorResponse":{"index":0,"code":11000,"errmsg":"E11000 duplicate key error collection: test.orders index: _id_ dup key: { _id: ObjectId('6a245204fabfe4f1da5241c5') }","keyPattern":{"_id":1},"keyValue":{"_id":"6a245204fabfe4f1da5241c5"}},"index":0,"code":11000,"keyPattern":{"_id":1},"keyValue":{"_id":"6a245204fabfe4f1da5241c5"}}
+MongoServerError: E11000 duplicate key error collection: test.orders index: _id_ dup key: { _id: ObjectId('6a245204fabfe4f1da5241c5') }
+    at UpdateOneOperation.handleOk (D:\Project\PetShop-Website\back-end\node_modules\mongoose\node_modules\mongodb\lib\operations\update.js:70:19)
+    at tryOperation (D:\Project\PetShop-Website\back-end\node_modules\mongoose\node_modules\mongodb\lib\operations\execute_operation.js:214:34)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async executeOperation (D:\Project\PetShop-Website\back-end\node_modules\mongoose\node_modules\mongodb\lib\operations\execute_operation.js:78:16)
+    at async Collection.updateOne (D:\Project\PetShop-Website\back-end\node_modules\mongoose\node_modules\mongodb\lib\collection.js:238:16)
+    at async model.Query.exec (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:4627:63)
+    at async projectOrder (file:///D:/Project/PetShop-Website/back-end/server/services/projector.js:130:3)
+    at async resumeProjectionsFromCheckpoints (file:///D:/Project/PetShop-Website/back-end/server/workers/projectionWorker.js:32:13)
+2026-06-09T15:26:23.067Z [info] [ProjectionWorker] Catch-up check completed. {"service":"back-end"}
+2026-06-09T15:26:26.267Z [info] [Projector] Starting deterministic rebuild for aggregateType: Product {"service":"back-end"}
+2026-06-09T15:26:26.812Z [info] [Projector] Reset Product stock to baseStock. {"service":"back-end"}
+2026-06-09T15:26:26.881Z [info] [Projector] Replaying 0 Product events... {"service":"back-end"}
+2026-06-09T15:26:26.942Z [info] [Projector] Rebuild completed for Product. Checkpoint set to globalSequence: 0 {"service":"back-end"}
+2026-06-09T15:26:26.942Z [info] [Projector] Starting deterministic rebuild for aggregateType: Order {"service":"back-end"}
+2026-06-09T15:26:27.079Z [info] [Projector] Cleared Orders and Payments projection collections. {"service":"back-end"}
+2026-06-09T15:26:27.139Z [info] [Projector] Replaying 18 Order events... {"service":"back-end"}
+2026-06-09T15:26:27.254Z [warn] OrderPlaced event not found and Order document not found in DB for order 6a245204fabfe4f1da5241c5 {"service":"back-end"}
+2026-06-09T15:26:27.360Z [warn] OrderPlaced event not found and Order document not found in DB for order 6a1e8e928413666c84435a49 {"service":"back-end"}
+2026-06-09T15:26:27.464Z [warn] OrderPlaced event not found and Order document not found in DB for order 6a1828c2ec64ea7bb152c4ec {"service":"back-end"}
+2026-06-09T15:26:27.521Z [info] [Projector] Rebuild completed for Order. Checkpoint set to globalSequence: 18 {"service":"back-end"}
+2026-06-09T15:26:40.047Z [info] Redis client connecting {"service":"back-end"}
+2026-06-09T15:26:40.059Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-09T15:26:40.063Z [info] Redis client ready {"service":"back-end"}
+2026-06-09T15:26:40.069Z [info] Redis client connected {"service":"back-end"}
+2026-06-09T15:26:40.073Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-09T15:26:40.077Z [info] Loading .env {"service":"back-end","envPath":"D:\\Project\\PetShop-Website\\back-end\\.env"}
+2026-06-09T15:26:40.078Z [info] .env file loaded successfully {"service":"back-end"}
+2026-06-09T15:26:40.125Z [info] [ProjectionWorker] Checking for pending events to catch up from checkpoints... {"service":"back-end"}
+2026-06-09T15:26:40.128Z [info] Background workers initialized {"service":"back-end"}
+2026-06-09T15:26:40.137Z [info] Server is running: http://localhost:5000 {"service":"back-end"}
+2026-06-09T15:26:40.869Z [info] MongoDB connected {"service":"back-end"}
+2026-06-09T15:26:40.872Z [info] Connected to MongoDB {"service":"back-end"}
+2026-06-09T15:26:41.724Z [info] [ProjectionWorker] Catch-up check completed. {"service":"back-end"}
+2026-06-09T15:26:47.750Z [info] PUT /api/orders/6a1e8e928413666c84435a49 404 208.417 ms - 29 req=d0e282e6-1731-40f8-89e4-77821bc09a74 {"service":"back-end"}
+2026-06-09T15:26:50.517Z [info] PUT /api/orders/6a1e8e928413666c84435a49 404 209.200 ms - 29 req=7e1d6775-4899-4dc7-8bab-dcde34f52f4b {"service":"back-end"}
+2026-06-09T15:26:54.734Z [info] GET /api/categories/shop-cho-cun 200 229.597 ms - 82558 req=99aecace-1947-47fa-abbe-5ecc0f78f71b {"service":"back-end"}
+2026-06-09T15:26:54.751Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 252.331 ms - - req=c7ae5a08-ae44-4862-b816-140cb8bac72d {"service":"back-end"}
+2026-06-09T15:26:54.759Z [info] GET /api/products 200 275.888 ms - 186559 req=5224368a-b4e6-453a-bb4e-a9ae2e261fc3 {"service":"back-end"}
+2026-06-09T15:26:54.765Z [info] GET /api/products/product/sales 304 12.402 ms - - req=e8b9d5c6-117d-4914-ae7c-3856737ce07f {"service":"back-end"}
+2026-06-09T15:26:54.772Z [info] GET /api/orders?limit=1000 200 269.353 ms - 67 req=f13017ff-24c8-4f38-a67b-4f0142b6aaa9 {"service":"back-end"}
+2026-06-09T15:26:54.827Z [info] GET /api/categories/shop-cho-meo 200 319.603 ms - 104002 req=9192b2d6-9ac7-4cb3-ba73-78f9601e7a9e {"service":"back-end"}
+2026-06-09T15:26:54.919Z [info] GET /api/orders/stats 200 432.864 ms - 93 req=d282e266-0df3-4b0a-b87b-8bfbe10cf187 {"service":"back-end"}
+2026-06-09T15:26:58.891Z [info] Redis client connecting {"service":"back-end"}
+2026-06-09T15:26:58.900Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-09T15:26:58.913Z [info] Redis client ready {"service":"back-end"}
+2026-06-09T15:26:58.913Z [info] Redis client connected {"service":"back-end"}
+2026-06-09T15:26:58.918Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-09T15:26:58.922Z [info] Loading .env {"service":"back-end","envPath":"D:\\Project\\PetShop-Website\\back-end\\.env"}
+2026-06-09T15:26:58.923Z [info] .env file loaded successfully {"service":"back-end"}
+2026-06-09T15:26:58.962Z [info] [ProjectionWorker] Checking for pending events to catch up from checkpoints... {"service":"back-end"}
+2026-06-09T15:26:58.964Z [info] Background workers initialized {"service":"back-end"}
+2026-06-09T15:26:58.972Z [info] Server is running: http://localhost:5000 {"service":"back-end"}
+2026-06-09T15:26:59.648Z [info] MongoDB connected {"service":"back-end"}
+2026-06-09T15:26:59.652Z [info] Connected to MongoDB {"service":"back-end"}
+2026-06-09T15:27:00.469Z [info] [ProjectionWorker] Catch-up check completed. {"service":"back-end"}
+2026-06-09T15:27:14.864Z [info] Redis client connecting {"service":"back-end"}
+2026-06-09T15:27:14.883Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-09T15:27:14.887Z [info] Redis client ready {"service":"back-end"}
+2026-06-09T15:27:14.894Z [info] Redis client connected {"service":"back-end"}
+2026-06-09T15:27:14.903Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-09T15:27:14.908Z [info] Loading .env {"service":"back-end","envPath":"D:\\Project\\PetShop-Website\\back-end\\.env"}
+2026-06-09T15:27:14.909Z [info] .env file loaded successfully {"service":"back-end"}
+2026-06-09T15:27:14.968Z [info] [ProjectionWorker] Checking for pending events to catch up from checkpoints... {"service":"back-end"}
+2026-06-09T15:27:14.971Z [info] Background workers initialized {"service":"back-end"}
+2026-06-09T15:27:14.984Z [info] Server is running: http://localhost:5000 {"service":"back-end"}
+2026-06-09T15:27:15.724Z [info] MongoDB connected {"service":"back-end"}
+2026-06-09T15:27:15.728Z [info] Connected to MongoDB {"service":"back-end"}
+2026-06-09T15:27:17.054Z [info] [ProjectionWorker] Catch-up check completed. {"service":"back-end"}
+2026-06-09T15:27:25.234Z [info] Redis client connecting {"service":"back-end"}
+2026-06-09T15:27:25.250Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-09T15:27:25.255Z [info] Redis client ready {"service":"back-end"}
+2026-06-09T15:27:25.262Z [info] Redis client connected {"service":"back-end"}
+2026-06-09T15:27:25.268Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-09T15:27:25.273Z [info] Loading .env {"service":"back-end","envPath":"D:\\Project\\PetShop-Website\\back-end\\.env"}
+2026-06-09T15:27:25.274Z [info] .env file loaded successfully {"service":"back-end"}
+2026-06-09T15:27:25.328Z [info] [ProjectionWorker] Checking for pending events to catch up from checkpoints... {"service":"back-end"}
+2026-06-09T15:27:25.331Z [info] Background workers initialized {"service":"back-end"}
+2026-06-09T15:27:25.342Z [info] Server is running: http://localhost:5000 {"service":"back-end"}
+2026-06-09T15:27:26.022Z [info] MongoDB connected {"service":"back-end"}
+2026-06-09T15:27:26.025Z [info] Connected to MongoDB {"service":"back-end"}
+2026-06-09T15:27:27.276Z [info] [ProjectionWorker] Catch-up check completed. {"service":"back-end"}
+2026-06-09T15:27:32.043Z [info] Redis client connecting {"service":"back-end"}
+2026-06-09T15:27:32.052Z [info] Redis client ready {"service":"back-end"}
+2026-06-09T15:27:32.053Z [info] Redis client connected {"service":"back-end"}
+2026-06-09T15:27:34.514Z [info] [Projector] Starting deterministic rebuild for aggregateType: Product {"service":"back-end"}
+2026-06-09T15:27:34.626Z [info] [Projector] Reset Product stock to baseStock. {"service":"back-end"}
+2026-06-09T15:27:34.674Z [info] [Projector] Replaying 0 Product events... {"service":"back-end"}
+2026-06-09T15:27:34.723Z [info] [Projector] Rebuild completed for Product. Checkpoint set to globalSequence: 0 {"service":"back-end"}
+2026-06-09T15:27:34.723Z [info] [Projector] Starting deterministic rebuild for aggregateType: Order {"service":"back-end"}
+2026-06-09T15:27:34.820Z [info] [Projector] Cleared Orders and Payments projection collections. {"service":"back-end"}
+2026-06-09T15:27:34.872Z [info] [Projector] Replaying 21 Order events... {"service":"back-end"}
+2026-06-09T15:27:34.984Z [info] Projected Order 6a245204fabfe4f1da5241c5 successfully to status: shipping, payment_status: paid {"service":"back-end"}
+2026-06-09T15:27:35.105Z [info] Projected Order 6a1e8e928413666c84435a49 successfully to status: pending, payment_status: pending {"service":"back-end"}
+2026-06-09T15:27:35.208Z [info] Projected Order 6a1828c2ec64ea7bb152c4ec successfully to status: pending, payment_status: pending {"service":"back-end"}
+2026-06-09T15:27:35.265Z [info] [Projector] Rebuild completed for Order. Checkpoint set to globalSequence: 21 {"service":"back-end"}
+2026-06-09T15:27:57.475Z [info] Redis client connecting {"service":"back-end"}
+2026-06-09T15:27:57.485Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-09T15:27:57.488Z [info] Redis client ready {"service":"back-end"}
+2026-06-09T15:27:57.489Z [info] Redis client connected {"service":"back-end"}
+2026-06-09T15:27:57.495Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-09T15:27:57.499Z [info] Loading .env {"service":"back-end","envPath":"D:\\Project\\PetShop-Website\\back-end\\.env"}
+2026-06-09T15:27:57.500Z [info] .env file loaded successfully {"service":"back-end"}
+2026-06-09T15:27:57.554Z [info] [ProjectionWorker] Checking for pending events to catch up from checkpoints... {"service":"back-end"}
+2026-06-09T15:27:57.557Z [info] Background workers initialized {"service":"back-end"}
+2026-06-09T15:27:57.569Z [info] Server is running: http://localhost:5000 {"service":"back-end"}
+2026-06-09T15:27:58.278Z [info] MongoDB connected {"service":"back-end"}
+2026-06-09T15:27:58.281Z [info] Connected to MongoDB {"service":"back-end"}
+2026-06-09T15:27:59.631Z [info] [ProjectionWorker] Catch-up check completed. {"service":"back-end"}
+2026-06-09T15:32:17.145Z [info] Received SIGINT. Starting graceful shutdown... {"service":"back-end"}

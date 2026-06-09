@@ -122,6 +122,10 @@ const orderSchema = new mongoose.Schema(
       type: Date,
       default: Date.now,
     },
+    lastEventSequence: {
+      type: Number,
+      required: false,
+    },
     updatedAt: {
       type: Date,
       default: Date.now,

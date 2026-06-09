@@ -45,6 +45,10 @@ const productSchema = new mongoose.Schema({
     type: String,
     unique: true,
   },
+  lastEventSequence: {
+    type: Number,
+    required: false,
+  },
 }, { collection: 'products' });
 
 productSchema.virtual("reviews", {

@@ -130,9 +130,23 @@ const axiosInstance = axios.create({
   withCredentials: true,
 });
 
+let isRefreshing = false;
+let failedQueue = [];
+
+const processQueue = (error, token = null) => {
+  failedQueue.forEach((prom) => {
+    if (error) {
+      prom.reject(error);
+    } else {
+      prom.resolve(token);
+    }
+  });
+  failedQueue = [];
+};
+
 const shouldHandleAuthLogout = (error) => {
   const status = error.response?.status;
-  if (![401, 403].includes(status)) {
+  if (status !== 403) {
     return false;
   }
 
@@ -144,10 +158,6 @@ const shouldHandleAuthLogout = (error) => {
   const requestUrl = String(error.config?.url || '');
   if (requestUrl.includes('/api/auth/')) {
     return false;
-  }
-
-  if (status === 401) {
-    return true;
   }
 
   const message = String(error.response?.data?.message || '').toLowerCase();
@@ -209,7 +219,9 @@ axiosInstance.interceptors.request.use(
 // Handle response errors
 axiosInstance.interceptors.response.use(
   (response) => response,
-  (error) => {
+  async (error) => {
+    const originalRequest = error.config;
+
     if (error.__rateLimitBlocked) {
       return Promise.reject(error);
     }
@@ -226,6 +238,51 @@ axiosInstance.interceptors.response.use(
         error.response?.data?.message ||
         'Bạn đã gửi quá nhiều yêu cầu. Vui lòng thử lại sau.'
       );
+    }
+
+    // Tự động gia hạn đăng nhập khi access token hết hạn (lỗi 401)
+    if (error.response?.status === 401 && !originalRequest._retry && !originalRequest.url?.includes('/api/auth/')) {
+      if (isRefreshing) {
+        return new Promise(function(resolve, reject) {
+          failedQueue.push({ resolve, reject });
+        })
+          .then((token) => {
+            originalRequest.headers['Authorization'] = 'Bearer ' + token;
+            return axiosInstance(originalRequest);
+          })
+          .catch((err) => {
+            return Promise.reject(err);
+          });
+      }
+
+      originalRequest._retry = true;
+      isRefreshing = true;
+
+      return new Promise(function(resolve, reject) {
+        axiosInstance.post('/api/auth/refresh')
+          .then(({ data }) => {
+            if (data?.accessToken) {
+              localStorage.setItem('accessToken', data.accessToken);
+              axiosInstance.defaults.headers.common['Authorization'] = 'Bearer ' + data.accessToken;
+              originalRequest.headers['Authorization'] = 'Bearer ' + data.accessToken;
+              processQueue(null, data.accessToken);
+              resolve(axiosInstance(originalRequest));
+            } else {
+              const refreshError = new Error("Gia hạn phiên đăng nhập thất bại");
+              processQueue(refreshError, null);
+              reject(refreshError);
+            }
+          })
+          .catch((err) => {
+            processQueue(err, null);
+            reject(err);
+            const message = err.response?.data?.message || 'Phiên đăng nhập đã hết hạn. Vui lòng đăng nhập lại.';
+            logoutOnAuthFailure(message);
+          })
+          .finally(() => {
+            isRefreshing = false;
+          });
+      });
     }
 
     if (shouldHandleAuthLogout(error)) {

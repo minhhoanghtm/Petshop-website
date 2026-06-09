@@ -352,6 +352,17 @@ const Dashboard = () => {
     return statusColors[status] || "text-gray-500 bg-gray-100";
   };
 
+  const translateStatus = (status) => {
+    const translations = {
+      pending: "Chờ xác nhận",
+      confirmed: "Đã xác nhận",
+      shipping: "Đang giao",
+      delivered: "Đã giao",
+      cancelled: "Đã hủy",
+    };
+    return translations[status] || status;
+  };
+
   const getNotificationIcon = (type) => {
     switch (type) {
       case "stock":
@@ -592,6 +603,7 @@ const Dashboard = () => {
                         <table className="w-full text-sm">
                           <thead>
                             <tr className="text-left text-gray-600 dark:text-gray-600 border-b dark:border-gray-400">
+                              <th className="pb-2 px-2">STT</th>
                               <th className="pb-2 px-2">Mã</th>
                               <th className="pb-2 px-2">Khách hàng</th>
                               <th className="pb-2 px-2">Tổng tiền</th>
@@ -600,13 +612,16 @@ const Dashboard = () => {
                             </tr>
                           </thead>
                           <tbody>
-                            {recentOrders.map((order) => (
+                            {recentOrders.map((order, index) => (
                               <tr
                                 key={order.id}
                                 className="border-b dark:border-gray-400 h-12"
                               >
                                 <td className="py-2 px-2">
-                                  {order.id.slice(-6)}
+                                  {index + 1}
+                                </td>
+                                <td className="py-2 px-2">
+                                  #{order.id.substring(0, 8)}
                                 </td>
                                 <td className="py-2 px-2">
                                   {order.customer || "Khách không xác định"}
@@ -620,7 +635,7 @@ const Dashboard = () => {
                                       order.status
                                     )}`}
                                   >
-                                    {order.status}
+                                    {translateStatus(order.status)}
                                   </span>
                                 </td>
                                 <td className="py-2 px-2">

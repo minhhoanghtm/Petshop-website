@@ -19,45 +19,95 @@ export const projectOrder = async (orderId, session = null) => {
   const latestEvent = events[events.length - 1];
   const orderPlacedEvent = events.find((e) => e.eventType === "OrderPlaced");
 
-  if (!orderPlacedEvent) {
-    logger.warn(`OrderPlaced event not found for order ${orderId}`);
-    return;
-  }
-
-  // Determine final status based on explicit priority rules
+  let baseOrderData = {};
   let status = "pending";
   let payment_status = "pending";
 
-  const hasPayment = events.some((e) => e.eventType === "PaymentReceived");
-  const hasCancellation = events.some((e) => e.eventType === "OrderCancelled");
+  if (!orderPlacedEvent) {
+    // Legacy support: if OrderPlaced event is missing, read base data from the existing MongoDB document
+    const existingOrderQuery = Order.findById(orderId);
+    if (session) existingOrderQuery.session(session);
+    const existingOrder = await existingOrderQuery;
 
-  if (hasPayment && hasCancellation) {
-    status = "cancelled";
-    payment_status = "refunded";
-  } else if (hasPayment) {
-    status = "confirmed";
-    payment_status = "paid";
-  } else if (hasCancellation) {
-    status = "cancelled";
-    payment_status = "failed";
+    if (!existingOrder) {
+      logger.warn(`OrderPlaced event not found and Order document not found in DB for order ${orderId}`);
+      return;
+    }
+
+    baseOrderData = {
+      user_id: existingOrder.user_id,
+      items: existingOrder.items,
+      total_price: existingOrder.total_price,
+      payment_method: existingOrder.payment_method,
+      fullName: existingOrder.fullName,
+      email: existingOrder.email,
+      phone: existingOrder.phone,
+      address: existingOrder.address,
+      province: existingOrder.province,
+      district: existingOrder.district,
+      ward: existingOrder.ward,
+      detailAddress: existingOrder.detailAddress,
+      deliveryOption: existingOrder.deliveryOption,
+      shippingCost: existingOrder.shippingCost,
+    };
+    // Initialize status and payment_status from the existing order doc
+    status = existingOrder.status || "pending";
+    payment_status = existingOrder.payment_status || "pending";
+  } else {
+    const payload = orderPlacedEvent.payload;
+    baseOrderData = {
+      user_id: payload.user_id,
+      items: payload.items,
+      total_price: payload.total_price,
+      payment_method: payload.payment_method,
+      fullName: payload.fullName,
+      email: payload.email,
+      phone: payload.phone,
+      address: payload.address,
+      province: payload.province,
+      district: payload.district,
+      ward: payload.ward,
+      detailAddress: payload.detailAddress,
+      deliveryOption: payload.deliveryOption || "delivery",
+      shippingCost: payload.shippingCost || 0,
+    };
   }
 
-  const payload = orderPlacedEvent.payload;
+  // Play events sequentially to determine final state
+  for (const event of events) {
+    switch (event.eventType) {
+      case "OrderPlaced":
+        status = "pending";
+        payment_status = "pending";
+        break;
+      case "PaymentReceived":
+        if (status === "cancelled") {
+          payment_status = "refunded";
+        } else {
+          payment_status = "paid";
+          if (status === "pending") {
+            status = "confirmed";
+          }
+        }
+        break;
+      case "OrderStatusChanged":
+        status = event.payload.newStatus || status;
+        break;
+      case "OrderCancelled":
+        status = "cancelled";
+        payment_status = payment_status === "paid" ? "refunded" : "failed";
+        break;
+      case "OrderDelivered":
+        status = "delivered";
+        payment_status = "paid";
+        break;
+      default:
+        break;
+    }
+  }
+
   const updateData = {
-    user_id: payload.user_id,
-    items: payload.items,
-    total_price: payload.total_price,
-    payment_method: payload.payment_method,
-    fullName: payload.fullName,
-    email: payload.email,
-    phone: payload.phone,
-    address: payload.address,
-    province: payload.province,
-    district: payload.district,
-    ward: payload.ward,
-    detailAddress: payload.detailAddress,
-    deliveryOption: payload.deliveryOption,
-    shippingCost: payload.shippingCost,
+    ...baseOrderData,
     status,
     payment_status,
     lastEventSequence: latestEvent.globalSequence,
@@ -78,7 +128,7 @@ export const projectOrder = async (orderId, session = null) => {
 
   if (session) updateQuery.session(session);
   await updateQuery;
-  logger.info(`Projected Order ${orderId} successfully to status: ${status}`);
+  logger.info(`Projected Order ${orderId} successfully to status: ${status}, payment_status: ${payment_status}`);
 };
 
 /**
