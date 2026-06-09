@@ -16,6 +16,8 @@
     "migrate:create": "migrate-mongo create -f migrate-mongo-config.cjs"
   },
   "dependencies": {
+    "@emnapi/core": "^1.11.0",
+    "@emnapi/runtime": "^1.11.0",
     "@google/generative-ai": "^0.24.1",
     "antd": "^6.3.3",
     "axios": "^1.17.0",
