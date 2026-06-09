@@ -120,13 +120,19 @@ const Register = () => {
 
         localStorage.setItem("accessToken", accessToken);
         const profileRes = await fetchProfile();
+        let isAdmin = false;
         if (profileRes?.data) {
           localStorage.setItem("user", JSON.stringify(profileRes.data));
+          isAdmin = profileRes.data.role === "admin";
         }
         setSuccess(true);
         toast.success("Đăng ký/Đăng nhập bằng Google thành công!");
         setTimeout(() => {
-          navigate("/");
+          if (isAdmin) {
+            navigate("/dashboard");
+          } else {
+            navigate("/");
+          }
         }, 500);
       } catch (err) {
         console.error("Google Register Error:", err);

@@ -236,13 +236,16 @@ const InventoryManagement = () => {
           currentUser={currentUser}
         />
         <main className="container mx-auto px-4 py-8 overflow-y-auto">
-          <div className="flex justify-between items-center mb-6">
-            <h1 className="text-2xl font-bold text-gray-900">
-              Quản lý hàng tồn kho
-            </h1>
+          <div className="flex flex-col justify-between items-start mb-6 md:flex-row md:items-center">
+            <div>
+              <h1 className="text-2xl font-bold text-gray-900">
+                Quản lý sản phầm
+              </h1>
+              <p className="text-sm text-gray-600 mt-1">Tổng số: {products.length}</p>
+            </div>
             <button
               onClick={resetFilters}
-              className="text-sm text-blue-600 hover:text-blue-800 focus:outline-none cursor-pointer border border-blue-500 rounded-md px-4 py-2"
+              className="text-sm text-blue-600 hover:text-blue-800 focus:outline-none cursor-pointer border border-blue-500 rounded-md px-4 py-2 mt-3 md:mt-0"
             >
               Đặt lại bộ lọc
             </button>

@@ -74,7 +74,7 @@ const orderSchema = new mongoose.Schema(
       type: String,
       required: true,
       default: "pending",
-      enum: ["pending", "paid", "refunded"],
+      enum: ["pending", "paid", "failed", "refunded"],
     },
     // Shipping Information
     fullName: {

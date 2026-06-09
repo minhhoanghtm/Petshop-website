@@ -2,7 +2,7 @@ import axiosInstance from "../utils/axiosInstance";
 
 export const createOrder = (orderData) => axiosInstance.post("/api/orders", orderData);
 
-export const fetchOrders = () => axiosInstance.get("/api/orders");
+export const fetchOrders = (params) => axiosInstance.get("/api/orders", { params });
 
 export const fetchOrdersByUser = (userId) =>
   axiosInstance.get(`/api/orders?user_id=${userId}`);

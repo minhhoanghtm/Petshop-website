@@ -74,7 +74,12 @@ const Login = () => {
   useEffect(() => {
     if (success) {
       const timer = setTimeout(() => {
-        navigate("/");
+        const storedUser = JSON.parse(localStorage.getItem("user"));
+        if (storedUser && storedUser.role === "admin") {
+          navigate("/dashboard");
+        } else {
+          navigate("/");
+        }
         setErrors({});
         setSuccess(false);
       }, 500);
@@ -141,13 +146,19 @@ const Login = () => {
 
         localStorage.setItem("accessToken", accessToken);
         const profileRes = await fetchProfile();
+        let isAdmin = false;
         if (profileRes?.data) {
           localStorage.setItem("user", JSON.stringify(profileRes.data));
+          isAdmin = profileRes.data.role === "admin";
         }
         setSuccess(true);
         toast.success("Đăng nhập bằng Google thành công!");
         setTimeout(() => {
-          navigate("/");
+          if (isAdmin) {
+            navigate("/dashboard");
+          } else {
+            navigate("/");
+          }
         }, 500);
       } catch (err) {
         console.error("Google Login Error:", err);
@@ -224,14 +235,20 @@ const Login = () => {
 
       localStorage.setItem("accessToken", accessToken);
       const profileRes = await fetchProfile();
+      let isAdmin = false;
       if (profileRes?.data) {
         localStorage.setItem("user", JSON.stringify(profileRes.data));
+        isAdmin = profileRes.data.role === "admin";
       }
       setLockUntil(0);
       setSuccess(true);
       toast.success("Đăng nhập thành công!");
       setTimeout(() => {
-        navigate("/");
+        if (isAdmin) {
+          navigate("/dashboard");
+        } else {
+          navigate("/");
+        }
       }, 500);
     } catch (err) {
       console.error("API Error:", err.response?.data || err.message);

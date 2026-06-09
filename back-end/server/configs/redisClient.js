@@ -64,6 +64,30 @@ if (useMock) {
             store.set(key, val);
             return val;
         },
+        decr: async (key) => {
+            if (isExpired(key)) {
+                store.set(key, 0);
+            }
+            const val = Number(store.get(key) || 0) - 1;
+            store.set(key, val);
+            return val;
+        },
+        incrBy: async (key, amount) => {
+            if (isExpired(key)) {
+                store.set(key, 0);
+            }
+            const val = Number(store.get(key) || 0) + Number(amount);
+            store.set(key, val);
+            return val;
+        },
+        decrBy: async (key, amount) => {
+            if (isExpired(key)) {
+                store.set(key, 0);
+            }
+            const val = Number(store.get(key) || 0) - Number(amount);
+            store.set(key, val);
+            return val;
+        },
         expire: async (key, seconds) => {
             if (store.has(key)) {
                 ttls.set(key, Date.now() + seconds * 1000);

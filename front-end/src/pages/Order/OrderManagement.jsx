@@ -100,11 +100,15 @@ const OrderManagement = () => {
       try {
         setLoading(true);
         const [ordersResponse, statsResponse] = await Promise.all([
-          fetchOrdersRequest(),
+          fetchOrdersRequest({ limit: 1000 }),
           fetchOrderStatsRequest(),
         ]);
 
-        const normalizedOrders = (ordersResponse.data || []).map((order) => ({
+        const ordersData = Array.isArray(ordersResponse.data)
+          ? ordersResponse.data
+          : (ordersResponse.data?.orders || []);
+
+        const normalizedOrders = ordersData.map((order) => ({
           ...order,
           statusNormalized: normalizeStatus(order.status),
         }));
@@ -280,9 +284,14 @@ const OrderManagement = () => {
           currentUser={currentUser}
         />
         <main className="container mx-auto px-4 py-8 overflow-y-auto">
-          <h1 className="text-2xl font-bold text-gray-800 mb-3">
-            Quản lý đơn hàng
-          </h1>
+          <div className="mb-4">
+            <h1 className="text-2xl font-bold text-gray-800">
+              Quản lý đơn hàng
+            </h1>
+            <p className="text-sm text-gray-600 mt-1">
+              Tổng số: {filteredOrders.length}
+            </p>
+          </div>
 
           <OrderStats stats={stats} />
 
@@ -295,6 +304,7 @@ const OrderManagement = () => {
 
           <OrdersTable
             orders={currentOrders}
+            startIndex={indexOfFirstOrder}
             formatDate={formatDate}
             getStatusInfo={getStatusInfo}
             updateOrderStatus={updateOrderStatus}

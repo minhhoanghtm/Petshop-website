@@ -7,6 +7,7 @@ export default function OrdersTable({
   updateOrderStatus,
   deleteOrder,
   viewOrderDetails,
+  startIndex = 0,
 }) {
   return (
     <div className="bg-white rounded-lg shadow overflow-hidden mb-8">
@@ -14,6 +15,9 @@ export default function OrdersTable({
         <table className="min-w-full divide-y divide-gray-200">
           <thead className="bg-gray-50">
             <tr>
+              <th className="px-6 py-3 text-left text-xs font-medium text-gray-900 uppercase tracking-wider">
+                STT
+              </th>
               <th className="px-6 py-3 text-left text-xs font-medium text-gray-900 uppercase tracking-wider">
                 Mã đơn hàng
               </th>
@@ -36,8 +40,11 @@ export default function OrdersTable({
           </thead>
           <tbody className="bg-white divide-y divide-gray-200">
             {orders.length > 0 ? (
-              orders.map((order) => (
+              orders.map((order, index) => (
                 <tr key={order._id} className="hover:bg-gray-50">
+                  <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-500">
+                    {startIndex + index + 1}
+                  </td>
                   <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-500">
                     #{order._id.substring(0, 8)}
                   </td>
@@ -100,7 +107,7 @@ export default function OrdersTable({
             ) : (
               <tr>
                 <td
-                  colSpan="6"
+                  colSpan="7"
                   className="px-6 py-4 text-center text-sm text-gray-500"
                 >
                   Không tìm thấy đơn hàng nào

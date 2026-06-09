@@ -1,7 +1,11 @@
+import mongoose from "mongoose";
 import Order from "../../models/Order.js";
 import Payment from "../../models/Payment.js";
+import EventStore from "../../models/EventStore.js";
 import { verifySecureHash, creatPaymentUrl } from "../../utils/vnpayUtils.js";
 import { createServiceError } from "../../utils/serviceError.js";
+import { getNextGlobalSequence } from "../../services/sequenceGenerator.js";
+import { enqueueEventForProjection } from "../../queues/projectionQueue.js";
 
 /**
  * Tạo link thanh toán VNPay cho một đơn hàng.
@@ -18,6 +22,19 @@ export const initiateVNPayPayment = async ({
   const order = await Order.findById(orderId);
   if (!order) throw createServiceError("Đơn hàng không tồn tại", 404);
   if (order.payment_status === "paid") throw createServiceError("Đơn hàng đã được thanh toán", 400);
+
+  // Pre-create Payment record if it doesn't exist
+  let payment = await Payment.findOne({ order_id: orderId, method: "VNPAY" });
+  if (!payment) {
+    await Payment.create({
+      order_id: orderId,
+      user_id: order.user_id,
+      payment_code: orderId,
+      amount: amount || order.total_price,
+      method: "VNPAY",
+      status: "pending",
+    });
+  }
   
   const paymentUrl = creatPaymentUrl({
     amount: amount || order.total_price,
@@ -28,7 +45,7 @@ export const initiateVNPayPayment = async ({
   });
   
   return paymentUrl;
-}
+};
 
 /**
  * Xử lý kết quả khi VNPAY redirect khách về ReturnURL.
@@ -89,7 +106,6 @@ function getErrorMessage(code) {
  * VNPAY yêu cầu response phải trả về trong 5 giây.
  */
 export const handleIPN = async (query) => {
-  //Verify chữ ký để đảm bảo dữ liệu là từ VNPAY
   const isValid = verifySecureHash(query);
   if (!isValid) {
     return {
@@ -101,52 +117,121 @@ export const handleIPN = async (query) => {
 
   const orderId = query["vnp_TxnRef"];
   const responseCode = query["vnp_ResponseCode"];
-  const amount = parseInt(query["vnp_Amount"], 10) / 100; // VNPAY trả về số tiền đã nhân 100
-  const transactionNo = query["vnp_TransactionStatus"]; //Mã giao dịch
+  const amount = parseInt(query["vnp_Amount"], 10) / 100;
+  const transactionNo = query["vnp_TransactionNo"] || query["vnp_TransactionStatus"];
+  const correlationId = `corr-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
 
-  //Tìm đơn hàng trong DB
-  const order = await Order.findById(orderId);
-  if (!order) {
-    return { success: false, RspCode: "01", message: "Đơn hàng không tồn tại" };
-  }
+  const session = await mongoose.startSession();
+  let newEvents = [];
 
-  //Kieemr tra số tiền để tránh giả mạo
-  if (order.totalAmount !== amount) {
-    return { success: false, RspCode: "04", message: "Số tiền không khớp" };
-  }
+  try {
+    let rspCode = "00";
+    let message = "Giao dịch thành công";
+    let success = true;
 
-  //Kiểm tra đơn hàng chưa được xử lý
-  if (order.status !== "pending") {
-    return { success: false, RspCode: "02", message: "Đơn hàng đã được xử lý" };
-  }
+    await session.withTransaction(async () => {
+      newEvents = [];
 
-  //Cập nhật DB
-  if (responseCode === "00") {
-    await Order.findByIdAndUpdate(orderId, {
-      paymentStatus: "paid",
-      paymentMethod: "vnpay",
-      transactionNo,
-      paidAt: new Date(),
-      status: "confirmed", // Hoặc trạng thái phù hợp sau khi thanh toán thành công
+      const events = await EventStore.find({ aggregateId: orderId }).session(session);
+      if (events.length === 0) {
+        rspCode = "01";
+        message = "Đơn hàng không tồn tại";
+        success = false;
+        return;
+      }
+
+      const orderPlacedEvent = events.find((e) => e.eventType === "OrderPlaced");
+      if (!orderPlacedEvent) {
+        rspCode = "01";
+        message = "Đơn hàng không tồn tại (OrderPlaced missing)";
+        success = false;
+        return;
+      }
+
+      const expectedAmount = orderPlacedEvent.payload.total_price;
+      if (expectedAmount !== amount) {
+        rspCode = "04";
+        message = "Số tiền không khớp";
+        success = false;
+        return;
+      }
+
+      const hasPayment = events.some((e) => e.eventType === "PaymentReceived");
+      const hasCancellation = events.some((e) => e.eventType === "OrderCancelled");
+
+      if (hasPayment) {
+        rspCode = "02";
+        message = "Đơn hàng đã được xử lý";
+        success = true;
+        return;
+      }
+
+      const latestOrderEvent = events[events.length - 1];
+      const nextOrderVersion = latestOrderEvent.version + 1;
+
+      const isPaid = responseCode === "00";
+      const eventType = (isPaid && !hasCancellation) ? "PaymentReceived" : "PaymentRefundFlagged";
+      const idempotencyKey = transactionNo ? `webhook:vnpay:${transactionNo}` : null;
+
+      // Check for duplicate idempotencyKey in event history
+      if (idempotencyKey) {
+        const isDuplicate = events.some((e) => e.idempotencyKey === idempotencyKey);
+        if (isDuplicate) {
+          rspCode = "02";
+          message = "Đơn hàng đã được xử lý";
+          success = true;
+          return;
+        }
+      }
+
+      const seqPaymentEvent = await getNextGlobalSequence();
+      const paymentEvent = new EventStore({
+        aggregateId: orderId,
+        aggregateType: "Order",
+        version: nextOrderVersion,
+        eventType,
+        globalSequence: seqPaymentEvent,
+        correlationId,
+        causationId: transactionNo || correlationId,
+        idempotencyKey,
+        payload: {
+          orderId,
+          txnId: transactionNo,
+          amount,
+          method: "VNPAY",
+          rawPayload: query,
+        },
+      });
+      await paymentEvent.save({ session });
+      newEvents.push(paymentEvent);
     });
-    return {
-      success: true,
-      RspCode: "00",
-      message: "Cập nhật đơn hàng thành công",
-    };
-  } else {
-    await Order.findByIdAndUpdate(orderId, {
-      paymentStatus: "failed",
-      paymentMethod: "vnpay",
-      status: "failed",
-    });
-    return {
-      success: false,
-      RspCode: "00",
-      message: "Cập nhật đơn hàng thất bại do giao dịch không thành công",
-    };
+
+    if (!success) {
+      return { success: false, RspCode: rspCode, message };
+    }
+  } catch (error) {
+    if (error.code === 11000 || error.message.includes("E11000")) {
+      return {
+        success: true,
+        RspCode: "00",
+        message: "Cập nhật đơn hàng thành công (Giao dịch trùng lặp được bỏ qua)",
+      };
+    }
+    throw error;
+  } finally {
+    session.endSession();
   }
-}
+
+  for (const event of newEvents) {
+    await enqueueEventForProjection(event);
+  }
+
+  return {
+    success: true,
+    RspCode: "00",
+    message: "Cập nhật đơn hàng thành công",
+  };
+};
 
 /**
  * Map mã lỗi VNPAY sang thông báo tiếng Việt.

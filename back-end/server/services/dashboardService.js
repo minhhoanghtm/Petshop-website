@@ -64,12 +64,16 @@ export const getDashboardStats = async (timeFilter = "7days") => {
   ]).then((rows) => Number(rows?.[0]?.total || 0));
 
   const averageOrderValue = orders.length > 0 ? totalRevenue / orders.length : 0;
+  const totalOrders = await Order.countDocuments({
+    order_date: { $gte: startDate },
+  });
 
   return {
     totalRevenue,
     monthlyRevenue,
     weeklyRevenue,
     averageOrderValue,
+    totalOrders,
   };
 };
 

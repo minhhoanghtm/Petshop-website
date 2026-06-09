@@ -1,6 +1,13 @@
+import mongoose from "mongoose";
+import redisClient from "../configs/redisClient.js";
 import Order from "../models/Order.js";
 import Product from "../models/Product.js";
 import Payment from "../models/Payment.js";
+import EventStore from "../models/EventStore.js";
+import { getNextGlobalSequence } from "../services/sequenceGenerator.js";
+import { enqueueEventForProjection } from "../queues/projectionQueue.js";
+import { enqueueOrderExpiry } from "../queues/orderExpiryQueue.js";
+import { logger } from "../logger/logger.js";
 import { createServiceError } from "../utils/serviceError.js";
 import PaymentContext from "./payment/paymentContext.js";
 import CodPaymentStrategy from "./payment/codStrategy.js";
@@ -40,6 +47,55 @@ export const normalizeStatus = (value) => {
   }
 };
 
+const reserveStockInRedis = async (items) => {
+  if (!redisClient || !redisClient.isOpen) {
+    throw new Error("Redis is not open");
+  }
+  const reserved = [];
+  for (const item of items) {
+    const key = `stock:product:${item.product_id}`;
+    const currentStock = await redisClient.get(key);
+    if (currentStock === null) {
+      const dbProduct = await Product.findById(item.product_id);
+      if (!dbProduct) throw new Error(`Product not found: ${item.product_id}`);
+      await redisClient.set(key, dbProduct.stock);
+    }
+    const val = await redisClient.decrBy(key, item.quantity);
+    if (val < 0) {
+      await redisClient.incrBy(key, item.quantity);
+      for (const res of reserved) {
+        await redisClient.incrBy(`stock:product:${res.product_id}`, res.quantity);
+      }
+      return false;
+    }
+    reserved.push(item);
+  }
+  return true;
+};
+
+const getProductStock = async (product, session) => {
+  const pendingEvents = await EventStore.find({
+    aggregateId: product._id.toString(),
+    globalSequence: { $gt: product.lastEventSequence || 0 }
+  }).session(session);
+
+  let stock = product.stock;
+  for (const event of pendingEvents) {
+    if (event.eventType === "StockReserved") {
+      stock -= event.payload.quantity;
+    } else if (event.eventType === "StockReleased") {
+      const hasPayment = await EventStore.findOne({
+        aggregateId: event.payload.orderId,
+        eventType: "PaymentReceived"
+      }).session(session);
+      if (!hasPayment) {
+        stock += event.payload.quantity;
+      }
+    }
+  }
+  return stock;
+};
+
 export const createOrder = async (orderData = {}) => {
   const { 
     user_id, 
@@ -59,95 +115,133 @@ export const createOrder = async (orderData = {}) => {
   } = orderData;
   
   const payment_method = orderData.payment_method || orderData.paymentMethod || "COD";
-  const normalizedStatus = normalizeStatus(status) || "pending";
+  const correlationId = `corr-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
 
-  const savedProducts = [];
+  // 1. Redis stock pre-gating with MongoDB fallback
+  let usedRedisPreGate = false;
   try {
-    // 1. Trừ tồn kho nguyên tử chống Race Condition (Overselling)
-    for (const item of items) {
-      const updatedProduct = await Product.findOneAndUpdate(
-        {
-          _id: item.product_id,
-          stock: { $gte: item.quantity } // Đảm bảo tồn kho lớn hơn hoặc bằng số lượng mua
-        },
-        {
-          $inc: { stock: -item.quantity } // Giảm kho nguyên tử
-        },
-        { new: true }
-      );
+    const reserved = await reserveStockInRedis(items);
+    if (!reserved) {
+      throw createServiceError("Sản phẩm không đủ số lượng trong kho", 400);
+    }
+    usedRedisPreGate = true;
+  } catch (redisError) {
+    logger.warn("Redis pre-gating unavailable, falling back to MongoDB real-time validation", {
+      message: redisError.message,
+    });
+  }
 
-      if (!updatedProduct) {
-        // Tìm xem sản phẩm có tồn tại hay không để phản hồi status phù hợp
-        const checkProduct = await Product.findById(item.product_id);
-        if (!checkProduct) {
-          throw createServiceError(`Không tìm thấy sản phẩm với ID: ${item.product_id}`, 404);
+  const session = await mongoose.startSession();
+  let newEvents = [];
+  const orderId = new mongoose.Types.ObjectId().toString();
+
+  try {
+    await session.withTransaction(async () => {
+      newEvents = [];
+      
+      // If Redis was not used, validate stock using DB event log + read model
+      if (!usedRedisPreGate) {
+        for (const item of items) {
+          const product = await Product.findById(item.product_id).session(session);
+          if (!product) {
+            throw createServiceError(`Sản phẩm với ID ${item.product_id} không tồn tại`, 404);
+          }
+          const realTimeStock = await getProductStock(product, session);
+          if (realTimeStock < item.quantity) {
+            throw createServiceError(`Sản phẩm ${product.name} không đủ số lượng trong kho`, 400);
+          }
         }
-        throw createServiceError(`Sản phẩm ${checkProduct.name} không đủ số lượng trong kho`, 400);
       }
 
-      // Lưu lại thông tin sản phẩm đã trừ để có thể rollback
-      savedProducts.push({ product_id: item.product_id, quantity: item.quantity });
-    }
+      // Generate events
+      // Event 1: OrderPlaced
+      const seqOrderPlaced = await getNextGlobalSequence();
+      const orderPlacedEvent = new EventStore({
+        aggregateId: orderId,
+        aggregateType: "Order",
+        version: 1,
+        eventType: "OrderPlaced",
+        globalSequence: seqOrderPlaced,
+        correlationId,
+        causationId: correlationId,
+        payload: {
+          user_id,
+          items,
+          total_price,
+          payment_method,
+          fullName,
+          email,
+          phone,
+          address,
+          province,
+          district,
+          ward,
+          detailAddress,
+          deliveryOption: deliveryOption || "delivery",
+          shippingCost: shippingCost || 0,
+          orderId,
+        },
+      });
+      await orderPlacedEvent.save({ session });
+      newEvents.push(orderPlacedEvent);
 
-    // 2. Áp dụng Strategy Pattern để xử lý thanh toán
-    let paymentStrategy;
-    switch (String(payment_method).toUpperCase()) {
-      case "MOMO":
-        paymentStrategy = new MomoPaymentStrategy();
-        break;
-      case "PAYPAL":
-        paymentStrategy = new PaypalPaymentStrategy();
-        break;
-      case "VNPAY":
-        paymentStrategy = new VnpayPaymentStrategy();
-        break;
-      case "COD":
-      default:
-        paymentStrategy = new CodPaymentStrategy();
-        break;
-    }
+      // Event 2: StockReserved for each item
+      for (const item of items) {
+        const latestProductEvent = await EventStore.findOne({ aggregateId: item.product_id })
+          .sort({ version: -1 })
+          .session(session);
+        const nextProductVersion = latestProductEvent ? latestProductEvent.version + 1 : 1;
 
-    const paymentContext = new PaymentContext(paymentStrategy);
-    
-    // Thực thi thanh toán qua Context
-    const paymentResult = await paymentContext.executePayment(total_price, { user_id, items });
-
-    // 3. Khởi tạo và lưu đơn hàng với kết quả thanh toán tương ứng
-    const newOrder = new Order({
-      user_id,
-      items,
-      total_price,
-      status: normalizedStatus,
-      payment_method: payment_method.toUpperCase(),
-      payment_status: paymentResult.payment_status,
-      // Shipping Information
-      fullName,
-      email,
-      phone,
-      address,
-      province,
-      district,
-      ward,
-      detailAddress,
-      deliveryOption: deliveryOption || "delivery",
-      shippingCost: shippingCost || 0,
+        const seqStockReserved = await getNextGlobalSequence();
+        const stockReservedEvent = new EventStore({
+          aggregateId: item.product_id,
+          aggregateType: "Product",
+          version: nextProductVersion,
+          eventType: "StockReserved",
+          globalSequence: seqStockReserved,
+          correlationId,
+          causationId: orderPlacedEvent._id.toString(),
+          payload: { productId: item.product_id, quantity: item.quantity, orderId },
+        });
+        await stockReservedEvent.save({ session });
+        newEvents.push(stockReservedEvent);
+      }
     });
-
-    return await newOrder.save();
   } catch (error) {
-    // Rollback lại tồn kho nguyên tử nếu xảy ra bất kỳ lỗi nào trong quá trình tạo đơn hàng
-    for (const { product_id, quantity } of savedProducts) {
+    if (usedRedisPreGate) {
       try {
-        await Product.updateOne(
-          { _id: product_id },
-          { $inc: { stock: quantity } } // Cộng lại kho nguyên tử
-        );
-      } catch (rollbackError) {
-        console.error(`Lỗi rollback tồn kho cho sản phẩm ${product_id}:`, rollbackError);
+        for (const item of items) {
+          await redisClient.incrBy(`stock:product:${item.product_id}`, item.quantity);
+        }
+      } catch (redisRollbackErr) {
+        logger.error("Failed to rollback Redis stock on transaction failure", redisRollbackErr);
       }
     }
     throw error;
+  } finally {
+    session.endSession();
   }
+
+  // Dispatch events asynchronously to Projection Queue
+  for (const event of newEvents) {
+    await enqueueEventForProjection(event);
+  }
+
+  // Schedule order expiration (15 minutes) if payment method is online
+  if (["MOMO", "PAYPAL", "VNPAY"].includes(payment_method.toUpperCase())) {
+    await enqueueOrderExpiry(orderId, 15 * 60 * 1000);
+  }
+
+  return {
+    _id: orderId,
+    user_id,
+    items,
+    total_price,
+    status: "pending",
+    payment_status: "pending",
+    payment_method,
+    order_date: new Date(),
+  };
 };
 
 export const getOrders = async (queryParams = {}, currentUser = null, pagination = null) => {
@@ -216,6 +310,7 @@ export const updateOrder = async (orderId, updateData = {}, currentUser = null) 
   }
 
   const previousStatus = normalizeStatus(currentOrder.status);
+  const correlationId = `corr-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
 
   const isAdmin = currentUser?.role === "admin";
   if (!isAdmin) {
@@ -234,55 +329,79 @@ export const updateOrder = async (orderId, updateData = {}, currentUser = null) 
     }
   }
 
-  if (normalizedStatus === "delivered" && previousStatus !== "delivered") {
-    for (const item of currentOrder.items) {
-      const product = await Product.findById(item.product_id);
-      if (product) {
-        product.sold = Math.max(0, Number(product.sold || 0) + Number(item.quantity || 0));
-        await product.save();
-      }
-    }
+  if (normalizedStatus === previousStatus) {
+    return currentOrder;
   }
 
-  if (normalizedStatus === "cancelled" && previousStatus !== "cancelled") {
-    for (const item of currentOrder.items) {
-      const product = await Product.findById(item.product_id);
-      if (product) {
-        product.stock = Math.max(0, Number(product.stock || 0) + Number(item.quantity || 0));
-        if (previousStatus === "delivered") {
-          product.sold = Math.max(0, Number(product.sold || 0) - Number(item.quantity || 0));
+  const session = await mongoose.startSession();
+  let newEvents = [];
+
+  try {
+    await session.withTransaction(async () => {
+      newEvents = [];
+
+      const latestOrderEvent = await EventStore.findOne({ aggregateId: orderId })
+        .sort({ version: -1 })
+        .session(session);
+      const nextOrderVersion = latestOrderEvent ? latestOrderEvent.version + 1 : 1;
+
+      let eventType = "OrderStatusChanged";
+      if (normalizedStatus === "cancelled") {
+        eventType = "OrderCancelled";
+      } else if (normalizedStatus === "delivered") {
+        eventType = "OrderDelivered";
+      }
+
+      const seqOrderEvent = await getNextGlobalSequence();
+      const statusEvent = new EventStore({
+        aggregateId: orderId,
+        aggregateType: "Order",
+        version: nextOrderVersion,
+        eventType,
+        globalSequence: seqOrderEvent,
+        correlationId,
+        causationId: correlationId,
+        payload: { orderId, previousStatus, newStatus: normalizedStatus },
+      });
+      await statusEvent.save({ session });
+      newEvents.push(statusEvent);
+
+      if (normalizedStatus === "cancelled" && previousStatus !== "cancelled") {
+        for (const item of currentOrder.items) {
+          const latestProductEvent = await EventStore.findOne({ aggregateId: item.product_id.toString() })
+            .sort({ version: -1 })
+            .session(session);
+          const nextProductVersion = latestProductEvent ? latestProductEvent.version + 1 : 1;
+
+          const seqStockReleased = await getNextGlobalSequence();
+          const stockReleasedEvent = new EventStore({
+            aggregateId: item.product_id.toString(),
+            aggregateType: "Product",
+            version: nextProductVersion,
+            eventType: "StockReleased",
+            globalSequence: seqStockReleased,
+            correlationId,
+            causationId: statusEvent._id.toString(),
+            payload: { productId: item.product_id.toString(), quantity: item.quantity, orderId },
+          });
+          await stockReleasedEvent.save({ session });
+          newEvents.push(stockReleasedEvent);
         }
-        await product.save();
       }
-    }
+    });
+  } finally {
+    session.endSession();
   }
 
-  const updateFields = { status: normalizedStatus, updatedAt: new Date() };
-
-  if (normalizedStatus === "cancelled" && previousStatus !== "cancelled") {
-    if (currentOrder.payment_status === "paid") {
-      updateFields.payment_status = "refunded";
-      try {
-        await Payment.updateMany({ order_id: orderId }, { status: "refunded", refunded_at: new Date() });
-      } catch (paymentErr) {
-        console.error("Lỗi khi cập nhật bảng Payment thành refunded:", paymentErr);
-      }
-    }
+  for (const event of newEvents) {
+    await enqueueEventForProjection(event);
   }
 
-  const updatedOrder = await Order.findByIdAndUpdate(
-    orderId,
-    updateFields,
-    { new: true }
-  )
-    .populate("user_id")
-    .populate("items.product_id");
-
-  if (!updatedOrder) {
-    throw createServiceError("Order not found", 404);
-  }
-
-  return updatedOrder;
+  return {
+    ...currentOrder.toObject(),
+    status: normalizedStatus,
+    updatedAt: new Date(),
+  };
 };
 
 export const deleteOrder = async (orderId) => {
@@ -294,7 +413,7 @@ export const deleteOrder = async (orderId) => {
   return { message: "Order deleted successfully" };
 };
 
-export const getOrderStats = async (timeFilter = "7days") => {
+export const getOrderStats = async (timeFilter = "all") => {
   let startDate = new Date();
 
   switch (timeFilter) {
@@ -349,12 +468,16 @@ export const getOrderStats = async (timeFilter = "7days") => {
   ]).then((rows) => Number(rows?.[0]?.total || 0));
 
   const averageOrderValue = orders.length > 0 ? totalRevenue / orders.length : 0;
+  const totalOrders = await Order.countDocuments({
+    order_date: { $gte: startDate },
+  });
 
   return {
     totalRevenue,
     monthlyRevenue,
     weeklyRevenue,
     averageOrderValue,
+    totalOrders,
   };
 };
 
@@ -373,13 +496,3 @@ export const getRecentOrders = async (limit = 5) => {
   }));
 };
 
-export default {
-  normalizeStatus,
-  createOrder,
-  getOrders,
-  getOrderById,
-  updateOrder,
-  deleteOrder,
-  getOrderStats,
-  getRecentOrders,
-};

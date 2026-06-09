@@ -29,13 +29,6 @@ const TopNavigation = ({ setMobileSidebarOpen, currentUser }) => {
           >
             <CiMenuFries size={24} />
           </button>
-          <button
-            onClick={handleBack}
-            className="inline-flex items-center gap-2 text-sm font-medium text-gray-700 hover:text-gray-900 dark:text-gray-200 dark:hover:text-white bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 px-3 py-2 rounded-lg transition"
-          >
-            <FaArrowLeft size={16} />
-            Quay lại
-          </button>
         </div>
         <div className="flex items-center space-x-4">
           <button className="p-2 text-gray-500 hover:text-gray-700 cursor-pointer">

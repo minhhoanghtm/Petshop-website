@@ -19,7 +19,7 @@ const router = express.Router();
 router.post("/", orderLimiterMiddleware, idempotencyMiddleware, createOrder);
 
 // lấy tất cả đơn hàng có hỗ trợ phân trang tối đa 100 records/page để bảo vệ RAM
-router.get("/", paginationMiddleware(10, 100), getOrders);
+router.get("/", paginationMiddleware(10, 1000), getOrders);
 
 // thống kê đơn hàng (admin)
 router.get("/stats", requireAdmin, getOrderStats);

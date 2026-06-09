@@ -96,6 +96,12 @@ const ProductTable = ({
             <tr>
               <th
                 scope="col"
+                className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+              >
+                STT
+              </th>
+              <th
+                scope="col"
                 className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer hover:text-gray-700"
                 onClick={() => onSort("name")}
               >
@@ -133,15 +139,18 @@ const ProductTable = ({
           <tbody className="bg-white divide-y divide-gray-200">
             {products.length === 0 ? (
               <tr>
-                <td colSpan="5" className="px-6 py-8 text-center text-sm text-gray-500">
+                <td colSpan="6" className="px-6 py-8 text-center text-sm text-gray-500">
                   {categoryFilter
                     ? "Chưa có sản phẩm nào thuộc danh mục này"
                     : "Chưa có sản phẩm nào"}
                 </td>
               </tr>
             ) : (
-              products.map((product) => (
+              products.map((product, index) => (
                 <tr key={product._id}>
+                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500 font-medium">
+                    {index + 1}
+                  </td>
                   <td className="px-6 py-4 whitespace-nowrap">
                     <div className="flex items-center">
                       {product.images?.length > 0 && (
@@ -183,7 +192,7 @@ const ProductTable = ({
                           : "bg-red-100 text-red-800"
                       }`}
                     >
-                      {product.stock} trong kho
+                      {product.stock} sản phẩm
                     </span>
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">

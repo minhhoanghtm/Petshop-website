@@ -67,9 +67,9 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen, currentUser }) => {
       icon: <Home size={18} className="mr-3" />,
     },
     {
-      path: "/inventory-management",
-      label: "Quản lý tồn kho",
-      icon: <MdOutlineInventory2 size={18} className="mr-3" />,
+      path: "/user-management",
+      label: "Quản lý người dùng",
+      icon: <Users size={18} className="mr-3" />,
     },
     {
       path: "/admin/categories",
@@ -77,14 +77,14 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen, currentUser }) => {
       icon: <Layers size={18} className="mr-3" />,
     },
     {
+      path: "/inventory-management",
+      label: "Quản lý sản phẩm",
+      icon: <MdOutlineInventory2 size={18} className="mr-3" />,
+    },
+    {
       path: "/order-management",
       label: "Quản lý đơn hàng",
       icon: <RiGalleryView2 size={18} className="mr-3" />,
-    },
-    {
-      path: "/user-management",
-      label: "Quản lý người dùng",
-      icon: <Users size={18} className="mr-3" />,
     },
     {
       path: "/settings",

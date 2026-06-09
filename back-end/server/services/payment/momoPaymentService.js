@@ -1,6 +1,10 @@
+import mongoose from "mongoose";
 import Order from "../../models/Order.js";
 import Payment from "../../models/Payment.js";
+import EventStore from "../../models/EventStore.js";
 import MomoPaymentStrategy from "./momoStrategy.js";
+import { getNextGlobalSequence } from "../../services/sequenceGenerator.js";
+import { enqueueEventForProjection } from "../../queues/projectionQueue.js";
 import { createServiceError } from "../../utils/serviceError.js";
 
 // Khởi tạo chiến lược thanh toán MOMO
@@ -107,12 +111,10 @@ export const handleMomoIpn = async (payload = {}) => {
   if (!payload || typeof payload !== "object") {
     throw createServiceError("Dữ liệu IPN không hợp lệ.", 400);
   }
-  //Nếu không có verify thì không thể xác thực được tính hợp lệ của IPN, do đó sẽ từ chối xử lý
   if (!momoStrategy.verifyCallback(payload)) {
     throw createServiceError("Chữ ký MoMo không hợp lệ.", 400);
   }
 
-  // Tìm thông tin thanh toán dựa trên extraData (payment_code) hoặc orderId từ payload
   let payment = null;
   if (payload.extraData) {
     payment = await Payment.findOne({ payment_code: payload.extraData, method: "MOMO" });
@@ -134,22 +136,78 @@ export const handleMomoIpn = async (payload = {}) => {
   }
 
   const isPaid = Number(payload.resultCode) === 0;
-  const updatePayload = {
-    provider_transaction_id: payload.transId ? String(payload.transId) : payment.provider_transaction_id,
-    provider_response: payload,
-    status: isPaid ? "paid" : "failed",
-    paid_at: isPaid ? new Date() : payment.paid_at,
-  };
+  const correlationId = `corr-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
+  const orderId = payment.order_id.toString();
+  const idempotencyKey = payload.transId ? `webhook:momo:${payload.transId}` : null;
 
-  await Payment.findByIdAndUpdate(payment._id, updatePayload, { new: true });
+  const session = await mongoose.startSession();
+  let newEvents = [];
 
-  if (isPaid) {
-    await Order.findByIdAndUpdate(payment.order_id, { payment_status: "paid" });
+  try {
+    await session.withTransaction(async () => {
+      newEvents = [];
+
+      const events = await EventStore.find({ aggregateId: orderId }).session(session);
+      
+      // If payment event was already appended under this idempotencyKey, abort transaction
+      if (idempotencyKey) {
+        const isDuplicate = events.some((e) => e.idempotencyKey === idempotencyKey);
+        if (isDuplicate) {
+          logger.info(`[MomoIpn] Duplicate payment webhook event for idempotencyKey ${idempotencyKey}. Aborting transaction.`);
+          return;
+        }
+      }
+
+      const latestOrderEvent = events[events.length - 1];
+      const nextOrderVersion = latestOrderEvent ? latestOrderEvent.version + 1 : 1;
+
+      const hasCancellation = events.some((e) => e.eventType === "OrderCancelled");
+      const eventType = (isPaid && !hasCancellation) ? "PaymentReceived" : "PaymentRefundFlagged";
+
+      const seqPaymentEvent = await getNextGlobalSequence();
+      const paymentEvent = new EventStore({
+        aggregateId: orderId,
+        aggregateType: "Order",
+        version: nextOrderVersion,
+        eventType,
+        globalSequence: seqPaymentEvent,
+        correlationId,
+        causationId: payload.transId ? String(payload.transId) : correlationId,
+        idempotencyKey,
+        payload: {
+          orderId,
+          txnId: payload.transId ? String(payload.transId) : null,
+          amount: payload.amount,
+          method: "MOMO",
+          rawPayload: payload,
+        },
+      });
+      await paymentEvent.save({ session });
+      newEvents.push(paymentEvent);
+    });
+  } catch (error) {
+    // Check for DuplicateKey error (code 11000)
+    if (error.code === 11000 || error.message.includes("E11000")) {
+      logger.info(`[MomoIpn] Duplicate payment webhook event for txnId ${payload.transId} (DuplicateKey error caught). Returning success.`);
+      return {
+        success: true,
+        status: isPaid ? "paid" : "failed",
+        paymentCode: payment.payment_code,
+      };
+    }
+    throw error;
+  } finally {
+    session.endSession();
   }
 
+  for (const event of newEvents) {
+    await enqueueEventForProjection(event);
+  }
+
+  const finalStatus = isPaid ? "paid" : "failed";
   return {
     success: true,
-    status: updatePayload.status,
+    status: finalStatus,
     paymentCode: payment.payment_code,
   };
 };

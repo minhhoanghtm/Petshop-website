@@ -204,3 +204,1002 @@
 2026-06-09T08:42:49.726Z [info] .env file loaded successfully {"service":"back-end"}
 2026-06-09T08:42:49.756Z [info] Background workers initialized {"service":"back-end"}
 2026-06-09T08:42:49.762Z [info] Server is running: http://localhost:5000 {"service":"back-end"}
+2026-06-09T13:29:35.436Z [info] Redis client connecting {"service":"back-end"}
+2026-06-09T13:29:35.448Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-09T13:29:35.458Z [info] Redis client ready {"service":"back-end"}
+2026-06-09T13:29:35.459Z [info] Redis client connected {"service":"back-end"}
+2026-06-09T13:29:35.461Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-09T13:29:35.465Z [info] Loading .env {"service":"back-end","envPath":"D:\\Project\\PetShop-Website\\back-end\\.env"}
+2026-06-09T13:29:35.466Z [info] .env file loaded successfully {"service":"back-end"}
+2026-06-09T13:29:35.513Z [info] [ProjectionWorker] Checking for pending events to catch up from checkpoints... {"service":"back-end"}
+2026-06-09T13:29:35.515Z [info] Background workers initialized {"service":"back-end"}
+2026-06-09T13:29:35.526Z [info] Server is running: http://localhost:5000 {"service":"back-end"}
+2026-06-09T13:29:36.298Z [info] MongoDB connected {"service":"back-end"}
+2026-06-09T13:29:36.300Z [info] Connected to MongoDB {"service":"back-end"}
+2026-06-09T13:29:37.078Z [info] [ProjectionWorker] Catch-up check completed. {"service":"back-end"}
+2026-06-09T13:29:41.979Z [info] GET /api/categories 304 67.666 ms - - req=34802a21-870b-4f7b-97e5-c4a88cf9c9d0 {"service":"back-end"}
+2026-06-09T13:29:41.988Z [info] GET /api/categories/catetory/shop-cho-cun 304 74.358 ms - - req=ac2becdf-83a8-433c-8571-535d006b628a {"service":"back-end"}
+2026-06-09T13:29:42.056Z [info] GET /api/categories 304 59.232 ms - - req=ac0fb506-91d7-4724-bb24-4edbd789d54f {"service":"back-end"}
+2026-06-09T13:29:42.082Z [info] GET /api/products/product/sales 304 158.554 ms - - req=52ac008b-f777-4fe5-9ef8-f797c59f0eb4 {"service":"back-end"}
+2026-06-09T13:29:42.109Z [info] GET /api/categories 304 51.144 ms - - req=75f5b639-7d16-4019-9f1b-77a4901b4b5c {"service":"back-end"}
+2026-06-09T13:29:42.159Z [info] GET /api/categories/shop-cho-cun 304 239.924 ms - - req=016865ca-40a6-4d43-888c-e831fb4a79b4 {"service":"back-end"}
+2026-06-09T13:29:42.289Z [info] GET /api/categories/shop-cho-meo 304 367.911 ms - - req=46188bd3-aed1-47b0-a864-3858fb990efc {"service":"back-end"}
+2026-06-09T13:29:42.316Z [info] GET /api/products 200 397.190 ms - 185091 req=82ff66e6-97cf-4714-9e5a-dbb88b86c5b1 {"service":"back-end"}
+2026-06-09T13:29:50.100Z [info] GET /api/products 200 19.319 ms - 185091 req=c966758b-9d54-4053-8c22-15e54d5664a0 {"service":"back-end"}
+2026-06-09T13:29:50.107Z [info] GET /api/products/product/sales 304 16.827 ms - - req=58384eed-ea72-437a-877f-c193415db038 {"service":"back-end"}
+2026-06-09T13:29:50.365Z [info] GET /api/categories/shop-cho-cun 304 282.810 ms - - req=71cde3fa-7acf-4db6-a61b-7879153cb4a9 {"service":"back-end"}
+2026-06-09T13:29:50.454Z [info] GET /api/categories/shop-cho-meo 304 363.491 ms - - req=3ae2f371-48c1-47cc-99e0-993bcb7ef572 {"service":"back-end"}
+2026-06-09T13:29:50.989Z [info] GET /api/users/6a00b69d0af467688ea55f1b 401 36.055 ms - 62 req=9bb5a2ad-fccf-4a09-be41-4f74e0f8e475 {"service":"back-end"}
+2026-06-09T13:29:50.992Z [info] GET /api/dashboard/revenue-by-category?timeFilter=7days 401 1.418 ms - 62 req=59898fa7-8948-45c0-ba22-913b17dba74e {"service":"back-end"}
+2026-06-09T13:29:50.995Z [info] GET /api/dashboard/stats?timeFilter=7days 401 0.749 ms - 62 req=eb75fd71-cc5d-444f-8218-4534e8681710 {"service":"back-end"}
+2026-06-09T13:29:51.000Z [info] GET /api/dashboard/recent-orders?limit=5 401 0.868 ms - 62 req=8f8260a9-dce3-41c8-8628-cf6c1b69f9e0 {"service":"back-end"}
+2026-06-09T13:29:51.010Z [info] GET /api/dashboard/notifications?timeFilter=7days 401 1.921 ms - 62 req=c25344a7-2242-4c8c-8cee-0f340c5cf5c5 {"service":"back-end"}
+2026-06-09T13:29:51.018Z [info] GET /api/dashboard/revenue-by-day?timeFilter=7days 401 1.071 ms - 62 req=29838215-ec1d-4335-a6b3-337c8f69acc4 {"service":"back-end"}
+2026-06-09T13:29:51.024Z [info] GET /api/users/paginated?page=1&limit=1 401 1.670 ms - 62 req=62b2ff45-0816-4d30-b5a1-40ad1a7a18e0 {"service":"back-end"}
+2026-06-09T13:29:51.036Z [info] GET /api/products 304 30.572 ms - - req=1be710c1-f935-402b-ae67-a505fb7270fb {"service":"back-end"}
+2026-06-09T13:29:51.559Z [info] GET /api/products 304 9.801 ms - - req=25be00a7-8afe-4154-8e82-30faf0354678 {"service":"back-end"}
+2026-06-09T13:29:51.562Z [info] GET /api/products/product/sales 304 10.280 ms - - req=9257d375-7e36-4aee-8546-7ef384a8f117 {"service":"back-end"}
+2026-06-09T13:29:51.613Z [info] GET /api/categories 304 65.899 ms - - req=c043f202-c040-4b0b-b1b8-6dd0f3af562a {"service":"back-end"}
+2026-06-09T13:29:51.818Z [info] GET /api/categories/shop-cho-meo 304 265.956 ms - - req=605981b5-c171-4c55-a999-dce9b16cbf3e {"service":"back-end"}
+2026-06-09T13:29:51.824Z [info] GET /api/categories/shop-cho-cun 304 273.883 ms - - req=491c2686-3f3c-49e1-a5bc-b1229abe67df {"service":"back-end"}
+2026-06-09T13:30:29.164Z [info] POST /api/auth/signin 200 153.663 ms - 18914 req=c9a51928-42e4-49ca-86df-ae1dd6642c78 {"service":"back-end"}
+2026-06-09T13:30:29.314Z [info] GET /api/users/profile 304 143.429 ms - - req=73e50a72-2c85-4beb-82c4-24d03f8ce6af {"service":"back-end"}
+2026-06-09T13:30:30.118Z [info] GET /api/dashboard/revenue-by-day?timeFilter=7days 200 185.338 ms - 74 req=f5e7c152-15ac-4387-a89a-d04b2fe1105a {"service":"back-end"}
+2026-06-09T13:30:30.142Z [info] GET /api/products 304 13.444 ms - - req=7d51804d-858b-4e8f-aae2-76eae7a34987 {"service":"back-end"}
+2026-06-09T13:30:30.144Z [info] GET /api/dashboard/revenue-by-category?timeFilter=7days 304 214.643 ms - - req=d05fc6e3-18b5-4b70-a86a-e86fe0cdfc6b {"service":"back-end"}
+2026-06-09T13:30:30.197Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 279.517 ms - - req=8dc8fad4-5e39-4698-a49d-dfdb7a883529 {"service":"back-end"}
+2026-06-09T13:30:30.272Z [info] GET /api/dashboard/notifications?timeFilter=7days 200 352.558 ms - 753 req=b4044650-829c-4c05-97b9-9efd4ee06bda {"service":"back-end"}
+2026-06-09T13:30:30.286Z [info] GET /api/users/paginated?page=1&limit=1 304 357.428 ms - - req=c44e64da-422d-479d-a0b5-921ca986a1e1 {"service":"back-end"}
+2026-06-09T13:30:30.422Z [info] GET /api/dashboard/stats?timeFilter=7days 200 273.244 ms - 83 req=c3e755d5-10a5-47aa-9b73-5704a5c99ca5 {"service":"back-end"}
+2026-06-09T13:30:30.742Z [info] GET /api/dashboard/recent-orders?limit=5 304 826.313 ms - - req=5c7798fb-f6ad-4ed0-a7ef-d93ff96a50e1 {"service":"back-end"}
+2026-06-09T13:30:31.137Z [info] GET /api/orders 200 386.860 ms - 211343 req=9f404643-77d5-4f2d-9f9b-e0b91c9a4405 {"service":"back-end"}
+2026-06-09T13:30:53.316Z [info] GET /api/dashboard/revenue-by-day?timeFilter=30days 200 205.221 ms - 349 req=dc64d805-2c7e-4eae-a00d-ecb75bf3c785 {"service":"back-end"}
+2026-06-09T13:30:53.357Z [info] GET /api/dashboard/revenue-by-category?timeFilter=30days 304 245.097 ms - - req=52383abe-dbef-4790-a2ba-35839c2f9d20 {"service":"back-end"}
+2026-06-09T13:30:53.368Z [info] GET /api/products 304 7.759 ms - - req=f83aa263-88b9-463c-a8cc-be40c7f47f48 {"service":"back-end"}
+2026-06-09T13:30:53.396Z [info] GET /api/dashboard/recent-orders?limit=5 304 286.345 ms - - req=1058cb68-64ce-444d-a288-0b817bbfc1de {"service":"back-end"}
+2026-06-09T13:30:53.429Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 324.402 ms - - req=c4d7f3fa-1b8c-46cc-b2df-fe2df1726670 {"service":"back-end"}
+2026-06-09T13:30:53.475Z [info] GET /api/dashboard/notifications?timeFilter=30days 200 367.477 ms - 753 req=b2d7dd48-da6c-46c1-bd44-9d5207a92cf2 {"service":"back-end"}
+2026-06-09T13:30:53.477Z [info] GET /api/dashboard/stats?timeFilter=30days 200 370.088 ms - 105 req=62eab3ec-d143-45ea-9b63-edc41b268420 {"service":"back-end"}
+2026-06-09T13:30:53.591Z [info] GET /api/users/paginated?page=1&limit=1 304 273.095 ms - - req=f4ae4e48-cb0c-440c-bee0-0abb633c4358 {"service":"back-end"}
+2026-06-09T13:30:53.885Z [info] GET /api/orders 304 285.144 ms - - req=94b5b7d3-3769-44d5-a85f-f161d56f12cd {"service":"back-end"}
+2026-06-09T13:30:56.313Z [info] GET /api/products 304 12.913 ms - - req=0ea8cba5-6248-4431-b7b5-c6602316d354 {"service":"back-end"}
+2026-06-09T13:30:56.520Z [info] GET /api/dashboard/revenue-by-day?timeFilter=all 200 198.664 ms - 55 req=37888e3f-c9d4-4206-9359-9ec253cf32bc {"service":"back-end"}
+2026-06-09T13:30:56.588Z [info] GET /api/dashboard/notifications?timeFilter=all 200 285.163 ms - 753 req=0ce9403c-ebf3-457d-9dec-0d7a99f4b267 {"service":"back-end"}
+2026-06-09T13:30:56.607Z [info] GET /api/dashboard/recent-orders?limit=5 304 313.096 ms - - req=668acf33-1bb6-4b5e-9cb1-8bfa9ffe43ab {"service":"back-end"}
+2026-06-09T13:30:56.608Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 315.444 ms - - req=48df7766-0a94-4bd3-a71c-ddb08c7bb86d {"service":"back-end"}
+2026-06-09T13:30:56.641Z [info] GET /api/dashboard/revenue-by-category?timeFilter=all 200 118.210 ms - 159 req=90353cb0-7a44-4b9b-a205-0061b6240fb5 {"service":"back-end"}
+2026-06-09T13:30:56.685Z [info] GET /api/dashboard/stats?timeFilter=all 200 382.464 ms - 106 req=23ed309e-bc44-48f8-aa29-2f9cb786a3df {"service":"back-end"}
+2026-06-09T13:30:57.183Z [info] GET /api/users/paginated?page=1&limit=1 304 882.454 ms - - req=11366d58-827e-4fe9-aa27-67877780bc5e {"service":"back-end"}
+2026-06-09T13:30:57.543Z [info] GET /api/orders 304 353.393 ms - - req=6b45eef2-d843-432f-94a5-48357109d6cf {"service":"back-end"}
+2026-06-09T13:31:21.909Z [info] GET /api/dashboard/revenue-by-day?timeFilter=7days 304 148.132 ms - - req=ffaf5496-eb50-4813-a098-38adeb78a389 {"service":"back-end"}
+2026-06-09T13:31:21.967Z [info] GET /api/dashboard/revenue-by-category?timeFilter=7days 304 204.762 ms - - req=57ee3581-1707-439b-abe1-165eccb8a9ef {"service":"back-end"}
+2026-06-09T13:31:21.976Z [info] GET /api/products 304 6.301 ms - - req=9b61c711-d0d3-429d-b69d-7dfe7683b246 {"service":"back-end"}
+2026-06-09T13:31:22.011Z [info] GET /api/dashboard/notifications?timeFilter=7days 200 252.451 ms - 753 req=dd743b1e-6108-452a-8943-b5c7de3e6120 {"service":"back-end"}
+2026-06-09T13:31:22.026Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 273.401 ms - - req=c171c998-1463-4960-a093-26506d09e08e {"service":"back-end"}
+2026-06-09T13:31:22.072Z [info] GET /api/dashboard/recent-orders?limit=5 304 317.644 ms - - req=68c32c93-b8b0-40e7-9198-b38d90c2a341 {"service":"back-end"}
+2026-06-09T13:31:22.091Z [info] GET /api/dashboard/stats?timeFilter=7days 304 336.994 ms - - req=d62b41ee-b9b9-4512-9d7e-15b631f65282 {"service":"back-end"}
+2026-06-09T13:31:22.196Z [info] GET /api/users/paginated?page=1&limit=1 304 282.527 ms - - req=e81da06b-249f-4f35-a253-8a95226a4357 {"service":"back-end"}
+2026-06-09T13:31:22.501Z [info] GET /api/orders 304 291.390 ms - - req=05e80e74-caf7-4d53-95c4-26012fdd7c05 {"service":"back-end"}
+2026-06-09T13:31:35.903Z [info] GET /api/dashboard/revenue-by-day?timeFilter=30days 304 148.782 ms - - req=fa7f2986-f078-4fa8-83cf-d3247efd6c21 {"service":"back-end"}
+2026-06-09T13:31:35.959Z [info] GET /api/dashboard/revenue-by-category?timeFilter=30days 304 205.455 ms - - req=06e90ff2-5073-4a01-97e2-12478706b1a1 {"service":"back-end"}
+2026-06-09T13:31:35.965Z [info] GET /api/products 304 5.132 ms - - req=c479a4aa-3318-4324-8328-08430011ff3b {"service":"back-end"}
+2026-06-09T13:31:35.982Z [info] GET /api/dashboard/recent-orders?limit=5 304 231.512 ms - - req=9acdc738-3778-4fa3-b890-0ee784c8c574 {"service":"back-end"}
+2026-06-09T13:31:36.040Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 294.675 ms - - req=ad4c33fd-f13c-4bc0-9221-bc836f97dce8 {"service":"back-end"}
+2026-06-09T13:31:36.081Z [info] GET /api/dashboard/notifications?timeFilter=30days 200 328.799 ms - 753 req=a6affce3-d1d4-45c5-850f-f186d489f59e {"service":"back-end"}
+2026-06-09T13:31:36.083Z [info] GET /api/dashboard/stats?timeFilter=30days 304 334.465 ms - - req=568e718e-96d3-4549-b9c1-132863f6e808 {"service":"back-end"}
+2026-06-09T13:31:36.168Z [info] GET /api/users/paginated?page=1&limit=1 304 263.776 ms - - req=fdcc14e0-6838-46c4-b17e-1199f9afee62 {"service":"back-end"}
+2026-06-09T13:31:36.453Z [info] GET /api/orders 304 277.168 ms - - req=a6ebcfb7-5df1-4b97-b3cc-542874c3fa9d {"service":"back-end"}
+2026-06-09T13:31:38.305Z [info] GET /api/products 304 9.863 ms - - req=a8ba54af-0d51-4e00-bbfd-760e218a89c3 {"service":"back-end"}
+2026-06-09T13:31:38.529Z [info] GET /api/dashboard/revenue-by-day?timeFilter=90days 200 223.044 ms - 949 req=2a012e71-8c3f-4338-9fdd-57fcc34c8acd {"service":"back-end"}
+2026-06-09T13:31:38.564Z [info] GET /api/dashboard/recent-orders?limit=5 304 276.694 ms - - req=6c329152-2186-4fcd-aa8d-4e1961c55104 {"service":"back-end"}
+2026-06-09T13:31:38.567Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 282.495 ms - - req=a376333a-217d-4351-a9c5-3c44114e199d {"service":"back-end"}
+2026-06-09T13:31:38.605Z [info] GET /api/users/paginated?page=1&limit=1 304 314.942 ms - - req=09e86001-8049-45e0-9383-a29727c2177e {"service":"back-end"}
+2026-06-09T13:31:38.633Z [info] GET /api/dashboard/notifications?timeFilter=90days 200 334.618 ms - 753 req=9760b503-f7dd-4e8b-a06a-f9528a4da613 {"service":"back-end"}
+2026-06-09T13:31:38.673Z [info] GET /api/dashboard/revenue-by-category?timeFilter=90days 200 138.978 ms - 159 req=25929a1f-c9eb-47cc-8d13-f99b9097fc40 {"service":"back-end"}
+2026-06-09T13:31:38.674Z [info] GET /api/dashboard/stats?timeFilter=90days 200 378.670 ms - 105 req=5f080ea5-53eb-4608-9a2b-34c02b45ee04 {"service":"back-end"}
+2026-06-09T13:31:38.976Z [info] GET /api/orders 304 297.391 ms - - req=50dd6453-f038-47f1-b23a-f242a17561d2 {"service":"back-end"}
+2026-06-09T13:31:48.825Z [info] GET /api/dashboard/revenue-by-day?timeFilter=30days 304 148.148 ms - - req=2a480c60-c16b-44d2-a76a-cb202e0a90e9 {"service":"back-end"}
+2026-06-09T13:31:48.833Z [info] GET /api/products 304 6.610 ms - - req=c5a6f9a9-01fb-44a2-bf15-aac61bcd5462 {"service":"back-end"}
+2026-06-09T13:31:48.943Z [info] GET /api/dashboard/recent-orders?limit=5 304 269.422 ms - - req=d2009600-713a-4aaa-84bb-c90b2204023e {"service":"back-end"}
+2026-06-09T13:31:48.945Z [info] GET /api/dashboard/revenue-by-category?timeFilter=30days 304 110.401 ms - - req=93fcfdde-07a5-48b5-a52d-c93fabc74ab2 {"service":"back-end"}
+2026-06-09T13:31:48.975Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 308.435 ms - - req=05974794-d2d2-4ee3-ba25-3738d5de3e48 {"service":"back-end"}
+2026-06-09T13:31:49.001Z [info] GET /api/users/paginated?page=1&limit=1 304 325.530 ms - - req=cac18e71-74af-4d90-b83c-d5de9999997c {"service":"back-end"}
+2026-06-09T13:31:49.006Z [info] GET /api/dashboard/notifications?timeFilter=30days 200 333.703 ms - 753 req=3a7ecd6f-0bf1-454e-96e7-8689a8a667e3 {"service":"back-end"}
+2026-06-09T13:31:49.023Z [info] GET /api/dashboard/stats?timeFilter=30days 304 353.216 ms - - req=d2d09550-56cd-4e2a-8ff2-d1711ced7ca8 {"service":"back-end"}
+2026-06-09T13:31:49.313Z [info] GET /api/orders 304 283.623 ms - - req=3cf5782c-1b09-4818-9888-245290925c82 {"service":"back-end"}
+2026-06-09T13:31:52.054Z [info] GET /api/products 304 9.614 ms - - req=a52729e1-2e1d-4c50-b15c-6a573c1d2f34 {"service":"back-end"}
+2026-06-09T13:31:52.281Z [info] GET /api/dashboard/revenue-by-day?timeFilter=90days 304 226.139 ms - - req=e11aea8e-803e-40de-b83b-a0b1962eb77d {"service":"back-end"}
+2026-06-09T13:31:52.309Z [info] GET /api/dashboard/stats?timeFilter=90days 304 264.261 ms - - req=a5eb4af4-ee47-4b3f-a299-ac81ccb1659f {"service":"back-end"}
+2026-06-09T13:31:52.311Z [info] GET /api/dashboard/recent-orders?limit=5 304 273.615 ms - - req=565e0e39-d714-4470-80c5-bf63266208de {"service":"back-end"}
+2026-06-09T13:31:52.319Z [info] GET /api/dashboard/notifications?timeFilter=90days 200 271.616 ms - 753 req=78d5224b-40cc-4a27-b371-d742a6bbe0b5 {"service":"back-end"}
+2026-06-09T13:31:52.356Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 321.733 ms - - req=d034e8eb-70a1-4cd3-9fce-69eb0cb38850 {"service":"back-end"}
+2026-06-09T13:31:52.445Z [info] GET /api/dashboard/revenue-by-category?timeFilter=90days 304 162.071 ms - - req=3e5744dd-1d98-4020-b837-7a50acc47ee7 {"service":"back-end"}
+2026-06-09T13:31:52.454Z [info] GET /api/users/paginated?page=1&limit=1 304 411.729 ms - - req=e104ee5a-d449-4c1f-82cb-c27ce2bb9557 {"service":"back-end"}
+2026-06-09T13:31:52.760Z [info] GET /api/orders 304 301.490 ms - - req=9a4a0825-1eca-49c0-a8dc-4fa56efee6f2 {"service":"back-end"}
+2026-06-09T13:33:32.636Z [info] Redis client connecting {"service":"back-end"}
+2026-06-09T13:33:32.647Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-09T13:33:32.650Z [info] Redis client ready {"service":"back-end"}
+2026-06-09T13:33:32.655Z [info] Redis client connected {"service":"back-end"}
+2026-06-09T13:33:32.661Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-09T13:33:32.664Z [info] Loading .env {"service":"back-end","envPath":"D:\\Project\\PetShop-Website\\back-end\\.env"}
+2026-06-09T13:33:32.665Z [info] .env file loaded successfully {"service":"back-end"}
+2026-06-09T13:33:32.708Z [info] [ProjectionWorker] Checking for pending events to catch up from checkpoints... {"service":"back-end"}
+2026-06-09T13:33:32.711Z [info] Background workers initialized {"service":"back-end"}
+2026-06-09T13:33:32.724Z [info] Server is running: http://localhost:5000 {"service":"back-end"}
+2026-06-09T13:33:33.546Z [info] MongoDB connected {"service":"back-end"}
+2026-06-09T13:33:33.548Z [info] Connected to MongoDB {"service":"back-end"}
+2026-06-09T13:33:34.405Z [info] [ProjectionWorker] Catch-up check completed. {"service":"back-end"}
+2026-06-09T13:34:07.023Z [info] GET /api/dashboard/revenue-by-day?timeFilter=7days 304 158.031 ms - - req=abc5162c-198a-48bf-a0de-ac28afffd23b {"service":"back-end"}
+2026-06-09T13:34:07.062Z [info] GET /api/dashboard/revenue-by-category?timeFilter=7days 304 196.533 ms - - req=fe8fe85a-0a2f-4b6a-a2ee-7aa10a0c6a6f {"service":"back-end"}
+2026-06-09T13:34:07.068Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 224.177 ms - - req=2cf40716-df6e-44b4-86ff-b87415b21ef8 {"service":"back-end"}
+2026-06-09T13:34:07.075Z [info] GET /api/products 304 11.381 ms - - req=3e1c2900-b86b-471d-a39d-810c45066750 {"service":"back-end"}
+2026-06-09T13:34:07.084Z [info] GET /api/products/product/sales 304 4.979 ms - - req=2de2fc64-516c-4e1b-ad51-a5a0162efac6 {"service":"back-end"}
+2026-06-09T13:34:07.177Z [info] GET /api/dashboard/stats?timeFilter=7days 304 322.390 ms - - req=2c020bb8-9ab3-48ac-ac91-6df3013e12f1 {"service":"back-end"}
+2026-06-09T13:34:07.185Z [info] GET /api/products 304 6.822 ms - - req=7ae26de7-7eb8-4989-8196-a55ec59d5b2c {"service":"back-end"}
+2026-06-09T13:34:07.200Z [info] GET /api/dashboard/notifications?timeFilter=7days 200 338.730 ms - 753 req=baebcf31-28f5-4d57-9747-9a8c99b12271 {"service":"back-end"}
+2026-06-09T13:34:07.259Z [info] GET /api/categories/shop-cho-cun 304 182.861 ms - - req=02ff5e3d-1d8f-43bd-a6f4-6961ae6c8543 {"service":"back-end"}
+2026-06-09T13:34:07.298Z [info] GET /api/categories/shop-cho-meo 304 212.955 ms - - req=bb8922aa-6ceb-4a12-a6cb-4ca7e849d5cf {"service":"back-end"}
+2026-06-09T13:34:07.325Z [info] GET /api/users/paginated?page=1&limit=1 304 300.905 ms - - req=2068ef66-0c0a-40d7-a13b-c118a8a7565e {"service":"back-end"}
+2026-06-09T13:34:07.558Z [info] GET /api/dashboard/recent-orders?limit=5 304 700.369 ms - - req=7be057cd-5cc4-409f-bdaa-901e1aa0e8fa {"service":"back-end"}
+2026-06-09T13:34:07.870Z [info] GET /api/orders 304 304.054 ms - - req=cd996500-fdb4-4f0b-8d03-dadb589c693d {"service":"back-end"}
+2026-06-09T13:34:39.607Z [info] Redis client connecting {"service":"back-end"}
+2026-06-09T13:34:39.617Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-09T13:34:39.620Z [info] Redis client ready {"service":"back-end"}
+2026-06-09T13:34:39.628Z [info] Redis client connected {"service":"back-end"}
+2026-06-09T13:34:39.633Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-09T13:34:39.636Z [info] Loading .env {"service":"back-end","envPath":"D:\\Project\\PetShop-Website\\back-end\\.env"}
+2026-06-09T13:34:39.637Z [info] .env file loaded successfully {"service":"back-end"}
+2026-06-09T13:34:39.675Z [info] [ProjectionWorker] Checking for pending events to catch up from checkpoints... {"service":"back-end"}
+2026-06-09T13:34:39.678Z [info] Background workers initialized {"service":"back-end"}
+2026-06-09T13:34:39.689Z [info] Server is running: http://localhost:5000 {"service":"back-end"}
+2026-06-09T13:34:40.449Z [info] MongoDB connected {"service":"back-end"}
+2026-06-09T13:34:40.451Z [info] Connected to MongoDB {"service":"back-end"}
+2026-06-09T13:34:41.764Z [info] [ProjectionWorker] Catch-up check completed. {"service":"back-end"}
+2026-06-09T13:34:45.110Z [info] GET /api/orders 401 6.192 ms - 85 req=331fdfd4-b5d5-4425-a426-705b5b9a4d67 {"service":"back-end"}
+2026-06-09T13:34:52.498Z [info] Redis client connecting {"service":"back-end"}
+2026-06-09T13:34:52.507Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-09T13:34:52.509Z [info] Redis client ready {"service":"back-end"}
+2026-06-09T13:34:52.510Z [info] Redis client connected {"service":"back-end"}
+2026-06-09T13:34:52.519Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-09T13:34:52.522Z [info] Loading .env {"service":"back-end","envPath":"D:\\Project\\PetShop-Website\\back-end\\.env"}
+2026-06-09T13:34:52.522Z [info] .env file loaded successfully {"service":"back-end"}
+2026-06-09T13:34:52.556Z [info] [ProjectionWorker] Checking for pending events to catch up from checkpoints... {"service":"back-end"}
+2026-06-09T13:34:52.558Z [info] Background workers initialized {"service":"back-end"}
+2026-06-09T13:34:52.566Z [info] Server is running: http://localhost:5000 {"service":"back-end"}
+2026-06-09T13:34:53.176Z [info] MongoDB connected {"service":"back-end"}
+2026-06-09T13:34:53.178Z [info] Connected to MongoDB {"service":"back-end"}
+2026-06-09T13:34:53.844Z [info] [ProjectionWorker] Catch-up check completed. {"service":"back-end"}
+2026-06-09T13:35:06.261Z [info] GET /api/orders 403 82.182 ms - 73 req=69690156-20d7-4754-ba1c-14bf67347be9 {"service":"back-end"}
+2026-06-09T13:35:10.631Z [info] Redis client connecting {"service":"back-end"}
+2026-06-09T13:35:10.647Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-09T13:35:10.650Z [info] Redis client ready {"service":"back-end"}
+2026-06-09T13:35:10.658Z [info] Redis client connected {"service":"back-end"}
+2026-06-09T13:35:10.663Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-09T13:35:10.667Z [info] Loading .env {"service":"back-end","envPath":"D:\\Project\\PetShop-Website\\back-end\\.env"}
+2026-06-09T13:35:10.668Z [info] .env file loaded successfully {"service":"back-end"}
+2026-06-09T13:35:10.708Z [info] [ProjectionWorker] Checking for pending events to catch up from checkpoints... {"service":"back-end"}
+2026-06-09T13:35:10.711Z [info] Background workers initialized {"service":"back-end"}
+2026-06-09T13:35:10.721Z [info] Server is running: http://localhost:5000 {"service":"back-end"}
+2026-06-09T13:35:11.430Z [info] MongoDB connected {"service":"back-end"}
+2026-06-09T13:35:11.433Z [info] Connected to MongoDB {"service":"back-end"}
+2026-06-09T13:35:12.240Z [info] [ProjectionWorker] Catch-up check completed. {"service":"back-end"}
+2026-06-09T13:35:21.992Z [info] Redis client connecting {"service":"back-end"}
+2026-06-09T13:35:22.005Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-09T13:35:22.013Z [info] Redis client ready {"service":"back-end"}
+2026-06-09T13:35:22.013Z [info] Redis client connected {"service":"back-end"}
+2026-06-09T13:35:22.019Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-09T13:35:22.023Z [info] Loading .env {"service":"back-end","envPath":"D:\\Project\\PetShop-Website\\back-end\\.env"}
+2026-06-09T13:35:22.024Z [info] .env file loaded successfully {"service":"back-end"}
+2026-06-09T13:35:22.065Z [info] [ProjectionWorker] Checking for pending events to catch up from checkpoints... {"service":"back-end"}
+2026-06-09T13:35:22.067Z [info] Background workers initialized {"service":"back-end"}
+2026-06-09T13:35:22.079Z [info] Server is running: http://localhost:5000 {"service":"back-end"}
+2026-06-09T13:35:22.844Z [info] MongoDB connected {"service":"back-end"}
+2026-06-09T13:35:22.846Z [info] Connected to MongoDB {"service":"back-end"}
+2026-06-09T13:35:23.598Z [info] [ProjectionWorker] Catch-up check completed. {"service":"back-end"}
+2026-06-09T13:35:28.544Z [info] GET /api/orders 200 375.295 ms - 211343 req=b2812b72-b8c3-4e73-81a0-df3118fb2e63 {"service":"back-end"}
+2026-06-09T13:35:38.653Z [info] GET /api/dashboard/revenue-by-day?timeFilter=7days 304 147.693 ms - - req=9ef8d8e7-e589-46ae-b224-5b5fd603289f {"service":"back-end"}
+2026-06-09T13:35:38.658Z [info] GET /api/dashboard/revenue-by-category?timeFilter=7days 304 155.896 ms - - req=a75bd06b-311c-46e8-9a29-f6168b1ec50e {"service":"back-end"}
+2026-06-09T13:35:38.755Z [info] GET /api/dashboard/stats?timeFilter=7days 304 258.911 ms - - req=99393b55-de7b-4614-aa29-202cdbfd8520 {"service":"back-end"}
+2026-06-09T13:35:38.764Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 274.706 ms - - req=86fe5483-70e0-487a-9fd4-f5fce030ff4d {"service":"back-end"}
+2026-06-09T13:35:38.841Z [info] GET /api/dashboard/notifications?timeFilter=7days 200 340.646 ms - 753 req=da33621e-3cd0-4091-91e2-6d8c10271150 {"service":"back-end"}
+2026-06-09T13:35:38.867Z [info] GET /api/products 304 206.339 ms - - req=29f530a1-6067-4ec6-99a7-fe9331ec1852 {"service":"back-end"}
+2026-06-09T13:35:38.929Z [info] GET /api/users/paginated?page=1&limit=1 304 274.758 ms - - req=c8a23e68-b435-428d-8b2c-179fac71a002 {"service":"back-end"}
+2026-06-09T13:35:39.149Z [info] GET /api/dashboard/recent-orders?limit=5 304 651.133 ms - - req=83a474b8-07c3-48b6-8616-20590f86de6f {"service":"back-end"}
+2026-06-09T13:35:39.432Z [info] GET /api/orders 304 275.643 ms - - req=e5ac674b-287e-401d-b8a5-8529ff14ba10 {"service":"back-end"}
+2026-06-09T13:35:40.765Z [info] GET /api/dashboard/revenue-by-category?timeFilter=7days 304 219.870 ms - - req=077bcc51-1dbf-487f-846c-59d563769d65 {"service":"back-end"}
+2026-06-09T13:35:40.767Z [info] GET /api/dashboard/revenue-by-day?timeFilter=7days 304 219.988 ms - - req=e5f4c474-28b5-4bbf-9372-75a1415e6824 {"service":"back-end"}
+2026-06-09T13:35:40.779Z [info] GET /api/products 304 7.163 ms - - req=0a20e7c4-6f22-4fc9-a2a3-84ac29ebac65 {"service":"back-end"}
+2026-06-09T13:35:40.809Z [info] GET /api/dashboard/recent-orders?limit=5 304 268.349 ms - - req=a6c1acd3-9469-4d51-b09f-268e05da32a4 {"service":"back-end"}
+2026-06-09T13:35:40.812Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 275.305 ms - - req=4817dadb-349c-4be8-be99-b0a41e41f651 {"service":"back-end"}
+2026-06-09T13:35:40.815Z [info] GET /api/dashboard/notifications?timeFilter=7days 200 272.615 ms - 753 req=8caedd4f-a916-4c74-b4eb-dc9a578ea256 {"service":"back-end"}
+2026-06-09T13:35:40.818Z [info] GET /api/dashboard/stats?timeFilter=7days 304 278.846 ms - - req=20bc241b-7219-4e55-b6e6-76042ef92521 {"service":"back-end"}
+2026-06-09T13:35:41.109Z [info] GET /api/users/paginated?page=1&limit=1 304 338.839 ms - - req=b269a084-5f4a-441f-adb5-d9eaf5468f2c {"service":"back-end"}
+2026-06-09T13:35:41.419Z [info] GET /api/orders 304 303.733 ms - - req=3155a0c9-4784-463f-99a5-97a5d142fdc8 {"service":"back-end"}
+2026-06-09T13:35:48.427Z [info] Redis client connecting {"service":"back-end"}
+2026-06-09T13:35:48.435Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-09T13:35:48.442Z [info] Redis client ready {"service":"back-end"}
+2026-06-09T13:35:48.443Z [info] Redis client connected {"service":"back-end"}
+2026-06-09T13:35:48.446Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-09T13:35:48.449Z [info] Loading .env {"service":"back-end","envPath":"D:\\Project\\PetShop-Website\\back-end\\.env"}
+2026-06-09T13:35:48.450Z [info] .env file loaded successfully {"service":"back-end"}
+2026-06-09T13:35:48.488Z [info] [ProjectionWorker] Checking for pending events to catch up from checkpoints... {"service":"back-end"}
+2026-06-09T13:35:48.490Z [info] Background workers initialized {"service":"back-end"}
+2026-06-09T13:35:48.497Z [info] Server is running: http://localhost:5000 {"service":"back-end"}
+2026-06-09T13:35:49.135Z [info] MongoDB connected {"service":"back-end"}
+2026-06-09T13:35:49.137Z [info] Connected to MongoDB {"service":"back-end"}
+2026-06-09T13:35:49.849Z [info] [ProjectionWorker] Catch-up check completed. {"service":"back-end"}
+2026-06-09T13:36:03.327Z [info] Redis client connecting {"service":"back-end"}
+2026-06-09T13:36:03.339Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-09T13:36:03.343Z [info] Redis client ready {"service":"back-end"}
+2026-06-09T13:36:03.349Z [info] Redis client connected {"service":"back-end"}
+2026-06-09T13:36:03.353Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-09T13:36:03.356Z [info] Loading .env {"service":"back-end","envPath":"D:\\Project\\PetShop-Website\\back-end\\.env"}
+2026-06-09T13:36:03.357Z [info] .env file loaded successfully {"service":"back-end"}
+2026-06-09T13:36:03.393Z [info] [ProjectionWorker] Checking for pending events to catch up from checkpoints... {"service":"back-end"}
+2026-06-09T13:36:03.395Z [info] Background workers initialized {"service":"back-end"}
+2026-06-09T13:36:03.402Z [info] Server is running: http://localhost:5000 {"service":"back-end"}
+2026-06-09T13:36:04.125Z [info] MongoDB connected {"service":"back-end"}
+2026-06-09T13:36:04.126Z [info] Connected to MongoDB {"service":"back-end"}
+2026-06-09T13:36:04.929Z [info] [ProjectionWorker] Catch-up check completed. {"service":"back-end"}
+2026-06-09T13:36:22.152Z [info] Received SIGINT. Starting graceful shutdown... {"service":"back-end"}
+2026-06-09T13:36:26.883Z [info] Redis client connecting {"service":"back-end"}
+2026-06-09T13:36:26.893Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-09T13:36:26.896Z [info] Redis client ready {"service":"back-end"}
+2026-06-09T13:36:26.897Z [info] Redis client connected {"service":"back-end"}
+2026-06-09T13:36:26.900Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-09T13:36:26.903Z [info] Loading .env {"service":"back-end","envPath":"D:\\Project\\PetShop-Website\\back-end\\.env"}
+2026-06-09T13:36:26.904Z [info] .env file loaded successfully {"service":"back-end"}
+2026-06-09T13:36:26.948Z [info] [ProjectionWorker] Checking for pending events to catch up from checkpoints... {"service":"back-end"}
+2026-06-09T13:36:26.949Z [info] Background workers initialized {"service":"back-end"}
+2026-06-09T13:36:26.957Z [info] Server is running: http://localhost:5000 {"service":"back-end"}
+2026-06-09T13:36:27.741Z [info] MongoDB connected {"service":"back-end"}
+2026-06-09T13:36:27.743Z [info] Connected to MongoDB {"service":"back-end"}
+2026-06-09T13:36:28.674Z [info] [ProjectionWorker] Catch-up check completed. {"service":"back-end"}
+2026-06-09T13:36:28.849Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 504.134 ms - - req=5cdaf321-70ff-49ee-8927-55c570a17736 {"service":"back-end"}
+2026-06-09T13:36:28.924Z [info] GET /api/dashboard/notifications?timeFilter=7days 200 556.752 ms - 753 req=c36239c8-685e-4f17-b8c8-8d8d81100d61 {"service":"back-end"}
+2026-06-09T13:36:28.939Z [info] GET /api/products 304 9.903 ms - - req=cda990a6-621b-46f7-aec7-d4e0e6f2d85e {"service":"back-end"}
+2026-06-09T13:36:28.957Z [info] GET /api/users/paginated?page=1&limit=1 304 594.019 ms - - req=0f610af7-54d6-43f3-b8a6-1752ada8085c {"service":"back-end"}
+2026-06-09T13:36:28.974Z [info] GET /api/dashboard/stats?timeFilter=7days 304 609.903 ms - - req=4a30bacb-6716-4a2e-90e4-6cd7d0cafcbf {"service":"back-end"}
+2026-06-09T13:36:28.981Z [info] GET /api/products/product/sales 304 4.151 ms - - req=64da655a-000c-46f3-b43e-e499da280836 {"service":"back-end"}
+2026-06-09T13:36:28.992Z [info] GET /api/products 304 9.621 ms - - req=1d53a9ee-cc04-4c7f-b4e9-4bd7ca5a135a {"service":"back-end"}
+2026-06-09T13:36:29.007Z [info] GET /api/dashboard/revenue-by-category?timeFilter=7days 304 156.154 ms - - req=cdecf52f-ce0f-40de-8135-0d96242ea6e1 {"service":"back-end"}
+2026-06-09T13:36:29.072Z [info] GET /api/dashboard/recent-orders?limit=5 304 705.929 ms - - req=d40593f1-c7dd-4f3c-8da2-79498e2a188f {"service":"back-end"}
+2026-06-09T13:36:29.129Z [info] GET /api/categories/shop-cho-cun 304 188.823 ms - - req=039031a0-009c-4760-803b-352c753597da {"service":"back-end"}
+2026-06-09T13:36:29.196Z [info] GET /api/categories/shop-cho-meo 304 237.779 ms - - req=36e67cdb-de57-4540-abed-a0f0afa49cac {"service":"back-end"}
+2026-06-09T13:36:29.211Z [info] GET /api/dashboard/revenue-by-day?timeFilter=7days 304 841.099 ms - - req=c85262c5-9d62-4097-9b05-6bdc6861e37f {"service":"back-end"}
+2026-06-09T13:36:29.523Z [info] GET /api/orders 304 306.024 ms - - req=e61b6a22-d0b8-49c9-93a8-3bd3b7170dc7 {"service":"back-end"}
+2026-06-09T13:36:32.072Z [info] GET /api/products 304 14.885 ms - - req=023a69c8-0340-4a1b-baf9-87bdeae78d5a {"service":"back-end"}
+2026-06-09T13:36:32.251Z [info] GET /api/dashboard/revenue-by-day?timeFilter=30days 304 176.395 ms - - req=2e183994-8656-4353-a622-2396894708ad {"service":"back-end"}
+2026-06-09T13:36:32.312Z [info] GET /api/dashboard/notifications?timeFilter=30days 200 246.472 ms - 753 req=bb28acf9-b5da-4e08-8b60-bc9c1fc46a63 {"service":"back-end"}
+2026-06-09T13:36:32.317Z [info] GET /api/dashboard/stats?timeFilter=30days 304 255.545 ms - - req=9a88c7c1-f114-44af-918b-c19493346992 {"service":"back-end"}
+2026-06-09T13:36:32.342Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 291.168 ms - - req=53082047-923b-419b-982f-d3d34c2976e8 {"service":"back-end"}
+2026-06-09T13:36:32.346Z [info] GET /api/dashboard/recent-orders?limit=5 304 290.546 ms - - req=805e8e25-b2b6-4e8d-b2ae-a40fabf63973 {"service":"back-end"}
+2026-06-09T13:36:32.352Z [info] GET /api/dashboard/revenue-by-category?timeFilter=30days 304 99.264 ms - - req=7dbe5882-307f-446c-af27-4072b5fc870c {"service":"back-end"}
+2026-06-09T13:36:32.483Z [info] GET /api/users/paginated?page=1&limit=1 304 424.293 ms - - req=a3023f6e-ad71-4dec-9a22-719110b941c7 {"service":"back-end"}
+2026-06-09T13:36:32.780Z [info] GET /api/orders 304 292.197 ms - - req=8544ceaa-6e00-4286-b6da-6303191be117 {"service":"back-end"}
+2026-06-09T13:36:34.939Z [info] GET /api/dashboard/revenue-by-category?timeFilter=90days 304 163.769 ms - - req=e467d493-0ca3-4c82-9d47-3b97bf239700 {"service":"back-end"}
+2026-06-09T13:36:34.982Z [info] GET /api/dashboard/revenue-by-day?timeFilter=90days 304 207.389 ms - - req=3bf1421d-9941-413a-98cf-7c7a510c5fcf {"service":"back-end"}
+2026-06-09T13:36:34.989Z [info] GET /api/products 304 6.124 ms - - req=897bc663-eb9a-4895-9020-e62a56f5cece {"service":"back-end"}
+2026-06-09T13:36:34.991Z [info] GET /api/dashboard/recent-orders?limit=5 304 220.426 ms - - req=22705204-304b-42a8-8876-814022ecc432 {"service":"back-end"}
+2026-06-09T13:36:35.035Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 270.121 ms - - req=3fbeff37-8db7-440d-83da-7740c42be377 {"service":"back-end"}
+2026-06-09T13:36:35.100Z [info] GET /api/dashboard/notifications?timeFilter=90days 200 327.569 ms - 753 req=c1311fe8-51ac-40eb-845b-da8a1661a129 {"service":"back-end"}
+2026-06-09T13:36:35.107Z [info] GET /api/dashboard/stats?timeFilter=90days 304 338.230 ms - - req=af4ef576-f946-4b54-bc34-cc2582e853f9 {"service":"back-end"}
+2026-06-09T13:36:35.212Z [info] GET /api/users/paginated?page=1&limit=1 304 271.874 ms - - req=56f3ad52-3bab-4e52-9e8e-0fc5130b3df3 {"service":"back-end"}
+2026-06-09T13:36:35.504Z [info] GET /api/orders 304 284.060 ms - - req=5e575a12-2bc8-4a5a-bed9-ea05324863e7 {"service":"back-end"}
+2026-06-09T13:36:38.677Z [info] GET /api/products 304 7.512 ms - - req=8e43ecaa-5f2b-45b7-8844-256074d67687 {"service":"back-end"}
+2026-06-09T13:36:38.841Z [info] GET /api/dashboard/revenue-by-day?timeFilter=year 200 161.647 ms - 195 req=bd14f0c4-a16c-45ad-8d3b-08e1dd71fa3b {"service":"back-end"}
+2026-06-09T13:36:38.931Z [info] GET /api/dashboard/stats?timeFilter=year 200 281.691 ms - 105 req=e65764d8-1b45-4884-9deb-e72c26751dc6 {"service":"back-end"}
+2026-06-09T13:36:38.952Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 308.633 ms - - req=f8cafbd4-dca7-4a69-b6a2-4588b1b324ca {"service":"back-end"}
+2026-06-09T13:36:38.957Z [info] GET /api/dashboard/recent-orders?limit=5 304 309.272 ms - - req=d97be28c-5a71-4a3b-896b-c453de9c78cb {"service":"back-end"}
+2026-06-09T13:36:38.959Z [info] GET /api/dashboard/revenue-by-category?timeFilter=year 200 115.771 ms - 159 req=b80e81f1-f4b8-475f-9b3a-bf0198fdef12 {"service":"back-end"}
+2026-06-09T13:36:39.020Z [info] GET /api/dashboard/notifications?timeFilter=year 200 369.326 ms - 753 req=d753c7e1-67ad-4409-b17c-2012356c3227 {"service":"back-end"}
+2026-06-09T13:36:39.480Z [info] GET /api/users/paginated?page=1&limit=1 304 813.040 ms - - req=872f1610-c904-41c4-aa7d-952dc2e775e6 {"service":"back-end"}
+2026-06-09T13:36:39.848Z [info] GET /api/orders 304 360.692 ms - - req=9c3e40d6-39ba-4d7f-972c-9e1f7c1e6aa8 {"service":"back-end"}
+2026-06-09T13:36:48.015Z [info] GET /api/dashboard/revenue-by-day?timeFilter=all 304 195.794 ms - - req=0f0a6e9d-d6bd-4c14-8fca-71149dfdfc70 {"service":"back-end"}
+2026-06-09T13:36:48.023Z [info] GET /api/products 304 6.188 ms - - req=51508b1e-af6c-43fb-bb00-f625d191fdb4 {"service":"back-end"}
+2026-06-09T13:36:48.027Z [info] GET /api/dashboard/revenue-by-category?timeFilter=all 304 205.126 ms - - req=f9b53b94-ce4e-4aac-b9dd-683bf92a736c {"service":"back-end"}
+2026-06-09T13:36:48.055Z [info] GET /api/dashboard/recent-orders?limit=5 304 240.794 ms - - req=b062be69-471c-4920-992d-5cada9e00647 {"service":"back-end"}
+2026-06-09T13:36:48.060Z [info] GET /api/dashboard/notifications?timeFilter=all 200 243.279 ms - 753 req=bd500936-8b71-4126-a7fc-17532d35af3c {"service":"back-end"}
+2026-06-09T13:36:48.098Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 293.587 ms - - req=85747daa-f461-4795-8db0-d72a633a6c5d {"service":"back-end"}
+2026-06-09T13:36:48.143Z [info] GET /api/dashboard/stats?timeFilter=all 304 331.609 ms - - req=8448f559-e650-4831-8a66-dacefa3433d0 {"service":"back-end"}
+2026-06-09T13:36:48.315Z [info] GET /api/users/paginated?page=1&limit=1 304 285.897 ms - - req=a1406007-c384-4fff-a5c3-ea88860beaaa {"service":"back-end"}
+2026-06-09T13:36:48.618Z [info] GET /api/orders 304 293.597 ms - - req=b6b54ff2-fd1a-4962-a8bc-b64811842632 {"service":"back-end"}
+2026-06-09T13:37:17.176Z [info] GET /api/products 304 19.767 ms - - req=4121418b-0e36-4352-a71e-6e0f3c6ef3c3 {"service":"back-end"}
+2026-06-09T13:37:17.235Z [info] GET /api/categories 304 73.635 ms - - req=22fa5481-6580-42e6-971c-b5d811efb5a1 {"service":"back-end"}
+2026-06-09T13:37:17.441Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 298.017 ms - - req=4f69c7af-3aeb-4ad2-bdd3-d81439cc2dc2 {"service":"back-end"}
+2026-06-09T13:37:17.859Z [info] GET /api/products 304 6.869 ms - - req=beb44472-11a0-43ae-8cf8-687962948bf5 {"service":"back-end"}
+2026-06-09T13:37:18.021Z [info] GET /api/products 304 6.629 ms - - req=b061e06b-c6b7-477e-806e-386d2cddf06f {"service":"back-end"}
+2026-06-09T13:38:03.003Z [info] GET /api/products 304 5.586 ms - - req=d1862138-a77c-46e5-a47a-93c26a269a4e {"service":"back-end"}
+2026-06-09T13:38:20.763Z [info] GET /api/dashboard/revenue-by-day?timeFilter=7days 304 149.793 ms - - req=85819e27-9771-4f03-97e9-1e6c87023987 {"service":"back-end"}
+2026-06-09T13:38:20.846Z [info] GET /api/dashboard/recent-orders?limit=5 304 234.694 ms - - req=f8b1a2f9-3d35-41cc-b722-e926cca4195e {"service":"back-end"}
+2026-06-09T13:38:20.853Z [info] GET /api/products 304 5.548 ms - - req=ec71d834-d630-4999-85d4-717934ccfdfc {"service":"back-end"}
+2026-06-09T13:38:20.871Z [info] GET /api/dashboard/revenue-by-category?timeFilter=7days 304 106.339 ms - - req=58b412bf-31c1-4930-912e-95e63448fe87 {"service":"back-end"}
+2026-06-09T13:38:20.916Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 312.989 ms - - req=7229387b-e881-4f95-b71a-df2af4f643db {"service":"back-end"}
+2026-06-09T13:38:20.941Z [info] GET /api/dashboard/notifications?timeFilter=7days 200 323.712 ms - 753 req=cfc22156-9ffa-4b14-b54e-500b9d5f3098 {"service":"back-end"}
+2026-06-09T13:38:20.943Z [info] GET /api/dashboard/stats?timeFilter=7days 304 333.998 ms - - req=5367a89e-f7af-4ff2-a361-278a5b6ef83d {"service":"back-end"}
+2026-06-09T13:38:21.031Z [info] GET /api/users/paginated?page=1&limit=1 304 411.027 ms - - req=a194fb0f-223c-4b87-b863-2b4dd88c89d1 {"service":"back-end"}
+2026-06-09T13:38:21.358Z [info] GET /api/orders 304 286.281 ms - - req=1955c7a3-1c3d-4cc8-b6b7-8a51064166aa {"service":"back-end"}
+2026-06-09T13:39:16.814Z [info] GET /api/dashboard/revenue-by-day?timeFilter=year 304 158.466 ms - - req=07819f48-e562-4672-9fcf-0160ab5987ad {"service":"back-end"}
+2026-06-09T13:39:16.820Z [info] GET /api/products 304 5.051 ms - - req=4747d187-da28-4271-8164-1711caf5fccc {"service":"back-end"}
+2026-06-09T13:39:16.824Z [info] GET /api/dashboard/revenue-by-category?timeFilter=year 304 167.239 ms - - req=b0de81cd-b52f-477f-97c5-5ee7b5055e63 {"service":"back-end"}
+2026-06-09T13:39:16.939Z [info] GET /api/dashboard/recent-orders?limit=5 304 287.986 ms - - req=fdf13b84-3975-466d-8d18-f92e082eda10 {"service":"back-end"}
+2026-06-09T13:39:16.942Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 298.288 ms - - req=4d4db2f2-0891-4d32-88dc-7c2da06684df {"service":"back-end"}
+2026-06-09T13:39:17.011Z [info] GET /api/dashboard/stats?timeFilter=year 304 361.662 ms - - req=8dbb895a-95aa-4f6d-870d-d6559ad5d141 {"service":"back-end"}
+2026-06-09T13:39:17.031Z [info] GET /api/dashboard/notifications?timeFilter=year 200 378.190 ms - 753 req=05b1660c-4b9b-4f08-be5c-a19f331c0e98 {"service":"back-end"}
+2026-06-09T13:39:17.114Z [info] GET /api/users/paginated?page=1&limit=1 304 291.719 ms - - req=c6390b0f-cd10-4b1f-a8bb-ae8564a428fb {"service":"back-end"}
+2026-06-09T13:39:17.439Z [info] GET /api/orders 304 314.983 ms - - req=fec94e9c-afce-49cf-8c90-36118d62bfe2 {"service":"back-end"}
+2026-06-09T13:39:18.680Z [info] GET /api/products 304 11.664 ms - - req=e33ed8e7-a477-4544-8e94-01a848989696 {"service":"back-end"}
+2026-06-09T13:39:18.896Z [info] GET /api/dashboard/recent-orders?limit=5 304 229.707 ms - - req=a0f76e76-3845-4383-878d-aa4e8319622f {"service":"back-end"}
+2026-06-09T13:39:18.931Z [info] GET /api/dashboard/revenue-by-day?timeFilter=all 304 249.873 ms - - req=b4da7354-aa6e-4b9b-bb79-76f279a59b75 {"service":"back-end"}
+2026-06-09T13:39:18.994Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 332.042 ms - - req=35a2ae57-a817-4e83-89b8-0b069e073947 {"service":"back-end"}
+2026-06-09T13:39:19.006Z [info] GET /api/dashboard/revenue-by-category?timeFilter=all 304 107.190 ms - - req=8ff2bc04-e000-42c1-83fd-fc301be4681d {"service":"back-end"}
+2026-06-09T13:39:19.035Z [info] GET /api/dashboard/notifications?timeFilter=all 200 362.574 ms - 753 req=e7224f2c-9f27-4902-9a0c-b3ae76a62111 {"service":"back-end"}
+2026-06-09T13:39:19.039Z [info] GET /api/dashboard/stats?timeFilter=all 304 369.410 ms - - req=f3413b9d-9726-461a-b004-768ad6e31740 {"service":"back-end"}
+2026-06-09T13:39:19.114Z [info] GET /api/users/paginated?page=1&limit=1 304 450.492 ms - - req=1807a76f-eaf1-4c08-acc4-72cc80bfbdef {"service":"back-end"}
+2026-06-09T13:39:19.406Z [info] GET /api/orders 304 286.891 ms - - req=cb0d1e82-1245-4cd2-a273-ba4d8c1ac47f {"service":"back-end"}
+2026-06-09T13:39:21.244Z [info] GET /api/products 304 10.740 ms - - req=1468d863-1c20-4ab1-9ea7-e607c6b56e9d {"service":"back-end"}
+2026-06-09T13:39:21.466Z [info] GET /api/dashboard/revenue-by-category?timeFilter=7days 304 226.636 ms - - req=1a16fbde-f04e-4039-ba19-978dfdca8a85 {"service":"back-end"}
+2026-06-09T13:39:21.512Z [info] GET /api/dashboard/recent-orders?limit=5 304 281.733 ms - - req=6f62b458-efbf-4a34-99ed-3f608b893747 {"service":"back-end"}
+2026-06-09T13:39:21.515Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 287.087 ms - - req=cd854b33-6519-42ab-b8ab-b6ed96da5ae2 {"service":"back-end"}
+2026-06-09T13:39:21.516Z [info] GET /api/dashboard/stats?timeFilter=7days 304 271.159 ms - - req=410fde4a-dbb3-41b0-b0fa-7561e764669c {"service":"back-end"}
+2026-06-09T13:39:21.552Z [info] GET /api/users/paginated?page=1&limit=1 304 317.545 ms - - req=c969026a-250e-4677-9961-f5cbb36101c9 {"service":"back-end"}
+2026-06-09T13:39:21.585Z [info] GET /api/dashboard/notifications?timeFilter=7days 200 347.951 ms - 753 req=7611515f-9337-4edb-b0e9-8a3d530c51e7 {"service":"back-end"}
+2026-06-09T13:39:21.613Z [info] GET /api/dashboard/revenue-by-day?timeFilter=7days 304 145.593 ms - - req=5b1c9edf-675c-4129-bd00-f32ea247e59d {"service":"back-end"}
+2026-06-09T13:39:21.921Z [info] GET /api/orders 304 303.282 ms - - req=a9128839-7a62-446a-88b0-9105cd1db088 {"service":"back-end"}
+2026-06-09T13:39:23.721Z [info] GET /api/dashboard/revenue-by-day?timeFilter=30days 304 156.276 ms - - req=717d0aa2-c1fa-4413-a3f4-236bb54e68cf {"service":"back-end"}
+2026-06-09T13:39:23.823Z [info] GET /api/dashboard/notifications?timeFilter=30days 200 259.191 ms - 753 req=fb87dd74-563d-48c3-971e-8c2cbf9118e3 {"service":"back-end"}
+2026-06-09T13:39:23.825Z [info] GET /api/dashboard/revenue-by-category?timeFilter=30days 304 102.838 ms - - req=77aa47ad-f3b9-409c-9483-e869d02edb85 {"service":"back-end"}
+2026-06-09T13:39:23.833Z [info] GET /api/products 304 7.079 ms - - req=142d48c3-f42b-4ee6-bd33-7131f14c3914 {"service":"back-end"}
+2026-06-09T13:39:23.837Z [info] GET /api/dashboard/recent-orders?limit=5 304 274.914 ms - - req=70cce1c3-cbc9-4e49-9ac1-c98aa1c4d7ec {"service":"back-end"}
+2026-06-09T13:39:23.858Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 300.934 ms - - req=14de2228-aef4-4421-9af3-52044710390c {"service":"back-end"}
+2026-06-09T13:39:23.905Z [info] GET /api/users/paginated?page=1&limit=1 304 338.648 ms - - req=174d0dda-897b-4549-9707-a3e32481b287 {"service":"back-end"}
+2026-06-09T13:39:23.907Z [info] GET /api/dashboard/stats?timeFilter=30days 304 346.578 ms - - req=dd55c1d6-9ec1-4c16-9cb1-f983da65a85b {"service":"back-end"}
+2026-06-09T13:39:24.197Z [info] GET /api/orders 304 284.125 ms - - req=613d7c09-0452-4376-b97c-840284618982 {"service":"back-end"}
+2026-06-09T13:39:26.437Z [info] GET /api/products 304 12.230 ms - - req=b4a22ffa-2b84-4f4e-92e3-61dd9652045c {"service":"back-end"}
+2026-06-09T13:39:26.605Z [info] GET /api/dashboard/revenue-by-day?timeFilter=year 304 166.547 ms - - req=4d1c4bd9-91cd-4397-bfa5-abc53f6eeb3c {"service":"back-end"}
+2026-06-09T13:39:26.690Z [info] GET /api/dashboard/recent-orders?limit=5 304 268.192 ms - - req=792cefdb-6d95-41ad-bdd8-115be3f5a71d {"service":"back-end"}
+2026-06-09T13:39:26.697Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 279.223 ms - - req=f4a5489d-a920-4455-8c26-17952bc50ba8 {"service":"back-end"}
+2026-06-09T13:39:26.719Z [info] GET /api/dashboard/revenue-by-category?timeFilter=year 304 111.955 ms - - req=f606fee1-e564-4f2d-b7a0-9033a69651d0 {"service":"back-end"}
+2026-06-09T13:39:26.721Z [info] GET /api/dashboard/stats?timeFilter=year 304 290.802 ms - - req=01dcb2e8-ba52-4f18-8c04-8ca2fcbb30ab {"service":"back-end"}
+2026-06-09T13:39:26.820Z [info] GET /api/dashboard/notifications?timeFilter=year 200 388.003 ms - 753 req=79791a73-8304-4311-935d-1284491fb0f9 {"service":"back-end"}
+2026-06-09T13:39:26.822Z [info] GET /api/users/paginated?page=1&limit=1 304 394.755 ms - - req=c1b2ce63-c260-4305-a977-828d34acb727 {"service":"back-end"}
+2026-06-09T13:39:27.113Z [info] GET /api/orders 304 286.677 ms - - req=aa969e8d-c76e-423d-971b-91113835cfd2 {"service":"back-end"}
+2026-06-09T13:39:29.374Z [info] GET /api/dashboard/recent-orders?limit=5 304 224.816 ms - - req=a229d75c-9a42-4144-8860-3ebc6aa3677a {"service":"back-end"}
+2026-06-09T13:39:29.411Z [info] GET /api/dashboard/notifications?timeFilter=all 200 260.284 ms - 753 req=182ca40b-95c5-4d67-a5a9-d4d7af65490f {"service":"back-end"}
+2026-06-09T13:39:29.419Z [info] GET /api/products 304 5.740 ms - - req=adeb2a8d-f198-43a3-bc07-76a44f7d5d38 {"service":"back-end"}
+2026-06-09T13:39:29.442Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 297.836 ms - - req=ade0add9-596c-4d24-a304-08df8779504c {"service":"back-end"}
+2026-06-09T13:39:29.464Z [info] GET /api/dashboard/revenue-by-day?timeFilter=all 304 311.924 ms - - req=5b8fabf1-f02d-42c3-b1ee-64964648027e {"service":"back-end"}
+2026-06-09T13:39:29.490Z [info] GET /api/dashboard/revenue-by-category?timeFilter=all 304 114.411 ms - - req=3642c1a5-d502-4a5a-a620-400f4bf89c22 {"service":"back-end"}
+2026-06-09T13:39:29.499Z [info] GET /api/dashboard/stats?timeFilter=all 304 352.729 ms - - req=84ad5e29-2c9c-44c5-8cf9-92356a110e91 {"service":"back-end"}
+2026-06-09T13:39:29.595Z [info] GET /api/users/paginated?page=1&limit=1 304 441.040 ms - - req=050e60f5-263c-42ff-8198-d4cfd67fa7b2 {"service":"back-end"}
+2026-06-09T13:39:29.888Z [info] GET /api/orders 304 284.675 ms - - req=5a74fd2f-107c-479e-b91c-aa6c0dadcae4 {"service":"back-end"}
+2026-06-09T13:39:31.030Z [info] GET /api/products 304 8.571 ms - - req=cc7c94a3-ab85-40b7-900e-ec447a353bd4 {"service":"back-end"}
+2026-06-09T13:39:31.200Z [info] GET /api/dashboard/revenue-by-day?timeFilter=30days 304 168.307 ms - - req=8e7ffd59-7389-4373-94e0-4bfa47e9dcd1 {"service":"back-end"}
+2026-06-09T13:39:31.309Z [info] GET /api/dashboard/revenue-by-category?timeFilter=30days 304 106.919 ms - - req=90b50ba3-5af8-4e76-9f82-65ff3cf4d1e1 {"service":"back-end"}
+2026-06-09T13:39:31.311Z [info] GET /api/dashboard/recent-orders?limit=5 304 294.393 ms - - req=973b8089-c70a-4c70-883e-48bae0940d79 {"service":"back-end"}
+2026-06-09T13:39:31.339Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 326.772 ms - - req=9368420f-1db6-459a-84e7-97cb0079421f {"service":"back-end"}
+2026-06-09T13:39:31.408Z [info] GET /api/users/paginated?page=1&limit=1 304 388.259 ms - - req=6a9cadc5-31f6-4edd-90a2-8ec26eae753e {"service":"back-end"}
+2026-06-09T13:39:31.409Z [info] GET /api/dashboard/stats?timeFilter=30days 304 386.964 ms - - req=06ffa84f-38a7-422b-9c5f-386c8919bd49 {"service":"back-end"}
+2026-06-09T13:39:31.417Z [info] GET /api/dashboard/notifications?timeFilter=30days 200 392.853 ms - 753 req=335d2c13-4409-4686-a963-48960805d2e0 {"service":"back-end"}
+2026-06-09T13:39:31.727Z [info] GET /api/orders 304 305.273 ms - - req=d3210ccc-66ff-489b-afbe-51dcaf108b80 {"service":"back-end"}
+2026-06-09T13:39:33.709Z [info] GET /api/products 304 7.315 ms - - req=ae02d250-3660-43e1-8d61-a0146ded7191 {"service":"back-end"}
+2026-06-09T13:39:33.889Z [info] GET /api/dashboard/revenue-by-day?timeFilter=90days 304 171.092 ms - - req=949dd628-e9b6-4105-970e-647d046c9ddf {"service":"back-end"}
+2026-06-09T13:39:33.993Z [info] GET /api/dashboard/recent-orders?limit=5 304 299.535 ms - - req=9a79c51b-4f2a-469c-a00b-176c944e052d {"service":"back-end"}
+2026-06-09T13:39:33.994Z [info] GET /api/dashboard/revenue-by-category?timeFilter=90days 304 102.635 ms - - req=71ec57a7-01da-477b-9eba-f3f24352f050 {"service":"back-end"}
+2026-06-09T13:39:33.996Z [info] GET /api/dashboard/notifications?timeFilter=90days 200 281.094 ms - 753 req=9455b36e-19ce-4f27-8520-5b275ceea5b0 {"service":"back-end"}
+2026-06-09T13:39:34.005Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 314.466 ms - - req=3b7cd24a-1e02-468a-b8e4-465fe9df7afd {"service":"back-end"}
+2026-06-09T13:39:34.033Z [info] GET /api/dashboard/stats?timeFilter=90days 304 329.846 ms - - req=ddb7466f-317e-4369-9fa3-174f6effa383 {"service":"back-end"}
+2026-06-09T13:39:34.116Z [info] GET /api/users/paginated?page=1&limit=1 304 419.813 ms - - req=d9f78e28-cbf6-46e8-a34b-4b38dcc72db4 {"service":"back-end"}
+2026-06-09T13:39:34.414Z [info] GET /api/orders 304 291.958 ms - - req=a720554d-b5fd-4314-994c-32186ac7dae9 {"service":"back-end"}
+2026-06-09T13:39:36.205Z [info] GET /api/dashboard/revenue-by-day?timeFilter=year 304 154.198 ms - - req=f190996e-4760-4575-8afe-4a37c256bf84 {"service":"back-end"}
+2026-06-09T13:39:36.252Z [info] GET /api/dashboard/revenue-by-category?timeFilter=year 304 200.104 ms - - req=fb147c3f-0c68-486a-9569-5a01f131c898 {"service":"back-end"}
+2026-06-09T13:39:36.262Z [info] GET /api/products 304 8.290 ms - - req=cdb43f7e-67b9-481c-84d6-586df5f43cee {"service":"back-end"}
+2026-06-09T13:39:36.316Z [info] GET /api/dashboard/recent-orders?limit=5 304 267.926 ms - - req=2597ad57-8795-4de9-8d1b-e02b64eccc4c {"service":"back-end"}
+2026-06-09T13:39:36.318Z [info] GET /api/dashboard/notifications?timeFilter=year 200 268.049 ms - 753 req=4a1beee4-4ad7-45a0-b941-5f4f3fee05d6 {"service":"back-end"}
+2026-06-09T13:39:36.340Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 297.058 ms - - req=f0032b98-5528-4de4-b902-fdb9089d2451 {"service":"back-end"}
+2026-06-09T13:39:36.370Z [info] GET /api/dashboard/stats?timeFilter=year 304 324.660 ms - - req=b3b63cc1-e584-444a-b1a4-54584127eedb {"service":"back-end"}
+2026-06-09T13:39:36.480Z [info] GET /api/users/paginated?page=1&limit=1 304 272.491 ms - - req=85849764-e1a1-4344-aeec-f243d9526b11 {"service":"back-end"}
+2026-06-09T13:39:36.783Z [info] GET /api/orders 304 296.632 ms - - req=5ae5af0f-f112-4c3a-bc14-8cbcb942a322 {"service":"back-end"}
+2026-06-09T13:39:38.059Z [info] GET /api/products 304 7.934 ms - - req=4e74e990-7580-4065-8f56-a720ab96ca11 {"service":"back-end"}
+2026-06-09T13:39:38.209Z [info] GET /api/dashboard/revenue-by-day?timeFilter=7days 304 149.003 ms - - req=0990318a-b644-493d-b5af-cafbc8eb535c {"service":"back-end"}
+2026-06-09T13:39:38.317Z [info] GET /api/dashboard/recent-orders?limit=5 304 271.679 ms - - req=48ff9b6b-c939-41fd-81e2-c60304cf2007 {"service":"back-end"}
+2026-06-09T13:39:38.319Z [info] GET /api/dashboard/stats?timeFilter=7days 304 267.106 ms - - req=1bbc75a2-fb81-4bf5-b4c5-dff8631d4f85 {"service":"back-end"}
+2026-06-09T13:39:38.320Z [info] GET /api/dashboard/revenue-by-category?timeFilter=7days 304 109.635 ms - - req=ffd18032-06d0-433f-8255-ba477812d869 {"service":"back-end"}
+2026-06-09T13:39:38.336Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 296.053 ms - - req=7689986a-e2ca-452a-b386-73322c66e0af {"service":"back-end"}
+2026-06-09T13:39:38.355Z [info] GET /api/users/paginated?page=1&limit=1 304 306.047 ms - - req=d3e100cc-a50f-469d-93c2-668c62207239 {"service":"back-end"}
+2026-06-09T13:39:38.376Z [info] GET /api/dashboard/notifications?timeFilter=7days 200 322.821 ms - 753 req=49900344-7393-4fc9-ae8d-ca6de3e62c9f {"service":"back-end"}
+2026-06-09T13:39:38.657Z [info] GET /api/orders 304 275.171 ms - - req=57f7181e-ef66-4957-8d09-c657a27f7f43 {"service":"back-end"}
+2026-06-09T13:39:45.229Z [info] GET /api/dashboard/revenue-by-category?timeFilter=year 304 170.275 ms - - req=06536ef3-277d-4137-bc73-17b1e755ab05 {"service":"back-end"}
+2026-06-09T13:39:45.231Z [info] GET /api/dashboard/revenue-by-day?timeFilter=year 304 168.257 ms - - req=f04167b1-03e2-42ba-b397-dc186077ad4a {"service":"back-end"}
+2026-06-09T13:39:45.240Z [info] GET /api/products 304 5.894 ms - - req=0e93308f-35f4-4418-a8cc-23fd15039eb6 {"service":"back-end"}
+2026-06-09T13:39:45.282Z [info] GET /api/dashboard/recent-orders?limit=5 304 225.140 ms - - req=45874545-e0d1-4355-afbc-b686092a78c1 {"service":"back-end"}
+2026-06-09T13:39:45.318Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 266.753 ms - - req=39fff901-493e-4f9c-bce5-26745a4b98ed {"service":"back-end"}
+2026-06-09T13:39:45.373Z [info] GET /api/dashboard/stats?timeFilter=year 304 319.311 ms - - req=694d124e-6e81-4258-a07a-122cf0027961 {"service":"back-end"}
+2026-06-09T13:39:45.438Z [info] GET /api/dashboard/notifications?timeFilter=year 200 377.715 ms - 753 req=841c2640-4915-46a2-95f4-84f022444dbc {"service":"back-end"}
+2026-06-09T13:39:45.496Z [info] GET /api/users/paginated?page=1&limit=1 304 264.230 ms - - req=8185ffaf-51c4-4395-8403-7aeabd2f0852 {"service":"back-end"}
+2026-06-09T13:39:45.770Z [info] GET /api/orders 304 267.357 ms - - req=98bb9cf8-843a-4280-b2e1-5a84a3f3a2f3 {"service":"back-end"}
+2026-06-09T13:39:46.871Z [info] GET /api/products 304 7.376 ms - - req=6c2d8693-5a41-4aaf-889d-b1a8da04eeba {"service":"back-end"}
+2026-06-09T13:39:47.072Z [info] GET /api/dashboard/revenue-by-day?timeFilter=all 304 197.392 ms - - req=882d70ae-f652-48f4-957b-58d5a1558d0d {"service":"back-end"}
+2026-06-09T13:39:47.124Z [info] GET /api/dashboard/recent-orders?limit=5 304 264.322 ms - - req=16bf6967-fba1-467b-adc6-10462a4d6152 {"service":"back-end"}
+2026-06-09T13:39:47.126Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 268.336 ms - - req=034ac790-6df1-4f40-b67b-aacc02324067 {"service":"back-end"}
+2026-06-09T13:39:47.148Z [info] GET /api/dashboard/notifications?timeFilter=all 200 282.857 ms - 753 req=a5f6a8e4-375f-4380-966f-61311771e0ac {"service":"back-end"}
+2026-06-09T13:39:47.178Z [info] GET /api/dashboard/revenue-by-category?timeFilter=all 304 105.029 ms - - req=63d54390-212b-43ae-8cba-445247066bc3 {"service":"back-end"}
+2026-06-09T13:39:47.186Z [info] GET /api/users/paginated?page=1&limit=1 304 323.647 ms - - req=ea673bb6-2c41-4436-823f-758212c36873 {"service":"back-end"}
+2026-06-09T13:39:47.239Z [info] GET /api/dashboard/stats?timeFilter=all 304 374.628 ms - - req=bfb5697a-c6ba-4935-96e1-9c1b2d77cafc {"service":"back-end"}
+2026-06-09T13:39:47.542Z [info] GET /api/orders 304 297.772 ms - - req=45a46ada-a8e3-4fbc-a8c9-faaca3c61cae {"service":"back-end"}
+2026-06-09T13:39:49.698Z [info] GET /api/products 304 8.518 ms - - req=617f702f-f97c-4d38-9fa7-25c33341cef2 {"service":"back-end"}
+2026-06-09T13:39:49.862Z [info] GET /api/dashboard/revenue-by-category?timeFilter=7days 304 160.765 ms - - req=b2d645e5-371e-4b32-8ecf-f2315fda12e8 {"service":"back-end"}
+2026-06-09T13:39:49.935Z [info] GET /api/dashboard/notifications?timeFilter=7days 200 242.437 ms - 753 req=20497242-0c9c-44be-8698-ab4814c0c19c {"service":"back-end"}
+2026-06-09T13:39:49.947Z [info] GET /api/dashboard/stats?timeFilter=7days 304 256.205 ms - - req=e6e81243-b301-4924-a614-bb073e08f1f0 {"service":"back-end"}
+2026-06-09T13:39:49.956Z [info] GET /api/dashboard/recent-orders?limit=5 304 272.440 ms - - req=3317379a-a8ab-4d41-bf7f-5e3f4c1d8ea8 {"service":"back-end"}
+2026-06-09T13:39:49.968Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 288.060 ms - - req=6b819bab-ab6a-4301-af66-9d4ba35ce5ae {"service":"back-end"}
+2026-06-09T13:39:49.978Z [info] GET /api/dashboard/revenue-by-day?timeFilter=7days 304 114.929 ms - - req=7193f582-616e-475d-b9ab-691184fe2d67 {"service":"back-end"}
+2026-06-09T13:39:50.009Z [info] GET /api/users/paginated?page=1&limit=1 304 321.852 ms - - req=9ad6a855-1317-41bf-8af5-e21526e0186e {"service":"back-end"}
+2026-06-09T13:39:50.404Z [info] GET /api/orders 304 389.839 ms - - req=7023a97b-7b25-4b34-ad74-e6b2bb709203 {"service":"back-end"}
+2026-06-09T13:40:46.834Z [info] GET /api/dashboard/recent-orders?limit=5 304 212.138 ms - - req=7963bc69-eea2-48b2-8354-a03c1e005f80 {"service":"back-end"}
+2026-06-09T13:40:46.841Z [info] GET /api/dashboard/revenue-by-category?timeFilter=7days 304 207.598 ms - - req=04afc50b-1d92-47a9-91ec-195660e2b85f {"service":"back-end"}
+2026-06-09T13:40:46.844Z [info] GET /api/dashboard/revenue-by-day?timeFilter=7days 304 212.758 ms - - req=67a812d1-7e9d-4eba-a668-a2aba3bdc24e {"service":"back-end"}
+2026-06-09T13:40:46.853Z [info] GET /api/products/product/sales 304 4.856 ms - - req=e0b78880-d895-4ddd-b283-42797e55292a {"service":"back-end"}
+2026-06-09T13:40:46.866Z [info] GET /api/dashboard/stats?timeFilter=7days 304 248.060 ms - - req=ea27c267-f545-4d82-aa65-f85936b30640 {"service":"back-end"}
+2026-06-09T13:40:46.893Z [info] GET /api/dashboard/notifications?timeFilter=7days 200 264.403 ms - 753 req=7e3f9467-9dd7-481a-84cf-29e4bd70a42f {"service":"back-end"}
+2026-06-09T13:40:46.997Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 385.357 ms - - req=cf7e8942-cc7e-4745-a2b6-b5a00785d1a0 {"service":"back-end"}
+2026-06-09T13:40:47.117Z [info] GET /api/products 304 269.388 ms - - req=c99d69ec-24cf-41ed-ab7e-b87b0d72b50a {"service":"back-end"}
+2026-06-09T13:40:47.126Z [info] GET /api/products 304 5.543 ms - - req=d84fc978-49a1-486d-9e5c-a359da05a999 {"service":"back-end"}
+2026-06-09T13:40:47.139Z [info] GET /api/categories/shop-cho-cun 304 275.133 ms - - req=07070043-0f38-4e69-b4c8-5624a0f73d94 {"service":"back-end"}
+2026-06-09T13:40:47.173Z [info] GET /api/categories/shop-cho-meo 304 305.485 ms - - req=84c57280-f0d1-4bd7-a567-dae9ec32aa97 {"service":"back-end"}
+2026-06-09T13:40:47.251Z [info] GET /api/users/paginated?page=1&limit=1 304 414.172 ms - - req=7bdddfc3-21e1-430d-b6d0-430bfebabd79 {"service":"back-end"}
+2026-06-09T13:40:47.538Z [info] GET /api/orders 304 280.879 ms - - req=5c78b8c9-33c6-40aa-b71c-c36eb049046a {"service":"back-end"}
+2026-06-09T13:40:49.254Z [info] GET /api/products 304 11.731 ms - - req=0675451e-8459-42e7-8791-a37c918c7a0f {"service":"back-end"}
+2026-06-09T13:40:49.424Z [info] GET /api/dashboard/revenue-by-day?timeFilter=30days 304 169.467 ms - - req=6265c4eb-71f3-4c93-a4b5-9117ede0d4d6 {"service":"back-end"}
+2026-06-09T13:40:49.518Z [info] GET /api/dashboard/recent-orders?limit=5 304 279.023 ms - - req=7e7a142b-a6c1-4ea9-b1f5-fb98ad469f2d {"service":"back-end"}
+2026-06-09T13:40:49.522Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 284.757 ms - - req=07b1460c-9df9-4d98-afd3-e386ddcd2e82 {"service":"back-end"}
+2026-06-09T13:40:49.550Z [info] GET /api/users/paginated?page=1&limit=1 304 307.485 ms - - req=32ea6198-c19e-4a8d-89b7-9cba78465b66 {"service":"back-end"}
+2026-06-09T13:40:49.557Z [info] GET /api/dashboard/revenue-by-category?timeFilter=30days 304 131.508 ms - - req=f447f1dc-9510-4c66-800d-9613e591e837 {"service":"back-end"}
+2026-06-09T13:40:49.581Z [info] GET /api/dashboard/notifications?timeFilter=30days 200 333.678 ms - 753 req=91d87274-734c-42fa-a45d-834d1d5b064a {"service":"back-end"}
+2026-06-09T13:40:49.602Z [info] GET /api/dashboard/stats?timeFilter=30days 304 356.804 ms - - req=5cc67eaf-a982-4f9b-b162-def8e3e427a8 {"service":"back-end"}
+2026-06-09T13:40:49.916Z [info] GET /api/orders 304 309.085 ms - - req=9ac9f3a3-4d00-49e0-a95c-1c025784da03 {"service":"back-end"}
+2026-06-09T13:40:51.892Z [info] GET /api/dashboard/revenue-by-day?timeFilter=year 304 139.317 ms - - req=d8c6035e-ee01-41a4-a223-7687cd7986c6 {"service":"back-end"}
+2026-06-09T13:40:51.899Z [info] GET /api/dashboard/revenue-by-category?timeFilter=year 304 145.469 ms - - req=38d7334d-9169-4721-93e0-fddf762618e9 {"service":"back-end"}
+2026-06-09T13:40:51.907Z [info] GET /api/products 304 6.923 ms - - req=0668d89d-4718-4eed-b090-e4735b8f1459 {"service":"back-end"}
+2026-06-09T13:40:51.964Z [info] GET /api/dashboard/recent-orders?limit=5 304 214.039 ms - - req=91518057-bb01-4c50-8a60-ae760959c4c8 {"service":"back-end"}
+2026-06-09T13:40:51.994Z [info] GET /api/dashboard/notifications?timeFilter=year 200 242.743 ms - 753 req=adbf64c1-8408-401e-aba0-34d5a8dce9c5 {"service":"back-end"}
+2026-06-09T13:40:52.042Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 296.539 ms - - req=8905f1ed-1a3a-46fa-8015-7addebb79be4 {"service":"back-end"}
+2026-06-09T13:40:52.080Z [info] GET /api/dashboard/stats?timeFilter=year 304 331.346 ms - - req=ff0d2fbf-0bee-4e76-a12a-1c1c64823592 {"service":"back-end"}
+2026-06-09T13:40:52.158Z [info] GET /api/users/paginated?page=1&limit=1 304 264.955 ms - - req=ddcfd3a0-448b-4396-8e37-5419f349d74f {"service":"back-end"}
+2026-06-09T13:40:52.470Z [info] GET /api/orders 304 302.820 ms - - req=6c1f42b7-45ca-4a90-b8bc-e48716661249 {"service":"back-end"}
+2026-06-09T13:40:52.907Z [info] GET /api/products 304 4.994 ms - - req=cdc6c47e-87ec-41ae-af2c-a2e18b6bc0e0 {"service":"back-end"}
+2026-06-09T13:40:53.048Z [info] GET /api/dashboard/revenue-by-day?timeFilter=year 304 148.235 ms - - req=a55b6af5-8e89-47b2-9ed2-022db88657fb {"service":"back-end"}
+2026-06-09T13:40:53.055Z [info] GET /api/dashboard/revenue-by-category?timeFilter=year 304 145.053 ms - - req=5f8b9d5c-e5bf-4597-b70e-054d5543917e {"service":"back-end"}
+2026-06-09T13:40:53.113Z [info] GET /api/dashboard/recent-orders?limit=5 304 214.299 ms - - req=d089dd4a-786b-4afd-8611-f16e242265e3 {"service":"back-end"}
+2026-06-09T13:40:53.118Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 222.470 ms - - req=70354164-5b9c-4175-9c44-a881573de33e {"service":"back-end"}
+2026-06-09T13:40:53.168Z [info] GET /api/dashboard/notifications?timeFilter=year 200 267.127 ms - 753 req=bcd93dbd-1edc-4b33-9f2e-81725ed7685a {"service":"back-end"}
+2026-06-09T13:40:53.216Z [info] GET /api/dashboard/stats?timeFilter=year 304 318.580 ms - - req=980013d9-b0d5-4802-9a85-4ab2959955fa {"service":"back-end"}
+2026-06-09T13:40:53.311Z [info] GET /api/users/paginated?page=1&limit=1 304 262.426 ms - - req=1fc5d2d8-dfef-46ef-83d8-12b1d1a42585 {"service":"back-end"}
+2026-06-09T13:40:53.584Z [info] GET /api/orders 304 265.861 ms - - req=ec6083ca-4297-4924-a0bb-f1e9a468d500 {"service":"back-end"}
+2026-06-09T13:40:53.699Z [info] GET /api/products 304 9.385 ms - - req=70850788-3946-4daa-984a-bd6ceb4467f7 {"service":"back-end"}
+2026-06-09T13:40:53.888Z [info] GET /api/dashboard/revenue-by-day?timeFilter=all 304 188.171 ms - - req=eaa5f6f3-e2ce-42a8-be3a-1b697be2c8c4 {"service":"back-end"}
+2026-06-09T13:40:53.900Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 218.133 ms - - req=ec494ad7-93a6-4fb8-8a15-9b782b9bcc9b {"service":"back-end"}
+2026-06-09T13:40:53.913Z [info] GET /api/dashboard/recent-orders?limit=5 304 227.444 ms - - req=70b475f6-4013-4566-b686-40cd0e181a80 {"service":"back-end"}
+2026-06-09T13:40:53.960Z [info] GET /api/users/paginated?page=1&limit=1 304 273.238 ms - - req=20b36aaa-7401-4722-aff1-70b6b5ebd196 {"service":"back-end"}
+2026-06-09T13:40:54.036Z [info] GET /api/dashboard/notifications?timeFilter=all 200 342.734 ms - 753 req=4a10e38a-e8be-4819-8e7e-331011eb281b {"service":"back-end"}
+2026-06-09T13:40:54.052Z [info] GET /api/dashboard/stats?timeFilter=all 304 361.921 ms - - req=505b284f-0d6e-43a2-8fe9-a668f4fa8607 {"service":"back-end"}
+2026-06-09T13:40:54.098Z [info] GET /api/dashboard/revenue-by-category?timeFilter=all 304 206.417 ms - - req=1f808a8e-787c-45a3-a60c-d138331440bc {"service":"back-end"}
+2026-06-09T13:40:54.390Z [info] GET /api/orders 304 288.293 ms - - req=a154ebde-028a-4bbf-bc7d-348b266d7f6d {"service":"back-end"}
+2026-06-09T13:41:01.350Z [info] GET /api/dashboard/revenue-by-day?timeFilter=7days 304 175.406 ms - - req=1031a583-bdfd-4c94-b90e-197eb5b887f2 {"service":"back-end"}
+2026-06-09T13:41:01.354Z [info] GET /api/dashboard/revenue-by-category?timeFilter=7days 304 176.937 ms - - req=d03593d3-2802-40c0-9b51-75cd746019e1 {"service":"back-end"}
+2026-06-09T13:41:01.363Z [info] GET /api/products 304 7.929 ms - - req=e812e3b7-8581-46e8-bf08-3b9a4cd0a992 {"service":"back-end"}
+2026-06-09T13:41:01.492Z [info] GET /api/dashboard/recent-orders?limit=5 304 321.871 ms - - req=56ed610b-9708-4afe-b758-49532849c3ba {"service":"back-end"}
+2026-06-09T13:41:01.510Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 344.947 ms - - req=c20c6221-bd34-4d6a-8381-2b338bf5829e {"service":"back-end"}
+2026-06-09T13:41:01.515Z [info] GET /api/products/product/sales 304 3.955 ms - - req=d0e480ac-2e43-43da-9387-99d16d36a097 {"service":"back-end"}
+2026-06-09T13:41:01.522Z [info] GET /api/products 304 5.466 ms - - req=56d896ee-d3c7-40e2-8920-d84380c89d7e {"service":"back-end"}
+2026-06-09T13:41:01.535Z [info] GET /api/dashboard/notifications?timeFilter=7days 200 362.628 ms - 753 req=057b6c4d-4a75-4a49-8cd9-2a43abd8cde3 {"service":"back-end"}
+2026-06-09T13:41:01.536Z [info] GET /api/dashboard/stats?timeFilter=7days 304 367.931 ms - - req=4c1d3e41-ea8d-49f5-9266-eb74aab79860 {"service":"back-end"}
+2026-06-09T13:41:01.586Z [info] GET /api/categories/shop-cho-meo 304 221.790 ms - - req=9c6f1805-883e-4c9a-8446-dacf7f82c9ec {"service":"back-end"}
+2026-06-09T13:41:01.627Z [info] GET /api/users/paginated?page=1&limit=1 304 276.306 ms - - req=4f9ad9a4-5958-413b-b073-5900557a5ae3 {"service":"back-end"}
+2026-06-09T13:41:01.711Z [info] GET /api/categories/shop-cho-cun 304 218.173 ms - - req=c5d9974c-d389-4bf6-b1e8-efd186b265a0 {"service":"back-end"}
+2026-06-09T13:41:01.935Z [info] GET /api/orders 304 300.627 ms - - req=1741f5fd-6c2a-4f2a-9220-809f7f17bfc4 {"service":"back-end"}
+2026-06-09T13:41:04.053Z [info] GET /api/products 304 9.223 ms - - req=4c4adb0d-b760-409f-925e-07f1d8c748b7 {"service":"back-end"}
+2026-06-09T13:41:04.283Z [info] GET /api/dashboard/revenue-by-day?timeFilter=30days 304 228.796 ms - - req=c2f6404d-f55c-4b9c-8ff3-e60dc5cb7a88 {"service":"back-end"}
+2026-06-09T13:41:04.314Z [info] GET /api/dashboard/notifications?timeFilter=30days 200 267.582 ms - 753 req=cd0d8c48-fa8a-42ce-bfe7-3d4e415608c3 {"service":"back-end"}
+2026-06-09T13:41:04.323Z [info] GET /api/dashboard/stats?timeFilter=30days 304 278.709 ms - - req=75f8caea-b59e-43f8-b6a4-264436a52e04 {"service":"back-end"}
+2026-06-09T13:41:04.338Z [info] GET /api/dashboard/recent-orders?limit=5 304 299.815 ms - - req=a59af28d-09b8-4692-9e2c-912e0b595e78 {"service":"back-end"}
+2026-06-09T13:41:04.343Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 307.352 ms - - req=d004dae4-1fda-4237-88ff-17094dd1266e {"service":"back-end"}
+2026-06-09T13:41:04.439Z [info] GET /api/dashboard/revenue-by-category?timeFilter=30days 304 154.430 ms - - req=268d8bc1-0f37-4c6b-8f38-290b4d2d6fe5 {"service":"back-end"}
+2026-06-09T13:41:04.467Z [info] GET /api/users/paginated?page=1&limit=1 304 424.919 ms - - req=4803a9a1-5690-4245-a516-f79f7d4ad41d {"service":"back-end"}
+2026-06-09T13:41:04.766Z [info] GET /api/orders 304 291.585 ms - - req=16f869cc-fee8-428a-8117-75dc1e72ef44 {"service":"back-end"}
+2026-06-09T13:41:10.880Z [info] GET /api/dashboard/revenue-by-category?timeFilter=90days 304 164.103 ms - - req=58726e39-506e-49e1-abfd-a9abb1350cd3 {"service":"back-end"}
+2026-06-09T13:41:10.892Z [info] GET /api/dashboard/revenue-by-day?timeFilter=90days 304 178.121 ms - - req=0cec7c83-05b5-41e1-a95d-f585c68351ad {"service":"back-end"}
+2026-06-09T13:41:10.901Z [info] GET /api/products 304 7.312 ms - - req=390777a3-7d8c-470b-9f81-6214d477cbaf {"service":"back-end"}
+2026-06-09T13:41:10.995Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 293.512 ms - - req=5ed7329a-ebc9-40ba-a239-724e94568268 {"service":"back-end"}
+2026-06-09T13:41:10.997Z [info] GET /api/dashboard/recent-orders?limit=5 304 289.123 ms - - req=4e15a72f-77ea-4bfc-b247-56e87fc4746f {"service":"back-end"}
+2026-06-09T13:41:11.059Z [info] GET /api/dashboard/stats?timeFilter=90days 304 353.575 ms - - req=0b5c67b6-9e93-44e7-8497-e24bf3c2cb55 {"service":"back-end"}
+2026-06-09T13:41:11.093Z [info] GET /api/dashboard/notifications?timeFilter=90days 200 381.856 ms - 753 req=e5ff1905-29b9-48b3-b84f-bdf92ff02349 {"service":"back-end"}
+2026-06-09T13:41:11.170Z [info] GET /api/users/paginated?page=1&limit=1 304 288.515 ms - - req=2e56de89-d07e-49d7-8f6a-b5d1a79b3be5 {"service":"back-end"}
+2026-06-09T13:41:11.485Z [info] GET /api/orders 304 308.282 ms - - req=1e906d46-f16b-4db6-af16-745567dd2a45 {"service":"back-end"}
+2026-06-09T13:41:13.593Z [info] GET /api/products 304 8.322 ms - - req=e5d86c3b-32b3-4f91-8a4b-a45333620fca {"service":"back-end"}
+2026-06-09T13:41:13.797Z [info] GET /api/dashboard/revenue-by-day?timeFilter=year 304 200.128 ms - - req=00f1bd78-387c-4bf5-932c-1acf9ca7bccb {"service":"back-end"}
+2026-06-09T13:41:13.855Z [info] GET /api/dashboard/recent-orders?limit=5 304 273.027 ms - - req=8011ce11-a076-4d02-91cb-3b5f6d809264 {"service":"back-end"}
+2026-06-09T13:41:13.869Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 289.455 ms - - req=634627ab-4050-405d-85a5-1f7a435f5c4d {"service":"back-end"}
+2026-06-09T13:41:13.874Z [info] GET /api/dashboard/notifications?timeFilter=year 200 274.436 ms - 753 req=f881c9c2-f5dc-448d-adbf-1bfe03dab5e5 {"service":"back-end"}
+2026-06-09T13:41:13.920Z [info] GET /api/dashboard/stats?timeFilter=year 304 325.575 ms - - req=1ab69988-05c2-41e6-9182-5aebb9513560 {"service":"back-end"}
+2026-06-09T13:41:13.924Z [info] GET /api/users/paginated?page=1&limit=1 304 337.248 ms - - req=1fe209fd-e821-4972-9fe8-9cb4a28df0cc {"service":"back-end"}
+2026-06-09T13:41:13.940Z [info] GET /api/dashboard/revenue-by-category?timeFilter=year 304 142.555 ms - - req=2ced2d94-ad47-41fa-a397-02db9e0b6cb5 {"service":"back-end"}
+2026-06-09T13:41:14.217Z [info] GET /api/orders 304 270.391 ms - - req=2ba477f0-ca23-45b7-b551-4ed385331f2f {"service":"back-end"}
+2026-06-09T13:41:16.643Z [info] GET /api/dashboard/revenue-by-category?timeFilter=all 304 214.403 ms - - req=d4e5a3bb-9ae6-453a-9227-7277ebff6673 {"service":"back-end"}
+2026-06-09T13:41:16.649Z [info] GET /api/products 304 4.964 ms - - req=6b45fad8-8e7e-4a0d-ad64-9e3d90ec70fc {"service":"back-end"}
+2026-06-09T13:41:16.672Z [info] GET /api/dashboard/revenue-by-day?timeFilter=all 304 246.022 ms - - req=6ee8aee5-5b38-43b3-a91a-f6443357c288 {"service":"back-end"}
+2026-06-09T13:41:16.729Z [info] GET /api/dashboard/notifications?timeFilter=all 200 301.359 ms - 753 req=fbf2eab2-4cf1-42af-bb2f-21b508b8ae6d {"service":"back-end"}
+2026-06-09T13:41:16.748Z [info] GET /api/dashboard/recent-orders?limit=5 304 325.780 ms - - req=b2a32a7b-b53d-4215-a224-5c315f9e266e {"service":"back-end"}
+2026-06-09T13:41:16.751Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 331.093 ms - - req=4a9453cb-8688-4f75-977b-2c599f4e3e12 {"service":"back-end"}
+2026-06-09T13:41:16.812Z [info] GET /api/dashboard/stats?timeFilter=all 304 388.422 ms - - req=8b2f8ae2-014a-476b-a47b-7bd401c3d85b {"service":"back-end"}
+2026-06-09T13:41:16.941Z [info] GET /api/users/paginated?page=1&limit=1 304 290.868 ms - - req=6d7ffea0-c83c-4ade-9868-f54b686266ed {"service":"back-end"}
+2026-06-09T13:41:17.246Z [info] GET /api/orders 304 295.613 ms - - req=e2ef224c-630a-440d-b441-65bba1d0220d {"service":"back-end"}
+2026-06-09T13:41:25.378Z [info] GET /api/dashboard/revenue-by-category?timeFilter=year 304 179.886 ms - - req=4e0ffafc-2558-40b4-ad8c-ec3260480c4b {"service":"back-end"}
+2026-06-09T13:41:25.382Z [info] GET /api/dashboard/revenue-by-day?timeFilter=year 304 185.885 ms - - req=384541a9-5d5f-40db-91fe-8b218b10eaac {"service":"back-end"}
+2026-06-09T13:41:25.394Z [info] GET /api/products 304 6.316 ms - - req=4022a4fc-57eb-434a-8615-f27a4314ce69 {"service":"back-end"}
+2026-06-09T13:41:25.499Z [info] GET /api/dashboard/notifications?timeFilter=year 200 307.243 ms - 753 req=de987d0c-41ae-4817-9368-d3341217269a {"service":"back-end"}
+2026-06-09T13:41:25.524Z [info] GET /api/dashboard/recent-orders?limit=5 304 330.805 ms - - req=65a728e6-2de6-4a90-8a4e-16d7d5418c94 {"service":"back-end"}
+2026-06-09T13:41:25.527Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 339.763 ms - - req=eb86c81e-977f-4c08-9646-7bf8966da19f {"service":"back-end"}
+2026-06-09T13:41:25.581Z [info] GET /api/dashboard/stats?timeFilter=year 304 390.514 ms - - req=38287de1-8219-44b3-9491-8b876bb57f75 {"service":"back-end"}
+2026-06-09T13:41:25.697Z [info] GET /api/users/paginated?page=1&limit=1 304 310.223 ms - - req=7faebca5-6aec-449e-8e52-ee0387d5f6d6 {"service":"back-end"}
+2026-06-09T13:41:26.032Z [info] GET /api/orders 304 326.329 ms - - req=f5187ce3-d6db-4428-a338-0c25e32dd0a0 {"service":"back-end"}
+2026-06-09T13:41:31.792Z [info] GET /api/dashboard/revenue-by-category?timeFilter=90days 304 159.618 ms - - req=b2255656-b45b-425b-9b99-e31be003d9fd {"service":"back-end"}
+2026-06-09T13:41:31.850Z [info] GET /api/dashboard/revenue-by-day?timeFilter=90days 304 221.339 ms - - req=704b0c50-fe94-4817-afe9-2193cf42d583 {"service":"back-end"}
+2026-06-09T13:41:31.858Z [info] GET /api/products 304 5.003 ms - - req=62b14044-ae3b-4f17-85a8-d4f92bab29e3 {"service":"back-end"}
+2026-06-09T13:41:31.879Z [info] GET /api/dashboard/recent-orders?limit=5 304 253.992 ms - - req=94fe8c8d-245b-4295-9e9e-57f7a0559170 {"service":"back-end"}
+2026-06-09T13:41:31.882Z [info] GET /api/dashboard/notifications?timeFilter=90days 200 250.494 ms - 753 req=a5b1b25c-524b-4b36-98cc-1b8de4c3e10a {"service":"back-end"}
+2026-06-09T13:41:31.919Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 300.952 ms - - req=f8049524-07dd-4cbc-a7f7-d1da5e9a0e80 {"service":"back-end"}
+2026-06-09T13:41:31.962Z [info] GET /api/dashboard/stats?timeFilter=90days 304 338.853 ms - - req=55141e86-5495-4061-b7c9-242f28270069 {"service":"back-end"}
+2026-06-09T13:41:32.076Z [info] GET /api/users/paginated?page=1&limit=1 304 283.294 ms - - req=e6bc28b3-e4b6-4cb6-b319-ecc6c9e552c5 {"service":"back-end"}
+2026-06-09T13:41:32.359Z [info] GET /api/orders 304 274.503 ms - - req=7a5d4a13-b1f6-4de5-99db-bfbb8fa63529 {"service":"back-end"}
+2026-06-09T13:41:33.987Z [info] GET /api/products 304 9.931 ms - - req=3150ca3d-3b51-4f87-9f09-71059633bad1 {"service":"back-end"}
+2026-06-09T13:41:34.198Z [info] GET /api/dashboard/revenue-by-day?timeFilter=30days 304 209.773 ms - - req=aec7be44-c6d1-4cd1-817c-0d08fb6df347 {"service":"back-end"}
+2026-06-09T13:41:34.225Z [info] GET /api/dashboard/stats?timeFilter=30days 304 244.570 ms - - req=01151b95-814f-410f-87e2-d035a4c12acc {"service":"back-end"}
+2026-06-09T13:41:34.263Z [info] GET /api/dashboard/recent-orders?limit=5 304 288.109 ms - - req=61df1086-6338-411e-8b11-86a98b3fd99f {"service":"back-end"}
+2026-06-09T13:41:34.267Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 296.359 ms - - req=bb13d70e-f4d6-4e2a-99cb-7e93faf2358d {"service":"back-end"}
+2026-06-09T13:41:34.305Z [info] GET /api/users/paginated?page=1&limit=1 304 327.214 ms - - req=0e754a6c-eab7-4c5d-a3a6-457f91f4b994 {"service":"back-end"}
+2026-06-09T13:41:34.345Z [info] GET /api/dashboard/revenue-by-category?timeFilter=30days 304 140.962 ms - - req=b77adac4-1a6e-4520-b75e-22fea39503da {"service":"back-end"}
+2026-06-09T13:41:34.349Z [info] GET /api/dashboard/notifications?timeFilter=30days 200 367.383 ms - 753 req=bd6ebce0-d80e-46f4-9441-1e29507082b5 {"service":"back-end"}
+2026-06-09T13:41:34.647Z [info] GET /api/orders 304 292.706 ms - - req=db684426-1a77-46a0-a108-2e8f63820a94 {"service":"back-end"}
+2026-06-09T13:41:35.731Z [info] GET /api/products 304 8.291 ms - - req=a9142a11-f407-4a5d-8aa2-4bf8450830a7 {"service":"back-end"}
+2026-06-09T13:41:35.948Z [info] GET /api/dashboard/revenue-by-day?timeFilter=7days 304 215.041 ms - - req=e1e75156-27b3-4d24-96f4-8fa1d8404fed {"service":"back-end"}
+2026-06-09T13:41:35.985Z [info] GET /api/dashboard/notifications?timeFilter=7days 200 260.494 ms - 753 req=4981a3f4-8f66-480b-9fd2-d066fcdd423e {"service":"back-end"}
+2026-06-09T13:41:35.996Z [info] GET /api/dashboard/stats?timeFilter=7days 304 272.511 ms - - req=1dbce00b-db24-4c54-a034-d5f52dce1a4b {"service":"back-end"}
+2026-06-09T13:41:36.013Z [info] GET /api/dashboard/recent-orders?limit=5 304 294.707 ms - - req=3c8e8f2c-b6dc-45fd-b166-ed32d85b16b5 {"service":"back-end"}
+2026-06-09T13:41:36.030Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 314.439 ms - - req=08db3ab4-05db-445b-9c92-4c7a93cfb8c2 {"service":"back-end"}
+2026-06-09T13:41:36.055Z [info] GET /api/users/paginated?page=1&limit=1 304 333.920 ms - - req=cd9bb397-c25b-4bbd-bb24-b711d009ab2a {"service":"back-end"}
+2026-06-09T13:41:36.088Z [info] GET /api/dashboard/revenue-by-category?timeFilter=7days 304 136.752 ms - - req=5fd7d15e-e6fe-495b-b838-d3466931b67d {"service":"back-end"}
+2026-06-09T13:41:36.382Z [info] GET /api/orders 304 289.538 ms - - req=5eb27b1c-5040-46f6-9644-7d43fcf5de63 {"service":"back-end"}
+2026-06-09T13:41:44.313Z [info] GET /api/dashboard/revenue-by-category?timeFilter=all 304 195.442 ms - - req=e79934ad-0d4f-42be-94f0-87d35974553d {"service":"back-end"}
+2026-06-09T13:41:44.320Z [info] GET /api/products 304 4.899 ms - - req=8dd36ccc-6ae0-4e78-83a2-2500e9dd1903 {"service":"back-end"}
+2026-06-09T13:41:44.349Z [info] GET /api/dashboard/recent-orders?limit=5 304 236.356 ms - - req=fbe46eca-c544-4622-9a64-5493de971907 {"service":"back-end"}
+2026-06-09T13:41:44.355Z [info] GET /api/dashboard/notifications?timeFilter=all 200 240.649 ms - 753 req=96e4ba5e-18ca-4e08-bdc9-78ee400d59da {"service":"back-end"}
+2026-06-09T13:41:44.375Z [info] GET /api/dashboard/stats?timeFilter=all 304 264.250 ms - - req=6735e9cf-3cb6-4b65-a78b-19aeef637765 {"service":"back-end"}
+2026-06-09T13:41:44.376Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 268.963 ms - - req=4cc6e7a9-d92e-4ead-81f5-af41cadef804 {"service":"back-end"}
+2026-06-09T13:41:44.404Z [info] GET /api/dashboard/revenue-by-day?timeFilter=all 304 287.541 ms - - req=49269562-3461-497e-a4e6-d6835b13b75e {"service":"back-end"}
+2026-06-09T13:41:44.594Z [info] GET /api/users/paginated?page=1&limit=1 304 271.551 ms - - req=b3cd4b2a-e5e4-4b5b-953d-1f35d9333d26 {"service":"back-end"}
+2026-06-09T13:41:44.898Z [info] GET /api/orders 304 296.977 ms - - req=a1dce783-f015-4e18-b847-124b723b43fb {"service":"back-end"}
+2026-06-09T13:42:31.874Z [info] GET /api/dashboard/revenue-by-day?timeFilter=7days 304 174.176 ms - - req=ba40aa6b-e089-4972-8ab9-340253c5c684 {"service":"back-end"}
+2026-06-09T13:42:31.902Z [info] GET /api/dashboard/revenue-by-category?timeFilter=7days 304 200.847 ms - - req=5ecbe40b-267c-469f-ae70-ea53a2885ccd {"service":"back-end"}
+2026-06-09T13:42:31.909Z [info] GET /api/products 304 4.842 ms - - req=a2d2c9d8-249c-464c-850f-30396e547f46 {"service":"back-end"}
+2026-06-09T13:42:31.969Z [info] GET /api/dashboard/recent-orders?limit=5 304 271.841 ms - - req=c6583b6c-3c62-4e56-bc9a-a65e645dd1ed {"service":"back-end"}
+2026-06-09T13:42:31.983Z [info] GET /api/dashboard/notifications?timeFilter=7days 200 284.539 ms - 753 req=b9369b7a-f8ff-411f-aae1-9c3806af6662 {"service":"back-end"}
+2026-06-09T13:42:31.994Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 306.921 ms - - req=0bb59251-5885-48d0-bb18-0ad645052d02 {"service":"back-end"}
+2026-06-09T13:42:32.035Z [info] GET /api/dashboard/stats?timeFilter=7days 304 339.493 ms - - req=4e5cdfcc-2e55-4e59-81c2-abb82298d64e {"service":"back-end"}
+2026-06-09T13:42:32.138Z [info] GET /api/users/paginated?page=1&limit=1 304 263.439 ms - - req=e861836f-2c95-4e0d-9101-b17179781492 {"service":"back-end"}
+2026-06-09T13:42:32.444Z [info] GET /api/orders 304 297.485 ms - - req=336e9ba2-d1a9-45f1-ae10-e3581df92e59 {"service":"back-end"}
+2026-06-09T13:42:37.399Z [info] GET /api/dashboard/revenue-by-day?timeFilter=30days 304 182.867 ms - - req=7b600c4b-1cb6-4327-8671-8f6af577bd85 {"service":"back-end"}
+2026-06-09T13:42:37.470Z [info] GET /api/dashboard/notifications?timeFilter=30days 200 255.548 ms - 753 req=7fc88dac-cec5-41d2-96ad-996ba2e15529 {"service":"back-end"}
+2026-06-09T13:42:37.478Z [info] GET /api/products 304 5.558 ms - - req=2ffe23f4-996b-4e97-a424-9a3e41a83901 {"service":"back-end"}
+2026-06-09T13:42:37.505Z [info] GET /api/dashboard/recent-orders?limit=5 304 287.009 ms - - req=780680a3-06fc-4600-804f-14d74983add4 {"service":"back-end"}
+2026-06-09T13:42:37.513Z [info] GET /api/dashboard/revenue-by-category?timeFilter=30days 304 112.047 ms - - req=b9b3e96e-162f-4394-951f-644dc2f9b0ef {"service":"back-end"}
+2026-06-09T13:42:37.524Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 314.051 ms - - req=ee6558d3-8768-4113-9e50-79cf3f116a88 {"service":"back-end"}
+2026-06-09T13:42:37.530Z [info] GET /api/users/paginated?page=1&limit=1 304 310.966 ms - - req=bb47dc07-571c-4d31-bf45-c15453ef8ec3 {"service":"back-end"}
+2026-06-09T13:42:37.572Z [info] GET /api/dashboard/stats?timeFilter=30days 304 358.722 ms - - req=12f233c9-e136-427d-9ada-0fe02fa426b0 {"service":"back-end"}
+2026-06-09T13:42:37.858Z [info] GET /api/orders 304 278.775 ms - - req=6b983080-208e-4cb1-a7d4-21117a81aa5e {"service":"back-end"}
+2026-06-09T13:42:38.995Z [info] GET /api/products 304 7.223 ms - - req=5619ce85-849b-4f0b-b4d4-0796f76d3b89 {"service":"back-end"}
+2026-06-09T13:42:39.153Z [info] GET /api/dashboard/revenue-by-category?timeFilter=90days 304 157.141 ms - - req=6e33dba1-c660-4799-a5a7-0867f5969433 {"service":"back-end"}
+2026-06-09T13:42:39.221Z [info] GET /api/dashboard/recent-orders?limit=5 304 237.322 ms - - req=12a8a9ee-a399-448f-a393-524065e87ad7 {"service":"back-end"}
+2026-06-09T13:42:39.238Z [info] GET /api/dashboard/stats?timeFilter=90days 304 248.927 ms - - req=1da5e075-f0d2-4db0-8f38-7eda174b20ce {"service":"back-end"}
+2026-06-09T13:42:39.253Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 271.678 ms - - req=b291dd58-f1ee-43b7-a2d2-fb274c5aec5b {"service":"back-end"}
+2026-06-09T13:42:39.270Z [info] GET /api/dashboard/revenue-by-day?timeFilter=90days 304 115.134 ms - - req=bdd3182a-e07e-4708-aae2-291bc6ea72c9 {"service":"back-end"}
+2026-06-09T13:42:39.300Z [info] GET /api/users/paginated?page=1&limit=1 304 314.384 ms - - req=3be6bc65-62aa-4578-be80-479f83d8cfcf {"service":"back-end"}
+2026-06-09T13:42:39.352Z [info] GET /api/dashboard/notifications?timeFilter=90days 200 360.886 ms - 753 req=505e3eb5-cbb8-428f-ab03-38c826ad198b {"service":"back-end"}
+2026-06-09T13:42:39.649Z [info] GET /api/orders 304 291.111 ms - - req=4cd3673f-3969-456c-a77c-9ddd2073461c {"service":"back-end"}
+2026-06-09T13:42:40.949Z [info] GET /api/products 304 10.456 ms - - req=f1dd84e0-de85-4635-a0ef-917af38d6703 {"service":"back-end"}
+2026-06-09T13:42:41.112Z [info] GET /api/dashboard/revenue-by-day?timeFilter=year 304 168.873 ms - - req=f40c42d9-d9b8-4f08-9ac0-f54cd14f41f8 {"service":"back-end"}
+2026-06-09T13:42:41.192Z [info] GET /api/dashboard/stats?timeFilter=year 304 250.002 ms - - req=10c0b59c-1ff1-4b6c-ab86-934f49c14b14 {"service":"back-end"}
+2026-06-09T13:42:41.221Z [info] GET /api/dashboard/revenue-by-category?timeFilter=year 304 107.464 ms - - req=1e771541-05f8-489e-b0d9-1efb22532dd7 {"service":"back-end"}
+2026-06-09T13:42:41.225Z [info] GET /api/dashboard/recent-orders?limit=5 304 289.502 ms - - req=d88f60d5-6c20-48d0-8445-95c0e7363f43 {"service":"back-end"}
+2026-06-09T13:42:41.259Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 325.905 ms - - req=03baed9e-99b6-4425-ae6e-db332b438b31 {"service":"back-end"}
+2026-06-09T13:42:41.269Z [info] GET /api/users/paginated?page=1&limit=1 304 329.708 ms - - req=64efccb7-0ba9-4b76-a2e5-2572f97dbf52 {"service":"back-end"}
+2026-06-09T13:42:41.324Z [info] GET /api/dashboard/notifications?timeFilter=year 200 374.127 ms - 753 req=5c4cc3e6-901c-4a6a-8bd3-e3cceff847d4 {"service":"back-end"}
+2026-06-09T13:42:41.612Z [info] GET /api/orders 304 282.627 ms - - req=ca1714ab-0a5c-4add-be41-1be8baecc49d {"service":"back-end"}
+2026-06-09T13:42:43.008Z [info] GET /api/dashboard/revenue-by-category?timeFilter=all 304 200.540 ms - - req=f4bf6120-9cf8-4da5-b70d-3b776878d107 {"service":"back-end"}
+2026-06-09T13:42:43.023Z [info] GET /api/dashboard/recent-orders?limit=5 304 220.577 ms - - req=795f4dc4-5909-4f6d-bc0f-67e59594a591 {"service":"back-end"}
+2026-06-09T13:42:43.030Z [info] GET /api/products 304 4.276 ms - - req=6c947fd2-7fcb-4447-a5d0-c459136abeac {"service":"back-end"}
+2026-06-09T13:42:43.046Z [info] GET /api/dashboard/notifications?timeFilter=all 200 241.571 ms - 753 req=9d3e504c-87b4-43a2-bcfe-1447e9f78263 {"service":"back-end"}
+2026-06-09T13:42:43.055Z [info] GET /api/dashboard/stats?timeFilter=all 304 254.428 ms - - req=a37bbc17-bd29-4432-bd65-1032edd7b36c {"service":"back-end"}
+2026-06-09T13:42:43.074Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 275.972 ms - - req=28db7aac-2b28-4563-987d-0076a38091f7 {"service":"back-end"}
+2026-06-09T13:42:43.098Z [info] GET /api/dashboard/revenue-by-day?timeFilter=all 304 291.745 ms - - req=63510e6c-d225-4afd-99ce-f70acae1435a {"service":"back-end"}
+2026-06-09T13:42:43.342Z [info] GET /api/users/paginated?page=1&limit=1 304 333.684 ms - - req=dd0108a1-e160-44cc-a386-01d1ca15b0ac {"service":"back-end"}
+2026-06-09T13:42:43.646Z [info] GET /api/orders 304 296.589 ms - - req=3f70b04f-0d86-4d1e-a834-a79550d03cb9 {"service":"back-end"}
+2026-06-09T13:42:46.403Z [info] GET /api/products 304 7.136 ms - - req=e3080cfb-d804-4ac9-9c00-ae331d2afc82 {"service":"back-end"}
+2026-06-09T13:42:46.566Z [info] GET /api/dashboard/revenue-by-day?timeFilter=7days 304 157.409 ms - - req=38f875fb-32dc-49e2-ac97-ef3c2bb3ff4e {"service":"back-end"}
+2026-06-09T13:42:46.648Z [info] GET /api/dashboard/notifications?timeFilter=7days 200 241.241 ms - 753 req=7ad81012-8b24-46dc-ae01-d2ba9dc083e2 {"service":"back-end"}
+2026-06-09T13:42:46.669Z [info] GET /api/dashboard/stats?timeFilter=7days 304 264.957 ms - - req=d50a103d-49bf-4536-86e6-27c43031896e {"service":"back-end"}
+2026-06-09T13:42:46.674Z [info] GET /api/dashboard/recent-orders?limit=5 304 280.994 ms - - req=e61a98da-c06b-4a41-8fa1-f8e0c83ef6ff {"service":"back-end"}
+2026-06-09T13:42:46.687Z [info] GET /api/dashboard/revenue-by-category?timeFilter=7days 304 119.245 ms - - req=b0f29f8a-06f7-4f8c-a634-69948a41d0cc {"service":"back-end"}
+2026-06-09T13:42:46.694Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 302.501 ms - - req=4cf08767-4663-47d9-8f89-1a9bd6fa592d {"service":"back-end"}
+2026-06-09T13:42:46.808Z [info] GET /api/users/paginated?page=1&limit=1 304 413.286 ms - - req=1c6783ab-472b-4754-a866-0f451574b851 {"service":"back-end"}
+2026-06-09T13:42:47.103Z [info] GET /api/orders 304 289.251 ms - - req=91880ea0-dcd1-46fc-addf-46ed1198b704 {"service":"back-end"}
+2026-06-09T13:42:49.595Z [info] GET /api/dashboard/revenue-by-category?timeFilter=30days 304 153.143 ms - - req=6470a4d4-0f96-4072-9ae8-0f5615f75a15 {"service":"back-end"}
+2026-06-09T13:42:49.600Z [info] GET /api/dashboard/revenue-by-day?timeFilter=30days 304 159.306 ms - - req=d4ef011e-9667-4ab4-a8c3-e16e51bb8dd4 {"service":"back-end"}
+2026-06-09T13:42:49.604Z [info] GET /api/products 304 7.438 ms - - req=5856cf5d-77f1-4c06-9b31-26c36e454e03 {"service":"back-end"}
+2026-06-09T13:42:49.673Z [info] GET /api/dashboard/recent-orders?limit=5 304 235.336 ms - - req=9f2e9aaf-1d8d-40fb-a45d-cce8348aa977 {"service":"back-end"}
+2026-06-09T13:42:49.734Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 300.591 ms - - req=af3b1acd-4981-4a74-b1fb-1df15571586a {"service":"back-end"}
+2026-06-09T13:42:49.773Z [info] GET /api/dashboard/stats?timeFilter=30days 304 336.942 ms - - req=12d4399c-7d0d-445a-baa9-ed749df5423d {"service":"back-end"}
+2026-06-09T13:42:49.781Z [info] GET /api/dashboard/notifications?timeFilter=30days 200 341.703 ms - 753 req=de973d99-9be0-4073-895d-f2f8b2db6126 {"service":"back-end"}
+2026-06-09T13:42:49.883Z [info] GET /api/users/paginated?page=1&limit=1 304 277.744 ms - - req=0cb2f4c2-562e-4aa5-8c3f-c4c1639e8bdd {"service":"back-end"}
+2026-06-09T13:42:50.164Z [info] GET /api/orders 304 273.724 ms - - req=4bf9ec7f-9bb6-40cd-aa57-220568cb6b05 {"service":"back-end"}
+2026-06-09T13:42:56.741Z [info] GET /api/dashboard/revenue-by-category?timeFilter=90days 304 169.154 ms - - req=f475eb59-f7ea-472b-99b5-199178d81b1e {"service":"back-end"}
+2026-06-09T13:42:56.754Z [info] GET /api/dashboard/revenue-by-day?timeFilter=90days 304 183.592 ms - - req=9b54172a-96f2-4522-b67e-30628336fe6e {"service":"back-end"}
+2026-06-09T13:42:56.762Z [info] GET /api/products 304 6.789 ms - - req=d732914f-e8d5-4974-b201-272eb49ae7da {"service":"back-end"}
+2026-06-09T13:42:56.790Z [info] GET /api/dashboard/recent-orders?limit=5 304 222.595 ms - - req=8d3fe8ed-b935-4b40-8b4c-ea01755e4591 {"service":"back-end"}
+2026-06-09T13:42:56.856Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 294.971 ms - - req=807c2adf-69cf-45e2-a91d-b6b24f10a4a8 {"service":"back-end"}
+2026-06-09T13:42:56.910Z [info] GET /api/dashboard/stats?timeFilter=90days 304 343.404 ms - - req=60380b4c-e6a3-4b62-9753-9214b6397319 {"service":"back-end"}
+2026-06-09T13:42:56.944Z [info] GET /api/dashboard/notifications?timeFilter=90days 200 374.816 ms - 753 req=d84fee8a-1f3d-4caa-91ed-7cdd08e2d45f {"service":"back-end"}
+2026-06-09T13:42:57.003Z [info] GET /api/users/paginated?page=1&limit=1 304 260.422 ms - - req=3d5cc934-5a54-4f6c-b38f-96e11cec3d15 {"service":"back-end"}
+2026-06-09T13:42:57.283Z [info] GET /api/orders 304 271.349 ms - - req=2b7c148f-1c0d-44a5-8247-6596f68719f6 {"service":"back-end"}
+2026-06-09T13:42:59.595Z [info] GET /api/products 304 10.377 ms - - req=442bf35c-57a1-43a2-94f5-046f214ac639 {"service":"back-end"}
+2026-06-09T13:42:59.741Z [info] GET /api/dashboard/revenue-by-day?timeFilter=year 304 144.461 ms - - req=c24769d3-548b-4764-a1f5-b5d7ad60508a {"service":"back-end"}
+2026-06-09T13:42:59.842Z [info] GET /api/dashboard/notifications?timeFilter=year 200 254.917 ms - 753 req=e62c3a38-b7b9-4eb8-81a4-43814478048f {"service":"back-end"}
+2026-06-09T13:42:59.843Z [info] GET /api/dashboard/revenue-by-category?timeFilter=year 304 99.446 ms - - req=0e811387-4e65-409e-b86b-111dcd0309a7 {"service":"back-end"}
+2026-06-09T13:42:59.848Z [info] GET /api/dashboard/recent-orders?limit=5 304 267.386 ms - - req=177d4949-3b37-4b18-ac3d-4c963f7b7214 {"service":"back-end"}
+2026-06-09T13:42:59.852Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 273.587 ms - - req=d1b370bb-ce5d-4522-bcb0-48c37e57b40e {"service":"back-end"}
+2026-06-09T13:42:59.899Z [info] GET /api/users/paginated?page=1&limit=1 304 315.856 ms - - req=67f4d3de-ef99-4f87-b6b7-7c6e6631d003 {"service":"back-end"}
+2026-06-09T13:42:59.944Z [info] GET /api/dashboard/stats?timeFilter=year 304 358.815 ms - - req=83f37734-aad7-448d-9100-af94d78eff16 {"service":"back-end"}
+2026-06-09T13:43:00.245Z [info] GET /api/orders 304 294.863 ms - - req=06f8f5f5-9358-446b-9c85-f581b84e8888 {"service":"back-end"}
+2026-06-09T13:43:19.977Z [info] GET /api/dashboard/revenue-by-category?timeFilter=all 304 199.007 ms - - req=b2d3064c-d043-4548-bea7-e68de0932002 {"service":"back-end"}
+2026-06-09T13:43:20.013Z [info] GET /api/dashboard/notifications?timeFilter=all 200 237.138 ms - 753 req=fba571d3-c4f6-47c9-b829-a9b067ed2c56 {"service":"back-end"}
+2026-06-09T13:43:20.020Z [info] GET /api/products 304 4.773 ms - - req=cf67a639-48cf-4fee-8e67-cd42050e1d19 {"service":"back-end"}
+2026-06-09T13:43:20.037Z [info] GET /api/dashboard/recent-orders?limit=5 304 262.310 ms - - req=47f43b62-7900-428e-a617-f2c6b8142146 {"service":"back-end"}
+2026-06-09T13:43:20.041Z [info] GET /api/dashboard/revenue-by-day?timeFilter=all 304 263.740 ms - - req=81d4478d-dae7-4ea9-9115-af44540802e9 {"service":"back-end"}
+2026-06-09T13:43:20.061Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 292.259 ms - - req=9fbbf7b7-1774-4136-ade9-0e7789856577 {"service":"back-end"}
+2026-06-09T13:43:20.102Z [info] GET /api/dashboard/stats?timeFilter=all 304 329.731 ms - - req=309cfad5-57ef-4e7f-8649-833945b0139a {"service":"back-end"}
+2026-06-09T13:43:20.318Z [info] GET /api/users/paginated?page=1&limit=1 304 339.652 ms - - req=5f823229-9a75-49c6-b02e-cb0ef549e9af {"service":"back-end"}
+2026-06-09T13:43:20.625Z [info] GET /api/orders 304 297.159 ms - - req=c58b7611-5b0c-4205-b81c-3a10167b558e {"service":"back-end"}
+2026-06-09T13:43:22.328Z [info] GET /api/products 304 8.387 ms - - req=7975535e-ee9c-47de-94f3-fd6ee455d474 {"service":"back-end"}
+2026-06-09T13:43:22.473Z [info] GET /api/dashboard/revenue-by-day?timeFilter=year 304 143.886 ms - - req=e1c53fea-bf8b-4cce-a93f-d6a0198f537e {"service":"back-end"}
+2026-06-09T13:43:22.574Z [info] GET /api/dashboard/revenue-by-category?timeFilter=year 304 98.460 ms - - req=843314dd-ca6b-4db4-adde-0d6dba687064 {"service":"back-end"}
+2026-06-09T13:43:22.606Z [info] GET /api/dashboard/recent-orders?limit=5 304 291.257 ms - - req=2cc9c066-a901-41b4-a419-45fd05de2878 {"service":"back-end"}
+2026-06-09T13:43:22.617Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 304.447 ms - - req=8d75705b-b7b6-4643-8321-8a09c00a0ec7 {"service":"back-end"}
+2026-06-09T13:43:22.651Z [info] GET /api/dashboard/notifications?timeFilter=year 200 328.213 ms - 753 req=b3e94e46-275c-4f5b-af9a-cceaa7181ba7 {"service":"back-end"}
+2026-06-09T13:43:22.678Z [info] GET /api/dashboard/stats?timeFilter=year 304 356.446 ms - - req=e7ec1aae-7f64-4c13-98d6-f087b13ee595 {"service":"back-end"}
+2026-06-09T13:43:22.732Z [info] GET /api/users/paginated?page=1&limit=1 304 414.970 ms - - req=d26e0535-5f0f-402a-8f09-61dae8149a6c {"service":"back-end"}
+2026-06-09T13:43:23.036Z [info] GET /api/orders 304 297.934 ms - - req=5885a5e8-8753-4413-a8d3-b31328befa63 {"service":"back-end"}
+2026-06-09T13:43:28.186Z [info] GET /api/dashboard/revenue-by-day?timeFilter=30days 304 157.624 ms - - req=7717386f-11e9-4028-b4d0-cd817d593ad5 {"service":"back-end"}
+2026-06-09T13:43:28.244Z [info] GET /api/dashboard/revenue-by-category?timeFilter=30days 304 217.208 ms - - req=584e6f07-ae81-42b2-bb2a-a3ec748849c6 {"service":"back-end"}
+2026-06-09T13:43:28.251Z [info] GET /api/products 304 5.531 ms - - req=371041dc-e6a5-4b31-a3b1-09722d726cbd {"service":"back-end"}
+2026-06-09T13:43:28.307Z [info] GET /api/dashboard/recent-orders?limit=5 304 284.401 ms - - req=aa59ee1f-ede0-4f9f-859e-ff7eefaf2cf1 {"service":"back-end"}
+2026-06-09T13:43:28.327Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 306.356 ms - - req=d0200229-73b4-4619-b303-a9a6a47d88dd {"service":"back-end"}
+2026-06-09T13:43:28.372Z [info] GET /api/dashboard/stats?timeFilter=30days 304 347.756 ms - - req=d9d2ee9f-19f0-492f-9a09-526736b79144 {"service":"back-end"}
+2026-06-09T13:43:28.375Z [info] GET /api/dashboard/notifications?timeFilter=30days 200 349.276 ms - 753 req=2234b9ae-d5d3-4b16-ba5d-9bacccf65565 {"service":"back-end"}
+2026-06-09T13:43:28.456Z [info] GET /api/users/paginated?page=1&limit=1 304 268.830 ms - - req=04802345-485d-4a46-ac76-3c948d700816 {"service":"back-end"}
+2026-06-09T13:43:28.737Z [info] GET /api/orders 304 274.059 ms - - req=245fba09-e41d-4609-a0e7-d72a1290db55 {"service":"back-end"}
+2026-06-09T13:43:47.840Z [info] GET /api/dashboard/revenue-by-day?timeFilter=7days 304 204.894 ms - - req=2ef8e359-0d11-4d3e-ba2a-590ed4bda894 {"service":"back-end"}
+2026-06-09T13:43:47.887Z [info] GET /api/dashboard/recent-orders?limit=5 304 255.727 ms - - req=9e248f71-d4d1-4a32-a6d4-472bce638e69 {"service":"back-end"}
+2026-06-09T13:43:47.895Z [info] GET /api/products 304 4.908 ms - - req=95de2022-1927-46b1-a2dd-394cc29b2a6b {"service":"back-end"}
+2026-06-09T13:43:47.916Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 292.987 ms - - req=4b419190-2fb8-4487-b060-c28bd17effcd {"service":"back-end"}
+2026-06-09T13:43:47.958Z [info] GET /api/users/paginated?page=1&limit=1 304 321.996 ms - - req=63a1ce84-891a-49de-aaed-f1d719d26396 {"service":"back-end"}
+2026-06-09T13:43:47.968Z [info] GET /api/dashboard/stats?timeFilter=7days 304 339.569 ms - - req=a1281b42-df17-4213-b722-9ed7a6543b79 {"service":"back-end"}
+2026-06-09T13:43:47.974Z [info] GET /api/dashboard/revenue-by-category?timeFilter=7days 304 130.981 ms - - req=20bf17e9-64e5-411e-85bf-7e9b40357c43 {"service":"back-end"}
+2026-06-09T13:43:47.996Z [info] GET /api/dashboard/notifications?timeFilter=7days 200 362.514 ms - 753 req=e849dcbd-e267-4588-8d8a-63f94779544f {"service":"back-end"}
+2026-06-09T13:43:48.343Z [info] GET /api/orders 304 332.686 ms - - req=588dbb7b-3b02-4e22-b206-2f6581308a1f {"service":"back-end"}
+2026-06-09T13:43:53.010Z [info] Redis client connecting {"service":"back-end"}
+2026-06-09T13:43:53.020Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-09T13:43:53.023Z [info] Redis client ready {"service":"back-end"}
+2026-06-09T13:43:53.030Z [info] Redis client connected {"service":"back-end"}
+2026-06-09T13:43:53.034Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-09T13:43:53.037Z [info] Loading .env {"service":"back-end","envPath":"D:\\Project\\PetShop-Website\\back-end\\.env"}
+2026-06-09T13:43:53.038Z [info] .env file loaded successfully {"service":"back-end"}
+2026-06-09T13:43:53.076Z [info] [ProjectionWorker] Checking for pending events to catch up from checkpoints... {"service":"back-end"}
+2026-06-09T13:43:53.079Z [info] Background workers initialized {"service":"back-end"}
+2026-06-09T13:43:53.087Z [info] Server is running: http://localhost:5000 {"service":"back-end"}
+2026-06-09T13:43:53.741Z [info] MongoDB connected {"service":"back-end"}
+2026-06-09T13:43:53.744Z [info] Connected to MongoDB {"service":"back-end"}
+2026-06-09T13:43:54.487Z [info] [ProjectionWorker] Catch-up check completed. {"service":"back-end"}
+2026-06-09T13:43:54.896Z [info] GET /api/dashboard/revenue-by-day?timeFilter=30days 304 467.604 ms - - req=28ad36f1-58af-4581-b04b-eae7b93f6551 {"service":"back-end"}
+2026-06-09T13:43:54.945Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 536.660 ms - - req=2e9ec424-da69-41a7-a144-c89a48092135 {"service":"back-end"}
+2026-06-09T13:43:54.953Z [info] GET /api/products 304 7.111 ms - - req=0f4319f5-9e1d-4a3a-837b-2bb6d8fda655 {"service":"back-end"}
+2026-06-09T13:43:55.048Z [info] GET /api/dashboard/notifications?timeFilter=30days 200 621.980 ms - 753 req=40843e43-4953-4f9b-a8e3-2f586a24440a {"service":"back-end"}
+2026-06-09T13:43:55.108Z [info] GET /api/dashboard/revenue-by-category?timeFilter=30days 304 207.511 ms - - req=9288e583-1061-4937-8068-4041188939fd {"service":"back-end"}
+2026-06-09T13:43:55.118Z [info] GET /api/dashboard/stats?timeFilter=30days 200 694.287 ms - 122 req=ac152484-0659-4baf-aa63-5434c98a572c {"service":"back-end"}
+2026-06-09T13:43:55.500Z [info] GET /api/users/paginated?page=1&limit=1 304 1078.222 ms - - req=f44283a5-9ff8-4024-9134-b85620666216 {"service":"back-end"}
+2026-06-09T13:43:55.563Z [info] GET /api/dashboard/recent-orders?limit=5 304 1138.607 ms - - req=8ac82751-b1e5-4089-bd05-0e124b097036 {"service":"back-end"}
+2026-06-09T13:43:55.878Z [info] GET /api/orders 304 307.811 ms - - req=c3d775c0-c3bf-47c2-b46f-157d4ff8705c {"service":"back-end"}
+2026-06-09T13:43:59.702Z [info] Redis client connecting {"service":"back-end"}
+2026-06-09T13:43:59.710Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-09T13:43:59.713Z [info] Redis client ready {"service":"back-end"}
+2026-06-09T13:43:59.714Z [info] Redis client connected {"service":"back-end"}
+2026-06-09T13:43:59.719Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-09T13:43:59.722Z [info] Loading .env {"service":"back-end","envPath":"D:\\Project\\PetShop-Website\\back-end\\.env"}
+2026-06-09T13:43:59.724Z [info] .env file loaded successfully {"service":"back-end"}
+2026-06-09T13:43:59.762Z [info] [ProjectionWorker] Checking for pending events to catch up from checkpoints... {"service":"back-end"}
+2026-06-09T13:43:59.764Z [info] Background workers initialized {"service":"back-end"}
+2026-06-09T13:43:59.772Z [info] Server is running: http://localhost:5000 {"service":"back-end"}
+2026-06-09T13:44:00.513Z [info] MongoDB connected {"service":"back-end"}
+2026-06-09T13:44:00.515Z [info] Connected to MongoDB {"service":"back-end"}
+2026-06-09T13:44:01.507Z [info] [ProjectionWorker] Catch-up check completed. {"service":"back-end"}
+2026-06-09T13:44:04.862Z [info] GET /api/dashboard/revenue-by-day?timeFilter=30days 304 240.997 ms - - req=34a8f513-d5b7-4289-ad63-bf4d01f0c9e1 {"service":"back-end"}
+2026-06-09T13:44:04.894Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 289.839 ms - - req=99ddb830-ea13-4a14-a9e1-85fb5877892d {"service":"back-end"}
+2026-06-09T13:44:04.902Z [info] GET /api/products 304 7.412 ms - - req=58d38456-0e58-4f88-b493-1fd72bc7864f {"service":"back-end"}
+2026-06-09T13:44:05.124Z [info] GET /api/dashboard/stats?timeFilter=30days 304 510.241 ms - - req=ac1d93e7-fc11-4fc1-89ce-f8b7f8de04e8 {"service":"back-end"}
+2026-06-09T13:44:05.128Z [info] GET /api/dashboard/notifications?timeFilter=30days 200 504.907 ms - 753 req=984e7086-f9f0-44e8-8cd6-011dbfaeec16 {"service":"back-end"}
+2026-06-09T13:44:05.129Z [info] GET /api/dashboard/revenue-by-category?timeFilter=30days 304 262.486 ms - - req=c8f8ea04-5332-42e1-8483-95fa229b17b5 {"service":"back-end"}
+2026-06-09T13:44:05.277Z [info] GET /api/dashboard/revenue-by-day?timeFilter=year 304 142.034 ms - - req=7c0b1019-bbfe-40a4-a59c-509be5ab4b84 {"service":"back-end"}
+2026-06-09T13:44:05.281Z [info] GET /api/dashboard/revenue-by-category?timeFilter=year 304 143.452 ms - - req=4bf723a3-2b3c-44b5-85f0-7f07ea283c89 {"service":"back-end"}
+2026-06-09T13:44:05.293Z [info] GET /api/products 304 10.971 ms - - req=26501919-1607-43d0-afd6-4b95cf1b5f42 {"service":"back-end"}
+2026-06-09T13:44:05.409Z [info] GET /api/dashboard/stats?timeFilter=year 200 505.269 ms - 122 req=86c812e9-a0f3-4038-ac0e-0edc4e1252f7 {"service":"back-end"}
+2026-06-09T13:44:05.419Z [info] GET /api/dashboard/notifications?timeFilter=year 200 286.843 ms - 753 req=74b793aa-95f1-4a01-b01a-38d818ac4b2f {"service":"back-end"}
+2026-06-09T13:44:05.437Z [info] GET /api/dashboard/recent-orders?limit=5 304 812.874 ms - - req=a6593f88-a57b-4682-ad70-c1e2ff9e89e9 {"service":"back-end"}
+2026-06-09T13:44:05.491Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 213.292 ms - - req=bf9465ce-0c4b-4ce0-adcf-95ed4c2b7839 {"service":"back-end"}
+2026-06-09T13:44:05.495Z [info] GET /api/users/paginated?page=1&limit=1 304 878.750 ms - - req=67a443db-dcbc-4aa7-81a9-61dcda026bb8 {"service":"back-end"}
+2026-06-09T13:44:05.675Z [info] GET /api/dashboard/recent-orders?limit=5 304 235.759 ms - - req=c1fcf95b-3566-4767-8d72-5b3d5f80b894 {"service":"back-end"}
+2026-06-09T13:44:05.835Z [info] GET /api/users/paginated?page=1&limit=1 304 338.565 ms - - req=cd352566-8e5b-4e19-a1c1-08fa16c8a0e3 {"service":"back-end"}
+2026-06-09T13:44:07.011Z [info] GET /api/products 304 10.252 ms - - req=c014deaa-e90d-4760-84f4-420c16633626 {"service":"back-end"}
+2026-06-09T13:44:07.163Z [info] GET /api/dashboard/revenue-by-day?timeFilter=7days 304 149.990 ms - - req=cd22c6c3-383e-4766-b9fc-238a23233acd {"service":"back-end"}
+2026-06-09T13:44:07.279Z [info] GET /api/dashboard/revenue-by-category?timeFilter=7days 304 114.855 ms - - req=59f7809d-7fcf-4209-b4c5-3fd522eaac16 {"service":"back-end"}
+2026-06-09T13:44:07.302Z [info] GET /api/dashboard/recent-orders?limit=5 304 306.910 ms - - req=05fd824c-1111-451a-a30a-9bb5cde63716 {"service":"back-end"}
+2026-06-09T13:44:07.306Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 313.835 ms - - req=98d2d7b2-aa69-479b-949f-84f8e14eacf8 {"service":"back-end"}
+2026-06-09T13:44:07.370Z [info] GET /api/dashboard/notifications?timeFilter=7days 200 366.307 ms - 753 req=d70d544d-574b-4dbd-a785-4aa668d8fab1 {"service":"back-end"}
+2026-06-09T13:44:07.440Z [info] GET /api/dashboard/stats?timeFilter=7days 200 437.894 ms - 100 req=90bfc887-fcc6-40f6-ab26-c219c89de36c {"service":"back-end"}
+2026-06-09T13:44:07.707Z [info] GET /api/users/paginated?page=1&limit=1 304 708.307 ms - - req=ea3e4e23-b1f8-4bed-9b70-8556e6dc76f1 {"service":"back-end"}
+2026-06-09T13:44:09.758Z [info] GET /api/dashboard/revenue-by-day?timeFilter=30days 304 165.382 ms - - req=312c64de-7176-47ed-9cb6-5f64e081dc11 {"service":"back-end"}
+2026-06-09T13:44:09.765Z [info] GET /api/products 304 5.530 ms - - req=9d563599-9017-48a5-bcbb-395e8023455d {"service":"back-end"}
+2026-06-09T13:44:09.807Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 220.213 ms - - req=f727bae5-08e3-43d7-a8b0-e1d9fbfc393d {"service":"back-end"}
+2026-06-09T13:44:09.810Z [info] GET /api/dashboard/revenue-by-category?timeFilter=30days 304 215.810 ms - - req=c9089c50-29f8-45da-be8a-8c3695388c68 {"service":"back-end"}
+2026-06-09T13:44:09.883Z [info] GET /api/dashboard/recent-orders?limit=5 304 293.560 ms - - req=b023caac-e6cc-48e2-ac20-73bdd9ebf60a {"service":"back-end"}
+2026-06-09T13:44:09.886Z [info] GET /api/dashboard/stats?timeFilter=30days 304 297.070 ms - - req=42170039-bfc4-4f2d-a2af-985588526078 {"service":"back-end"}
+2026-06-09T13:44:09.918Z [info] GET /api/dashboard/notifications?timeFilter=30days 200 326.708 ms - 753 req=54c7215a-7644-4bc6-afc8-3bd8ea05f5c6 {"service":"back-end"}
+2026-06-09T13:44:10.036Z [info] GET /api/users/paginated?page=1&limit=1 304 269.849 ms - - req=68fd32e0-3cd3-41fe-8fca-e2568847c20e {"service":"back-end"}
+2026-06-09T13:44:11.853Z [info] GET /api/dashboard/revenue-by-day?timeFilter=90days 304 171.028 ms - - req=6e5638f5-a8a0-43b2-b55e-baad833dc20c {"service":"back-end"}
+2026-06-09T13:44:11.956Z [info] GET /api/dashboard/revenue-by-category?timeFilter=90days 304 101.295 ms - - req=b47154ff-8fab-432f-84de-daec1f6c874b {"service":"back-end"}
+2026-06-09T13:44:11.965Z [info] GET /api/products 304 7.338 ms - - req=09bf7a1a-28ef-42f1-a2ea-3d17d8c6929a {"service":"back-end"}
+2026-06-09T13:44:11.969Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 292.102 ms - - req=567ed677-a6a0-48ff-b828-07dde1c5d1c1 {"service":"back-end"}
+2026-06-09T13:44:11.976Z [info] GET /api/dashboard/recent-orders?limit=5 304 292.245 ms - - req=5a01ba9e-dac9-4b4c-9b34-d6f4e9076b75 {"service":"back-end"}
+2026-06-09T13:44:12.021Z [info] GET /api/dashboard/stats?timeFilter=90days 200 341.089 ms - 122 req=70ba6559-9ce7-42d8-bd05-2800bdf21178 {"service":"back-end"}
+2026-06-09T13:44:12.038Z [info] GET /api/dashboard/notifications?timeFilter=90days 200 352.326 ms - 753 req=78921bf3-f895-4b8e-80d0-0f159f835cd4 {"service":"back-end"}
+2026-06-09T13:44:12.120Z [info] GET /api/users/paginated?page=1&limit=1 304 433.055 ms - - req=b726dcc5-d567-4541-a90f-7cc7b07b4c80 {"service":"back-end"}
+2026-06-09T13:44:14.523Z [info] GET /api/products 304 9.087 ms - - req=651dfab6-cbab-4f39-9f8e-cc1317aa93d8 {"service":"back-end"}
+2026-06-09T13:44:14.679Z [info] GET /api/dashboard/revenue-by-day?timeFilter=year 304 153.265 ms - - req=49369d10-c778-49f3-9c1e-040ee364c197 {"service":"back-end"}
+2026-06-09T13:44:14.775Z [info] GET /api/dashboard/recent-orders?limit=5 304 266.669 ms - - req=5a146ada-e403-4af3-9a62-8989a5f69582 {"service":"back-end"}
+2026-06-09T13:44:14.782Z [info] GET /api/products 304 5.584 ms - - req=0946ace1-5169-46f8-801e-76bbbe9134cd {"service":"back-end"}
+2026-06-09T13:44:14.785Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 279.157 ms - - req=4811d8e9-12c8-41f7-8394-be49e969efe5 {"service":"back-end"}
+2026-06-09T13:44:14.790Z [info] GET /api/dashboard/revenue-by-category?timeFilter=year 304 109.722 ms - - req=83b74dd9-6acf-4bc5-b0fb-6a3a3b80afd6 {"service":"back-end"}
+2026-06-09T13:44:14.831Z [info] GET /api/users/paginated?page=1&limit=1 304 319.386 ms - - req=2a4524ab-5879-4d5d-b5cd-c4716008ff54 {"service":"back-end"}
+2026-06-09T13:44:14.839Z [info] GET /api/dashboard/notifications?timeFilter=year 200 321.965 ms - 753 req=7e8002e0-b373-4a0d-9c2a-e5377bec588c {"service":"back-end"}
+2026-06-09T13:44:14.924Z [info] GET /api/dashboard/revenue-by-day?timeFilter=year 304 136.537 ms - - req=095ed65b-c0eb-4712-8d3d-ee373a043078 {"service":"back-end"}
+2026-06-09T13:44:14.926Z [info] GET /api/dashboard/stats?timeFilter=year 304 410.519 ms - - req=dab789b8-718e-4e40-b4e8-c4bf3008a3a4 {"service":"back-end"}
+2026-06-09T13:44:14.963Z [info] GET /api/dashboard/recent-orders?limit=5 304 170.005 ms - - req=f8d3dd1a-6888-45e1-8930-c4d2c3a14cc8 {"service":"back-end"}
+2026-06-09T13:44:14.995Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 199.885 ms - - req=3e34b90b-f392-4f1b-b2ed-55fcf3b3f99c {"service":"back-end"}
+2026-06-09T13:44:15.035Z [info] GET /api/dashboard/revenue-by-category?timeFilter=year 304 202.218 ms - - req=be70b4bc-872c-4fe3-a3a5-aa725b3f098c {"service":"back-end"}
+2026-06-09T13:44:15.167Z [info] GET /api/users/paginated?page=1&limit=1 304 324.676 ms - - req=a0ddcd3b-d2ce-4762-81d2-ba12b4c1a430 {"service":"back-end"}
+2026-06-09T13:44:15.204Z [info] GET /api/dashboard/notifications?timeFilter=year 200 274.986 ms - 753 req=4b0007ec-33ef-48d6-8ff7-9aedf3228a21 {"service":"back-end"}
+2026-06-09T13:44:15.272Z [info] GET /api/dashboard/stats?timeFilter=year 304 340.381 ms - - req=8d637da4-1d56-48d5-b464-50a9b48e481d {"service":"back-end"}
+2026-06-09T13:44:35.660Z [info] GET /api/dashboard/revenue-by-category?timeFilter=30days 304 158.149 ms - - req=f6290305-0bdc-4a0f-aa02-e29fb1456951 {"service":"back-end"}
+2026-06-09T13:44:35.666Z [info] GET /api/products 304 4.800 ms - - req=523745e2-8f6a-4a1f-aeca-8039063731d9 {"service":"back-end"}
+2026-06-09T13:44:35.705Z [info] GET /api/dashboard/revenue-by-day?timeFilter=30days 304 204.653 ms - - req=7e0e1b22-9d50-4817-a81e-20a84446ec61 {"service":"back-end"}
+2026-06-09T13:44:35.782Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 290.519 ms - - req=d0b54781-99f9-4e23-95b2-2e5c8233cf2e {"service":"back-end"}
+2026-06-09T13:44:35.791Z [info] GET /api/dashboard/recent-orders?limit=5 304 295.642 ms - - req=279505cb-5ace-48fb-b7e1-cd1711d130bd {"service":"back-end"}
+2026-06-09T13:44:35.844Z [info] GET /api/dashboard/notifications?timeFilter=30days 200 346.732 ms - 753 req=e9c897dd-6634-4696-9328-0ae9eaa02fc6 {"service":"back-end"}
+2026-06-09T13:44:35.909Z [info] GET /api/dashboard/stats?timeFilter=30days 304 409.453 ms - - req=f9631601-c4ed-4af5-891f-a3b5c77dafb7 {"service":"back-end"}
+2026-06-09T13:44:35.946Z [info] GET /api/users/paginated?page=1&limit=1 304 278.884 ms - - req=8c0e5d47-b571-478f-9bef-91737d39a80b {"service":"back-end"}
+2026-06-09T13:44:37.206Z [info] GET /api/products 304 7.274 ms - - req=08f9b96e-b924-43ec-a5e2-ee0b3ac97859 {"service":"back-end"}
+2026-06-09T13:44:37.435Z [info] GET /api/dashboard/revenue-by-category?timeFilter=7days 304 220.664 ms - - req=3c18f178-b15b-4c74-ad1f-7add555cc89e {"service":"back-end"}
+2026-06-09T13:44:37.499Z [info] GET /api/dashboard/recent-orders?limit=5 304 301.774 ms - - req=fad84499-fb20-46dc-afa7-fe6b7e98db81 {"service":"back-end"}
+2026-06-09T13:44:37.502Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 307.653 ms - - req=985eebc2-ae3f-4532-9652-522a776dea82 {"service":"back-end"}
+2026-06-09T13:44:37.538Z [info] GET /api/users/paginated?page=1&limit=1 304 338.450 ms - - req=1bbd4d11-402b-4fb0-94da-97080f1a3e7f {"service":"back-end"}
+2026-06-09T13:44:37.541Z [info] GET /api/dashboard/notifications?timeFilter=7days 200 328.710 ms - 753 req=102c7b1f-0867-4f07-834b-9b857a17725a {"service":"back-end"}
+2026-06-09T13:44:37.572Z [info] GET /api/dashboard/revenue-by-day?timeFilter=7days 304 134.673 ms - - req=e7f9a86c-08a1-4309-9bd6-dc14f16beafe {"service":"back-end"}
+2026-06-09T13:44:37.643Z [info] GET /api/dashboard/stats?timeFilter=7days 304 433.972 ms - - req=13a4eb30-0ddf-4f32-9ad7-0e739dad2f6a {"service":"back-end"}
+2026-06-09T13:44:39.462Z [info] GET /api/products 304 10.857 ms - - req=24917e38-292a-4b44-b38d-64e528241e8a {"service":"back-end"}
+2026-06-09T13:44:39.614Z [info] GET /api/dashboard/revenue-by-category?timeFilter=all 304 151.336 ms - - req=eb3e14da-8733-438b-acc4-e7f7820401e9 {"service":"back-end"}
+2026-06-09T13:44:39.711Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 266.496 ms - - req=e825af8c-345b-4350-ade4-bd39837377aa {"service":"back-end"}
+2026-06-09T13:44:39.719Z [info] GET /api/dashboard/notifications?timeFilter=all 200 262.898 ms - 753 req=047a0d1b-16de-4680-a098-a96b7ecc9690 {"service":"back-end"}
+2026-06-09T13:44:39.733Z [info] GET /api/dashboard/recent-orders?limit=5 304 285.663 ms - - req=61d77e58-eb27-4267-a999-3b8db68a676a {"service":"back-end"}
+2026-06-09T13:44:39.765Z [info] GET /api/dashboard/revenue-by-day?timeFilter=all 304 149.651 ms - - req=bca3e2ef-967d-4756-990d-bad28a6db0a2 {"service":"back-end"}
+2026-06-09T13:44:39.773Z [info] GET /api/dashboard/stats?timeFilter=all 200 319.259 ms - 124 req=0ca48e23-7511-4a30-bf1d-5578e9b5a090 {"service":"back-end"}
+2026-06-09T13:44:39.845Z [info] GET /api/users/paginated?page=1&limit=1 304 393.083 ms - - req=821b0e8d-f868-44bd-a287-ddb02dc6786c {"service":"back-end"}
+2026-06-09T13:44:42.005Z [info] GET /api/dashboard/revenue-by-day?timeFilter=year 304 184.187 ms - - req=ee38c308-0c4c-4c6d-a057-508a3628b061 {"service":"back-end"}
+2026-06-09T13:44:42.088Z [info] GET /api/dashboard/recent-orders?limit=5 304 271.956 ms - - req=12e23bdb-0c5b-4192-ba44-4099b570240b {"service":"back-end"}
+2026-06-09T13:44:42.097Z [info] GET /api/products 304 6.716 ms - - req=2af3b5a1-a86b-409d-bf8f-3ba5ff7addd1 {"service":"back-end"}
+2026-06-09T13:44:42.104Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 290.493 ms - - req=f3542a89-fb6f-4a62-a841-459cbbaf2e9b {"service":"back-end"}
+2026-06-09T13:44:42.115Z [info] GET /api/dashboard/revenue-by-category?timeFilter=year 304 105.113 ms - - req=a4e13988-6960-4410-815a-b90b7b45e919 {"service":"back-end"}
+2026-06-09T13:44:42.160Z [info] GET /api/dashboard/stats?timeFilter=year 304 344.250 ms - - req=02e63e9e-d00f-425b-9fd4-fc7f7de9a55e {"service":"back-end"}
+2026-06-09T13:44:42.194Z [info] GET /api/dashboard/notifications?timeFilter=year 200 376.314 ms - 753 req=270d8644-ecb6-456e-9d53-b8ee78f0b538 {"service":"back-end"}
+2026-06-09T13:44:42.255Z [info] GET /api/users/paginated?page=1&limit=1 304 435.809 ms - - req=4b2741bc-cad1-4df9-a141-85be4264eee3 {"service":"back-end"}
+2026-06-09T13:45:51.420Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 201.695 ms - - req=9854c785-1f47-46da-b916-2fd08d3e7edb {"service":"back-end"}
+2026-06-09T13:45:51.432Z [info] GET /api/dashboard/revenue-by-day?timeFilter=7days 304 199.873 ms - - req=ed9fa7f8-6e31-4ce0-af0f-e0b60ec4068a {"service":"back-end"}
+2026-06-09T13:45:51.499Z [info] GET /api/dashboard/recent-orders?limit=5 304 274.416 ms - - req=bc82a15b-db02-44d8-b8d0-a4aa3dd7a091 {"service":"back-end"}
+2026-06-09T13:45:51.527Z [info] GET /api/dashboard/revenue-by-category?timeFilter=7days 304 106.496 ms - - req=8015c301-5045-49ae-acec-f5a9a43d6307 {"service":"back-end"}
+2026-06-09T13:45:51.532Z [info] GET /api/products/product/sales 304 2.855 ms - - req=a014f85a-bd25-4034-b2f3-8c1bb2118dc4 {"service":"back-end"}
+2026-06-09T13:45:51.543Z [info] GET /api/users/paginated?page=1&limit=1 304 320.908 ms - - req=63a69a86-bc55-4f00-a564-165455141127 {"service":"back-end"}
+2026-06-09T13:45:51.548Z [info] GET /api/dashboard/notifications?timeFilter=7days 200 319.783 ms - 753 req=93f8c2c9-dc04-402e-845b-adee5f583260 {"service":"back-end"}
+2026-06-09T13:45:51.620Z [info] GET /api/dashboard/stats?timeFilter=7days 304 407.571 ms - - req=58736818-66bf-4455-9790-75af544c9a08 {"service":"back-end"}
+2026-06-09T13:45:51.727Z [info] GET /api/categories/shop-cho-meo 304 193.531 ms - - req=127fb3ba-20cc-439e-8dba-a9fdef977cd3 {"service":"back-end"}
+2026-06-09T13:45:51.732Z [info] GET /api/products 304 298.740 ms - - req=821fba50-7540-479b-be2c-c65499ad55c4 {"service":"back-end"}
+2026-06-09T13:45:51.737Z [info] GET /api/categories/shop-cho-cun 304 236.962 ms - - req=d1e09206-de60-4958-a2ba-6f796ddf1e44 {"service":"back-end"}
+2026-06-09T13:45:51.743Z [info] GET /api/products 304 4.923 ms - - req=821e2b08-464e-43ef-9d5a-792329a966cc {"service":"back-end"}
+2026-06-09T13:45:52.837Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 311.253 ms - - req=317674fb-173d-410d-af71-52b2a1604a11 {"service":"back-end"}
+2026-06-09T13:45:52.885Z [info] GET /api/users/paginated?page=1&limit=5 200 356.459 ms - 2681 req=3a1fe67f-1a03-4c12-ae9b-b17a40400845 {"service":"back-end"}
+2026-06-09T13:45:57.444Z [info] GET /api/dashboard/revenue-by-day?timeFilter=7days 304 219.144 ms - - req=e1c67f18-bb45-486a-bd08-6bdb7ee84a1c {"service":"back-end"}
+2026-06-09T13:45:57.449Z [info] GET /api/dashboard/revenue-by-category?timeFilter=7days 304 222.748 ms - - req=e654018f-bf45-4089-bb5a-2f40fd06d9ea {"service":"back-end"}
+2026-06-09T13:45:57.460Z [info] GET /api/products 304 7.240 ms - - req=3a4937e6-118c-4415-8981-665310057ccd {"service":"back-end"}
+2026-06-09T13:45:57.507Z [info] GET /api/dashboard/recent-orders?limit=5 304 287.565 ms - - req=9359e594-63ad-41eb-85de-e4a29d3ed0e5 {"service":"back-end"}
+2026-06-09T13:45:57.520Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 303.010 ms - - req=028e34cb-de72-45f9-9bd7-330ffbc8a911 {"service":"back-end"}
+2026-06-09T13:45:57.565Z [info] GET /api/dashboard/stats?timeFilter=7days 304 343.956 ms - - req=e8005ceb-dfae-4625-b71e-3b011dfe5035 {"service":"back-end"}
+2026-06-09T13:45:57.597Z [info] GET /api/dashboard/notifications?timeFilter=7days 200 374.098 ms - 753 req=9f0a44e3-938d-4c92-b4a1-6e741d518846 {"service":"back-end"}
+2026-06-09T13:45:57.768Z [info] GET /api/users/paginated?page=1&limit=1 304 321.581 ms - - req=1e63cc91-e15e-4271-8ab1-498df2323647 {"service":"back-end"}
+2026-06-09T13:45:59.188Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 307.807 ms - - req=14dcfe85-24c8-48dd-9893-31a85a97351d {"service":"back-end"}
+2026-06-09T13:45:59.291Z [info] GET /api/users/paginated?page=1&limit=5 304 406.473 ms - - req=5a324872-2a85-48f4-99b6-d033c8da30e0 {"service":"back-end"}
+2026-06-09T13:46:03.022Z [info] GET /api/categories 304 83.779 ms - - req=02a81e28-72a5-46c6-88a7-041a483ff266 {"service":"back-end"}
+2026-06-09T13:46:03.270Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 334.057 ms - - req=e62c5b17-df62-4ea3-834d-2809d0c51035 {"service":"back-end"}
+2026-06-09T13:46:03.402Z [info] GET /api/categories?page=1&limit=10&search=&type= 200 67.620 ms - 2828 req=65d27e3b-abeb-4e55-8f37-45b215d95aa2 {"service":"back-end"}
+2026-06-09T13:46:09.690Z [info] GET /api/products 304 5.434 ms - - req=6f82e455-1eec-414e-b601-c9d3beb93cc2 {"service":"back-end"}
+2026-06-09T13:46:09.769Z [info] GET /api/categories 304 83.748 ms - - req=2605b910-3a1a-40af-a328-ada9b405d46f {"service":"back-end"}
+2026-06-09T13:46:09.977Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 293.989 ms - - req=ba711c9a-3c53-4e4c-9a12-242076befa3b {"service":"back-end"}
+2026-06-09T13:46:10.185Z [info] GET /api/products 304 5.963 ms - - req=52cbeb1f-af15-4090-ac66-fae7b0e4e27d {"service":"back-end"}
+2026-06-09T13:46:10.354Z [info] GET /api/products 304 5.906 ms - - req=f36bbd6a-24b9-45e9-9920-a1dfd4301c0f {"service":"back-end"}
+2026-06-09T13:46:16.739Z [info] GET /api/categories 304 73.657 ms - - req=59910594-ee97-4e25-994d-8080c8e6b966 {"service":"back-end"}
+2026-06-09T13:46:16.947Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 283.864 ms - - req=d4562a19-a004-42f0-a028-8779fb2a279a {"service":"back-end"}
+2026-06-09T13:46:17.136Z [info] GET /api/categories?page=1&limit=10&search=&type= 304 69.340 ms - - req=6c3e2928-1d45-494b-b33b-d3d9e735dec2 {"service":"back-end"}
+2026-06-09T13:46:18.139Z [info] GET /api/products 304 5.780 ms - - req=3e0bdc6f-dce0-41d9-aa2f-a35bb368ecde {"service":"back-end"}
+2026-06-09T13:46:18.227Z [info] GET /api/categories 304 95.444 ms - - req=fd2b1db0-f3da-4474-ac78-0714979a6afd {"service":"back-end"}
+2026-06-09T13:46:18.432Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 302.285 ms - - req=f9501282-e076-4852-a827-1b8977f6a483 {"service":"back-end"}
+2026-06-09T13:46:18.630Z [info] GET /api/products 304 6.307 ms - - req=ad91428a-97d8-4eb6-b905-c98b5a92aa2f {"service":"back-end"}
+2026-06-09T13:46:18.782Z [info] GET /api/products 304 5.784 ms - - req=8e5cc1e8-9732-48d0-b604-1da37f641d34 {"service":"back-end"}
+2026-06-09T13:46:21.170Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 272.965 ms - - req=61c1dade-4742-42b5-bb97-92a93f8aa784 {"service":"back-end"}
+2026-06-09T13:46:21.222Z [info] GET /api/orders/stats 200 315.762 ms - 100 req=557502ea-2215-4fe5-a54f-5e6983b6622d {"service":"back-end"}
+2026-06-09T13:46:21.416Z [info] GET /api/orders?limit=1000 200 512.803 ms - 2521658 req=ac5ef309-e710-4704-95bd-167646873e73 {"service":"back-end"}
+2026-06-09T13:46:23.968Z [info] GET /api/products 304 5.642 ms - - req=2c5d7fa9-77e4-463a-ac5e-5d5a4747386a {"service":"back-end"}
+2026-06-09T13:46:24.028Z [info] GET /api/categories 304 67.009 ms - - req=7aceb3a4-5a88-4288-838e-c773544f9ddb {"service":"back-end"}
+2026-06-09T13:46:24.230Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 271.244 ms - - req=719d0d42-523c-478e-8f97-131bc4e15828 {"service":"back-end"}
+2026-06-09T13:46:24.465Z [info] GET /api/products 304 7.534 ms - - req=564bfcf3-ff3a-440e-92a1-2924493b9d31 {"service":"back-end"}
+2026-06-09T13:46:24.618Z [info] GET /api/products 304 6.053 ms - - req=079caf63-edfa-4c55-b0cc-4ba094d70ced {"service":"back-end"}
+2026-06-09T13:46:25.024Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 255.351 ms - - req=dac2972e-744d-427d-8523-f3ae8ecdb7c2 {"service":"back-end"}
+2026-06-09T13:46:25.222Z [info] GET /api/orders?limit=1000 200 449.363 ms - 2521658 req=5ca3cbc7-b80b-47c6-82d8-45c08de05942 {"service":"back-end"}
+2026-06-09T13:46:25.224Z [info] GET /api/orders/stats 304 451.665 ms - - req=defcd731-8fe3-4c48-9a68-11326dd814a1 {"service":"back-end"}
+2026-06-09T13:46:44.486Z [info] GET /api/settings 200 243.444 ms - 177 req=2080e15d-f889-4551-876c-44c67fc038dd {"service":"back-end"}
+2026-06-09T13:46:44.546Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 300.378 ms - - req=2f27eb76-9436-4820-80bb-e9a1029c0572 {"service":"back-end"}
+2026-06-09T13:46:55.083Z [info] PUT /api/settings 200 202.638 ms - 177 req=2ec3c01c-becc-4407-bda1-46afbb68b264 {"service":"back-end"}
+2026-06-09T13:46:57.401Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 264.165 ms - - req=dc01df09-93ed-4451-9e72-3bc560e080a6 {"service":"back-end"}
+2026-06-09T13:46:57.453Z [info] GET /api/orders/stats 304 312.895 ms - - req=20876f5c-8e99-42c4-b7d7-6faf8e08cf4e {"service":"back-end"}
+2026-06-09T13:46:57.730Z [info] GET /api/orders?limit=1000 200 589.679 ms - 2521658 req=92921aaf-3a6b-4b4f-9cc8-3a6b25539ac1 {"service":"back-end"}
+2026-06-09T13:47:03.198Z [info] GET /api/products 304 5.447 ms - - req=60a1aae9-f7d2-4863-864d-e67e40d8e288 {"service":"back-end"}
+2026-06-09T13:47:03.264Z [info] GET /api/categories 304 72.365 ms - - req=b461d4fa-d4b9-4743-af35-33b5736cae8c {"service":"back-end"}
+2026-06-09T13:47:03.484Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 294.589 ms - - req=93e3dd78-99f9-43e0-a213-ac58d6d7c562 {"service":"back-end"}
+2026-06-09T13:47:03.736Z [info] GET /api/products 304 6.452 ms - - req=dc58ab3f-ca19-4eac-ab14-33d3ff30a986 {"service":"back-end"}
+2026-06-09T13:47:04.350Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 305.786 ms - - req=151ce8e1-4e9e-4f19-bc63-3664dec7a423 {"service":"back-end"}
+2026-06-09T13:47:04.445Z [info] GET /api/orders/stats 304 392.974 ms - - req=354deb1c-fb4c-46dd-94e6-3ce750a8fdc8 {"service":"back-end"}
+2026-06-09T13:47:04.593Z [info] GET /api/orders?limit=1000 200 540.943 ms - 2521658 req=28451ca4-63c6-4004-8eb9-7cb8bb41db09 {"service":"back-end"}
+2026-06-09T13:47:05.997Z [info] GET /api/products 304 7.115 ms - - req=268b7b4f-e9cf-433e-8a7d-6fe2dde10004 {"service":"back-end"}
+2026-06-09T13:47:06.058Z [info] GET /api/categories 304 67.125 ms - - req=616a1e7b-9636-41b2-a105-3ce0e2f3d1cd {"service":"back-end"}
+2026-06-09T13:47:06.272Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 284.423 ms - - req=5e07ed59-b654-454b-b3af-035c24352ac7 {"service":"back-end"}
+2026-06-09T13:47:06.496Z [info] GET /api/products 304 4.787 ms - - req=7c5d04d6-a8e4-478f-9769-8a31e1213720 {"service":"back-end"}
+2026-06-09T13:47:06.654Z [info] GET /api/products 304 5.614 ms - - req=f9451cfc-d595-4965-ac69-5da2f8f18d34 {"service":"back-end"}
+2026-06-09T13:47:07.664Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 271.454 ms - - req=3cebe104-a301-4f05-88f4-ab21343a2d0c {"service":"back-end"}
+2026-06-09T13:47:07.779Z [info] GET /api/orders/stats 304 382.759 ms - - req=9fcd71db-a084-44d7-8c93-740ab7b55979 {"service":"back-end"}
+2026-06-09T13:47:07.868Z [info] GET /api/orders?limit=1000 200 473.275 ms - 2521658 req=b99197b2-445e-4eab-a454-c11daa571d09 {"service":"back-end"}
+2026-06-09T13:47:18.078Z [info] GET /api/products/product/sales 304 30.871 ms - - req=effdaa0d-08e3-4357-bb69-fc64b53cc3fa {"service":"back-end"}
+2026-06-09T13:47:18.109Z [info] GET /api/products 304 26.201 ms - - req=dfb90773-3a80-4115-bdc4-229cf518584d {"service":"back-end"}
+2026-06-09T13:47:18.327Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 287.885 ms - - req=fdc0f674-cbbe-41fd-b949-100832713dc8 {"service":"back-end"}
+2026-06-09T13:47:18.343Z [info] GET /api/categories/shop-cho-cun 304 278.655 ms - - req=e507cd86-a58c-44b1-bc43-016f012530a3 {"service":"back-end"}
+2026-06-09T13:47:18.428Z [info] GET /api/categories/shop-cho-meo 304 375.352 ms - - req=5eea8886-3f2f-45ed-800f-d6dee6a6ee5c {"service":"back-end"}
+2026-06-09T13:47:18.432Z [info] GET /api/orders/stats 304 381.609 ms - - req=27537807-e1ec-411f-b5b7-1a294f1ef6a4 {"service":"back-end"}
+2026-06-09T13:47:18.528Z [info] GET /api/orders?limit=1000 200 478.567 ms - 2521658 req=ebd7e9bb-9ca2-43fb-a32e-b8b675ebf47d {"service":"back-end"}
+2026-06-09T13:47:23.065Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 250.840 ms - - req=12e327ba-bec4-48c7-8c1d-00b451b225a3 {"service":"back-end"}
+2026-06-09T13:47:23.238Z [info] GET /api/orders/stats 304 419.096 ms - - req=bdf8c4a8-da97-48b8-83d7-8c733e93b422 {"service":"back-end"}
+2026-06-09T13:47:23.287Z [info] GET /api/orders?limit=1000 200 467.263 ms - 2521658 req=8f9d358a-77c3-48db-82e3-4d5fca69a5f7 {"service":"back-end"}
+2026-06-09T13:47:47.883Z [info] Redis client connecting {"service":"back-end"}
+2026-06-09T13:47:47.902Z [info] Queue Redis connecting {"service":"back-end","redisUrl":"redis://localhost:6379"}
+2026-06-09T13:47:47.909Z [info] Redis client ready {"service":"back-end"}
+2026-06-09T13:47:47.910Z [info] Redis client connected {"service":"back-end"}
+2026-06-09T13:47:47.913Z [info] Queue Redis ready {"service":"back-end"}
+2026-06-09T13:47:47.917Z [info] Loading .env {"service":"back-end","envPath":"D:\\Project\\PetShop-Website\\back-end\\.env"}
+2026-06-09T13:47:47.918Z [info] .env file loaded successfully {"service":"back-end"}
+2026-06-09T13:47:47.954Z [info] [ProjectionWorker] Checking for pending events to catch up from checkpoints... {"service":"back-end"}
+2026-06-09T13:47:47.956Z [info] Background workers initialized {"service":"back-end"}
+2026-06-09T13:47:47.964Z [info] Server is running: http://localhost:5000 {"service":"back-end"}
+2026-06-09T13:47:48.722Z [info] MongoDB connected {"service":"back-end"}
+2026-06-09T13:47:48.724Z [info] Connected to MongoDB {"service":"back-end"}
+2026-06-09T13:47:49.661Z [info] [ProjectionWorker] Catch-up check completed. {"service":"back-end"}
+2026-06-09T13:48:05.472Z [info] GET /api/products 304 13.305 ms - - req=7214eb86-0e7a-4358-8e76-ea0218906ade {"service":"back-end"}
+2026-06-09T13:48:05.477Z [info] GET /api/products/product/sales 304 3.211 ms - - req=e3f7d2c2-5f48-4824-8640-79d10dddbff7 {"service":"back-end"}
+2026-06-09T13:48:05.693Z [info] GET /api/categories/shop-cho-cun 304 233.291 ms - - req=e7989765-1751-4c10-851e-9fa6170c3aec {"service":"back-end"}
+2026-06-09T13:48:05.712Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 269.998 ms - - req=dc6c84f8-b09b-4c4f-8b51-8dce3b4d6e37 {"service":"back-end"}
+2026-06-09T13:48:05.820Z [info] GET /api/categories/shop-cho-meo 304 358.195 ms - - req=236d797a-e266-4142-af61-9aad5e0424da {"service":"back-end"}
+2026-06-09T13:48:05.937Z [info] GET /api/orders/stats 200 481.182 ms - 124 req=4a539a3b-d491-4d2f-bf56-1978dbf68c8e {"service":"back-end"}
+2026-06-09T13:48:06.090Z [info] GET /api/orders?limit=1000 200 636.498 ms - 2521658 req=51ef2761-e525-4a1c-a698-06838f2a0797 {"service":"back-end"}
+2026-06-09T13:48:16.105Z [info] GET /api/products 304 8.612 ms - - req=75893c17-00af-41e5-bc1c-109445b24e76 {"service":"back-end"}
+2026-06-09T13:48:16.179Z [info] GET /api/categories 304 82.056 ms - - req=b8b12e51-3b9e-4452-b5a2-d5ad73211a20 {"service":"back-end"}
+2026-06-09T13:48:16.400Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 306.438 ms - - req=bba384fb-7a36-4d6d-9b7f-d709805734e2 {"service":"back-end"}
+2026-06-09T13:48:16.597Z [info] GET /api/products 304 5.867 ms - - req=5660d4bc-b53f-4e2d-9587-3db1998ca48f {"service":"back-end"}
+2026-06-09T13:48:16.794Z [info] GET /api/products 304 7.672 ms - - req=f6d9ce7c-2036-4a53-a337-cab8f0ca67df {"service":"back-end"}
+2026-06-09T13:48:20.230Z [info] GET /api/products/search?query=b%C3%A1t 200 152.532 ms - 23819 req=0a7d6506-0ae6-4dfe-a0e2-08686a4a6779 {"service":"back-end"}
+2026-06-09T13:48:25.285Z [info] GET /api/products/search?query=b%C3%A1t+%C4%83n+d%C3%B4i+h%C3%ACnh 200 82.909 ms - 2 req=a995adce-d097-47c6-b013-f142081f84ec {"service":"back-end"}
+2026-06-09T13:48:28.875Z [info] GET /api/products/search?query=b%C3%A1t+%C4%83n+d%E1%BB%93i 200 82.572 ms - 2 req=1a57459d-c78d-47b1-b73c-82f7586b9a2b {"service":"back-end"}
+2026-06-09T13:48:30.669Z [info] GET /api/products/search?query=b%C3%A1t+%C4%83n+ 200 151.725 ms - 20312 req=466665fd-27e9-49f9-a354-d939f86977af {"service":"back-end"}
+2026-06-09T13:48:32.042Z [info] GET /api/products/search?query=b%C3%A1t+%C4%83n+%C4%91%C3%B4i 200 79.609 ms - 4875 req=876e0110-71f2-4d9d-95d1-91201c3f2c1f {"service":"back-end"}
+2026-06-09T13:48:34.694Z [info] GET /api/products 304 6.300 ms - - req=89796fea-3394-40f4-8cfd-a0bcf8c1fca4 {"service":"back-end"}
+2026-06-09T13:48:37.365Z [info] GET /api/products 304 4.673 ms - - req=76c7e248-ac42-465d-8aaa-7743a061444c {"service":"back-end"}
+2026-06-09T13:48:38.286Z [info] GET /api/categories 304 87.502 ms - - req=eda0291d-9c0c-42a1-88b0-0603b45da9d9 {"service":"back-end"}
+2026-06-09T13:48:38.488Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 292.481 ms - - req=c4f3f5a6-3194-4ea8-a02c-97e46adda6ea {"service":"back-end"}
+2026-06-09T13:48:38.666Z [info] GET /api/categories?page=1&limit=10&search=&type= 304 68.700 ms - - req=054c04d9-434a-4a3b-97fd-b805cd59af43 {"service":"back-end"}
+2026-06-09T13:48:41.760Z [info] GET /api/products 304 4.742 ms - - req=7aeda6a4-2a5e-46b9-9485-4b7c0b4d231f {"service":"back-end"}
+2026-06-09T13:48:41.840Z [info] GET /api/categories 304 89.043 ms - - req=db69bb07-2749-40f2-8d89-958f30d39c0a {"service":"back-end"}
+2026-06-09T13:48:42.042Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 288.157 ms - - req=2609a273-3646-45f4-b9b4-1c95e73e3e88 {"service":"back-end"}
+2026-06-09T13:48:42.262Z [info] GET /api/products 304 6.209 ms - - req=34f99018-642f-4e70-9919-7c2644e342d7 {"service":"back-end"}
+2026-06-09T13:48:42.433Z [info] GET /api/products 304 6.165 ms - - req=4796d760-502a-424d-badb-a18513ae0358 {"service":"back-end"}
+2026-06-09T13:48:46.594Z [info] GET /api/categories 304 81.270 ms - - req=fa717ab7-d3ff-41a5-8274-a0443a056adb {"service":"back-end"}
+2026-06-09T13:48:46.798Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 288.704 ms - - req=468b13a7-94fa-4da2-8a7d-4c53418465e9 {"service":"back-end"}
+2026-06-09T13:48:46.990Z [info] GET /api/categories?page=1&limit=10&search=&type= 304 72.333 ms - - req=5bdc3225-cb1b-41ad-b339-582ef4efdb98 {"service":"back-end"}
+2026-06-09T13:48:48.854Z [info] GET /api/products 304 5.097 ms - - req=9bd96fb4-993d-4044-95de-1252b6398ff6 {"service":"back-end"}
+2026-06-09T13:48:48.933Z [info] GET /api/categories 304 86.584 ms - - req=62fa6bac-55a4-41ff-9a92-ed32e9f2b8a7 {"service":"back-end"}
+2026-06-09T13:48:49.155Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 312.273 ms - - req=26b73b94-1c84-49d9-b153-016d54f12753 {"service":"back-end"}
+2026-06-09T13:48:49.349Z [info] GET /api/products 304 8.479 ms - - req=acb72170-1661-4de9-a3a5-9b065325911a {"service":"back-end"}
+2026-06-09T13:48:49.675Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 245.954 ms - - req=1a321630-a691-48af-8298-00d8d786197d {"service":"back-end"}
+2026-06-09T13:48:49.890Z [info] GET /api/orders/stats 304 456.318 ms - - req=fa2eae84-d9c9-4b10-9a37-f03b3f9293b5 {"service":"back-end"}
+2026-06-09T13:48:50.003Z [info] GET /api/orders?limit=1000 200 566.494 ms - 2521658 req=5a046c96-4de1-4699-9ee8-0805487aa555 {"service":"back-end"}
+2026-06-09T13:48:50.880Z [info] GET /api/products 304 16.015 ms - - req=bc720972-25da-43f2-a8ef-5a80018f72b4 {"service":"back-end"}
+2026-06-09T13:48:50.945Z [info] GET /api/categories 304 80.715 ms - - req=10392000-9244-4588-b4f7-73c488084429 {"service":"back-end"}
+2026-06-09T13:48:51.163Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 305.335 ms - - req=67468922-5a4d-4c48-a39d-b0535a070e4f {"service":"back-end"}
+2026-06-09T13:48:51.357Z [info] GET /api/products 304 6.497 ms - - req=4024b8e4-d397-4cac-a078-e38db7c4ca74 {"service":"back-end"}
+2026-06-09T13:48:51.626Z [info] GET /api/products 304 5.815 ms - - req=7146782f-bbe5-42ef-bfa6-f8b26ae6bc92 {"service":"back-end"}
+2026-06-09T13:50:06.490Z [info] GET /api/products 304 6.030 ms - - req=b6eddfe7-f958-4bf0-b9cf-7c0871d60d4c {"service":"back-end"}
+2026-06-09T13:50:06.564Z [info] GET /api/categories 304 79.308 ms - - req=002ce1ab-f505-4342-8158-9dad328223cd {"service":"back-end"}
+2026-06-09T13:50:06.783Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 300.420 ms - - req=49aff338-9fc8-4a61-93ca-c4897b2dd81d {"service":"back-end"}
+2026-06-09T13:50:07.375Z [info] GET /api/products 304 4.708 ms - - req=2c7a1244-4358-4330-a62d-4a2576911024 {"service":"back-end"}
+2026-06-09T13:50:07.387Z [info] GET /api/products 304 9.875 ms - - req=1a2460c7-eaf4-4bfc-a552-316e2fb2ca3c {"service":"back-end"}
+2026-06-09T13:50:08.480Z [info] GET /api/products 304 6.639 ms - - req=29f8d136-3b97-4c65-96db-97a78cd98434 {"service":"back-end"}
+2026-06-09T13:50:08.551Z [info] GET /api/categories 304 77.919 ms - - req=ffe169eb-d370-4bef-92af-4a8250c512c3 {"service":"back-end"}
+2026-06-09T13:50:08.772Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 300.190 ms - - req=44ebed22-15ad-46aa-a7c3-d38c7c76e18e {"service":"back-end"}
+2026-06-09T13:50:09.382Z [info] GET /api/products 304 6.635 ms - - req=174a47c7-a047-4b54-817a-c6f84235a1e6 {"service":"back-end"}
+2026-06-09T13:50:09.390Z [info] GET /api/products 304 5.761 ms - - req=a5f4158f-6d8c-4537-a76b-22db6c765e3d {"service":"back-end"}
+2026-06-09T13:50:10.428Z [info] GET /api/products 304 7.850 ms - - req=5e1bc3ca-b461-4928-bbb5-08b69d66847a {"service":"back-end"}
+2026-06-09T13:50:10.492Z [info] GET /api/categories 304 71.948 ms - - req=0a98f751-f0c7-4a90-9e65-e19055dfe657 {"service":"back-end"}
+2026-06-09T13:50:10.696Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 278.061 ms - - req=5ba5da9e-ef9b-4174-b91c-a3cc744c8c4c {"service":"back-end"}
+2026-06-09T13:50:10.927Z [info] GET /api/products 304 8.115 ms - - req=09f111ea-5948-4684-8548-c5ae621e2b01 {"service":"back-end"}
+2026-06-09T13:50:10.938Z [info] GET /api/products 304 8.832 ms - - req=fd84ec88-1ba9-4b38-b666-ff8733d331bb {"service":"back-end"}
+2026-06-09T13:50:36.632Z [info] GET /api/products 304 8.163 ms - - req=e0ca313b-94d5-4ca1-a847-2f34ae035d52 {"service":"back-end"}
+2026-06-09T13:50:36.691Z [info] GET /api/categories 304 66.995 ms - - req=0746136f-00d3-4804-82c2-450387d392ce {"service":"back-end"}
+2026-06-09T13:50:36.910Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 288.703 ms - - req=78b53ff1-b58c-410c-beda-eec3fd74ba8e {"service":"back-end"}
+2026-06-09T13:50:37.132Z [info] GET /api/products 304 6.220 ms - - req=9724d4c9-da87-4a2a-9d83-7ed638868bc2 {"service":"back-end"}
+2026-06-09T13:50:37.139Z [info] GET /api/products 304 5.764 ms - - req=855f6363-c261-4031-86d3-60ea80ab733c {"service":"back-end"}
+2026-06-09T13:50:37.489Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 215.412 ms - - req=bc4a9bd1-abb7-4b21-84b5-b55e50901255 {"service":"back-end"}
+2026-06-09T13:50:37.722Z [info] GET /api/orders/stats 304 438.873 ms - - req=a6b4f896-c5bc-4304-9a15-4d1c3ee59c8f {"service":"back-end"}
+2026-06-09T13:50:37.839Z [info] GET /api/orders?limit=1000 200 556.967 ms - 2521658 req=37d29c52-a609-4c27-a7e3-d474ad468f12 {"service":"back-end"}
+2026-06-09T13:50:38.613Z [info] GET /api/products 304 8.041 ms - - req=656d65cb-c9eb-4b29-a17a-1506119760ed {"service":"back-end"}
+2026-06-09T13:50:38.682Z [info] GET /api/categories 304 75.912 ms - - req=893c8192-9e25-4ecf-abec-a310e0cb81e8 {"service":"back-end"}
+2026-06-09T13:50:38.953Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 350.077 ms - - req=e305a709-55e0-4d20-960a-afbc729e850d {"service":"back-end"}
+2026-06-09T13:50:39.118Z [info] GET /api/products 304 6.241 ms - - req=788ff45f-c5c6-4eec-88a2-e8e9ec410cf2 {"service":"back-end"}
+2026-06-09T13:50:39.288Z [info] GET /api/products 304 5.721 ms - - req=56607be1-8434-4bb4-a5c8-616fdf95ebff {"service":"back-end"}
+2026-06-09T13:50:40.662Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 300.740 ms - - req=ac7c30dc-0eed-4dd9-9e4e-a005ae43b01f {"service":"back-end"}
+2026-06-09T13:50:40.806Z [info] GET /api/orders/stats 304 441.475 ms - - req=6327aa6c-96a0-4627-a283-b554c044b1b6 {"service":"back-end"}
+2026-06-09T13:50:40.963Z [info] GET /api/orders?limit=1000 200 597.102 ms - 2521658 req=830c68ca-4522-4350-a9ea-67922e3e4dcf {"service":"back-end"}
+2026-06-09T13:50:46.870Z [info] GET /api/products 304 10.338 ms - - req=781815ed-1d51-4c09-8597-5c29982138f7 {"service":"back-end"}
+2026-06-09T13:50:46.959Z [info] GET /api/categories 304 96.187 ms - - req=ca4f416d-48a4-45b8-9c22-be6a9d012532 {"service":"back-end"}
+2026-06-09T13:50:47.147Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 287.263 ms - - req=d5c15344-d4b2-4307-b1f6-1b629be1a6bf {"service":"back-end"}
+2026-06-09T13:50:47.352Z [info] GET /api/products 304 5.581 ms - - req=1b8a0db0-f409-4157-9bb5-0ddecc468ec3 {"service":"back-end"}
+2026-06-09T13:50:47.524Z [info] GET /api/products 304 5.875 ms - - req=42502807-db03-43b8-b0a1-7f02fdf5141e {"service":"back-end"}
+2026-06-09T13:50:48.078Z [info] GET /api/categories 304 69.812 ms - - req=2f98827d-ebd9-4f19-b417-d0fc46f5a965 {"service":"back-end"}
+2026-06-09T13:50:48.278Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 272.030 ms - - req=3467f12e-a56b-4ddc-b19e-140bb69bc837 {"service":"back-end"}
+2026-06-09T13:50:48.483Z [info] GET /api/categories?page=1&limit=10&search=&type= 304 67.316 ms - - req=daec1e99-0aad-4e66-9624-5145006bbb4e {"service":"back-end"}
+2026-06-09T13:50:49.684Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 273.145 ms - - req=b8a6e267-cf88-4784-bcf8-60155764ad4b {"service":"back-end"}
+2026-06-09T13:50:49.799Z [info] GET /api/users/paginated?page=1&limit=5 304 385.245 ms - - req=a77510f5-3e77-4bcb-bb02-902acefdf23c {"service":"back-end"}
+2026-06-09T13:50:51.336Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 300.909 ms - - req=ee9f1409-2252-49d4-82dc-8151586c317a {"service":"back-end"}
+2026-06-09T13:50:51.446Z [info] GET /api/orders/stats 304 400.252 ms - - req=fb75b591-8023-4c53-b443-466a9b42cfb3 {"service":"back-end"}
+2026-06-09T13:50:51.646Z [info] GET /api/orders?limit=1000 200 604.622 ms - 2521658 req=de0cea8b-0068-4364-994c-a29fb4e40616 {"service":"back-end"}
+2026-06-09T13:51:21.704Z [info] GET /api/users/6a00b69d0af467688ea55f1b 304 302.345 ms - - req=52636c71-907b-492f-a07f-d727918901cf {"service":"back-end"}
+2026-06-09T13:51:21.839Z [info] GET /api/orders/stats 304 432.282 ms - - req=4e5d9e6d-a9bf-4366-944e-ac7cb89f72e2 {"service":"back-end"}
+2026-06-09T13:51:21.984Z [info] GET /api/orders?limit=1000 200 576.607 ms - 2521658 req=f3ea3b9b-8a51-43de-995c-bb4d2929dfac {"service":"back-end"}

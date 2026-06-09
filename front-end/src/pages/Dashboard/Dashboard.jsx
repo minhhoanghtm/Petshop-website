@@ -27,7 +27,6 @@ import {
 } from "../../services/dashboardService";
 import { fetchUserById as fetchUserByIdRequest, fetchUsersPaginated as fetchUsersPaginatedRequest } from "../../services/userService";
 import { fetchProducts as fetchProductsRequest } from "../../services/productService";
-import { fetchOrders as fetchOrdersRequest } from "../../services/orderService";
 
 const Dashboard = () => {
   const [currentUser, setCurrentUser] = useState(null);
@@ -100,18 +99,13 @@ const Dashboard = () => {
         fetchProductsRequest(),
       ]);
 
-      const totalOrders = await fetchOrdersRequest()
-        .then((res) => res.data.length);
-      const activeUsers = usersResponse.data.users.filter(
-        (user) => user.status === "Active"
-      ).length;
+      const activeUsers = usersResponse.data.stats?.active ?? 0;
       const lowStockProducts = productsResponse.data.filter(
         (product) => product.stock <= 10
       ).length;
 
       setStats({
         ...statsResponse.data,
-        totalOrders,
         activeUsers,
         lowStockProducts,
       });
@@ -373,6 +367,57 @@ const Dashboard = () => {
     }
   };
 
+  const getRevenueLabel = () => {
+    switch (timeFilter) {
+      case "7days":
+        return "Doanh Thu 7 Ngày Qua";
+      case "30days":
+        return "Doanh Thu 30 Ngày Qua";
+      case "90days":
+        return "Doanh Thu 90 Ngày Qua";
+      case "year":
+        return "Doanh Thu Năm Nay";
+      case "all":
+        return "Tổng Doanh Thu (Tất Cả)";
+      default:
+        return "Doanh Thu Trong Kỳ";
+    }
+  };
+
+  const getAverageOrderValueLabel = () => {
+    switch (timeFilter) {
+      case "7days":
+        return "Giá Trị Đơn TB 7 Ngày";
+      case "30days":
+        return "Giá Trị Đơn TB 30 Ngày";
+      case "90days":
+        return "Giá Trị Đơn TB 90 Ngày";
+      case "year":
+        return "Giá Trị Đơn TB Năm Nay";
+      case "all":
+        return "Giá Trị Đơn TB (Tất Cả)";
+      default:
+        return "Giá Trị Đơn TB";
+    }
+  };
+
+  const getOrdersLabel = () => {
+    switch (timeFilter) {
+      case "7days":
+        return "Đơn Hàng 7 Ngày Qua";
+      case "30days":
+        return "Đơn Hàng 30 Ngày Qua";
+      case "90days":
+        return "Đơn Hàng 90 Ngày Qua";
+      case "year":
+        return "Đơn Hàng Năm Nay";
+      case "all":
+        return "Tổng Đơn Hàng (Tất Cả)";
+      default:
+        return "Đơn Hàng Trong Kỳ";
+    }
+  };
+
   return (
     <div className="flex h-screen bg-gray-100 dark:bg-gray-900">
       <Sidebar
@@ -443,7 +488,7 @@ const Dashboard = () => {
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
                   {[
                     {
-                      label: "Tổng Doanh Thu",
+                      label: getRevenueLabel(),
                       value: stats.totalRevenue,
                       icon: DollarSign,
                       color: "green",
@@ -461,13 +506,13 @@ const Dashboard = () => {
                       color: "purple",
                     },
                     {
-                      label: "Giá Trị Đơn TB",
+                      label: getAverageOrderValueLabel(),
                       value: stats.averageOrderValue,
                       icon: ShoppingCart,
                       color: "yellow",
                     },
                     {
-                      label: "Tổng Đơn Hàng",
+                      label: getOrdersLabel(),
                       value: stats.totalOrders,
                       icon: Package,
                       color: "indigo",

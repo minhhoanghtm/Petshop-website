@@ -21,6 +21,7 @@ import UsersPage from "../pages/Admin/UsersPage";
 import ContactUs from "../pages/ContactUs/ContactUs";
 import ForgotPassword from "../pages/ForgotPassWord";
 import ProtectedRoute from "./ProtectedRoute";
+import ConsumerRoute from "./ConsumerRoute";
 import MyReviews from "../pages/Review/MyReviews";
 import ReviewPage from "../pages/Review/ReviewPage";
 
@@ -28,19 +29,19 @@ const AppRoutes = () => {
   return (
     <Routes>
       <Route path="*" element={<NotFoundPage />} />
-      <Route path="/" element={<Home />} />
-      <Route path="/login" element={<Login />} />
-      <Route path="/register" element={<Register />} />
-      <Route path="/product/:slug" element={<ProductDetail />} />
-      <Route path="/search" element={<Search />} />
-      <Route path="/cart" element={<CartShop />} />
-      <Route path="/checkout" element={<CheckOut />} />
-      <Route path="/userProfile" element={<UserProfile />} />
-      <Route path="/my-reviews" element={<MyReviews />} />
-      <Route path="/review/:productId/:orderId" element={<ReviewPage />} />
-      <Route path="/blogs/news" element={<News />} />
-      <Route path="/blogs/news/:slug" element={<NewsDetail />} />
-      <Route path="/categories/:slug" element={<Category />} />
+      <Route path="/" element={<ConsumerRoute><Home /></ConsumerRoute>} />
+      <Route path="/login" element={<ConsumerRoute><Login /></ConsumerRoute>} />
+      <Route path="/register" element={<ConsumerRoute><Register /></ConsumerRoute>} />
+      <Route path="/product/:slug" element={<ConsumerRoute><ProductDetail /></ConsumerRoute>} />
+      <Route path="/search" element={<ConsumerRoute><Search /></ConsumerRoute>} />
+      <Route path="/cart" element={<ConsumerRoute><CartShop /></ConsumerRoute>} />
+      <Route path="/checkout" element={<ConsumerRoute><CheckOut /></ConsumerRoute>} />
+      <Route path="/userProfile" element={<ConsumerRoute><UserProfile /></ConsumerRoute>} />
+      <Route path="/my-reviews" element={<ConsumerRoute><MyReviews /></ConsumerRoute>} />
+      <Route path="/review/:productId/:orderId" element={<ConsumerRoute><ReviewPage /></ConsumerRoute>} />
+      <Route path="/blogs/news" element={<ConsumerRoute><News /></ConsumerRoute>} />
+      <Route path="/blogs/news/:slug" element={<ConsumerRoute><NewsDetail /></ConsumerRoute>} />
+      <Route path="/categories/:slug" element={<ConsumerRoute><Category /></ConsumerRoute>} />
       <Route
         path="/user-management"
         element={
@@ -97,8 +98,8 @@ const AppRoutes = () => {
           </ProtectedRoute>
         }
       />
-      <Route path="/contactus" element={<ContactUs />} />
-      <Route path="/forgot-password" element={<ForgotPassword />} />
+      <Route path="/contactus" element={<ConsumerRoute><ContactUs /></ConsumerRoute>} />
+      <Route path="/forgot-password" element={<ConsumerRoute><ForgotPassword /></ConsumerRoute>} />
     </Routes>
   );
 };
