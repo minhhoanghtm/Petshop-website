@@ -5,15 +5,14 @@
 // - Nếu Jenkins agent có Docker, có thể mở rộng thêm stage build/push image.
 
 pipeline {
-agent any
+    agent any
 
-```
-tools {
-    // Tên phải trùng với NodeJS installation trong Jenkins Tools
-    nodejs 'Node 22'
-}
+    tools {
+        // Tên phải trùng với NodeJS installation trong Jenkins Tools
+        nodejs 'Node 22'
+    }
 
-options {
+    options {
     timestamps()
     disableConcurrentBuilds()
 }
