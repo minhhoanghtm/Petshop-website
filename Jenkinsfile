@@ -5,124 +5,122 @@
 // - Pipeline này dùng Docker Node để tránh lỗi `libatomic.so.1` trên Jenkins agent.
 
 pipeline {
-    agent none
 
-    options {
-        timestamps()
-        disableConcurrentBuilds()
+```
+agent any
+
+tools {
+    // Phải trùng với tên NodeJS trong:
+    // Manage Jenkins -> Tools
+    nodejs 'Node 22'
+}
+
+options {
+    timestamps()
+    disableConcurrentBuilds()
+}
+
+environment {
+    BACKEND_DIR = 'back-end'
+    FRONTEND_DIR = 'front-end'
+    CI = 'true'
+    NODE_ENV = 'test'
+}
+
+stages {
+
+    stage('Checkout') {
+        steps {
+            checkout scm
+        }
     }
 
-    environment {
-        BACKEND_DIR = 'back-end'
-        FRONTEND_DIR = 'front-end'
-        CI = 'true'
+    stage('Show Environment') {
+        steps {
+            sh 'node -v'
+            sh 'npm -v'
+        }
     }
 
-    stages {
-        stage('Checkout') {
-            agent any
-            steps {
-                checkout scm
+    stage('Install Backend Dependencies') {
+        steps {
+            dir(env.BACKEND_DIR) {
+                sh 'npm ci'
             }
         }
+    }
 
-        stage('Install Backend') {
-            agent {
-                docker {
-                    image 'node:22-alpine'
-                    args '--user root:root'
-                }
-            }
-            steps {
-                dir(env.BACKEND_DIR) {
-                    sh 'npm ci'
-                }
+    stage('Install Frontend Dependencies') {
+        steps {
+            dir(env.FRONTEND_DIR) {
+                sh 'npm ci'
             }
         }
+    }
 
-        stage('Install Frontend') {
-            agent {
-                docker {
-                    image 'node:22-alpine'
-                    args '--user root:root'
-                }
-            }
-            steps {
-                dir(env.FRONTEND_DIR) {
-                    sh 'npm ci'
-                }
-            }
-        }
+    stage('Run Backend Tests') {
+        steps {
+            dir(env.BACKEND_DIR) {
 
-        stage('Test Backend') {
-            agent {
-                docker {
-                    image 'node:22-alpine'
-                    args '--user root:root'
-                }
-            }
-            steps {
-                dir(env.BACKEND_DIR) {
-                    catchError(buildResult: 'UNSTABLE', stageResult: 'UNSTABLE') {
-                        sh 'npm test'
-                    }
-                }
-            }
-        }
+                catchError(
+                    buildResult: 'UNSTABLE',
+                    stageResult: 'UNSTABLE'
+                ) {
 
-        stage('Build Frontend') {
-            agent {
-                docker {
-                    image 'node:22-alpine'
-                    args '--user root:root'
-                }
-            }
-            steps {
-                dir(env.FRONTEND_DIR) {
-                    sh 'npm run build'
-                }
-            }
-        }
+                    sh 'npm test'
 
-        stage('Archive Artifacts') {
-            agent any
-            steps {
-                archiveArtifacts artifacts: 'front-end/dist/**/*',
-                    allowEmptyArchive: true,
-                    fingerprint: true
-            }
-        }
-
-        stage('Docker Build Preview') {
-            agent any
-            when {
-                anyOf {
-                    branch 'main'
-                    branch 'master'
-                }
-            }
-            steps {
-                script {
-                    echo 'Docker build preview stage'
-                    sh 'docker --version || true'
                 }
             }
         }
     }
 
-    post {
-        always {
-            cleanWs()
-        }
-        success {
-            echo 'Jenkins pipeline đã chạy thành công.'
-        }
-        unstable {
-            echo 'Pipeline UNSTABLE: test chưa pass hoàn toàn.'
-        }
-        failure {
-            echo 'Pipeline FAILED. Kiểm tra stage bị lỗi.'
+    stage('Build Frontend') {
+        steps {
+            dir(env.FRONTEND_DIR) {
+                sh 'npm run build'
+            }
         }
     }
+
+    stage('Archive Frontend Artifacts') {
+        steps {
+            archiveArtifacts(
+                artifacts: 'front-end/dist/**/*',
+                allowEmptyArchive: true,
+                fingerprint: true
+            )
+        }
+    }
+
+    stage('Docker Check') {
+        steps {
+            sh '''
+                docker --version || true
+            '''
+        }
+    }
+
+}
+
+post {
+
+    success {
+        echo 'Pipeline completed successfully.'
+    }
+
+    unstable {
+        echo 'Pipeline unstable: some tests failed.'
+    }
+
+    failure {
+        echo 'Pipeline failed. Check logs.'
+    }
+
+    always {
+        cleanWs()
+    }
+}
+```
+
 }
 
