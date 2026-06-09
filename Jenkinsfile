@@ -114,7 +114,5 @@ post {
         echo 'Pipeline FAILED. Kiểm tra stage bị lỗi.'
     }
 }
-```
-
 }
 
