@@ -31,7 +31,7 @@ pipeline {
             steps {
                 sh '''
                     echo "=== Checking for libatomic.so.1 ==="
-                    if ldconfig -p | grep -q libatomic; then
+                    if ldconfig -p 2>/dev/null | grep -q libatomic || /sbin/ldconfig -p 2>/dev/null | grep -q libatomic || /usr/sbin/ldconfig -p 2>/dev/null | grep -q libatomic; then
                         echo "libatomic.so.1 is already present on the system."
                     else
                         echo "libatomic.so.1 is missing. Attempting to install..."
@@ -64,12 +64,8 @@ pipeline {
                                 DEB_ARCH="amd64"
                             fi
                             
-                            # Direct package download URLs from Debian mirrors
-                            URLs=(
-                                "http://ftp.debian.org/debian/pool/main/g/gcc-12/libatomic1_12.2.0-14_${DEB_ARCH}.deb"
-                                "http://ftp.debian.org/debian/pool/main/g/gcc-10/libatomic1_10.2.1-6_${DEB_ARCH}.deb"
-                                "http://ftp.debian.org/debian/pool/main/g/gcc-14/libatomic1_14.2.0-4_${DEB_ARCH}.deb"
-                            )
+                            # Direct package download URLs from Debian mirrors (POSIX compliant space-separated string instead of Bash array)
+                            URLs="http://ftp.debian.org/debian/pool/main/g/gcc-12/libatomic1_12.2.0-14_${DEB_ARCH}.deb http://ftp.debian.org/debian/pool/main/g/gcc-10/libatomic1_10.2.1-6_${DEB_ARCH}.deb http://ftp.debian.org/debian/pool/main/g/gcc-14/libatomic1_14.2.0-4_${DEB_ARCH}.deb"
                             
                             DOWNLOAD_SUCCESS=false
                             # Try downloading via apt-get download first (works if local cache is populated)
@@ -80,7 +76,7 @@ pipeline {
                             
                             # Fallback to direct URLs from Debian mirrors
                             if [ "$DOWNLOAD_SUCCESS" = "false" ]; then
-                                for url in "${URLs[@]}"; do
+                                for url in $URLs; do
                                     echo "Downloading from mirror: $url"
                                     if wget -q --timeout=10 "$url" -O libatomic1.deb || curl -s -f --connect-timeout 10 "$url" -o libatomic1.deb; then
                                         echo "Download succeeded from mirror."
