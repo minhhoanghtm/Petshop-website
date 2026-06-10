@@ -1,4 +1,4 @@
-import { Home, Users, Settings, LogOut, Bell, Layers, Ticket } from "lucide-react";
+import { Home, Users, Settings, LogOut, Bell, Layers, Ticket, User } from "lucide-react";
 import { FaBell } from "react-icons/fa";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { RiGalleryView2 } from "react-icons/ri";
@@ -171,15 +171,24 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen, currentUser }) => {
                   </span> */}
                 </button>
               </div>
-              <div className="mt-4 flex items-center justify-between">
-                <button
-                  onClick={handleLogout}
-                  disabled={isLoggingOut}
+              <div className="mt-4 flex flex-col gap-3">
+                <Link
+                  to="/admin/profile"
                   className="flex items-center text-sm cursor-pointer logout-btn"
                 >
-                  <LogOut size={16} className="mr-2" />
-                  Đăng xuất
-                </button>
+                  <User size={16} className="mr-2" />
+                  Quản lý tài khoản
+                </Link>
+                <div className="flex items-center justify-between">
+                  <button
+                    onClick={handleLogout}
+                    disabled={isLoggingOut}
+                    className="flex items-center text-sm cursor-pointer logout-btn"
+                  >
+                    <LogOut size={16} className="mr-2" />
+                    Đăng xuất
+                  </button>
+                </div>
                 {/* <button
                   onClick={toggleDarkMode}
                   className="text-sm theme-toggle-btn cursor-pointer"
