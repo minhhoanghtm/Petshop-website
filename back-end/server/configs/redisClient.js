@@ -30,6 +30,7 @@ if (useMock) {
         connect: async () => redisClient,
         disconnect: async () => {},
         quit: async () => {},
+        ping: async () => "PONG",
         get: async (key) => {
             if (isExpired(key)) return null;
             const val = store.get(key);
@@ -87,6 +88,63 @@ if (useMock) {
             const val = Number(store.get(key) || 0) - Number(amount);
             store.set(key, val);
             return val;
+        },
+        sAdd: async (key, member) => {
+            if (isExpired(key)) {
+                store.delete(key);
+            }
+            let set = store.get(key);
+            if (!(set instanceof Set)) {
+                set = new Set();
+                store.set(key, set);
+            }
+            const sizeBefore = set.size;
+            set.add(String(member));
+            return set.size - sizeBefore;
+        },
+        sMembers: async (key) => {
+            if (isExpired(key)) {
+                return [];
+            }
+            const set = store.get(key);
+            if (set instanceof Set) {
+                return Array.from(set);
+            }
+            return [];
+        },
+        sRem: async (key, member) => {
+            if (isExpired(key)) {
+                return 0;
+            }
+            const set = store.get(key);
+            if (set instanceof Set) {
+                const deleted = set.delete(String(member));
+                if (set.size === 0) {
+                    store.delete(key);
+                }
+                return deleted ? 1 : 0;
+            }
+            return 0;
+        },
+        sCard: async (key) => {
+            if (isExpired(key)) {
+                return 0;
+            }
+            const set = store.get(key);
+            if (set instanceof Set) {
+                return set.size;
+            }
+            return 0;
+        },
+        sIsMember: async (key, member) => {
+            if (isExpired(key)) {
+                return 0;
+            }
+            const set = store.get(key);
+            if (set instanceof Set) {
+                return set.has(String(member)) ? 1 : 0;
+            }
+            return 0;
         },
         expire: async (key, seconds) => {
             if (store.has(key)) {

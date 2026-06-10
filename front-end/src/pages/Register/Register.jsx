@@ -126,7 +126,7 @@ const Register = () => {
           isAdmin = profileRes.data.role === "admin";
         }
         setSuccess(true);
-        toast.success("Đăng ký/Đăng nhập bằng Google thành công!");
+        toast.success("Đăng nhập bằng Google thành công!");
         setTimeout(() => {
           if (isAdmin) {
             navigate("/dashboard");
@@ -295,10 +295,10 @@ const Register = () => {
               <FcGoogle className="text-4xl" />
               Google
             </button>
-            <button className="flex items-center gap-2 bg-gray-100 px-6 py-3 rounded-md hover:bg-gray-200 shadow-sm cursor-pointer">
+            {/* <button className="flex items-center gap-2 bg-gray-100 px-6 py-3 rounded-md hover:bg-gray-200 shadow-sm cursor-pointer">
               <FaFacebook className="text-4xl text-blue-600" />
               Facebook
-            </button>
+            </button> */}
           </div>
           <div className="flex items-center my-6">
             <hr className="grow border-gray-300" />

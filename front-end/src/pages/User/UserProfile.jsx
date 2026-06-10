@@ -1,20 +1,19 @@
 import { useEffect, useState } from "react";
 import {
     FaUser,
-    FaShoppingBag,
     FaHistory,
     FaEdit,
     FaSignOutAlt,
     FaMapMarkerAlt,
-    FaCartPlus,
+    FaTicketAlt,
+    FaCrown,
 } from "react-icons/fa";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate, useLocation, Outlet, NavLink } from "react-router-dom";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import LoadingOverlay from "../../components/LoadingOverlay";
 import { toast } from "react-toastify";
 import ScrollToTopButton from "../../components/ScrollToTopButton";
-import Modal from "../../components/Modal";
 
 import { generateInvoice } from "../../utils/generateInvoice";
 import { signOut as signOutRequest } from "../../services/authService";
@@ -29,9 +28,6 @@ import {
 } from "../../services/orderService";
 import { createMomoPayment, createVNPayPayment } from "../../services/paymentService";
 import { isValidPhone, isValidGmailAddress } from "../../utils/validation";
-    
-import ShippingInfo from "./components/ShippingInfo";
-import OrderHistory from "./components/OrderHistory";
 
 const STATUS_META = {
     pending: {
@@ -64,10 +60,6 @@ const ORDER_TABS = [
     { key: "delivered", label: "Đã giao" },
     { key: "cancelled", label: "Đã hủy" },
 ];
-
-const IN_PROGRESS_TABS = ORDER_TABS.filter((tab) =>
-    ["pending", "confirmed", "shipping"].includes(tab.key)
-);
 
 const normalizeStatus = (status) => {
     if (!status) return "pending";
@@ -125,20 +117,9 @@ const UserProfile = () => {
     const [ordersLoading, setOrdersLoading] = useState(true);
     const [error, setError] = useState(null);
     const navigate = useNavigate();
-    const location = useLocation();
     const [isLoggingOut, setIsLoggingOut] = useState(false);
     const [selectedFile, setSelectedFile] = useState(null);
-    const [activeTab, setActiveTab] = useState("profile");
 
-    useEffect(() => {
-        if (location.state?.activeTab) {
-            setActiveTab(location.state.activeTab);
-        } else if (location.hash === "#history" || location.hash === "#don-hang-cua-ban") {
-            setActiveTab("history");
-        }
-    }, [location]);
-    const [selectedOrder, setSelectedOrder] = useState(null);
-    const [showOrderModal, setShowOrderModal] = useState(false);
     const [orderStats, setOrderStats] = useState({
         totalOrders: 0,
         inProgressOrders: 0,
@@ -151,10 +132,8 @@ const UserProfile = () => {
     const formatDate = (dateString) => {
         if (!dateString) return "";
         
-        // Parse the date string
         let date = new Date(dateString);
         
-        // If date is invalid, try parsing it as is
         if (isNaN(date.getTime())) {
             return "";
         }
@@ -163,7 +142,6 @@ const UserProfile = () => {
         const month = String(date.getMonth() + 1).padStart(2, "0");
         const day = String(date.getDate()).padStart(2, "0");
         
-        // Validate year is reasonable (between 1900 and current year + 1)
         if (year < 1900 || year > new Date().getFullYear() + 1) {
             return "";
         }
@@ -266,7 +244,9 @@ const UserProfile = () => {
         try {
             setOrdersLoading(true);
             const response = await fetchOrdersByUserRequest(userId);
-            const userOrders = response.data || [];
+            const userOrders = Array.isArray(response.data)
+                ? response.data
+                : (response.data?.orders || []);
 
             const normalizedOrders = userOrders.map((order) => {
                 const statusNormalized = normalizeStatus(order.status);
@@ -414,11 +394,6 @@ const UserProfile = () => {
         }
     };
 
-    const handleViewOrder = (order) => {
-        setSelectedOrder(order);
-        setShowOrderModal(true);
-    };
-
     const handleCancelOrder = async (orderId) => {
         try {
             const confirmed = window.confirm(
@@ -538,29 +513,50 @@ const UserProfile = () => {
                                     {user.fullName}
                                 </h2>
                                 <p className="text-sm text-slate-500">{user.email}</p>
+                                <div className="mt-2.5">
+                                    <span className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold border shadow-sm ${
+                                        user.level === "silver" ? "bg-slate-50 text-slate-600 border-slate-200" :
+                                        user.level === "gold" ? "bg-amber-50 text-amber-700 border-amber-200" :
+                                        user.level === "vip" ? "bg-purple-50 text-purple-700 border-purple-200" :
+                                        "bg-orange-50/80 text-orange-700 border-orange-200/80"
+                                    }`}>
+                                        <FaCrown className={
+                                            user.level === "silver" ? "text-slate-400" :
+                                            user.level === "gold" ? "text-amber-500" :
+                                            user.level === "vip" ? "text-purple-500" :
+                                            "text-orange-500"
+                                        } />
+                                        {user.level === "silver" ? "Hạng Bạc" :
+                                         user.level === "gold" ? "Hạng Vàng" :
+                                         user.level === "vip" ? "Hạng VIP" :
+                                         "Hạng Đồng"}
+                                    </span>
+                                </div>
                             </div>
 
                             <ul className="mt-6 space-y-2 w-full max-w-md mx-auto lg:max-w-none lg:mx-0">
                                 {[
-                                    { key: "profile", label: "Thông tin cá nhân", icon: FaUser },
-                                    { key: "shipping", label: "Thông tin giao hàng", icon: FaMapMarkerAlt },
-                                    // { key: "orders", label: "Đơn hàng của bạn", icon: FaShoppingBag },
-                                    { key: "history", label: "Lịch sử mua hàng", icon: FaHistory },
+                                    { key: "profile", label: "Thông tin cá nhân", icon: FaUser, path: "/userProfile", end: true },
+                                    { key: "shipping", label: "Thông tin giao hàng", icon: FaMapMarkerAlt, path: "/userProfile/shipping" },
+                                    { key: "history", label: "Lịch sử mua hàng", icon: FaHistory, path: "/userProfile/history" },
+                                    { key: "vouchers", label: "Kho Voucher", icon: FaTicketAlt, path: "/userProfile/vouchers" },
                                 ].map((item) => {
                                     const Icon = item.icon;
-                                    const isActive = activeTab === item.key;
                                     return (
                                         <li key={item.key}>
-                                            <button
-                                                onClick={() => setActiveTab(item.key)}
-                                                className={`w-full flex items-center gap-2 px-3 py-2 rounded-xl text-sm font-medium transition ${isActive
-                                                    ? "bg-amber-50 text-amber-700"
-                                                    : "text-slate-600 hover:bg-amber-50"
-                                                    }`}
+                                            <NavLink
+                                                to={item.path}
+                                                end={item.end}
+                                                className={({ isActive }) =>
+                                                    `w-full flex items-center gap-2 px-3 py-2 rounded-xl text-sm font-medium transition ${isActive
+                                                        ? "bg-amber-50 text-amber-700"
+                                                        : "text-slate-600 hover:bg-amber-50"
+                                                        }`
+                                                }
                                             >
                                                 <Icon />
                                                 {item.label}
-                                            </button>
+                                            </NavLink>
                                         </li>
                                     );
                                 })}
@@ -577,237 +573,32 @@ const UserProfile = () => {
                         </aside>
 
                         <main className="w-full lg:flex-1 bg-white border border-slate-100 shadow-sm rounded-3xl p-6 min-w-0">
-                            {activeTab === "profile" && (
-                                <div className="space-y-8">
-                                    <div>
-                                        <h1 className="text-2xl font-semibold text-slate-900 mb-4">
-                                            Thông tin cá nhân
-                                        </h1>
-                                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                            <div>
-                                                <label className="text-sm font-medium text-slate-600">Họ và tên</label>
-                                                <input
-                                                    type="text"
-                                                    value={user.fullName}
-                                                    onChange={handleProfileChange("fullName")}
-                                                    className="mt-2 w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-amber-200"
-                                                />
-                                                {errors.fullName && (
-                                                    <p className="text-sm font-semibold text-rose-600 mt-1">
-                                                        {errors.fullName}
-                                                    </p>
-                                                )}
-                                            </div>
-                                            <div>
-                                                <label className="text-sm font-medium text-slate-600">Ngày sinh</label>
-                                                <input
-                                                    type="date"
-                                                    value={formatDate(user.birthDate)}
-                                                    onChange={handleProfileChange("birthDate")}
-                                                    className="mt-2 w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-amber-200"
-                                                />
-                                                {errors.birthDate && (
-                                                    <p className="text-sm font-semibold text-rose-600 mt-1">
-                                                        {errors.birthDate}
-                                                    </p>
-                                                )}
-                                            </div>
-                                            <div>
-                                                <label className="text-sm font-medium text-slate-600">Giới tính</label>
-                                                <select
-                                                    value={user.gender || ""}
-                                                    onChange={(e) => setUser({
-                                                        ...user,
-                                                        gender: e.target.value,
-                                                    })}
-                                                    className="mt-2 w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-amber-200"
-                                                >
-                                                    <option value="">-- Chọn giới tính --</option>
-                                                    <option value="male">Nam</option>
-                                                    <option value="female">Nữ</option>
-                                                </select>
-                                            </div>
-                                            <div>
-                                                <label className="text-sm font-medium text-slate-600">Email</label>
-                                                <input
-                                                    type="email"
-                                                    value={user.email}
-                                                    onChange={handleProfileChange("email")}
-                                                    className="mt-2 w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-amber-200"
-                                                />
-                                                {errors.email && (
-                                                    <p className="text-sm font-semibold text-rose-600 mt-1">
-                                                        {errors.email}
-                                                    </p>
-                                                )}
-                                            </div>
-                                            <div>
-                                                <label className="text-sm font-medium text-slate-600">Số điện thoại</label>
-                                                <input
-                                                    type="text"
-                                                    value={user.phone}
-                                                    onChange={handleProfileChange("phone")}
-                                                    className="mt-2 w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-amber-200"
-                                                />
-                                                {errors.phone && (
-                                                    <p className="text-sm font-semibold text-rose-600 mt-1">
-                                                        {errors.phone}
-                                                    </p>
-                                                )}
-                                            </div>
-                                            <div>
-                                                <label className="text-sm font-medium text-slate-600">Địa chỉ</label>
-                                                <div className="mt-2 w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-slate-800">
-                                                    <div className="flex items-center justify-between">
-                                                        <div className="text-sm text-slate-700">{user.address || "Chưa có địa chỉ giao hàng"}</div>
-                                                        <button
-                                                            type="button"
-                                                            onClick={() => setActiveTab("shipping")}
-                                                            className="ml-4 inline-flex items-center gap-2 text-sm font-medium text-amber-700 hover:underline"
-                                                        >
-                                                            Chỉnh sửa địa chỉ
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className="flex gap-3 mt-4">
-                                            <button
-                                                onClick={handleUpdateProfile}
-                                                disabled={!hasProfileChanged()}
-                                                className="flex-1 bg-amber-600 text-white px-6 py-3 rounded-xl font-semibold hover:bg-amber-500 transition disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-amber-600"
-                                            >
-                                                Cập nhật thông tin
-                                            </button>
-                                            <button
-                                                onClick={handleCancelEdit}
-                                                className="flex-1 border border-slate-300 text-slate-700 px-6 py-3 rounded-xl font-semibold hover:bg-slate-50 transition"
-                                            >
-                                                Hủy
-                                            </button>
-                                        </div>
-                                    </div>
-
-                                    <div>
-                                        <h2 className="text-xl font-semibold text-slate-900 mb-4">Thống kê đơn hàng</h2>
-                                        <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-                                            <div className="bg-blue-50 p-4 rounded-xl border border-blue-100">
-                                                <div className="text-blue-600 text-lg font-bold">{orderStats.totalOrders}</div>
-                                                <div className="text-slate-600">Tổng đơn hàng</div>
-                                            </div>
-                                            <div className="bg-amber-50 p-4 rounded-xl border border-amber-100">
-                                                <div className="text-amber-600 text-lg font-bold">{orderStats.inProgressOrders}</div>
-                                                <div className="text-slate-600">Đơn đang xử lý</div>
-                                            </div>
-                                            <div className="bg-emerald-50 p-4 rounded-xl border border-emerald-100">
-                                                <div className="text-emerald-600 text-lg font-bold">{orderStats.deliveredOrders}</div>
-                                                <div className="text-slate-600">Đơn đã giao</div>
-                                            </div>
-                                            <div className="bg-purple-50 p-4 rounded-xl border border-purple-100">
-                                                <div className="text-purple-600 text-lg font-bold">{orderStats.totalSpent.toLocaleString()} VNĐ</div>
-                                                <div className="text-slate-600">Tổng chi tiêu</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            )}
-
-                            {activeTab === "shipping" && (
-                                <ShippingInfo onAddressUpdated={handleShippingUpdated} />
-                            )}
-{/* 
-                            {activeTab === "orders" && (
-                                <OrderHistory
-                                    title="Đơn hàng của bạn"
-                                    orders={orders}
-                                    tabs={IN_PROGRESS_TABS}
-                                    statusMeta={STATUS_META}
-                                    defaultTab="pending"
-                                    loading={ordersLoading}
-                                    onViewOrder={handleViewOrder}
-                                    onCancelOrder={handleCancelOrder}
-                                    formatDate={formatDisplayDate}
-                                />
-                            )} */}
-
-                            {activeTab === "history" && (
-                                <OrderHistory
-                                    title="Lịch sử mua hàng"
-                                    orders={orders}
-                                    tabs={ORDER_TABS}
-                                    statusMeta={STATUS_META}
-                                    defaultTab="all"
-                                    loading={ordersLoading}
-                                    onViewOrder={handleViewOrder}
-                                    onCancelOrder={handleCancelOrder}
-                                    formatDate={formatDisplayDate}
-                                    onPayNow={handlePayNow}
-                                />
-                            )}
-
-                            {showOrderModal && selectedOrder && (
-                                <Modal
-                                    isOpen={showOrderModal}
-                                    onClose={() => setShowOrderModal(false)}
-                                    size="lg"
-                                >
-                                    <div className="p-6">
-                                        <h2 className="flex gap-3 justify-center text-2xl font-bold mb-6 text-slate-900 text-center border-b pb-4">
-                                            <FaCartPlus className="w-8 h-8" />
-                                            Chi tiết đơn hàng
-                                        </h2>
-                                        <div className="space-y-6 text-slate-700">
-                                            <div>
-                                                <p className="text-sm font-medium text-slate-500">Mã đơn hàng:</p>
-                                                <p className="text-lg font-semibold">{selectedOrder._id}</p>
-                                            </div>
-                                            <div>
-                                                <p className="text-sm font-medium text-slate-500">Ngày đặt:</p>
-                                                <p className="text-lg">
-                                                    {formatDisplayDate(selectedOrder.order_date)}
-                                                </p>
-                                            </div>
-                                            <div>
-                                                <p className="text-sm font-medium text-slate-500">Trạng thái:</p>
-                                                <span className={`inline-flex items-center px-3 py-1 rounded-full text-sm border ${STATUS_META[selectedOrder.statusNormalized]?.badge || "border-slate-200 text-slate-600"}`}>
-                                                    {STATUS_META[selectedOrder.statusNormalized]?.label || selectedOrder.status}
-                                                </span>
-                                            </div>
-                                            <div>
-                                                <p className="text-sm font-medium text-slate-500">Sản phẩm:</p>
-                                                <ul className="list-none divide-y divide-slate-200">
-                                                    {selectedOrder.items.map((item, index) => (
-                                                        <li key={index} className="py-3 flex justify-between items-center">
-                                                            <span className="font-medium text-slate-800">{item.product_id.name}</span>
-                                                            <span className="text-sm text-slate-700">
-                                                                {item.quantity} x {item.product_id.price.toLocaleString()} VNĐ
-                                                            </span>
-                                                        </li>
-                                                    ))}
-                                                </ul>
-                                            </div>
-                                            <div className="flex justify-between items-center mt-4">
-                                                <p className="text-xl font-medium text-slate-500">Tổng tiền:</p>
-                                                <p className="text-xl font-bold text-amber-600">{selectedOrder.total_price.toLocaleString()} VNĐ</p>
-                                            </div>
-                                            <div className="mt-6 flex justify-between items-center">
-                                                <button
-                                                    onClick={() => hanldeGenerateInvoice(selectedOrder)}
-                                                    className="text-sm font-medium text-amber-700 hover:text-amber-600 cursor-pointer"
-                                                >
-                                                    Tải hóa đơn
-                                                </button>
-                                                <button
-                                                    onClick={() => setShowOrderModal(false)}
-                                                    className="bg-amber-600 text-white py-2 px-6 rounded-xl hover:bg-amber-500 transition cursor-pointer"
-                                                >
-                                                    Đóng
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </Modal>
-                            )}
+                            <Outlet context={{
+                                user,
+                                setUser,
+                                initialUser,
+                                setInitialUser,
+                                orders,
+                                setOrders,
+                                loading,
+                                ordersLoading,
+                                orderStats,
+                                errors,
+                                setErrors,
+                                handleProfileChange,
+                                validateProfile,
+                                hasProfileChanged,
+                                handleCancelEdit,
+                                handleUpdateProfile,
+                                formatDate,
+                                formatDisplayDate,
+                                handleCancelOrder,
+                                handlePayNow,
+                                hanldeGenerateInvoice,
+                                handleShippingUpdated,
+                                STATUS_META,
+                                ORDER_TABS,
+                            }} />
                         </main>
                     </div>
                 </div>

@@ -1,4 +1,4 @@
-import { Home, Users, Settings, LogOut, Bell, Layers } from "lucide-react";
+import { Home, Users, Settings, LogOut, Bell, Layers, Ticket } from "lucide-react";
 import { FaBell } from "react-icons/fa";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { RiGalleryView2 } from "react-icons/ri";
@@ -87,11 +87,17 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen, currentUser }) => {
       icon: <RiGalleryView2 size={18} className="mr-3" />,
     },
     {
+      path: "/admin/vouchers",
+      label: "Quản lý Voucher",
+      icon: <Ticket size={18} className="mr-3" />,
+    },
+    {
       path: "/settings",
       label: "Cài đặt",
       icon: <Settings size={18} className="mr-3" />,
     },
   ];
+
 
   return (
     <>

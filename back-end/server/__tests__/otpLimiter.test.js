@@ -1,32 +1,28 @@
 import { jest } from "@jest/globals";
-import { otpSendLimiter, otpSendLimiterMiddleware } from "../middleware/rateLimit/otpLimiter.js";
+import { otpRateLimiterMiddleware } from "../middleware/rateLimit/otpRateLimiter.js";
+import redisClient from "../configs/redisClient.js";
 
-describe("OTP Send Rate Limiter", () => {
-  const email = "test_otp_limiter@gmail.com";
-  const key = `otp_send:${email}`;
+describe("OTP Rate Limiter Middleware", () => {
+  const email = "test_otp_new_limiter@gmail.com";
+  const ip = "127.0.0.1";
 
   beforeEach(async () => {
-    await otpSendLimiter.delete(email);
+    // Clean keys prefix in Redis
+    const emailKey = `otp_email:${email}`;
+    const ipKey = `otp_ip:${ip}`;
+    await redisClient.del([emailKey, ipKey]);
   });
 
   afterAll(async () => {
-    await otpSendLimiter.delete(email);
+    const emailKey = `otp_email:${email}`;
+    const ipKey = `otp_ip:${ip}`;
+    await redisClient.del([emailKey, ipKey]);
   });
 
-  test("Allows up to 5 OTP requests and blocks on the 6th", async () => {
-    // Consume 5 times
-    for (let i = 0; i < 5; i++) {
-      const res = await otpSendLimiter.consume(email);
-      expect(res.remainingPoints).toBe(4 - i);
-    }
-
-    // 6th time should throw/reject as rate limit exceeded
-    await expect(otpSendLimiter.consume(email)).rejects.toHaveProperty("remainingPoints", 0);
-  });
-
-  test("otpSendLimiterMiddleware rate limits requests correctly", async () => {
+  test("Allows up to 3 OTP requests by email and blocks on the 4th", async () => {
     const req = {
-      body: { email }
+      body: { email },
+      ip
     };
     const res = {
       status: jest.fn().mockReturnThis(),
@@ -34,23 +30,20 @@ describe("OTP Send Rate Limiter", () => {
     };
     const next = jest.fn();
 
-    // Reset rate limiter points
-    await otpSendLimiter.delete(email);
-
-    // Call 5 times: should call next() each time
-    for (let i = 0; i < 5; i++) {
+    // Call 3 times: should call next() each time
+    for (let i = 0; i < 3; i++) {
       next.mockClear();
-      await otpSendLimiterMiddleware(req, res, next);
+      await otpRateLimiterMiddleware(req, res, next);
       expect(next).toHaveBeenCalledTimes(1);
       expect(res.status).not.toHaveBeenCalled();
     }
 
-    // 6th time: should return 429 status and message
+    // 4th time: should return 429 status
     res.status.mockClear();
     res.json.mockClear();
     next.mockClear();
 
-    await otpSendLimiterMiddleware(req, res, next);
+    await otpRateLimiterMiddleware(req, res, next);
     expect(next).not.toHaveBeenCalled();
     expect(res.status).toHaveBeenCalledWith(429);
     expect(res.json).toHaveBeenCalledWith(

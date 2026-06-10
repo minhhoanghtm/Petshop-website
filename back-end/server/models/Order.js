@@ -126,6 +126,15 @@ const orderSchema = new mongoose.Schema(
       type: Number,
       required: false,
     },
+    voucher_id: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Voucher",
+      default: null,
+    },
+    discount_amount: {
+      type: Number,
+      default: 0,
+    },
     updatedAt: {
       type: Date,
       default: Date.now,

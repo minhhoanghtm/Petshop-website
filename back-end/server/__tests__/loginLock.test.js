@@ -42,7 +42,7 @@ describe("Redis Login Lock Escalation", () => {
     await recordFailedLogin(email); // 3 (locked 30s)
     
     // Xóa khóa giả lập hết thời gian khóa 30 giây để test tiếp lần 4
-    await redisClient.del(`lock:${email}`);
+    await redisClient.del(`security:login:lock:${email}`);
     
     let result = await recordFailedLogin(email); // 4
     expect(result.attempts).toBe(4);
@@ -57,7 +57,7 @@ describe("Redis Login Lock Escalation", () => {
 
   test("10 failed attempts: locks for 24 hours and resets attempts", async () => {
     // Tăng tốc đếm lỗi bằng cách đẩy thẳng 9 lần lỗi lên Redis
-    await redisClient.set(`login_attempts:${email}`, "9");
+    await redisClient.set(`security:login:attempts:${email}`, "9");
     
     let result = await recordFailedLogin(email); // Lần thứ 10
     expect(result.attempts).toBe(10);
@@ -86,6 +86,26 @@ describe("Redis Login Lock Escalation", () => {
     // Đảm bảo giá trị trong Redis vẫn giữ nguyên là 3
     const finalAttempts = await getAttemptCount(email);
     expect(finalAttempts).toBe(3);
+  });
+
+  test("Concurrent logins for the same email: atomic increment", async () => {
+    // Send 50 failed logins concurrently
+    const promises = Array.from({ length: 50 }, () => recordFailedLogin(email));
+    const results = await Promise.all(promises);
+
+    // Get the maximum attempts returned
+    const attempts = results.map(r => r.attempts);
+    expect(attempts).toContain(1);
+    expect(attempts).toContain(2);
+    expect(attempts).toContain(3);
+    
+    // Check final status
+    const status = await getLockStatus(email);
+    expect(status.isLocked).toBe(true);
+    
+    // Max attempts must be cleared since attempts >= 10 resets attempts key
+    const finalAttempts = await getAttemptCount(email);
+    expect(finalAttempts).toBe(0);
   });
 });
 

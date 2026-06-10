@@ -14,6 +14,9 @@ import CodPaymentStrategy from "./payment/codStrategy.js";
 import MomoPaymentStrategy from "./payment/momoStrategy.js";
 import PaypalPaymentStrategy from "./payment/paypalStrategy.js";
 import VnpayPaymentStrategy from "./payment/vnpayStrategy.js";
+import Voucher from "../models/Voucher.js";
+import UserVoucher from "../models/UserVoucher.js";
+import { validateAndCalculateVoucher } from "./voucherService.js";
 
 const REVENUE_STATUSES = ["delivered"];
 
@@ -111,7 +114,9 @@ export const createOrder = async (orderData = {}) => {
     ward,
     detailAddress,
     deliveryOption,
-    shippingCost
+    shippingCost,
+    voucherCode,
+    voucherId,
   } = orderData;
   
   const payment_method = orderData.payment_method || orderData.paymentMethod || "COD";
@@ -134,6 +139,8 @@ export const createOrder = async (orderData = {}) => {
   const session = await mongoose.startSession();
   let newEvents = [];
   const orderId = new mongoose.Types.ObjectId().toString();
+  let voucherPayload = {};
+  let finalTotalPrice = total_price;
 
   try {
     await session.withTransaction(async () => {
@@ -153,6 +160,53 @@ export const createOrder = async (orderData = {}) => {
         }
       }
 
+      // Handle Voucher application atomically
+      if (voucherId || voucherCode) {
+        const query = voucherId
+          ? { _id: voucherId, isDeleted: false }
+          : { code: String(voucherCode).trim().toUpperCase(), isDeleted: false };
+        
+        const voucher = await Voucher.findOne(query).session(session);
+        if (!voucher) {
+          throw createServiceError("Voucher không tồn tại hoặc đã bị xoá.", 404);
+        }
+
+        // Validate voucher and calculate discount
+        const calculation = await validateAndCalculateVoucher(user_id, voucher.code, items, shippingCost, deliveryOption);
+
+        // Atomic update UserVoucher isUsed
+        const updatedUserVoucher = await UserVoucher.findOneAndUpdate(
+          { _id: calculation.userVoucher._id, isUsed: false },
+          { $set: { isUsed: true, usedAt: new Date(), orderId } },
+          { new: true, session }
+        );
+
+        if (!updatedUserVoucher) {
+          throw createServiceError("Voucher đã được sử dụng ở giao dịch khác.", 400);
+        }
+
+        // Atomic update Voucher usedCount
+        await Voucher.findOneAndUpdate(
+          { _id: voucher._id, isDeleted: false },
+          { $inc: { usedCount: 1 } },
+          { new: true, session }
+        );
+
+        voucherPayload = {
+          voucher_id: voucher._id.toString(),
+          discount_amount: calculation.discountAmount,
+          voucher_code: voucher.code,
+          voucher_snapshot: {
+            voucherCode: voucher.code,
+            voucherType: voucher.type,
+            voucherValue: voucher.value,
+          },
+        };
+
+        const expectedTotal = calculation.totalSubtotal + (deliveryOption === "pickup" ? 0 : shippingCost) - calculation.discountAmount;
+        finalTotalPrice = Math.max(0, expectedTotal);
+      }
+
       // Generate events
       // Event 1: OrderPlaced
       const seqOrderPlaced = await getNextGlobalSequence();
@@ -167,7 +221,7 @@ export const createOrder = async (orderData = {}) => {
         payload: {
           user_id,
           items,
-          total_price,
+          total_price: finalTotalPrice,
           payment_method,
           fullName,
           email,
@@ -178,8 +232,9 @@ export const createOrder = async (orderData = {}) => {
           ward,
           detailAddress,
           deliveryOption: deliveryOption || "delivery",
-          shippingCost: shippingCost || 0,
+          shippingCost: deliveryOption === "pickup" ? 0 : shippingCost,
           orderId,
+          ...voucherPayload,
         },
       });
       await orderPlacedEvent.save({ session });
@@ -236,11 +291,13 @@ export const createOrder = async (orderData = {}) => {
     _id: orderId,
     user_id,
     items,
-    total_price,
+    total_price: finalTotalPrice,
     status: "pending",
     payment_status: "pending",
     payment_method,
     order_date: new Date(),
+    voucher_id: voucherPayload.voucher_id || null,
+    discount_amount: voucherPayload.discount_amount || 0,
   };
 };
 
@@ -386,6 +443,35 @@ export const updateOrder = async (orderId, updateData = {}, currentUser = null) 
           });
           await stockReleasedEvent.save({ session });
           newEvents.push(stockReleasedEvent);
+        }
+
+        // Voucher Restore Policy on Cancellation
+        if (currentOrder.voucher_id) {
+          const voucher = await Voucher.findById(currentOrder.voucher_id).session(session);
+          if (voucher && voucher.restoreVoucherOnCancel) {
+            const minutesLimit = voucher.restoreOnlyIfCancelledWithinMinutes || 30;
+            const orderCreatedAt = currentOrder.order_date || currentOrder.createdAt;
+            const diffMs = Date.now() - new Date(orderCreatedAt).getTime();
+            const diffMins = diffMs / (60 * 1000);
+
+            if (diffMins <= minutesLimit) {
+              // Re-enable UserVoucher record
+              await UserVoucher.updateOne(
+                { orderId: currentOrder._id, isUsed: true },
+                { $set: { isUsed: false, usedAt: null, orderId: null } }
+              ).session(session);
+
+              // Decrement Voucher usedCount
+              await Voucher.updateOne(
+                { _id: voucher._id },
+                { $inc: { usedCount: -1 } }
+              ).session(session);
+
+              logger.info(`Voucher ${voucher.code} restored for user ${currentOrder.user_id} (cancellation within ${minutesLimit} mins limit).`);
+            } else {
+              logger.info(`Voucher ${voucher.code} NOT restored. Cancelled after ${minutesLimit} mins limit (Actual: ${Math.round(diffMins)} mins).`);
+            }
+          }
         }
       }
     });

@@ -11,6 +11,8 @@ import {
   normalizeEmail,
 } from "../utils/validation.js";
 import { hashPassword, verifyPassword } from "../utils/passwordUtils.js";
+import { logSecurityEvent } from "./securityLogService.js";
+import { sendPasswordChangedEmail } from "./notificationService.js";
 
 const normalizeMongoValidationError = (error) => {
   if (!error) return null;
@@ -506,7 +508,7 @@ export const updateProfile = async (user, updateData) => {
 /**
  * Change password (requires current password)
  */
-export const changePassword = async (user, payload = {}) => {
+export const changePassword = async (user, payload = {}, req = null) => {
   if (!user?._id) {
     throw createServiceError("User not found", 404);
   }
@@ -538,6 +540,18 @@ export const changePassword = async (user, payload = {}) => {
 
   dbUser.password = hashPassword(newPassword);
   await dbUser.save();
+
+  // Ghi log bảo mật: PASSWORD_CHANGED
+  await logSecurityEvent({
+    event: "PASSWORD_CHANGED",
+    email: dbUser.email,
+    userId: dbUser._id,
+    ip: req?.ip || req?.headers?.["x-forwarded-for"],
+    userAgent: req?.headers?.["user-agent"],
+  });
+
+  // Gửi email cảnh báo đổi mật khẩu thành công (Asynchronous)
+  sendPasswordChangedEmail(dbUser.email);
 
   return { message: "Đổi mật khẩu thành công." };
 };

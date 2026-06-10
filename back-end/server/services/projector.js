@@ -70,6 +70,8 @@ export const projectOrder = async (orderId, session = null) => {
       detailAddress: payload.detailAddress,
       deliveryOption: payload.deliveryOption || "delivery",
       shippingCost: payload.shippingCost || 0,
+      voucher_id: payload.voucher_id || null,
+      discount_amount: payload.discount_amount || 0,
     };
   }
 

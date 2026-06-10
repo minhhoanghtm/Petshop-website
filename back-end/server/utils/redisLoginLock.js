@@ -1,8 +1,8 @@
 import redisClient from "../configs/redisClient.js";
 import { logger } from "../logger/logger.js";
 
-const ATTEMPTS_PREFIX = "login_attempts:";
-const LOCK_PREFIX = "lock:";
+const ATTEMPTS_PREFIX = "security:login:attempts:";
+const LOCK_PREFIX = "security:login:lock:";
 const ATTEMPTS_TTL_SECONDS = 24 * 60 * 60;
 
 const normalizeEmail = (email) => String(email || "").trim().toLowerCase();

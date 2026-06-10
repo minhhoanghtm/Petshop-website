@@ -8,6 +8,33 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const envPath = path.resolve(__dirname, "../../.env");
 dotenv.config({ path: envPath });
 
+// Nếu đang chạy ở môi trường test (như Jest), tự động đổi tên database sang db-test để tránh xoá dữ liệu của dev/prod
+if (process.env.NODE_ENV === "test" && process.env.MONGO_URI) {
+  const mongoUri = process.env.MONGO_URI;
+  const schemeIndex = mongoUri.indexOf("://");
+  if (schemeIndex !== -1) {
+    const scheme = mongoUri.substring(0, schemeIndex + 3);
+    const rest = mongoUri.substring(schemeIndex + 3);
+    const slashIndex = rest.indexOf("/");
+    if (slashIndex !== -1) {
+      const host = rest.substring(0, slashIndex);
+      const pathAndQuery = rest.substring(slashIndex);
+      const questionMarkIndex = pathAndQuery.indexOf("?");
+      if (questionMarkIndex !== -1) {
+        const dbName = pathAndQuery.substring(0, questionMarkIndex);
+        const query = pathAndQuery.substring(questionMarkIndex);
+        process.env.MONGO_URI = `${scheme}${host}${dbName}-test${query}`;
+      } else {
+        process.env.MONGO_URI = `${scheme}${host}${pathAndQuery}-test`;
+      }
+    } else {
+      process.env.MONGO_URI = `${mongoUri}-test`;
+    }
+  } else {
+    process.env.MONGO_URI = `${mongoUri}-test`;
+  }
+}
+
 // Định nghĩa schema nghiêm ngặt cho các biến môi trường cốt lõi
 const envSchema = z.object({
   NODE_ENV: z.enum(["development", "production", "test"]).default("development"),

@@ -23,6 +23,8 @@ import {
   normalizeEmail,
 } from "../utils/validation.js";
 import { hashPassword, verifyPassword } from "../utils/passwordUtils.js";
+import { logSecurityEvent } from "./securityLogService.js";
+import { sendAccountLockedEmail, sendPasswordResetSuccessEmail, sendNewDeviceLoginEmail } from "./notificationService.js";
 
 const ACCESS_TOKEN_TTL = "30m";
 const REFRESH_TOKEN_TTL = 14 * 24 * 60 * 60 * 1000;
@@ -58,6 +60,22 @@ const validatePasswordOrThrow = (password) => {
       errors: { password: PASSWORD_RULE_MESSAGE },
     });
   }
+};
+
+const acquireOtpVerifyLockOrThrow = async (email, purpose) => {
+  const lockKey = `lock:otp_verify:${purpose}:${String(email).trim().toLowerCase()}`;
+  const acquired = await redisClient.set(lockKey, "1", {
+    NX: true,
+    EX: 3
+  });
+  if (!acquired) {
+    throw new Error("Yêu cầu xác thực đang được xử lý. Vui lòng thử lại sau giây lát.");
+  }
+};
+
+const releaseOtpVerifyLock = async (email, purpose) => {
+  const lockKey = `lock:otp_verify:${purpose}:${String(email).trim().toLowerCase()}`;
+  await redisClient.del(lockKey);
 };
 
 const getForgotPasswordKey = (email) =>
@@ -215,7 +233,7 @@ const revokeAllUserRefreshTokens = async (userId) => {
   }
 };
 
-export const refreshAccessToken = async (oldRefreshToken) => {
+export const refreshAccessToken = async (oldRefreshToken, req = null) => {
   if (!oldRefreshToken) {
     throw createServiceError("Thiếu Refresh Token.", 400);
   }
@@ -239,6 +257,18 @@ export const refreshAccessToken = async (oldRefreshToken) => {
     if (!redisValue) {
       // Kích hoạt cơ chế tự vệ: Xóa toàn bộ token của User để hủy tất cả phiên đăng nhập
       await revokeAllUserRefreshTokens(userId);
+
+      // Ghi log bảo mật: REFRESH_TOKEN_REPLAY
+      const user = await User.findById(userId);
+      await logSecurityEvent({
+        event: "REFRESH_TOKEN_REPLAY",
+        email: user?.email,
+        userId: userId,
+        ip: req?.ip || req?.headers?.["x-forwarded-for"],
+        userAgent: req?.headers?.["user-agent"],
+        details: { token: oldRefreshToken }
+      });
+
       throw createServiceError("Phiên đăng nhập bất hợp pháp hoặc token đã hết hạn. Vui lòng đăng nhập lại.", 403);
     }
 
@@ -246,6 +276,18 @@ export const refreshAccessToken = async (oldRefreshToken) => {
     if (redisValue.startsWith("used:")) {
       logger.info(`Phát hiện request refresh trùng lặp trong thời gian ân hạn cho user: ${userId}`);
       const cacheData = JSON.parse(redisValue.slice("used:".length));
+
+      // Ghi log bảo mật: TOKEN_REUSE_DETECTED
+      const user = await User.findById(userId);
+      await logSecurityEvent({
+        event: "TOKEN_REUSE_DETECTED",
+        email: user?.email,
+        userId: userId,
+        ip: req?.ip || req?.headers?.["x-forwarded-for"],
+        userAgent: req?.headers?.["user-agent"],
+        details: { token: oldRefreshToken, gracePeriod: true }
+      });
+
       return {
         accessToken: cacheData.accessToken,
         refreshToken: cacheData.refreshToken,
@@ -433,14 +475,36 @@ export const signIn = async (userData, req) => {
     await cleanupLegacyMongoLockFields(user);
   }
 
+  const DUMMY_STORED_HASH = "00000000000000000000000000000000:00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000";
   const passwordCorrect = user
     ? verifyPassword(password, user.password ?? user.passWord)
-    : false;
+    : verifyPassword(password, DUMMY_STORED_HASH);
 
   if (!user || !passwordCorrect) {
     const failure = await recordFailedLogin(email);
 
+    // Ghi log bảo mật: LOGIN_FAILED
+    await logSecurityEvent({
+      event: "LOGIN_FAILED",
+      email,
+      ip: req?.ip || req?.headers?.["x-forwarded-for"],
+      userAgent: req?.headers?.["user-agent"],
+      details: { attempts: failure.attempts }
+    });
+
     if (failure.isLocked) {
+      // Ghi log bảo mật: ACCOUNT_LOCKED
+      await logSecurityEvent({
+        event: "ACCOUNT_LOCKED",
+        email,
+        ip: req?.ip || req?.headers?.["x-forwarded-for"],
+        userAgent: req?.headers?.["user-agent"],
+        details: { attempts: failure.attempts, lockUntil: failure.lockUntil, durationMs: failure.remainingMs }
+      });
+
+      // Gửi email cảnh báo tài khoản bị khóa (Asynchronous)
+      sendAccountLockedEmail(email, failure.remainingMs);
+
       throw createServiceError(failure.message, 429, {
         message: failure.message,
         lockUntil: failure.lockUntil,
@@ -451,7 +515,7 @@ export const signIn = async (userData, req) => {
     logger.warn("Failed login attempt", {
       email,
       attempts: failure.attempts,
-      ip: req.ip,
+      ip: req?.ip || req?.headers?.["x-forwarded-for"],
     });
 
     throw createServiceError("Email hoặc mật khẩu không đúng.", 401, {
@@ -468,6 +532,48 @@ export const signIn = async (userData, req) => {
   }
 
   await resetLoginState(email);
+
+  // Ghi log bảo mật: LOGIN_SUCCESS
+  await logSecurityEvent({
+    event: "LOGIN_SUCCESS",
+    email,
+    userId: user._id,
+    ip: req?.ip || req?.headers?.["x-forwarded-for"],
+    userAgent: req?.headers?.["user-agent"],
+  });
+
+  // NEW DEVICE DETECTION (IP Hash + UA Hash)
+  if (req) {
+    try {
+      const userAgent = req.headers?.["user-agent"] || "";
+      const ip = req.ip || req.headers?.["x-forwarded-for"] || "";
+      const userDevicesKey = `security:user_devices:${user._id}`;
+      const deviceFingerprint = crypto.createHash("md5").update(`${userAgent}:${ip}`).digest("hex");
+
+      const hasDevices = await redisClient.sCard(userDevicesKey);
+      const isKnownDevice = await redisClient.sIsMember(userDevicesKey, deviceFingerprint);
+
+      if (hasDevices > 0 && !isKnownDevice) {
+        // Ghi log bảo mật: NEW_DEVICE_LOGIN
+        await logSecurityEvent({
+          event: "NEW_DEVICE_LOGIN",
+          email: user.email,
+          userId: user._id,
+          ip,
+          userAgent,
+          details: { ip, userAgent }
+        });
+
+        // Gửi email cảnh báo thiết bị lạ (Asynchronous)
+        sendNewDeviceLoginEmail(user.email, ip, userAgent);
+      }
+
+      await redisClient.sAdd(userDevicesKey, deviceFingerprint);
+      await redisClient.expire(userDevicesKey, 180 * 24 * 60 * 60); // 180 days TTL
+    } catch (deviceErr) {
+      logger.error("Lỗi khi xử lý phát hiện thiết bị mới:", { message: deviceErr.message, userId: user._id });
+    }
+  }
 
   const accessToken = jwt.sign(
     { userId: user._id },
@@ -580,7 +686,7 @@ export const requestPasswordReset = async (userData) => {
 /**
  * Verify forgot-password OTP
  */
-export const verifyPasswordResetOtp = async (userData) => {
+export const verifyPasswordResetOtp = async (userData, req) => {
   const { email, code, otp } = userData;
   const inputOtp = String(code ?? otp ?? "").trim();
 
@@ -595,25 +701,54 @@ export const verifyPasswordResetOtp = async (userData) => {
   }
 
   const normalizedEmail = validateEmailOrThrow(email);
-  const state = await readForgotPasswordState(normalizedEmail);
-  if (!state) {
-    throw new Error("OTP không tồn tại hoặc đã hết hạn!");
-  }
 
-  const isExpired =
-    !state.expiresAt || new Date(state.expiresAt).getTime() < Date.now();
-  if (isExpired) {
+  await acquireOtpVerifyLockOrThrow(normalizedEmail, "reset");
+  try {
+    const state = await readForgotPasswordState(normalizedEmail);
+    if (!state) {
+      // Ghi log bảo mật: OTP_FAILED (không tìm thấy)
+      await logSecurityEvent({
+        event: "OTP_FAILED",
+        email: normalizedEmail,
+        ip: req?.ip || req?.headers?.["x-forwarded-for"],
+        userAgent: req?.headers?.["user-agent"],
+        details: { purpose: "password-reset", reason: "OTP expired or not found" }
+      });
+      throw new Error("OTP không tồn tại hoặc đã hết hạn!");
+    }
+
+    const isExpired =
+      !state.expiresAt || new Date(state.expiresAt).getTime() < Date.now();
+    if (isExpired) {
+      await redisClient.del(getForgotPasswordKey(normalizedEmail));
+      await redisClient.del(getForgotPasswordCooldownKey(normalizedEmail));
+      // Ghi log bảo mật: OTP_FAILED (hết hạn)
+      await logSecurityEvent({
+        event: "OTP_FAILED",
+        email: normalizedEmail,
+        ip: req?.ip || req?.headers?.["x-forwarded-for"],
+        userAgent: req?.headers?.["user-agent"],
+        details: { purpose: "password-reset", reason: "OTP expired" }
+      });
+      throw new Error("OTP đã hết hạn!");
+    }
+
+    if (state.used) {
+      throw new Error("OTP đã được sử dụng!");
+    }
+
+  if (state.verifyAttempts >= 5) {
     await redisClient.del(getForgotPasswordKey(normalizedEmail));
     await redisClient.del(getForgotPasswordCooldownKey(normalizedEmail));
-    throw new Error("OTP đã hết hạn!");
-  }
-
-  if (state.used) {
-    throw new Error("OTP đã được sử dụng!");
-  }
-
-  if (state.verifyAttempts >= FORGOT_PASSWORD_MAX_ATTEMPTS) {
-    throw new Error("Bạn đã nhập sai OTP quá nhiều lần!");
+    // Ghi log bảo mật: OTP_FAILED (sai quá nhiều lần)
+    await logSecurityEvent({
+      event: "OTP_FAILED",
+      email: normalizedEmail,
+      ip: req?.ip || req?.headers?.["x-forwarded-for"],
+      userAgent: req?.headers?.["user-agent"],
+      details: { purpose: "password-reset", reason: "Max verification attempts exceeded" }
+    });
+    throw new Error("Bạn đã nhập sai OTP quá 5 lần. Mã OTP đã bị hủy.");
   }
 
   const isOtpValid = bcrypt.compareSync(inputOtp, state.otpHash);
@@ -624,13 +759,30 @@ export const verifyPasswordResetOtp = async (userData) => {
       updatedAt: new Date().toISOString(),
     };
 
-    await persistForgotPasswordState(normalizedEmail, updatedState);
-
-    if (updatedState.verifyAttempts >= FORGOT_PASSWORD_MAX_ATTEMPTS) {
-      throw new Error("Bạn đã nhập sai OTP quá nhiều lần!");
+    if (updatedState.verifyAttempts >= 5) {
+      await redisClient.del(getForgotPasswordKey(normalizedEmail));
+      await redisClient.del(getForgotPasswordCooldownKey(normalizedEmail));
+      // Ghi log bảo mật: OTP_FAILED (vượt quá số lần thử)
+      await logSecurityEvent({
+        event: "OTP_FAILED",
+        email: normalizedEmail,
+        ip: req?.ip || req?.headers?.["x-forwarded-for"],
+        userAgent: req?.headers?.["user-agent"],
+        details: { purpose: "password-reset", attempts: updatedState.verifyAttempts, reason: "Max verification attempts exceeded" }
+      });
+      throw new Error("Bạn đã nhập sai OTP quá 5 lần. Mã OTP đã bị hủy.");
+    } else {
+      await persistForgotPasswordState(normalizedEmail, updatedState);
+      // Ghi log bảo mật: OTP_FAILED
+      await logSecurityEvent({
+        event: "OTP_FAILED",
+        email: normalizedEmail,
+        ip: req?.ip || req?.headers?.["x-forwarded-for"],
+        userAgent: req?.headers?.["user-agent"],
+        details: { purpose: "password-reset", attempts: updatedState.verifyAttempts, reason: "Incorrect OTP code" }
+      });
+      throw new Error(`OTP không đúng! Bạn còn ${5 - updatedState.verifyAttempts} lần thử.`);
     }
-
-    throw new Error("OTP không đúng!");
   }
 
   const verifiedState = {
@@ -642,6 +794,15 @@ export const verifyPasswordResetOtp = async (userData) => {
   };
 
   await persistForgotPasswordState(normalizedEmail, verifiedState);
+
+  // Ghi log bảo mật: OTP_SUCCESS
+  await logSecurityEvent({
+    event: "OTP_SUCCESS",
+    email: normalizedEmail,
+    ip: req?.ip || req?.headers?.["x-forwarded-for"],
+    userAgent: req?.headers?.["user-agent"],
+    details: { purpose: "password-reset" }
+  });
 
   logger.info("Forgot-password OTP verified", {
     email,
@@ -658,6 +819,9 @@ export const verifyPasswordResetOtp = async (userData) => {
       ),
     ),
   };
+  } finally {
+    await releaseOtpVerifyLock(normalizedEmail, "reset");
+  }
 };
 
 /**
@@ -784,6 +948,18 @@ export const resetPassword = async (userData) => {
     `${FORGOT_PASSWORD_KEY_PREFIX}:resendcount:${String(normalizedEmail).trim().toLowerCase()}`,
   );
 
+  // Ghi log bảo mật: PASSWORD_RESET
+  await logSecurityEvent({
+    event: "PASSWORD_RESET",
+    email: normalizedEmail,
+    userId: user._id,
+    ip: req?.ip || req?.headers?.["x-forwarded-for"],
+    userAgent: req?.headers?.["user-agent"],
+  });
+
+  // Gửi email cảnh báo đặt lại mật khẩu thành công (Asynchronous)
+  sendPasswordResetSuccessEmail(normalizedEmail);
+
   logger.info("Forgot-password reset succeeded", {
     email,
     userId: user._id.toString(),
@@ -861,8 +1037,8 @@ export const sendSignupCode = async (userData) => {
 
   await redisClient.set(
     `signup:${email}`,
-    JSON.stringify({ code: hashedOTP, payload }),
-    { EX: 60 },
+    JSON.stringify({ code: hashedOTP, payload, verifyAttempts: 0 }),
+    { EX: 300 }, // OTP sống 5 phút
   );
 
   if (!hasMailerConfig()) {
@@ -882,8 +1058,8 @@ export const sendSignupCode = async (userData) => {
     email,
     purpose: "signup-verification",
     subject: "Mã xác thực đăng ký tài khoản",
-    text: `Mã xác thực đăng ký của bạn là: ${signupCode}. Mã có hiệu lực trong 1 phút.`,
-    html: `<p>Mã xác thực đăng ký của bạn là: <strong>${signupCode}</strong></p><p>Mã có hiệu lực trong 1 phút.</p>`,
+    text: `Mã xác thực đăng ký của bạn là: ${signupCode}. Mã có hiệu lực trong 5 phút.`,
+    html: `<p>Mã xác thực đăng ký của bạn là: <strong>${signupCode}</strong></p><p>Mã có hiệu lực trong 5 phút.</p>`,
     code: signupCode,
   });
 
@@ -897,7 +1073,7 @@ export const sendSignupCode = async (userData) => {
 /**
  * Verify signup code and create user
  */
-export const verifySignup = async (userData) => {
+export const verifySignup = async (userData, req) => {
   const email = validateEmailOrThrow(userData?.email);
   const { code } = userData;
 
@@ -911,40 +1087,106 @@ export const verifySignup = async (userData) => {
     });
   }
 
-  const redisData = await redisClient.get(`signup:${email}`);
-  if (!redisData) {
-    throw new Error("Mã xác thực không hợp lệ hoặc đã hết hạn.");
+  await acquireOtpVerifyLockOrThrow(email, "signup");
+  try {
+    const redisData = await redisClient.get(`signup:${email}`);
+    if (!redisData) {
+      // Ghi log bảo mật: OTP_FAILED (không tồn tại/hết hạn)
+      await logSecurityEvent({
+        event: "OTP_FAILED",
+        email,
+        ip: req?.ip || req?.headers?.["x-forwarded-for"],
+        userAgent: req?.headers?.["user-agent"],
+        details: { purpose: "signup-verification", reason: "OTP expired or not found" }
+      });
+      throw new Error("Mã xác thực không hợp lệ hoặc đã hết hạn.");
+    }
+
+    const parsedData = JSON.parse(redisData);
+    const attempts = parsedData.verifyAttempts || 0;
+
+    if (attempts >= 5) {
+      await redisClient.del(`signup:${email}`);
+      await redisClient.del(`signup_cooldown:${email}`);
+      // Ghi log bảo mật: OTP_FAILED
+      await logSecurityEvent({
+        event: "OTP_FAILED",
+        email,
+        ip: req?.ip || req?.headers?.["x-forwarded-for"],
+        userAgent: req?.headers?.["user-agent"],
+        details: { purpose: "signup-verification", reason: "Max verification attempts exceeded" }
+      });
+      throw new Error("Bạn đã nhập sai mã xác thực quá 5 lần. Vui lòng yêu cầu mã mới.");
+    }
+
+    const isCodeValid = bcrypt.compareSync(code, parsedData.code);
+    if (!isCodeValid) {
+      const nextAttempts = attempts + 1;
+      if (nextAttempts >= 5) {
+        await redisClient.del(`signup:${email}`);
+        await redisClient.del(`signup_cooldown:${email}`);
+        // Ghi log bảo mật: OTP_FAILED
+        await logSecurityEvent({
+          event: "OTP_FAILED",
+          email,
+          ip: req?.ip || req?.headers?.["x-forwarded-for"],
+          userAgent: req?.headers?.["user-agent"],
+          details: { purpose: "signup-verification", attempts: nextAttempts, reason: "Max verification attempts exceeded" }
+        });
+        throw new Error("Bạn đã nhập sai mã xác thực quá 5 lần. Mã xác thực đã bị hủy.");
+      } else {
+        parsedData.verifyAttempts = nextAttempts;
+        const ttl = await redisClient.ttl(`signup:${email}`);
+        const remainingTTL = ttl > 0 ? ttl : 300;
+        await redisClient.set(`signup:${email}`, JSON.stringify(parsedData), { EX: remainingTTL });
+
+        // Ghi log bảo mật: OTP_FAILED
+        await logSecurityEvent({
+          event: "OTP_FAILED",
+          email,
+          ip: req?.ip || req?.headers?.["x-forwarded-for"],
+          userAgent: req?.headers?.["user-agent"],
+          details: { purpose: "signup-verification", attempts: nextAttempts, reason: "Incorrect OTP code" }
+        });
+        throw new Error(`Mã xác thực không đúng. Bạn còn ${5 - nextAttempts} lần thử.`);
+      }
+    }
+
+    // Ghi log bảo mật: OTP_SUCCESS
+    await logSecurityEvent({
+      event: "OTP_SUCCESS",
+      email,
+      ip: req?.ip || req?.headers?.["x-forwarded-for"],
+      userAgent: req?.headers?.["user-agent"],
+      details: { purpose: "signup-verification" }
+    });
+
+    const payload = parsedData.payload;
+
+    const existing = await User.findOne({
+      $or: [{ email }],
+    });
+    if (existing) {
+      throw new Error("Email đã được sử dụng.");
+    }
+
+    await User.create({
+      email: payload.email,
+      password: payload.password,
+      fullName: `${payload.firstName} ${payload.lastName}`,
+      birthDate: payload.birthDate,
+      gender: payload.gender,
+    });
+
+    await redisClient.del(`signup:${email}`);
+    await redisClient.del(`signup_cooldown:${email}`);
+
+    return {
+      message: "Đăng ký thành công!",
+    };
+  } finally {
+    await releaseOtpVerifyLock(email, "signup");
   }
-
-  const parsedData = JSON.parse(redisData);
-  const isCodeValid = bcrypt.compareSync(code, parsedData.code);
-  if (!isCodeValid) {
-    throw new Error("Mã xác thực không hợp lệ hoặc đã hết hạn.");
-  }
-
-  const payload = parsedData.payload;
-
-  const existing = await User.findOne({
-    $or: [{ email }],
-  });
-  if (existing) {
-    throw new Error("Email đã được sử dụng.");
-  }
-
-  await User.create({
-    email: payload.email,
-    password: payload.password,
-    fullName: `${payload.firstName} ${payload.lastName}`,
-    birthDate: payload.birthDate,
-    gender: payload.gender,
-  });
-
-  await redisClient.del(`signup:${email}`);
-  await redisClient.del(`signup_cooldown:${email}`);
-
-  return {
-    message: "Đăng ký thành công!",
-  };
 };
 
 /**

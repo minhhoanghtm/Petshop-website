@@ -49,6 +49,7 @@ const userSchema = new mongoose.Schema({
   },
   status: { type: String, default: 'Inactive', enum: ['Active', 'Inactive'] },
   lastActive: { type: Date, default: null },
+  level: { type: String, default: 'standard', enum: ['standard', 'silver', 'gold', 'vip'] },
 }, { collection: 'users' });
 
 const User = mongoose.model('User', userSchema);

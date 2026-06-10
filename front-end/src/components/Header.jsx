@@ -587,6 +587,9 @@ const Header = () => {
               <a href="/blogs/news" className="text-gray-700 text-brown-hover">
                 TIN TỨC
               </a>
+              <Link to="/vouchers" className="text-gray-700 text-brown-hover">
+                VOUCHER
+              </Link>
               <Link to="/contactus" className="text-gray-700 text-brown-hover">
                 VỀ CHÚNG TÔI
               </Link>
@@ -718,6 +721,14 @@ const Header = () => {
               className="block text-gray-700 text-sm text-brown-hover"
             >
               TIN TỨC
+            </Link>
+          </li>
+          <li className="py-1">
+            <Link
+              to="/vouchers"
+              className="block text-gray-700 text-sm text-brown-hover"
+            >
+              MÃ GIẢM GIÁ
             </Link>
           </li>
           <li className="py-1">

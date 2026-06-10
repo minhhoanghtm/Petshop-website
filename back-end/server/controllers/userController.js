@@ -143,7 +143,7 @@ export const updateShippingAddress = async (req, res) => {
 
 export const changePassword = async (req, res) => {
   try {
-    const result = await userService.changePassword(req.user, req.body);
+    const result = await userService.changePassword(req.user, req.body, req);
     return res.json(result);
   } catch (error) {
     logger.warn("Error changing password", { message: error.message, stack: error.stack });

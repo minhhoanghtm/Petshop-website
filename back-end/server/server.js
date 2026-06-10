@@ -39,6 +39,7 @@ import aiRoutes from "./routes/AIRoutes.js";
 import reviewRoutes from "./routes/reviewRoutes.js";
 import dashboadRoutes from "./routes/dashboardRoutes.js";
 import adminRoutes from "./routes/adminRoutes.js";
+import voucherRoutes from "./routes/voucherRoutes.js";
 import { protectedRoute } from "./middleware/authMiddleware.js";
 import redisClient from "./configs/redisClient.js";
 import User from "./models/User.js";
@@ -230,6 +231,7 @@ app.use("/api/categories", categoryRoutes);
 app.use("/api/payments", paymentRoutes);
 app.use("/api/ai", aiRoutes);
 app.use("/api/reviews", reviewRoutes);
+app.use("/api/vouchers", voucherRoutes);
 
 // ===== PROTECTED ROUTES (Authentication required) =====
 // Apply middleware to protect these routes

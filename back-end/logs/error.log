@@ -416,3 +416,4 @@ MongoServerError: E11000 duplicate key error collection: test.orders index: _id_
     at async model.Query.exec (D:\Project\PetShop-Website\back-end\node_modules\mongoose\lib\query.js:4627:63)
     at async projectOrder (file:///D:/Project/PetShop-Website/back-end/server/services/projector.js:130:3)
     at async resumeProjectionsFromCheckpoints (file:///D:/Project/PetShop-Website/back-end/server/workers/projectionWorker.js:32:13)
+2026-06-10T15:51:16.450Z [error] Lỗi khi thu hồi toàn bộ Refresh Token của User: redisClient.sMembers is not a function {"service":"back-end","userId":"6a2987f1e2cb232786c3f1d2"}

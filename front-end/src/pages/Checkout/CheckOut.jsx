@@ -16,6 +16,7 @@ import {
   fetchShippingAddress,
   updateShippingAddress,
 } from "../../services/userService";
+import CheckoutVoucherSelector from "./components/CheckoutVoucherSelector";
 
 const CheckOut = () => {
   const [deliveryOption, setDeliveryOption] = useState("delivery");
@@ -29,6 +30,7 @@ const CheckOut = () => {
   const [isSavingAddress, setIsSavingAddress] = useState(false);
   const [addressError, setAddressError] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [appliedVoucher, setAppliedVoucher] = useState(null);
   const navigate = useNavigate();
   const location = useLocation();
   const { cartItems, clearCart, removeFromCart } = useCart();
@@ -51,7 +53,8 @@ const CheckOut = () => {
     0
   );
   const calculateTotal = () => {
-    return deliveryOption === "pickup" ? subtotal : subtotal + shippingCost;
+    const baseTotal = deliveryOption === "pickup" ? subtotal : subtotal + shippingCost;
+    return Math.max(0, baseTotal - (appliedVoucher?.discountAmount || 0));
   };
   const links = [
     { label: "Trang chủ", link: "/" },
@@ -431,6 +434,8 @@ const CheckOut = () => {
         paymentMethod: selectedMethod,
         payment_method: selectedMethod,
         shippingCost: deliveryOption === "pickup" ? 0 : shippingCost,
+        voucherId: appliedVoucher?.voucherId || null,
+        voucherCode: appliedVoucher?.code || null,
       };
 
       try {
@@ -456,6 +461,7 @@ const CheckOut = () => {
         setShippingCost(0);
         setDeliveryOption("delivery");
         setSelectedMethod("cod");
+        setAppliedVoucher(null);
         setErrors({});
 
         if ((selectedMethod === "momo" || selectedMethod === "vnpay") && createdOrder?._id) {
@@ -499,7 +505,7 @@ const CheckOut = () => {
               closeButton: true,
             });
             setTimeout(() => {
-              navigate("/userProfile#history");
+              navigate("/userProfile/history");
             }, 3000);
             return;
           }
@@ -515,7 +521,7 @@ const CheckOut = () => {
         });
 
         setTimeout(() => {
-          navigate("/userProfile#history");
+          navigate("/userProfile/history");
         }, 1000);
       } catch (error) {
         console.error("Error submitting order:", error);
@@ -908,6 +914,18 @@ const CheckOut = () => {
               ))}
             </div>
 
+            {/* Voucher Selector */}
+            <div className="mb-4">
+              <CheckoutVoucherSelector
+                cartItems={checkoutItems}
+                shippingCost={shippingCost}
+                deliveryOption={deliveryOption}
+                appliedVoucher={appliedVoucher}
+                onApplyVoucher={setAppliedVoucher}
+                onRemoveVoucher={() => setAppliedVoucher(null)}
+              />
+            </div>
+
             <div className="mb-6">
               <div className="flex justify-between mb-2">
                 <span className="text-gray-600">Tạm tính</span>
@@ -921,6 +939,12 @@ const CheckOut = () => {
                     : `${shippingCost.toLocaleString()}đ`}
                 </strong>
               </div>
+              {appliedVoucher && (
+                <div className="flex justify-between mb-2 text-rose-600 font-semibold">
+                  <span>Giảm giá Voucher</span>
+                  <span>-{appliedVoucher.discountAmount.toLocaleString()}đ</span>
+                </div>
+              )}
               <div className="flex justify-between items-center font-semibold text-lg pt-4 border-t border-gray-200">
                 <span>Tổng cộng</span>
                 <div className="text-right">

@@ -5,9 +5,10 @@ import { Navigate } from "react-router-dom";
  * Prevents logged-in admins from accessing user-facing pages, redirecting them to the admin dashboard.
  */
 const ConsumerRoute = ({ children }) => {
+  const accessToken = localStorage.getItem("accessToken");
   const storedUser = JSON.parse(localStorage.getItem("user"));
 
-  if (storedUser && storedUser.role === "admin") {
+  if (accessToken && storedUser && storedUser.role === "admin") {
     // Admins are restricted to management pages only
     return <Navigate to="/dashboard" replace />;
   }
