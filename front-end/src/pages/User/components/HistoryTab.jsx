@@ -19,6 +19,17 @@ const HistoryTab = () => {
     const [selectedOrder, setSelectedOrder] = useState(null);
     const [showOrderModal, setShowOrderModal] = useState(false);
 
+    const formatCurrency = (value) =>
+        new Intl.NumberFormat("vi-VN", {
+            style: "currency",
+            currency: "VND",
+        }).format(value || 0);
+
+    const shippingCost = Number(selectedOrder?.shippingCost || 0);
+    const voucherDiscount = Number(
+        selectedOrder?.discount_amount ?? selectedOrder?.discountAmount ?? 0,
+    );
+
     const handleViewOrder = (order) => {
         setSelectedOrder(order);
         setShowOrderModal(true);
@@ -59,6 +70,18 @@ const HistoryTab = () => {
                                 <p className="text-sm font-medium text-slate-500">Ngày đặt:</p>
                                 <p className="text-lg">
                                     {formatDisplayDate(selectedOrder.order_date)}
+                                </p>
+                            </div>
+                            <div>
+                                <p className="text-sm font-medium text-slate-500">Tiền ship:</p>
+                                <p className="text-lg font-semibold text-slate-800">
+                                    {formatCurrency(shippingCost)}
+                                </p>
+                            </div>
+                            <div>
+                                <p className="text-sm font-medium text-slate-500">Voucher đã giảm:</p>
+                                <p className="text-lg font-semibold text-rose-600">
+                                    -{formatCurrency(voucherDiscount)}
                                 </p>
                             </div>
                             <div>

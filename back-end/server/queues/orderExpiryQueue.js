@@ -18,7 +18,7 @@ export const orderExpiryQueue = new Queue(ORDER_EXPIRY_QUEUE_NAME, {
   },
 });
 
-export const enqueueOrderExpiry = (orderId, delayMs = 15 * 60 * 1000) => {
+export const enqueueOrderExpiry = (orderId, delayMs = 24 * 60 * 60 * 1000) => {
   return orderExpiryQueue.add(
     "check-order-expiry",
     { orderId },

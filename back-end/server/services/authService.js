@@ -347,7 +347,7 @@ export const signUp = async (userData) => {
   const { password, lastName, firstName, birthDate, gender } = userData;
   const email = validateEmailOrThrow(userData?.email);
 
-  if (!password || !lastName || !firstName || !birthDate || !gender) {
+  if (!password || !lastName || !firstName || !birthDate) {
     throw createServiceError(
       "Thiếu thông tin đăng ký. Vui lòng điền đầy đủ.",
       400,
@@ -369,22 +369,16 @@ export const signUp = async (userData) => {
 
   // normalize gender to 'male'|'female'
   const normalizeGenderLocal = (val) => {
+    if (val === undefined || val === null || val === "") return 'male';
     if (typeof val === 'boolean') return val ? 'male' : 'female';
-    if (typeof val === 'number') return val === 1 ? 'male' : val === 0 ? 'female' : undefined;
-    if (typeof val !== 'string') return undefined;
+    if (typeof val === 'number') return val === 1 ? 'male' : val === 0 ? 'female' : 'male';
+    if (typeof val !== 'string') return 'male';
     const n = val.trim().toLowerCase();
-    if (["nam","male","m","true","1"].includes(n)) return 'male';
     if (["nu","nữ","female","f","false","0"].includes(n)) return 'female';
-    return undefined;
+    return 'male';
   };
 
   const normalizedGender = normalizeGenderLocal(gender);
-  if (typeof normalizedGender === 'undefined') {
-    throw createServiceError("Giới tính không hợp lệ.", 400, {
-      message: "Giới tính không hợp lệ.",
-      errors: { gender: "Giới tính không hợp lệ." },
-    });
-  }
 
   const hashedPass = hashPassword(password);
   await User.create({
@@ -977,7 +971,7 @@ export const sendSignupCode = async (userData) => {
   const { password, lastName, firstName, birthDate, gender } = userData;
   const email = validateEmailOrThrow(userData?.email);
 
-  if (!email || !password || !lastName || !firstName || !birthDate || !gender) {
+  if (!email || !password || !lastName || !firstName || !birthDate) {
     throw createServiceError(
       "Thiếu thông tin đăng ký. Vui lòng điền đầy đủ.",
       400,
@@ -1009,22 +1003,16 @@ export const sendSignupCode = async (userData) => {
 
   // normalize gender locally
   const normalizeGenderLocal = (val) => {
+    if (val === undefined || val === null || val === "") return 'male';
     if (typeof val === 'boolean') return val ? 'male' : 'female';
-    if (typeof val === 'number') return val === 1 ? 'male' : val === 0 ? 'female' : undefined;
-    if (typeof val !== 'string') return undefined;
+    if (typeof val === 'number') return val === 1 ? 'male' : val === 0 ? 'female' : 'male';
+    if (typeof val !== 'string') return 'male';
     const n = val.trim().toLowerCase();
-    if (["nam","male","m","true","1"].includes(n)) return 'male';
     if (["nu","nữ","female","f","false","0"].includes(n)) return 'female';
-    return undefined;
+    return 'male';
   };
 
   const normalizedGender = normalizeGenderLocal(gender);
-  if (typeof normalizedGender === 'undefined') {
-    throw createServiceError("Giới tính không hợp lệ.", 400, {
-      message: "Giới tính không hợp lệ.",
-      errors: { gender: "Giới tính không hợp lệ." },
-    });
-  }
 
   const payload = {
     email,
@@ -1176,6 +1164,7 @@ export const verifySignup = async (userData, req) => {
       fullName: `${payload.firstName} ${payload.lastName}`,
       birthDate: payload.birthDate,
       gender: payload.gender,
+      status: "Active",
     });
 
     await redisClient.del(`signup:${email}`);

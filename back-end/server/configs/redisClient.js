@@ -31,6 +31,10 @@ if (useMock) {
         disconnect: async () => {},
         quit: async () => {},
         ping: async () => "PONG",
+        exists: async (key) => {
+            if (isExpired(key)) return 0;
+            return store.has(key) ? 1 : 0;
+        },
         get: async (key) => {
             if (isExpired(key)) return null;
             const val = store.get(key);
@@ -162,7 +166,304 @@ if (useMock) {
             }
             const remainingMs = ttls.get(key) - Date.now();
             return Math.max(0, Math.ceil(remainingMs / 1000));
-        }
+        },
+        zAdd: async (key, score, member) => {
+            let set = store.get(key);
+            if (!(set instanceof Map)) {
+                set = new Map();
+                store.set(key, set);
+            }
+            if (typeof score === "object") {
+                const entries = Array.isArray(score) ? score : [score];
+                for (const entry of entries) {
+                    set.set(entry.value, entry.score);
+                }
+                return entries.length;
+            } else {
+                set.set(String(member), Number(score));
+                return 1;
+            }
+        },
+        zRemRangeByScore: async (key, min, max) => {
+            const set = store.get(key);
+            if (!(set instanceof Map)) return 0;
+            let count = 0;
+            for (const [member, score] of set.entries()) {
+                if (score >= min && score <= max) {
+                    set.delete(member);
+                    count++;
+                }
+            }
+            return count;
+        },
+        zRange: async (key, start, stop) => {
+            const set = store.get(key);
+            if (!(set instanceof Map)) return [];
+            return Array.from(set.keys());
+        },
+        zRem: async (key, member) => {
+            const set = store.get(key);
+            if (!(set instanceof Map)) return 0;
+            return set.delete(String(member)) ? 1 : 0;
+        },
+        eval: async (script, options) => {
+            const keys = options?.keys || [];
+            const args = options?.arguments || [];
+
+            if (script.includes("currentVersion")) {
+                // checkout-reserve script
+                const userId = args[0];
+                const currentTime = Number(args[1]);
+                const ttl = Number(args[2]);
+                const newItems = JSON.parse(args[3]);
+
+                const resKey = keys[0];
+                const existingStr = store.get(resKey);
+                const existingItems = {};
+                let currentVersion = 0;
+                if (existingStr) {
+                    const existingData = JSON.parse(existingStr);
+                    if (existingData) {
+                        currentVersion = Number(existingData.version || "0");
+                        if (existingData.items) {
+                            for (const item of existingData.items) {
+                                existingItems[item.productId] = item.quantity;
+                            }
+                        }
+                    }
+                }
+
+                const deltas = {};
+                const processed = {};
+                for (const item of newItems) {
+                    const pId = item.productId;
+                    const reqQty = Number(item.quantity);
+                    const dbStock = Number(item.dbStock);
+
+                    const prevQty = existingItems[pId] || 0;
+                    const diff = reqQty - prevQty;
+
+                    const expiryKey = `reserved:product:expiry:${pId}`;
+                    const counterKey = `reserved:product:counter:${pId}`;
+
+                    // Clean up expired members first
+                    const set = store.get(expiryKey);
+                    let sumExpired = 0;
+                    if (set instanceof Map) {
+                        for (const [member, score] of set.entries()) {
+                            if (score <= currentTime) {
+                                const parts = member.split(":");
+                                const mQty = Number(parts[1] || "0");
+                                set.delete(member);
+                                sumExpired += mQty;
+                            }
+                        }
+                    }
+
+                    if (sumExpired > 0) {
+                        const currentCounter = Number(store.get(counterKey) || 0);
+                        const newCounterVal = Math.max(0, currentCounter - sumExpired);
+                        store.set(counterKey, newCounterVal);
+                    }
+
+                    const currentReserved = Number(store.get(counterKey) || 0);
+                    let currentReservedOthers = currentReserved - prevQty;
+                    if (currentReservedOthers < 0) currentReservedOthers = 0;
+
+                    if (currentReservedOthers + reqQty > dbStock) {
+                        return JSON.stringify({
+                            ok: false,
+                            error: "out_of_stock",
+                            productId: pId,
+                            available: dbStock - currentReservedOthers,
+                        });
+                    }
+
+                    deltas[pId] = { reqQty, prevQty, diff };
+                    processed[pId] = true;
+                }
+
+                for (const [pId, info] of Object.entries(deltas)) {
+                    const expiryKey = `reserved:product:expiry:${pId}`;
+                    const counterKey = `reserved:product:counter:${pId}`;
+
+                    if (info.prevQty > 0) {
+                        const set = store.get(expiryKey);
+                        if (set instanceof Map) {
+                            set.delete(`${userId}:${info.prevQty}`);
+                        }
+                    }
+                    let set = store.get(expiryKey);
+                    if (!(set instanceof Map)) {
+                        set = new Map();
+                        store.set(expiryKey, set);
+                    }
+                    set.set(`${userId}:${info.reqQty}`, currentTime + ttl);
+
+                    const currentCounter = Number(store.get(counterKey) || 0);
+                    const newCounterVal = Math.max(0, currentCounter + info.diff);
+                    store.set(counterKey, newCounterVal);
+                }
+
+                for (const [pId, prevQty] of Object.entries(existingItems)) {
+                    if (!processed[pId]) {
+                        const expiryKey = `reserved:product:expiry:${pId}`;
+                        const counterKey = `reserved:product:counter:${pId}`;
+                        const set = store.get(expiryKey);
+                        if (set instanceof Map) {
+                            set.delete(`${userId}:${prevQty}`);
+                        }
+                        const currentCounter = Number(store.get(counterKey) || 0);
+                        const newCounterVal = Math.max(0, currentCounter - prevQty);
+                        store.set(counterKey, newCounterVal);
+                    }
+                }
+
+                const nextVersion = currentVersion + 1;
+                const resToSave = {
+                    userId,
+                    version: nextVersion,
+                    updatedAt: currentTime,
+                    items: newItems,
+                };
+                store.set(resKey, JSON.stringify(resToSave));
+                ttls.set(resKey, Date.now() + ttl * 1000);
+
+                return JSON.stringify({ ok: true, version: nextVersion });
+            } else if (script.includes("EXPIRE") || (script.includes("not_found") && script.includes("ZADD"))) {
+                // checkout-refresh script
+                const userId = args[0];
+                const currentTime = Number(args[1]);
+                const ttl = Number(args[2]);
+
+                const resKey = keys[0];
+                const resStr = store.get(resKey);
+                if (!resStr) {
+                    return JSON.stringify({ ok: false, error: "not_found" });
+                }
+
+                const resData = JSON.parse(resStr);
+                if (resData && resData.items) {
+                    for (const item of resData.items) {
+                        const expiryKey = `reserved:product:expiry:${item.productId}`;
+                        let set = store.get(expiryKey);
+                        if (!(set instanceof Map)) {
+                            set = new Map();
+                            store.set(expiryKey, set);
+                        }
+                        set.set(`${userId}:${item.quantity}`, currentTime + ttl);
+                    }
+                }
+
+                resData.updatedAt = currentTime;
+                store.set(resKey, JSON.stringify(resData));
+                ttls.set(resKey, Date.now() + ttl * 1000);
+
+                return JSON.stringify({ ok: true });
+            } else if (script.includes("DEL") && script.includes("ZREM")) {
+                // checkout-commit script
+                const userId = args[0];
+                const resKey = keys[0];
+                const resStr = store.get(resKey);
+                if (resStr) {
+                    const resData = JSON.parse(resStr);
+                    if (resData && resData.items) {
+                        for (const item of resData.items) {
+                            const expiryKey = `reserved:product:expiry:${item.productId}`;
+                            const counterKey = `reserved:product:counter:${item.productId}`;
+                            const set = store.get(expiryKey);
+                            if (set instanceof Map) {
+                                if (set.delete(`${userId}:${item.quantity}`)) {
+                                    const currentCounter = Number(store.get(counterKey) || 0);
+                                    const newCounterVal = Math.max(0, currentCounter - item.quantity);
+                                    store.set(counterKey, newCounterVal);
+                                }
+                            }
+                        }
+                    }
+                    store.delete(resKey);
+                    ttls.delete(resKey);
+                }
+                return 1;
+            } else if (script.includes("results = {}")) {
+                // batch stock checking script
+                const currentTime = Number(args[0]);
+                const results = [];
+                for (let i = 1; i < args.length; i++) {
+                    const pId = args[i];
+                    const expiryKey = `reserved:product:expiry:${pId}`;
+                    const counterKey = `reserved:product:counter:${pId}`;
+
+                    const set = store.get(expiryKey);
+                    let sumExpired = 0;
+                    if (set instanceof Map) {
+                        for (const [member, score] of set.entries()) {
+                            if (score <= currentTime) {
+                                const parts = member.split(":");
+                                const mQty = Number(parts[1] || "0");
+                                set.delete(member);
+                                sumExpired += mQty;
+                            }
+                        }
+                    }
+
+                    if (sumExpired > 0) {
+                        const currentCounter = Number(store.get(counterKey) || 0);
+                        const newCounterVal = Math.max(0, currentCounter - sumExpired);
+                        store.set(counterKey, newCounterVal);
+                    }
+
+                    const currentReserved = Number(store.get(counterKey) || 0);
+                    results.push(String(currentReserved));
+                }
+                return results;
+            }
+            throw new Error(`Unsupported script in mock Redis eval: ${script}`);
+        },
+        multi: () => {
+            const queue = [];
+            const chain = {
+                zRemRangeByScore: (key, min, max) => {
+                    queue.push(async () => {
+                        const set = store.get(key);
+                        if (!(set instanceof Map)) return 0;
+                        let count = 0;
+                        for (const [member, score] of set.entries()) {
+                            if (score >= min && score <= max) {
+                                set.delete(member);
+                                count++;
+                            }
+                        }
+                        return count;
+                    });
+                    return chain;
+                },
+                zRange: (key, start, stop) => {
+                    queue.push(async () => {
+                        const set = store.get(key);
+                        if (!(set instanceof Map)) return [];
+                        return Array.from(set.keys());
+                    });
+                    return chain;
+                },
+                get: (key) => {
+                    queue.push(async () => {
+                        if (isExpired(key)) return null;
+                        const val = store.get(key);
+                        return val !== undefined ? String(val) : null;
+                    });
+                    return chain;
+                },
+                exec: async () => {
+                    const results = [];
+                    for (const op of queue) {
+                        results.push(await op());
+                    }
+                    return results;
+                },
+            };
+            return chain;
+        },
     };
 } else {
     // Tạo một client Redis mới

@@ -194,7 +194,7 @@ const VoucherTab = () => {
 
                   <div className="flex items-center justify-between mt-3 pt-2 border-t border-slate-100 dark:border-slate-700/50 text-[10px] font-semibold">
                     <span className="text-slate-400 flex items-center gap-1">
-                      <FaClock /> HSD: {new Date(v.endDate).toLocaleDateString("vi-VN")}
+                      <FaClock /> HSD: {new Date(v.endDate).toLocaleString("vi-VN", { hour: "2-digit", minute: "2-digit", day: "2-digit", month: "2-digit", year: "numeric", hour12: false })}
                     </span>
 
                     {isAvailable ? (
@@ -282,7 +282,7 @@ const VoucherTab = () => {
                   {selectedVoucherDetails.maxDiscount && (
                     <div>• Giảm tối đa: <span className="font-semibold">{selectedVoucherDetails.maxDiscount.toLocaleString()}đ</span></div>
                   )}
-                  <div>• Hạn sử dụng: <span className="font-semibold">{new Date(selectedVoucherDetails.endDate).toLocaleDateString("vi-VN")}</span></div>
+                  <div>• Hạn sử dụng: <span className="font-semibold">{new Date(selectedVoucherDetails.endDate).toLocaleString("vi-VN", { hour: "2-digit", minute: "2-digit", day: "2-digit", month: "2-digit", year: "numeric", hour12: false })}</span></div>
                   <div>• Đối tượng áp dụng: <span className="font-semibold">{selectedVoucherDetails.applicableUserLevels?.map(lvl => LEVEL_MAP[lvl] || lvl).join(", ") || "Tất cả thành viên"}</span></div>
                 </div>
               </div>

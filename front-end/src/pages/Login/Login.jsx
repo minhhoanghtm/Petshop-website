@@ -97,6 +97,9 @@ const Login = () => {
       ...preErrors,
       [name]: null,
     }));
+    if (name === "email") {
+      setLockUntil(0);
+    }
   };
 
   const validateForm = () => {

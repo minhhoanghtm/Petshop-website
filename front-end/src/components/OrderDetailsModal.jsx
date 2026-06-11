@@ -16,8 +16,19 @@ export default function OrderDetailsModal({
   setShowModal,
   reviewMap = new Map(),
 }) {
+  const formatCurrency = (value) =>
+    new Intl.NumberFormat("vi-VN", {
+      style: "currency",
+      currency: "VND",
+    }).format(value || 0);
+
+  const shippingCost = Number(selectedOrder.shippingCost || 0);
+  const voucherDiscount = Number(
+    selectedOrder.discount_amount ?? selectedOrder.discountAmount ?? 0,
+  );
+
   return (
-    <div className="fixed z-10 inset-0 overflow-y-auto">
+    <div className="fixed z-20000 inset-0 overflow-y-auto">
       <div className="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
         <div className="fixed inset-0 transition-opacity" aria-hidden="true">
           <div
@@ -33,12 +44,12 @@ export default function OrderDetailsModal({
           &#8203;
         </span>
 
-        <div className="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-4xl sm:w-full z-50000">
+        <div className="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-4xl sm:w-full z-20001">
           <div className="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
             <div className="sm:flex sm:items-start">
               <div className="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left w-full">
                 <h3 className="text-lg leading-6 font-medium text-gray-900 mb-4">
-                  Chi tiết đơn hàng #{selectedOrder._id.substring(0, 8)}
+                  Chi tiết đơn hàng #{selectedOrder._id}
                 </h3>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -89,6 +100,16 @@ export default function OrderDetailsModal({
                               selectedOrder.statusNormalized || selectedOrder.status
                             ).label || selectedOrder.status}
                           </span>
+                        </span>
+                      </p>
+                      <p className="text-sm text-gray-600 mt-1">
+                        <span className="font-medium">Tiền ship:</span>{" "}
+                        <span className="font-medium">{formatCurrency(shippingCost)}</span>
+                      </p>
+                      <p className="text-sm text-gray-600 mt-1">
+                        <span className="font-medium">Voucher đã giảm:</span>{" "}
+                        <span className="font-medium text-rose-600">
+                          -{formatCurrency(voucherDiscount)}
                         </span>
                       </p>
                       <p className="text-sm text-gray-600 mt-1">
@@ -159,7 +180,7 @@ export default function OrderDetailsModal({
                                 (item.product_id?.price || 0) * item.quantity
                               )}
                             </td>
-                            <td className="px-3 py-2 whitespace-nowrap text-sm text-gray-900 font-medium">
+                            {/* <td className="px-3 py-2 whitespace-nowrap text-sm text-gray-900 font-medium">
                               {review ? (
                                 <div className="flex items-center gap-2">
                                   <div className="flex items-center gap-1">
@@ -182,7 +203,7 @@ export default function OrderDetailsModal({
                               ) : (
                                 <span className="text-gray-500">Chưa đủ điều kiện</span>
                               )}
-                            </td>
+                            </td> */}
                           </tr>
                         );
                         })}

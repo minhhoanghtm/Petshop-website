@@ -164,7 +164,7 @@ function DialogProduct({ open, setOpen, product }) {
               </div>
               <span className="opacity-50">
                 Thương hiệu: Khác | Tình trạng:{" "}
-                {product.sold === product.stock ? "Hết hàng" : "Còn hàng"}
+                {product.stock <= 0 ? "Hết hàng" : "Còn hàng"}
               </span>
             </div>
             <div className="flex flex-col w-full justify-center items-center">

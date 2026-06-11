@@ -7,6 +7,9 @@ import {
     deleteOrder,
     getOrderStats,
     getRecentOrders,
+    reserveCheckoutStock,
+    refreshCheckoutStock,
+    releaseCheckoutStock,
 } from "../controllers/orderController.js";
 import { requireAdmin } from "../middleware/authMiddleware.js";
 import { orderLimiterMiddleware } from "../middleware/rateLimit/orderLimiter.js";
@@ -14,6 +17,11 @@ import { idempotencyMiddleware } from "../middleware/idempotencyMiddleware.js";
 import { paginationMiddleware } from "../middleware/paginationMiddleware.js";
 
 const router = express.Router();
+
+// Giữ hàng tạm thời khi khách xem Checkout
+router.post("/checkout/reserve", reserveCheckoutStock);
+router.post("/checkout/refresh", refreshCheckoutStock);
+router.post("/checkout/release", releaseCheckoutStock);
 
 // tạo đơn hàng mới với cơ chế idempotency bảo vệ chống race condition đặt trùng
 router.post("/", orderLimiterMiddleware, idempotencyMiddleware, createOrder);

@@ -4,6 +4,7 @@ import Product from "../models/Product.js";
 import Order from "../models/Order.js";
 import { createServiceError } from "../utils/serviceError.js";
 import { logger } from "../logger/logger.js";
+import { clearProductCache } from "../utils/cacheHelper.js";
 
 const normalizeImages = (images) => {
   if (!Array.isArray(images)) {
@@ -194,6 +195,12 @@ const updateProductReviewStats = async (productId) => {
       },
       { new: true }
     );
+
+    // Xóa cache chi tiết và danh sách sản phẩm để cập nhật ratings/reviews ngay lập tức
+    const product = await Product.findById(productId).select("slug");
+    if (product && product.slug) {
+      await clearProductCache(product.slug);
+    }
 
     return summary;
   } catch (error) {

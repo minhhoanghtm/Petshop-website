@@ -135,11 +135,8 @@ const orderSchema = new mongoose.Schema(
       type: Number,
       default: 0,
     },
-    updatedAt: {
-      type: Date,
-      default: Date.now,
-    },
   },
+  { timestamps: true },
   { collection: "orders" },
 );
 

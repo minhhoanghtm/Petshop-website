@@ -290,13 +290,16 @@ const Dashboard = () => {
   };
 
   const formatDate = (dateString) => {
-    return new Date(dateString).toLocaleString("vi-VN", {
-      day: "2-digit",
-      month: "2-digit",
-      year: "2-digit",
-      hour: "2-digit",
-      minute: "2-digit",
-    });
+    const date = new Date(dateString);
+    if (Number.isNaN(date.getTime())) return "-";
+
+    const hours = String(date.getHours()).padStart(2, "0");
+    const minutes = String(date.getMinutes()).padStart(2, "0");
+    const day = String(date.getDate()).padStart(2, "0");
+    const month = String(date.getMonth() + 1).padStart(2, "0");
+    const year = date.getFullYear();
+
+    return `${hours}:${minutes} ${day}/${month}/${year}`;
   };
 
   const handleExportStats = () => {
@@ -621,7 +624,7 @@ const Dashboard = () => {
                                   {index + 1}
                                 </td>
                                 <td className="py-2 px-2">
-                                  #{order.id.substring(0, 8)}
+                                  #{order.id}
                                 </td>
                                 <td className="py-2 px-2">
                                   {order.customer || "Khách không xác định"}

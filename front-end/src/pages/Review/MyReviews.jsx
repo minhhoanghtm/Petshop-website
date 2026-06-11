@@ -109,7 +109,7 @@ const MyReviews = () => {
                           </span>
                         </div>
 
-                        <p className="mt-3 text-sm text-slate-500">Đơn hàng: #{String(item.orderId).slice(-6).toUpperCase()}</p>
+                        <p className="mt-3 text-sm text-slate-500">Đơn hàng: #{String(item.orderId)}</p>
 
                         {review && (
                           <div className="mt-3 rounded-2xl bg-slate-50 p-3">

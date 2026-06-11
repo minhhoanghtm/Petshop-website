@@ -84,6 +84,9 @@ const ProductDetail = () => {
         if (productDetail?.images?.length) {
             setSelectedImageId(0);
         }
+        if (productDetail) {
+            setQuantity(productDetail.stock > 0 ? 1 : 0);
+        }
     }, [productDetail]);
 
     const CustomPrevArrow = (props) => {
@@ -148,6 +151,11 @@ const ProductDetail = () => {
     };
 
     const handleIncrease = () => {
+        const stock = productDetail?.stock || 0;
+        if (quantity >= stock) {
+            toast.warning(`Số lượng tối đa trong kho là ${stock}`);
+            return;
+        }
         setQuantity(quantity + 1);
     };
 
@@ -400,8 +408,9 @@ const ProductDetail = () => {
                                         </button>
                                         <span className="px-6 text-lg font-medium">{quantity}</span>
                                         <button
-                                            className="size-10 text-lg font-bold bg-slate-50 hover:bg-slate-100 transition rounded-full"
+                                            className="size-10 text-lg font-bold bg-slate-50 hover:bg-slate-100 transition rounded-full disabled:opacity-50 disabled:cursor-not-allowed"
                                             onClick={handleIncrease}
+                                            disabled={quantity >= (productDetail?.stock || 0)}
                                             aria-label="Tăng số lượng"
                                         >
                                             +
@@ -423,13 +432,23 @@ const ProductDetail = () => {
                         <div className="flex flex-col sm:flex-row gap-3 mt-6">
                             <button
                                 onClick={handleBuyNow}
-                                className="bg-amber-600 text-white w-full py-3 text-lg rounded-xl font-semibold hover:bg-amber-500 transition shadow-sm cursor-pointer"
+                                disabled={!productDetail?.stock || productDetail.stock === 0}
+                                className={`w-full py-3 text-lg rounded-xl font-semibold transition shadow-sm ${
+                                    !productDetail?.stock || productDetail.stock === 0
+                                        ? "bg-slate-200 text-slate-400 cursor-not-allowed"
+                                        : "bg-amber-600 text-white hover:bg-amber-500 cursor-pointer"
+                                }`}
                             >
-                                Mua ngay
+                                {!productDetail?.stock || productDetail.stock === 0 ? "Hết hàng" : "Mua ngay"}
                             </button>
                             <button
                                 onClick={() => handleAddToCart(null)}
-                                className="border border-amber-600 text-amber-700 bg-white w-full py-3 text-lg rounded-xl font-semibold hover:bg-amber-50 transition cursor-pointer"
+                                disabled={!productDetail?.stock || productDetail.stock === 0}
+                                className={`w-full py-3 text-lg rounded-xl font-semibold transition ${
+                                    !productDetail?.stock || productDetail.stock === 0
+                                        ? "border border-slate-200 text-slate-400 bg-slate-50 cursor-not-allowed"
+                                        : "border border-amber-600 text-amber-700 bg-white hover:bg-amber-50 cursor-pointer"
+                                }`}
                             >
                                 Thêm vào giỏ hàng
                             </button>

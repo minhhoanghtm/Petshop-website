@@ -1,4 +1,5 @@
-import { FaEye, FaTrash, FaStar, FaRegStar } from "react-icons/fa";
+import { useState, useEffect } from "react";
+import { FaEye, FaTrash, FaStar, FaRegStar, FaClock } from "react-icons/fa";
 import ReviewButton from "../../../components/reviews/ReviewButton";
 import { Link } from "react-router-dom";
 
@@ -19,6 +20,47 @@ const OrderCard = ({
     onPayNow,
 }) => {
     const statusInfo = statusMeta[order.statusNormalized];
+    const [timeLeft, setTimeLeft] = useState("");
+
+    useEffect(() => {
+        const isOnlinePayment = ["MOMO", "VNPAY"].includes(order.payment_method);
+        const isUnpaid = order.payment_status === "pending";
+        const isActive = ["pending", "confirmed"].includes(order.statusNormalized);
+
+        if (!isOnlinePayment || !isUnpaid || !isActive) {
+            setTimeLeft("");
+            return;
+        }
+
+        const calculateTimeLeft = () => {
+            const orderTime = new Date(order.order_date).getTime();
+            const expiryTime = orderTime + 24 * 60 * 60 * 1000; // 24 hours
+            const difference = expiryTime - Date.now();
+
+            if (difference <= 0) {
+                return "Hết hạn";
+            }
+
+            const hours = Math.floor(difference / (1000 * 60 * 60));
+            const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+            const pad = (num) => String(num).padStart(2, "0");
+            return `${pad(hours)}:${pad(minutes)}:${pad(seconds)}`;
+        };
+
+        setTimeLeft(calculateTimeLeft());
+
+        const timer = setInterval(() => {
+            const time = calculateTimeLeft();
+            setTimeLeft(time);
+            if (time === "Hết hạn") {
+                clearInterval(timer);
+            }
+        }, 1000);
+
+        return () => clearInterval(timer);
+    }, [order.order_date, order.payment_method, order.payment_status, order.statusNormalized]);
     
     let paymentMethodLabel = order.payment_method || order.paymentMethod || "Thanh toán khi nhận hàng";
     if (paymentMethodLabel === "MOMO") {
@@ -27,6 +69,8 @@ const OrderCard = ({
         paymentMethodLabel = "Ví PayPal";
     } else if (paymentMethodLabel === "COD") {
         paymentMethodLabel = "Thanh toán khi nhận hàng (COD)";
+    } else if (paymentMethodLabel === "VNPAY") {
+        paymentMethodLabel = "VNPay";
     }
 
     const paymentStatusText = order.payment_status === "paid"
@@ -41,7 +85,7 @@ const OrderCard = ({
                 <div>
                     <p className="text-sm text-slate-500">Mã đơn hàng</p>
                     <p className="text-lg font-semibold text-slate-900">
-                        #{order._id.substring(order._id.length - 6).toUpperCase()}
+                        #{order._id}
                     </p>
                 </div>
                 <div className="flex items-center gap-3">
@@ -63,6 +107,7 @@ const OrderCard = ({
                     <p className="text-slate-500">Ngày đặt</p>
                     <p className="font-medium text-slate-800">
                         {formatDate(order.order_date)}
+                        {/* {formatDisplayDate(order.order_date)} */}
                     </p>
                 </div>
                 <div>
@@ -73,7 +118,7 @@ const OrderCard = ({
                 </div>
                 <div>
                     <p className="text-slate-500">Thanh toán</p>
-                    <p className="font-medium text-slate-800 flex items-center flex-wrap gap-1">
+                    <div className="font-medium text-slate-800 flex items-center flex-wrap gap-1">
                         {paymentMethodLabel}
                         <span className={`text-[10px] px-2 py-0.5 rounded-full font-medium ${
                             order.payment_status === "paid"
@@ -84,7 +129,15 @@ const OrderCard = ({
                         }`}>
                             {paymentStatusText}
                         </span>
-                    </p>
+                    </div>
+                    {timeLeft && (
+                        <div className={`text-[11px] mt-1 font-semibold flex items-center gap-1 ${
+                            timeLeft === "Hết hạn" ? "text-rose-600" : "text-amber-600"
+                        }`}>
+                            <FaClock className={timeLeft === "Hết hạn" ? "" : "animate-spin"} />
+                            {timeLeft === "Hết hạn" ? "Hết hạn thanh toán" : `Hết hạn sau: ${timeLeft}`}
+                        </div>
+                    )}
                 </div>
                 <div className="md:text-right">
                     <p className="text-slate-500">Tổng tiền</p>
@@ -102,12 +155,20 @@ const OrderCard = ({
                     <FaEye />
                     Xem chi tiết
                 </button>
-                {order.payment_method === "MOMO" && order.payment_status === "pending" && order.statusNormalized !== "cancelled" && (
+                {order.payment_method === "MOMO" && order.payment_status === "pending" && order.statusNormalized !== "cancelled" && timeLeft !== "Hết hạn" && (
                     <button
                         onClick={() => onPayNow && onPayNow(order)}
                         className="inline-flex items-center gap-2 px-3 py-2 rounded-lg bg-[#d82d8b] text-white text-sm font-medium hover:bg-[#b0226f] transition cursor-pointer shadow-sm font-medium"
                     >
                         Thanh toán ngay (MoMo)
+                    </button>
+                )}
+                {order.payment_method === "VNPAY" && order.payment_status === "pending" && order.statusNormalized !== "cancelled" && timeLeft !== "Hết hạn" && (
+                    <button
+                        onClick={() => onPayNow && onPayNow(order)}
+                        className="inline-flex items-center gap-2 px-3 py-2 rounded-lg bg-[#005ba1] text-white text-sm font-medium hover:bg-[#004780] transition cursor-pointer shadow-sm font-medium"
+                    >
+                        Thanh toán ngay (VNPay)
                     </button>
                 )}
                 {canCancel && (

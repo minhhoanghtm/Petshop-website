@@ -6,6 +6,7 @@ import ProductDetail from "../pages/Product/ProductDetail";
 import Search from "../pages/Search/Search";
 import CartShop from "../pages/CartShop/CartShop";
 import CheckOut from "../pages/Checkout/CheckOut";
+import PaymentResult from "../pages/Checkout/PaymentResult";
 import UserProfile from "../pages/User/UserProfile";
 import ProfileTab from "../pages/User/components/ProfileTab";
 import ShippingTab from "../pages/User/components/ShippingTab";
@@ -43,6 +44,7 @@ const AppRoutes = () => {
       <Route path="/search" element={<ConsumerRoute><Search /></ConsumerRoute>} />
       <Route path="/cart" element={<ConsumerRoute><CartShop /></ConsumerRoute>} />
       <Route path="/checkout" element={<ConsumerRoute><CheckOut /></ConsumerRoute>} />
+      <Route path="/payment-result" element={<ConsumerRoute><PaymentResult /></ConsumerRoute>} />
       <Route path="/vouchers" element={<ConsumerRoute><VoucherCenter /></ConsumerRoute>} />
       <Route path="/userProfile" element={<ConsumerRoute><UserProfile /></ConsumerRoute>}>
         <Route index element={<ProfileTab />} />

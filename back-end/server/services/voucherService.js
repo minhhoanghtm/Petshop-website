@@ -7,11 +7,6 @@ import { logSecurityEvent } from "./securityLogService.js";
 import { createServiceError } from "../utils/serviceError.js";
 import { logger } from "../logger/logger.js";
 
-/**
- * Service to manage Vouchers (Admin and User actions)
- */
-
-// ================= ADMIN FUNCTIONS =================
 
 export const createVoucher = async (voucherData, adminUser = null, req = null) => {
   const code = String(voucherData.code || "").trim().toUpperCase();
@@ -192,22 +187,17 @@ export const getVoucherHistory = async (voucherId, page = 1, limit = 10) => {
 
 // ================= USER FUNCTIONS =================
 
-export const getPublicVouchers = async (userId = null, isAdmin = false) => {
+export const getPublicVouchers = async (userId = null) => {
   const now = new Date();
-  const query = isAdmin
-    ? { isDeleted: false }
-    : {
-        isDeleted: false,
-        isPublic: true,
-        status: "ACTIVE",
-        startDate: { $lte: now },
-        endDate: { $gte: now },
-      };
+  const query = {
+    isDeleted: false,
+    isPublic: true,
+    status: "ACTIVE",
+    startDate: { $lte: now },
+    endDate: { $gte: now },
+  };
 
-  const vouchers = await Voucher.find(query)
-    .populate("applicableProducts", "name price")
-    .populate("applicableCategories", "name")
-    .sort(isAdmin ? { createdAt: -1 } : { startDate: 1 });
+  const vouchers = await Voucher.find(query).sort({ startDate: 1 });
 
   // If user is logged in, attach claim status to each voucher
   if (userId) {
@@ -242,7 +232,6 @@ export const getPublicVouchers = async (userId = null, isAdmin = false) => {
     },
   }));
 };
-
 
 export const claimVoucher = async (userId, voucherCodeOrId, req = null) => {
   const now = new Date();
@@ -354,11 +343,7 @@ export const getUserWallet = async (userId, filterStatus = "available") => {
   const userVouchers = await UserVoucher.find({ userId })
     .populate({
       path: "voucherId",
-      match: { isDeleted: false },
-      populate: [
-        { path: "applicableProducts", select: "name price" },
-        { path: "applicableCategories", select: "name" }
-      ]
+      match: { isDeleted: false }
     })
     .sort({ claimedAt: -1 });
 

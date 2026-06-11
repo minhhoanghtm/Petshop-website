@@ -196,20 +196,27 @@ const CartShop = () => {
                               } else {
                                 const newQuantity = parseInt(value, 10);
                                 if (!isNaN(newQuantity) && newQuantity >= 1) {
-                                  updateCartItemQuantity(
-                                    userId,
-                                    item._id,
-                                    newQuantity
-                                  );
+                                  const stock = item.product_id?.stock || 0;
+                                  if (newQuantity > stock) {
+                                    toast.warning(`Số lượng tối đa trong kho là ${stock}`);
+                                    updateCartItemQuantity(userId, item._id, stock);
+                                  } else {
+                                    updateCartItemQuantity(
+                                      userId,
+                                      item._id,
+                                      newQuantity
+                                    );
+                                  }
                                 }
                               }
                             }}
                             onBlur={(e) => {
-                              if (
-                                !e.target.value ||
-                                parseInt(e.target.value, 10) < 1
-                              ) {
+                              const stock = item.product_id?.stock || 0;
+                              const value = parseInt(e.target.value, 10);
+                              if (!e.target.value || value < 1) {
                                 updateCartItemQuantity(userId, item._id, 1);
+                              } else if (value > stock) {
+                                updateCartItemQuantity(userId, item._id, stock);
                               }
                             }}
                             className="w-10 text-center border-x border-gray-300 bg-white text-gray-800 appearance-none custom-number-input"
@@ -217,14 +224,24 @@ const CartShop = () => {
 
                           {/* Nút Tăng */}
                           <button
-                            onClick={() =>
+                            onClick={() => {
+                              const stock = item.product_id?.stock || 0;
+                              if (item.quantity >= stock) {
+                                toast.warning(`Số lượng tối đa trong kho là ${stock}`);
+                                return;
+                              }
                               updateCartItemQuantity(
                                 userId,
                                 item._id,
                                 item.quantity + 1
-                              )
-                            }
-                            className="px-3 py-2 text-gray-700 rounded-r-lg cursor-pointer hover:bg-gray-100 transition-colors duration-200"
+                              );
+                            }}
+                            disabled={item.quantity >= (item.product_id?.stock || 0)}
+                            className={`px-3 py-2 text-gray-700 rounded-r-lg transition-colors duration-200 ${
+                              item.quantity >= (item.product_id?.stock || 0)
+                                ? "cursor-not-allowed opacity-50"
+                                : "cursor-pointer hover:bg-gray-100"
+                            }`}
                           >
                             +
                           </button>
@@ -284,6 +301,22 @@ const CartShop = () => {
                   toast.warning("Vui lòng chọn ít nhất một sản phẩm để thanh toán!");
                   return;
                 }
+                
+                // Kiểm tra số lượng tồn kho của các sản phẩm được chọn
+                const selectedCartItems = cartItems.filter((item) =>
+                  selectedItems.includes(item._id)
+                );
+                const insufficientItem = selectedCartItems.find(
+                  (item) => item.quantity > (item.product_id?.stock || 0)
+                );
+                
+                if (insufficientItem) {
+                  toast.error(
+                    `Sản phẩm ${insufficientItem.product_id?.name} không đủ số lượng trong kho (Còn lại: ${insufficientItem.product_id?.stock || 0}).`
+                  );
+                  return;
+                }
+
                 navigate("/checkout", { state: { selectedItems } });
               }}
               className="bg-brown text-white py-2 px-4 rounded-lg shadow-md border-brown-hover transition cursor-pointer"

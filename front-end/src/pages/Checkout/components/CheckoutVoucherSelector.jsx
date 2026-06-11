@@ -12,13 +12,6 @@ import {
 } from "react-icons/fa";
 import { fetchUserWallet, applyVoucher } from "../../../services/voucherService";
 
-const LEVEL_MAP = {
-  standard: "Đồng",
-  silver: "Bạc",
-  gold: "Vàng",
-  vip: "VIP",
-};
-
 const CheckoutVoucherSelector = ({
   cartItems = [],
   shippingCost = 0,
@@ -32,7 +25,6 @@ const CheckoutVoucherSelector = ({
   const [manualCode, setManualCode] = useState("");
   const [loading, setLoading] = useState(false);
   const [btnLoading, setBtnLoading] = useState(false);
-  const [selectedVoucherDetails, setSelectedVoucherDetails] = useState(null);
 
   const subtotal = cartItems.reduce((sum, item) => sum + (item.price || item.product_id?.price || 0) * item.quantity, 0);
 
@@ -229,51 +221,18 @@ const CheckoutVoucherSelector = ({
                         <div className="space-y-0.5">
                           <h4 className="font-bold text-slate-800 dark:text-white line-clamp-1 text-[13px]">{v.name}</h4>
                           <p className="text-[10px] text-slate-400 leading-normal line-clamp-1">
-                            {v.description || "Hello world"}
+                            {v.description}
                           </p>
                           {v.minOrderValue > 0 && (
                             <p className={`text-[10px] font-semibold ${isApplicable ? "text-slate-500" : "text-rose-500"}`}>
                               Giá trị tối thiểu đơn: {v.minOrderValue.toLocaleString()}đ (Mua thêm: {Math.max(0, v.minOrderValue - subtotal).toLocaleString()}đ)
                             </p>
                           )}
-
-                          {/* Applicable products / categories */}
-                          <div className="mt-1 text-[9px]">
-                            {v.applicableProducts?.length > 0 || v.applicableCategories?.length > 0 ? (
-                              <div className="space-y-0.5 bg-slate-50 dark:bg-slate-900/40 p-1.5 rounded-lg border border-slate-100/80 dark:border-slate-800">
-                                <div className="font-bold text-slate-600 dark:text-slate-300">Sản phẩm áp dụng:</div>
-                                <div className="flex flex-wrap gap-1 mt-0.5">
-                                  {v.applicableCategories?.slice(0, 1).map((c) => (
-                                    <span key={c._id} className="px-1 py-0.2 bg-amber-50 dark:bg-amber-950/30 text-amber-700 dark:text-amber-400 rounded border border-amber-100 dark:border-amber-900/30 font-medium">
-                                      Danh mục: {c.name}
-                                    </span>
-                                  ))}
-                                  {v.applicableProducts?.slice(0, 2 - (v.applicableCategories?.length > 0 ? 1 : 0)).map((p) => (
-                                    <span key={p._id} className="px-1 py-0.2 bg-blue-50 dark:bg-blue-950/30 text-blue-700 dark:text-blue-400 rounded border border-blue-100/80 dark:border-blue-900/30 font-medium truncate max-w-[100px]" title={p.name}>
-                                      {p.name}
-                                    </span>
-                                  ))}
-                                  {((v.applicableProducts?.length || 0) + (v.applicableCategories?.length || 0)) > 2 && (
-                                    <button
-                                      onClick={() => setSelectedVoucherDetails(v)}
-                                      className="px-1.5 py-0.2 bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-slate-600 dark:text-slate-300 rounded border border-slate-200 dark:border-slate-600 font-bold transition cursor-pointer"
-                                    >
-                                      +{((v.applicableProducts?.length || 0) + (v.applicableCategories?.length || 0)) - 2} Xem thêm
-                                    </button>
-                                  )}
-                                </div>
-                              </div>
-                            ) : (
-                              <span className="text-slate-400 font-semibold italic text-[9px]">
-                                Áp dụng cho toàn bộ cửa hàng
-                              </span>
-                            )}
-                          </div>
                         </div>
 
                         <div className="flex items-center justify-between mt-2 pt-1.5 border-t border-slate-100 dark:border-slate-700/50 text-[10px] font-semibold">
                           <span className="text-slate-400 flex items-center gap-1">
-                            <FaClock /> HSD: {new Date(v.endDate).toLocaleDateString("vi-VN")}
+                            <FaClock /> HSD: {new Date(v.endDate).toLocaleString("vi-VN", { hour: "2-digit", minute: "2-digit", day: "2-digit", month: "2-digit", year: "numeric", hour12: false })}
                           </span>
 
                           {isApplicable ? (
@@ -295,114 +254,6 @@ const CheckoutVoucherSelector = ({
                   );
                 })
               )}
-            </div>
-          </div>
-        </div>
-      )}
-
-      {/* Voucher Details Modal */}
-      {selectedVoucherDetails && (
-        <div className="fixed inset-0 z-[1100] flex items-center justify-center bg-slate-900/60 backdrop-blur-sm p-4 overflow-y-auto">
-          <div className="bg-white dark:bg-slate-800 rounded-3xl w-full max-w-md shadow-xl overflow-hidden flex flex-col my-8 animate-scaleUp">
-            {/* Header */}
-            <div className="p-5 border-b border-slate-100 dark:border-slate-700 flex justify-between items-center bg-gradient-to-r from-amber-500 to-orange-600 text-white">
-              <h3 className="text-base font-bold flex items-center gap-2">
-                <FaTicketAlt /> Chi Tiết Voucher
-              </h3>
-              <button
-                onClick={() => setSelectedVoucherDetails(null)}
-                className="p-1 hover:bg-white/20 text-white rounded-full cursor-pointer transition text-lg leading-none"
-              >
-                &times;
-              </button>
-            </div>
-
-            {/* Content */}
-            <div className="p-6 space-y-4 overflow-y-auto max-h-[60vh]">
-              {/* Voucher Code & Type */}
-              <div className="flex items-center justify-between border-b border-slate-100 dark:border-slate-700 pb-3">
-                <div>
-                  <span className="px-2.5 py-1 bg-amber-50 dark:bg-amber-950/30 text-amber-700 dark:text-amber-400 rounded-lg text-xs font-bold font-mono tracking-wider border border-amber-200/50">
-                    {selectedVoucherDetails.code}
-                  </span>
-                  <h4 className="font-extrabold text-slate-800 dark:text-white text-base mt-2">
-                    {selectedVoucherDetails.name}
-                  </h4>
-                </div>
-                <div className="text-right">
-                  <span className="text-amber-600 dark:text-amber-400 font-extrabold text-base">
-                    {selectedVoucherDetails.type === "PERCENT" && `${selectedVoucherDetails.value}% OFF`}
-                    {selectedVoucherDetails.type === "FIXED" && `${selectedVoucherDetails.value.toLocaleString()}đ OFF`}
-                    {selectedVoucherDetails.type === "FREESHIP" && "FREE SHIP"}
-                  </span>
-                </div>
-              </div>
-
-              {/* Description */}
-              <div className="space-y-1">
-                <div className="text-xs font-bold text-slate-400 uppercase">Mô tả</div>
-                <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
-                  {selectedVoucherDetails.description || "Mã giảm giá mua sắm các sản phẩm tại Pet Station."}
-                </p>
-              </div>
-
-              {/* Conditions */}
-              <div className="space-y-2 border-t border-slate-100 dark:border-slate-700 pt-3">
-                <div className="text-xs font-bold text-slate-400 uppercase">Điều kiện áp dụng</div>
-                <div className="text-xs text-slate-600 dark:text-slate-300 space-y-1">
-                  <div>• Đơn tối thiểu: <span className="font-semibold">{selectedVoucherDetails.minOrderValue.toLocaleString()}đ</span></div>
-                  {selectedVoucherDetails.maxDiscount && (
-                    <div>• Giảm tối đa: <span className="font-semibold">{selectedVoucherDetails.maxDiscount.toLocaleString()}đ</span></div>
-                  )}
-                  <div>• Hạn sử dụng: <span className="font-semibold">{new Date(selectedVoucherDetails.endDate).toLocaleDateString("vi-VN")}</span></div>
-                  <div>• Đối tượng áp dụng: <span className="font-semibold">{selectedVoucherDetails.applicableUserLevels?.map(lvl => LEVEL_MAP[lvl] || lvl).join(", ") || "Tất cả thành viên"}</span></div>
-                </div>
-              </div>
-
-              {/* Applicable Products / Categories list */}
-              <div className="space-y-2 border-t border-slate-100 dark:border-slate-700 pt-3">
-                <div className="text-xs font-bold text-slate-400 uppercase">Sản phẩm & Danh mục áp dụng</div>
-                {selectedVoucherDetails.applicableProducts?.length > 0 || selectedVoucherDetails.applicableCategories?.length > 0 ? (
-                  <div className="max-h-48 overflow-y-auto space-y-2 pr-1">
-                    {selectedVoucherDetails.applicableCategories?.length > 0 && (
-                      <div className="space-y-1">
-                        <div className="text-[10px] font-bold text-slate-400">Danh mục:</div>
-                        <div className="flex flex-wrap gap-1">
-                          {selectedVoucherDetails.applicableCategories.map((c) => (
-                            <span key={c._id} className="px-2 py-0.5 bg-amber-50 dark:bg-amber-950/30 text-amber-700 dark:text-amber-400 rounded-md border border-amber-100 dark:border-amber-900/30 text-[10px] font-medium">
-                              {c.name}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
-                    )}
-                    {selectedVoucherDetails.applicableProducts?.length > 0 && (
-                      <div className="space-y-1">
-                        <div className="text-[10px] font-bold text-slate-400">Sản phẩm:</div>
-                        <div className="flex flex-wrap gap-1">
-                          {selectedVoucherDetails.applicableProducts.map((p) => (
-                            <span key={p._id} className="px-2 py-0.5 bg-blue-50 dark:bg-blue-950/30 text-blue-700 dark:text-blue-400 rounded-md border border-blue-100/80 dark:border-blue-900/30 text-[10px] font-medium">
-                              {p.name}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
-                    )}
-                  </div>
-                ) : (
-                  <div className="text-xs text-slate-500 italic">Áp dụng cho toàn bộ cửa hàng (không giới hạn sản phẩm).</div>
-                )}
-              </div>
-            </div>
-
-            {/* Footer */}
-            <div className="p-4 border-t border-slate-100 dark:border-slate-700 flex justify-end bg-slate-50 dark:bg-slate-900/30">
-              <button
-                onClick={() => setSelectedVoucherDetails(null)}
-                className="px-4 py-2 bg-slate-200 dark:bg-slate-700 hover:bg-slate-300 dark:hover:bg-slate-600 text-slate-700 dark:text-white rounded-xl text-xs font-bold transition cursor-pointer"
-              >
-                Đóng
-              </button>
             </div>
           </div>
         </div>

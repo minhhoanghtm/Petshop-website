@@ -251,14 +251,16 @@ const OrderManagement = () => {
 
   // Format date
   const formatDate = (dateString) => {
-    const options = {
-      year: "numeric",
-      month: "short",
-      day: "numeric",
-      hour: "2-digit",
-      minute: "2-digit",
-    };
-    return new Date(dateString).toLocaleDateString(undefined, options);
+    const date = new Date(dateString);
+    if (Number.isNaN(date.getTime())) return "-";
+
+    const hours = String(date.getHours()).padStart(2, "0");
+    const minutes = String(date.getMinutes()).padStart(2, "0");
+    const day = String(date.getDate()).padStart(2, "0");
+    const month = String(date.getMonth() + 1).padStart(2, "0");
+    const year = date.getFullYear();
+
+    return `${hours}:${minutes} ${day}/${month}/${year}`;
   };
 
   if (loading) {

@@ -4,6 +4,8 @@ import Payment from "../models/Payment.js";
 import EventStore from "../models/EventStore.js";
 import ProjectionCheckpoint from "../models/ProjectionCheckpoint.js";
 import { logger } from "../logger/logger.js";
+import { clearProductCache, invalidateCachePattern } from "../utils/cacheHelper.js";
+import redisClient from "../configs/redisClient.js";
 
 /**
  * Projects the current state of an Order based on all its events,
@@ -159,6 +161,10 @@ export const projectProductStockEvent = async (event, session = null) => {
     const result = await updateQuery;
     if (result.modifiedCount > 0) {
       logger.info(`Projected StockReserved: Decremented ${quantity} from product ${productId}`);
+      const product = await Product.findById(productId).select("slug").session(session);
+      if (product && product.slug) {
+        await clearProductCache(product.slug, productId);
+      }
     }
   } else if (event.eventType === "StockReleased") {
     // Conflict resolution rule: check if the order has been paid
@@ -193,6 +199,10 @@ export const projectProductStockEvent = async (event, session = null) => {
     const result = await updateQuery;
     if (result.modifiedCount > 0) {
       logger.info(`Projected StockReleased: Incremented ${quantity} to product ${productId}`);
+      const product = await Product.findById(productId).select("slug").session(session);
+      if (product && product.slug) {
+        await clearProductCache(product.slug, productId);
+      }
     }
   }
 };
@@ -311,6 +321,11 @@ export const rebuildProjection = async (aggregateType) => {
       { upsert: true }
     );
     logger.info(`[Projector] Rebuild completed for Product. Checkpoint set to globalSequence: ${lastSeq}`);
+    
+    // Invalidate product caches after rebuild
+    await invalidateCachePattern("products:detail:*");
+    await invalidateCachePattern("products:list:*");
+    await redisClient.del("products:best_seller");
   } else {
     throw new Error(`Unsupported aggregateType for rebuild: ${aggregateType}`);
   }

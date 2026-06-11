@@ -38,7 +38,11 @@ export const invalidateCachePattern = async (pattern) => {
             MATCH: pattern,
             COUNT: 100
         })) {
-            keys.push(key);
+            if (Array.isArray(key)) {
+                keys.push(...key);
+            } else {
+                keys.push(key);
+            }
         }
         if (keys.length > 0) {
             await redisClient.del(keys);
@@ -48,3 +52,26 @@ export const invalidateCachePattern = async (pattern) => {
         logger.error(`Error invalidating cache pattern ${pattern}: `, { message: error.message });
     }
 }
+
+/**
+ * Xóa cache liên quan đến sản phẩm (detail, list, best seller, và stock pre-gate)
+ */
+export const clearProductCache = async (slug = null, productId = null) => {
+  try {
+    // 1. Xóa cache danh sách sản phẩm và sản phẩm bán chạy
+    await invalidateCachePattern("products:list:*");
+    await redisClient.del("products:best_seller");
+    
+    // 2. Xóa cache chi tiết sản phẩm cụ thể nếu có truyền slug
+    if (slug) {
+      await redisClient.del(`products:detail:${slug}`);
+    }
+
+    // 3. Xóa cache stock trong Redis pre-gate nếu có truyền productId
+    if (productId) {
+      await redisClient.del(`stock:product:${productId}`);
+    }
+  } catch (error) {
+    logger.error("Failed to clear product cache:", { message: error.message });
+  }
+};

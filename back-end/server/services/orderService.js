@@ -17,6 +17,7 @@ import VnpayPaymentStrategy from "./payment/vnpayStrategy.js";
 import Voucher from "../models/Voucher.js";
 import UserVoucher from "../models/UserVoucher.js";
 import { validateAndCalculateVoucher } from "./voucherService.js";
+import { commitCheckoutStock } from "./checkoutReservationService.js";
 
 const REVENUE_STATUSES = ["delivered"];
 
@@ -48,32 +49,6 @@ export const normalizeStatus = (value) => {
     default:
       return normalized;
   }
-};
-
-const reserveStockInRedis = async (items) => {
-  if (!redisClient || !redisClient.isOpen) {
-    throw new Error("Redis is not open");
-  }
-  const reserved = [];
-  for (const item of items) {
-    const key = `stock:product:${item.product_id}`;
-    const currentStock = await redisClient.get(key);
-    if (currentStock === null) {
-      const dbProduct = await Product.findById(item.product_id);
-      if (!dbProduct) throw new Error(`Product not found: ${item.product_id}`);
-      await redisClient.set(key, dbProduct.stock);
-    }
-    const val = await redisClient.decrBy(key, item.quantity);
-    if (val < 0) {
-      await redisClient.incrBy(key, item.quantity);
-      for (const res of reserved) {
-        await redisClient.incrBy(`stock:product:${res.product_id}`, res.quantity);
-      }
-      return false;
-    }
-    reserved.push(item);
-  }
-  return true;
 };
 
 const getProductStock = async (product, session) => {
@@ -117,23 +92,42 @@ export const createOrder = async (orderData = {}) => {
     shippingCost,
     voucherCode,
     voucherId,
+    checkoutVersion
   } = orderData;
   
   const payment_method = orderData.payment_method || orderData.paymentMethod || "COD";
   const correlationId = `corr-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
 
-  // 1. Redis stock pre-gating with MongoDB fallback
-  let usedRedisPreGate = false;
-  try {
-    const reserved = await reserveStockInRedis(items);
-    if (!reserved) {
-      throw createServiceError("Sản phẩm không đủ số lượng trong kho", 400);
+  // 1. Redis reservation validation
+  if (!redisClient || !redisClient.isOpen) {
+    throw createServiceError("Dịch vụ giữ hàng tạm thời không khả dụng.", 503);
+  }
+
+  const userResKey = `reservation:user:${user_id}`;
+  const resStr = await redisClient.get(userResKey);
+  if (!resStr) {
+    throw createServiceError("RESERVATION_LOST", 400);
+  }
+
+  const reservation = JSON.parse(resStr);
+  const reqVersion = Number(checkoutVersion);
+  if (reservation.version !== reqVersion) {
+    throw createServiceError("STALE_RESERVATION", 400);
+  }
+
+  // Verify reservation matches items
+  const resItems = reservation.items || [];
+  if (resItems.length !== items.length) {
+    throw createServiceError("Thông tin giữ hàng không khớp với đơn đặt hàng.", 400);
+  }
+  const resMap = {};
+  for (const item of resItems) {
+    resMap[item.productId] = item.quantity;
+  }
+  for (const item of items) {
+    if (resMap[item.product_id] !== item.quantity) {
+      throw createServiceError("Thông tin giữ hàng không khớp với đơn đặt hàng.", 400);
     }
-    usedRedisPreGate = true;
-  } catch (redisError) {
-    logger.warn("Redis pre-gating unavailable, falling back to MongoDB real-time validation", {
-      message: redisError.message,
-    });
   }
 
   const session = await mongoose.startSession();
@@ -146,18 +140,53 @@ export const createOrder = async (orderData = {}) => {
     await session.withTransaction(async () => {
       newEvents = [];
       
-      // If Redis was not used, validate stock using DB event log + read model
-      if (!usedRedisPreGate) {
-        for (const item of items) {
-          const product = await Product.findById(item.product_id).session(session);
-          if (!product) {
-            throw createServiceError(`Sản phẩm với ID ${item.product_id} không tồn tại`, 404);
-          }
-          const realTimeStock = await getProductStock(product, session);
-          if (realTimeStock < item.quantity) {
-            throw createServiceError(`Sản phẩm ${product.name} không đủ số lượng trong kho`, 400);
-          }
+      // Perform final stock validation and direct stock deduction inside transaction
+      for (const item of items) {
+        const product = await Product.findById(item.product_id).session(session);
+        if (!product) {
+          throw createServiceError(`Sản phẩm với ID ${item.product_id} không tồn tại`, 404);
         }
+        
+        if (product.stock < item.quantity) {
+          throw createServiceError(`Sản phẩm ${product.name} không đủ số lượng trong kho`, 400);
+        }
+
+        const latestProductEvent = await EventStore.findOne({ aggregateId: item.product_id })
+          .sort({ version: -1 })
+          .session(session);
+        const nextProductVersion = latestProductEvent ? latestProductEvent.version + 1 : 1;
+        const seqStockReserved = await getNextGlobalSequence();
+
+        // Direct stock deduction inside the transaction
+        const updateResult = await Product.updateOne(
+          {
+            _id: item.product_id,
+            stock: { $gte: item.quantity }
+          },
+          {
+            $inc: { stock: -item.quantity },
+            $set: { lastEventSequence: seqStockReserved }
+          },
+          { session }
+        );
+
+        if (updateResult.modifiedCount === 0) {
+          throw createServiceError("Sản phẩm không đủ số lượng trong kho hoặc xảy ra xung đột giao dịch.", 400);
+        }
+
+        // Event: StockReserved
+        const stockReservedEvent = new EventStore({
+          aggregateId: item.product_id,
+          aggregateType: "Product",
+          version: nextProductVersion,
+          eventType: "StockReserved",
+          globalSequence: seqStockReserved,
+          correlationId,
+          causationId: orderId,
+          payload: { productId: item.product_id, quantity: item.quantity, orderId },
+        });
+        await stockReservedEvent.save({ session });
+        newEvents.push(stockReservedEvent);
       }
 
       // Handle Voucher application atomically
@@ -171,10 +200,8 @@ export const createOrder = async (orderData = {}) => {
           throw createServiceError("Voucher không tồn tại hoặc đã bị xoá.", 404);
         }
 
-        // Validate voucher and calculate discount
         const calculation = await validateAndCalculateVoucher(user_id, voucher.code, items, shippingCost, deliveryOption);
 
-        // Atomic update UserVoucher isUsed
         const updatedUserVoucher = await UserVoucher.findOneAndUpdate(
           { _id: calculation.userVoucher._id, isUsed: false },
           { $set: { isUsed: true, usedAt: new Date(), orderId } },
@@ -185,7 +212,6 @@ export const createOrder = async (orderData = {}) => {
           throw createServiceError("Voucher đã được sử dụng ở giao dịch khác.", 400);
         }
 
-        // Atomic update Voucher usedCount
         await Voucher.findOneAndUpdate(
           { _id: voucher._id, isDeleted: false },
           { $inc: { usedCount: 1 } },
@@ -207,8 +233,7 @@ export const createOrder = async (orderData = {}) => {
         finalTotalPrice = Math.max(0, expectedTotal);
       }
 
-      // Generate events
-      // Event 1: OrderPlaced
+      // Generate event: OrderPlaced
       const seqOrderPlaced = await getNextGlobalSequence();
       const orderPlacedEvent = new EventStore({
         aggregateId: orderId,
@@ -239,42 +264,18 @@ export const createOrder = async (orderData = {}) => {
       });
       await orderPlacedEvent.save({ session });
       newEvents.push(orderPlacedEvent);
-
-      // Event 2: StockReserved for each item
-      for (const item of items) {
-        const latestProductEvent = await EventStore.findOne({ aggregateId: item.product_id })
-          .sort({ version: -1 })
-          .session(session);
-        const nextProductVersion = latestProductEvent ? latestProductEvent.version + 1 : 1;
-
-        const seqStockReserved = await getNextGlobalSequence();
-        const stockReservedEvent = new EventStore({
-          aggregateId: item.product_id,
-          aggregateType: "Product",
-          version: nextProductVersion,
-          eventType: "StockReserved",
-          globalSequence: seqStockReserved,
-          correlationId,
-          causationId: orderPlacedEvent._id.toString(),
-          payload: { productId: item.product_id, quantity: item.quantity, orderId },
-        });
-        await stockReservedEvent.save({ session });
-        newEvents.push(stockReservedEvent);
-      }
     });
   } catch (error) {
-    if (usedRedisPreGate) {
-      try {
-        for (const item of items) {
-          await redisClient.incrBy(`stock:product:${item.product_id}`, item.quantity);
-        }
-      } catch (redisRollbackErr) {
-        logger.error("Failed to rollback Redis stock on transaction failure", redisRollbackErr);
-      }
-    }
     throw error;
   } finally {
     session.endSession();
+  }
+
+  // Commit stock reservation in Redis after successful DB transaction commit
+  try {
+    await commitCheckoutStock(user_id);
+  } catch (redisCommitErr) {
+    logger.error("Failed to commit checkout stock in Redis", redisCommitErr);
   }
 
   // Dispatch events asynchronously to Projection Queue
@@ -282,8 +283,9 @@ export const createOrder = async (orderData = {}) => {
     await enqueueEventForProjection(event);
   }
 
-  // Schedule order expiration (15 minutes) if payment method is online
-  if (["MOMO", "PAYPAL", "VNPAY"].includes(payment_method.toUpperCase())) {
+  if (["MOMO", "VNPAY"].includes(payment_method.toUpperCase())) {
+    await enqueueOrderExpiry(orderId, 24 * 60 * 60 * 1000);
+  } else if (payment_method.toUpperCase() === "PAYPAL") {
     await enqueueOrderExpiry(orderId, 15 * 60 * 1000);
   }
 

@@ -64,6 +64,65 @@ export const handleReturn = async (query) => {
   const transactionNo = query["vnp_TransactionNo"]; // ✅ Fix: TransactionNo (không phải TransactionStatus)
 
   if (responseCode === "00") {
+    // Save payment event and project immediately as a fallback and to support local development
+    const correlationId = `corr-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
+    const session = await mongoose.startSession();
+    let newEvents = [];
+    try {
+      await session.withTransaction(async () => {
+        const events = await EventStore.find({ aggregateId: orderId }).session(session);
+        if (events.length > 0) {
+          const orderPlacedEvent = events.find((e) => e.eventType === "OrderPlaced");
+          if (orderPlacedEvent) {
+            const hasPayment = events.some((e) => e.eventType === "PaymentReceived");
+            const hasCancellation = events.some((e) => e.eventType === "OrderCancelled");
+            const idempotencyKey = transactionNo ? `webhook:vnpay:${transactionNo}` : null;
+            
+            let isDuplicate = false;
+            if (idempotencyKey) {
+              isDuplicate = events.some((e) => e.idempotencyKey === idempotencyKey);
+            }
+
+            if (!hasPayment && !isDuplicate) {
+              const latestOrderEvent = events[events.length - 1];
+              const nextOrderVersion = latestOrderEvent.version + 1;
+              const eventType = !hasCancellation ? "PaymentReceived" : "PaymentRefundFlagged";
+              const seqPaymentEvent = await getNextGlobalSequence();
+              const paymentEvent = new EventStore({
+                aggregateId: orderId,
+                aggregateType: "Order",
+                version: nextOrderVersion,
+                eventType,
+                globalSequence: seqPaymentEvent,
+                correlationId,
+                causationId: transactionNo || correlationId,
+                idempotencyKey,
+                payload: {
+                  orderId,
+                  txnId: transactionNo,
+                  amount,
+                  method: "VNPAY",
+                  rawPayload: query,
+                },
+              });
+              await paymentEvent.save({ session });
+              newEvents.push(paymentEvent);
+            }
+          }
+        }
+      });
+    } catch (err) {
+      if (err.code !== 11000 && !err.message.includes("E11000")) {
+        console.error("Error processing payment in handleReturn:", err);
+      }
+    } finally {
+      session.endSession();
+    }
+
+    for (const event of newEvents) {
+      await enqueueEventForProjection(event);
+    }
+
     return {
       success: true,
       message: `Thanh toán thành công cho đơn hàng ${orderId} với số tiền ${amount.toLocaleString("vi-VN")} VND`, // ✅ Fix: format số tiền → 25.000 VND

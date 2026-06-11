@@ -423,8 +423,8 @@ const VouchersPage = () => {
                         <div className="text-xs text-slate-400 mt-1">Đã dùng: {voucher.usedCount}</div>
                       </td>
                       <td className="p-4 text-xs font-medium text-slate-600 dark:text-slate-400">
-                        <div className="flex items-center gap-1"><FaCalendarAlt /> Bắt đầu: {new Date(voucher.startDate).toLocaleDateString("vi-VN")}</div>
-                        <div className="flex items-center gap-1 mt-1"><FaCalendarAlt /> Kết thúc: {new Date(voucher.endDate).toLocaleDateString("vi-VN")}</div>
+                        <div className="flex items-center gap-1"><FaCalendarAlt /> Bắt đầu: {new Date(voucher.startDate).toLocaleString("vi-VN", { hour: "2-digit", minute: "2-digit", day: "2-digit", month: "2-digit", year: "numeric", hour12: false })}</div>
+                        <div className="flex items-center gap-1 mt-1"><FaCalendarAlt /> Kết thúc: {new Date(voucher.endDate).toLocaleString("vi-VN", { hour: "2-digit", minute: "2-digit", day: "2-digit", month: "2-digit", year: "numeric", hour12: false })}</div>
                       </td>
                       <td className="p-4">
                         <span className={`inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold border ${stateBadges[state]}`}>
@@ -884,7 +884,7 @@ const VouchersPage = () => {
                   <div className="text-xs text-slate-500 space-y-1">
                     <div>Email: {item.userId?.email}</div>
                     <div>Hạng User: {item.userId?.level === "standard" ? "Đồng" : item.userId?.level === "silver" ? "Bạc" : item.userId?.level === "gold" ? "Vàng" : item.userId?.level === "vip" ? "VIP" : item.userId?.level || "Đồng"}</div>
-                    <div className="flex items-center gap-1 mt-1"><FaCalendarAlt /> Ngày nhận: {new Date(item.claimedAt).toLocaleString("vi-VN")}</div>
+                    <div className="flex items-center gap-1 mt-1"><FaCalendarAlt /> Ngày nhận: {new Date(item.claimedAt).toLocaleString("vi-VN", { hour: "2-digit", minute: "2-digit", day: "2-digit", month: "2-digit", year: "numeric", hour12: false })}</div>
                   </div>
                   <div className="border-t border-slate-200 dark:border-slate-700 pt-2 flex justify-between items-center text-xs">
                     <span className="font-semibold">Trạng thái:</span>
@@ -898,8 +898,8 @@ const VouchersPage = () => {
                   </div>
                   {item.isUsed && item.usedAt && (
                     <div className="text-[11px] text-slate-400 space-y-1">
-                      <div>Thời gian dùng: {new Date(item.usedAt).toLocaleString("vi-VN")}</div>
-                      {item.orderId && <div>Mã đơn hàng: #{String(item.orderId).slice(-6).toUpperCase()}</div>}
+                      <div>Thời gian dùng: {new Date(item.usedAt).toLocaleString("vi-VN", { hour: "2-digit", minute: "2-digit", day: "2-digit", month: "2-digit", year: "numeric", hour12: false })}</div>
+                      {item.orderId && <div>Mã đơn hàng: #{String(item.orderId)}</div>}
                     </div>
                   )}
                 </div>

@@ -1,9 +1,9 @@
 import mongoose from "mongoose";
 import Product from "../models/Product.js";
 import { getReviewSummaryByProductId } from "./reviewService.js";
-import { getOrSetCache, invalidateCachePattern } from "../utils/cacheHelper.js";
+import { getOrSetCache, clearProductCache } from "../utils/cacheHelper.js";
 import { CACHE_TTL } from "../configs/cacheConfig.js";
-import redisClient from "../configs/redisClient.js";
+
 
 // ============ Helper Functions ============
 
@@ -253,21 +253,6 @@ export const getProductsSale = async () => {
   });
 };
 
-// Hàm helper nội bộ dọn dẹp cache liên quan đến sản phẩm
-const clearProductCache = async (slug = null) => {
-  try {
-    // 1. Xóa cache danh sách sản phẩm và sản phẩm bán chạy
-    await invalidateCachePattern("products:list:*");
-    await redisClient.del("products:best_seller");
-    
-    // 2. Xóa cache chi tiết sản phẩm cụ thể nếu có truyền slug (chú ý sửa key có chữ 's' cho đồng bộ)
-    if (slug) {
-      await redisClient.del(`products:detail:${slug}`);
-    }
-  } catch (error) {
-    logger.error("Failed to clear product cache:", { message: error.message });
-  }
-};
 
 /**
  * Create new product
@@ -304,9 +289,9 @@ export const updateProduct = async (productId, updateData) => {
   }
 
   // Xóa cache danh sách và chi tiết của sản phẩm này (kể cả slug cũ và mới)
-  await clearProductCache(oldSlug);
+  await clearProductCache(oldSlug, productId);
   if (updatedProduct.slug !== oldSlug) {
-    await clearProductCache(updatedProduct.slug);
+    await clearProductCache(updatedProduct.slug, productId);
   }
   return updatedProduct;
 };
@@ -323,7 +308,7 @@ export const deleteProduct = async (productId) => {
   await Product.deleteOne({ _id: productId });
   
   // Xóa cache danh sách và chi tiết của sản phẩm vừa xóa
-  await clearProductCache(slug);
+  await clearProductCache(slug, productId);
   return { message: "Product deleted" };
 };
 

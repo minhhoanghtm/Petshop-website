@@ -1,9 +1,26 @@
-import { FaBell, FaArrowLeft } from "react-icons/fa";
+import { useEffect, useState } from "react";
+import { MdDarkMode, MdLightMode } from "react-icons/md";
 import { CiMenuFries } from "react-icons/ci";
 import { useNavigate } from "react-router-dom";
 
 const TopNavigation = ({ setMobileSidebarOpen, currentUser }) => {
   const navigate = useNavigate();
+  const [darkMode, setDarkMode] = useState(() => localStorage.getItem("darkMode") === "true");
+
+  const toggleDarkMode = () => {
+    setDarkMode((prev) => {
+      const newMode = !prev;
+      localStorage.setItem("darkMode", newMode);
+      document.body.classList.toggle("dark-theme", newMode);
+      return newMode;
+    });
+  };
+
+  useEffect(() => {
+    const isDark = localStorage.getItem("darkMode") === "true";
+    document.body.classList.toggle("dark-theme", isDark);
+    setDarkMode(isDark);
+  }, []);
 
   const handleBack = () => {
     const hasHistory = window.history.state?.idx > 0 || window.history.length > 1;
@@ -31,8 +48,13 @@ const TopNavigation = ({ setMobileSidebarOpen, currentUser }) => {
           </button>
         </div>
         <div className="flex items-center space-x-4">
-          <button className="p-2 text-gray-500 hover:text-gray-700 cursor-pointer">
-            <FaBell size={20} />
+          <button
+            onClick={toggleDarkMode}
+            className="p-2 text-gray-500 hover:text-gray-700 cursor-pointer"
+            aria-label={darkMode ? "Tắt chế độ tối" : "Bật chế độ tối"}
+            title={darkMode ? "Tắt chế độ tối" : "Bật chế độ tối"}
+          >
+            {darkMode ? <MdLightMode size={22} /> : <MdDarkMode size={22} />}
           </button>
           <div className="flex items-center">
             <img

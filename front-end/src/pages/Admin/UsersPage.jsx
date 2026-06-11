@@ -79,10 +79,14 @@ const UsersPage = () => {
   const formatDate = (iso) => {
     if (!iso) return "-";
     const d = new Date(iso);
+    if (Number.isNaN(d.getTime())) return "-";
+
+    const hh = String(d.getHours()).padStart(2, "0");
+    const mm = String(d.getMinutes()).padStart(2, "0");
     const dd = String(d.getDate()).padStart(2, "0");
-    const mm = String(d.getMonth() + 1).padStart(2, "0");
+    const month = String(d.getMonth() + 1).padStart(2, "0");
     const yyyy = d.getFullYear();
-    return `${dd}/${mm}/${yyyy}`;
+    return `${hh}:${mm} ${dd}/${month}/${yyyy}`;
   };
 
   const handleBlock = async (id) => {

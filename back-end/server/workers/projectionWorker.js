@@ -1,5 +1,6 @@
 import { Worker } from "bullmq";
 import queueRedis from "../configs/queueRedis.js";
+import redisClient from "../configs/redisClient.js";
 import EventStore from "../models/EventStore.js";
 import ProjectionCheckpoint from "../models/ProjectionCheckpoint.js";
 import { projectOrder, projectProductStockEvent, projectPaymentEvent } from "../services/projector.js";
@@ -7,11 +8,65 @@ import { logger } from "../logger/logger.js";
 import { PROJECTION_QUEUE_NAME } from "../queues/projectionQueue.js";
 
 /**
+ * Synchronizes and repairs database checkpoints and Redis global sequence.
+ * This heals any sequence mismatches if Redis is cleared or restarted.
+ */
+export const syncSequencesAndCheckpoints = async () => {
+  logger.info("[SequenceSync] Starting sequence and checkpoint synchronization...");
+  try {
+    const aggregateTypes = ["Order", "Product"];
+    
+    // 1. Sync and repair Projection Checkpoints
+    for (const type of aggregateTypes) {
+      const maxEvent = await EventStore.findOne({ aggregateType: type })
+        .sort({ globalSequence: -1 });
+      
+      const maxEventSeq = maxEvent ? maxEvent.globalSequence : 0;
+      const checkpoint = await ProjectionCheckpoint.findOne({ aggregateType: type });
+      
+      if (checkpoint && checkpoint.lastProcessedGlobalSequence > maxEventSeq) {
+        logger.warn(`[SequenceSync] Checkpoint mismatch for ${type}: checkpoint (${checkpoint.lastProcessedGlobalSequence}) is greater than max event sequence (${maxEventSeq}). Resetting checkpoint to 0 to rebuild projection.`);
+        await ProjectionCheckpoint.updateOne(
+          { aggregateType: type },
+          { $set: { lastProcessedGlobalSequence: 0 } }
+        );
+      }
+    }
+
+    // 2. Sync Redis global:sequence
+    const maxEventGlobal = await EventStore.findOne().sort({ globalSequence: -1 });
+    const maxDbSeq = maxEventGlobal ? maxEventGlobal.globalSequence : 0;
+
+    const maxCheckpoints = await ProjectionCheckpoint.find({});
+    const maxCheckpointSeq = maxCheckpoints.reduce((max, c) => Math.max(max, c.lastProcessedGlobalSequence), 0);
+
+    const requiredSeq = Math.max(maxDbSeq, maxCheckpointSeq);
+
+    if (redisClient && redisClient.isOpen) {
+      const redisSeqRaw = await redisClient.get("global:sequence");
+      const redisSeq = redisSeqRaw ? Number(redisSeqRaw) : 0;
+
+      if (redisSeq < requiredSeq) {
+        logger.warn(`[SequenceSync] Redis sequence (${redisSeq}) is behind database max sequence (${requiredSeq}). Fast-forwarding Redis sequence key.`);
+        await redisClient.set("global:sequence", requiredSeq);
+      }
+    }
+    logger.info("[SequenceSync] Sequence and checkpoint synchronization completed successfully.");
+  } catch (error) {
+    logger.error("[SequenceSync] Error during sequence and checkpoint synchronization:", error);
+  }
+};
+
+/**
  * Resumes projections from the last saved global sequence checkpoint for each aggregate type.
  * Ensures the system catches up on missed events after a crash or restart.
  */
 export const resumeProjectionsFromCheckpoints = async () => {
   logger.info("[ProjectionWorker] Checking for pending events to catch up from checkpoints...");
+  
+  // Align and repair sequences and checkpoints
+  await syncSequencesAndCheckpoints();
+
   const checkpoints = await ProjectionCheckpoint.find({});
   const aggregateTypes = ["Order", "Product"];
 

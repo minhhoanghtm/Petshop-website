@@ -10,7 +10,7 @@ import boxCard from "../../assets/images/box-card.png";
 import bankCard from "../../assets/images/bank-card.png";
 import { CheckCheck, ChevronDown } from "lucide-react";
 import { BsBox2 } from "react-icons/bs";
-import { createOrder } from "../../services/orderService";
+import { createOrder, reserveCheckoutStock, refreshCheckoutStock, releaseCheckoutStock } from "../../services/orderService";
 import { createMomoPayment, createVNPayPayment } from "../../services/paymentService";
 import {
   fetchShippingAddress,
@@ -31,6 +31,7 @@ const CheckOut = () => {
   const [addressError, setAddressError] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [appliedVoucher, setAppliedVoucher] = useState(null);
+  const [checkoutVersion, setCheckoutVersion] = useState(null);
   const navigate = useNavigate();
   const location = useLocation();
   const { cartItems, clearCart, removeFromCart } = useCart();
@@ -89,6 +90,71 @@ const CheckOut = () => {
       navigate("/login");
     }
   }, [navigate]);
+
+  useEffect(() => {
+    if (checkoutItems.length === 0) return;
+
+    let active = true;
+    const runReserve = async () => {
+      try {
+        const itemsToReserve = checkoutItems.map(item => ({
+          productId: item.product_id?._id || item.product_id,
+          quantity: item.quantity
+        }));
+        const response = await reserveCheckoutStock(itemsToReserve);
+        if (active && response.data?.ok) {
+          setCheckoutVersion(response.data.version);
+        }
+      } catch (error) {
+        if (active) {
+          toast.error(error.response?.data?.message || "Không thể giữ hàng tạm thời. Kho hàng không đủ số lượng.");
+          navigate("/cart");
+        }
+      }
+    };
+
+    runReserve();
+
+    return () => {
+      active = false;
+      releaseCheckoutStock().catch((err) =>
+        console.error("Failed to release reservation on unmount", err)
+      );
+    };
+  }, [checkoutItems, navigate]);
+
+  useEffect(() => {
+    if (!checkoutVersion) return;
+
+    const interval = setInterval(async () => {
+      try {
+        await refreshCheckoutStock();
+      } catch (error) {
+        console.error("Failed to refresh checkout reservation", error);
+        if (error.response?.status === 404) {
+          try {
+            const itemsToReserve = checkoutItems.map(item => ({
+              productId: item.product_id?._id || item.product_id,
+              quantity: item.quantity
+            }));
+            const response = await reserveCheckoutStock(itemsToReserve);
+            if (response.data?.ok) {
+              setCheckoutVersion(response.data.version);
+              toast.info("Đã khôi phục phiên giữ hàng của bạn.");
+            }
+          } catch (reserveErr) {
+            toast.error("Phiên giữ hàng đã hết hạn và không thể khôi phục do thiếu hàng.");
+            navigate("/cart");
+          }
+        }
+      }
+    }, 60000);
+
+    return () => {
+      clearInterval(interval);
+    };
+  }, [checkoutVersion, checkoutItems, navigate]);
+
 
   useEffect(() => {
     let isMounted = true;
@@ -301,6 +367,17 @@ const CheckOut = () => {
       );
     }
 
+    // Kiểm tra số lượng tồn kho của các sản phẩm
+    const insufficientItem = checkoutItems.find(
+      (item) => item.quantity > (item.product_id?.stock || 0)
+    );
+    if (insufficientItem) {
+      newErrors.stock = `Sản phẩm ${insufficientItem.product_id?.name} không đủ số lượng trong kho.`;
+      toast.error(
+        `Không thể thanh toán: sản phẩm ${insufficientItem.product_id?.name} không đủ số lượng trong kho (Còn lại: ${insufficientItem.product_id?.stock || 0}).`
+      );
+    }
+
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
@@ -417,6 +494,21 @@ const CheckOut = () => {
       }
 
       setIsSubmitting(true);
+
+      // Generate UUID v4 for idempotency key
+      const generateUUID = () => {
+        if (typeof crypto !== "undefined" && typeof crypto.randomUUID === "function") {
+          return crypto.randomUUID();
+        }
+        return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, (c) => {
+          const r = (Math.random() * 16) | 0;
+          const v = c === "x" ? r : (r & 0x3) | 0x8;
+          return v.toString(16);
+        });
+      };
+      
+      const idempotencyKey = generateUUID();
+
       const orderData = {
         user_id: userId,
         items: checkoutItems.map((item) => ({
@@ -436,14 +528,20 @@ const CheckOut = () => {
         shippingCost: deliveryOption === "pickup" ? 0 : shippingCost,
         voucherId: appliedVoucher?.voucherId || null,
         voucherCode: appliedVoucher?.code || null,
+        checkoutVersion: checkoutVersion,
       };
 
+      let loadingToastId = null;
       try {
         // show loading toast
-        const loadingToastId = toast.loading("Đang xử lý đơn hàng...");
+        loadingToastId = toast.loading("Đang xử lý đơn hàng...");
 
         // call API đặt hàng
-        const response = await createOrder(orderData);
+        const response = await createOrder(orderData, {
+          headers: {
+            "x-idempotency-key": idempotencyKey,
+          },
+        });
         const createdOrder = response.data;
 
         // Chỉ xóa những sản phẩm đã chọn thanh toán khỏi giỏ hàng
@@ -525,9 +623,23 @@ const CheckOut = () => {
         }, 1000);
       } catch (error) {
         console.error("Error submitting order:", error);
-        toast.error(
-          error.response?.data?.message || "Có lỗi xảy ra khi đặt hàng."
-        );
+        const errMsg = error.response?.data?.message || "Có lỗi xảy ra khi đặt hàng.";
+        if (loadingToastId) {
+          toast.update(loadingToastId, {
+            render: errMsg,
+            type: "error",
+            isLoading: false,
+            autoClose: 5000,
+            closeButton: true,
+          });
+        } else {
+          toast.error(errMsg);
+        }
+        if (errMsg === "STALE_RESERVATION" || errMsg === "RESERVATION_LOST") {
+          setTimeout(() => {
+            navigate("/cart");
+          }, 3000);
+        }
       } finally {
         setIsSubmitting(false);
       }

@@ -46,7 +46,7 @@ export default function OrdersTable({
                     {startIndex + index + 1}
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-500">
-                    #{order._id.substring(0, 8)}
+                    #{order._id}
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                     {order.user_id?.fullName || "Khách vãng lai"}
@@ -93,13 +93,13 @@ export default function OrdersTable({
                         <option value="delivered">Đã giao</option>
                         <option value="cancelled">Đã hủy</option>
                       </select>
-                      <button
+                      {/* <button
                         onClick={() => deleteOrder(order._id)}
                         className="text-red-600 hover:text-red-900 cursor-pointer"
                         title="Xóa đơn hàng"
                       >
                         <FiTrash2 className="h-5 w-5" />
-                      </button>
+                      </button> */}
                     </div>
                   </td>
                 </tr>
