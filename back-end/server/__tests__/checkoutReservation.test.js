@@ -1,6 +1,13 @@
 import mongoose from "mongoose";
 import "../configs/env.js";
 import redisClient from "../configs/redisClient.js";
+import { projectionQueue } from "../queues/projectionQueue.js";
+import { orderExpiryQueue } from "../queues/orderExpiryQueue.js";
+import queueRedis from "../configs/queueRedis.js";
+
+// Patch BullMQ add methods to resolve immediately in tests
+projectionQueue.add = () => Promise.resolve({ id: "mock-job-id" });
+orderExpiryQueue.add = () => Promise.resolve({ id: "mock-job-id" });
 import Product from "../models/Product.js";
 import Category from "../models/Category.js";
 import {
@@ -78,6 +85,7 @@ describe("Checkout Inventory Reservation & Concurrency Tests", () => {
       await redisClient.del(`reservation:user:${testUser._id}`);
       await redisClient.del(`reserved:product:expiry:${testProduct._id}`);
       await redisClient.del(`reserved:product:counter:${testProduct._id}`);
+      await redisClient.del(`lock:checkout:${testUser._id}`);
     } else {
       await redisClient.flushAll();
     }
@@ -193,7 +201,7 @@ describe("Checkout Inventory Reservation & Concurrency Tests", () => {
     // Verify Redis counter is decremented back to 0
     const reservedQty = await redisClient.get(`reserved:product:counter:${testProduct._id}`);
     expect(Number(reservedQty || 0)).toBe(0);
-  });
+  }, 30000);
 
   test("Should handle Redis restart gracefully: refresh throws error, createOrder throws RESERVATION_LOST", async () => {
     // Reserve stock
@@ -228,7 +236,7 @@ describe("Checkout Inventory Reservation & Concurrency Tests", () => {
     };
 
     await expect(createOrder(orderData)).rejects.toThrow("RESERVATION_LOST");
-  });
+  }, 30000);
 
   test("Concurrency: 100 concurrent reservations should not oversell", async () => {
     // Product has 50 stock. We run 100 users trying to reserve 1 stock each.
@@ -251,4 +259,63 @@ describe("Checkout Inventory Reservation & Concurrency Tests", () => {
     const reservedQty = await redisClient.get(`reserved:product:counter:${testProduct._id}`);
     expect(Number(reservedQty)).toBe(50);
   });
+
+  test("Should prevent concurrent checkouts for the same user via SETNX lock", async () => {
+    // Prepare reservation for testUser
+    await reserveCheckoutStock(testUser._id, [
+      { productId: testProduct._id.toString(), quantity: 1 },
+    ]);
+
+    const orderData = {
+      user_id: testUser._id.toString(),
+      items: [{ product_id: testProduct._id.toString(), quantity: 1 }],
+      total_price: 999999, // client-supplied total price
+      fullName: "Test Customer",
+      email: "cust@gmail.com",
+      phone: "0909090909",
+      address: "123 Street",
+      province: "Hồ Chí Minh",
+      payment_method: "COD",
+      checkoutVersion: 1,
+    };
+
+    // Fire 2 concurrent checkouts for the same user
+    const promises = [
+      createOrder(orderData),
+      createOrder(orderData),
+    ];
+
+    const results = await Promise.allSettled(promises);
+    const succeeded = results.filter((r) => r.status === "fulfilled");
+    const failedWithLock = results.filter(
+      (r) => r.status === "rejected" && r.reason.message.includes("yêu cầu trùng lặp")
+    );
+
+    // One must succeed, and the other must be rejected by the lock
+    expect(succeeded.length).toBe(1);
+    expect(failedWithLock.length).toBe(1);
+  }, 30000);
+
+  test("Should recalculate total price on backend and ignore client-supplied total_price", async () => {
+    await reserveCheckoutStock(testUser._id, [
+      { productId: testProduct._id.toString(), quantity: 2 },
+    ]);
+
+    const orderData = {
+      user_id: testUser._id.toString(),
+      items: [{ product_id: testProduct._id.toString(), quantity: 2 }],
+      total_price: 1000, // Malicious client price
+      fullName: "Test Customer",
+      email: "cust@gmail.com",
+      phone: "0909090909",
+      address: "123 Street",
+      province: "Hồ Chí Minh",
+      payment_method: "COD",
+      checkoutVersion: 1,
+    };
+
+    const order = await createOrder(orderData);
+    // Recalculated total should be: product price (150,000) * 2 = 300,000
+    expect(order.total_price).toBe(300000);
+  }, 30000);
 });

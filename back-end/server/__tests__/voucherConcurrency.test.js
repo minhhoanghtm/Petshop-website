@@ -1,7 +1,16 @@
 import mongoose from "mongoose";
 import "../configs/env.js";
+import redisClient from "../configs/redisClient.js";
+import { projectionQueue } from "../queues/projectionQueue.js";
+import { orderExpiryQueue } from "../queues/orderExpiryQueue.js";
+
+// Patch BullMQ add methods to resolve immediately in tests
+projectionQueue.add = () => Promise.resolve({ id: "mock-job-id" });
+orderExpiryQueue.add = () => Promise.resolve({ id: "mock-job-id" });
+
 import { claimVoucher } from "../services/voucherService.js";
 import { createOrder } from "../services/orderService.js";
+import { reserveCheckoutStock } from "../services/checkoutReservationService.js";
 import Voucher from "../models/Voucher.js";
 import UserVoucher from "../models/UserVoucher.js";
 import User from "../models/User.js";
@@ -69,6 +78,17 @@ describe("Voucher System Concurrency & Safety Tests", () => {
 
     if (mongoose.connection.readyState !== 0) {
       await mongoose.connection.close();
+    }
+  });
+
+  beforeEach(async () => {
+    if (redisClient.isMock) {
+      await redisClient.del(`reservation:user:${testUser._id}`);
+      await redisClient.del(`reserved:product:expiry:${testProduct._id}`);
+      await redisClient.del(`reserved:product:counter:${testProduct._id}`);
+      await redisClient.del(`lock:checkout:${testUser._id}`);
+    } else {
+      await redisClient.flushAll();
     }
   });
 
@@ -152,6 +172,12 @@ describe("Voucher System Concurrency & Safety Tests", () => {
     // Claim the voucher first
     await claimVoucher(testUser._id, "APPLYCONCUR");
 
+    // Reserve stock first
+    const res = await reserveCheckoutStock(testUser._id, [
+      { productId: testProduct._id.toString(), quantity: 1 },
+    ]);
+    expect(res.ok).toBe(true);
+
     // Double order payload applying the same voucher code
     const orderPayload1 = {
       user_id: testUser._id.toString(),
@@ -166,6 +192,7 @@ describe("Voucher System Concurrency & Safety Tests", () => {
       shippingCost: 30000,
       voucherCode: "APPLYCONCUR",
       paymentMethod: "COD",
+      checkoutVersion: res.version,
     };
 
     const orderPayload2 = { ...orderPayload1 };

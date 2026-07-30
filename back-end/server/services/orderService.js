@@ -98,209 +98,243 @@ export const createOrder = async (orderData = {}) => {
   const payment_method = orderData.payment_method || orderData.paymentMethod || "COD";
   const correlationId = `corr-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
 
-  // 1. Redis reservation validation
+  // 1. Redis checking
   if (!redisClient || !redisClient.isOpen) {
     throw createServiceError("Dịch vụ giữ hàng tạm thời không khả dụng.", 503);
   }
 
-  const userResKey = `reservation:user:${user_id}`;
-  const resStr = await redisClient.get(userResKey);
-  if (!resStr) {
-    throw createServiceError("RESERVATION_LOST", 400);
+  // Cast and validate shippingCost
+  const cleanShippingCost = Number(shippingCost || 0);
+  if (isNaN(cleanShippingCost) || cleanShippingCost < 0) {
+    throw createServiceError("Chi phí vận chuyển không hợp lệ.", 400);
   }
 
-  const reservation = JSON.parse(resStr);
-  const reqVersion = Number(checkoutVersion);
-  if (reservation.version !== reqVersion) {
-    throw createServiceError("STALE_RESERVATION", 400);
+  // 2. Acquire Redis checkout lock to prevent concurrent requests
+  const lockKey = `lock:checkout:${user_id}`;
+  const lockToken = `token-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
+  
+  const lockAcquired = await redisClient.set(lockKey, lockToken, { NX: true, EX: 10 });
+  if (!lockAcquired) {
+    throw createServiceError("Đơn hàng của bạn đang được xử lý. Vui lòng không thực hiện thao tác quá nhanh hoặc gửi yêu cầu trùng lặp.", 409);
   }
 
-  // Verify reservation matches items
-  const resItems = reservation.items || [];
-  if (resItems.length !== items.length) {
-    throw createServiceError("Thông tin giữ hàng không khớp với đơn đặt hàng.", 400);
-  }
-  const resMap = {};
-  for (const item of resItems) {
-    resMap[item.productId] = item.quantity;
-  }
-  for (const item of items) {
-    if (resMap[item.product_id] !== item.quantity) {
+  try {
+    // 3. Redis reservation validation
+    const userResKey = `reservation:user:${user_id}`;
+    const resStr = await redisClient.get(userResKey);
+    if (!resStr) {
+      throw createServiceError("RESERVATION_LOST", 400);
+    }
+
+    const reservation = JSON.parse(resStr);
+    const reqVersion = Number(checkoutVersion);
+    if (reservation.version !== reqVersion) {
+      throw createServiceError("STALE_RESERVATION", 400);
+    }
+
+    // Verify reservation matches items
+    const resItems = reservation.items || [];
+    if (resItems.length !== items.length) {
       throw createServiceError("Thông tin giữ hàng không khớp với đơn đặt hàng.", 400);
     }
-  }
+    const resMap = {};
+    for (const item of resItems) {
+      resMap[item.productId] = item.quantity;
+    }
+    for (const item of items) {
+      if (resMap[item.product_id] !== item.quantity) {
+        throw createServiceError("Thông tin giữ hàng không khớp với đơn đặt hàng.", 400);
+      }
+    }
 
-  const session = await mongoose.startSession();
-  let newEvents = [];
-  const orderId = new mongoose.Types.ObjectId().toString();
-  let voucherPayload = {};
-  let finalTotalPrice = total_price;
+    const session = await mongoose.startSession();
+    let newEvents = [];
+    const orderId = new mongoose.Types.ObjectId().toString();
+    let voucherPayload = {};
+    let finalTotalPrice = 0; // Will be strictly recalculated
 
-  try {
-    await session.withTransaction(async () => {
-      newEvents = [];
-      
-      // Perform final stock validation and direct stock deduction inside transaction
-      for (const item of items) {
-        const product = await Product.findById(item.product_id).session(session);
-        if (!product) {
-          throw createServiceError(`Sản phẩm với ID ${item.product_id} không tồn tại`, 404);
-        }
+    try {
+      await session.withTransaction(async () => {
+        newEvents = [];
+        let calculatedSubtotal = 0;
         
-        if (product.stock < item.quantity) {
-          throw createServiceError(`Sản phẩm ${product.name} không đủ số lượng trong kho`, 400);
+        // Perform final stock validation and direct stock deduction inside transaction
+        for (const item of items) {
+          const product = await Product.findById(item.product_id).session(session);
+          if (!product) {
+            throw createServiceError(`Sản phẩm với ID ${item.product_id} không tồn tại`, 404);
+          }
+          
+          if (product.stock < item.quantity) {
+            throw createServiceError(`Sản phẩm ${product.name} không đủ số lượng trong kho`, 400);
+          }
+
+          calculatedSubtotal += product.price * item.quantity;
+
+          const latestProductEvent = await EventStore.findOne({ aggregateId: item.product_id })
+            .sort({ version: -1 })
+            .session(session);
+          const nextProductVersion = latestProductEvent ? latestProductEvent.version + 1 : 1;
+          const seqStockReserved = await getNextGlobalSequence();
+
+          // Direct stock deduction inside the transaction
+          const updateResult = await Product.updateOne(
+            {
+              _id: item.product_id,
+              stock: { $gte: item.quantity }
+            },
+            {
+              $inc: { stock: -item.quantity },
+              $set: { lastEventSequence: seqStockReserved }
+            },
+            { session }
+          );
+
+          if (updateResult.modifiedCount === 0) {
+            throw createServiceError("Sản phẩm không đủ số lượng trong kho hoặc xảy ra xung đột giao dịch.", 400);
+          }
+
+          // Event: StockReserved
+          const stockReservedEvent = new EventStore({
+            aggregateId: item.product_id,
+            aggregateType: "Product",
+            version: nextProductVersion,
+            eventType: "StockReserved",
+            globalSequence: seqStockReserved,
+            correlationId,
+            causationId: orderId,
+            payload: { productId: item.product_id, quantity: item.quantity, orderId },
+          });
+          await stockReservedEvent.save({ session });
+          newEvents.push(stockReservedEvent);
         }
 
-        const latestProductEvent = await EventStore.findOne({ aggregateId: item.product_id })
-          .sort({ version: -1 })
-          .session(session);
-        const nextProductVersion = latestProductEvent ? latestProductEvent.version + 1 : 1;
-        const seqStockReserved = await getNextGlobalSequence();
+        // Handle Voucher application atomically
+        if (voucherId || voucherCode) {
+          const query = voucherId
+            ? { _id: voucherId, isDeleted: false }
+            : { code: String(voucherCode).trim().toUpperCase(), isDeleted: false };
+          
+          const voucher = await Voucher.findOne(query).session(session);
+          if (!voucher) {
+            throw createServiceError("Voucher không tồn tại hoặc đã bị xoá.", 404);
+          }
 
-        // Direct stock deduction inside the transaction
-        const updateResult = await Product.updateOne(
-          {
-            _id: item.product_id,
-            stock: { $gte: item.quantity }
-          },
-          {
-            $inc: { stock: -item.quantity },
-            $set: { lastEventSequence: seqStockReserved }
-          },
-          { session }
-        );
+          const calculation = await validateAndCalculateVoucher(user_id, voucher.code, items, cleanShippingCost, deliveryOption);
 
-        if (updateResult.modifiedCount === 0) {
-          throw createServiceError("Sản phẩm không đủ số lượng trong kho hoặc xảy ra xung đột giao dịch.", 400);
+          const updatedUserVoucher = await UserVoucher.findOneAndUpdate(
+            { _id: calculation.userVoucher._id, isUsed: false },
+            { $set: { isUsed: true, usedAt: new Date(), orderId } },
+            { new: true, session }
+          );
+
+          if (!updatedUserVoucher) {
+            throw createServiceError("Voucher đã được sử dụng ở giao dịch khác.", 400);
+          }
+
+          await Voucher.findOneAndUpdate(
+            { _id: voucher._id, isDeleted: false },
+            { $inc: { usedCount: 1 } },
+            { new: true, session }
+          );
+
+          voucherPayload = {
+            voucher_id: voucher._id.toString(),
+            discount_amount: calculation.discountAmount,
+            voucher_code: voucher.code,
+            voucher_snapshot: {
+              voucherCode: voucher.code,
+              voucherType: voucher.type,
+              voucherValue: voucher.value,
+            },
+          };
+
+          const expectedTotal = calculation.totalSubtotal + (deliveryOption === "pickup" ? 0 : cleanShippingCost) - calculation.discountAmount;
+          finalTotalPrice = Math.max(0, expectedTotal);
+        } else {
+          const expectedTotal = calculatedSubtotal + (deliveryOption === "pickup" ? 0 : cleanShippingCost);
+          finalTotalPrice = Math.max(0, expectedTotal);
         }
 
-        // Event: StockReserved
-        const stockReservedEvent = new EventStore({
-          aggregateId: item.product_id,
-          aggregateType: "Product",
-          version: nextProductVersion,
-          eventType: "StockReserved",
-          globalSequence: seqStockReserved,
+        // Generate event: OrderPlaced
+        const seqOrderPlaced = await getNextGlobalSequence();
+        const orderPlacedEvent = new EventStore({
+          aggregateId: orderId,
+          aggregateType: "Order",
+          version: 1,
+          eventType: "OrderPlaced",
+          globalSequence: seqOrderPlaced,
           correlationId,
-          causationId: orderId,
-          payload: { productId: item.product_id, quantity: item.quantity, orderId },
-        });
-        await stockReservedEvent.save({ session });
-        newEvents.push(stockReservedEvent);
-      }
-
-      // Handle Voucher application atomically
-      if (voucherId || voucherCode) {
-        const query = voucherId
-          ? { _id: voucherId, isDeleted: false }
-          : { code: String(voucherCode).trim().toUpperCase(), isDeleted: false };
-        
-        const voucher = await Voucher.findOne(query).session(session);
-        if (!voucher) {
-          throw createServiceError("Voucher không tồn tại hoặc đã bị xoá.", 404);
-        }
-
-        const calculation = await validateAndCalculateVoucher(user_id, voucher.code, items, shippingCost, deliveryOption);
-
-        const updatedUserVoucher = await UserVoucher.findOneAndUpdate(
-          { _id: calculation.userVoucher._id, isUsed: false },
-          { $set: { isUsed: true, usedAt: new Date(), orderId } },
-          { new: true, session }
-        );
-
-        if (!updatedUserVoucher) {
-          throw createServiceError("Voucher đã được sử dụng ở giao dịch khác.", 400);
-        }
-
-        await Voucher.findOneAndUpdate(
-          { _id: voucher._id, isDeleted: false },
-          { $inc: { usedCount: 1 } },
-          { new: true, session }
-        );
-
-        voucherPayload = {
-          voucher_id: voucher._id.toString(),
-          discount_amount: calculation.discountAmount,
-          voucher_code: voucher.code,
-          voucher_snapshot: {
-            voucherCode: voucher.code,
-            voucherType: voucher.type,
-            voucherValue: voucher.value,
+          causationId: correlationId,
+          payload: {
+            user_id,
+            items,
+            total_price: finalTotalPrice,
+            payment_method,
+            fullName,
+            email,
+            phone,
+            address,
+            province,
+            district,
+            ward,
+            detailAddress,
+            deliveryOption: deliveryOption || "delivery",
+            shippingCost: deliveryOption === "pickup" ? 0 : cleanShippingCost,
+            orderId,
+            ...voucherPayload,
           },
-        };
-
-        const expectedTotal = calculation.totalSubtotal + (deliveryOption === "pickup" ? 0 : shippingCost) - calculation.discountAmount;
-        finalTotalPrice = Math.max(0, expectedTotal);
-      }
-
-      // Generate event: OrderPlaced
-      const seqOrderPlaced = await getNextGlobalSequence();
-      const orderPlacedEvent = new EventStore({
-        aggregateId: orderId,
-        aggregateType: "Order",
-        version: 1,
-        eventType: "OrderPlaced",
-        globalSequence: seqOrderPlaced,
-        correlationId,
-        causationId: correlationId,
-        payload: {
-          user_id,
-          items,
-          total_price: finalTotalPrice,
-          payment_method,
-          fullName,
-          email,
-          phone,
-          address,
-          province,
-          district,
-          ward,
-          detailAddress,
-          deliveryOption: deliveryOption || "delivery",
-          shippingCost: deliveryOption === "pickup" ? 0 : shippingCost,
-          orderId,
-          ...voucherPayload,
-        },
+        });
+        await orderPlacedEvent.save({ session });
+        newEvents.push(orderPlacedEvent);
       });
-      await orderPlacedEvent.save({ session });
-      newEvents.push(orderPlacedEvent);
-    });
-  } catch (error) {
-    throw error;
+    } catch (error) {
+      throw error;
+    } finally {
+      session.endSession();
+    }
+
+    // Commit stock reservation in Redis after successful DB transaction commit
+    try {
+      await commitCheckoutStock(user_id);
+    } catch (redisCommitErr) {
+      logger.error("Failed to commit checkout stock in Redis", redisCommitErr);
+    }
+
+    // Dispatch events asynchronously to Projection Queue
+    for (const event of newEvents) {
+      await enqueueEventForProjection(event);
+    }
+
+    if (["MOMO", "VNPAY"].includes(payment_method.toUpperCase())) {
+      await enqueueOrderExpiry(orderId, 24 * 60 * 60 * 1000);
+    } else if (payment_method.toUpperCase() === "PAYPAL") {
+      await enqueueOrderExpiry(orderId, 15 * 60 * 1000);
+    }
+
+    return {
+      _id: orderId,
+      user_id,
+      items,
+      total_price: finalTotalPrice,
+      status: "pending",
+      payment_status: "pending",
+      payment_method,
+      order_date: new Date(),
+      voucher_id: voucherPayload.voucher_id || null,
+      discount_amount: voucherPayload.discount_amount || 0,
+    };
   } finally {
-    session.endSession();
+    // Release the checkout lock safely by verifying the owner token
+    try {
+      const currentLockToken = await redisClient.get(lockKey);
+      if (currentLockToken === lockToken) {
+        await redisClient.del(lockKey);
+      }
+    } catch (lockErr) {
+      logger.error("Failed to release checkout lock safely", lockErr);
+    }
   }
-
-  // Commit stock reservation in Redis after successful DB transaction commit
-  try {
-    await commitCheckoutStock(user_id);
-  } catch (redisCommitErr) {
-    logger.error("Failed to commit checkout stock in Redis", redisCommitErr);
-  }
-
-  // Dispatch events asynchronously to Projection Queue
-  for (const event of newEvents) {
-    await enqueueEventForProjection(event);
-  }
-
-  if (["MOMO", "VNPAY"].includes(payment_method.toUpperCase())) {
-    await enqueueOrderExpiry(orderId, 24 * 60 * 60 * 1000);
-  } else if (payment_method.toUpperCase() === "PAYPAL") {
-    await enqueueOrderExpiry(orderId, 15 * 60 * 1000);
-  }
-
-  return {
-    _id: orderId,
-    user_id,
-    items,
-    total_price: finalTotalPrice,
-    status: "pending",
-    payment_status: "pending",
-    payment_method,
-    order_date: new Date(),
-    voucher_id: voucherPayload.voucher_id || null,
-    discount_amount: voucherPayload.discount_amount || 0,
-  };
 };
 
 export const getOrders = async (queryParams = {}, currentUser = null, pagination = null) => {

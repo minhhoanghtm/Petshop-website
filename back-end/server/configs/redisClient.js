@@ -41,6 +41,11 @@ if (useMock) {
             return val !== undefined ? String(val) : null;
         },
         set: async (key, value, options) => {
+            if (options && options.NX) {
+                if (store.has(key) && !isExpired(key)) {
+                    return null;
+                }
+            }
             store.set(key, value);
             if (options && options.EX) {
                 ttls.set(key, Date.now() + options.EX * 1000);
