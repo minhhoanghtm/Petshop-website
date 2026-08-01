@@ -243,16 +243,14 @@ app.use("/api/reviews", reviewRoutes);
 app.use("/api/vouchers", voucherRoutes);
 
 // ===== PROTECTED ROUTES (Authentication required) =====
-// Apply middleware to protect these routes
-app.use(protectedRoute);
-
-// User, Order, Cart, Settings, Dashboard routes
-app.use("/api/users", userRoutes);
-app.use("/api/orders", orderRoutes);
-app.use("/api/carts", cartRoutes);
-app.use("/api/settings", settingRoutes);
-app.use("/api/dashboard", dashboadRoutes);
-app.use("/api/admin", adminRoutes);
+// protectedRoute is applied inline per route — NOT globally,
+// so unmatched paths still reach notFoundHandler correctly.
+app.use("/api/users", protectedRoute, userRoutes);
+app.use("/api/orders", protectedRoute, orderRoutes);
+app.use("/api/carts", protectedRoute, cartRoutes);
+app.use("/api/settings", protectedRoute, settingRoutes);
+app.use("/api/dashboard", protectedRoute, dashboadRoutes);
+app.use("/api/admin", protectedRoute, adminRoutes);
 
 app.use(notFoundHandler);
 app.use(errorHandler);
