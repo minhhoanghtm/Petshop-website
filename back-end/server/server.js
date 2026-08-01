@@ -141,13 +141,20 @@ const ensureBootstrapAdmin = async () => {
   }
 };
 
+const MONGO_URI = process.env.MONGO_URI;
+if (!MONGO_URI) {
+  logger.error("FATAL: MONGO_URI environment variable is not set. MongoDB will not connect.");
+} else {
+  logger.info("Attempting MongoDB connection...", { uri: MONGO_URI.replace(/:\/\/[^@]+@/, "://<credentials>@") });
+}
+
 mongoose
-  .connect(process.env.MONGO_URI, {
-    retryWrites: false,
+  .connect(MONGO_URI, {
+    retryWrites: true,
     w: "majority",
-    serverSelectionTimeoutMS: 5000,
+    serverSelectionTimeoutMS: 10000,
     socketTimeoutMS: 45000,
-    connectTimeoutMS: 10000,
+    connectTimeoutMS: 15000,
   })
   .then(async () => {
     logger.info("Connected to MongoDB");
@@ -155,8 +162,10 @@ mongoose
     await ensureBootstrapAdmin();
   })
   .catch((err) => {
-    logger.warn("MongoDB connection failed. Server continuing without DB.", {
+    logger.error("FATAL: MongoDB connection failed!", {
       message: err.message,
+      code: err.code,
+      uri: MONGO_URI ? MONGO_URI.replace(/:\/\/[^@]+@/, "://<credentials>@") : "NOT SET",
     });
   });
 
