@@ -141,7 +141,6 @@ voucherSchema.pre("validate", function (next) {
   next();
 });
 
-voucherSchema.index({ code: 1 }, { unique: true });
 voucherSchema.index({ isDeleted: 1, status: 1, isPublic: 1 });
 
 const Voucher = mongoose.model("Voucher", voucherSchema);
